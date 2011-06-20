@@ -1,0 +1,11 @@
+# DEP-3 (http://dep.debian.net/deps/dep3/) style patch header
+snippet header DEP-3 style header
+	Description: ${1}
+	Origin: ${2}
+	Bug: ${3}
+	Forwarded: ${4}
+	Author: ${5:`g:snips_author`}
+	Reviewed-by: ${6}
+	Last-Update: ${7:`strftime("%Y-%m-%d")`}
+	Applied-Upstream: ${8}
+

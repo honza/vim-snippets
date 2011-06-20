@@ -1,0 +1,124 @@
+# .erb and .rhmtl files
+
+# Includes html.snippets
+
+# Rails *****************************
+snippet rc
+	<% ${1} -%>
+snippet rce
+	<%= ${1} %>${2}
+snippet end
+	<% end -%>${1}
+snippet for
+	<% for ${2:item} in $1 %>
+		${3}
+	<% end %>
+snippet rp
+	<%= render :partial => '${1:item}' %>
+snippet rpl
+	<%= render :partial => '${1:item}', :locals => { :${2:name} => '${3:value}'$4 } %>
+snippet rps
+	<%= render :partial => '${1:item}', :status => ${2:500} %>
+snippet rpc
+	<%= render :partial => '${1:item}', :collection => ${2:items} %>
+snippet lia
+	<%= link_to '${1:link text...}', :action => '${2:index}' %>
+snippet liai
+	<%= link_to '${1:link text...}', :action => '${2:edit}', :id => ${3:@item} %>
+snippet lic
+	<%= link_to '${1:link text...}', :controller => '${2:items}' %>
+snippet lica
+	<%= link_to '${1:link text...}', :controller => '${2:items}', :action => '${3:index}' %>
+snippet licai
+	<%= link_to '${1:link text...}', :controller => '${2:items}', :action => '${3:edit}', :id => ${4:@item} %>
+snippet yield
+	<%= yield${1::content_symbol}%>${2}
+snippet conf
+	<% content_for ${1::foo} do %>
+		${2}
+	<% end -%>
+# Ruby ******************************
+snippet :
+	:${1:key} => ${2:"value"}${3}
+snippet if
+	if ${1:condition}
+		${2}
+	end
+snippet ife
+	if ${1:condition}
+		${2}
+	else
+		${3}
+	end
+snippet elsif
+	elsif ${1:condition}
+		${2}
+snippet unless
+	unless ${1:condition}
+		${2}
+	end
+snippet while
+	while ${1:condition}
+		${2}
+	end
+snippet until
+	until ${1:condition}
+		${2}
+	end
+snippet case
+	case ${1:object}
+	when ${2:condition}
+		${3}
+	end
+snippet when
+	when ${1:condition}
+		${2}
+	end
+snippet dow
+	downto(${1:0}) { |${2:n}| ${3} }
+snippet ste
+	step(${1:2}) { |${2:n}| ${3} }
+snippet tim
+	times { |${1:n}| ${2} }
+snippet upt
+	upto(${1:1.0/0.0}) { |${2:n}| ${3} }
+snippet loo
+	loop { ${1} }
+snippet ea
+	each { |${1:e}| ${2} }
+snippet eab
+	each_byte { |${1:byte}| ${2} }
+snippet eac- each_char { |chr| .. }
+	each_char { |${1:chr}| ${2} }
+snippet eac- each_cons(..) { |group| .. }
+	each_cons(${1:2}) { |${2:group}| ${3} }
+snippet eai
+	each_index { |${1:i}| ${2} }
+snippet eak
+	each_key { |${1:key}| ${2} }
+snippet eal
+	each_line { |${1:line}| ${2} }
+snippet eap
+	each_pair { |${1:name}, ${2:val}| ${3} }
+snippet eas-
+	each_slice(${1:2}) { |${2:group}| ${3} }
+snippet eav
+	each_value { |${1:val}| ${2} }
+snippet eawi
+	each_with_index { |${1:e}, ${2:i}| ${3} }
+snippet reve
+	reverse_each { |${1:e}| ${2} }
+snippet inj
+	inject(${1:init}) { |${2:mem}, ${3:var}| ${4} }
+snippet map
+	map { |${1:e}| ${2} }
+snippet mapwi-
+	enum_with_index.map { |${1:e}, ${2:i}| ${3} }
+snippet col
+	collect { |${1:e}| ${2} }
+snippet det
+	detect { |${1:e}| ${2} }
+snippet rej
+	reject { |${1:e}|, ${2} }
+snippet sel
+	select { |${1:e}|, ${2} }
