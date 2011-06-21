@@ -20,6 +20,7 @@ to maintain snippets for a language, please get in touch.
 * Javascript - [honza](http://github.com/honza)
 * HTML Django - [honza](http://github.com/honza)
 * Markdown - [honza](http://github.com/honza)
+* Ruby - [taq](http://github.com/taq)
 
 Authors
 -------
