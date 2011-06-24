@@ -1,8 +1,11 @@
 # append
 snippet ap
 	append(${1:slice}, ${2:value})
+# bool
+snippet bl
+	bool
 # byte 
-snippet b
+snippet bt
 	byte
 # break
 snippet br
@@ -10,11 +13,15 @@ snippet br
 # channel
 snippet ch
 	chan ${1:int}
-# const
+# case
 snippet cs
-	const ${1:NAME} = ${2:value}
+	case ${1:value}:
+		${2:/* code */}
+# const
+snippet c
+	const ${1:NAME} = ${2:0}
 # constants with iota
-snippet cst
+snippet co
 	const (
 		${1:NAME1} = iota
 		${2:NAME2}
@@ -86,14 +93,20 @@ snippet ir
 	}
 	${1}
 # false
-snippet fa
+snippet f
 	false
 # fallthrough
-snippet fth
+snippet ft
 	fallthrough
 # float
 snippet fl
 	float32
+# float32
+snippet f3
+	float32
+# float64
+snippet f6
+	float64
 # if else
 snippet ie
 	if ${1:/* condition */} {
@@ -151,7 +164,7 @@ snippet rt
 snippet rs
 	result
 # select
-snippet sel
+snippet sl
 	select {
 	case ${1:v1} := <-${2:chan1}
 		${3:/* code */}
@@ -181,7 +194,7 @@ snippet sw
 snippet sp
 	fmt.Sprintf("${1:%s}", ${2:var})${3}
 # true 
-snippet tr
+snippet t
 	true
 # variable declaration
 snippet v
