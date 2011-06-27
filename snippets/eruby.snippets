@@ -1,26 +1,38 @@
-# .erb and .rhmtl files
+# .erb and .rhtml files
 
 # Includes html.snippets
 
 # Rails *****************************
 snippet rc
-	<% ${1} -%>
+	<% ${1} %>
 snippet rce
 	<%= ${1} %>${2}
 snippet end
-	<% end -%>${1}
+	<% end %>${1}
+snippet conf
+	<% content_for ${1::foo} do %>
+	   ${2}
+	<% end %>
+snippet fields
+	<% fields_for :${1:model}, @$1 do |${2:f}| %>
+	   ${3}
+	<% end %>
 snippet for
 	<% for ${2:item} in $1 %>
-		${3}
+	   ${3}
 	<% end %>
-snippet rp
-	<%= render :partial => '${1:item}' %>
-snippet rpl
-	<%= render :partial => '${1:item}', :locals => { :${2:name} => '${3:value}'$4 } %>
-snippet rps
-	<%= render :partial => '${1:item}', :status => ${2:500} %>
-snippet rpc
-	<%= render :partial => '${1:item}', :collection => ${2:items} %>
+snippet eff
+	<% error_messages_for :${1:model} %>
+
+	<% form_for @${2:model} do |f| %>
+	   ${3}
+	<% end %>
+snippet ff 
+	 <% form_for @${1:model} do |f| %>
+	   ${2}
+	 <% end %>
+snippet i18
+	 I18n.t('${1:type.key}')${2}
 snippet lia
 	<%= link_to '${1:link text...}', :action => '${2:index}' %>
 snippet liai
@@ -31,18 +43,41 @@ snippet lica
 	<%= link_to '${1:link text...}', :controller => '${2:items}', :action => '${3:index}' %>
 snippet licai
 	<%= link_to '${1:link text...}', :controller => '${2:items}', :action => '${3:edit}', :id => ${4:@item} %>
+snippet liep
+	<%= link_to '${1:link text...}', edit_${2:model_name}_path($2) %>
+snippet linp
+	<%= link_to '${1:link text...}', new_${2:model_name}_path %>
+snippet lip
+	<%= link_to '${1:link text...}', ${2:model_name}_path($2) %>
+snippet lipcp
+	 <%= link_to '${1:link text...}', ${2:parent}_${3:child}_path($2) %>
+snippet lipcpc
+	 <%= link_to '${1:link text...}', ${2:parent}_${3:child}_path($2, $3) %>
+snippet lipf
+	<%= link_to '${1:link text...}', ${2:model_name}_path($2, :format => :${3:render_type}) %>
+snippet lipm
+	<%= link_to '${1:link text...}', ${2:model_name}_path($2), :method => ${3:method} %>
+snippet rf
+	<%= render :file => "${1:file}"${2} %>
+snippet rp
+	<%= render :partial => '${1:item}' %>
+snippet rpl
+	<%= render :partial => '${1:item}', :locals => { :${2:name} => '${3:value}'$4 } %>
+snippet rps
+	<%= render :partial => '${1:item}', :status => ${2:500} %>
+snippet rpc
+	<%= render :partial => '${1:item}', :collection => ${2:items} %>
+snippet rt
+	<%= render :template => "${1:file}"${2} %>
 snippet yield
 	<%= yield${1::content_symbol}%>${2}
-snippet conf
-	<% content_for ${1::foo} do %>
-		${2}
-	<% end -%>
+
 # Ruby ******************************
 snippet :
 	:${1:key} => ${2:"value"}${3}
 snippet if
 	if ${1:condition}
-		${2}
+	  ${2}
 	end
 snippet ife
 	if ${1:condition}
