@@ -9,7 +9,8 @@ snippet moosecl
 
 	${6:# body of class}
 
-	1;
+	"one, but we're not the same";
+
 	__END__
 
 	=head1 NAME
@@ -33,5 +34,16 @@ snippet has
 		default => ${4:defaultvalue}
 		,${5:# other attributes}
 	); #}}}
+
+
+# override
+snippet override
+	override ${1:attribute} => sub { #{{{ 
+		${2:# my $self = shift;};
+		${3:# my ($self,$args) = @_;};
+	}; #}}}
+
+
+
 
 

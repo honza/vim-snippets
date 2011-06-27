@@ -21,9 +21,16 @@ snippet trunner
 
 #testclass
 snippet tsub
-	sub t${1:number}_${2:test_case} Test:(${3:num_of_tests}) { #{{{
+	sub t${1:number}_${2:test_case} :Test(${3:num_of_tests}) { #{{{
+		my $self = shift;
 		${4:#  body}
 		
 		} #}}}
 
 
+#prep test method
+snippet tprep
+	sub prep${1:number}_${2:test_case} :Test(startup) { #{{{
+		my $self = shift;
+		${4:#  body}
+	} #}}}
