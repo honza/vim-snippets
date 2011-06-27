@@ -1,0 +1,58 @@
+# #!/usr/bin/perl
+
+# strict warnings
+snippet strwar
+	use strict;
+	use warnings;
+
+
+# standard versioning with perlcritic bypass
+snippet vers
+	## no critic
+	our $VERSION = '${1:version}';
+	eval $VERSION;
+	## use critic
+
+
+
+# Anonymous subroutine
+snippet asub
+	sub { 
+	 	${1:# body }
+	}
+
+
+# Begin block
+snippet begin
+	BEGIN { #{{{
+		${1:# begin body}
+	} #}}}
+
+# call package function
+snippet pkgm  
+	__PACKAGE__->${1:package_method}(${2:var});
+
+# complex regex
+snippet qrx
+	qr/
+	     ${1:regex}
+	/xms
+
+#simpler regex
+snippet qr/
+	qr/${1:regex}/x
+
+#switch
+snippet switch
+	switch ($${1:var}) { #{{{
+		${2:# cases}
+	} #}}}
+
+# switch case
+snippet case
+	case ${1:case} { 
+		${2:# body}
+	}
+
+
+

@@ -1,0 +1,29 @@
+# #!/usr/bin/perl
+
+# use test classes
+snippet tuse
+	use Test::More;
+	use Test::Deep;
+	use Test::Exception;
+
+# local test lib
+snippet tlib
+	use lib qw{ ./t/lib };
+
+#test methods
+snippet tmeths
+	$ENV{TEST_METHOD} = '${1:regex}';
+
+# runtestclass
+snippet trunner
+	use ${1:test_class};
+	$1->runtests();
+
+#testclass
+snippet tsub
+	sub t${1:number}_${2:test_case} Test:(${3:num_of_tests}) { #{{{
+		${4:#  body}
+		
+		} #}}}
+
+

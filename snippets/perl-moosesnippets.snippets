@@ -1,0 +1,37 @@
+# #!/usr/bin/perl
+
+# Moose package
+snippet moosecl
+	package ${1:ClassName};
+	
+	use Moose;
+	#extends ${2:# ParentClass};
+
+	${6:# body of class}
+
+	1;
+	__END__
+
+	=head1 NAME
+
+	$1 - ${3:ShortDesc}
+
+	=head1 SYNOPSIS
+
+	${4:# synopsis...}
+
+	=head1 DESCRIPTION
+
+	${5:# longer description...}
+
+
+# has
+snippet has
+	has ${1:attribute} => ( #{{{ 
+		is	=> '${2:ro|rw}',
+		isa 	=> '${3:Str|Int|HashRef|ArrayRef|etc}',
+		default => ${4:defaultvalue}
+		,${5:# other attributes}
+	); #}}}
+
+
