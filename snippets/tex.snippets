@@ -9,6 +9,10 @@ snippet tab
 	\begin{${1:tabular}}{${2:c}}
 	${3}
 	\end{$1}
+snippet center
+	\begin{center}
+		${1}
+	\end{center}
 # Align(ed)
 snippet ali
 	\begin{align${1:ed}}
@@ -24,11 +28,16 @@ snippet eq
 	\begin{equation}
 		${1}
 	\end{equation}
+# Equation
+snippet eq*
+	\begin{equation*}
+		${1}
+	\end{equation*}
 # Unnumbered Equation
 snippet \
-	\\[
+	\[
 		${1}
-	\\]
+	\]
 # Enumerate
 snippet enum
 	\begin{enumerate}
