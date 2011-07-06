@@ -69,8 +69,8 @@ snippet wh
 snippet try
 	try {
 		${1:/* code */}
-	} catch(e) {
-		${2:/* handle error */}
+	} catch(${2:e}) {
+		${3:/* handle error */}
 	}
 # do...while
 snippet do
@@ -91,12 +91,6 @@ snippet get
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
-# Get Element
-snippet try
-	try {
-		${2}
-	} catch (${2:e}) {
-	}
 # console.log (Firebug)
 snippet cl
 	console.log(${1});
