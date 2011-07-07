@@ -22,6 +22,12 @@ to maintain snippets for a language, please get in touch.
 * Markdown - [honza](http://github.com/honza)
 * Ruby - [taq](http://github.com/taq)
 
+Contributing notes
+------------------
+
+Until further work is done on `vim-snipmate`, please don't add folding markers
+into snippets.
+
 Authors
 -------
 
