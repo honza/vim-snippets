@@ -34,17 +34,17 @@ snippet cl
 			${6}
 # New Function
 snippet def
-	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):#{{{
+	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 		"""${3:docstring for $1}"""
 		${4:pass}
 	#}}}
 snippet deff
-	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}): #{{{
+	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 		${3}
 	#}}}
 # New Method
 snippet defs
-	def ${1:mname}(self, ${2:arg}):#{{{
+	def ${1:mname}(self, ${2:arg}):
 		${3:pass}
 	#}}}
 # New Property
