@@ -53,6 +53,33 @@ snippet property
 			${3:return self._$1}
 		def fset(self, value):
 			${4:self._$1 = value}
+# Ifs
+snippet if
+	if ${1:condition}:
+		${2:code...}
+snippet ifelse
+	if ${1:condition}:
+		${2:code...}
+	else:
+		${3:code...}
+snippet ifelif
+	if ${1:condition}:
+		${2:code...}
+	elif ${3:condition}:
+		${4:code...}
+	else:
+		${5:code..}
+# For
+snippet for
+	for ${1:item} in ${2:items}
+		${3:code...}
+# Encodes
+snippet cuft8
+	# -*- coding: utf-8 -*-
+snippet clatin1
+	# -*- coding: latin-1 -*-
+snippet cascii
+	# -*- coding: ascii -*-
 # Lambda
 snippet ld
 	${1:var} = lambda ${2:vars} : ${3:action}
