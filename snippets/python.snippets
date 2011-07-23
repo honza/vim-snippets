@@ -57,18 +57,12 @@ snippet property
 snippet if
 	if ${1:condition}:
 		${2:code...}
-snippet ifelse
-	if ${1:condition}:
-		${2:code...}
+snippet el
 	else:
-		${3:code...}
-snippet ifelif
-	if ${1:condition}:
+		${1:code...}
+snippet ei
+	elif ${1:condition}:
 		${2:code...}
-	elif ${3:condition}:
-		${4:code...}
-	else:
-		${5:code..}
 # For
 snippet for
 	for ${1:item} in ${2:items}
