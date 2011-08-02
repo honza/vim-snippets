@@ -27,13 +27,13 @@ snippet tab
 snippet shift
 	&#x21E7;
 # ⌃
-snippet control
+snippet ctrl
 	&#x2303;
 # ⌅
 snippet enter
 	&#x2305;
 # ⌘
-snippet command
+snippet cmd
 	&#x2318;
 # ⌥
 snippet option
@@ -45,7 +45,7 @@ snippet delete
 snippet backspace
 	&#x232B;
 # ⎋
-snippet escape
+snippet esc
 	&#x238B;
 # Generic Doctype
 snippet doctype HTML 4.01 Strict
@@ -95,6 +95,347 @@ snippet docxt
 snippet docx
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+# Attributes
+snippet attr
+	${1:attribute}="${2:property}"
+snippet attr+
+	${1:attribute}="${2:property}" attr+${3}
+snippet .
+	class="${1}"${2}
+snippet #
+	id="${1}"${2}
+snippet alt
+	alt="${1}"${2}
+snippet charset
+	charset="${1:utf-8}"${2}
+snippet data
+	data-${1}="${2:$1}"${3}
+snippet for
+	for="${1}"${2}
+snippet height
+	height="${1}"${2}
+snippet href
+	href="${1:#}"${2}
+snippet lang
+	lang="${1:en}"${2}
+snippet media
+	media="${1}"${2}
+snippet name
+	name="${1}"${2}
+snippet rel
+	rel="${1}"${2}
+snippet scope
+	scope="${1:row}"${2}
+snippet src
+	src="${1}"${2}
+snippet title
+	title="${1}"${2}
+snippet type
+	type="${1}"${2}
+snippet value
+	value="${1}"${2}
+snippet width
+	width="${1}"${2}
+# Elements
+snippet a
+	<a href="${1:#}">${2:$1}</a>${3}
+snippet a.
+	<a class="${1}" href="${2:#}">${3:$1}</a>${4}
+snippet a#
+	<a id="${1}" href="${2:#}">${3:$1}</a>${4}
+snippet a:ext
+	<a href="http://${1:example.com}">${2:$1}</a>${3}
+snippet a:mail
+	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>${4}
+snippet abbr
+	<abbr title="${1}">${2}</abbr>${3}
+snippet address
+	<address>
+		${1}
+	</address>${2}
+snippet area
+	<area shape="${1:rect}" coords="${2}" href="${3}" alt="${4}" />${5}
+snippet area+
+	<area shape="${1:rect}" coords="${2}" href="${3}" alt="${4}" />
+	area+${5}
+snippet area:c
+	<area shape="circle" coords="${1}" href="${2}" alt="${3}" />${4}
+snippet area:d
+	<area shape="default" coords="${1}" href="${2}" alt="${3}" />${4}
+snippet area:p
+	<area shape="poly" coords="${1}" href="${2}" alt="${3}" />${4}
+snippet area:r
+	<area shape="rect" coords="${1}" href="${2}" alt="${3}" />${4}
+snippet article
+	<article>
+		${1}
+	</article>${2}
+snippet article.
+	<article class="${1}">
+		${2}
+	</article>${3}
+snippet article#
+	<article id="${1}">
+		${2}
+	</article>${3}
+snippet aside
+	<aside>
+		${1}
+	</aside>${2}
+snippet aside.
+	<aside class="${1}">
+		${2}
+	</aside>${3}
+snippet aside#
+	<aside id="${1}">
+		${2}
+	</aside>${3}
+snippet audio
+	<audio src="${1}>${2}</audio>${3}
+snippet b
+	<b>${1}</b>${2}
+snippet base
+	<base href="${1}" target="${2}" />${3}
+snippet bdi
+	<bdi>${1}</bdo>${2}
+snippet bdo
+	<bdo dir="${1}">${2}</bdo>${3}
+snippet bdo:l
+	<bdo dir="ltr">${1}</bdo>${3}
+snippet bdo:r
+	<bdo dir="rtl">${1}</bdo>${3}
+snippet blockquote
+	<blockquote>
+		${1}
+	</blockquote>${2}
+snippet body
+	<body>
+		${1}
+	</body>
+snippet br
+	<br />${1}
+snippet button
+	<button type="${1:submit}">${2}</button>${3}
+snippet button.
+	<button class="${1:button}" type="${2:submit}">${3}</button>${4}
+snippet button#
+	<button id="${1}" type="${2:submit}">${3}</button>${4}
+snippet button:s
+	<button type="submit">${1}</button>${2}
+snippet button:r
+	<button type="reset">${1}</button>${2}
+snippet canvas
+	<canvas>
+		${1}
+	</canvas>${2}
+snippet caption
+	<caption>${1}</caption>${2}
+snippet cite
+	<cite>${1}</cite>${2}
+snippet code
+	<code>${1}</code>${2}
+snippet col
+	<col />${1}
+snippet col+
+	<col />
+	col+${1}
+snippet colgroup
+	<colgroup>
+		${1}
+	</colgroup>${2}
+snippet colgroup+
+	<colgroup>
+		<col />
+		col+${1}
+	</colgroup>
+snippet command
+	<command type="command" label="${1}" icon="${2}" />${3}
+snippet command:c
+	<command type="checkbox" label="${1}" icon="${2}" />${3}
+snippet command:r
+	<command type="radio" radiogroup="${1}" label="${2}" icon="${3}" />${4}
+snippet datagrid
+	<datagrid>
+		${1}
+	</datagrid>${2}
+snippet datalist
+	<datalist>
+		${1}
+	</datalist>${2}
+snippet datatemplate
+	<datatemplate>
+		${1}
+	</datatemplate>${2}
+snippet dd
+	<dd>${1}</dd>${2}
+snippet dd.
+	<dd class="${1}">${2}</dd>${3}
+snippet dd#
+	<dd id="${1}">${2}</dd>${3}
+snippet del
+	<del>${1}</del>${2}
+snippet details
+	<details>${1}</details>
+snippet dfn
+	<dfn>${1}</dfn>${2}
+snippet dialog
+	<dialog>
+		${1}
+	</dialog>${2}
+snippet div
+	<div>
+		${1}
+	</div>${2}
+snippet div.
+	<div class="${1}">
+		${2}
+	</div>${3}
+snippet div#
+	<div id="${1}">
+		${2}
+	</div>${3}
+snippet dl
+	<dl>
+		${1}
+	</dl>
+snippet dl.
+	<dl class="${1}">
+		${2}
+	</dl>
+snippet dl#
+	<dl id="${1}">
+		${2}
+	</dl>
+snippet dl+
+	<dl>
+		<dt>${1}</dt>
+		<dd>${2}</dd>
+		dt+${3}
+	</dl>
+snippet dt
+	<dt>${1}</dt>
+snippet dt.
+	<dt class="${1}">${2}</dt>${3}
+snippet dt#
+	<dt id="${1}">${2}</dt>${3}
+snippet dt+
+	<dt>${1}</dt>
+	<dd>${2}</dd>
+	dt+${3}
+snippet em
+	<em>${1}</em>${2}
+snippet embed
+	<embed src=${1} type="${2} />${3}
+snippet fieldset
+	<fieldset>
+		${1}
+	</fieldset>${2}
+snippet fieldset.
+	<fieldset class="${1}">
+		${2}
+	</fieldset>${3}
+snippet fieldset#
+	<fieldset id="${1}">
+		${2}
+	</fieldset>${3}
+snippet fieldset+
+	<fieldset>
+		<legend><span>${1}</span></legend>
+		${2}
+	</fieldset>
+	fieldset+${3}
+snippet figcaption
+	<figcaption>${1}</figcaption>${2}
+snippet figure
+	<figure>${1}</figure>${2}
+snippet footer
+	<footer>
+		${1}
+	</footer>${2}
+snippet footer.
+	<footer class="${1}>
+		${2}
+	</footer>${3}
+snippet footer#
+	<footer id="${1}>
+		${2}
+	</footer>${3}
+snippet form
+	<form action="${1}" method="${2:get}" accept-charset="utf-8">
+		${3}
+	</form>${4}
+snippet form.
+	<form class="${1}" action="${2}" method="${3:get}" accept-charset="utf-8">
+		${4}
+	</form>${5}
+snippet form#
+	<form id="${1}" action="${2}" method="${3:get}" accept-charset="utf-8">
+		${4}
+	</form>${5}
+snippet h1
+	<h1>${1}</h1>${2}
+snippet h1.
+	<h1 class="${1}">${2}</h1>${3}
+snippet h1#
+	<h1 id="${1}">${2}</h1>${3}
+snippet h2
+	<h2>${1}</h2>${2}
+snippet h2.
+	<h2 class="${1}">${2}</h2>${3}
+snippet h2#
+	<h2 id="${1}">${2}</h2>${3}
+snippet h3
+	<h3>${1}</h3>${2}
+snippet h3.
+	<h3 class="${1}">${2}</h2>${3}
+snippet h3#
+	<h3 id="${1}">${2}</h2>${3}
+snippet h4
+	<h4>${1}</h4>${2}
+snippet h4.
+	<h4 class="${1}">${2}</h4>${3}
+snippet h4#
+	<h4 id="${1}">${2}</h4>${3}
+snippet h5
+	<h5>${1}</h5>${2}
+snippet h5.
+	<h5 class="${1}">${2}</h5>${3}
+snippet h5#
+	<h5 id="${1}">${2}</h5>${3}
+snippet h6
+	<h6>${1}</h6>${2}
+snippet h6.
+	<h6 class="${1}">${2}</h6>${3}
+snippet h6#
+	<h6 id="${1}">${2}</h6>${3}
+snippet head
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+	</head>
+snippet header
+	<header>
+		${1}
+	</header>${2}
+snippet header.
+	<header class="${1}">
+		${2}
+	</header>${3}
+snippet header#
+	<header id="${1}">
+		${2}
+	</header>${3}
+snippet hgroup
+	<hgroup>
+		${1}
+	</hgroup>${2}
+snippet hgroup.
+	<hgroup class="${1}>
+		${2}
+	</hgroup>${3}
+snippet hr
+	<hr />${1}
 snippet html
 	<html>
 	${1}
@@ -103,146 +444,368 @@ snippet xhtml
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	${1}
 	</html>
-snippet body
-	<body>
-		${1}
-	</body>
-snippet head
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8"`Close()`>
-
-		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+snippet i
+	<i>${1}</i>${2}
+snippet iframe
+	<iframe src="${1}" frameborder="0"></iframe>${2}
+snippet iframe.
+	<iframe class="${1}" src="${2}" frameborder="0"></iframe>${3}
+snippet iframe#
+	<iframe id="${1}" src="${2}" frameborder="0"></iframe>${3}
+snippet img
+	<img src="${1}" alt="${2} />${3}
+snippet img.
+	<img class="${1}" src="${2}" alt="${3} />${4}
+snippet img#
+	<img id="${1}" src="${2}" alt="${3} />${4}
+snippet input
+	<input type="${1:text/submit/hidden/button/image}" name="${2}" id="${3:$2}" value="${4}" />${5}
+snippet input.
+	<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:$3}" value="${5}" />${6}
+snippet input:text
+	<input type="text" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:submit
+	<input type="submit" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:hidden
+	<input type="hidden" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:button
+	<input type="button" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:image
+	<input type="image" name="${1}" id="${2:$1}" src="${3}" alt="${4} />${5}
+snippet input:checkbox
+	<input type="checkbox" name="${1}" id="${2:$1}" />${3}
+snippet input:radio
+	<input type="radio" name="${1}" id="${2:$1}" />${3}
+snippet input:color
+	<input type="color" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:date
+	<input type="date" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:datetime
+	<input type="datetime" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:datetime-local
+	<input type="datetime-local" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:email
+	<input type="email" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:file
+	<input type="file" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:month
+	<input type="month" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:number
+	<input type="number" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:password
+	<input type="password" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:range
+	<input type="range" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:reset
+	<input type="reset" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:search
+	<input type="search" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:time
+	<input type="time" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:url
+	<input type="url" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet input:week
+	<input type="week" name="${1}" id="${2:$1}" value="${3}" />${4}
+snippet ins
+	<ins>${1}</ins>${2}
+snippet kbd
+	<kbd>${1}</kbd>${2}
+snippet keygen
+	<keygen>${1}</keygen>${2}
+snippet label
+	<label for="${2:$1}">${1}</label>${3}
+snippet label:i
+	<label for="${2:$1}">${1}</label>
+	<input type="${3:text/submit/hidden/button}" name="${4:$2}" id="${5:$2}" value="${6}" />${7}
+snippet label:s
+	<label for="${2:$1}">${1}</label>
+	<select name="${3:$2}" id="${4:$2}">
+		<option value="${5}">${6:$5}</option>
+	</select>
+snippet legend
+	<legend>${1}</legend>${2}
+snippet legend+
+	<legend><span>${1}</span></legend>${2}
+snippet li
+	<li>${1}</li>${2}
+snippet li.
+	<li class="${1}">${2}</li>${3}
+snippet li+
+	<li>${1}</li>
+	li+${2}
+snippet lia
+	<li><a href="${2:#}">${1}</a></li>${3}
+snippet lia+
+	<li><a href="${2:#}">${1}</a></li>
+	lia+${3}
+snippet link
+	<link rel="${1}" href="${2}" title="${3}" type="${4}" />${5}
+snippet link:atom
+	<link rel="alternate" href="${1:atom.xml}" title="Atom" type="application/atom+xml" />${2}
+snippet link:css
+	<link rel="stylesheet" href="${2:style.css}" type="text/css" media="${3:all}" />${4}
+snippet link:favicon
+	<link rel="shortcut icon" href="${1:favicon.ico}" type="image/x-icon" />${2}
+snippet link:rss
+	<link rel="alternate" href="${1:rss.xml}" title="RSS" type="application/atom+xml" />${2}
+snippet link:touch
+	<link rel="apple-touch-icon" href="${1:favicon.png}" />${2}
+snippet map
+	<map name="${1}">
 		${2}
-	</head>
-snippet title
-	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+	</map>${3}
+snippet map.
+	<map class="${1}" name="${2}">
+		${3}
+	</map>${4}
+snippet map#
+	<map name="${1}" id="${2:$1}>
+		${3}
+	</map>${4}
+snippet map+
+	<map name="${1}">
+		<area shape="${2}" coords="${3}" href="${4} alt="${5}" />${6}
+	</map>${7}
+snippet mark
+	<mark>${1}</mark>${2}
+snippet menu
+	<menu>
+		${1}
+	</menu>${2}
+snippet menu:c
+	<menu type="context">
+		${1}
+	</menu>${2}
+snippet menu:t
+	<menu type="toolbar">
+		${1}
+	</menu>${2}
+snippet meta
+	<meta http-equiv="${1}" content="${2}" />${3}
+snippet meta:compat
+	<meta http-equiv="X-UA-Compatible" content="IE=${1:7,8,edge}" />${3}
+snippet meta:refresh
+	<meta http-equiv="refresh" content="text/html;charset=UTF-8" />${3}
+snippet meta:utf
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />${3}
+snippet meter
+	<meter>${1}</meter>
+snippet nav
+	<nav>
+		${1}
+	</nav>${2}
+snippet nav.
+	<nav class="${1}">
+		${2}
+	</nav>${3}
+snippet nav#
+	<nav id="${1}">
+		${2}
+	</nav>${3}
+snippet noscript
+	<noscript>
+		${1}
+	</noscript>${2}
+snippet object
+	<object data="${1}" type="${2}">
+		${3}
+	</object>${4}
+# Embed QT Movie
+snippet movie
+	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		<param name="src" value="$1" />
+		<param name="controller" value="$4" />
+		<param name="autoplay" value="$5" />
+		<embed src="${1:movie.mov}"
+			width="${2:320}" height="${3:240}"
+			controller="${4:true}" autoplay="${5:true}"
+			scale="tofit" cache="true"
+			pluginspage="http://www.apple.com/quicktime/download/" />
+	</object>${6}
+snippet ol
+	<ol>
+		${1}
+	</ol>
+snippet ol.
+	<ol class="${1}>
+		${2}
+	</ol>
+snippet ol#
+	<ol id="${1}>
+		${2}
+	</ol>
+snippet ol+
+	<ol>
+		<li>${1}</li>
+		li+${2}
+	</ol>
+snippet opt
+	<option value="${1}">${2:$1}</option>${3}
+snippet opt+
+	<option value="${1}">${2:$1}</option>
+	opt+${3}
+snippet optt
+	<option>${1}</option>${2}
+snippet optgroup
+	<optgroup>
+		<option value="${1}">${2:$1}</option>
+		opt+${3}
+	</optgroup>
+snippet output
+	<output>${1}</output>${2}
+snippet p
+	<p>${1}</p>${2}
+snippet param
+	<param name="${1}" value="${2}" />${3}
+snippet pre
+	<pre>
+		${1}
+	</pre>${2}
+snippet progress
+	<progress>${1}</progress>${2}
+snippet q
+	<q>${1}</q>${2}
+snippet rp
+	<rp>${1}</rp>
+snippet rt
+	<rt>${1}</rt>
+snippet ruby
+	<ruby>
+		<rp><rt>${1}</rt></rp>
+	</ruby>${2}
+snippet s
+	<s>${1}</s>${2}
+snippet samp
+	<samp>
+		${1}
+	</samp>${2}
 snippet script
 	<script type="text/javascript" charset="utf-8">
 		${1}
 	</script>${2}
 snippet scriptsrc
-	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
-snippet style
-	<style type="text/css" media="${1:screen}">
+	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>
+snippet section
+	<section>
+		${1}
+	</section>${2}
+snippet section.
+	<section class="${1}">
 		${2}
-	</style>${3}
-snippet base
-	<base href="${1}" target="${2}"`Close()`>
-snippet r
-	<br`Close()[1:]`>
-snippet div
-	<div id="${1:name}">
+	</section>${3}
+snippet section#
+	<section id="${1}">
 		${2}
-	</div>
-snippet divc
-	<div id="${1:name}" class="${2:class}">
-		${3}
-	</div>
-# Embed QT Movie
-snippet movie
-	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
-	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-		<param name="src" value="$1"`Close()`>
-		<param name="controller" value="$4"`Close()`>
-		<param name="autoplay" value="$5"`Close()`>
-		<embed src="${1:movie.mov}"
-			width="${2:320}" height="${3:240}"
-			controller="${4:true}" autoplay="${5:true}"
-			scale="tofit" cache="true"
-			pluginspage="http://www.apple.com/quicktime/download/"
-		`Close()[1:]`>
-	</object>${6}
-snippet fieldset
-	<fieldset id="$1">
-		<legend>${1:name}</legend>
-
-		${3}
-	</fieldset>
-snippet form
-	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
-		${3}
-
-
-	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
-	</form>
-snippet h1
-	<h1 id="${1:heading}">${2:$1}</h1>
-snippet input
-	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
-snippet label
-	<label for="${2:$1}">${1:name}</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="${5}" id="${6:$2}"`Close()`>${7}
-snippet link
-	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
-snippet mailto
-	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
-snippet meta
-	<meta name="${1:name}" content="${2:content}"`Close()`>${3}
-snippet opt
-	<option value="${1:option}">${2:$1}</option>${3}
-snippet optt
-	<option>${1:option}</option>${2}
+	</section>${3}
 snippet select
-	<select name="${1:some_name}" id="${2:$1}">
-		<option value="${3:option}">${4:$3}</option>
-	</select>${5}
+	<select name="${1}" id="${2:$1}">
+		${3}
+	</select>
+snippet select.
+	<select name="${1}" id="${2:$1}" class="${3}>
+		${4}
+	</select>
+snippet select+
+	<select name="${1}" id="${2:$1}">
+		<option value="${3}">${4:$3}</option>
+		opt+${5}
+	</select>
+snippet small
+	<small>${1}</small>${2}
+snippet source
+	<source src="${1}" type="${2}" media="${3}" />${4}
+snippet span
+	<span>${1}</span>${2}
+snippet strong
+	<strong>${1}</strong>${2}
+snippet style
+	<style type="text/css" media="${1:all}">
+		${2}
+	</style>
+snippet sub
+	<sub>${1}</sub>${2}
+snippet summary
+	<summary>
+		${1}
+	</summary>${2}
+snippet sup
+	<sup>${1}</sup>${2}
 snippet table
 	<table border="${1:0}">
-		<tr><th>${2:Header}</th></tr>
-		<tr><th>${3:Data}</th></tr>
-	</table>${4}
+		${2}
+	</table>
+snippet table.
+	<table class="${1}" border="${2:0}">
+		${3}
+	</table>
+snippet table#
+	<table id="${1}" border="${2:0}">
+		${3}
+	</table>
+snippet tbody
+	<tbody>
+		${1}
+	</tbody>${2}
+snippet td
+	<td>${1}</td>${2}
+snippet td.
+	<td class="${1}">${2}</td>${3}
+snippet td+
+	<td>${1}</td>
+	td+${2}
 snippet textarea
-	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
-snippet #
-	#{${1:tagName}} /}${2}
-snippet ##
-	#{${1:tagName} ${2:param}} ${3} #{/${1}}
-snippet dobody
-	#{doBody /}${1}
-snippet dolayout
-	#{doLayout /}${1}
-snippet elseif
-	#{elseif ${1:condition}} ${2} #{/elseif}
-snippet else
-	#{else} ${1} #{/else}
-snippet extends
-	#{extends '${1:class}' /} ${2}
-snippet get
-	#{get '${1:param}' /} ${2}
-snippet if
-	#{if ${1:condition}} ${2} #{/if}
-snippet include
-	#{include ${1:page} /} ${2}
-snippet list
-	#{list items:${1:list}, as:'${2:item}'} ${3} #{/list}
-snippet set
-	#{set ${1:var}: '${2:value}' /}
-snippet $
-	\$\{${1:expression}}${2}
-snippet %
-	%{${1:script}}%${2}
-snippet *
-	*{ ${1:comment} }*${2}
-snippet em
-	<em>${1:text}</em>${2}
-snippet li
-	<li>${1:item}</li>${2}
-snippet p
-	<p>${1:text}</p>${2}
-snippet span
-	<span${1}>${2}</span>${3}
-snippet strong
-	<strong>${1:text}</strong>${2}
+	<textarea name="${1}" id=${2:$1} rows="${3:8}" cols="${4:40}">${5}</textarea>${6}
+snippet tfoot
+	<tfoot>
+		${1}
+	</tfoot>${2}
+snippet th
+	<th>${1}</th>${2}
+snippet th.
+	<th class="${1}">${2}</th>${3}
+snippet th+
+	<th>${1}</th>
+	th+${2}
+snippet thead
+	<thead>
+		${1}
+	</thead>${2}
+snippet time
+	<time datetime="${1}" pubdate="${2:$1}>${3:$1}</time>
+snippet title
+	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+snippet tr
+	<tr>
+		${1}
+	</tr>${2}
+snippet tr+
+	<tr>
+		<td>${1}</td>
+		td+${2}
+	</tr>
+snippet track
+	<track src="${1}" srclang="${2}" label="${3}" default="${4:default}>${5}</track>${6}
 snippet ul
 	<ul>
-	  <li>${1:item}</li>${2}
+		${1}
 	</ul>
-snippet ulc
-	<ul class="${1:class}">
-	  <li>${2:item}</li>${3}
+snippet ul.
+	<ul class="${1}">
+		${2}
 	</ul>
-snippet uli
-	<ul id="${1:id}">
-	  <li>${2:item}</li>${3}
+snippet ul#
+	<ul id="${1}">
+		${2}
 	</ul>
-snippet @
-	@{${1:action}}${2}
+snippet ul+
+	<ul>
+		<li>${1}</li>
+		li+${2}
+	</ul>
+snippet var
+	<var>${1}</var>${2}
+snippet video
+	<video src="${1} height="${2}" width="${3}" preload="${5:none}" autoplay="${6:autoplay}>${7}</video>${8}
+snippet wbr
+	<wbr />${1}
