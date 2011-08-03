@@ -129,7 +129,7 @@ snippet style
 snippet base
 	<base href="${1}" target="${2}"`Close()`>
 snippet r
-	<br`Close()[1:]`>
+	<br`Close()[1:]` />
 snippet div
 	<div id="${1:name}">
 		${2}
@@ -246,3 +246,11 @@ snippet uli
 	</ul>
 snippet @
 	@{${1:action}}${2}
+snippet <!
+	<!-- ${1:comments} -->
+snippet <a
+	<a href="${1:URL}">${2}</a>
+snippet img
+	<img src="${1:URL}" />
+snippet iframe
+	<iframe id="${1:iframe}" src="${2:URL}"></iframe> 
