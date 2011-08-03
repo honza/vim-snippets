@@ -19,6 +19,10 @@ snippet for
 	for (( ${2:i} = 0; $2 < ${1:count}; $2++ )); do
 		${3:# statements}
 	done
+snippet fori
+	for ${1:needle} in ${2:haystack} ; do
+		${3:#statements}
+	done
 snippet fore
 	for ${1:item} in ${2:list}; do
 		${3:# statements}
