@@ -2,6 +2,12 @@
 # Non-Breaking Space
 snippet nbs
 	&nbsp;
+# Full-Width Space
+snippet ems
+	&emsp;
+# Half-Width Space
+snippet ens
+	&ensp;
 # ←
 snippet left
 	&#x2190;
@@ -117,11 +123,10 @@ snippet head
 snippet title
 	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
 snippet script
-	<script type="text/javascript" charset="utf-8">
-		${1}
-	</script>${2}
-snippet scriptsrc
-	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
+	<script ${1} type="text/javascript" charset="utf-8">
+		${2}
+	</script>
+	${3}
 snippet style
 	<style type="text/css" media="${1:screen}">
 		${2}
@@ -244,11 +249,16 @@ snippet uli
 	<ul id="${1:id}">
 	  <li>${2:item}</li>${3}
 	</ul>
+snippet ulic
+	<ul id="${1:id}" class="${2:class}">
+	  <li>${3:item}</li>
+	  ${4}
+	</ul>
 snippet @
 	@{${1:action}}${2}
 snippet <!
 	<!-- ${1:comments} -->
-snippet <a
+snippet a
 	<a href="${1:URL}">${2}</a>
 snippet img
 	<img src="${1:URL}" />
