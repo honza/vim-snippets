@@ -1,0 +1,344 @@
+snippet art
+	assert_redirected_to ${1::action => "${2:index}"}
+snippet artnp
+	assert_redirected_to ${1:parent}_${2:child}_path(${3:@$1}, ${4:@$2})
+snippet artnpp
+	assert_redirected_to ${1:parent}_${2:child}_path(${3:@$1})
+snippet artp
+	assert_redirected_to ${1:model}_path(${2:@$1})
+snippet artpp
+	assert_redirected_to ${1:model}s_path
+snippet asd
+	assert_difference "${1:Model}.${2:count}", $1 do
+		${3}
+	end
+snippet asnd
+	assert_no_difference "${1:Model}.${2:count}" do
+		${3}
+	end
+snippet asre
+	assert_response :${1:success}, @response.body${2}
+snippet asrj
+	assert_rjs :${1:replace}, "${2:dom id}"
+snippet ass
+	assert_select '${1:path}', :${2:text} => '${3:inner_html' ${4:do}
+snippet bf
+	before_filter :${1:method}
+snippet bt
+	belongs_to :${1:association}
+snippet crw
+	cattr_accessor :${1:attr_names}
+snippet defcreate
+	def create
+		@${1:model_class_name} = ${2:ModelClassName}.new(params[:$1])
+	
+		respond_to do |wants|
+			if @$1.save
+				flash[:notice] = '$2 was successfully created.'
+				wants.html { redirect_to(@$1) }
+				wants.xml  { render :xml => @$1, :status => :created, :location => @$1 }
+			else
+				wants.html { render :action => "new" }
+				wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+			end
+		end
+	end${3}
+snippet defdestroy
+	def destroy
+		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+		@$1.destroy
+	
+		respond_to do |wants|
+			wants.html { redirect_to($1s_url) }
+			wants.xml  { head :ok }
+		end
+	end${3}
+snippet defedit
+	def edit
+		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+	end
+snippet defindex
+	def index
+		@${1:model_class_name} = ${2:ModelClassName}.all
+	
+		respond_to do |wants|
+			wants.html # index.html.erb
+			wants.xml  { render :xml => @$1s }
+		end
+	end${3}
+snippet defnew
+	def new
+		@${1:model_class_name} = ${2:ModelClassName}.new
+	
+		respond_to do |wants|
+			wants.html # new.html.erb
+			wants.xml  { render :xml => @$1 }
+		end
+	end${3}
+snippet defshow
+	def show
+		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+	
+		respond_to do |wants|
+			wants.html # show.html.erb
+			wants.xml  { render :xml => @$1 }
+		end
+	end${3}
+snippet defupdate
+	def update
+		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+	
+		respond_to do |wants|
+			if @$1.update_attributes(params[:$1])
+				flash[:notice] = '$2 was successfully updated.'
+				wants.html { redirect_to(@$1) }
+				wants.xml  { head :ok }
+			else
+				wants.html { render :action => "edit" }
+				wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+			end
+		end
+	end${3}
+snippet flash
+	flash[:${1:notice}] = "${2}"
+snippet habtm
+	has_and_belongs_to_many :${1:object}, :join_table => "${2:table_name}", :foreign_key => "${3}_id"${4}
+snippet hm
+	has_many :${1:object}
+snippet hmd
+	has_many :${1:other}s, :class_name => "${2:$1}", :foreign_key => "${3:$1}_id", :dependent => :destroy${4}
+snippet hmt
+	has_many :${1:object}, :through => :${2:object}
+snippet ho
+	has_one :${1:object}
+snippet i18
+	I18n.t('${1:type.key}')${2}
+snippet ist
+	<%= image_submit_tag("${1:agree.png}", :id => "${2:id}"${3} %>
+snippet log
+	RAILS_DEFAULT_LOGGER.${1:debug} ${2}
+snippet logd
+	logger.debug { "${1:message}" }${2}
+snippet loge
+	logger.error { "${1:message}" }${2}
+snippet logf
+	logger.fatal { "${1:message}" }${2}
+snippet logi
+	logger.info { "${1:message}" }${2}
+snippet logw
+	logger.warn { "${1:message}" }${2}
+snippet mac
+	add_column :${1:table}, :${2:column}, :${3:type}
+snippet mapc
+	${1:map}.${2:connect} '${3:controller/:action/:id}'
+snippet mapca
+	${1:map}.catch_all "*${2:anything}", :controller => "${3:default}", :action => "${4:error}"${5}
+snippet mapr
+	${1:map}.resource :${2:resource}
+snippet maprs
+	${1:map}.resources :${2:resource}
+snippet mapwo
+	${1:map}.with_options :${2:controller} => '${3:thing}' do |$3|
+		${4}
+	end
+snippet mbs
+	before_save :${1:method}
+snippet mcc
+	change_column :${1:table}, :${2:column}, :${3:type}
+snippet mccc
+	t.column :${1:title}, :${2:string}
+snippet mcht
+	change_table :${1:table_name} do |t|
+		${2}
+	end
+snippet mcol
+	remove_column :${1:table}, :${2:column}
+snippet mct
+	create_table :${1:table_name} do |t|
+		t.column :${2:name}, :${3:type}
+	end
+snippet migration
+	class ${1:`Snippet_MigrationNameFromFilename()`} < ActiveRecord::Migration
+		def self.up
+			${2}
+		end
+	
+		def self.down
+		end
+	end
+snippet mp
+	map(&:${1:id})
+snippet mrc
+	remove_column :${1:column}
+snippet mrmc
+	remove_column :${1:table}, :${2:column}
+snippet mrnc
+	rename_column :${1:table}, :${2:old}, :${3:new}
+snippet mrw
+	mattr_accessor :${1:attr_names}
+snippet oa
+	order("${1:field}")
+snippet od
+	order("${1:field} DESC")
+snippet pa
+	params[:${1:id}]${2}
+snippet ra
+	render :action => "${1:action}"
+snippet ral
+	render :action => "${1:action}", :layout => "${2:layoutname}"
+snippet rest
+	respond_to do |wants|
+		wants.${1:html} { ${2} }
+	end
+snippet rf
+	render :file => "${1:filepath}"
+snippet rfu
+	render :file => "${1:filepath}", :use_full_path => ${2:false}
+snippet ri
+	render :inline => "${1:<%= 'hello' %>}"
+snippet ril
+	render :inline => "${1:<%= 'hello' %>}", :locals => { ${2::name} => "${3:value}"${4} }
+snippet rit
+	render :inline => "${1:<%= 'hello' %>}", :type => ${2::rxml}
+snippet rjson
+	render :json => ${1:text to render}
+snippet rl
+	render :layout => "${1:layoutname}"
+snippet rn
+	render :nothing => ${1:true}
+snippet rns
+	render :nothing => ${1:true}, :status => ${2:401}
+snippet rp
+	render :partial => "${1:item}"
+snippet rpc
+	render :partial => "${1:item}", :collection => ${2:@$1s}
+snippet rpl
+	render :partial => "${1:item}", :locals => { :${2:$1} => ${3:@$1}
+snippet rpo
+	render :partial => "${1:item}", :object => ${2:@$1}
+snippet rps
+	render :partial => "${1:item}", :status => ${2:500}
+snippet rt
+	render :text => "${1:text to render}"
+snippet rtl
+	render :text => "${1:text to render}", :layout => "${2:layoutname}"
+snippet rtlt
+	render :text => "${1:text to render}", :layout => ${2:true}
+snippet rts
+	render :text => "${1:text to render}", :status => ${2:401}
+snippet ru
+	render :update do |${1:page}|
+		$1.${2}
+	end
+snippet rxml
+	render :xml => ${1:text to render}
+snippet sc
+	scope :${1:name}, :where(:@${2:field} => ${3:value})
+snippet sl
+	scope :${1:name}, lambda do |${2:value}|
+		where("${3:field = ?}", ${4:bind var})
+	end
+snippet sha1
+	Digest::SHA1.hexdigest(${1:string})
+snippet sweeper
+	class ${1:ModelClassName}Sweeper < ActionController::Caching::Sweeper
+		observe $1
+	
+		def after_save(${2:model_class_name})
+			expire_cache($2)
+		end
+	
+		def after_destroy($2)
+			expire_cache($2)
+		end
+	
+		def expire_cache($2)
+			expire_page
+		end
+	end
+snippet tcb
+	t.boolean :${1:title}
+	${2}
+snippet tcbi
+	t.binary :${1:title}, :limit => ${2:2}.megabytes
+	${3}
+snippet tcd
+	t.decimal :${1:title}, :precision => ${2:10}, :scale => ${3:2}
+	${4}
+snippet tcda
+	t.date :${1:title}
+	${2}
+snippet tcdt
+	t.datetime :${1:title}
+	${2}
+snippet tcf
+	t.float :${1:title}
+	${2}
+snippet tch
+	t.change :${1:name}, :${2:string}, :${3:limit} => ${4:80}
+	${5}
+snippet tci
+	t.integer :${1:title}
+	${2}
+snippet tcl
+	t.integer :lock_version, :null => false, :default => 0
+	${1}
+snippet tcr
+	t.references :${1:taggable}, :polymorphic => { :default => '${2:Photo}' }
+	${3}
+snippet tcs
+	t.string :${1:title}
+	${2}
+snippet tct
+	t.text :${1:title}
+	${2}
+snippet tcti
+	t.time :${1:title}
+	${2}
+snippet tcts
+	t.timestamp :${1:title}
+	${2}
+snippet tctss
+	t.timestamps
+	${1}
+snippet trc
+	t.remove :${1:column}
+snippet tre
+	t.rename :${1:old_column_name}, :${2:new_column_name}
+	${3}
+snippet tref
+	t.references :${1:model}
+snippet va
+	validates_associated :${1:attribute}
+snippet vao
+	validates_acceptance_of :${1:terms}
+snippet vc
+	validates_confirmation_of :${1:attribute}
+snippet ve
+	validates_exclusion_of :${1:attribute}, :in => ${2:%w( mov avi )}
+snippet vf
+	validates_format_of :${1:attribute}, :with => /${2:regex}/
+snippet vi
+	validates_inclusion_of :${1:attribute}, :in => %w(${2: mov avi })
+snippet vl
+	validates_length_of :${1:attribute}, :within => ${2:3}..${3:20}
+snippet vn
+	validates_numericality_of :${1:attribute}
+snippet vpo
+	validates_presence_of :${1:attribute}
+snippet vu
+	validates_uniqueness_of :${1:attribute}
+snippet wants
+	wants.${1:js|xml|html} { ${2} }
+snippet wc
+	where(${1:"conditions"}${2:, bind_var})
+snippet wh
+	where(${1:field} => ${2:value})
+snippet xdelete
+	xhr :delete, :${1:destroy}, :id => ${2:1}${3}
+snippet xget
+	xhr :get, :${1:show}, :id => ${2:1}${3}
+snippet xpost
+	xhr :post, :${1:create}, :${2:object} => { ${3} }
+snippet xput
+	xhr :put, :${1:update}, :id => ${2:1}, :${3:object} => { ${4} }${5}
