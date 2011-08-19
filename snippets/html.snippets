@@ -2,6 +2,12 @@
 # Non-Breaking Space
 snippet nbs
 	&nbsp;
+# Full-Width Space
+snippet ems
+	&emsp;
+# Half-Width Space
+snippet ens
+	&ensp;
 # ←
 snippet left
 	&#x2190;
@@ -553,6 +559,24 @@ snippet link:touch
 snippet map
 	<map name="${1}">
 		${2}
+	</head>
+snippet title
+	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+snippet script
+	<script ${1} type="text/javascript" charset="utf-8">
+		${2}
+	</script>
+	${3}
+snippet style
+	<style type="text/css" media="${1:screen}">
+		${2}
+	</style>${3}
+snippet base
+	<base href="${1}" target="${2}"`Close()`>
+snippet r
+	<br`Close()[1:]` />
+snippet div
+	<div id="${1:name}">
 	</map>${3}
 snippet map.
 	<map class="${1}" name="${2}">
@@ -803,6 +827,21 @@ snippet ul+
 		<li>${1}</li>
 		li+${2}
 	</ul>
+snippet ulic
+	<ul id="${1:id}" class="${2:class}">
+	  <li>${3:item}</li>
+	  ${4}
+	</ul>
+snippet @
+	@{${1:action}}${2}
+snippet <!
+	<!-- ${1:comments} -->
+snippet a
+	<a href="${1:URL}">${2}</a>
+snippet img
+	<img src="${1:URL}" />
+snippet iframe
+	<iframe id="${1:iframe}" src="${2:URL}"></iframe> 
 snippet var
 	<var>${1}</var>${2}
 snippet video
