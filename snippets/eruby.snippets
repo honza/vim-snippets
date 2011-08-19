@@ -19,8 +19,18 @@ snippet fields
 	<% end %>
 snippet for
 	<% for ${2:item} in $1 %>
-	   ${3}
+	  ${3}
 	<% end %>
+snippet rp
+	<%= render :partial => '${1:item}' %>
+snippet rpl
+	<%= render :partial => '${1:item}', :locals => { :${2:name} => '${3:value}'$4 } %>
+snippet rps
+	<%= render :partial => '${1:item}', :status => ${2:500} %>
+snippet rpc
+	<%= render :partial => '${1:item}', :collection => ${2:items} %>
+snippet rt
+	<%= render :template => "${1:file}"${2} %>
 snippet eff
 	<% error_messages_for :${1:model} %>
 
@@ -59,16 +69,6 @@ snippet lipm
 	<%= link_to '${1:link text...}', ${2:model_name}_path($2), :method => ${3:method} %>
 snippet rf
 	<%= render :file => "${1:file}"${2} %>
-snippet rp
-	<%= render :partial => '${1:item}' %>
-snippet rpl
-	<%= render :partial => '${1:item}', :locals => { :${2:name} => '${3:value}'$4 } %>
-snippet rps
-	<%= render :partial => '${1:item}', :status => ${2:500} %>
-snippet rpc
-	<%= render :partial => '${1:item}', :collection => ${2:items} %>
-snippet rt
-	<%= render :template => "${1:file}"${2} %>
 snippet yield
 	<%= yield${1::content_symbol}%>${2}
 snippet conf
