@@ -4,7 +4,7 @@
   "maintainer" : "honza @ github & others",
   "repository" : {"type": "git", "url": "git://github.com/honza/snipmate-snippets.git"},
   "dependencies" : {
-    "snipmate": {},
+    "snipmate": {}
   },
   "description" : "community driven set of snippets for snipmate"
 }
