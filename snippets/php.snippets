@@ -245,3 +245,5 @@ snippet http_redirect
 	header ("HTTP/1.1 301 Moved Permanently"); 
 	header ("Location: ".URL); 
 	exit();
+snippet log
+	error_log(print_r(${1},1));
