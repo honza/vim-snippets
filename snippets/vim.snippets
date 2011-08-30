@@ -12,6 +12,12 @@ snippet f
 	fun! ${1:`expand('%') =~ 'autoload' ? substitute(matchstr(expand('%:p'),'autoload/\zs.*\ze.vim'),'[/\\]','#','g').'#' : ''`}${2:function_name}(${3})
 		${4:" code}
 	endf
+snippet t
+	try
+		${1}
+	catch ${2}
+		${3}
+	endtry
 snippet for
 	for ${1:needle} in ${2:haystack}
 		${3:" code}
