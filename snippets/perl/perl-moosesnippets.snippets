@@ -29,20 +29,20 @@ snippet moosecl
 
 # has
 snippet has
-	has ${1:attribute} => ( #{{{ 
+	has ${1:attribute} => (
 		is	=> '${2:ro|rw}',
 		isa 	=> '${3:Str|Int|HashRef|ArrayRef|etc}',
 		default => ${4:defaultvalue}
 		,${5:# other attributes}
-	); #}}}
+	);
 
 
 # override
 snippet override
-	override ${1:attribute} => sub { #{{{ 
+	override ${1:attribute} => sub {
 		${2:# my $self = shift;};
 		${3:# my ($self,$args) = @_;};
-	}; #}}}
+	};
 
 
 

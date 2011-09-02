@@ -30,9 +30,9 @@ snippet asub
 
 # Begin block
 snippet begin
-	BEGIN { #{{{
+	BEGIN {
 		${1:# begin body}
-	} #}}}
+	}
 
 # call package function with some parameter
 snippet pkgmv  
@@ -62,16 +62,16 @@ snippet qr/
 
 #given
 snippet given
-	given ($${1:var}) { #{{{
+	given ($${1:var}) { 
 		${2:# cases}
 		${3:# default}
-	} #}}}
+	} 
 
 # switch-like case
 snippet when
-	when (${1:case}) { #{{{
+	when (${1:case}) {
 		${2:# body}
-	} #}}}
+	}
 
 # hash slice
 snippet hslice
