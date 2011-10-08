@@ -1,4 +1,4 @@
-# recomendation: no change the fold marker (fold),(end) to {{{,}}} ; latex use many times "{" and "}" 
+# recomendation: change the fold marker from {{{,}}} to (fold),(end) ; tex uses "{" and "}" a lot
 # \begin{}...\end{}
 snippet begin
 	\begin{${1:env}}
@@ -148,16 +148,16 @@ snippet ft
 snippet fig
 	\begin{figure}
 	\begin{center}
-	\includegraphics[scale=$1]{Figures/$2}
+	\includegraphics[scale=${1}]{Figures/${2}}
 	\end{center}
-	\caption{$3}
-	\label{fig:$4}
+	\caption{${3}}
+	\label{fig:${4}}
 	\end{figure}
 #math
 snippet frac
-	\frac{$1}{$2}
+	\frac{${1}}{${2}}
 snippet sum
-	$\sum^{${1:n}}_{${2:i=1}}{$3}$
+	\sum^{${1:n}}_{${2:i=1}}{${3}}
 #cite
 snippet cite
-	\cite{$1}
+	\cite{${1}}
