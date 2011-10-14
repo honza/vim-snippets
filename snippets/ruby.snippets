@@ -424,45 +424,61 @@ snippet ts
 	require "tc_${1:test_case_file}"
 	require "tc_${2:test_case_file}"${3}
 snippet as
-	assert(${1:test}, "${2:Failure message.}")${3}
+	assert ${1:test}, "${2:Failure message.}"${3}
 snippet ase
-	assert_equal(${1:expected}, ${2:actual})${3}
+	assert_equal ${1:expected}, ${2:actual}${3}
 snippet asne
-	assert_not_equal(${1:unexpected}, ${2:actual})${3}
+	assert_not_equal ${1:unexpected}, ${2:actual}${3}
 snippet asid
-	assert_in_delta(${1:expected_float}, ${2:actual_float}, ${3:2 ** -20})${4}
+	assert_in_delta ${1:expected_float}, ${2:actual_float}, ${3:2 ** -20}${4}
 snippet asio
-	assert_instance_of(${1:ExpectedClass}, ${2:actual_instance})${3}
+	assert_instance_of ${1:ExpectedClass}, ${2:actual_instance}${3}
 snippet asko
-	assert_kind_of(${1:ExpectedKind}, ${2:actual_instance})${3}
+	assert_kind_of ${1:ExpectedKind}, ${2:actual_instance}${3}
 snippet asn
-	assert_nil(${1:instance})${2}
+	assert_nil ${1:instance}${2}
 snippet asnn
-	assert_not_nil(${1:instance})${2}
+	assert_not_nil ${1:instance}${2}
 snippet asm
-	assert_match(/${1:expected_pattern}/, ${2:actual_string})${3}
+	assert_match /${1:expected_pattern}/, ${2:actual_string}${3}
 snippet asnm
-	assert_no_match(/${1:unexpected_pattern}/, ${2:actual_string})${3}
+	assert_no_match /${1:unexpected_pattern}/, ${2:actual_string}${3}
 snippet aso
-	assert_operator(${1:left}, :${2:operator}, ${3:right})${4}
+	assert_operator ${1:left}, :${2:operator}, ${3:right}${4}
 snippet asr
-	assert_raise(${1:Exception}) { ${2} }
+	assert_raise ${1:Exception} { ${2} }
+snippet asrd
+	assert_raise ${1:Exception} do
+		${2}
+	end
 snippet asnr
-	assert_nothing_raised(${1:Exception}) { ${2} }
+	assert_nothing_raised ${1:Exception} { ${2} }
+snippet asnrd
+	assert_nothing_raised ${1:Exception} do
+		${2}
+	end
 snippet asrt
-	assert_respond_to(${1:object}, :${2:method})${3}
+	assert_respond_to ${1:object}, :${2:method}${3}
 snippet ass assert_same(..)
-	assert_same(${1:expected}, ${2:actual})${3}
+	assert_same ${1:expected}, ${2:actual}${3}
 snippet ass assert_send(..)
-	assert_send([${1:object}, :${2:message}, ${3:args}])${4}
+	assert_send [${1:object}, :${2:message}, ${3:args}]${4}
 snippet asns
-	assert_not_same(${1:unexpected}, ${2:actual})${3}
+	assert_not_same ${1:unexpected}, ${2:actual}${3}
 snippet ast
-	assert_throws(:${1:expected}) { ${2} }
+	assert_throws :${1:expected} { ${2} }
+snippet astd
+	assert_throws :${1:expected} do
+		${2}
+	end
 snippet asnt
 	assert_nothing_thrown { ${1} }
+snippet asntd
+	assert_nothing_thrown do
+		${1}
+	end
 snippet fl
-	flunk("${1:Failure message.}")${2}
+	flunk "${1:Failure message.}"${2}
 # Benchmark.bmbm do .. end
 snippet bm-
 	TESTS = ${1:10_000}
