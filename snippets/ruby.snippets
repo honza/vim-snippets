@@ -446,10 +446,14 @@ snippet asnm
 snippet aso
 	assert_operator ${1:left}, :${2:operator}, ${3:right}${4}
 snippet asr
+	assert_raise ${1:Exception} { ${2} }
+snippet asrd
 	assert_raise ${1:Exception} do
 		${2}
 	end
 snippet asnr
+	assert_nothing_raised ${1:Exception} { ${2} }
+snippet asnrd
 	assert_nothing_raised ${1:Exception} do
 		${2}
 	end
@@ -462,10 +466,14 @@ snippet ass assert_send(..)
 snippet asns
 	assert_not_same ${1:unexpected}, ${2:actual}${3}
 snippet ast
+	assert_throws :${1:expected} { ${2} }
+snippet astd
 	assert_throws :${1:expected} do
 		${2}
 	end
 snippet asnt
+	assert_nothing_thrown { ${1} }
+snippet asntd
 	assert_nothing_thrown do
 		${1}
 	end
