@@ -22,6 +22,11 @@ to maintain snippets for a language, please get in touch.
 * Markdown - [honza](http://github.com/honza)
 * Ruby - [taq](http://github.com/taq)
 
+Suggestion plugin
+-----------------
+
+* [Enter Indent](https://github.com/acustodioo/vim-enter-indent) - Reposition the cursor when "enter" is pressed between two tags
+
 Contributing notes
 ------------------
 
