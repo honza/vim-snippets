@@ -1,0 +1,60 @@
+snippet cls
+	clrscr;
+snippet tbg
+	textbackground(${1});${2}
+snippet tc
+	textcolor(${1});${2}
+snippet var
+	${1} := ${2};
+snippet program
+	program ${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`};
+	uses crt;
+
+	var
+		${2}
+
+	begin
+	${3}
+	end.
+snippet bg
+	begin
+		${1}
+	end
+snippet bg;
+	begin
+		${1}
+	end;
+snippet if
+	if ${1} then
+		${2}
+snippet wrl
+	writeln(${1});
+snippet wr
+	write(${1});
+snippet rd
+	read(${1});
+snippet rdl
+	readln(${1});
+snippet rdk
+	readkey;
+snippet case
+	case ${1} of
+		${2}
+	end;
+snippet wh
+	while ${1} do
+		${2}
+snippet rep
+	repeat
+		${2}
+	until ${1};
+snippet fun
+	function ${1}(${2}) : ${3};${4}
+	begin
+		${5}
+	end;
+snippet pro
+	procedure ${1}(${2});${3}
+	begin
+		${4}
+	end;
