@@ -145,3 +145,13 @@ snippet "
 	"""
 	${1:doc}
 	"""
+# test function/method
+snippet test
+	def test_${1:description}(${2:`indent('.') ? 'self' : ''`}):
+		${3:pass}
+# test case
+snippet testcase
+	class ${1:ExampleCase}(unittest.TestCase):
+		
+		def test_${2:description}(self):
+			${3:pass}
