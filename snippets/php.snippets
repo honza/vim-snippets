@@ -240,6 +240,8 @@ snippet pdd
 	echo '<pre>'; var_dump(${1}); echo '</pre>'; die(${2:});
 snippet vd
 	var_dump(${1});
+snippet vdd
+	var_dump(${1}); die(${2:});
 
 snippet http_redirect
 	header ("HTTP/1.1 301 Moved Permanently"); 
