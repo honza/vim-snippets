@@ -331,3 +331,12 @@ snippet tprep
 		my $self = shift;
 		${4:#  body}
 	}
+# cause failures to print stack trace
+snippet debug_trace
+	use Carp; # 'verbose';
+	# cloak "die"
+	# warn "warning"
+	$SIG{'__DIE__'} = sub {
+		require Carp; Carp::confess
+	};
+
