@@ -47,10 +47,11 @@ snippet xunless
 	${1:expression} unless ${2:condition};${3}
 # Try/Except
 snippet eval
+	local $@;
 	eval {
 		${1:# do something risky...}
 	};
-	if ($@) {
+	if (my $e = $@) {
 		${2:# handle failure...}
 	}
 # While Loop
