@@ -414,6 +414,11 @@ snippet head
 
 		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
 	</head>
+snippet head5
+	<head>
+		<meta charset=${1:"utf-8"} />
+		<title>${2:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${3}
+	</head>
 snippet header
 	<header>
 		${1}
