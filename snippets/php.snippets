@@ -46,8 +46,9 @@ snippet doc_cp
 	 * ${1:undocumented class}
 	 *
 	 * @package ${2:default}
-	 * @author ${3:`g:snips_author`}
-	 */${4}
+	 * @subpackage ${3:default}
+	 * @author ${4:`g:snips_author`}
+	 */${5}
 # Class Variable - post doc
 snippet doc_vp
 	/**
@@ -242,8 +243,28 @@ snippet vd
 	var_dump(${1});
 snippet vdd
 	var_dump(${1}); die(${2:});
-
 snippet http_redirect
 	header ("HTTP/1.1 301 Moved Permanently"); 
 	header ("Location: ".URL); 
 	exit();
+# Getters & Setters
+snippet getset
+	/**
+	 * Gets the value of ${1:}
+	 *
+	 * @return ${2}
+	 */
+	function get$1()
+	{
+		return $this->$_$1
+	}
+
+	/**
+	 * Sets the value of $1
+	 *
+	 * @param mixed $$1 ${3}
+	 */
+	function set$1($$1)
+	{
+		$this->_$1 = $$1
+	}
