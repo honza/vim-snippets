@@ -92,6 +92,8 @@ snippet tryf
 	}
 snippet rst
 	ResultSet ${1:rst}${2: = null}${3};${4}
+snippet @au
+	@author `system("grep \`id -un\` /etc/passwd | cut -d \":\" -f5")`
 snippet mm
 	@ManyToMany
 	${1}
@@ -141,3 +143,15 @@ snippet unless
 	(unless=${1:param});${2}
 snippet warn
 	Logger.warn(${1:param});${2}
+snippet sysout
+	System.out.println(${1});
+snippet syserr
+	System.err.println(${1});
+snippet /*
+	/*
+	 * ${1}
+	 */
+snippet /**
+	/**
+	 * ${1}
+	 */
