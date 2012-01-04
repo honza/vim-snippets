@@ -11,10 +11,6 @@ snippet {
 	{
 	  ${1}
 	}
-snippet main
-	static void main() {
-	  ${1:/* code */}
-	}
 snippet vo
 	void ${1}
 snippet st
@@ -58,7 +54,7 @@ snippet de
 	default:
 	  ${1}
 snippet for
-	for (var ${2:i} = 0, len = ${1:things}.length; $2 < len; ${3:++}$2) {
+	for (final ${2:i} = 0; $2 < ${1:things}.length; ${3:++}$2) {
 	  ${4:$1[$2]}
 	}
 snippet fore
