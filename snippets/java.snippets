@@ -155,3 +155,11 @@ snippet /**
 	/**
 	 * ${1}
 	 */
+snippet prop
+	$1 void set$3($2 $4){
+		this.$4 = $4;
+	}
+
+	${1:public} ${2:String} get${3:}(){
+		return this.${4:};
+	}
