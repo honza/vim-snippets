@@ -9,7 +9,7 @@
 # can either not specify them, or override them, e.g. auto_now_add=False.
 
 snippet auto
-	${1:FIELDNAME} = models.AutoField()
+	${1:FIELDNAME} = models.AutoField(${2})
 snippet bool
 	${1:FIELDNAME} = models.BooleanField(${2:default=True})
 snippet char
@@ -29,23 +29,23 @@ snippet file
 snippet filepath
 	${1:FIELDNAME} = models.FilePathField(path=${2:"/abs/path/to/dir"}${3:, max_length=100}${4:, match="*.ext"}${5:, recursive=True}${6:, blank=True, })
 snippet float
-	${1:FIELDNAME} = models.FloatField()
+	${1:FIELDNAME} = models.FloatField({2})
 snippet image
 	${1:FIELDNAME} = models.ImageField(upload_to=${2:path/for/upload}${3:, height_field=height, width_field=width}${4:, max_length=100})
 snippet int
-	${1:FIELDNAME} = models.IntegerField()
+	${1:FIELDNAME} = models.IntegerField(${2})
 snippet ip
-	${1:FIELDNAME} = models.IPAddressField()
+	${1:FIELDNAME} = models.IPAddressField(${2})
 snippet nullbool
-	${1:FIELDNAME} = models.NullBooleanField()
+	${1:FIELDNAME} = models.NullBooleanField(${2})
 snippet posint
-	${1:FIELDNAME} = models.PositiveIntegerField()
+	${1:FIELDNAME} = models.PositiveIntegerField({$2})
 snippet possmallint
-	${1:FIELDNAME} = models.PositiveSmallIntegerField()
+	${1:FIELDNAME} = models.PositiveSmallIntegerField({$2})
 snippet slug
 	${1:FIELDNAME} = models.SlugField(max_length=${2:50}${3:, blank=True})
 snippet smallint
-	${1:FIELDNAME} = models.SmallIntegerField()
+	${1:FIELDNAME} = models.SmallIntegerField({$2})
 snippet text
 	${1:FIELDNAME} = models.TextField(${2:blank=True})
 snippet time
