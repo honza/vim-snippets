@@ -37,3 +37,28 @@ snippet case
 snippet rec
 	-record(${1:record}, {
 	    ${2:field}=${3:value}}).${4}
+
+# todo comment
+snippet todo
+	%% TODO: ${1}
+
+
+## Snippets below (starting with '%') are in EDoc format.
+## See http://www.erlang.org/doc/apps/edoc/chapter.html#id56887 for more details
+
+# doc comment
+snippet %d
+	%% @doc ${1}
+
+# end of doc comment
+snippet %e
+	%% @end
+
+# specification comment
+snippet %s
+	%% @spec ${1}
+
+# private function marker
+snippet %p
+	%% @private
+
