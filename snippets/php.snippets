@@ -69,11 +69,13 @@ snippet doc_c
 	/**
 	 * ${3:undocumented class}
 	 *
-	 * @packaged ${4:default}
-	 * @author ${5:`g:snips_author`}
+	 * @package ${4:default}
+	 * @subpackage ${5:default}
+	 * @author ${6:`g:snips_author`}
 	 */
 	${1:}class ${2:}
-	{${6}
+	{
+		${7}
 	} // END $1class $2
 # Constant Definition - post doc
 snippet doc_dp
@@ -125,9 +127,6 @@ snippet doc_h
 	 * @package ${5:default}
 	 */
 	
-	/**
-	 * Define DocBlock
-	 */
 # Interface
 snippet doc_i
 	/**
