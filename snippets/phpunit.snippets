@@ -1,0 +1,25 @@
+snippet test
+	public function test${1}()
+	{
+		${2}
+	}
+
+
+# Assertions
+snippet assIO
+	$this->assertInstanceOf(${1}, ${2});
+snippet assE
+	$this->assertEquals(${1}, ${2});
+snippet assN
+	$this->assertNull(${1});
+# Exception assertions
+snippet exE
+	/**
+	 * @expectedException ${1}
+	 */
+
+snippet exEM
+	/**
+	 * @expectedException ${1}
+	 * @expectedExceptionMessage ${2}
+	 */
