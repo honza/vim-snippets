@@ -680,8 +680,6 @@ snippet logi
 	logger.info { "${1:message}" }${2}
 snippet logw
 	logger.warn { "${1:message}" }${2}
-snippet mac
-	add_column :${1:table}, :${2:column}, :${3:type}
 snippet mapc
 	${1:map}.${2:connect} '${3:controller/:action/:id}'
 snippet mapca
@@ -696,37 +694,12 @@ snippet mapwo
 	end
 snippet mbs
 	before_save :${1:method}
-snippet mcc
-	change_column :${1:table}, :${2:column}, :${3:type}
-snippet mccc
-	t.column :${1:title}, :${2:string}
 snippet mcht
 	change_table :${1:table_name} do |t|
 		${2}
 	end
-snippet mcol
-	remove_column :${1:table}, :${2:column}
-snippet mct
-	create_table :${1:table_name} do |t|
-		t.column :${2:name}, :${3:type}
-	end
-snippet migration
-	class ${1:`Snippet_MigrationNameFromFilename()`} < ActiveRecord::Migration
-		def self.up
-			${2}
-		end
-	
-		def self.down
-		end
-	end
 snippet mp
 	map(&:${1:id})
-snippet mrc
-	remove_column :${1:column}
-snippet mrmc
-	remove_column :${1:table}, :${2:column}
-snippet mrnc
-	rename_column :${1:table}, :${2:old}, :${3:new}
 snippet mrw
 	mattr_accessor :${1:attr_names}
 snippet oa
@@ -854,13 +827,6 @@ snippet tcts
 snippet tctss
 	t.timestamps
 	${1}
-snippet trc
-	t.remove :${1:column}
-snippet tre
-	t.rename :${1:old_column_name}, :${2:new_column_name}
-	${3}
-snippet tref
-	t.references :${1:model}
 snippet va
 	validates_associated :${1:attribute}
 snippet vao
@@ -905,8 +871,33 @@ snippet mac
 	add_column :${1:table_name}, :${2:column_name}, :${3:data_type}
 snippet mrc
 	remove_column :${1:table_name}, :${2:column_name}
-snippet mrenc
+snippet mrnc
 	rename_column :${1:table_name}, :${2:old_column_name}, :${3:new_column_name}
+snippet mcc
+	change_column :${1:table}, :${2:column}, :${3:type}
+snippet mccc
+	t.column :${1:title}, :${2:string}
+snippet mct
+	create_table :${1:table_name} do |t|
+		t.column :${2:name}, :${3:type}
+	end
+snippet migration
+	class ${1:class_name} < ActiveRecord::Migration
+		def self.up
+			${2}
+		end
+	
+		def self.down
+		end
+	end
+
+snippet trc
+	t.remove :${1:column}
+snippet tre
+	t.rename :${1:old_column_name}, :${2:new_column_name}
+	${3}
+snippet tref
+	t.references :${1:model}
 
 #rspec
 snippet it
