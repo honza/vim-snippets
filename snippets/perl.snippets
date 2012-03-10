@@ -310,7 +310,7 @@ snippet override
 # use test classes
 snippet tuse
 	use Test::More;
-	use Test::Deep;
+	use Test::Deep ();
 	use Test::Exception;
 
 # local test lib
@@ -326,7 +326,7 @@ snippet trunner
 	use ${1:test_class};
 	$1->runtests();
 
-#testclass
+# Test::Class-style test
 snippet tsub
 	sub t${1:number}_${2:test_case} :Test(${3:num_of_tests}) {
 		my $self = shift;
@@ -334,6 +334,12 @@ snippet tsub
 		
 	}
 
+# Test::Routine-style test
+snippet trsub
+	test ${1:test_name} => { description => '${2:Description of test.}'} => sub {
+		my ($self) = @_;
+		${3:# test code}
+	};
 
 #prep test method
 snippet tprep
