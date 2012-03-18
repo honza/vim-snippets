@@ -30,20 +30,22 @@ snippet bfun
 		${2:// body...}
 # Class
 snippet cla class ..
-	class ${1:ClassName}
-		${2:// body...}
+	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+		${2}
 snippet cla class .. constructor: ..
-	class ${1:ClassName}
+	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
 		constructor: (${2:args}) ->
-			${3:// body...}
+			${3}
+
 		${4}
 snippet cla class .. extends ..
-	class ${1:ClassName} extends ${2:Ancestor}
-		${3:// body...}
+	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} extends ${2:ParentClass}
+		${3}
 snippet cla class .. extends .. constructor: ..
-	class ${1:ClassName} extends ${2:Ancestor}
+	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} extends ${2:ParentClass}
 		constructor: (${3:args}) ->
-			${4:// body...}
+			${4}
+
 		${5}
 # If
 snippet if
