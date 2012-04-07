@@ -170,12 +170,23 @@ snippet if
 	if (${1:/* condition */}) {
 		${2:// code...}
 	}
+snippet ifil
+	<?php if (${1:/* condition */}): ?>
+		${2:<!-- code... -->}
+	<?php endif; ?>
 snippet ife
 	if (${1:/* condition */}) {
 		${2:// code...}
 	} else {
 		${3:// code...}
 	}
+	${4}
+snippet ifeil
+	<?php if (${1:/* condition */}): ?>
+		${2:<!-- html... -->}
+	<?php else: ?>
+		${3:<!-- html... -->}
+	<?php endif; ?>
 	${4}
 snippet else
 	else {
@@ -210,10 +221,18 @@ snippet foreach
 	foreach ($${1:variable} as $${2:value}) {
 		${3:// code...}
 	}
+snippet foreachil
+	<?php foreach ($${1:variable} as $${2:value}): ?>
+		${3:<!-- html... -->}
+	<?php endforeach; ?>
 snippet foreachk
 	foreach ($${1:variable} as $${2:key} => $${3:value}) {
 		${4:// code...}
 	}
+snippet foreachkil
+	<?php foreach ($${1:variable} as $${2:key} => $${3:value}): ?>
+		${4:<!-- html... -->}
+	<?php endforeach; ?>
 snippet fun
 	${1:public }function ${2:FunctionName}(${3})
 	{
