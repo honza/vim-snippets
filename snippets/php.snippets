@@ -6,6 +6,8 @@ snippet phpil
 	<?php ${1} ?>
 snippet ec
 	echo "${1:string}"${2};
+snippet ethis
+	<?php echo $this->${1:something}; ?>
 snippet inc
 	include '${1:file}';${2}
 snippet inc1
@@ -286,3 +288,7 @@ snippet getset
 	{
 		$this->_$1 = $$1;
 	}
+snippet rett
+	return true;
+snippet retf
+	return false;
