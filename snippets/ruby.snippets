@@ -673,6 +673,8 @@ snippet i18
 snippet ist
 	<%= image_submit_tag("${1:agree.png}", :id => "${2:id}"${3} %>
 snippet log
+	Rails.logger.${1:debug} ${2}
+snippet log2
 	RAILS_DEFAULT_LOGGER.${1:debug} ${2}
 snippet logd
 	logger.debug { "${1:message}" }${2}
