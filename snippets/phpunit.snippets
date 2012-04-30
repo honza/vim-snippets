@@ -1,0 +1,47 @@
+snippet test
+	public function test${1}()
+	{
+		${2}
+	}
+# Assertions
+snippet assIO
+	$this->assertInstanceOf(${1}, ${2});
+snippet assE
+	$this->assertEquals(${1}, ${2});
+snippet assN
+	$this->assertNull(${1});
+snippet assNN
+	$this->assertNotNull(${1});
+snippet assSE
+	$this->assertSelectEquals('${1:element path}', '${2:element contents}', ${3:count}, ${4:haystack});
+snippet assSC
+	$this->assertSelectCount('${1:element path}', ${2:count}, ${3:haystack});
+# Exception assertions
+snippet exE
+	/**
+	 * @expectedException ${1}
+	 */
+
+snippet exEM
+	/**
+	 * @expectedException ${1}
+	 * @expectedExceptionMessage ${2}
+	 */
+# Incomplete/Skipped tests.
+snippet testIN
+	$this->markTestIncomplete(
+		'${1:Schtop! Thish tesht ish not ready yet!}'
+		);
+snippet testSK
+	$this->markTestSkipped(
+		'${1:This test has been skipped.}'
+	);
+# Mock Objects
+snippet expects
+	$${1:mockObject}->expects(${2:<parameters>})
+	    ->method('${3:methodName}')
+	    ->will($this->returnValue(${4:<returnValue>}));
+snippet once
+	$this->once()
+snippet any
+	$this->any()

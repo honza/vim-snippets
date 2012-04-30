@@ -15,7 +15,7 @@ snippet inc1
 snippet req
 	require '${1:file}';${2}
 snippet req1
-	require_once '${1:file}';${2}
+	require_once ${2}'${1:file}';
 # $GLOBALS['...']
 snippet globals
 	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
@@ -274,7 +274,7 @@ snippet getset
 	 *
 	 * @return ${2}
 	 */
-	function get$1()
+	public function get$1()
 	{
 		return $this->_$1;
 	}
@@ -284,7 +284,7 @@ snippet getset
 	 *
 	 * @param mixed $$1 ${3}
 	 */
-	function set$1($$1)
+	public function set$1($$1)
 	{
 		$this->_$1 = $$1;
 	}
