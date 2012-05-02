@@ -12,6 +12,12 @@ snippet info
 	--
 	-- ${8:Description}
 	--
+snippet import
+	import           ${1:Data.Text}
+snippet import2
+	import           ${1:Data.Text} (${2:head})
+snippet importq
+	import qualified ${1:Data.Text} as ${2:T}
 snippet inst
 	instance ${1:Monoid} ${2:Type} where
 		${3}
