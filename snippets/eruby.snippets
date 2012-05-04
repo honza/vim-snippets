@@ -4,11 +4,11 @@
 
 # Rails *****************************
 snippet rc
-	<% ${1} -%>
+	<% ${1} %>
 snippet rce
 	<%= ${1} %>${2}
 snippet end
-	<% end -%>${1}
+	<% end %>${1}
 snippet for
 	<% for ${2:item} in ${1} %>
 		${3}
@@ -40,19 +40,19 @@ snippet conf
 snippet cs
 	<%= collection_select <+object+>, <+method+>, <+collection+>, <+value_method+>, <+text_method+><+, <+[options]+>, <+[html_options]+>+> %>
 snippet ct
-	<%= content_tag '${1:DIV}', ${2:content}${3:,options} -%>
+	<%= content_tag '${1:DIV}', ${2:content}${3:,options} %>
 snippet ff
-	<% form_for @${1:model} do |f| -%>
+	<% form_for @${1:model} do |f| %>
 		${2}
-	<% end -%>
+	<% end %>
 snippet ffcb
 	<%= ${1:f}.check_box :${2:attribute} %>
 snippet ffe
-	<% error_messages_for :${1:model} -%>
+	<% error_messages_for :${1:model} %>
 	
-	<% form_for @${2:model} do |f| -%>
+	<% form_for @${2:model} do |f| %>
 		${3}
-	<% end -%>
+	<% end %>
 snippet ffff
 	<%= ${1:f}.file_field :${2:attribute} %>
 snippet ffhf
@@ -70,13 +70,13 @@ snippet ffta
 snippet fftf
 	<%= ${1:f}.text_field :${2:attribute} %>
 snippet fields
-	<% fields_for :${1:model}, @$1 do |${2:f}| -%>
+	<% fields_for :${1:model}, @$1 do |${2:f}| %>
 		${3}
-	<% end -%>
+	<% end %>
 snippet ff
-	<%= form_for @${1:model} do |f| -%>
+	<%= form_for @${1:model} do |f| %>
 		${2}
-	<% end -%>
+	<% end %>
 snippet i18
 	I18n.t('${1:type.key}')${2}
 snippet it
