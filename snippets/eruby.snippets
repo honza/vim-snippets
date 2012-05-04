@@ -9,6 +9,10 @@ snippet rce
 	<%= ${1} %>${2}
 snippet end
 	<% end %>${1}
+snippet ead
+	<% ${1}.each do |${2}| %>
+		${3}
+	<% end %>
 snippet for
 	<% for ${2:item} in ${1} %>
 		${3}
