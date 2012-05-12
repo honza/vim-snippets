@@ -77,3 +77,11 @@ snippet img
 
 snippet youtube
 	{% youtube ${1:video_id} %}
+
+# The quote should appear only once in the text. It is inherently part of it.
+# See http://octopress.org/docs/plugins/pullquote/ for more info.
+
+snippet pullquote
+	{% pullquote %}
+	${1:text} {" ${2:quote} "} ${3:text}
+	{% endpullquote %}
