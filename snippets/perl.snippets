@@ -82,7 +82,7 @@ snippet fore
 snippet cl
 	package ${1:ClassName};
 
-	use base qw(${2:ParentClass});
+	use parent qw(${2:ParentClass});
 
 	sub new {
 		my $class = shift;
