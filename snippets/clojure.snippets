@@ -8,7 +8,7 @@ snippet condp
 snippet def
 	(def ${1})
 snippet defm
-	(defmethod ${1:name} "${2:doc-string}" ${3:match} [${4:args}]
+	(defmethod ${1:multifn} "${2:doc-string}" ${3:dispatch-val} [${4:args}]
 	  ${5})
 snippet defmm
 	(defmulti ${1:name} "${2:doc-string}" ${3:dispatch-fn})
