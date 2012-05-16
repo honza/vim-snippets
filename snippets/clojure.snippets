@@ -8,13 +8,15 @@ snippet condp
 snippet def
 	(def ${1})
 snippet defm
-	(defmethod ${1:name} ${2:match} [${3:args}]
-	  ${4})
-snippet defmm
-	(defmulti ${1:name} ${2:dispatch-fn})
-snippet defn
-	(defn ${1:name} ${2:"${3:doc-string}"}[${4:arg-list}]
+	(defmethod ${1:name} "${2:doc-string}" ${3:match} [${4:args}]
 	  ${5})
+snippet defmm
+	(defmulti ${1:name} "${2:doc-string}" ${3:dispatch-fn})
+snippet defma
+	(defmacro ${1:name} "${2:doc-string}" ${3:dispatch-fn})
+snippet defn
+	(defn ${1:name} "${2:doc-string}" [${3:arg-list}]
+	  ${4})
 snippet defp
 	(defprotocol ${1:name}
 	  ${2})
@@ -41,11 +43,16 @@ snippet if
 	(if ${1:test-expr}
 	  ${2:then-expr}
 	  ${3:else-expr})
+snippet if-let 
+	(if-let [${1:result} ${2:test-expr}]
+		(${3:then-expr} $1)
+		(${4:else-expr}))
 snippet imp
 	(:import [${1:package}])
 	& {:keys [${1:keys}] :or {${2:defaults}}}
 snippet let
-	(let [${1}])
+	(let [${1:name} ${2:expr}]
+		${3})
 snippet letfn
 	(letfn [(${1:name) [${2:args}]
 	          ${3})])
@@ -68,7 +75,16 @@ snippet pmethod
 	(${1:name} [${2:this} ${3:args}])
 snippet refer
 	(:refer-clojure :exclude [${1}])
-snippet req
+snippet require
 	(:require [${1:namespace} :as [${2}]])
 snippet use
 	(:use [${1:namespace} :only [${2}]])
+snippet print
+	(println ${1})
+snippet reduce
+	(reduce ${1:(fn [p n] ${3})} ${2})
+snippet when
+	(when ${1:test} ${2:body})
+snippet when-let
+	(when-let [${1:result} ${2:test}]
+		${3:body})
