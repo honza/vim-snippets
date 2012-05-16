@@ -82,9 +82,7 @@ snippet fore
 snippet cl
 	package ${1:ClassName};
 
-	#use parent qw(${2:ParentClass});
-		
-	${3:#...}
+	${2:#...}
 
 	1;
 
@@ -93,7 +91,7 @@ snippet cl
 # Moose package
 snippet moosecl
 	package ${1:ClassName};
-	
+
 	use Moose;
 	#extends '${2:# ParentClass}';
 
