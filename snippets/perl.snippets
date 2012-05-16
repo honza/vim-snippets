@@ -82,16 +82,30 @@ snippet fore
 snippet cl
 	package ${1:ClassName};
 
-	use parent qw(${2:ParentClass});
+	#use parent qw(${2:ParentClass});
 
-	sub new {
-		my $class = shift;
-		$class = ref $class if ref $class;
-		my $self = bless {}, $class;
-		$self;
-	}
 
 	1;${3}
+
+	__END__
+
+# Package block syntax
+snippet package
+	package ${1:ClassName} ${2:version} {
+	
+		${3:#}use Moose;
+
+		${4:#}use parent qw(${5:ParentClass});
+		${3:#}extends qw(${5:ParentClass});
+
+		${6:#...}
+
+	}
+
+	1;
+
+	__END__
+
 # Read File
 snippet slurp
 	my $${1:var} = do { local $/; open my $file, '<', "${2:file}"; <$file> };
