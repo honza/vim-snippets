@@ -33,6 +33,9 @@ snippet case
 	    ${2:pattern} ->
 	        ${3:body};
 	end
+# anonymous function
+snippet fun
+	fun (${1:Parameters}) -> ${2:body} end${3}
 # record directive
 snippet rec
 	-record(${1:record}, {
