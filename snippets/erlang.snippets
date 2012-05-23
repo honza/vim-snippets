@@ -64,6 +64,24 @@ snippet %s
 # private function marker
 snippet %p
 	%% @private
+# OTP application
+snippet application
+	-module(${1:`Filename('', 'my')`}).
+
+	-behaviour(application).
+
+	-export([start/2, stop/1]).
+
+	start(_Type, _StartArgs) ->
+	    case ${2:root_supervisor}:start_link() of
+	        {ok, Pid} ->
+	            {ok, Pid};
+	        Other ->
+		          {error, Other}
+	    end.
+
+	stop(_State) ->
+	    ok.	
 # OTP gen_server
 snippet gen_server
 	-module(${1:`Filename('', 'my')`}).
