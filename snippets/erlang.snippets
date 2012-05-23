@@ -82,6 +82,29 @@ snippet application
 
 	stop(_State) ->
 	    ok.	
+# OTP supervisor
+snippet supervisor
+	-module(${1:`Filename('', 'my')`}).
+
+	-behaviour(supervisor).
+
+	%% API
+	-export([start_link/0]).
+
+	%% Supervisor callbacks
+	-export([init/1]).
+
+	-define(SERVER, ?MODULE).
+
+	start_link() ->
+	    supervisor:start_link({local, ?SERVER}, ?MODULE, []).
+
+	init([]) ->
+	    Server = {${2:my_server}, {$2, start_link, []},
+	      permanent, 2000, worker, [$2]},
+	    Children = [Server],
+	    RestartStrategy = {one_for_one, 0, 1},
+	    {ok, {RestartStrategy, Children}}.
 # OTP gen_server
 snippet gen_server
 	-module(${1:`Filename('', 'my')`}).
