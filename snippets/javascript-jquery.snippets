@@ -1,0 +1,329 @@
+snippet add
+	${1:obj}.add('${2:selector expression}')${3}
+snippet addClass
+	${1:obj}.addClass('${2:class name}')${3}
+snippet after
+	${1:obj}.after('${2:Some text <b>and bold!</b>}')${3}
+snippet ajax
+	$.ajax({
+		url: "${1:mydomain.com/url}",
+		type: "${2:POST}",
+		dataType: "${3:xml/html/script/json}",
+		data: $.param( $("${4:Element or Expression}") ),
+
+		complete: function() {
+			${5://called when complete}
+		},
+
+		success: function() {
+			${6://called when successful}
+		},
+
+		error: function() {
+			${7://called when there is an error}
+		},
+	});
+snippet ajaxerror
+	.ajaxError(function(${1:request, settings}) {
+		${2://stuff to do when an AJAX call returns an error};
+	});
+	${3}
+snippet ajaxget
+	$.get('${1:/test/ajax-test.xml}', function(xml){
+		${2:alert( ("title",xml).text() ) //optional stuff to do after get;}
+	});
+snippet ajaxgetif
+	$.getIfModified('${1:/test/test.cgi}', function(data){
+		${2:alert( "Data loaded: " + data ) //optional stuff to do after get;}
+	});
+snippet ajaxpost
+	$.post('<+/path/to/file.cgi+>',{
+	<+<+param1+>: "<+value1+>", <+param2+>: "<+value2+>"+>},
+	function(){
+		<+//stuff to do after event occurs;+>
+	});
+snippet ajaxsend
+	.ajaxSend(function(${1:request, settings}) {
+		${2://stuff to do when an AJAX call returns an error};
+	});
+	${3}
+snippet ajaxsetup
+	$.ajaxSetup({
+		url: "${1:mydomain.com/url}",
+		type: "${2:POST}",
+		dataType: "${3:xml/html/script/json}",
+		data: $.param( $("${4:Element or Expression}") ),
+
+		complete: function() {
+			${5://called when complete}
+		},
+
+		success: function() {
+			${6://called when successful}
+		},
+
+		error: function() {
+			${7://called when there is an error}
+		},
+	});
+snippet ajaxstart
+	$.ajaxStart(function() {
+		${1://stuff to do when an AJAX call is started and no other AJAX calls are in progress};
+	});
+	${2}
+snippet ajaxstop
+	$.ajaxStop(function() {
+		${1://stuff to do when an AJAX call is started and no other AJAX calls are in progress};
+	});
+	${2}
+snippet ajaxsuccess
+	$.ajaxSuccess(function() {
+	  ${1://stuff to do when an AJAX call is started and no other AJAX calls are in progress};
+	});
+	${2}
+snippet animate
+	${1:obj}.animate({${2:param1: value1, param2: value2}}, ${3:speed})${4}
+snippet append
+	${1:obj}.append('${2:Some text <b>and bold!</b>}')${3}
+snippet appendTo
+	${1:obj}.appendTo('${2:selector expression}')${3}
+snippet attr
+	${1:obj}.attr('${2:attribute}', '${3:value}')${4}
+snippet attrm
+	${1:obj}.attr({'${2:attr1}': '${3:value1}', '${4:attr2}': '${5:value2}'})${6}
+snippet before
+	${1:obj}.before('${2:Some text <b>and bold!</b>}')${3}
+snippet bind
+	${1:obj}.bind('${2:event name}', function(${3:event}) {
+		${4:// Act on the event}
+	});
+snippet blur
+	${1:obj}.blur(function() {
+		${2:// Act on the event}
+	});
+snippet change
+	${1:obj}.change(function() {
+		${2:// Act on the event}
+	});
+snippet children
+	${1:obj}.children('${2:selector expression}')${3}
+snippet click
+	${1:obj}.click(function() {
+		${2:// Act on the event}
+	});
+snippet clone
+	${1:obj}.clone()${2}
+snippet contains
+	${1:obj}.contains('${2:text to find}')${3}
+snippet css
+	${1:obj}.css('${2:attribute}', '${3:value}')${4}
+snippet cssm
+	${1:obj}.css({${2:attribute1}: '${3:value1}', ${4:attribute2}: '${5:value2}'})${6}
+snippet dblclick
+	${1:obj}.dblclick(function() {
+		${2:// Act on the event}
+	});
+snippet each
+	${1:obj}.each(function(index) {
+		${2:this.innerHTML = this + " is the element, " + index + " is the position";}
+	});
+snippet el
+	$('${1}')${2:}
+snippet eltrim
+	$.trim('${1:string}')${2}
+snippet end
+	${1:obj}.end()${2}
+snippet error
+	${1:obj}.error(function() {
+		${2:// Act on the event}
+	});
+snippet fadein
+	${1:obj}.fadeIn('${2:slow/400/fast}')${3}
+snippet fadeinc
+	${1:obj}.fadeIn('slow/400/fast', function() {
+		${2://Stuff to do *after* the animation takes place};
+	});
+snippet fadeout
+	${1:obj}.fadeOut('${2:slow/400/fast}')${3}
+snippet fadeoutc
+	${1:obj}.fadeOut('slow/400/fast', function() {
+		${2://Stuff to do *after* the animation takes place};
+	});
+snippet fadeto
+	${1:obj}.fadeTo('${2:slow/400/fast}', ${3:0.5})${4}
+snippet fadetoc
+	${1:obj}.fadeTo('slow/400/fast', ${2:0.5}, function() {
+		${3://Stuff to do *after* the animation takes place};
+	});
+snippet filter
+	${1:obj}.filter('${2:selector expression}')${3}
+snippet find
+	${1:obj}.find('${2:selector expression}')${3}
+snippet focus
+	${1:obj}.focus(function() {
+		${2:// Act on the event}
+	});
+snippet get
+	${1:obj}.get(${2:element index})${3}
+snippet getjson
+	$.getJSON('<+/path/to/file.cgi+>',{
+	<+<+param1+>: "<+value1+>", <+param2+>: "<+value2+>"+>},
+	function(json){
+		<+//stuff to do after event occurs;+>
+	});
+snippet getscript
+	$.getScript('${1:somescript.js}', function(){
+		${2://optional stuff to do after getScript;}
+	});
+snippet height
+	${1:obj}.height(${2:integer})${3}
+snippet hide
+	${1:obj}.hide('${2:slow/400/fast}')${3}
+snippet hidec
+	${1:obj}.hide('${2:slow/400/fast}', function() {
+		${3://Stuff to do *after* the animation takes place}
+	});
+snippet hover
+	${1:obj}.hover(function() {
+		${2:// Stuff to do when the mouse enters the element;}
+	}, function() {
+		${3:// Stuff to do when the mouse leaves the element;}
+	});${4}
+snippet html
+	${1:obj}.html('${2:Some text <b>and bold!</b>}')${3}
+snippet insertAfter
+	${1:obj}.insertAfter('${2:selector expression}')${3}
+snippet insertBefore
+	${1:obj}.insertBefore('${2:selector expression}')${3}
+snippet is
+	${1:obj}.is('${2:selector expression}')${3}
+snippet jj
+	$('${1:selector}')${2}
+snippet load
+	${1:obj}.load(function() {
+		${2:// Act on the event}
+	});
+snippet loadf
+	<+obj+>.load('<+/path/to/file.htm+>', { <+<+param1+>: "<+value1+>", <+param2+>: "<+value2+>"+> }, function() {
+		<+// Stuff to do after the page is loaded+>
+snippet 	});loadif
+	<+obj+>.loadIfModified('<+/path/to/file.htm+>', { <+<+param1+>: "<+value1+>", <+param2+>: "<+value2+>"+> }, function() {
+		<+// Stuff to do after the page is loaded+>
+	});
+snippet mdown
+	${1:obj}.mousedown(function() {
+		${2:// Act on the event}
+	});
+snippet mmove
+	${1:obj}.mousemove(function() {
+		${2:// Act on the event}
+	});
+snippet mout
+	${1:obj}.mouseout(function() {
+		${2:// Act on the event}
+	});
+snippet mover
+	${1:obj}.mouseover(function() {
+		${2:// Act on the event}
+	});
+snippet mup
+	${1:obj}.mouseup(function() {
+		${2:// Act on the event}
+	});
+snippet next
+	${1:obj}.next('${2:selector expression}')${3}
+snippet not
+	${1:obj}.not('${2:selector expression}')${3}
+snippet one
+	${1:obj}.one('${2:event name}', function(${3:event}) {
+		${4:// Act on the event once}
+	});
+snippet parent
+	${1:obj}.parent('${2:selector expression}')${3}
+snippet parents
+	${1:obj}.parents('${2:selector expression}')${3}
+snippet prepend
+	${1:obj}.prepend('${2:Some text <b>and bold!</b>}')${3}
+snippet prependto
+	${1:obj}.prependTo('${2:selector expression}')${3}
+snippet prev
+	${1:obj}.prev('${2:selector expression}')${3}
+snippet ready
+	$(function() {
+		${1}
+	});
+snippet remove
+	${1:obj}.remove()${2}
+snippet removeattr
+	${1:obj}.removeAttr('${2:attribute name}')${3}
+snippet removeclass
+	${1:obj}.removeClass('${2:class name}')${3}
+snippet reset
+	${1:obj}.reset(function() {
+		${2:// Act on the event}
+	});
+snippet resize
+	${1:obj}.resize(function() {
+		${2:// Act on the event}
+	});
+snippet scroll
+	${1:obj}.scroll(function() {
+		${2:// Act on the event}
+	});
+snippet sdown
+	${1:obj}.slideDown('${2:slow/400/fast}')${3}
+snippet sdownc
+	${1:obj}.slideDown('${2:slow/400/fast}', function() {
+		${3://Stuff to do *after* the animation takes place};
+	});
+snippet sdupc
+	${1:obj}.slideUp('${2:slow/400/fast}', function() {
+		${3://Stuff to do *after* the animation takes place};
+	});
+snippet select
+	${1:obj}.select(function() {
+		${2:// Act on the event}
+	});
+snippet show
+	${1:obj}.show('${2:slow/400/fast}')${3}
+snippet showc
+	${1:obj}.show('${2:slow/400/fast}', function() {
+		${3://Stuff to do *after* the animation takes place}
+	});
+snippet sib
+	${1:obj}.siblings('${2:selector expression}')${3}
+snippet size
+	${1:obj}.size()${2}
+snippet stoggle
+	${1:obj}.slideToggle('${2:slow/400/fast}')${3}
+snippet submit
+	${1:obj}.submit(function() {
+		${2:// Act on the event once}
+	});
+snippet sup
+	${1:obj}.slideUp('${2:slow/400/fast}')${3}
+snippet text
+	${1:obj}.text(${2:'some text'})${3}
+snippet this
+	$(this)${1}
+snippet tog
+	${1:obj}.toggle(function() {
+		${2:// Stuff to do every *odd* time the element is clicked;}
+	}, function() {
+		${3:// Stuff to do every *even* time the element is clicked;}
+	});
+	${4}
+snippet togclass
+	${1:obj}.toggleClass('${2:class name}')${3}
+snippet togsh
+	${1:obj}.toggle('${2:slow/400/fast}')${3}
+snippet trig
+	${1:obj}.trigger('${2:event name}')${3}
+snippet unbind
+	${1:obj}.unbind('${2:event name}')${3}
+snippet val
+	${1:obj}.val('${2:text}')${3}
+snippet width
+	${1:obj}.width(${2:integer})${3}
+snippet wrap
+	${1:obj}.wrap('${2:&lt;div class="extra-wrapper"&gt;&lt;/div&gt;}')${3}
