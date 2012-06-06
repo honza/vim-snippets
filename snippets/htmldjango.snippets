@@ -12,17 +12,17 @@ snippet {
 
 snippet autoescape
 	{% autoescape ${1:off} %}
-	${2}
+		${2}
 	{% endautoescape %}
 snippet block
 	{% block ${1} %}
-	${2}
+		${2}
 	{% endblock %}
 snippet #
 	{# ${1:comment} #}
 snippet comment
 	{% comment %}
-	${1}
+		${1}
 	{% endcomment %}
 snippet cycle
 	{% cycle ${1:val1} ${2:val2} ${3:as ${4}} %}
@@ -32,33 +32,33 @@ snippet extends
 	{% extends "${1:base.html}" %}
 snippet filter
 	{% filter ${1} %}
-	${2}
+		${2}
 	{% endfilter %}
 snippet firstof
 	{% firstof ${1} %}
 snippet for
 	{% for ${1} in ${2} %}
-	${3}
+		${3}
 	{% endfor %}
 snippet empty
 	{% empty %}
 	${1}
 snippet if
 	{% if ${1} %}
-	${2}
+		${2}
 	{% endif %}
 snippet else
 	{% else %}
-	${1}
+		${1}
 snippet ifchanged
 	{% ifchanged %}${1}{% endifchanged %}
 snippet ifequal
 	{% ifequal ${1} ${2} %}
-	${3}
+		${3}
 	{% endifequal %}
 snippet ifnotequal
 	{% ifnotequal ${1} ${2} %}
-	${3}
+		${3}
 	{% endifnotequal %}
 snippet include
 	{% include "${1}" %}
