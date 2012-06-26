@@ -98,6 +98,7 @@ snippet cla ClassName = Struct .. do .. end
 snippet cla class BlankSlate .. initialize .. end
 	class ${1:BlankSlate}
 		instance_methods.each { |meth| undef_method(meth) unless meth =~ /\A__/ }
+	end
 snippet cla class << self .. end
 	class << ${1:self}
 		${2}
