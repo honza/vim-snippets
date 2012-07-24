@@ -1,13 +1,13 @@
-snippet php
+snippet ph
 	<?php
+
 	${1}
-	?>
-snippet phpil
-	<?php ${1} ?>
 snippet ec
-	echo "${1:string}"${2};
-snippet ethis
-	<?php echo $this->${1:something}; ?>
+	echo ${1};
+snippet ecil
+	<?php echo ${1} ?>
+snippet th
+	$this->${1:something}
 snippet inc
 	include '${1:file}';${2}
 snippet inc1
@@ -16,26 +16,21 @@ snippet req
 	require '${1:file}';${2}
 snippet req1
 	require_once '${1:file}';${2}
-# $GLOBALS['...']
-snippet globals
-	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
-snippet G
-	$GLOBALS['${1:variable}']
-snippet $_ COOKIE['...']
+snippet C
 	$_COOKIE['${1:variable}']${2}
-snippet $_ ENV['...']
+snippet E
 	$_ENV['${1:variable}']${2}
-snippet $_ FILES['...']
+snippet F
 	$_FILES['${1:variable}']${2}
-snippet $_ Get['...']
+snippet G
 	$_GET['${1:variable}']${2}
-snippet $_ POST['...']
+snippet P
 	$_POST['${1:variable}']${2}
-snippet $_ REQUEST['...']
+snippet R
 	$_REQUEST['${1:variable}']${2}
-snippet $_ SERVER['...']
+snippet S
 	$_SERVER['${1:variable}']${2}
-snippet $_ SESSION['...']
+snippet SS
 	$_SESSION['${1:variable}']${2}
 # Start Docblock
 snippet /*
@@ -138,8 +133,9 @@ snippet doc_i
 	 * @author ${4:`g:snips_author`}
 	 */
 	interface ${1:}
-	{${5}
-	} // END interface $1
+	{
+		${5}
+	}$1
 # class ...
 snippet class
 	/**
@@ -148,7 +144,7 @@ snippet class
 	class ${2:ClassName}
 	{
 		${3}
-		function ${4:__construct}(${5:argument})
+		${7:public} function ${4:__construct}(${5:argument})
 		{
 			${6:// code...}
 		}
@@ -236,10 +232,15 @@ snippet foreachkil
 		${4:<!-- html... -->}
 	<?php endforeach; ?>
 snippet fun
-	${1:public }function ${2:FunctionName}(${3})
+	function ${1:FunctionName}(${2})
+	{
+		${3:// code...}
+	}${4}
+snippet p
+	${1:protected} function ${2:FunctionName}(${3})
 	{
 		${4:// code...}
-	}
+	}${5}
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
@@ -274,9 +275,9 @@ snippet getset
 	 *
 	 * @return ${2}
 	 */
-	function get$1()
+	public function get$1()
 	{
-		return $this->_$1;
+		return $this->$1;
 	}
 
 	/**
@@ -284,9 +285,10 @@ snippet getset
 	 *
 	 * @param mixed $$1 ${3}
 	 */
-	function set$1($$1)
+	public function set$1($$1)
 	{
-		$this->_$1 = $$1;
+		$this->$1 = $$1;
+		return $this;
 	}
 snippet rett
 	return true;
