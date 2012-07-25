@@ -104,7 +104,7 @@ snippet packagev512
 snippet moose
 	use Moose;
 	use namespace::autoclean;
-	${1:#}extends '${2:ParentClass}';
+	${1:#}BEGIN {extends '${2:ParentClass}}';
 
 # moose extends
 snippet extends
