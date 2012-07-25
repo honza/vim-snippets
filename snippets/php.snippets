@@ -1,11 +1,14 @@
-snippet ph
+snippet <?
 	<?php
 
 	${1}
 snippet ec
 	echo ${1};
-snippet ecil
+snippet <?e
 	<?php echo ${1} ?>
+# this is for php5.4
+snippet <?=
+	<?=${1}?>
 snippet th
 	$this->${1:something}
 snippet inc
@@ -125,7 +128,7 @@ snippet doc_h
 	 */
 	
 # Interface
-snippet doc_i
+snippet interface
 	/**
 	 * ${2:undocumented class}
 	 *
@@ -135,7 +138,7 @@ snippet doc_i
 	interface ${1:}
 	{
 		${5}
-	}$1
+	}
 # class ...
 snippet class
 	/**
@@ -144,10 +147,13 @@ snippet class
 	class ${2:ClassName}
 	{
 		${3}
-		${7:public} function ${4:__construct}(${5:argument})
+		/**
+		 * ${4}
+		 */
+		${5:public} function ${6:__construct}(${7:argument})
 		{
-			${6:// code...}
-		}
+			${8:// code...}
+		}${9}
 	}
 # define(...)
 snippet def
