@@ -79,7 +79,7 @@ snippet for
 snippet fore
 	${1:expression} foreach @${2:array};${3}
 # Package
-snippet cl
+snippet package
 	package ${1:ClassName};
 
 	${2:#...}
@@ -88,23 +88,9 @@ snippet cl
 
 	__END__
 
-# Moose package
-snippet moosecl
-	package ${1:ClassName};
-
-	use Moose;
-	#extends '${2:# ParentClass}';
-
-	${3:#...}
-
-	1;
-
-
-	__END__
-
 
 # Package syntax perl >= 5.12.0
-snippet package
+snippet packagev512
 	package ${1:ClassName} ${2:0.99};
 
 	${3:#...}
@@ -117,6 +103,8 @@ snippet package
 #moose
 snippet moose
 	use Moose;
+	use namespace::autoclean;
+	#extends '${2:# ParentClass}';
 
 # moose extends
 snippet extends
@@ -298,10 +286,12 @@ snippet parg
 # Moose has
 snippet has
 	has ${1:attribute} => (
-		is	=> '${2:ro|rw}',
+		is	    => '${2:ro|rw}',
 		isa 	=> '${3:Str|Int|HashRef|ArrayRef|etc}',
-		default => ${4:defaultvalue}
-		,${5:# other attributes}
+		default => sub {
+			${4:defaultvalue}
+		},
+		${5:# other attributes}
 	);
 
 
@@ -309,14 +299,14 @@ snippet has
 snippet override
 	override ${1:attribute} => sub {
 		${2:# my $self = shift;};
-		${3:# my ($self,$args) = @_;};
+		${3:# my ($self, $args) = @_;};
 	};
 
 
 # use test classes
 snippet tuse
 	use Test::More;
-	use Test::Deep ();
+	use Test::Deep; # (); # uncomment to stop prototype errors
 	use Test::Exception;
 
 # local test lib
@@ -353,6 +343,7 @@ snippet tprep
 		my $self = shift;
 		${4:#  body}
 	}
+
 # cause failures to print stack trace
 snippet debug_trace
 	use Carp; # 'verbose';
