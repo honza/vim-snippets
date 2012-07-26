@@ -228,8 +228,17 @@ snippet psubi
 
 
 	=cut
+# inline documented subroutine
+snippet subpod
+	=head2 $1
 
+	Summarry of $1
 
+	=cut
+
+	sub ${1:subroutine_name} {
+		${2:# body...}
+	}
 # Subroutine signature
 snippet parg
 	=over 2
