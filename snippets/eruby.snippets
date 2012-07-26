@@ -7,6 +7,10 @@ snippet rc
 	<% ${1} %>
 snippet rce
 	<%= ${1} %>${2}
+snippet %
+	<% ${1} %>
+snippet =
+	<%= ${1} %>${2}
 snippet end
 	<% end %>${1}
 snippet ead
@@ -36,7 +40,7 @@ snippet lica
 snippet licai
 	<%= link_to '${1:link text...}', :controller => '${2:items}', :action => '${3:edit}', :id => ${4:@item} %>
 snippet yield
-	<%= yield${1::content_symbol}%>${2}
+	<%= yield ${1::content_symbol} %>${2}
 snippet conf
 	<% content_for :${1:head} do %>
 		${2}

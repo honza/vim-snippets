@@ -59,28 +59,28 @@
 # entry point
 snippet sim
 	public static int Main(string[] args) {
-	  ${1}
-	  return 0;
+		${1}
+		return 0;
 	} 
 snippet simc
 	public class Application {
-	  public static int Main(string[] args) {
-	    ${1}
-	    return 0;
-	  }
+		public static int Main(string[] args) {
+			${1}
+			return 0;
+		}
 	}
 # if condition
 snippet if
 	if (${1}) {
-	  ${2}
+		${2}
 	} 
 snippet el
 	else {
-	  ${1}
+		${1}
 	} 
 snippet ifs
 	if (${1}) 
-	  ${2}
+		${2}
 # ternary conditional
 snippet t
 	${1} ? ${2} : ${3}
@@ -89,77 +89,77 @@ snippet ?
 # do while loop
 snippet do
 	do {
-	  ${2}
+		${2}
 	} while (${1});
 # while loop
 snippet wh
 	while (${1}) {
-	  ${2}
+		${2}
 	}
 # for loop
 snippet for
 	for (int ${1:i} = 0; $1 < ${2:count}; $1${3:++}) {
-	  ${4}
+		${4}
 	}
 # foreach
 snippet fore
 	foreach (var ${1:entry} in ${2}) {
-	  ${3}
+		${3}
 	}
 snippet foreach
 	foreach (var ${1:entry} in ${2}) {
-	  ${3}
+		${3}
 	}
 snippet each
 	foreach (var ${1:entry} in ${2}) {
-	  ${3}
+		${3}
 	}
 # interfaces
 snippet interface
 	public interface ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 snippet if+
 	public interface ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 # class bodies
 snippet class
 	public class ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 snippet cls
 	${2:public} class ${1:`Filename()`} {
-	  ${3}
+		${3}
 	}
 snippet cls+
 	public class ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 snippet cls+^
 	public static class ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 snippet cls&
 	internal class ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 snippet cls&^
 	internal static class ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 snippet cls|
 	protected class ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 snippet cls|%
 	protected abstract class ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 # constructor
 snippet ctor
 	public ${1:`Filename()`}() {
-	  ${2}
+		${2}
 	}
 # properties - auto properties by default.
 # default type is int with layout get / set.
@@ -259,101 +259,101 @@ snippet ps-
 # members - void
 snippet m
 	${1:public} ${2:void} ${3:}(${4:}) {
-	  ${5:}
+		${5:}
 	}
 snippet m+
 	public ${1:void} ${2:}(${3:}) {
-	  ${4:}
+		${4:}
 	}
 snippet m&
 	internal ${1:void} ${2:}(${3:}) {
-	  ${4:}
+		${4:}
 	}
 snippet m|
 	protected ${1:void} ${2:}(${3:}) {
-	  ${4:}
+		${4:}
 	}
 snippet m-
 	private ${1:void} ${2:}(${3:}) {
-	  ${4:}
+		${4:}
 	}
 # members - int
 snippet mi
 	${1:public} int ${2:}(${3:}) {
-	  ${4:return 0;}
+		${4:return 0;}
 	}
 snippet mi+
 	public int ${1:}(${2:}) {
-	  ${3:return 0;}
+		${3:return 0;}
 	}
 snippet mi&
 	internal int ${1:}(${2:}) {
-	  ${3:return 0;}
+		${3:return 0;}
 	}
 snippet mi|
 	protected int ${1:}(${2:}) {
-	  ${3:return 0;}
+		${3:return 0;}
 	}
 snippet mi-
 	private int ${1:}(${2:}) {
-	  ${3:return 0;}
+		${3:return 0;}
 	}
 # members - bool
 snippet mb
 	${1:public} bool ${2:}(${3:}) {
-	  ${4:return false;}
+		${4:return false;}
 	}
 snippet mb+
 	public bool ${1:}(${2:}) {
-	  ${3:return false;}
+		${3:return false;}
 	}
 snippet mb&
 	internal bool ${1:}(${2:}) {
-	  ${3:return false;}
+		${3:return false;}
 	}
 snippet mb|
 	protected bool ${1:}(${2:}) {
-	  ${3:return false;}
+		${3:return false;}
 	}
 snippet mb-
 	private bool ${1:}(${2:}) {
-	  ${3:return false;}
+		${3:return false;}
 	}
 # members - string
 snippet ms
 	${1:public} string ${2:}(${3:}) {
-	  ${4:return "";}
+		${4:return "";}
 	}
 snippet ms+
 	public string ${1:}(${2:}) {
-	  ${3:return "";}
+		${3:return "";}
 	}
 snippet ms&
 	internal string ${1:}(${2:}) {
-	  ${3:return "";}
+		${3:return "";}
 	}
 snippet ms|
 	protected string ${1:}(${2:}) {
-	  ${3:return "";}
+		${3:return "";}
 	}
 snippet ms-
 	private string ${1:}(${2:}) {
-	  ${3:return "";}
+		${3:return "";}
 	}
 # structure
 snippet struct
 	public struct ${1:`Filename()`} {
-	  ${2}
+		${2}
 	}
 # enumeration
 snippet enum
 	public enum ${1} {
-	  ${2}
+		${2}
 	}
 # preprocessor directives
 snippet #if
 	#if
-	  ${1}
+		${1}
 	#endif
 # inline xml documentation
 snippet ///
