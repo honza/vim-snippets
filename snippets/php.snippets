@@ -28,15 +28,15 @@ snippet i
 snippet $t
 	$this->${1:foo}
 snippet f
-	function ${1:foo}(${2:array }$${3:bar})
+	function ${1:foo}(${2:array }${3:$bar})
 	{
 		${4}
 	}
 # method
 snippet m
-	${1:abstract }${2:protected}${3: static} function ${4:foo}(${5})
+	${1:abstract }${2:protected}${3: static} function ${4:foo}(${5:array }${6:$bar})
 	{
-		${6}
+		${7}
 	}
 # setter method
 # I think vim's functions will not be called at the snipMate's runtime
