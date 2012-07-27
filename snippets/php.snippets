@@ -6,11 +6,58 @@ snippet ec
 	echo ${1};
 snippet <?e
 	<?php echo ${1} ?>
-# this is for php5.4
+# this one is for php5.4
 snippet <?=
 	<?=${1}?>
-snippet th
-	$this->${1:something}
+snippet ns
+	namespace ${1:Foo\Bar\Baz};
+	${2}
+snippet use
+	use ${1:Foo\Bar\Baz};
+	${2}
+snippet	c
+	${1:abstract }class ${2:`Filename()`}
+	{
+		${3}
+	}
+snippet i
+	interface ${1:`Filename()`}
+	{
+		${2}
+	}
+snippet $t
+	$this->${1:foo}
+snippet f
+	function ${1:foo}(${2})
+	{
+		${3:echo 'hello world';}
+	}
+# method
+snippet m
+	${1:abstract }${2:protected}${3: static} function ${4:foo}(${5})
+	{
+		${6}
+	}
+# setter method
+# I think vim's functions will not be called at the snipMate's runtime
+# but `compile` time
+# so `tolower` here won't work
+# but it would be wonderful if we could make the property and parameter to lower case
+snippet sm 
+	${1:public} function set${2:Foo}(${3:$2 }$${4:`tolower('$2')`})
+	{
+		$this->${5:$4} = $$4;
+		${6}
+		return $this;
+	}
+# getter method
+snippet gm
+	${1:public} function get${2:Foo}()
+	{
+		return $this->${3:$2};
+	}
+	
+# the following are old ones
 snippet inc
 	include '${1:file}';${2}
 snippet inc1
@@ -237,16 +284,6 @@ snippet foreachkil
 	<?php foreach ($${1:variable} as $${2:key} => $${3:value}): ?>
 		${4:<!-- html... -->}
 	<?php endforeach; ?>
-snippet fun
-	function ${1:FunctionName}(${2})
-	{
-		${3:// code...}
-	}${4}
-snippet p
-	${1:protected} function ${2:FunctionName}(${3})
-	{
-		${4:// code...}
-	}${5}
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
