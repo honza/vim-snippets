@@ -26,7 +26,7 @@ snippet i
 		${2}
 	}
 snippet $t
-	$this->${1:foo}
+	$this->${1:foo}${2}
 snippet f
 	function ${1:foo}(${2:array }${3:$bar})
 	{
@@ -56,16 +56,6 @@ snippet gm
 	{
 		return $this->${3:$2};
 	}
-	
-# the following are old ones
-snippet inc
-	include '${1:file}';${2}
-snippet inc1
-	include_once '${1:file}';${2}
-snippet req
-	require '${1:file}';${2}
-snippet req1
-	require_once '${1:file}';${2}
 snippet C
 	$_COOKIE['${1:variable}']${2}
 snippet E
@@ -82,6 +72,16 @@ snippet S
 	$_SERVER['${1:variable}']${2}
 snippet SS
 	$_SESSION['${1:variable}']${2}
+	
+# the following are old ones
+snippet inc
+	include '${1:file}';${2}
+snippet inc1
+	include_once '${1:file}';${2}
+snippet req
+	require '${1:file}';${2}
+snippet req1
+	require_once '${1:file}';${2}
 # Start Docblock
 snippet /*
 	/**
@@ -200,7 +200,7 @@ snippet class
 		${5:public} function ${6:__construct}(${7:argument})
 		{
 			${8:// code...}
-		}${9}
+		}
 	}
 # define(...)
 snippet def
