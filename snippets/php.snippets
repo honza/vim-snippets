@@ -25,7 +25,7 @@ snippet i
 	{
 		${2}
 	}
-snippet $t
+snippet t.
 	$this->${1}
 snippet f
 	function ${1:foo}(${2:array }${3:$bar})
@@ -62,6 +62,13 @@ snippet $s
 #getter
 snippet $g
 	${1:$foo}->get${2:Bar}();
+
+# Tertiary conditional
+snippet =?:
+	$${1:foo} = ${2:true} ? ${3:a} : ${4};
+snippet ?:
+	${1:true} ? ${2:a} : ${3}
+
 snippet C
 	$_COOKIE['${1:variable}']${2}
 snippet E
@@ -253,9 +260,6 @@ snippet elseif
 	elseif (${1:/* condition */}) {
 		${2:// code...}
 	}
-# Tertiary conditional
-snippet t
-	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
 snippet switch
 	switch ($${1:variable}) {
 		case '${2:value}':
