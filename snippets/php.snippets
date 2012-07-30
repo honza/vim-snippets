@@ -26,7 +26,7 @@ snippet i
 		${2}
 	}
 snippet $t
-	$this->${1:foo}${2}
+	$this->${1}
 snippet f
 	function ${1:foo}(${2:array }${3:$bar})
 	{
@@ -56,6 +56,12 @@ snippet gm
 	{
 		return $this->${3:$2};
 	}
+#setter
+snippet $s
+	${1:$foo}->set${2:Bar}(${3});
+#getter
+snippet $g
+	${1:$foo}->get${2:Bar}();
 snippet C
 	$_COOKIE['${1:variable}']${2}
 snippet E
