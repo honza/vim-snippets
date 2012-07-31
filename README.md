@@ -21,6 +21,7 @@ to maintain snippets for a language, please get in touch.
 * HTML Django - [honza](http://github.com/honza)
 * Markdown - [honza](http://github.com/honza)
 * Ruby - [taq](http://github.com/taq)
+* PHP - [chrisyue](http://github.com/chrisyue)
 
 Contributing notes
 ------------------
