@@ -16,7 +16,7 @@ snippet attribute blank
 
 snippet attribute value-of
 	<xsl:attribute name="${1:name}">
-		<xsl:value-of select="${2:*}">
+		<xsl:value-of select="${2:*}" />
 	</xsl:attribute>${3}
 
 snippet call-template
