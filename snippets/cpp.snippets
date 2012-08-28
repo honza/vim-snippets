@@ -80,7 +80,7 @@ snippet cl
 # member function implementation
 snippet mfun
 	${4:void} ${1:`Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
-		${5:return};
+		${5:/* code */}
 	}
 # namespace
 snippet ns
@@ -91,10 +91,10 @@ snippet ns
 ## Input/Output
 # std::cout
 snippet cout
-	std::cout << ${1} << std::endl;
+	std::cout << ${1} << std::endl;${2}
 # std::cin
 snippet cin
-	std::cin >> ${1};
+	std::cin >> ${1};${2}
 # read file into vector
 snippet readfile
 	std::vector<char> v;
@@ -111,22 +111,22 @@ snippet readfile
 snippet fori
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
 		${4:/* code */}
-	}
+	}${5}
 
 # foreach
 snippet fore
 	for (${1:auto} ${2:i} : ${3:container}) {
 		${4:/* code */}
-	}
+	}${5}
 # iterator
 snippet iter
 	for (${1:std::vector}<${2:type}>::${3:const_iterator} ${4:i} = ${5:container}.begin(); $4 != $5.end(); ++$4) {
 		${6}
-	}
+	}${7}
 
 # auto iterator
 snippet itera
 	for (auto ${1:i} = $1.begin(); $1 != $1.end(); ++$1) {
 		${2:std::cout << *$1 << std::endl;}
-	}
+	}${3}
 
