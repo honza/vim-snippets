@@ -87,12 +87,24 @@ snippet ns
 	namespace ${1:`Filename('', 'my')`} {
 		${2}
 	} /* namespace $1 */
+##
+## Input/Output
 # std::cout
 snippet cout
 	std::cout << ${1} << std::endl;
 # std::cin
 snippet cin
 	std::cin >> ${1};
+# read file into vector
+snippet readfile
+	std::vector<char> v;
+	if (FILE *${2:fp} = fopen(${1:"filename"}, "r")) {
+		char buf[1024];
+		while (size_t len = fread(buf, 1, sizeof(buf), $2))
+			v.insert(v.end(), buf, buf + len);
+		fclose($2);
+	}${3}
+
 # for i loop
 snippet fori
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
@@ -115,14 +127,4 @@ snippet itera
 	for (auto ${1:i} = $1.begin(); $1 != $1.end(); ++$1) {
 		${2:std::cout << *$1 << std::endl;}
 	}
-
-# read file into vector
-snippet readfile
-	std::vector<char> v;
-	if (FILE *${2:fp} = fopen(${1:"filename"}, "r")) {
-		char buf[1024];
-		while (size_t len = fread(buf, 1, sizeof(buf), $2))
-			v.insert(v.end(), buf, buf + len);
-		fclose($2);
-	}${3}
 
