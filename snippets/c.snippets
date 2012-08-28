@@ -1,38 +1,45 @@
-# main()
+## Main
+# main
 snippet main
 	int main(int argc, const char *argv[])
 	{
 		${1}
 		return 0;
 	}
+# main(void)
 snippet mainn
 	int main(void)
 	{
 		${1}
 		return 0;
 	}
+##
+## Preprocessor 
 # #include <...>
 snippet inc
 	#include <${1:stdio}.h>${2}
 # #include "..."
 snippet Inc
 	#include "${1:`Filename("$1.h")`}"${2}
-# #ifndef ... #define ... #endif
-snippet Def
+# ifndef...define...endif
+snippet ndef
 	#ifndef $1
 	#define ${1:SYMBOL} ${2:value}
 	#endif${3}
+# define
 snippet def
 	#define
+# ifdef...endif
 snippet ifdef
 	#ifdef ${1:FOO}
 		${2:#define }
 	#endif${3}
+# if
 snippet #if
 	#if ${1:FOO}
 		${2}
-	#endif${3}
-# Header Include-Guard
+	#endif
+# header include guard
 snippet once
 	#ifndef ${1:`toupper(Filename('$1_H', 'UNTITLED_H'))`}
 
@@ -41,77 +48,89 @@ snippet once
 	${2}
 
 	#endif /* end of include guard: $1 */
-# If Condition
+##
+## Control Statements
+# if
 snippet if
 	if (${1:/* condition */}) {
 		${2:/* code */}
 	}${3}
+# else
 snippet el
 	else {
 		${1}
-	}${2}
+	}${3}
+# else if
 snippet elif
 	else if (${1:/* condition */}) {
 		${2:/* code */}
 	}${3}
-# Ternary conditional
+# ternary
 snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
-# Do While Loop
-snippet do
-	do {
-		${2:/* code */}
-	} while (${1:/* condition */});${3}
-# While Loop
-snippet wh
-	while (${1:/* condition */}) {
-		${2:/* code */}
-	}${3}
-# For Loop
+##
+## Loops
+# for
 snippet for
 	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
 		${4:/* code */}
 	}${5}
-# Custom For Loop
+# for (custom)
 snippet forr
 	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
 		${5:/* code */}
 	}${6}
-# Function
+# while
+snippet wh
+	while (${1:/* condition */}) {
+		${2:/* code */}
+	}${3}
+# do... while
+snippet do
+	do {
+		${2:/* code */}
+	} while (${1:/* condition */});${3}
+##
+## Functions
+# function definition
 snippet fun
 	${1:void} ${2:function_name}(${3})
 	{
 		${4:/* code */}
 	}${5}
-# Function Declaration
+# function declaration
 snippet fund
 	${1:void} ${2:function_name}(${3});${4}
-# Typedef
+##
+## Types
+# typedef
 snippet td
 	typedef ${1:int} ${2:MyCustomType};${3}
-# Struct
+# struct
 snippet st
 	struct ${1:`Filename('$1_t', 'name')`} {
 		${2:/* data */}
 	}${3: /* optional variable list */};${4}
-# Typedef struct
+# typedef struct
 snippet tds
 	typedef struct ${2:_$1 }{
 		${3:/* data */}
 	} ${1:`Filename('$1_t', 'name')`};${4}
-# Typdef enum
+# typedef enum
 snippet tde
 	typedef enum {
 		${1:/* data */}
 	} ${2:foo};${3}
+##
+## Input/Output
 # printf
-# unfortunately version this isn't as nice as TextMates's, given the lack of a
-# dynamic `...`
 snippet pr
 	printf("${1:%s}\n"${2});${3}
 # fprintf (again, this isn't as nice as TextMate's version, but it works)
 snippet fpr
 	fprintf(${1:stderr}, "${2:%s}\n"${3});${4}
+##
+## Miscellaneous
 # This is kind of convenient
 snippet .
 	[${1}]${2}
