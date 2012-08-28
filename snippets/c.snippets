@@ -27,11 +27,11 @@ snippet def
 snippet ifdef
 	#ifdef ${1:FOO}
 		${2:#define }
-	#endif
+	#endif${3}
 snippet #if
 	#if ${1:FOO}
 		${2}
-	#endif
+	#endif${3}
 # Header Include-Guard
 snippet once
 	#ifndef ${1:`toupper(Filename('$1_H', 'UNTITLED_H'))`}
@@ -45,15 +45,15 @@ snippet once
 snippet if
 	if (${1:/* condition */}) {
 		${2:/* code */}
-	}
+	}${3}
 snippet el
 	else {
 		${1}
-	}
+	}${2}
 snippet elif
 	else if (${1:/* condition */}) {
 		${2:/* code */}
-	}
+	}${3}
 # Ternary conditional
 snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
@@ -61,28 +61,28 @@ snippet t
 snippet do
 	do {
 		${2:/* code */}
-	} while (${1:/* condition */});
+	} while (${1:/* condition */});${3}
 # While Loop
 snippet wh
 	while (${1:/* condition */}) {
 		${2:/* code */}
-	}
+	}${3}
 # For Loop
 snippet for
 	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
 		${4:/* code */}
-	}
+	}${5}
 # Custom For Loop
 snippet forr
 	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
 		${5:/* code */}
-	}
+	}${6}
 # Function
 snippet fun
 	${1:void} ${2:function_name}(${3})
 	{
 		${4:/* code */}
-	}
+	}${5}
 # Function Declaration
 snippet fund
 	${1:void} ${2:function_name}(${3});${4}
@@ -98,12 +98,12 @@ snippet st
 snippet tds
 	typedef struct ${2:_$1 }{
 		${3:/* data */}
-	} ${1:`Filename('$1_t', 'name')`};
+	} ${1:`Filename('$1_t', 'name')`};${4}
 # Typdef enum
 snippet tde
 	typedef enum {
 		${1:/* data */}
-	} ${2:foo};
+	} ${2:foo};${3}
 # printf
 # unfortunately version this isn't as nice as TextMates's, given the lack of a
 # dynamic `...`
