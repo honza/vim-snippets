@@ -64,14 +64,10 @@ snippet fr
 # mutable
 snippet mu
 	mutable
-# std::cout
-snippet cout
-	std::cout << ${1} << std::endl;
-# std::cin
-snippet cin
-	std::cin >> ${1};
+## 
+## Class
 # class
-snippet class
+snippet cl
 	class ${1:`Filename('$1', 'name')`} 
 	{
 	public:
@@ -81,8 +77,7 @@ snippet class
 	private:
 		${3:/* data */}
 	};
-
-# member function implementations
+# member function implementation
 snippet mfun
 	${4:void} ${1:`Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
 		${5:return};
@@ -92,7 +87,12 @@ snippet ns
 	namespace ${1:`Filename('', 'my')`} {
 		${2}
 	} /* namespace $1 */
-
+# std::cout
+snippet cout
+	std::cout << ${1} << std::endl;
+# std::cin
+snippet cin
+	std::cin >> ${1};
 # for i loop
 snippet fori
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
