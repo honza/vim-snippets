@@ -1,7 +1,7 @@
 ## STL Collections
 # std::array
 snippet array
-	std::array<${1:T}, ${2:N}> ${2};${3}
+	std::array<${1:T}, ${2:N}> ${3};${4}
 # std::vector
 snippet vector
 	std::vector<${1:T}> ${2};${3}
@@ -16,7 +16,7 @@ snippet list
 	std::list<${1:T}> ${2};${3}
 # std::set
 snippet set
-	std::set<${1:T}> ${2};{$3}
+	std::set<${1:T}> ${2};${3}
 # std::map
 snippet map
 	std::map<${1:Key}, ${2:T}> ${3};${4}
@@ -34,7 +34,7 @@ snippet umap
 	std::unordered_map<${1:Key}, ${2:T}> ${3};${4}
 # std::unordered_multiset
 snippet umset
-	std::unordered_multiset<${1:T}> ${3};${4}
+	std::unordered_multiset<${1:T}> ${2};${3}
 # std::unordered_multimap
 snippet ummap
 	std::unordered_multimap<${1:Key}, ${2:T}> ${3};${4}
@@ -50,13 +50,13 @@ snippet pqueue
 ##
 ## Access Modifiers
 # private
-snippet pr
+snippet pri
 	private
 # protected
-snippet po
+snippet pro
 	protected
 # public
-snippet pu
+snippet pub
 	public
 # friend
 snippet fr
