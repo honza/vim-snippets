@@ -129,4 +129,13 @@ snippet itera
 	for (auto ${1:i} = $1.begin(); $1 != $1.end(); ++$1) {
 		${2:std::cout << *$1 << std::endl;}
 	}${3}
-
+##
+## Lambdas
+# lamda (one line)
+snippet ld
+	[${1}](${2}){${3:/* code */}}${4}
+# lambda (multi-line)
+snippet lld
+	[${1}](${2}){
+		${3:/* code */}
+	}${4}
