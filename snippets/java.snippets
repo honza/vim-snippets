@@ -140,7 +140,7 @@ snippet /**
 	 * ${1}
 	 */
 snippet @au
-	@author `system("grep \`id -un\` /etc/passwd | cut -d \":\" -f5")`
+	@author `system("grep \`id -un\` /etc/passwd | cut -d \":\" -f5 | cut -d \",\" -f1")`
 snippet @br
 	@brief ${1:Description}
 snippet @fi
