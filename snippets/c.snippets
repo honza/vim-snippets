@@ -68,6 +68,27 @@ snippet elif
 # ternary
 snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
+# switch
+snippet switch
+	switch (${1:/* variable */}) {
+		case ${2:/* variable case */}:
+			${3}
+			${4:break;}${5}
+		default:
+			${6}
+	}${7}
+# switch without default
+snippet switchndef
+	switch (${1:/* variable */}) {
+		case ${2:/* variable case */}:
+			${3}
+			${4:break;}${5}
+	}${6}
+# case
+snippet case
+	case ${1:/* variable case */}:
+		${2}
+		${3:break;}${4}
 ##
 ## Loops
 # for
