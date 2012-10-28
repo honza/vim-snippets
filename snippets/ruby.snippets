@@ -26,7 +26,7 @@ snippet beg
 	rescue ${1:Exception} => ${2:e}
 	end
 
-snippet req
+snippet req require
 	require "${1}"${2}
 snippet #
 	# =>
@@ -575,7 +575,7 @@ snippet asre
 	assert_response :${1:success}, @response.body${2}
 snippet asrj
 	assert_rjs :${1:replace}, "${2:dom id}"
-snippet ass
+snippet ass assert_select(..)
 	assert_select '${1:path}', :${2:text} => '${3:inner_html' ${4:do}
 snippet bf
 	before_filter :${1:method}
