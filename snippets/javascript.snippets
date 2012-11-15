@@ -11,12 +11,12 @@ snippet fun
 	}
 # Anonymous Function
 snippet f
-	function(${1}) {
+	function (${1}) {
 		${3}
 	}${2:;}
 # Immediate function
 snippet (f
-	(function(${1}) {
+	(function (${1}) {
 		${3:/* code */}
 	}(${2}));
 # if
@@ -69,7 +69,7 @@ snippet wh
 snippet try
 	try {
 		${1:/* code */}
-	} catch(${2:e}) {
+	} catch (${2:e}) {
 		${3:/* handle error */}
 	}
 # do...while
@@ -79,12 +79,12 @@ snippet do
 	} while (${1:/* condition */});
 # Object Method
 snippet :f
-	${1:method_name}: function(${2:attribute}) {
+	${1:method_name}: function (${2:attribute}) {
 		${4}
 	}${3:,}
 # setTimeout function
 snippet timeout
-	setTimeout(function() {${3}}${2}, ${1:10});
+	setTimeout(function () {${3}}${2}, ${1:10});
 # Get Elements
 snippet get
 	getElementsBy${1:TagName}('${2}')${3}
