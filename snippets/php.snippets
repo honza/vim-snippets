@@ -195,7 +195,7 @@ snippet interface
 	 * @package ${3:default}
 	 * @author ${4:`g:snips_author`}
 	 */
-	interface ${1:}
+	interface ${1:`Filename()`}
 	{
 		${5}
 	}
@@ -204,7 +204,7 @@ snippet class
 	/**
 	 * ${1}
 	 */
-	class ${2:ClassName}
+	class ${2:`Filename()`}
 	{
 		${3}
 		/**
