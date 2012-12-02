@@ -1,3 +1,5 @@
+IMPORTANT: comment on: [What about merging whith Ultisnip using its engine](https://github.com/garbas/vim-snipmate/issues/114)
+
 Snipmate Snippets
 =================
 
