@@ -139,3 +139,20 @@ snippet testcase
 			${3:# TODO: write code...}
 snippet fut
 	from __future__ import ${1}
+#getopt
+snippet getopt
+	try:
+		# Short option syntax: "hv:"
+		# Long option syntax: "help" or "verbose="
+		opts, args = getopt.getopt(sys.argv[1:], "${1:short_options}", [${2:long_options}])
+	
+	except getopt.GetoptError, err:
+		# Print debug info
+		print str(err)
+		${3:error_action}
+
+	for option, argument in opts:
+		if option in ("-h", "--help"):
+			${4}
+		elif option in ("-v", "--verbose"):
+			verbose = argument
