@@ -9,8 +9,10 @@ It was originally written for the the famous [snipMate][1] plugin for vim.
 However today there are at least 3 plugins which can make use of this snippet repository:
 
 1) [snipMate][1]
+
 2) [Shougo's neosnippet][5] has a compatible mode allowing
   to reuse most snippets.
+
 3) [ultisnip][6] (experimental, mind the branch snipmate-merge)
   This code is subject to change. Take it as preview. That branch
   has additional notes for Snipmate users. at the bottom.
