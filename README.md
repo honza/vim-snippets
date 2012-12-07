@@ -6,8 +6,18 @@ Snipmate Snippets
 This repository contains snippets files for various programming languages.
 
 It was originally written for the the famous [snipMate][1] plugin for vim.
-However it appears that [Shougo's neosnippet][5] has a compatible mode allowing
-to reuse most snippets.
+However today there are at least 3 plugins which can make use of this snippet repository:
+
+1) [snipMate][1]
+2) [Shougo's neosnippet][5] has a compatible mode allowing
+  to reuse most snippets.
+3) [ultisnip][6] (experimental, mind the branch snipmate-merge)
+  This code is subject to change. Take it as preview. That branch
+  has additional notes for Snipmate users. at the bottom.
+  In the long run ultisnip will have its own set of snippets, because it is
+  more powerful cause it supports nested snippets.
+
+
 
 It is community-maintained and many people have contributed snippet files and other
 improvements already. Not sure whether it implements all features such as
@@ -55,3 +65,4 @@ terms of the MIT license.
 [3]: http://github.com/garbas
 [4]: http://github.com/garbas/vim-snipmate
 [5]: https://github.com/Shougo/neosnippet
+[6]: https://github.com/MarcWeber/UltiSnips/tree/snipmate-merge
