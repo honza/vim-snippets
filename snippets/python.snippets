@@ -13,16 +13,16 @@ snippet docs
 	'''
 snippet wh
 	while ${1:condition}:
-		${2:# code...}
+		${2:# TODO: write code...}
 # dowh - does the same as do...while in other languages
 snippet dowh
 	while True:
-		${1:# code...}
+		${1:# TODO: write code...}
 		if ${2:condition}:
 			break
 snippet with
 	with ${1:expr} as ${2:var}:
-		${3:# code...}
+		${3:# TODO: write code...}
 # New Class
 snippet cl
 	class ${1:ClassName}(${2:object}):
@@ -35,14 +35,14 @@ snippet cl
 snippet def
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 		"""${3:docstring for $1}"""
-		${4:pass}
+		${4:# TODO: write code...}
 snippet deff
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
-		${3}
+		${3:# TODO: write code...}
 # New Method
 snippet defs
 	def ${1:mname}(self, ${2:arg}):
-		${3:pass}
+		${3:# TODO: write code...}
 # New Property
 snippet property
 	def ${1:foo}():
@@ -54,17 +54,17 @@ snippet property
 # Ifs
 snippet if
 	if ${1:condition}:
-		${2:code...}
+		${2:# TODO: write code...}
 snippet el
 	else:
-		${1:code...}
+		${1:# TODO: write code...}
 snippet ei
 	elif ${1:condition}:
-		${2:code...}
+		${2:# TODO: write code...}
 # For
 snippet for
 	for ${1:item} in ${2:items}:
-		${3:code...}
+		${3:# TODO: write code...}
 # Encodes
 snippet cutf8
 	# -*- coding: utf-8 -*-
@@ -79,32 +79,32 @@ snippet .
 	self.
 snippet try Try/Except
 	try:
-		${1:pass}
+		${1:# TODO: write code...}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 snippet try Try/Except/Else
 	try:
-		${1:pass}
+		${1:# TODO: write code...}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 	else:
-		${5:pass}
+		${5:# TODO: write code...}
 snippet try Try/Except/Finally
 	try:
-		${1:pass}
+		${1:# TODO: write code...}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 	finally:
-		${5:pass}
+		${5:# TODO: write code...}
 snippet try Try/Except/Else/Finally
 	try:
-		${1:pass}
+		${1:# TODO: write code...}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 	else:
-		${5:pass}
+		${5:# TODO: write code...}
 	finally:
-		${6:pass}
+		${6:# TODO: write code...}
 # if __name__ == '__main__':
 snippet ifmain
 	if __name__ == '__main__':
@@ -130,12 +130,29 @@ snippet "
 # test function/method
 snippet test
 	def test_${1:description}(${2:`indent('.') ? 'self' : ''`}):
-		${3:pass}
+		${3:# TODO: write code...}
 # test case
 snippet testcase
 	class ${1:ExampleCase}(unittest.TestCase):
 		
 		def test_${2:description}(self):
-			${3:pass}
+			${3:# TODO: write code...}
 snippet fut
 	from __future__ import ${1}
+#getopt
+snippet getopt
+	try:
+		# Short option syntax: "hv:"
+		# Long option syntax: "help" or "verbose="
+		opts, args = getopt.getopt(sys.argv[1:], "${1:short_options}", [${2:long_options}])
+	
+	except getopt.GetoptError, err:
+		# Print debug info
+		print str(err)
+		${3:error_action}
+
+	for option, argument in opts:
+		if option in ("-h", "--help"):
+			${4}
+		elif option in ("-v", "--verbose"):
+			verbose = argument

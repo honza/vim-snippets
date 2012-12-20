@@ -353,11 +353,11 @@ snippet footer
 		${1}
 	</footer>
 snippet footer.
-	<footer class="${1}>
+	<footer class="${1}">
 		${2}
 	</footer>
 snippet footer#
-	<footer id="${1}>
+	<footer id="${1}">
 		${2}
 	</footer>
 snippet form
@@ -444,6 +444,18 @@ snippet html
 snippet xhtml
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	${1}
+	</html>
+snippet html5
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+			${2:meta}
+		</head>
+		<body>
+			${3:body}
+		</body>
 	</html>
 snippet i
 	<i>${1}</i>
