@@ -93,3 +93,29 @@ snippet	ma
 	maply(${1:matrix}, ${2:function})
 snippet	m_
 	m_ply(${1:matrix}, ${2:function})
+
+# plot functions
+snippet pl
+	plot(${1:x}, ${2:y})
+snippet ggp
+	ggplot(${1:data}, aes(${2:aesthetics}))
+snippet img
+	${1:(jpeg,bmp,png,tiff)}(filename="${2:filename}", width=${3}, height=${4}, unit="${5}")
+	${6:plot}
+	dev.off()
+
+# statistical test functions
+snippet fis
+	fisher.test(${1:x}, ${2:y})
+snippet chi
+	chisq.test(${1:x}, ${2:y})
+snippet tt
+	t.test(${1:x}, ${2:y})
+snippet wil
+	wilcox.test(${1:x}, ${2:y})
+snippet cor
+	cor.test(${1:x}, ${2:y})
+snippet fte
+	var.test(${1:x}, ${2:y})
+snippet kvt 
+	kv.test(${1:x}, ${2:y})
