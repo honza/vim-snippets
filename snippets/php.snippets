@@ -357,7 +357,7 @@ snippet ags
 	/**
 	 * ${1:description}
 	 * 
-	 * @ORM\Column(type=$7)
+	 * @${7}
 	 */
 	${2:protected} $${3:foo};
 
@@ -369,7 +369,6 @@ snippet ags
 	public function set$4(${5:$4 }$${6:$3})
 	{
 		$this->$3 = $$6;
-
 		return $this;
 	}
 snippet rett
