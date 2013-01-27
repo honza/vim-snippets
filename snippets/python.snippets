@@ -51,6 +51,10 @@ snippet property
 			${3:return self._$1}
 		def fset(self, value):
 			${4:self._$1 = value}
+		def fdel(self):
+			${5:del self._$1}
+		return locals()
+	$1 = property(**$1())
 # Ifs
 snippet if
 	if ${1:condition}:
