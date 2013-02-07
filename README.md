@@ -13,7 +13,7 @@ However today there are at least 3 plugins which can make use of this snippet re
 2) [Shougo's neosnippet][5] has a compatible mode allowing
   to reuse most snippets.
 
-3) [ultisnip][6] (experimental, mind the branch snipmate-merge)
+3) [ultisnip][6] (stable enough to be used, branch master previously snipmate-merge)
   This code is subject to change. Take it as preview. That branch
   has additional notes for Snipmate users. at the bottom.
   In the long run ultisnip will have its own set of snippets, because it is
