@@ -67,7 +67,7 @@ snippet i
 snippet im
 	import (
 		"${1:package}" 
-	)
+	)${2}
 # interface 
 snippet in
 	interface{}
@@ -80,12 +80,12 @@ snippet inf
 snippet if
 	if ${1:/* condition */} {
 		${2:/* code */}
-	}
+	}${2}
 # else snippet
 snippet el
 	else {
 		${1}
-	}
+	}${2}
 # error snippet
 snippet ir
 	if err != nil {
@@ -114,26 +114,37 @@ snippet ie
 	} else {
 		${3}
 	}
+	${4}
 # for loop
 snippet fo
 	for ${2:i} = 0; $2 < ${1:count}; $2${3:++} {
 		${4:/* code */}
 	}
+	${5}
 # for range loop
 snippet fr
 	for ${1:k}, ${2:v} := range ${3} {
 		${4:/* code */}
 	}
+	${5}
 # function simple 
 snippet fun
 	func ${1:funcName}(${2}) ${3:error} {
 		${4:/* code */}
 	}
+	${5}
 # function on receiver 
 snippet fum
 	func (self ${1:type}) ${2:funcName}(${3}) ${4:error} {
 		${5:/* code */}
 	}
+	${6}
+# log printf
+snippet lf
+	log.Printf("%${1:s}", ${2:var})${3}
+# log printf
+snippet lp
+	log.Println("${1}")${2}
 # make
 snippet mk
 	make(${1:[]string}, ${2:0})
@@ -145,6 +156,7 @@ snippet main
 	func main() {
 		${1:/* code */}
 	}
+	${2}
 # new
 snippet nw
 	new(${1:type})
@@ -153,7 +165,7 @@ snippet pn
 	panic("${1:msg}")
 # print
 snippet pr
-	fmt.Printf("${1:%s}\n", ${2:var})${3}
+	fmt.Printf("%${1:s}\n", ${2:var})${3}
 # range 
 snippet rn
 	range ${1}
@@ -180,7 +192,8 @@ snippet sr
 snippet st
 	struct ${1:name} {
 		${2:/* data */}
-	}${4}
+	}
+	${3}
 # switch 
 snippet sw
 	switch ${1:var} {
@@ -192,7 +205,7 @@ snippet sw
 		${6:/* code */}
 	}
 snippet sp
-	fmt.Sprintf("${1:%s}", ${2:var})${3}
+	fmt.Sprintf("%${1:s}", ${2:var})${3}
 # true 
 snippet t
 	true
