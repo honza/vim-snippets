@@ -934,3 +934,13 @@ snippet subj
 	subject { ${1} }
 snippet spec
 	specify { subject.${1} }
+snippet exp
+	expect(${1:object}).to ${2}
+snippet bt
+	be_true
+snippet bf
+	be_false
+snippet shared
+	shared_examples "${1:shared examples name}" ${2}
+snippet itb
+	it_behaves_like "${1:shared examples name}"${2}
