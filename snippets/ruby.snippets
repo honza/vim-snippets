@@ -286,8 +286,14 @@ snippet eavd
 snippet eawi
 	each_with_index { |${1:e}, ${2:i}| ${3} }
 snippet eawid
-	each_with_index do |${1:e},${2:i}|
+	each_with_index do |${1:e}, ${2:i}|
 		${3}
+	end
+snippet eawo
+	each_with_object(${1:init}) { |${2:e}, ${3:var}| ${4} }
+snippet eawod
+	each_with_object(${1:init}) do |${2:e}, ${3:var}|
+		${4}
 	end
 snippet reve
 	reverse_each { |${1:e}| ${2} }
