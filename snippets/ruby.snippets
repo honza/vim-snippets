@@ -2,6 +2,10 @@
 # Ruby snippets - for Rails, see below #
 ########################################
 
+# encoding for Ruby 1.9
+snippet enc
+	# encoding: utf-8
+
 # #!/usr/bin/env ruby
 snippet #!
 	#!/usr/bin/env ruby
@@ -22,7 +26,7 @@ snippet beg
 	rescue ${1:Exception} => ${2:e}
 	end
 
-snippet req
+snippet req require
 	require "${1}"${2}
 snippet #
 	# =>
@@ -282,8 +286,14 @@ snippet eavd
 snippet eawi
 	each_with_index { |${1:e}, ${2:i}| ${3} }
 snippet eawid
-	each_with_index do |${1:e},${2:i}|
+	each_with_index do |${1:e}, ${2:i}|
 		${3}
+	end
+snippet eawo
+	each_with_object(${1:init}) { |${2:e}, ${3:var}| ${4} }
+snippet eawod
+	each_with_object(${1:init}) do |${2:e}, ${3:var}|
+		${4}
 	end
 snippet reve
 	reverse_each { |${1:e}| ${2} }
@@ -390,7 +400,7 @@ snippet :
 snippet ope
 	open(${1:"path/or/url/or/pipe"}, "${2:w}") { |${3:io}| ${4} }
 # path_from_here()
-snippet patfh
+snippet fpath
 	File.join(File.dirname(__FILE__), *%2[${1:rel path here}])${2}
 # unix_filter {}
 snippet unif
@@ -571,7 +581,7 @@ snippet asre
 	assert_response :${1:success}, @response.body${2}
 snippet asrj
 	assert_rjs :${1:replace}, "${2:dom id}"
-snippet ass
+snippet ass assert_select(..)
 	assert_select '${1:path}', :${2:text} => '${3:inner_html' ${4:do}
 snippet bf
 	before_filter :${1:method}
@@ -650,6 +660,10 @@ snippet defupdate
 			end
 		end
 	end${3}
+snippet dele delegate .. to
+	delegate :${1:methods}, :to => :${2:object}
+snippet dele delegate .. to .. prefix .. allow_nil
+	delegate :${1:methods}, :to => :${2:object}, :prefix => :${3:prefix}, :allow_nil => ${4:allow_nil}
 snippet flash
 	flash[:${1:notice}] = "${2}"
 snippet habtm
@@ -865,7 +879,6 @@ snippet test
 	test "should ${1:do something}" do
 		${2}
 	end
-
 #migrations
 snippet mac
 	add_column :${1:table_name}, :${2:column_name}, :${3:data_type}
@@ -907,6 +920,8 @@ snippet it
 snippet itp
 	it "${1:spec_name}"
 	${2}
+snippet its
+	its(:${1:method}) { should ${2} }
 snippet desc
 	describe ${1:class_name} do
 		${2}
@@ -923,3 +938,19 @@ snippet aft
 	after :${1:each} do
 		${2}
 	end
+snippet let
+	let(:${1:method}) { ${2} }
+snippet subj
+	subject { ${1} }
+snippet spec
+	specify { subject.${1} }
+snippet exp
+	expect(${1:object}).to ${2}
+snippet btr
+	be_true
+snippet bfa
+	be_false
+snippet shared
+	shared_examples "${1:shared examples name}" ${2}
+snippet itb
+	it_behaves_like "${1:shared examples name}"${2}

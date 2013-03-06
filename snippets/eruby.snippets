@@ -81,10 +81,6 @@ snippet fields
 	<% fields_for :${1:model}, @$1 do |${2:f}| %>
 		${3}
 	<% end %>
-snippet ff
-	<%= form_for @${1:model} do |f| %>
-		${2}
-	<% end %>
 snippet i18
 	I18n.t('${1:type.key}')${2}
 snippet it

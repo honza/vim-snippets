@@ -216,12 +216,25 @@ snippet APACHE
 
 	${3}
 snippet BEERWARE 
-	${1:one line to give the program's name and a brief description}
-	Copyright `strftime("%Y")` ${2:copyright holder}
+	${2:one line to give the program's name and a brief description}
+	Copyright `strftime("%Y")` ${3:copyright holder}
 	
 	Licensed under the "THE BEER-WARE LICENSE" (Revision 42):
 	${1:`g:snips_author`} wrote this file. As long as you retain this notice you
 	can do whatever you want with this stuff. If we meet some day, and you think
 	this stuff is worth it, you can buy me a beer or coffee in return 
 
-	${3}
+	${4}
+
+snippet WTFPL
+			DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+					Version 2, December 2004
+
+	Copyright `strftime("%Y")` ${1:copyright holder}
+
+	Everyone is permitted to copy and distribute verbatim or modified
+	copies of this license document, and changing it is allowed as long
+	as the name is changed.
+
+			DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+	TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION

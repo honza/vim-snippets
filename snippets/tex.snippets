@@ -1,5 +1,3 @@
-# recomendation: change the fold marker from {{{,}}} to (fold),(end) ; tex uses "{" and "}" a lot
-
 #PREAMBLE
 #newcommand
 snippet nc
@@ -97,40 +95,34 @@ snippet part
 	% part $2 (end)
 # Chapter
 snippet cha
-	\chapter{${1:chapter name}} % (fold)
+	\chapter{${1:chapter name}}
 	\label{cha:${2:$1}}
 	${3}
-	% chapter $2 (end)
 # Section
 snippet sec
-	\section{${1:section name}} % (fold)
+	\section{${1:section name}}
 	\label{sec:${2:$1}}
 	${3}
-	% section $2 (end)
 # Sub Section
 snippet sub
-	\subsection{${1:subsection name}} % (fold)
+	\subsection{${1:subsection name}}
 	\label{sub:${2:$1}}
 	${3}
-	% subsection $2 (end)
 # Sub Sub Section
 snippet subs
-	\subsubsection{${1:subsubsection name}} % (fold)
+	\subsubsection{${1:subsubsection name}}
 	\label{ssub:${2:$1}}
 	${3}
-	% subsubsection $2 (end)
 # Paragraph
 snippet par
-	\paragraph{${1:paragraph name}} % (fold)
+	\paragraph{${1:paragraph name}}
 	\label{par:${2:$1}}
 	${3}
-	% paragraph $2 (end)
 # Sub Paragraph
 snippet subp
-	\subparagraph{${1:subparagraph name}} % (fold)
+	\subparagraph{${1:subparagraph name}}
 	\label{subp:${2:$1}}
 	${3}
-	% subparagraph $2 (end)
 #References
 snippet itd
 	\item[${1:description}] ${2:item}
@@ -146,9 +138,11 @@ snippet page
 	${1:page}~\pageref{${2}}${3}
 snippet index
 	\index{${1:index}}${2}
-#cite
+#Citations
 snippet cite
-	\cite{${1}}${2}
+	\cite[${1}]{${2}}${3}
+snippet fcite
+	\footcite[${1}]{${2}}${3}
 #Formating text: italic, bold, underline, small capital, emphase ..
 snippet it
 	\textit{${1:text}}

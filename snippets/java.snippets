@@ -140,7 +140,7 @@ snippet /**
 	 * ${1}
 	 */
 snippet @au
-	@author `system("grep \`id -un\` /etc/passwd | cut -d \":\" -f5")`
+	@author `system("grep \`id -un\` /etc/passwd | cut -d \":\" -f5 | cut -d \",\" -f1")`
 snippet @br
 	@brief ${1:Description}
 snippet @fi
@@ -176,9 +176,9 @@ snippet main
 ##
 ## Print Methods
 snippet print
-	System.out.print("${1:Message");
+	System.out.print("${1:Message}");
 snippet printf
-	System.out.printf("${1:Message", ${2:args});
+	System.out.printf("${1:Message}", ${2:args});
 snippet println
 	System.out.println(${1});
 ##
