@@ -445,6 +445,18 @@ snippet xhtml
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	${1}
 	</html>
+snippet html5
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+			${2:meta}
+		</head>
+		<body>
+			${3:body}
+		</body>
+	</html>
 snippet i
 	<i>${1}</i>
 snippet iframe
@@ -544,7 +556,7 @@ snippet link
 snippet link:atom
 	<link rel="alternate" href="${1:atom.xml}" title="Atom" type="application/atom+xml" />${2}
 snippet link:css
-	<link rel="stylesheet" href="${2:style.css}" type="text/css" media="${3:all}" />${4}
+	<link rel="stylesheet" href="${1:style.css}" type="text/css" media="${2:all}" />${3}
 snippet link:favicon
 	<link rel="shortcut icon" href="${1:favicon.ico}" type="image/x-icon" />${2}
 snippet link:rss
@@ -777,7 +789,7 @@ snippet thead
 		${1}
 	</thead>
 snippet time
-	<time datetime="${1}" pubdate="${2:$1}>${3:$1}</time>
+	<time datetime="${1}" pubdate="${2:$1}">${3:$1}</time>
 snippet title
 	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
 snippet tr

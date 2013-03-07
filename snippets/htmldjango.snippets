@@ -50,6 +50,9 @@ snippet if
 snippet else
 	{% else %}
 		${1}
+snippet elif
+	{% elif ${1} %}
+		${2}
 snippet ifchanged
 	{% ifchanged %}${1}{% endifchanged %}
 snippet ifequal
@@ -80,6 +83,8 @@ snippet widthratio
 	{% widthratio ${1:this_value} ${2:max_value} ${3:100} %}
 snippet with
 	{% with ${1} as ${2} %}
+		${3}
+	{% endwith %}
 
 # Template Filters
 
