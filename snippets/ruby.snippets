@@ -969,6 +969,8 @@ snippet spec
 	specify { subject.${1} }
 snippet exp
 	expect(${1:object}).to ${2}
+snippet raise
+	expect { ${1:object} }.to raise_error ${2:StandardError}, /${3:message_regex}/
 snippet btr
 	be_true
 snippet bfa
