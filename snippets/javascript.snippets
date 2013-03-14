@@ -154,3 +154,10 @@ snippet sing
 
 		return instance;
 	}
+# Crockford's object function 
+snippet obj
+	object(o) {
+		function F() {}
+		F.prototype = o;
+		return new F();
+	}
