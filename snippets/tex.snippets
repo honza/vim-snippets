@@ -1,16 +1,16 @@
 #PREAMBLE
 #newcommand
 snippet nc
-	\newcommand{\${1:cmd}}[${2:opt}]{${3:realcmd}}${4}
+	\newcommand{\${1:cmd}}[${2:opt}]{${3:realcmd}} ${4}
 #usepackage
 snippet up
-	\usepackage[${1:[options}]{${2:package}}${3}
+	\usepackage[${1:options}]{${2:package}} ${3}
 #newunicodechar
 snippet nuc
-	\newunicodechar{${1}}{${2:\ensuremath}${3:tex-substitute}}}${4}
+	\newunicodechar{${1}}{${2:\ensuremath}${3:tex-substitute}}} ${4}
 #DeclareMathOperator
 snippet dmo
-	\DeclareMathOperator{${1}}{${2}}${3}
+	\DeclareMathOperator{${1}}{${2}} ${3}
 
 #DOCUMENT
 # \begin{}...\end{}
@@ -18,7 +18,6 @@ snippet begin
 	\begin{${1:env}}
 		${2}
 	\end{$1}
-	${3}
 # Tabular
 snippet tab
 	\begin{${1:tabular}}{${2:c}}
@@ -28,57 +27,47 @@ snippet thm
 	\begin[${1:author}]{${2:thm}}
 	${3}
 	\end{$1}
-	${4}
 snippet center
 	\begin{center}
 		${1}
 	\end{center}
-	${2}
 # Align(ed)
 snippet ali
 	\begin{align${1:ed}}
 		${2}
 	\end{align$1}
-	${3}
 # Gather(ed)
 snippet gat
 	\begin{gather${1:ed}}
 		${2}
 	\end{gather$1}
-	${3}
 # Equation
 snippet eq
 	\begin{equation}
 		${1}
 	\end{equation}
-	${2}
 # Equation
 snippet eq*
 	\begin{equation*}
 		${1}
 	\end{equation*}
-	${2}
 # Unnumbered Equation
 snippet \
 	\[
 		${1}
 	\]
-	${2}
 # Enumerate
 snippet enumerate
 	\begin{enumerate}
 		\item ${1}
-		${2}
 	\end{enumerate}
 # Itemize
 snippet itemize
 	\begin{itemize}
 		\item ${1}
-		${2}
 	\end{itemize}
-snippet it
+snippet item
 	\item ${1}
-	${2}
 # Description
 snippet desc
 	\begin{description}
