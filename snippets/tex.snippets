@@ -53,16 +53,16 @@ snippet eq*
 	\end{equation*}
 # Unnumbered Equation
 snippet \
-	\[
+	\\[
 		${1}
-	\]
+	\\]
 # Enumerate
 snippet enum
 	\begin{enumerate}
 		\item ${1}
 	\end{enumerate}
 # Itemize
-snippet itemize
+snippet item
 	\begin{itemize}
 		\item ${1}
 	\end{itemize}
@@ -95,34 +95,37 @@ snippet part
 	% part $2 (end)
 # Chapter
 snippet cha
-	\chapter{${1:chapter name}}
+	\chapter{${1:chapter name}} % (fold)
 	\label{cha:${2:$1}}
 	${3}
 # Section
 snippet sec
-	\section{${1:section name}}
+	\section{${1:section name}} % (fold)
 	\label{sec:${2:$1}}
 	${3}
 # Sub Section
 snippet sub
-	\subsection{${1:subsection name}}
+	\subsection{${1:subsection name}} % (fold)
 	\label{sub:${2:$1}}
 	${3}
 # Sub Sub Section
 snippet subs
-	\subsubsection{${1:subsubsection name}}
+	\subsubsection{${1:subsubsection name}} % (fold)
 	\label{ssub:${2:$1}}
 	${3}
 # Paragraph
 snippet par
-	\paragraph{${1:paragraph name}}
+	\paragraph{${1:paragraph name}} % (fold)
 	\label{par:${2:$1}}
 	${3}
 # Sub Paragraph
 snippet subp
-	\subparagraph{${1:subparagraph name}}
+	\subparagraph{${1:subparagraph name}} % (fold)
 	\label{subp:${2:$1}}
 	${3}
+snippet ni
+	\noindent
+	${1}
 #References
 snippet itd
 	\item[${1:description}] ${2:item}
@@ -139,6 +142,13 @@ snippet page
 snippet index
 	\index{${1:index}}${2}
 #Citations
+snippet citen
+	\cite{$1}
+# bibtex commands
+snippet citep
+	\citep{$1}
+snippet citet
+	\citet{$1}
 snippet cite
 	\cite[${1}]{${2}}${3}
 snippet fcite
@@ -167,10 +177,10 @@ snippet ft
 snippet fig
 	\begin{figure}
 	\begin{center}
-	    \includegraphics[scale=${1}]{Figures/${2}}
+		\includegraphics[\width=\textwidth]{Figures/$2}
 	\end{center}
-	\caption{${3}}
-	\label{fig:${4}}
+	\caption{$3}
+	\label{fig:$4}
 	\end{figure}
 snippet tikz
 	\begin{figure}
@@ -186,6 +196,8 @@ snippet tikz
 snippet stackrel
 	\stackrel{${1:above}}{${2:below}} ${3}
 snippet frac
-	\frac{${1:num}}{${2:denom}}
+	\frac{$1:num}{$2:denom}
 snippet sum
-	\sum^{${1:n}}_{${2:i=1}}{${3}}
+	\sum^{${1:n}}_{${2:i=1}}{{$3}}
+snippet lim
+	\lim_{${1:x \to +\infty}}{$2}
