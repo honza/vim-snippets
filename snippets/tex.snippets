@@ -60,19 +60,21 @@ snippet eq*
 	${2}
 # Unnumbered Equation
 snippet \
-	\\[
+	\[
 		${1}
-	\\]
+	\]
 	${2}
 # Enumerate
-snippet enum
+snippet enumerate
 	\begin{enumerate}
 		\item ${1}
+		${2}
 	\end{enumerate}
 # Itemize
-snippet item
+snippet itemize
 	\begin{itemize}
 		\item ${1}
+		${2}
 	\end{itemize}
 snippet it
 	\item ${1}
@@ -209,7 +211,7 @@ snippet tikz
 snippet stackrel
 	\stackrel{${1:above}}{${2:below}} ${3}
 snippet frac
-	\frac{$1:num}{$2:denom}${3}
+	\frac{${1:num}}{${2:denom}}${3}
 snippet sum
 	\sum^{${1:n}}_{${2:i=1}}${3}
 snippet lim
