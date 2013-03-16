@@ -4,13 +4,13 @@ snippet nc
 	\newcommand{\${1:cmd}}[${2:opt}]{${3:realcmd}}${4}
 #usepackage
 snippet up
-	\usepackage[${1:[options}]{${2:package}}
+	\usepackage[${1:[options}]{${2:package}}${3}
 #newunicodechar
 snippet nuc
-	\newunicodechar{${1}}{${2:\ensuremath}${3:tex-substitute}}}
+	\newunicodechar{${1}}{${2:\ensuremath}${3:tex-substitute}}}${4}
 #DeclareMathOperator
 snippet dmo
-	\DeclareMathOperator{${1}}{${2}}
+	\DeclareMathOperator{${1}}{${2}}${3}
 
 #DOCUMENT
 # \begin{}...\end{}
@@ -18,6 +18,7 @@ snippet begin
 	\begin{${1:env}}
 		${2}
 	\end{$1}
+	${3}
 # Tabular
 snippet tab
 	\begin{${1:tabular}}{${2:c}}
@@ -27,35 +28,42 @@ snippet thm
 	\begin[${1:author}]{${2:thm}}
 	${3}
 	\end{$1}
+	${4}
 snippet center
 	\begin{center}
 		${1}
 	\end{center}
+	${2}
 # Align(ed)
 snippet ali
 	\begin{align${1:ed}}
 		${2}
 	\end{align$1}
+	${3}
 # Gather(ed)
 snippet gat
 	\begin{gather${1:ed}}
 		${2}
 	\end{gather$1}
+	${3}
 # Equation
 snippet eq
 	\begin{equation}
 		${1}
 	\end{equation}
+	${2}
 # Equation
 snippet eq*
 	\begin{equation*}
 		${1}
 	\end{equation*}
+	${2}
 # Unnumbered Equation
 snippet \
 	\\[
 		${1}
 	\\]
+	${2}
 # Enumerate
 snippet enum
 	\begin{enumerate}
@@ -66,6 +74,9 @@ snippet item
 	\begin{itemize}
 		\item ${1}
 	\end{itemize}
+snippet it
+	\item ${1}
+	${2}
 # Description
 snippet desc
 	\begin{description}
@@ -130,58 +141,59 @@ snippet ni
 snippet itd
 	\item[${1:description}] ${2:item}
 snippet figure
-	${1:Figure}~\ref{${2:fig:}}${3}
+	${1:Figure}~\ref{fig:${2}}${3}
 snippet table
-	${1:Table}~\ref{${2:tab:}}${3}
+	${1:Table}~\ref{tab:${2:}}${3}
 snippet listing
-	${1:Listing}~\ref{${2:list}}${3}
+	${1:Listing}~\ref{list:${2}}${3}
 snippet section
-	${1:Section}~\ref{${2:sec:}}${3}
+	${1:Section}~\ref{sec:${2}}${3}
 snippet page
 	${1:page}~\pageref{${2}}${3}
 snippet index
 	\index{${1:index}}${2}
 #Citations
 snippet citen
-	\cite{$1}
+	\cite{$1}${2}
 # bibtex commands
 snippet citep
-	\citep{$1}
+	\citep{$1}${2}
 snippet citet
-	\citet{$1}
+	\citet{$1}${2}
 snippet cite
 	\cite[${1}]{${2}}${3}
 snippet fcite
 	\footcite[${1}]{${2}}${3}
 #Formating text: italic, bold, underline, small capital, emphase ..
 snippet it
-	\textit{${1:text}}
+	\textit{${1:text}}${3}
 snippet bf
-	\textbf{${1:text}}
+	\textbf{${1:text}}${3}
 snippet under
-	\underline{${1:text}}
+	\underline{${1:text}}${3}
 snippet emp
-	\emph{${1:text}}
+	\emph{${1:text}}${3}
 snippet sc
-	\textsc{${1:text}}
+	\textsc{${1:text}}${3}
 #Choosing font
 snippet sf
-	\textsf{${1:text}}
+	\textsf{${1:text}}${3}
 snippet rm
-	\textrm{${1:text}}
+	\textrm{${1:text}}${3}
 snippet tt
-	\texttt{${1:text}}
+	\texttt{${1:text}}${3}
 #misc
 snippet ft
-	\footnote{${1:text}}
+	\footnote{${1:text}}${3}
 snippet fig
 	\begin{figure}
 	\begin{center}
-		\includegraphics[\width=\textwidth]{Figures/$2}
+		\includegraphics[\width=${1}\textwidth]{Figures/${2}}
 	\end{center}
-	\caption{$3}
-	\label{fig:$4}
+	\caption{${3}}
+	\label{fig:${4}}
 	\end{figure}
+	${5}
 snippet tikz
 	\begin{figure}
 	\begin{center}
@@ -192,12 +204,13 @@ snippet tikz
 	\caption{${3}}
 	\label{fig:${4}}
 	\end{figure}
+	${5}
 #math
 snippet stackrel
 	\stackrel{${1:above}}{${2:below}} ${3}
 snippet frac
-	\frac{$1:num}{$2:denom}
+	\frac{$1:num}{$2:denom}${3}
 snippet sum
-	\sum^{${1:n}}_{${2:i=1}}{{$3}}
+	\sum^{${1:n}}_{${2:i=1}}${3}
 snippet lim
-	\lim_{${1:x \to +\infty}}{$2}
+	\lim_{${1:x \to +\infty}}${2}
