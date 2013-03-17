@@ -80,4 +80,5 @@ snippet getopt
 	  esac    # --- end of case ---
 	done
 	shift $(($OPTIND-1))
-
+snippet root
+	if [ $(id -u) -ne 0 ]; then exec sudo $0; fi
