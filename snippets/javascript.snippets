@@ -129,7 +129,7 @@ snippet sdf
 		$1 = function ($2) {
 			${4:// main code}
 		};
-	}
+	};
 # singleton
 snippet sing
 	function ${1:Singleton} (${2:argument}) {
@@ -153,4 +153,11 @@ snippet sing
 		${3:// code ...}
 
 		return instance;
+	}
+# Crockford's object function 
+snippet obj
+	function object(o) {
+		function F() {}
+		F.prototype = o;
+		return new F();
 	}
