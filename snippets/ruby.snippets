@@ -945,6 +945,12 @@ snippet desc
 	describe ${1:class_name} do
 		${2}
 	end
+snippet descm
+	describe "#${1:method}" do
+		pending "Not implemented"
+	end
+
+	${2}
 snippet cont
 	context "${1:message}" do
 		${2}
