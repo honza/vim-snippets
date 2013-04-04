@@ -50,6 +50,13 @@ of the snippets by setting the "always_use_first_snippet" option to 1.
 If you have VimL only (vim without python support) your best option is using
 garbas/vim-snipmate and cope with the minor bugs found in the engine.
 
+Related repositories
+====================
+github.com/garbas/vim-snipmate -> README lists additional repositories
+containing snipmate-snippets
+
+This list should eventually be moved here now
+
 Historical notes
 ================
 
