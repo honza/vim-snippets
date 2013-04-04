@@ -52,10 +52,15 @@ garbas/vim-snipmate and cope with the minor bugs found in the engine.
 
 Related repositories
 ====================
-github.com/garbas/vim-snipmate -> README lists additional repositories
-containing snipmate-snippets
+We also encourage people to maintain sets of snippets for particular use cases
+so that all users can benefit from them.  People can list their snippet repositories here:
 
-This list should eventually be moved here now
+     * https://github.com/rbonvall/snipmate-snippets-bib (snippets for BibTeX files)
+     * https://github.com/sudar/vim-arduino-snippets (snippets for Arduino files)
+     * https://github.com/zedr/zope-snipmate-bundle.git (snippets for Python, TAL and ZCML)
+     * https://github.com/bonsaiben/bootstrap-snippets (snippets for Twitter Bootstrap markup, in HTML and Haml)
+
+Installation using VAM: "github:rbonvall/snipmate-snippets-bib"
 
 Historical notes
 ================
