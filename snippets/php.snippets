@@ -222,6 +222,13 @@ snippet class
 			${8:// code...}
 		}
 	}
+snippet nc
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
+
+	${2:abstract }class ${3:`Filename()`}
+	{
+		${4}
+	}
 # define(...)
 snippet def
 	define('${1}'${2});${3}
