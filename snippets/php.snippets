@@ -51,7 +51,7 @@ snippet m
 		${3}
 	}
 # setter method
-snippet sm 
+snippet sm
 	/**
 	 * Sets the value of ${1:foo}
 	 *
@@ -104,7 +104,7 @@ snippet S
 	$_SERVER['${1:variable}']${2}
 snippet SS
 	$_SESSION['${1:variable}']${2}
-	
+
 # the following are old ones
 snippet inc
 	include '${1:file}';${2}
@@ -205,7 +205,7 @@ snippet doc_h
 	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
 	 * @package ${5:default}
 	 */
-	
+
 # Interface
 snippet interface
 	/**
@@ -344,8 +344,8 @@ snippet vd
 snippet vdd
 	var_dump(${1}); die(${2:});
 snippet http_redirect
-	header ("HTTP/1.1 301 Moved Permanently"); 
-	header ("Location: ".URL); 
+	header ("HTTP/1.1 301 Moved Permanently");
+	header ("Location: ".URL);
 	exit();
 # Getters & Setters
 snippet gs
@@ -375,7 +375,7 @@ snippet gs
 snippet ags
 	/**
 	 * ${1:description}
-	 * 
+	 *
 	 * @${7}
 	 */
 	${2:protected} $${3:foo};
