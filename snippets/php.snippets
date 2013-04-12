@@ -399,3 +399,7 @@ snippet am
 		${3}
 		return $$2;
 	}, $$1);
+snippet aw
+	array_walk($${1:foo}, function(&$${2:v}, $${3:k}) {
+		$$2 = ${4};
+	});
