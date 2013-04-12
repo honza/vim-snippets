@@ -394,3 +394,8 @@ snippet rett
 	return true;
 snippet retf
 	return false;
+snippet am
+	array_map(function($${1:v}) {
+		${3}
+		return $$1;
+	}, $${2:foo});
