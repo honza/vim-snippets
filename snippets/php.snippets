@@ -395,7 +395,7 @@ snippet rett
 snippet retf
 	return false;
 snippet am
-	array_map(function($${1:v}) {
+	$${1:foo} = array_map(function($${2:v}) {
 		${3}
-		return $$1;
-	}, $${2:foo});
+		return $$2;
+	}, $$1);
