@@ -343,6 +343,8 @@ snippet vd
 	var_dump(${1});
 snippet vdd
 	var_dump(${1}); die(${2:});
+snippet vdf
+	error_log(print_r($${1:foo}, true), 3, '${2:/tmp/debug.log}');${3}
 snippet http_redirect
 	header ("HTTP/1.1 301 Moved Permanently");
 	header ("Location: ".URL);
