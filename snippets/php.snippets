@@ -14,11 +14,11 @@ snippet ?=
 snippet ?
 	<?php ${1} ?>
 snippet ?f
-	<?php foreach (${1:$vars} as ${2:$var}): ?>
+	<?php foreach ($${1:vars} as $${2:$var}): ?>
 		${3}
 	<?php endforeach ?>
 snippet ?i
-	<?php if (${1}): ?>
+	<?php if ($${1:var}): ?>
 		${2}
 	<?php endif ?>
 snippet ns
