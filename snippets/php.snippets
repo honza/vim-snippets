@@ -9,6 +9,18 @@ snippet <?e
 # this one is for php5.4
 snippet <?=
 	<?=${1}?>
+snippet ?=
+	<?= ${1} ?>
+snippet ?
+	<?php ${1} ?>
+snippet ?f
+	<?php foreach ($${1:vars} as $${2:$var}): ?>
+		${3}
+	<?php endforeach ?>
+snippet ?i
+	<?php if ($${1:var}): ?>
+		${2}
+	<?php endif ?>
 snippet ns
 	namespace ${1:Foo\Bar\Baz};
 	${2}
