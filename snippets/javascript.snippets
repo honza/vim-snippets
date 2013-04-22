@@ -96,7 +96,7 @@ snippet cl
 	console.log(${1});
 # return
 snippet ret
-	return ${1:result}
+	return ${1:result};${2}
 # for (property in object ) { ... }
 snippet fori
 	for (var ${1:prop} in ${2:Things}) {
@@ -140,7 +140,7 @@ snippet sing
 		$1 = function $1($2) {
 			return instance;
 		};
-		
+
 		// carry over the prototype properties
 		$1.prototype = this;
 
@@ -154,7 +154,7 @@ snippet sing
 
 		return instance;
 	}
-# Crockford's object function 
+# Crockford's object function
 snippet obj
 	function object(o) {
 		function F() {}
