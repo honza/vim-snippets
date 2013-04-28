@@ -894,7 +894,7 @@ snippet mnc
 	t.${1:string} :${2:title}${3:, null: false}${4}
 snippet mct
 	create_table :${1:table_name} do |t|
-		t.column :${2:name}, :${3:type}
+		${2}
 	end
 snippet migration
 	class ${1:class_name} < ActiveRecord::Migration
