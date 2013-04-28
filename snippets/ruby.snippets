@@ -890,8 +890,8 @@ snippet mrnc
 	rename_column :${1:table_name}, :${2:old_column_name}, :${3:new_column_name}
 snippet mcc
 	change_column :${1:table}, :${2:column}, :${3:type}
-snippet mccc
-	t.column :${1:title}, :${2:string}
+snippet mnc
+	t.${1:string} :${2:title}${3:, null: false}${4}
 snippet mct
 	create_table :${1:table_name} do |t|
 		t.column :${2:name}, :${3:type}
