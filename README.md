@@ -97,6 +97,14 @@ or github.com/MarcWeber/UltiSnips this way:
 If it happens that you work on a project requiring ruby-1.8 snippets instead,
 consider using vim-addon-local-vimrc and override the filetypes.
 
+Well - of course it may not make sense to create a new file for each
+ruby-library-version triplet. Sometimes postfixing a name such as
+
+    migrate_lib_20_down
+    migrate_lib_20_up
+
+will do it then if syntax has changed.
+
 Language maintainers
 --------------------
 
