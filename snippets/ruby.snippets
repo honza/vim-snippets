@@ -950,7 +950,9 @@ snippet aft
 		${2}
 	end
 snippet let
-	let(:${1:method}) { ${2} }
+	let(:${1:object}) ${2:block}
+snippet let!
+	let!(:${1:object}) ${2:block}
 snippet subj
 	subject { ${1} }
 snippet spec
