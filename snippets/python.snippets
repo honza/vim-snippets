@@ -162,3 +162,18 @@ snippet getopt
 			${4}
 		elif option in ("-v", "--verbose"):
 			verbose = argument
+# logging
+# glog = get log
+snippet glog
+	import logging
+	logger = logging.getLogger(${1:__name__})
+snippet le
+	logger.error(${1:msg})
+snippet ld
+	logger.debug(${1:msg})
+snippet lw
+	logger.warning(${1:msg})
+snippet lc
+	logger.critical(${1:msg})
+snippet li
+	logger.info(${1:msg})
