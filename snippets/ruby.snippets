@@ -680,6 +680,8 @@ snippet hmt
 	has_many :${1:object}, :through => :${2:object}
 snippet ho
 	has_one :${1:object}
+snippet hod
+	has_one :${1:object}, dependent: :${2:destroy}
 snippet i18
 	I18n.t('${1:type.key}')${2}
 snippet ist
