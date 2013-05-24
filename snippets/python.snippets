@@ -140,7 +140,7 @@ snippet test
 # test case
 snippet testcase
 	class ${1:ExampleCase}(unittest.TestCase):
-		
+
 		def test_${2:description}(self):
 			${3:# TODO: write code...}
 snippet fut
@@ -151,7 +151,7 @@ snippet getopt
 		# Short option syntax: "hv:"
 		# Long option syntax: "help" or "verbose="
 		opts, args = getopt.getopt(sys.argv[1:], "${1:short_options}", [${2:long_options}])
-	
+
 	except getopt.GetoptError, err:
 		# Print debug info
 		print str(err)
@@ -169,7 +169,7 @@ snippet glog
 	logger = logging.getLogger(${1:__name__})
 snippet le
 	logger.error(${1:msg})
-snippet ld
+snippet ldb
 	logger.debug(${1:msg})
 snippet lw
 	logger.warning(${1:msg})
