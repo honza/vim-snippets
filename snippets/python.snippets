@@ -79,7 +79,7 @@ snippet clatin1
 snippet cascii
 	# -*- coding: ascii -*-
 # Lambda
-snippet lda
+snippet ld
 	${1:var} = lambda ${2:vars} : ${3:action}
 snippet .
 	self.
@@ -169,7 +169,8 @@ snippet glog
 	logger = logging.getLogger(${1:__name__})
 snippet le
 	logger.error(${1:msg})
-snippet ld
+# conflict with lambda=ld, therefor we change into Logger.debuG
+snippet lg
 	logger.debug(${1:msg})
 snippet lw
 	logger.warning(${1:msg})
