@@ -849,24 +849,24 @@ snippet tctss
 	${1}
 snippet va
 	validates_associated :${1:attribute}
-snippet vao
-	validates_acceptance_of :${1:terms}
+snippet va
+	validates :${1:terms}, :acceptance => true
 snippet vc
-	validates_confirmation_of :${1:attribute}
+	validates :${1:attribute}, :confirmation => true
 snippet ve
-	validates_exclusion_of :${1:attribute}, :in => ${2:%w( mov avi )}
+	validates :${1:attribute}, :exclusion => { :in => ${2:%w( mov avi )} }
 snippet vf
-	validates_format_of :${1:attribute}, :with => /${2:regex}/
+	validates :${1:attribute}, :format => { :with => /${2:regex}/ }
 snippet vi
-	validates_inclusion_of :${1:attribute}, :in => %w(${2: mov avi })
+	validates :${1:attribute}, :inclusion => { :in => %w(${2: mov avi }) }
 snippet vl
-	validates_length_of :${1:attribute}, :within => ${2:3}..${3:20}
+	validates :${1:attribute}, :length => { :in => ${2:3}..${3:20} }
 snippet vn
-	validates_numericality_of :${1:attribute}
-snippet vpo
-	validates_presence_of :${1:attribute}
+	validates :${1:attribute}, :numericality => true
+snippet vp
+	validates :${1:attribute}, :presence => true
 snippet vu
-	validates_uniqueness_of :${1:attribute}
+	validates :${1:attribute}, :uniqueness => true
 snippet wants
 	wants.${1:js|xml|html} { ${2} }
 snippet wc
