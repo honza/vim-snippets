@@ -20,6 +20,11 @@ snippet -
 #some directive
 snippet img:
 	.. |${2:alias}| image:: ${1:img}
+snippet fig:
+	.. figure:: ${1:img}
+		:alt: ${2:alter text}
+
+		$2
 snippet cont:
 	.. contents::
 		${1:content}
