@@ -16,9 +16,33 @@ snippet ife if .. do .. else .. end
 snippet ife if .. do: .. else:
 	if ${1:condition}, do: ${2}, else: ${3}
 
+snippet unless unless .. do .. end
+	unless ${1} do
+		${2}
+	end
+
+snippet unless unless .. do: ..
+	unless ${1:condition}, do: ${2}
+
+snippet unlesse unless .. do .. else .. end
+	unless ${1:condition} do
+		${2}
+	else
+		${3}
+	end
+
+snippet unlesse unless .. do: .. else:
+	unless ${1:condition}, do: ${2}, else: ${3}
+
+snippet cond
+	cond do
+	${1} ->
+		${2}
+	end
+
 snippet case
 	case ${1} do
-	match: ${2}
+	${2} ->
 		${3}
 	end
 
@@ -51,7 +75,7 @@ snippet defpr
 	defprotocol ${1:name}, [${2:function}]
 
 snippet defr
-	defrecord ${1:record_name}, ${2:functions}
+	defrecord ${1:record_name}, ${2:fields}
 
 snippet doc
 	@doc """
@@ -61,12 +85,6 @@ snippet doc
 snippet fn
 	fn(${1:args}) -> ${2} end
 
-snippet loop
-	loop ${1:values}, ${2:initial} do
-	match: ${3}
-		${4}
-	end
-
 snippet mdoc
 	@moduledoc """
 	${1}
@@ -74,20 +92,27 @@ snippet mdoc
 
 snippet rec
 	receive do
-	match: ${1}
+	${1} ->
 		${2}
 	end
 
 snippet req
-	require ${1:module_name}, as: ${2:alias}
+	require ${1:module_name}
+
+snippet imp
+	import ${1:module_name}
+
+snippet ali
+	alias ${1:module_name}
 
 snippet test
 	test "${1:test_name}" do
 		${2}
 	end
 
-snippet try
+snippet try try .. rescue .. end
 	try do
-	catch: ${1}
-		${2}
+		${1}
+	rescue
+		${2} -> ${3}
 	end
