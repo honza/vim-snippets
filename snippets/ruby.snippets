@@ -847,9 +847,9 @@ snippet tcts
 snippet tctss
 	t.timestamps
 	${1}
-snippet va
+snippet va validates_associated
 	validates_associated :${1:attribute}
-snippet va
+snippet va validates .., :acceptance => true
 	validates :${1:terms}, :acceptance => true
 snippet vc
 	validates :${1:attribute}, :confirmation => true
