@@ -18,46 +18,46 @@ snippet -
 	-----${2:-}
 	${3}
 #some directive
-snippet img:
+snippet img
 	.. |${2:alias}| image:: ${1:img}
-snippet fig:
+snippet fig
 	.. figure:: ${1:img}
 		:alt: ${2:alter text}
 
 		$2
-snippet cont:
+snippet con
 	.. contents::
 		${1:content}
-snippet code:
+snippet cod
 	.. code:: ${1:type}
 		
 		${2:write some code}
-snippet tip:
+snippet tip
 	.. tip::
 		${1:my tips}
-snippet not:
+snippet not
 	.. note::
 		${1:my notes}
-snippet	war:
+snippet	war
 	.. warning::
 		${1:attention!}
-snippet imp:
+snippet imp
 	.. important::
 		${1:this is importatnt}
-snippet att:
+snippet att
 	.. attention::
 		${1:hey!}
-snippet dan:
+snippet dan
 	.. danger::
 		${1:ah!}
-snippet err:
+snippet err
 	.. error::
 		${1:Error occur}
-snippet cau:
+snippet cau
 	.. caution::
 		${1:Watch out!}
 #Spinx only
-snippet sid:
+snippet sid
 	.. sidebar:: ${1:Title}
 		
 		${2}	
