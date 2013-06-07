@@ -133,6 +133,7 @@ vim-snippets is not like the "linux kernel".
 * Ruby - [taq](http://github.com/taq)
 * PHP - [chrisyue](http://github.com/chrisyue)
 * Scala - [gorodinskiy](https://github.com/gorodinskiy)
+* Falcon - [steveno](https://github.com/steveno)
 
 Contributing notes
 ------------------
