@@ -7,7 +7,7 @@ ${1:name} = `!p snip.rv = "(" if t[2] else ""`${2:args}`!p snip.rv = ") " if t[2
 endsnippet
 
 snippet bfun "Function (bound)" i
-`!p snip.rv = "(" if t[1] else ""`${1:args}`!p snip.rv = ") " if t[1] else ""`=>`!p snip.rv = " " if t[2] else ""`${2:expr}
+`!p snip.rv = "(" if t[1] else ""`${1:args}`!p snip.rv = ") " if t[1] else ""`=>`!p snip.rv = " " if t[2] and not t[2].startswith("\n") else ""`${2:expr}
 endsnippet
 
 snippet if "If"
@@ -66,7 +66,7 @@ endsnippet
 snippet swit "Switch when .. then"
 switch ${1:object}
 	when ${2:condition}`!p snip.rv = " then " if t[3] else ""`${3:value}
-	else`!p snip.rv = " " if t[4] else ""`${4:value}
+	else`!p snip.rv = " " if t[4] and not t[4].startswith("\n") else ""`${4:value}
 endsnippet
 
 snippet cla "Class" b
