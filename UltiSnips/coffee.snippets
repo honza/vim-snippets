@@ -2,13 +2,12 @@
 # with some modification
 
 snippet fun "Function" b
-${1:name} = ${2:(${3:args}) }->
+${1:name} = `!p snip.rv = "(" if t[2] else ""`${2:args}`!p snip.rv = ") " if t[2] else ""`->
 	${0:# body...}
 endsnippet
 
-snippet bfun "Function (bound)"
-${1:(${2:args}) }=>
-	${0:# body...}
+snippet bfun "Function (bound)" i
+`!p snip.rv = "(" if t[1] else ""`${1:args}`!p snip.rv = ") " if t[1] else ""`=>`!p snip.rv = " " if t[2] else ""`${2:expr}
 endsnippet
 
 snippet if "If"
@@ -47,12 +46,12 @@ for ${1:key}, ${2:value} of ${3:Object}
 endsnippet
 
 snippet forr "Range Comprehension (inclusive)"
-for ${1:name} in [${2:start}..${3:finish}]${4: by ${5:step}}
+for ${1:name} in [${2:start}..${3:finish}]`!p snip.rv = " by " if t[4] else ""`${4:step}
 	${0:# body...}
 endsnippet
 
 snippet forrex "Range Comprehension (exclusive)"
-for ${1:name} in [${2:start}...${3:finish}]${4: by ${5:step}}
+for ${1:name} in [${2:start}...${3:finish}]`!p snip.rv = " by " if t[4] else ""`${4:step}
 	${0:# body...}
 endsnippet
 
@@ -66,16 +65,16 @@ endsnippet
 
 snippet swit "Switch when .. then"
 switch ${1:object}
-	when ${2:${3:condition} then ${4:value}}
-	else ${0:value}
+	when ${2:condition}`!p snip.rv = " then " if t[3] else ""`${3:value}
+	else`!p snip.rv = " " if t[4] else ""`${4:value}
 endsnippet
 
 snippet cla "Class" b
-class ${1:ClassName}${2: extends ${3:Ancestor}}
+class ${1:ClassName}`!p snip.rv = " extends " if t[2] else ""`${2:Ancestor}
 
-	${4:constructor: (${5:args}) ->
-		${6:# body...}}
-	$7
+	${3:constructor:`!p snip.rv = " (" if t[4] else ""`${4:args}`!p snip.rv = ")" if t[4] else ""` ->
+		${5:# body...}}
+	$0
 endsnippet
 
 snippet try "Try .. Catch"
