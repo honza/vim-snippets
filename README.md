@@ -86,19 +86,23 @@ add snippets/ruby-1.9.snippets (1.9 only)
 
 then configure github.com/garbas/vim-snipmate this way:
 
-    let g:snipMate = {}
-    let g:snipMate.scope_aliases = {}
-    let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
+
+```vim
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
+```
 
 or github.com/MarcWeber/UltiSnips this way:
 
 
-    let g:UltiSnips = {}
+```vim
+let g:UltiSnips = {}
 
-    let g:UltiSnips.snipmate_ft_filter = {
-                \ 'default' : {'filetypes': ["FILETYPE"] },
-                \ 'ruby'    : {'filetypes': ["ruby", "ruby-rails", "ruby-1.9"] },
-
+let g:UltiSnips.snipmate_ft_filter = {
+            \ 'default' : {'filetypes': ["FILETYPE"] },
+            \ 'ruby'    : {'filetypes': ["ruby", "ruby-rails", "ruby-1.9"] },
+```
 
 If it happens that you work on a project requiring ruby-1.8 snippets instead,
 consider using vim-addon-local-vimrc and override the filetypes.
@@ -129,6 +133,7 @@ vim-snippets is not like the "linux kernel".
 * Ruby - [taq](http://github.com/taq)
 * PHP - [chrisyue](http://github.com/chrisyue)
 * Scala - [gorodinskiy](https://github.com/gorodinskiy)
+* Falcon - [steveno](https://github.com/steveno)
 
 Contributing notes
 ------------------
