@@ -47,6 +47,47 @@ ${1:Paragraph name}
 $0
 endsnippet
 
+snippet em "Emphasize string" i
+*${1:Em}* $0
+endsnippet
+
+snippet ec "Emphasize string (CJK)" w
+\ *${1:Em}*\ $0
+endsnippet
+
+snippet st "Strong string" i
+**${1:Strong}** $0
+endsnippet
+
+snippet sc "Strong string (CJK)" w
+\ **${1:Strong}**\ $0
+endsnippet
+
+global !p
+def	make_items(times, leading='+'):
+    times = int(times)
+    if leading == 1:
+        msg = ""
+        for x in xrange(1, times+1):
+            msg += "%s. Item\n" % x
+        return msg
+    else:
+        return ("%s Item\n" % leading) * times
+endglobal
+
+snippet "li(st)? (?P<num>\d+)" "List" br
+$0
+`!p
+snip.rv = make_items(match.groupdict()['num'])
+`
+endsnippet
+
+snippet "ol(st)? (?P<num>\d+)" "Order List" br
+$0
+`!p
+snip.rv = make_items(match.groupdict()['num'], 1)
+`
+endsnippet
 ###########################################################################
 #                         More Specialized Stuff.                         #
 ###########################################################################
@@ -72,9 +113,7 @@ $0
 endsnippet
 
 snippet cont "Content Block" b
-.. contents::
-    
-	${1:content}
+.. contents:: ${1:Contents Title}
 
 $0
 endsnippet
@@ -151,7 +190,10 @@ snippet top "Topic" b
 $0
 endsnippet
 
-# Spinx Only
+############
+#  Sphinx  #
+############
+
 snippet sid "SideBar" b
 .. sidebar:: ${1:SideBar Title}
 
