@@ -58,4 +58,103 @@ snippet cb "Code Block" b
 $0
 endsnippet
 
+snippet img "Image Block" b
+.. |${2:alias}| image:: ${1:img}
+endsnippet
+
+snippet fig "Figure Block" b
+.. figure:: ${1:img}
+    :alt: ${2:alter text}
+    
+    ${3}
+
+$0
+endsnippet
+
+snippet cont "Content Block" b
+.. contents::
+    
+	${1:content}
+
+$0
+endsnippet
+
+snippet tip "Tip Block" b
+.. tip::
+    
+	${1:some tips}
+
+$0
+endsnippet
+
+snippet not "Note Block" b
+.. note::
+    
+	${1:some notes}
+
+$0
+endsnippet
+
+snippet war "Warning Block" b
+.. warning::
+    
+	${1:Warning!}
+
+$0
+endsnippet
+
+snippet imp "Important Block" b
+.. important::
+    
+	${1:This is important}
+
+$0
+endsnippet
+
+snippet att "Attention " b
+.. attention::
+    
+	${1:Attention!}
+
+$0
+endsnippet
+
+snippet dan "Danger" b
+.. danger::
+    
+	${1:Danger}
+
+$0
+endsnippet
+
+snippet err "Error Block" b
+.. error::
+    
+	${1:Errors!}
+
+$0
+endsnippet
+
+snippet cau "Cautions Block" b
+.. caution::
+    
+	${1:Cautions!}
+
+$0
+endsnippet
+
+snippet top "Topic" b
+.. topic:: ${1:title}
+
+    ${2:contents}
+
+$0
+endsnippet
+
+# Spinx Only
+snippet sid "SideBar" b
+.. sidebar:: ${1:SideBar Title}
+
+    ${2:SideBar Content}
+endsnippet
 # vim:ft=snippets:
