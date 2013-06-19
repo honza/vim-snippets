@@ -99,7 +99,7 @@ def find_all_code_type(path):
         types = re.findall(r'[:|\.\.\s]code::?\s(\w+)', source.read())
     try:
         popular_type = Counter(types).most_common()[0][0]
-    except KeyError:
+    except IndexError:
         popular_type = "lua" # Don't break default
 
     return popular_type
