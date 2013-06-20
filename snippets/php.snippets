@@ -231,7 +231,7 @@ snippet class
 		 */
 		${5:public} function ${6:__construct}(${7:argument})
 		{
-			${8:// code...}
+			${8}
 		}
 	}
 snippet nc
@@ -249,26 +249,26 @@ snippet def?
 	${1}defined('${2}')${3}
 snippet wh
 	while (${1:/* condition */}) {
-		${2:// code...}
+		${2}
 	}
 # do ... while
 snippet do
 	do {
-		${2:// code... }
+		${2}
 	} while (${1:/* condition */});
 snippet if
 	if (${1:/* condition */}) {
-		${2:// code...}
+		${2}
 	}
 snippet ifil
 	<?php if (${1:/* condition */}): ?>
-		${2:<!-- code... -->}
+		${2}
 	<?php endif; ?>
 snippet ife
 	if (${1:/* condition */}) {
-		${2:// code...}
+		${2}
 	} else {
-		${3:// code...}
+		${3}
 	}
 	${4}
 snippet ifeil
@@ -280,33 +280,33 @@ snippet ifeil
 	${4}
 snippet else
 	else {
-		${1:// code...}
+		${1}
 	}
 snippet elseif
 	elseif (${1:/* condition */}) {
-		${2:// code...}
+		${2}
 	}
 snippet switch
 	switch ($${1:variable}) {
 		case '${2:value}':
-			${3:// code...}
+			${3}
 			break;
 		${5}
 		default:
-			${4:// code...}
+			${4}
 			break;
 	}
 snippet case
 	case '${1:value}':
-		${2:// code...}
+		${2}
 		break;${3}
 snippet for
 	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
-		${4: // code...}
+		${4}
 	}
 snippet foreach
 	foreach ($${1:variable} as $${2:value}) {
-		${3:// code...}
+		${3}
 	}
 snippet foreachil
 	<?php foreach ($${1:variable} as $${2:value}): ?>
@@ -314,7 +314,7 @@ snippet foreachil
 	<?php endforeach; ?>
 snippet foreachk
 	foreach ($${1:variable} as $${2:key} => $${3:value}) {
-		${4:// code...}
+		${4}
 	}
 snippet foreachkil
 	<?php foreach ($${1:variable} as $${2:key} => $${3:value}): ?>

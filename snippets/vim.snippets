@@ -10,7 +10,7 @@ snippet guard
 	let $1 = 1${3}
 snippet f
 	fun! ${1:`expand('%') =~ 'autoload' ? substitute(matchstr(expand('%:p'),'autoload/\zs.*\ze.vim'),'[/\\]','#','g').'#' : ''`}${2:function_name}(${3})
-		${4:" code}
+		${4}
 	endf
 snippet t
 	try
@@ -20,15 +20,15 @@ snippet t
 	endtry
 snippet for
 	for ${1:needle} in ${2:haystack}
-		${3:" code}
+		${3}
 	endfor
 snippet wh
 	while ${1:condition}
-		${2:" code}
+		${2}
 	endw
 snippet if
 	if ${1:condition}
-		${2:" code}
+		${2}
 	endif
 snippet ife
 	if ${1:condition}

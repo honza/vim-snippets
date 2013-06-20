@@ -207,7 +207,7 @@ snippet arel
 # autorelease pool
 snippet pool
 	NSAutoreleasePool *${1:pool} = [[NSAutoreleasePool alloc] init];
-	${2:/* code */}
+	${2}
 	[$1 drain];
 # Throw an exception
 snippet except

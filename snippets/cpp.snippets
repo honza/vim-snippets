@@ -80,7 +80,7 @@ snippet cl
 # member function implementation
 snippet mfun
 	${4:void} ${1:`Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
-		${5:/* code */}
+		${5}
 	}
 # namespace
 snippet ns
@@ -100,13 +100,13 @@ snippet cin
 # for i 
 snippet fori
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
-		${4:/* code */}
+		${4}
 	}${5}
 
 # foreach
 snippet fore
 	for (${1:auto} ${2:i} : ${3:container}) {
-		${4:/* code */}
+		${4}
 	}${5}
 # iterator
 snippet iter
@@ -123,9 +123,9 @@ snippet itera
 ## Lambdas
 # lamda (one line)
 snippet ld
-	[${1}](${2}){${3:/* code */}}${4}
+	[${1}](${2}){${3}}${4}
 # lambda (multi-line)
 snippet lld
 	[${1}](${2}){
-		${3:/* code */}
+		${3}
 	}${4}
