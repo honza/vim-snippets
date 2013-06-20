@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 
 ###########################################################################
 #                              General Stuff                              #
@@ -7,12 +7,23 @@ global !p
 import re
 from collections import Counter
 
-
 def rst_char_len(char):
-	return len(re.findall(r'[^\u4e00-\u9fff\s]', char))+len(char)
+    """ 
+    return len of string which fit in rst
+    For instance:chinese "我" decode as only one character, 
+    However, the rst interpreter needs 2 "=" instead of 1.
 
+    :param: char needs to be count
+    """
+    return len(re.findall(r'[^\u4e00-\u9fff\s]', char))+len(char)
 
 def	make_items(times, leading='+'):
+    """
+    make lines with leading char multitimes
+    
+    :param: times, how many times you need
+    :param: leading, leading character
+    """
     times = int(times)
     if leading == 1:
         msg = ""
@@ -24,6 +35,11 @@ def	make_items(times, leading='+'):
 
 
 def get_popular_code_type(path):
+    """
+    As function name, it will get most popular code type in given file
+
+    :param: path, to path to rst file
+    """
     with open(path) as source:
         types = re.findall(r'[:|\.\.\s]code::?\s(\w+)', source.read())
     try:
@@ -33,6 +49,7 @@ def get_popular_code_type(path):
 
     return popular_type
 endglobal
+
 snippet part "Part" b
 `!p snip.rv = rst_char_len(t[1])*'#'`
 ${1:Part name}
@@ -78,19 +95,22 @@ $0
 endsnippet
 
 snippet em "Emphasize string" i
-*${1:Em}* $0
+*${1:${VISUAL:Em}}* $0
 endsnippet
 
+# the CJK characters doesn't had space to sperate them, like "我强调"
+# should be "我\ *强调*\ "
+# Therefor we need special snippet
 snippet ec "Emphasize string (CJK)" w
-\ *${1:Em}*\ $0
+\ *${1:${VISUAL:Em}}*\ $0
 endsnippet
 
 snippet st "Strong string" i
-**${1:Strong}** $0
+**${1:${VISUAL:Strong}}** $0
 endsnippet
 
 snippet sc "Strong string (CJK)" w
-\ **${1:Strong}**\ $0
+\ **${1:${VISUAL:Strong}}**\ $0
 endsnippet
 
 snippet "li(st)? (?P<num>\d+)" "List" br
