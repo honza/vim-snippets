@@ -63,10 +63,11 @@ so that all users can benefit from them.  People can list their snippet reposito
 Installation using VAM: "github:rbonvall/snipmate-snippets-bib"
 
 
-## If you believe in the success of vim-snipmate
-then you may also want to have a look at [vim-git-wiki](http://github.com/MarcWeber/vim-git-wiki).
-If you contribute to this git based wiki editable by Vim we have a chance
-of making it official at www.vim.org.
+Future - ideas - examples
+=========================
+[overview snippet engines](http://vim-wiki.mawercer.de/wiki/topic/text-snippets-skeletons-templates.html)
+If you have ideas you can add them to that list of "snippet engine features by example".
+
 
 Historical notes
 ================
