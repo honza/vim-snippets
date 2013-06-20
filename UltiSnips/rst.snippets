@@ -94,7 +94,7 @@ endsnippet
 global !p
 import re
 from collections import Counter
-def find_all_code_type(path):
+def get_popular_code_type(path):
     with open(path) as source:
         types = re.findall(r'[:|\.\.\s]code::?\s(\w+)', source.read())
     try:
@@ -105,7 +105,7 @@ def find_all_code_type(path):
     return popular_type
 endglobal
 snippet cb "Code Block" b
-.. code-block:: ${1:`!p snip.rv = find_all_code_type(path)`}
+.. code-block:: ${1:`!p snip.rv = get_popular_code_type(path)`}
 
    ${2:code}
 
