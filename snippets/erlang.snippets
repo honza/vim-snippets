@@ -1,12 +1,12 @@
 # module and export all
 snippet mod
 	-module(${1:`Filename('', 'my')`}).
-	
+
 	-compile([export_all]).
-	
+
 	start() ->
 	    ${2}
-	
+
 	stop() ->
 	    ok.
 # define directive
@@ -81,7 +81,7 @@ snippet application
 	    end.
 
 	stop(_State) ->
-	    ok.	
+	    ok.
 # OTP supervisor
 snippet supervisor
 	-module(${1:`Filename('', 'my')`}).

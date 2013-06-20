@@ -64,11 +64,11 @@ snippet fr
 # mutable
 snippet mu
 	mutable
-## 
+##
 ## Class
 # class
 snippet cl
-	class ${1:`Filename('$1', 'name')`} 
+	class ${1:`Filename('$1', 'name')`}
 	{
 	public:
 		$1(${2});
@@ -97,7 +97,7 @@ snippet cin
 	std::cin >> ${1};${2}
 ##
 ## Iteration
-# for i 
+# for i
 snippet fori
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
 		${4}

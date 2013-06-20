@@ -2,22 +2,22 @@ snippet main
 	package {
 		import flash.display.*;
 		import flash.Events.*;
-	
+
 		public class Main extends Sprite {
 			public function Main (	) {
 				trace("start");
 				stage.scaleMode = StageScaleMode.NO_SCALE;
 				stage.addEventListener(Event.RESIZE, resizeListener);
 			}
-	
+
 			private function resizeListener (e:Event):void {
 				trace("The application window changed size!");
 				trace("New width:  " + stage.stageWidth);
 				trace("New height: " + stage.stageHeight);
 			}
-	
+
 		}
-	
+
 	}
 snippet class
 	${1:public|internal} class ${2:name} ${3:extends } {
