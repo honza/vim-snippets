@@ -16,7 +16,7 @@ snippet ch
 # case
 snippet cs
 	case ${1:value}:
-		${2:/* code */}
+		${2}
 # const
 snippet c
 	const ${1:NAME} = ${2:0}
@@ -36,7 +36,7 @@ snippet df
 snippet dfr
 	defer func() {
 		if err := recover(); err != nil {
-			${1:/* code */}
+			${1}
 		}
 	}()
 # gpl
@@ -78,7 +78,7 @@ snippet inf
 # if condition
 snippet if
 	if ${1:/* condition */} {
-		${2:/* code */}
+		${2}
 	}${2}
 # else snippet
 snippet el
@@ -109,7 +109,7 @@ snippet f6
 # if else
 snippet ie
 	if ${1:/* condition */} {
-		${2:/* code */}
+		${2}
 	} else {
 		${3}
 	}
@@ -117,25 +117,25 @@ snippet ie
 # for loop
 snippet fo
 	for ${2:i} := 0; $2 < ${1:count}; $2${3:++} {
-		${4:/* code */}
+		${4}
 	}
 	${5}
 # for range loop
 snippet fr
 	for ${1:k}, ${2:v} := range ${3} {
-		${4:/* code */}
+		${4}
 	}
 	${5}
 # function simple 
 snippet fun
 	func ${1:funcName}(${2}) ${3:error} {
-		${4:/* code */}
+		${4}
 	}
 	${5}
 # function on receiver 
 snippet fum
 	func (self ${1:type}) ${2:funcName}(${3}) ${4:error} {
-		${5:/* code */}
+		${5}
 	}
 	${6}
 # log printf
@@ -153,7 +153,7 @@ snippet mp
 # main()
 snippet main
 	func main() {
-		${1:/* code */}
+		${1}
 	}
 	${2}
 # new
@@ -178,11 +178,11 @@ snippet rs
 snippet sl
 	select {
 	case ${1:v1} := <-${2:chan1}
-		${3:/* code */}
+		${3}
 	case ${4:v2} := <-${5:chan2}
-		${6:/* code */}
+		${6}
 	default:
-		${7:/* code */}
+		${7}
 	}
 # string
 snippet sr
@@ -197,11 +197,11 @@ snippet st
 snippet sw
 	switch ${1:var} {
 	case ${2:value1}:
-		${3:/* code */}
+		${3}
 	case ${4:value2}:
-		${5:/* code */}
+		${5}
 	default:
-		${6:/* code */}
+		${6}
 	}
 snippet sp
 	fmt.Sprintf("%${1:s}", ${2:var})${3}

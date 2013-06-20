@@ -53,7 +53,7 @@ snippet once
 # if
 snippet if
 	if (${1:/* condition */}) {
-		${2:/* code */}
+		${2}
 	}${3}
 # else
 snippet el
@@ -63,7 +63,7 @@ snippet el
 # else if
 snippet elif
 	else if (${1:/* condition */}) {
-		${2:/* code */}
+		${2}
 	}${3}
 # ternary
 snippet t
@@ -94,22 +94,22 @@ snippet case
 # for
 snippet for
 	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
-		${4:/* code */}
+		${4}
 	}${5}
 # for (custom)
 snippet forr
 	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
-		${5:/* code */}
+		${5}
 	}${6}
 # while
 snippet wh
 	while (${1:/* condition */}) {
-		${2:/* code */}
+		${2}
 	}${3}
 # do... while
 snippet do
 	do {
-		${2:/* code */}
+		${2}
 	} while (${1:/* condition */});${3}
 ##
 ## Functions
@@ -117,7 +117,7 @@ snippet do
 snippet fun
 	${1:void} ${2:function_name}(${3})
 	{
-		${4:/* code */}
+		${4}
 	}${5}
 # function declaration
 snippet fund

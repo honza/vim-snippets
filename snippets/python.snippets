@@ -15,16 +15,16 @@ snippet docs
 	"""
 snippet wh
 	while ${1:condition}:
-		${2:# TODO: write code...}
+		${2}
 # dowh - does the same as do...while in other languages
 snippet dowh
 	while True:
-		${1:# TODO: write code...}
+		${1}
 		if ${2:condition}:
 			break
 snippet with
 	with ${1:expr} as ${2:var}:
-		${3:# TODO: write code...}
+		${3}
 # New Class
 snippet cl
 	class ${1:ClassName}(${2:object}):
@@ -37,14 +37,14 @@ snippet cl
 snippet def
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 		"""${3:docstring for $1}"""
-		${4:# TODO: write code...}
+		${4}
 snippet deff
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
-		${3:# TODO: write code...}
+		${3}
 # New Method
 snippet defs
 	def ${1:mname}(self, ${2:arg}):
-		${3:# TODO: write code...}
+		${3}
 # New Property
 snippet property
 	def ${1:foo}():
@@ -60,17 +60,17 @@ snippet property
 # Ifs
 snippet if
 	if ${1:condition}:
-		${2:# TODO: write code...}
+		${2}
 snippet el
 	else:
-		${1:# TODO: write code...}
+		${1}
 snippet ei
 	elif ${1:condition}:
-		${2:# TODO: write code...}
+		${2}
 # For
 snippet for
 	for ${1:item} in ${2:items}:
-		${3:# TODO: write code...}
+		${3}
 # Encodes
 snippet cutf8
 	# -*- coding: utf-8 -*-
@@ -85,32 +85,32 @@ snippet .
 	self.
 snippet try Try/Except
 	try:
-		${1:# TODO: write code...}
+		${1}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 snippet try Try/Except/Else
 	try:
-		${1:# TODO: write code...}
+		${1}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 	else:
-		${5:# TODO: write code...}
+		${5}
 snippet try Try/Except/Finally
 	try:
-		${1:# TODO: write code...}
+		${1}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 	finally:
-		${5:# TODO: write code...}
+		${5}
 snippet try Try/Except/Else/Finally
 	try:
-		${1:# TODO: write code...}
+		${1}
 	except ${2:Exception}, ${3:e}:
 		${4:raise $3}
 	else:
-		${5:# TODO: write code...}
+		${5}
 	finally:
-		${6:# TODO: write code...}
+		${6}
 # if __name__ == '__main__':
 snippet ifmain
 	if __name__ == '__main__':
@@ -136,13 +136,13 @@ snippet "
 # test function/method
 snippet test
 	def test_${1:description}(${2:`indent('.') ? 'self' : ''`}):
-		${3:# TODO: write code...}
+		${3}
 # test case
 snippet testcase
 	class ${1:ExampleCase}(unittest.TestCase):
 		
 		def test_${2:description}(self):
-			${3:# TODO: write code...}
+			${3}
 snippet fut
 	from __future__ import ${1}
 #getopt
