@@ -75,6 +75,7 @@ def	make_items(times, leading='+'):
         return ("%s Item\n" % leading) * times
 endglobal
 
+# usage: li 3<tab>
 snippet "li(st)? (?P<num>\d+)" "List" br
 $0
 `!p
@@ -82,6 +83,7 @@ snip.rv = make_items(match.groupdict()['num'])
 `
 endsnippet
 
+# usage: ol 3<tab>
 snippet "ol(st)? (?P<num>\d+)" "Order List" br
 $0
 `!p
