@@ -5,9 +5,33 @@
 ###########################################################################
 global !p
 import re
+from collections import Counter
+
+
 def rst_char_len(char):
 	return len(re.findall(r'[^\u4e00-\u9fff\s]', char))+len(char)
 
+
+def	make_items(times, leading='+'):
+    times = int(times)
+    if leading == 1:
+        msg = ""
+        for x in xrange(1, times+1):
+            msg += "%s. Item\n" % x
+        return msg
+    else:
+        return ("%s Item\n" % leading) * times
+
+
+def get_popular_code_type(path):
+    with open(path) as source:
+        types = re.findall(r'[:|\.\.\s]code::?\s(\w+)', source.read())
+    try:
+        popular_type = Counter(types).most_common()[0][0]
+    except IndexError:
+        popular_type = "lua" # Don't break default
+
+    return popular_type
 endglobal
 snippet part "Part" b
 `!p snip.rv = rst_char_len(t[1])*'#'`
@@ -69,19 +93,6 @@ snippet sc "Strong string (CJK)" w
 \ **${1:Strong}**\ $0
 endsnippet
 
-global !p
-def	make_items(times, leading='+'):
-    times = int(times)
-    if leading == 1:
-        msg = ""
-        for x in xrange(1, times+1):
-            msg += "%s. Item\n" % x
-        return msg
-    else:
-        return ("%s Item\n" % leading) * times
-endglobal
-
-# usage: li 3<tab>
 snippet "li(st)? (?P<num>\d+)" "List" br
 $0
 `!p
@@ -99,18 +110,6 @@ endsnippet
 ###########################################################################
 #                         More Specialized Stuff.                         #
 ###########################################################################
-global !p
-from collections import Counter
-def get_popular_code_type(path):
-    with open(path) as source:
-        types = re.findall(r'[:|\.\.\s]code::?\s(\w+)', source.read())
-    try:
-        popular_type = Counter(types).most_common()[0][0]
-    except IndexError:
-        popular_type = "lua" # Don't break default
-
-    return popular_type
-endglobal
 snippet cb "Code Block" b
 .. code-block:: ${1:`!p snip.rv = get_popular_code_type(path)`}
 
