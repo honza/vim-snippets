@@ -4,7 +4,7 @@ snippet ap
 # bool
 snippet bl
 	bool
-# byte 
+# byte
 snippet bt
 	byte
 # break
@@ -29,7 +29,7 @@ snippet co
 # continue
 snippet cn
 	continue
-# defer 
+# defer
 snippet df
 	defer ${1:func}()
 # defer recover
@@ -57,20 +57,20 @@ snippet gpl
 	 *
 	 * Copyright (C) ${1:Author}, `strftime("%Y")`
 	 */
-	
+
 	${2}
 # int
 snippet i
 	int
-# import 
+# import
 snippet im
 	import (
-		"${1:package}" 
+		"${1:package}"
 	)${2}
-# interface 
+# interface
 snippet in
 	interface{}
-# full interface snippet 
+# full interface snippet
 snippet inf
 	interface ${1:name} {
 		${2:/* methods */}
@@ -126,13 +126,13 @@ snippet fr
 		${4}
 	}
 	${5}
-# function simple 
+# function simple
 snippet fun
 	func ${1:funcName}(${2}) ${3:error} {
 		${4}
 	}
 	${5}
-# function on receiver 
+# function on receiver
 snippet fum
 	func (self ${1:type}) ${2:funcName}(${3}) ${4:error} {
 		${5}
@@ -147,7 +147,7 @@ snippet lp
 # make
 snippet mk
 	make(${1:[]string}, ${2:0})
-# map 
+# map
 snippet mp
 	map[${1:string}]${2:int}
 # main()
@@ -159,19 +159,19 @@ snippet main
 # new
 snippet nw
 	new(${1:type})
-# panic 
+# panic
 snippet pn
 	panic("${1:msg}")
 # print
 snippet pr
 	fmt.Printf("%${1:s}\n", ${2:var})${3}
-# range 
+# range
 snippet rn
 	range ${1}
-# return 
+# return
 snippet rt
 	return ${1}
-# result 
+# result
 snippet rs
 	result
 # select
@@ -193,7 +193,7 @@ snippet st
 		${2:/* data */}
 	}
 	${3}
-# switch 
+# switch
 snippet sw
 	switch ${1:var} {
 	case ${2:value1}:
@@ -205,7 +205,7 @@ snippet sw
 	}
 snippet sp
 	fmt.Sprintf("%${1:s}", ${2:var})${3}
-# true 
+# true
 snippet t
 	true
 # variable declaration

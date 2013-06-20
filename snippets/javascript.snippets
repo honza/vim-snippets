@@ -140,7 +140,7 @@ snippet sing
 		$1 = function $1($2) {
 			return instance;
 		};
-		
+
 		// carry over the prototype properties
 		$1.prototype = this;
 
@@ -154,7 +154,7 @@ snippet sing
 
 		return instance;
 	}
-# Crockford's object function 
+# Crockford's object function
 snippet obj
 	function object(o) {
 		function F() {}
@@ -164,7 +164,7 @@ snippet obj
 # Define multiple properties
 snippet props
 	var ${1:my_object} = Object.defineProperties(
-		${2:new Object()}, 
+		${2:new Object()},
 		{
 			${3:property} : {
 				get : function $1_$3_getter() {
@@ -182,9 +182,9 @@ snippet props
 	);
 # Define single property
 snippet prop
-	Object.defineProperty( 
+	Object.defineProperty(
 		${1:object},
-		"${2:property}", 
+		"${2:property}",
 		{
 			get : function $1_$2_getter() {
 				// getter code
