@@ -4,8 +4,57 @@
 #                              General Stuff                              #
 ###########################################################################
 global !p
+from os import path as ospath
+from string import Template
 import re
 from collections import Counter
+
+#http://docutils.sourceforge.net/docs/ref/rst/roles.html
+TEXT_ROLES = ['emphasis','literal','code','math',
+              'pep-reference','rfc-reference',
+              'strong','subscript','superscript',
+              'title-reference','raw'] 
+TEXT_ROLES_REGEX = r'\.\.\srole::?\s(w+)'
+
+#http://docutils.sourceforge.net/docs/ref/rst/directives.html#specific-admonitions
+SPECIFIC_ADMONITIONS = ["attention", "caution", "danger", 
+                        "error", "hint", "important", "note", 
+                        "tip", "warning"]
+#http://docutils.sourceforge.net/docs/ref/rst/directives.html
+DIRECTIVES = ['topic','sidebar','math','epigraph',
+              'parsed-literal','code','highlights',
+              'pull-quote','compound','container',
+              'list-table','class','sectnum',
+              'role','default-role','unicode',
+              'raw']
+
+NONE_CONTENT_DIRECTIVES = ['rubric', 'contents', 'header',
+                           'footer', 'date', 'include', 'title'
+                          ]
+INCLUDABLE_DIRECTIVES_INDEX = {'img':'image',
+                                'fig':'figure',
+                                'inc':'include'}
+
+def real_filename(filename):
+    # peal extension name off if possible
+    # i.e. "foo.bar.png will return "foo.bar"
+    names=filename.split('.')
+    return ".".join(names[:-1]) if len(names) > 1 else filename
+
+def check_file_exist(rst_path, relative_path):
+    """
+    For RST file, it can just include files as relative path.
+    
+    :param rst_path: absolute path to rst file
+    :param relative_path: path related to rst file
+    :return: relative file's absolute path if file exist
+    """
+    abs_path = ospath.join(ospath.dirname(rst_path), relative_path)
+    if ospath.isfile(abs_path):
+        return abs_path
+
+#TODO: File preview
+#TODO: File list complete
 
 def rst_char_len(char):
     """ 
@@ -34,27 +83,40 @@ def	make_items(times, leading='+'):
         return ("%s Item\n" % leading) * times
 
 
-def get_popular_code_type(path):
+def look_up_directives(regex, fpath):
     """
-    As function name, it will get most popular code type in given file
-
+    find all directive args in given file
+    :param: regex, the regex that needs to match
     :param: path, to path to rst file
+
+    :return: list, empty list if nothing match
     """
-    with open(path) as source:
-        types = re.findall(r'[:|\.\.\s]code::?\s(\w+)', source.read())
+    with open(fpath) as source:
+        match = re.findall(regex, source.read())
+    return match
+
+
+def get_popular_code_type(path):
+    # find most popular code type in the given rst
+    types = look_up_directives(r'[:|\.\.\s]code::?\s(\w+)', path)
     try:
         popular_type = Counter(types).most_common()[0][0]
     except IndexError:
         popular_type = "lua" # Don't break default
 
     return popular_type
+ 
 
 def complete(t, opts):
+    msg = "({0})"
     if t:
         opts = [ m[len(t):] for m in opts if m.startswith(t) ]
     if len(opts) == 1:
         return opts[0]
-    return "({0})".format("|".join(opts))
+
+    if not len(opts):
+        msg = "{0}"
+    return msg.format("|".join(opts))
 
 endglobal
 
@@ -146,34 +208,61 @@ snippet cb "Code Block" b
 $0
 endsnippet
 
-snippet img "Image Block" b
-.. |${2:alias}| image:: ${1:img}
+# match snippets :
+# img, inc, fig
+snippet "(?P<shortcut>^img|inc|fig)" "Includable Block" !br
+`!p 
+#TODO: Import img.template in rst relative path?
+real_name=real_filename(ospath.basename(t[1]))
+di=INCLUDABLE_DIRECTIVES_INDEX.get(match.groupdict()['shortcut'], 'include')
+link=""
+content=""
+
+if di in ['image']:
+    link = "|{0}| ".format(real_name)
+
+if di == 'figure':
+    content="""
+    :alt: {0}
+    {0}""".format(real_name)
+
+snip.rv = ".. {link}{di}:: ".format(di=di,link=link)
+`${1:file}`!p if content:
+    snip.rv +="    "+content`
+`!p
+# Tip of whether file is exist in comment type
+if not check_file_exist(path, t[1]):
+    snip.rv='.. FILE {0} does not exist'.format(t[1])
+else:
+    snip.rv=""
+`$0
 endsnippet
 
-snippet fig "Figure Block" b
-.. figure:: ${1:img}
-    :alt: ${2:alter text}
-    
-    ${3}
+snippet di "Directives" b
+.. $1`!p snip.rv=complete(t[1], DIRECTIVES)`:: $2
 
+    ${3:Content}
 $0
 endsnippet
 
-snippet cont "Content Block" b
-.. contents:: ${1:Contents Title}
-
+snippet nd "None Content Directives" b
+.. $1`!p snip.rv=complete(t[1], NONE_CONTENT_DIRECTIVES)`:: $2
 $0
 endsnippet
 
-#http://docutils.sourceforge.net/docs/ref/rst/directives.html#specific-admonitions
 snippet sa "Specific Admonitions" b
-.. $1`!p snip.rv =complete(t[1], ["attention", "caution", "danger", 
-                                  "error", "hint", "important", "note", 
-                                  "tip", "warning"])`::
+.. $1`!p snip.rv =complete(t[1], SPECIFIC_ADMONITIONS)`::
     
     ${2:Content}
 
 $0
+endsnippet
+
+#it will be trigger at start of line or after a word
+snippet ro "Text Roles" b
+\ :$1`!p snip.rv=complete(t[1],
+                          TEXT_ROLES+look_up_directives(TEXT_ROLES_REGEX,
+                                                        path))`:\`$2\`\ 
 endsnippet
 
 ############
