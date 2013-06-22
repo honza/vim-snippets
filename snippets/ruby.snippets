@@ -616,14 +616,14 @@ snippet defcreate
 	def create
 		@${1:model_class_name} = ${2:ModelClassName}.new(params[:$1])
 
-		respond_to do |wants|
+		respond_to do |format|
 			if @$1.save
 				flash[:notice] = '$2 was successfully created.'
-				wants.html { redirect_to(@$1) }
-				wants.xml  { render :xml => @$1, :status => :created, :location => @$1 }
+				format.html { redirect_to(@$1) }
+				format.xml  { render :xml => @$1, :status => :created, :location => @$1 }
 			else
-				wants.html { render :action => "new" }
-				wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+				format.html { render :action => "new" }
+				format.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
 			end
 		end
 	end${3}
@@ -632,9 +632,9 @@ snippet defdestroy
 		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
 		@$1.destroy
 
-		respond_to do |wants|
-			wants.html { redirect_to($1s_url) }
-			wants.xml  { head :ok }
+		respond_to do |format|
+			format.html { redirect_to($1s_url) }
+			format.xml  { head :ok }
 		end
 	end${3}
 snippet defedit
@@ -645,41 +645,41 @@ snippet defindex
 	def index
 		@${1:model_class_name} = ${2:ModelClassName}.all
 
-		respond_to do |wants|
-			wants.html # index.html.erb
-			wants.xml  { render :xml => @$1s }
+		respond_to do |format|
+			format.html # index.html.erb
+			format.xml  { render :xml => @$1s }
 		end
 	end${3}
 snippet defnew
 	def new
 		@${1:model_class_name} = ${2:ModelClassName}.new
 
-		respond_to do |wants|
-			wants.html # new.html.erb
-			wants.xml  { render :xml => @$1 }
+		respond_to do |format|
+			format.html # new.html.erb
+			format.xml  { render :xml => @$1 }
 		end
 	end${3}
 snippet defshow
 	def show
 		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
 
-		respond_to do |wants|
-			wants.html # show.html.erb
-			wants.xml  { render :xml => @$1 }
+		respond_to do |format|
+			format.html # show.html.erb
+			format.xml  { render :xml => @$1 }
 		end
 	end${3}
 snippet defupdate
 	def update
 		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
 
-		respond_to do |wants|
+		respond_to do |format|
 			if @$1.update_attributes(params[:$1])
 				flash[:notice] = '$2 was successfully updated.'
-				wants.html { redirect_to(@$1) }
-				wants.xml  { head :ok }
+				format.html { redirect_to(@$1) }
+				format.xml  { head :ok }
 			else
-				wants.html { render :action => "edit" }
-				wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+				format.html { render :action => "edit" }
+				format.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
 			end
 		end
 	end${3}
@@ -752,8 +752,8 @@ snippet ra
 snippet ral
 	render :action => "${1:action}", :layout => "${2:layoutname}"
 snippet rest
-	respond_to do |wants|
-		wants.${1:html} { ${2} }
+	respond_to do |format|
+		format.${1:html} { ${2} }
 	end
 snippet rf
 	render :file => "${1:filepath}"
@@ -886,8 +886,8 @@ snippet vp
 	validates :${1:attribute}, :presence => true
 snippet vu
 	validates :${1:attribute}, :uniqueness => true
-snippet wants
-	wants.${1:js|xml|html} { ${2} }
+snippet format
+	format.${1:js|xml|html} { ${2} }
 snippet wc
 	where(${1:"conditions"}${2:, bind_var})
 snippet wh
