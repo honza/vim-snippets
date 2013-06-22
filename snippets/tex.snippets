@@ -114,14 +114,29 @@ snippet sec
 	\section{${1:section name}}
 	\label{sec:${2:$1}}
 	${3}
+# Section without number
+snippet sec*
+	\section*{${1:section name}}
+	\label{sec:${2:$1}}
+	${3}
 # Sub Section
 snippet sub
 	\subsection{${1:subsection name}}
 	\label{sub:${2:$1}}
 	${3}
+# Sub Section without number
+snippet sub*
+	\subsection*{${1:subsection name}}
+	\label{sub:${2:$1}}
+	${3}
 # Sub Sub Section
 snippet subs
 	\subsubsection{${1:subsubsection name}}
+	\label{ssub:${2:$1}}
+	${3}
+# Sub Sub Section without number
+snippet subs*
+	\subsubsection*{${1:subsubsection name}}
 	\label{ssub:${2:$1}}
 	${3}
 # Paragraph
