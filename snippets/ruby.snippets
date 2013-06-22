@@ -322,6 +322,12 @@ snippet injd
 	inject(${1:init}) do |${2:mem}, ${3:var}|
 		${4}
 	end
+snippet red
+	reduce(${1:init}) { |${2:mem}, ${3:var}| ${4} }
+snippet redd
+	reduce(${1:init}) do |${2:mem}, ${3:var}|
+		${4}
+	end
 snippet map
 	map { |${1:e}| ${2} }
 snippet mapd
