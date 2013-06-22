@@ -16,6 +16,14 @@ snippet =b
 	=begin rdoc
 		${1}
 	=end
+snippet prot
+	protected
+
+	${1}
+snippet priv
+	private
+
+	${1}
 snippet y
 	:yields: ${1:arguments}
 snippet rb
@@ -156,6 +164,8 @@ snippet atp
 	attr_protected :${1:attr_names}
 snippet ata
 	attr_accessible :${1:attr_names}
+snippet ivc
+	@${1:variable_name} ||= ${2:chached_value}
 # include Enumerable
 snippet Enum
 	include Enumerable
@@ -176,6 +186,11 @@ snippet Forw-
 # def self
 snippet defs
 	def self.${1:class_method_name}
+		${2}
+	end
+# def initialize
+snippet definit
+	def initialize(${1:args})
 		${2}
 	end
 # def method_missing
@@ -307,6 +322,12 @@ snippet inj
 	inject(${1:init}) { |${2:mem}, ${3:var}| ${4} }
 snippet injd
 	inject(${1:init}) do |${2:mem}, ${3:var}|
+		${4}
+	end
+snippet red
+	reduce(${1:init}) { |${2:mem}, ${3:var}| ${4} }
+snippet redd
+	reduce(${1:init}) do |${2:mem}, ${3:var}|
 		${4}
 	end
 snippet map
@@ -597,14 +618,14 @@ snippet defcreate
 	def create
 		@${1:model_class_name} = ${2:ModelClassName}.new(params[:$1])
 
-		respond_to do |wants|
+		respond_to do |format|
 			if @$1.save
 				flash[:notice] = '$2 was successfully created.'
-				wants.html { redirect_to(@$1) }
-				wants.xml  { render :xml => @$1, :status => :created, :location => @$1 }
+				format.html { redirect_to(@$1) }
+				format.xml  { render :xml => @$1, :status => :created, :location => @$1 }
 			else
-				wants.html { render :action => "new" }
-				wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+				format.html { render :action => "new" }
+				format.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
 			end
 		end
 	end${3}
@@ -613,9 +634,9 @@ snippet defdestroy
 		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
 		@$1.destroy
 
-		respond_to do |wants|
-			wants.html { redirect_to($1s_url) }
-			wants.xml  { head :ok }
+		respond_to do |format|
+			format.html { redirect_to($1s_url) }
+			format.xml  { head :ok }
 		end
 	end${3}
 snippet defedit
@@ -626,41 +647,41 @@ snippet defindex
 	def index
 		@${1:model_class_name} = ${2:ModelClassName}.all
 
-		respond_to do |wants|
-			wants.html # index.html.erb
-			wants.xml  { render :xml => @$1s }
+		respond_to do |format|
+			format.html # index.html.erb
+			format.xml  { render :xml => @$1s }
 		end
 	end${3}
 snippet defnew
 	def new
 		@${1:model_class_name} = ${2:ModelClassName}.new
 
-		respond_to do |wants|
-			wants.html # new.html.erb
-			wants.xml  { render :xml => @$1 }
+		respond_to do |format|
+			format.html # new.html.erb
+			format.xml  { render :xml => @$1 }
 		end
 	end${3}
 snippet defshow
 	def show
 		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
 
-		respond_to do |wants|
-			wants.html # show.html.erb
-			wants.xml  { render :xml => @$1 }
+		respond_to do |format|
+			format.html # show.html.erb
+			format.xml  { render :xml => @$1 }
 		end
 	end${3}
 snippet defupdate
 	def update
 		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
 
-		respond_to do |wants|
+		respond_to do |format|
 			if @$1.update_attributes(params[:$1])
 				flash[:notice] = '$2 was successfully updated.'
-				wants.html { redirect_to(@$1) }
-				wants.xml  { head :ok }
+				format.html { redirect_to(@$1) }
+				format.xml  { head :ok }
 			else
-				wants.html { render :action => "edit" }
-				wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+				format.html { render :action => "edit" }
+				format.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
 			end
 		end
 	end${3}
@@ -733,8 +754,8 @@ snippet ra
 snippet ral
 	render :action => "${1:action}", :layout => "${2:layoutname}"
 snippet rest
-	respond_to do |wants|
-		wants.${1:html} { ${2} }
+	respond_to do |format|
+		format.${1:html} { ${2} }
 	end
 snippet rf
 	render :file => "${1:filepath}"
@@ -779,7 +800,7 @@ snippet ru
 snippet rxml
 	render :xml => ${1:text to render}
 snippet sc
-	scope :${1:name}, :where(:@${2:field} => ${3:value})
+	scope :${1:name}, -> { where(${2:field}: ${3:value}) }
 snippet sl
 	scope :${1:name}, lambda do |${2:value}|
 		where("${3:field = ?}", ${4:bind var})
@@ -867,8 +888,8 @@ snippet vp
 	validates :${1:attribute}, :presence => true
 snippet vu
 	validates :${1:attribute}, :uniqueness => true
-snippet wants
-	wants.${1:js|xml|html} { ${2} }
+snippet format
+	format.${1:js|xml|html} { ${2} }
 snippet wc
 	where(${1:"conditions"}${2:, bind_var})
 snippet wh
@@ -936,11 +957,16 @@ snippet its
 	its(:${1:method}) { should ${2} }
 snippet itsn
 	its(:${1:method}) { should_not ${2} }
-
 snippet desc
 	describe ${1:class_name} do
 		${2}
 	end
+snippet descm
+	describe "#${1:method}" do
+		pending "Not implemented"
+	end
+
+	${2}
 snippet cont
 	context "${1:message}" do
 		${2}
@@ -959,10 +985,14 @@ snippet let!
 	let!(:${1:object}) ${2:block}
 snippet subj
 	subject { ${1} }
+snippet s.
+	subject.${1:method}
 snippet spec
 	specify { subject.${1} }
 snippet exp
-	expect(${1:object}).to ${2}
+	expect { ${1:object} }.to ${2}
+snippet raise
+	expect { ${1:object} }.to raise_error ${2:StandardError}, /${3:message_regex}/
 snippet btr
 	be_true
 snippet bfa
