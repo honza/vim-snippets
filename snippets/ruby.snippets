@@ -798,7 +798,7 @@ snippet ru
 snippet rxml
 	render :xml => ${1:text to render}
 snippet sc
-	scope :${1:name}, :where(:@${2:field} => ${3:value})
+	scope :${1:name}, -> { where(${2:field}: ${3:value}) }
 snippet sl
 	scope :${1:name}, lambda do |${2:value}|
 		where("${3:field = ?}", ${4:bind var})
