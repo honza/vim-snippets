@@ -23,9 +23,9 @@ snippet for
 		${3}
 	endfor
 snippet forkv
-	for [a,b] in items({2})
-		${3}
-            unlet a b
+	for [${1},${2}] in items(${3})
+		${4}
+            unlet $1 $2
 	endfor
 
 snippet wh

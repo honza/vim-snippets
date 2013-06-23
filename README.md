@@ -87,6 +87,12 @@ get vim-dev plugin which has function completion
 
 Thus for conditions (while, if ..) and block bodies just use ${N} - Thanks
 
+Open questions:
+What about one line if ee then .. else .. vs if \n .. then \n ... \n else \n .. ?
+What about wh(ile), which trigger?
+Discuss at: https://github.com/honza/vim-snippets/issues/230
+
+
 Related repositories
 ====================
 We also encourage people to maintain sets of snippets for particular use cases
