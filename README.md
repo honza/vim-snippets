@@ -53,8 +53,8 @@ garbas/vim-snipmate and cope with the minor bugs found in the engine.
 
 Policies / for contributors
 ===========================
-some snippets are useful for all languages, so let's try to have the same
-triggers for all languages:
+Some snippets are useful for almost all languages, so let's try to have the same
+triggers for them:
 
 ```
 if : if without else
@@ -69,14 +69,14 @@ aliasing. Then you can remap "else" to "el" or the like.
 
 Don't add stupid placeholder default texts like
 ```
-if (${1:condition){
+if (${1:condition}){
   ${2:some code here}
 }
 ```
 instead use:
 
 ```
-if (${1){
+if (${1}){
   ${2}
 }
 ```
