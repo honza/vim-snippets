@@ -826,6 +826,85 @@ snippet sweeper
 			expire_page
 		end
 	end
+snippet va validates_associated
+	validates_associated :${1:attribute}
+snippet va validates .., :acceptance => true
+	validates :${1:terms}, :acceptance => true
+snippet vc
+	validates :${1:attribute}, :confirmation => true
+snippet ve
+	validates :${1:attribute}, :exclusion => { :in => ${2:%w( mov avi )} }
+snippet vf
+	validates :${1:attribute}, :format => { :with => /${2:regex}/ }
+snippet vi
+	validates :${1:attribute}, :inclusion => { :in => %w(${2: mov avi }) }
+snippet vl
+	validates :${1:attribute}, :length => { :in => ${2:3}..${3:20} }
+snippet vn
+	validates :${1:attribute}, :numericality => true
+snippet vp
+	validates :${1:attribute}, :presence => true
+snippet vu
+	validates :${1:attribute}, :uniqueness => true
+snippet format
+	format.${1:js|xml|html} { ${2} }
+snippet wc
+	where(${1:"conditions"}${2:, bind_var})
+snippet wh
+	where(${1:field} => ${2:value})
+snippet xdelete
+	xhr :delete, :${1:destroy}, :id => ${2:1}${3}
+snippet xget
+	xhr :get, :${1:show}, :id => ${2:1}${3}
+snippet xpost
+	xhr :post, :${1:create}, :${2:object} => { ${3} }
+snippet xput
+	xhr :put, :${1:update}, :id => ${2:1}, :${3:object} => { ${4} }${5}
+snippet test
+	test "should ${1:do something}" do
+		${2}
+	end
+###########################
+#   migrations snippets   #
+###########################
+snippet mac
+	add_column :${1:table_name}, :${2:column_name}, :${3:data_type}
+snippet mai
+	add_index :${1:table_name}, :${2:column_name}
+snippet mrc
+	remove_column :${1:table_name}, :${2:column_name}
+snippet mrnc
+	rename_column :${1:table_name}, :${2:old_column_name}, :${3:new_column_name}
+snippet mcc
+	change_column :${1:table}, :${2:column}, :${3:type}
+snippet mnc
+	t.${1:string} :${2:title}${3:, null: false}${4}
+snippet mct
+	create_table :${1:table_name} do |t|
+		${2}
+	end
+snippet migration class .. < ActiveRecord::Migration .. def up .. def down .. end
+	class ${1:class_name} < ActiveRecord::Migration
+		def up
+			${2}
+		end
+
+		def down
+		end
+	end
+snippet migration class .. < ActiveRecord::Migration .. def change .. end
+	class ${1:class_name} < ActiveRecord::Migration
+		def change
+			${2}
+		end
+	end
+snippet trc
+	t.remove :${1:column}
+snippet tre
+	t.rename :${1:old_column_name}, :${2:new_column_name}
+	${3}
+snippet tref
+	t.references :${1:model}
 snippet tcb
 	t.boolean :${1:title}
 	${2}
@@ -871,97 +950,6 @@ snippet tcts
 snippet tctss
 	t.timestamps
 	${1}
-snippet va validates_associated
-	validates_associated :${1:attribute}
-snippet va validates .., :acceptance => true
-	validates :${1:terms}, :acceptance => true
-snippet vc
-	validates :${1:attribute}, :confirmation => true
-snippet ve
-	validates :${1:attribute}, :exclusion => { :in => ${2:%w( mov avi )} }
-snippet vf
-	validates :${1:attribute}, :format => { :with => /${2:regex}/ }
-snippet vi
-	validates :${1:attribute}, :inclusion => { :in => %w(${2: mov avi }) }
-snippet vl
-	validates :${1:attribute}, :length => { :in => ${2:3}..${3:20} }
-snippet vn
-	validates :${1:attribute}, :numericality => true
-snippet vp
-	validates :${1:attribute}, :presence => true
-snippet vu
-	validates :${1:attribute}, :uniqueness => true
-snippet format
-	format.${1:js|xml|html} { ${2} }
-snippet wc
-	where(${1:"conditions"}${2:, bind_var})
-snippet wh
-	where(${1:field} => ${2:value})
-snippet xdelete
-	xhr :delete, :${1:destroy}, :id => ${2:1}${3}
-snippet xget
-	xhr :get, :${1:show}, :id => ${2:1}${3}
-snippet xpost
-	xhr :post, :${1:create}, :${2:object} => { ${3} }
-snippet xput
-	xhr :put, :${1:update}, :id => ${2:1}, :${3:object} => { ${4} }${5}
-snippet test
-	test "should ${1:do something}" do
-		${2}
-	end
-#migrations
-snippet mac
-	add_column :${1:table_name}, :${2:column_name}, :${3:data_type}
-snippet mai
-	add_index :${1:table_name}, :${2:column_name}
-snippet mrc
-	remove_column :${1:table_name}, :${2:column_name}
-snippet mrnc
-	rename_column :${1:table_name}, :${2:old_column_name}, :${3:new_column_name}
-snippet mcc
-	change_column :${1:table}, :${2:column}, :${3:type}
-snippet mnc
-	t.${1:string} :${2:title}${3:, null: false}${4}
-snippet mct
-	create_table :${1:table_name} do |t|
-		${2}
-	end
-snippet migration class .. < ActiveRecord::Migration .. def up .. def down .. end
-	class ${1:class_name} < ActiveRecord::Migration
-		def up
-			${2}
-		end
-
-		def down
-		end
-	end
-snippet migration class .. < ActiveRecord::Migration .. def change .. end
-	class ${1:class_name} < ActiveRecord::Migration
-		def change
-			${2}
-		end
-	end
-snippet trc
-	t.remove :${1:column}
-snippet tre
-	t.rename :${1:old_column_name}, :${2:new_column_name}
-	${3}
-snippet tref
-	t.references :${1:model}
-########################################
-# Rspec snippets - see below           #
-########################################
-snippet it
-	it "${1:spec_name}" do
-		${2}
-	end
-snippet itp
-	it "${1:spec_name}"
-	${2}
-snippet its
-	its(:${1:method}) { should ${2} }
-snippet itsn
-	its(:${1:method}) { should_not ${2} }
 snippet desc
 	describe ${1:class_name} do
 		${2}
