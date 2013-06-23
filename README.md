@@ -178,6 +178,7 @@ vim-snippets is not like the "linux kernel".
 * PHP - [chrisyue](http://github.com/chrisyue)
 * Scala - [gorodinskiy](https://github.com/gorodinskiy)
 * Falcon - [steveno](https://github.com/steveno)
+* Elixir - [iurifq](https://github.com/iurifq)
 
 Contributing notes
 ------------------
