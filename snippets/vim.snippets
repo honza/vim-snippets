@@ -19,19 +19,25 @@ snippet t
 		${3}
 	endtry
 snippet for
-	for ${1:needle} in ${2:haystack}
+	for ${1} in ${2}
 		${3}
 	endfor
+snippet forkv
+	for [a,b] in items({2})
+		${3}
+            unlet a b
+	endfor
+
 snippet wh
-	while ${1:condition}
+	while ${1}
 		${2}
 	endw
 snippet if
-	if ${1:condition}
+	if ${1}
 		${2}
 	endif
 snippet ife
-	if ${1:condition}
+	if ${1}
 		${2}
 	else
 		${3}

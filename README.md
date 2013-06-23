@@ -50,6 +50,43 @@ of the snippets by setting the "always_use_first_snippet" option to 1.
 If you have VimL only (vim without python support) your best option is using
 garbas/vim-snipmate and cope with the minor bugs found in the engine.
 
+
+Policies / for contributors
+===========================
+some snippets are useful for all languages, so let's try to have the same
+triggers for all languages:
+
+```
+if : if without else
+ife: if $1 else $2
+eif : else if ($1) { .. }
+el  : else ..
+```
+
+If you're not satisfied with these defaults, open a ticket that we implement
+aliasing. Then you can remap "else" to "el" or the like.
+
+
+Don't add stupid placeholder default texts like
+```
+if (${1:condition){
+  ${2:some code here}
+}
+```
+instead use:
+
+```
+if (${1){
+  ${2}
+}
+```
+
+Exception: Functions which are used less often, such as Vim's matchall(), matchstr()
+functions which case hints may be helpful to remember order. In the VimL case
+get vim-dev plugin which has function completion
+
+Thus for conditions (while, if ..) and block bodies just use ${N} - Thanks
+
 Related repositories
 ====================
 We also encourage people to maintain sets of snippets for particular use cases
