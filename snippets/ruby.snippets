@@ -950,16 +950,17 @@ snippet tcts
 snippet tctss
 	t.timestamps
 	${1}
+##########################
+#     Rspec snippets     #
+##########################
 snippet desc
 	describe ${1:class_name} do
 		${2}
 	end
 snippet descm
-	describe "#${1:method}" do
-		pending "Not implemented"
+	describe "${1:#method}" do
+		${2:pending "Not implemented"}
 	end
-
-	${2}
 snippet cont
 	context "${1:message}" do
 		${2}
@@ -973,9 +974,9 @@ snippet aft
 		${2}
 	end
 snippet let
-	let(:${1:object}) ${2:block}
+	let(:${1:object}) ${2}
 snippet let!
-	let!(:${1:object}) ${2:block}
+	let!(:${1:object}) ${2}
 snippet subj
 	subject { ${1} }
 snippet s.
@@ -986,14 +987,23 @@ snippet exp
 	expect { ${1:object} }.to ${2}
 snippet raise
 	expect { ${1:object} }.to raise_error ${2:StandardError}, /${3:message_regex}/
-snippet btr
-	be_true
-snippet bfa
-	be_false
 snippet shared
-	shared_examples "${1:shared examples name}" ${2}
+	shared_examples ${1:"shared examples name"}
 snippet itb
-	it_behaves_like "${1:shared examples name}"${2}
+	it_behaves_like ${1:"shared examples name"}
+snippet it
+	it "${1:spec_name}" do
+		${2}
+	end
+snippet itp
+	it "${1:spec_name}"
+	${2}
+snippet its
+	its(:${1:method}) { should ${2} }
+snippet itsh
+	it { should ${1} }
+snippet itsn
+	it { should_not ${1} }
 #ShouldaMatchers#ActionController
 snippet sfp
 	it { should filter_param :${1:key} }
@@ -1017,7 +1027,7 @@ snippet ssf
 snippet sama
 	it { should allow_mass_assignment_of :${1} }
 snippet sav
-	it { should allow_value(${1}) }
+	it { should allow_value(${1}).for :${2} }
 snippet see
 	it { should ensure_exclusion_of :${1} }
 snippet sei
@@ -1037,19 +1047,25 @@ snippet svu
 #ShouldaMatchers#ActiveRecord
 snippet sana
 	it { should accept_nested_attributes_for :${1} }
-snippet sb
+snippet sbt
 	it { should belong_to :${1} }
+snippet sbtcc
+	it { should belong_to(:${1}).counter_cache ${2:true} }
 snippet shbtm
 	it { should have_and_belong_to_many :${1} }
+snippet sbv
+	it { should be_valid }${1}
 snippet shc
 	it { should have_db_column :${1} }
 snippet shi
 	it { should have_db_index :${1} }
 snippet shm
 	it { should have_many :${1} }
+snippet shmt
+	it { should have_many(:${1}).through :${2} }
 snippet sho
 	it { should have_one :${1} }
-snippet shroa
+snippet shro
 	it { should have_readonly_attribute :${1} }
 snippet ss
 	it { should serialize :${1} }
