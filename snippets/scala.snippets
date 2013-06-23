@@ -15,7 +15,7 @@ snippet ifn
 		${2}
 	}
 #if-else
-snippet ifel
+snippet ife
 	if(${1:obj}) {
 		${2}
 	} else {
@@ -26,6 +26,10 @@ snippet ifelif
 	if(${1:obj}) {
 		${2}
 	} else if(${3:obj}) {
+		${4}
+	}
+snippet eif
+	else if(${3:obj}) {
 		${4}
 	}
 #while loop
