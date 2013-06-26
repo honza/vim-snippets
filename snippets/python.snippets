@@ -2,6 +2,9 @@ snippet #!
 	#!/usr/bin/env python
 snippet imp
 	import ${1:module}
+snippet uni
+	def __unicode__(self):
+		${1:representation}
 snippet from
 	from ${1:package} import ${2:module}
 # Module Docstring
@@ -13,6 +16,7 @@ snippet docs
 	Github: `g:snips_github`
 	Description: ${2}
 	"""
+
 snippet wh
 	while ${1:condition}:
 		${2}
