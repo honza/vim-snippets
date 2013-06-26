@@ -221,14 +221,17 @@ endsnippet
 snippet "li(st)? (?P<num>\d+)" "List" br
 $0
 `!p
+# usage: li 4<tab>
+# which will extand into a unordered list contains 4 items
 snip.rv = make_items(match.groupdict()['num'])
 `
 endsnippet
 
-# usage: ol 3<tab>
 snippet "ol(st)? (?P<num>\d+)" "Order List" br
 $0
 `!p
+# usage: ol 4<tab>
+# which will extand into a ordered list contains 4 items
 snip.rv = make_items(match.groupdict()['num'], 1)
 `
 endsnippet
