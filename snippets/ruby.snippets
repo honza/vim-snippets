@@ -596,8 +596,8 @@ snippet artp
 snippet artpp
 	assert_redirected_to ${1:model}s_path
 snippet asd
-	assert_difference "${1:Model}.${2:count}", $1 do
-		${3}
+	assert_difference "${1:Model}.${2:count}", ${3:1} do
+		${4}
 	end
 snippet asnd
 	assert_no_difference "${1:Model}.${2:count}" do
