@@ -989,83 +989,80 @@ snippet raise
 	expect { ${1:object} }.to raise_error ${2:StandardError}, /${3:message_regex}/
 snippet shared
 	shared_examples ${1:"shared examples name"}
-snippet itb
+snippet ibl
 	it_behaves_like ${1:"shared examples name"}
 snippet it
 	it "${1:spec_name}" do
 		${2}
 	end
-snippet itp
-	it "${1:spec_name}"
-	${2}
 snippet its
 	its(:${1:method}) { should ${2} }
-snippet itsh
+snippet is
 	it { should ${1} }
-snippet itsn
+snippet isn
 	it { should_not ${1} }
 #ShouldaMatchers#ActionController
-snippet sfp
+snippet isfp
 	it { should filter_param :${1:key} }
-snippet srt
+snippet isrt
 	it { should redirect_to ${1:url} }
-snippet srtp
+snippet isrtp
 	it { should render_template ${1} }
-snippet srwl
+snippet isrwl
 	it { should render_with_layout ${1} }
-snippet srf
+snippet isrf
 	it { should rescue_from ${1:exception} }
-snippet srw
+snippet isrw
 	it { should respond_with ${1:status} }
-snippet sr
+snippet isr
 	it { should route(:${1:method}, '${2:path}') }
-snippet sss
+snippet isss
 	it { should set_session :${1:key} }
-snippet ssf
+snippet issf
 	it { should set_the_flash('${1}') }
 #ShouldaMatchers#ActiveModel
-snippet sama
+snippet isama
 	it { should allow_mass_assignment_of :${1} }
-snippet sav
+snippet isav
 	it { should allow_value(${1}).for :${2} }
-snippet see
+snippet isee
 	it { should ensure_exclusion_of :${1} }
-snippet sei
+snippet isei
 	it { should ensure_inclusion_of :${1} }
-snippet itsel
+snippet isel
 	it { should ensure_length_of :${1} }
-snippet sva
+snippet isva
 	it { should validate_acceptance_of :${1} }
-snippet svc
+snippet isvc
 	it { should validate_confirmation_of :${1} }
-snippet svn
+snippet isvn
 	it { should validate_numericality_of :${1} }
-snippet svp
+snippet isvp
 	it { should validate_presence_of :${1} }
-snippet svu
+snippet isvu
 	it { should validate_uniqueness_of :${1} }
 #ShouldaMatchers#ActiveRecord
-snippet sana
+snippet isana
 	it { should accept_nested_attributes_for :${1} }
-snippet sbt
+snippet isbt
 	it { should belong_to :${1} }
-snippet sbtcc
+snippet isbtcc
 	it { should belong_to(:${1}).counter_cache ${2:true} }
-snippet shbtm
+snippet ishbtm
 	it { should have_and_belong_to_many :${1} }
-snippet sbv
+snippet isbv
 	it { should be_valid }${1}
-snippet shc
+snippet ishc
 	it { should have_db_column :${1} }
-snippet shi
+snippet ishi
 	it { should have_db_index :${1} }
-snippet shm
+snippet ishm
 	it { should have_many :${1} }
-snippet shmt
+snippet ishmt
 	it { should have_many(:${1}).through :${2} }
-snippet sho
+snippet isho
 	it { should have_one :${1} }
-snippet shro
+snippet ishro
 	it { should have_readonly_attribute :${1} }
-snippet ss
+snippet iss
 	it { should serialize :${1} }
