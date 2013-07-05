@@ -1066,3 +1066,7 @@ snippet ishro
 	it { should have_readonly_attribute :${1} }
 snippet iss
 	it { should serialize :${1} }
+snippet isres
+	it { should respond_to :${1} }
+snippet isresw
+	it { should respond_to(:${1}).with(${2}).arguments }
