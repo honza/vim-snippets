@@ -1,6 +1,6 @@
 # module and export all
 snippet mod
-	-module(${1:`Filename('', 'my')`}).
+	-module(${1:`vim_snippets#Filename('', 'my')`}).
 
 	-compile([export_all]).
 
@@ -66,7 +66,7 @@ snippet %p
 	%% @private
 # OTP application
 snippet application
-	-module(${1:`Filename('', 'my')`}).
+	-module(${1:`vim_snippets#Filename('', 'my')`}).
 
 	-behaviour(application).
 
@@ -84,7 +84,7 @@ snippet application
 	    ok.
 # OTP supervisor
 snippet supervisor
-	-module(${1:`Filename('', 'my')`}).
+	-module(${1:`vim_snippets#Filename('', 'my')`}).
 
 	-behaviour(supervisor).
 
@@ -107,7 +107,7 @@ snippet supervisor
 	    {ok, {RestartStrategy, Children}}.
 # OTP gen_server
 snippet gen_server
-	-module(${1:`Filename('', 'my')`}).
+	-module(${1:`vim_snippets#Filename('', 'my')`}).
 
 	-behaviour(gen_server).
 

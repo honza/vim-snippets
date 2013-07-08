@@ -20,7 +20,7 @@ snippet inc
 	#include <${1:stdio}.h>${2}
 # #include "..."
 snippet Inc
-	#include "${1:`Filename("$1.h")`}"${2}
+	#include "${1:`vim_snippets#Filename("$1.h")`}"${2}
 # ifndef...define...endif
 snippet ndef
 	#ifndef $1
@@ -41,7 +41,7 @@ snippet #if
 	#endif
 # header include guard
 snippet once
-	#ifndef ${1:`toupper(Filename('$1_H', 'UNTITLED_H'))`}
+	#ifndef ${1:`toupper(vim_snippets#Filename('$1_H', 'UNTITLED_H'))`}
 
 	#define $1
 
@@ -132,14 +132,14 @@ snippet td
 	typedef ${1:int} ${2:MyCustomType};${3}
 # struct
 snippet st
-	struct ${1:`Filename('$1_t', 'name')`} {
+	struct ${1:`vim_snippets#Filename('$1_t', 'name')`} {
 		${2:/* data */}
 	}${3: /* optional variable list */};${4}
 # typedef struct
 snippet tds
 	typedef struct ${2:_$1 }{
 		${3:/* data */}
-	} ${1:`Filename('$1_t', 'name')`};${4}
+	} ${1:`vim_snippets#Filename('$1_t', 'name')`};${4}
 # typedef enum
 snippet tde
 	typedef enum {

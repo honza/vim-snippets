@@ -68,7 +68,7 @@ snippet mu
 ## Class
 # class
 snippet cl
-	class ${1:`Filename('$1', 'name')`}
+	class ${1:`vim_snippets#Filename('$1', 'name')`}
 	{
 	public:
 		$1(${2});
@@ -79,12 +79,12 @@ snippet cl
 	};
 # member function implementation
 snippet mfun
-	${4:void} ${1:`Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
+	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
 		${5}
 	}
 # namespace
 snippet ns
-	namespace ${1:`Filename('', 'my')`} {
+	namespace ${1:`vim_snippets#Filename('', 'my')`} {
 		${2}
 	} /* namespace $1 */
 ##

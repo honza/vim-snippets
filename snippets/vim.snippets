@@ -4,7 +4,7 @@ snippet header
 	" Description: ${3}
 	${4:" Last Modified: `strftime("%B %d, %Y")`}
 snippet guard
-	if exists('${1:did_`Filename()`}') || &cp${2: || version < 700}
+	if exists('${1:did_`vim_snippets#Filename()`}') || &cp${2: || version < 700}
 		finish
 	endif
 	let $1 = 1${3}

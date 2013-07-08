@@ -39,11 +39,11 @@ snippet j.u
 ##
 ## Class
 snippet cl
-	class ${1:`Filename("", "untitled")`} ${2}
+	class ${1:`vim_snippets#Filename("", "untitled")`} ${2}
 snippet in
-	interface ${1:`Filename("", "untitled")`} ${2:extends Parent}${3}
+	interface ${1:`vim_snippets#Filename("", "untitled")`} ${2:extends Parent}${3}
 snippet tc
-	public class ${1:`Filename()`} extends ${2:TestCase}
+	public class ${1:`vim_snippets#Filename()`} extends ${2:TestCase}
 ##
 ## Class Enhancements
 snippet ext
@@ -144,7 +144,7 @@ snippet @au
 snippet @br
 	@brief ${1:Description}
 snippet @fi
-	@file ${1:`Filename()`}.java
+	@file ${1:`vim_snippets#Filename()`}.java
 snippet @pa
 	@param ${1:param}
 snippet @re

@@ -28,12 +28,12 @@ snippet use
 	use ${1:Foo\Bar\Baz};
 	${2}
 snippet	c
-	class ${1:`Filename()`}
+	class ${1:`vim_snippets#Filename()`}
 	{
 		${2}
 	}
 snippet i
-	interface ${1:`Filename()`}
+	interface ${1:`vim_snippets#Filename()`}
 	{
 		${2}
 	}
@@ -57,7 +57,7 @@ snippet sm
 	 *
 	 * @param ${2:$1} $$1 ${3:description}
 	 *
-	 * @return ${4:`Filename()`}
+	 * @return ${4:`vim_snippets#Filename()`}
 	 */
 	${5:public} function set${6:$2}(${7:$2 }$$1)
 	{
@@ -214,7 +214,7 @@ snippet interface
 	 * @package ${3:default}
 	 * @author ${4:`g:snips_author`}
 	 */
-	interface ${1:`Filename()`}
+	interface ${1:`vim_snippets#Filename()`}
 	{
 		${5}
 	}
@@ -223,7 +223,7 @@ snippet class
 	/**
 	 * ${1}
 	 */
-	class ${2:`Filename()`}
+	class ${2:`vim_snippets#Filename()`}
 	{
 		${3}
 		/**
@@ -237,7 +237,7 @@ snippet class
 snippet nc
 	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 
-	${2:abstract }class ${3:`Filename()`}
+	${2:abstract }class ${3:`vim_snippets#Filename()`}
 	{
 		${4}
 	}
@@ -366,7 +366,7 @@ snippet gs
 	 *
 	 * @param $2 $$1 ${5:description}
 	 *
-	 * @return ${6:`Filename()`}
+	 * @return ${6:`vim_snippets#Filename()`}
 	 */
 	public function set$3(${7:$2 }$$1)
 	{
