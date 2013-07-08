@@ -413,13 +413,17 @@ snippet seld
 	end
 snippet lam
 	lambda { |${1:args}| ${2} }
-snippet doo
+# I'm pretty sure that ruby users expect do to expand to do .. end
+snippet do
 	do
 		${1}
 	end
+# this is for one or more variables. typing a ", " is that cheap that it may
+# not be worth adding another snippet. should 0/1 placeholders change order?
+# its a good idea to think about the var name, so use it first
 snippet dov
-	do |${1:variable}|
-		${2}
+	do |${0:v}|
+		${1}
 	end
 snippet :
 	:${1:key} => ${2:"value"}${3}
