@@ -56,7 +56,7 @@ endsnippet
 #####################################
 
 snippet part "Part" b
-\part{${1:part name}}
+\part{${1:part name}} % (fold)
 \label{prt:${2:${1/(\w+)|\W+/(?1:\L$0\E:_)/g}}}
 
 ${0}
@@ -65,7 +65,7 @@ ${0}
 endsnippet
 
 snippet cha "Chapter" b
-\chapter{${1:chapter name}}
+\chapter{${1:chapter name}} % (fold)
 \label{cha:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
 ${0}
@@ -74,7 +74,7 @@ ${0}
 endsnippet
 
 snippet sec "Section" b
-\section{${1:section name}} 
+\section{${1:section name}}  % (fold)
 \label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
 ${0}
@@ -84,7 +84,7 @@ endsnippet
 
 
 snippet sub "Subsection" b
-\subsection{${1:subsection name}}
+\subsection{${1:subsection name}} % (fold)
 \label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
 ${0}
@@ -93,7 +93,7 @@ ${0}
 endsnippet
 
 snippet ssub "Subsubsection" b
-\subsubsection{${1:subsubsection name}}
+\subsubsection{${1:subsubsection name}} % (fold)
 \label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
 ${0}
@@ -103,7 +103,7 @@ ${0}
 endsnippet
 
 snippet par "Paragraph" b
-\paragraph{${1:paragraph name}}
+\paragraph{${1:paragraph name}} % (fold)
 \label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
 ${0}
@@ -113,7 +113,7 @@ endsnippet
 
 
 snippet subp "Subparagraph" b
-\subparagraph{${1:subparagraph name}}
+\subparagraph{${1:subparagraph name}} % (fold)
 \label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
 ${0}
