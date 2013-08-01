@@ -5,7 +5,7 @@ snippet <? "php open tag" b
 endsnippet
 
 snippet vdd "php var_dump and die" b
-var_dump(); die();
+var_dump(${1}); die();
 endsnippet
 
 snippet ns "php namespace" b
@@ -29,7 +29,7 @@ if m:
  * ${3:@author `whoami`}$4
  */
 class ${2:`!p
-snip.rv = re.match(r'.*(?=\.)', fn).group().capitalize()
+snip.rv = re.match(r'.*(?=\.)', fn).group()
 `}
 {
 }
