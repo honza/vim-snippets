@@ -78,6 +78,10 @@ snippet swi
 	case ${2:value}
 		${3}
 	default void
+snippet mat
+	match ${1:object}
+	| ${2:value} => ${3}
+	| otherwise => void
 
 # Log
 snippet log
