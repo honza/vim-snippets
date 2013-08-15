@@ -24,7 +24,7 @@ snippet l link_to
 snippet m mail_to
 	= mail_to ${1:email_address}, ${2:name}
 snippet m mail_to subject body
-	= mail_to ${1:email_address}, ${2:name}, :subject => ${3:subject}, :body
+	= mail_to ${1:email_address}, ${2:name}, :subject => ${3:subject}, :body => ${4:body}
 snippet ife
 	- if ${1:condition}
 		${2}
