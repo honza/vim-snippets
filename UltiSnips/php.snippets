@@ -18,7 +18,7 @@ if m:
 
 endsnippet
 
-snippet nc "php namespace and class" b
+snippet nc "php namespace and class or interface" b
 namespace ${1:`!p 
 abspath = os.path.abspath(path)
 m = re.search(r'[A-Z].+(?=/)', abspath)
@@ -29,7 +29,17 @@ if m:
 /**
  * ${3:@author `whoami`}${4}
  */
-class ${2:`!p
+`!p
+m = re.search(r'Abstract', path)
+if m:
+	snip.rv = 'abstract '
+``!p
+m = re.search(r'Interface', path)
+if m:
+	snip.rv = 'interface'
+else:
+	snip.rv = 'class'
+` ${2:`!p
 snip.rv = re.match(r'.*(?=\.)', fn).group()
 `}
 {
@@ -79,4 +89,10 @@ snippet if "php if" !b
 if (${1}) {
 	${2}
 }
+endsnippet
+
+snippet /** "php comment block" b
+/**
+ * @${1}
+ */
 endsnippet
