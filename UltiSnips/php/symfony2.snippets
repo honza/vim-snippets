@@ -1,3 +1,5 @@
+# sugguestion? report bugs? 
+# go to https://github.com/chrisyue/vim-snippets/issues
 snippet contr "symfony2 controller" b
 namespace `!p 
 abspath = os.path.abspath(path)
@@ -25,6 +27,18 @@ endsnippet
 snippet act "symfony2 action" b
 /**
  * @Route("${3}", name="${4}")
+ * @Method({${5:"POST"}})
+ */
+public function ${1}Action(${2})
+{
+	${6}
+	return $this->redirect($this->generate('home', [], false));
+}
+endsnippet
+
+snippet actt "symfony2 action and template" b
+/**
+ * @Route("${3}", name="${4}")
  * @Method({${5:"GET"}})
  * @Template()
  */
@@ -32,7 +46,8 @@ public function ${1}Action(${2})
 {
 	${6}
 	return [];
-}
+}`!p
+abspath = os.path.abspath(path)`
 endsnippet
 
 snippet comm "symfony2 command" b
