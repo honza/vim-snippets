@@ -34,9 +34,10 @@ m = re.search(r'Abstract', path)
 if m:
 	snip.rv = 'abstract '
 ``!p
-m = re.search(r'Interface', path)
-if m:
+if re.search(r'Interface', path):
 	snip.rv = 'interface'
+elif re.search(r'Trait', path):
+	snip.rv = 'trait'
 else:
 	snip.rv = 'class'
 ` ${2:`!p
