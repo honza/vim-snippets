@@ -88,3 +88,68 @@ snip.rv = re.match(r'.*(?=\.)', fn).group()
 	}
 }
 endsnippet
+
+snippet subs "symfony2 subscriber" b
+namespace `!p 
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+/**
+ * ${1:@author `whoami`}${2}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` implements EventSubscriberInterface
+{
+	public function __construct()
+	{
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public static function getSubscribedEvents()
+	{
+		return [];
+	}
+}
+endsnippet
+
+snippet transf "symfony2 form data transformer" b
+namespace `!p 
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Symfony\Component\Form\DataTransformerInterface;
+use Symfony\Component\Form\Exception\TransformationFailedException;
+
+/**
+ * ${3:@author `whoami`}${4}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` implements DataTransformerInterface
+{
+	/**
+	 * {@inheritDoc}
+	 */
+	public function transform(${1})
+	{
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function reverseTransform(${2})
+	{
+	}
+}
+endsnippet
