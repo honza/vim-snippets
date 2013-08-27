@@ -116,9 +116,9 @@ snippet iter
 
 # auto iterator
 snippet itera
-	for (auto ${1:i} = $1.begin(); $1 != $1.end(); ++$1) {
-		${2:std::cout << *$1 << std::endl;}
-	}${3}
+	for (auto ${1:i} = ${2:container}.begin(); $1 != $2.end(); ++$1) {
+		${3:std::cout << *$1 << std::endl;}
+	}${4}
 ##
 ## Lambdas
 # lamda (one line)
