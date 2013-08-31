@@ -153,3 +153,32 @@ snip.rv = re.match(r'.*(?=\.)', fn).group()
 	}
 }
 endsnippet
+
+snippet ent "symfony2 doctrine entity" b
+namespace `!p 
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ${3:@author `whoami`}${4}
+ *
+ * @ORM\Entity()
+ * @ORM\Table(name="`!p snip.rv = re.match(r'.*(?=\.)', fn).group().lower()`")
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+`
+{
+	/**
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue
+	 * @ORM\Id
+	 */
+	private $id;
+}
+endsnippet
