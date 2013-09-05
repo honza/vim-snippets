@@ -1,5 +1,6 @@
 # sugguestion? report bugs? 
 # go to https://github.com/chrisyue/vim-snippets/issues
+
 snippet contr "symfony2 controller" b
 namespace `!p 
 abspath = os.path.abspath(path)
@@ -15,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * ${1:@author `whoami`}${2}
+ * ${1:@author `whoami`}
  */
 class `!p
 snip.rv = re.match(r'.*(?=\.)', fn).group()
@@ -65,7 +66,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * ${3:@author `whoami`}${4}
+ * ${3:@author `whoami`}
  */
 class `!p
 snip.rv = re.match(r'.*(?=\.)', fn).group()
@@ -100,7 +101,7 @@ if m:
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
- * ${1:@author `whoami`}${2}
+ * ${1:@author `whoami`}
  */
 class `!p
 snip.rv = re.match(r'.*(?=\.)', fn).group()
@@ -132,7 +133,7 @@ use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
 /**
- * ${3:@author `whoami`}${4}
+ * ${3:@author `whoami`}
  */
 class `!p
 snip.rv = re.match(r'.*(?=\.)', fn).group()
@@ -165,7 +166,7 @@ if m:
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ${3:@author `whoami`}${4}
+ * ${3:@author `whoami`}
  *
  * @ORM\Entity()
  * @ORM\Table(name="`!p snip.rv = re.match(r'.*(?=\.)', fn).group().lower()`")
@@ -180,5 +181,49 @@ snip.rv = re.match(r'.*(?=\.)', fn).group()
 	 * @ORM\Id
 	 */
 	private $id;
+}
+endsnippet
+
+snippet form "symfony2 form type" b
+namespace `!p 
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
+/**
+ * ${2:@author `whoami`}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` extends AbstractType
+{
+	/** 
+     * {@inheritDoc}
+	 */
+	public function buildForm(FormBuilderInterface $builder, array $options)
+	{   
+	}
+
+	/** 
+     * {@inheritDoc}
+	 */
+	public function setDefaultOptions(OptionsResolverInterface $resolver)
+	{   
+	    $resolver->setDefaults(); 
+	} 
+
+	/** 
+     * {@inheritDoc}
+	 */
+	public function getName()
+	{   
+		return '${1}';
+	}
 }
 endsnippet
