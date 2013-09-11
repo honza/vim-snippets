@@ -169,7 +169,11 @@ use Doctrine\ORM\Mapping as ORM;
  * ${3:@author `whoami`}
  *
  * @ORM\Entity()
- * @ORM\Table(name="`!p snip.rv = re.match(r'.*(?=\.)', fn).group().lower()`")
+ * @ORM\Table(name="`!p 
+tmp = re.match(r'.*(?=\.)', fn).group()
+tmp = re.sub(r'\B([A-Z])', r'_\1', tmp)
+snip.rv = tmp.lower()
+`")
  */
 class `!p
 snip.rv = re.match(r'.*(?=\.)', fn).group()
