@@ -33,7 +33,7 @@ snippet act "symfony2 action" b
 public function ${1}Action(${2})
 {
 	${6}
-	return $this->redirect($this->generate('home', [], false));
+	return $this->redirect($this->generateUrl('home', [], false));
 }
 endsnippet
 
@@ -175,7 +175,11 @@ tmp = re.sub(r'\B([A-Z])', r'_\1', tmp)
 snip.rv = tmp.lower()
 `")
  */
-class `!p
+`!p
+m = re.search(r'Abstract', path)
+if m:
+	snip.rv = 'abstract '
+`class `!p
 snip.rv = re.match(r'.*(?=\.)', fn).group()
 `
 {
