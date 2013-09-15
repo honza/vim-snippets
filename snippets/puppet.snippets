@@ -3,6 +3,87 @@
 # Please contact R.I.Pienaar <rip@devco.net> for additions and feedback,
 # see it in action @ http://www.devco.net/archives/2009/09/22/vim_and_puppet.php
 
+# Header to match http://docs.puppetlabs.com/guides/style_guide.html#puppet-doc
+snippet classheader
+	# == Class: ${1:`vim_snippets#Filename(expand('%:p:s?.*modules/??:h:h'), 'name')`}
+	#
+	# ${2:Full description of class $1 here}
+	#
+	# === Parameters
+	#
+	# Document parameters here.
+	#
+	# [*parameter1*]
+	#   Explanation of what this parameter affects and what it defaults to.
+	#   e.g. "Specify one or more upstream ntp servers as an array."
+	#
+	# === Variables
+	#
+	# Here you should define a list of variables that this module would require.
+	#
+	# [*variable1*]
+	#   Explanation of how this variable affects the funtion of this class and
+	#   if it has a default. e.g. "The parameter enc_ntp_servers must be set by the
+	#   External Node Classifier as a comma separated list of hostnames."
+	#
+	# === Examples
+	#
+	#  class { '$1':
+	#    parameter1 => [ 'just', 'an', 'example', ]
+	#  }
+	#
+	# === Authors
+	#
+	# `g:snips_author` <`g:snips_email`>
+	#
+	# === Copyright
+	#
+	# Copyright `strftime("%Y")` `g:snips_author`
+	#
+	class $1 (${3}){
+		${4}
+	}
+
+snippet defheader
+	# == Define: ${1:`vim_snippets#Filename(expand('%:p:s?.*modules/??:r:s?/manifests/?::?'), 'name')`}
+	#
+	# ${2:Full description of defined resource type $1 here}
+	#
+	# === Parameters
+	#
+	# Document parameters here
+	#
+	# [*namevar*]
+	#   If there is a parameter that defaults to the value of the title string
+	#   when not explicitly set, you must always say so.  This parameter can be
+	#   referred to as a "namevar," since it's functionally equivalent to the
+	#   namevar of a core resource type.
+	#
+	# [*basedir*]
+	#   Description of this variable.  For example, "This parameter sets the
+	#   base directory for this resource type.  It should not contain a trailing
+	#   slash."
+	#
+	# === Examples
+	#
+	# Provide some examples on how to use this type:
+	#
+	#   $1 { 'namevar':
+	#     basedir => '/tmp/src',
+	#   }
+	#
+	# === Authors
+	#
+	# `g:snips_author` <`g:snips_email`>
+	#
+	# === Copyright
+	#
+	# Copyright `strftime("%Y")` `g:snips_author`
+	#
+	define $1(${3}) {
+		${4}
+	}
+
 # Language Constructs
 snippet class
 	class ${1:`vim_snippets#Filename('', 'name')`} {
