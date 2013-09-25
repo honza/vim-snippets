@@ -62,14 +62,15 @@ ${1:public} function __construct($2)
 endsnippet
 
 snippet sg "Setter and Getter" b
-
 /**
- * @var ${3:`!p snip.rv = t[2].capitalize()`}
+ * @var ${3:`!p snip.rv = t[2][0:1].upper() + t[2][1:]`}
+ * 
+ * ${4}
  */
-${1:protected} $$2;
+${1:protected} $${2};
 
-public function set`!p snip.rv = t[2].capitalize()`(`!p
-if re.match(r'[A-Z].*', t[3]):
+public function set`!p snip.rv = t[2][0:1].upper() + t[2][1:]`(`!p
+if re.match(r'^(\\|[A-Z]).*', t[3]):
 	snip.rv = t[3] + ' '
 else:
 	snip.rv = ''
@@ -80,7 +81,7 @@ else:
 	return $this;
 }
 
-public function get`!p snip.rv = t[2].capitalize()`()
+public function get`!p snip.rv = t[2][0:1].upper() + t[2][1:]`()
 {
 	return $this->$2;
 }
