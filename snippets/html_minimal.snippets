@@ -63,12 +63,10 @@ snippet img
 snippet css_file
 	<link rel="stylesheet" href="${1:style.css}" type="text/css" media="${2:all}">
 snippet css_block
-	<link rel="stylesheet" href="${1:style.css}" type="text/css" media="${0:all}">
-        </link>
-
+	<style type='text/css'>
+	</style>
 snippet script_block
 	<script type="text/javascript" charset="utf-8">
 	</script>
 snippet script_file
-	<script type="text/javascript" charset="utf-8">
-	</script>
+	<script src="${1}" type="text/javascript"></script>
