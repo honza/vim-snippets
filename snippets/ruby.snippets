@@ -58,7 +58,7 @@ snippet deft
 	def test_${1:case_name}
 		${0}
 	end
-snippets descendants
+snippet descendants
 	class Class
 		def descendants
 			ObjectSpace.each_object(::Class).select {|klass| klass < self }
