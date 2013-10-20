@@ -140,6 +140,19 @@ snippet "
 	"""
 	${0:doc}
 	"""
+# test setup, teardown
+snippet setup
+	def setUp(self):
+		# If class not setup yet, do it.
+		if not self.IsSetup:
+			${1}
+			self.IsSetup = True
+snippet teardown
+	def tearDown(self):
+		# If class not torn down yet, do it.
+		if not self.IsTorndown:
+			${1}
+			self.IsTorndown = True
 # test function/method
 snippet test
 	def test_${1:description}(${2:`indent('.') ? 'self' : ''`}):
