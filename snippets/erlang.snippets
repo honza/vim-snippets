@@ -18,6 +18,9 @@ snippet exp
 # include directive
 snippet inc
 	-include("${1:file}").
+# include_lib directive
+snippet incl
+	-include_lib("${1:lib}/include/${1}.hrl").${2}
 # behavior directive
 snippet beh
 	-behaviour(${1:behaviour}).
