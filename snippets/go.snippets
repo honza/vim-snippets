@@ -1,8 +1,17 @@
-# variables
+# shorthand variable declaration
 snippet v
 	${1} := ${2}
+# variable initialization
 snippet vr
+	var ${1:t} ${0:string}
+# variable declaration
+snippet var
 	var ${1} ${2} = ${3}
+# variables declaration
+snippet vars
+	var (
+		${1} ${2} = ${3}
+	)
 # append
 snippet ap
 	append(${1:slice}, ${0:value})
@@ -213,9 +222,6 @@ snippet sp
 # true
 snippet t
 	true
-# variable declaration
-snippet v
-	var ${1:t} ${0:string}
 # goroutine named function
 snippet g
 	go ${1:funcName}(${0})
