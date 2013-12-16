@@ -1,19 +1,17 @@
 # main()
 snippet main
-	int main(int argc, const char *argv[])
-	{
+	int main(int argc, const char *argv[]) {
 		${1}
 		return 0;
 	}
 snippet mainn
-	int main(void)
-	{
+	int main(void) {
 		${1}
 		return 0;
 	}
 # #include <...>
 snippet inc
-	#include <${1:stdio}.h>${2}
+	#include <${1:stdio}>${2}
 # #include "..."
 snippet Inc
 	#include "${1:`Filename("$1.h")`}"${2}
@@ -35,7 +33,6 @@ snippet #if
 # Header Include-Guard
 snippet once
 	#ifndef ${1:`toupper(Filename('$1_H', 'UNTITLED_H'))`}
-
 	#define $1
 
 	${2}
@@ -75,8 +72,7 @@ snippet forr
 	}
 # Function
 snippet fun
-	${1:void} ${2:function_name}(${3})
-	{
+	${1:void} ${2:function_name}(${3}) {
 		${4:/* code */}
 	}
 # Function Declaration
@@ -109,7 +105,7 @@ snippet pr
 snippet fpr
 	fprintf(${1:stderr}, "${2:%s}\n"${3});${4}
 # This is kind of convenient
-snippet .
+snippet ,
 	[${1}]${2}
 # GPL
 snippet gpl
