@@ -72,7 +72,10 @@ ActivateAddons vim-snippets snipmate
 Is the place to discuss plugin managers and repository resources.
 
 About how to install snipate see [snipmate@garbas](https://github.com/garbas/vim-snipmate)
-About how to install the other engines .. just use google (see above)
+
+(Bundle, Pathogen, git clone - keywords to make people find this link by ctrl-f search)
+I know that I should be reading the docs of the snippet engine, just let me copy paste into my .vmirc:
+(See this pull request)[https://github.com/honza/vim-snippets/pull/307/files].
 
 Policies / for contributors
 ===========================
