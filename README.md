@@ -8,6 +8,41 @@ This repository contains snippets files for various programming languages.
 It is community-maintained and many people have contributed snippet files and
 other improvements already.
 
+Installation
+============
+### Pathogen
+
+Install [garbas' fork](https://github.com/garbas/vim-snipmate) of the vim-snipmate plugin
+
+```
+$ cd ~/.vim/bundle
+$ git clone https://github.com/tomtom/tlib_vim.git
+$ git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
+$ git clone https://github.com/garbas/vim-snipmate.git
+```
+
+Install vim-snippets
+
+```
+$ git clone https://github.com/honza/vim-snippets.git
+```
+
+### Vundler
+
+Install [garbas' fork](https://github.com/garbas/vim-snipmate) of the vim-snipmate plugin
+
+```
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+```
+
+Install vim-snippets
+
+```
+Bundle "honza/vim-snippets"
+```
+
 Contents
 ========
 
