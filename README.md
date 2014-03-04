@@ -162,9 +162,6 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
 ```
 
-            \ 'ruby'    : {'filetypes': ["ruby", "ruby-rails", "ruby-1.9"] },
-```
-
 If it happens that you work on a project requiring ruby-1.8 snippets instead,
 consider using vim-addon-local-vimrc and override the filetypes.
 
