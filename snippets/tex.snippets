@@ -34,6 +34,7 @@ snippet center
 # Align(ed)
 snippet ali
 	\begin{align${1:ed}}
+		\label{eq:${2}}
 		${0}
 	\end{align$1}
 # Gather(ed)
@@ -44,6 +45,7 @@ snippet gat
 # Equation
 snippet eq
 	\begin{equation}
+		\label{eq:${2}}
 		${0}
 	\end{equation}
 # Equation
@@ -61,6 +63,9 @@ snippet eqnarray
 	\begin{eqnarray}
 		${0}
 	\end{eqnarray}
+# Label
+snippet lab
+	\label{${1:eq:}${2:fig:}${3:tab:}${0}}
 # Enumerate
 snippet enum
 	\begin{enumerate}
