@@ -750,42 +750,46 @@ snippet mapwo
 		${0}
 	end
 
+###########################
+#   controller snippets   #
+###########################
+
 # before callback
-snippet mbv
+snippet cbv
   before_validation :${0:method}
-snippet mbc
+snippet cbc
   before_create :${0:method}
-snippet mbu
+snippet cbu
   before_update :${0:method}
-snippet mbs
+snippet cbs
 	before_save :${0:method}
-snippet mbd
+snippet cbd
   before_destroy :${0:method}
 
 # after callback
-snippet mav
+snippet cav
   after_validation :${0:method}
-snippet maf
+snippet caf
   after_find :${0:method}
-snippet mat
+snippet cat
   after_touch :${0:method}
-snippet mac
+snippet cac
   after_create :${0:method}
-snippet mau
+snippet cau
   after_update :${0:method}
-snippet mas
+snippet cas
   after_save :${0:method}
-snippet mad
+snippet cad
   after_destroy :${0:method}
-snippet mrc
 
 # around callback
+snippet crc
   around_create :${0:method}
-snippet mru
+snippet cru
   around_update :${0:method}
-snippet mrs
+snippet crs
   around_save :${0:method}
-snippet mrd
+snippet crd
   around_destroy :${0:method}
 
 snippet mcht
@@ -933,6 +937,8 @@ snippet mct
 	create_table :${1:table_name} do |t|
 		${0}
 	end
+snippet mdt
+	drop_table :${1:table_name}
 snippet migration class .. < ActiveRecord::Migration .. def up .. def down .. end
 	class ${1:class_name} < ActiveRecord::Migration
 		def up
