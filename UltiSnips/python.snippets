@@ -34,13 +34,30 @@ global !p
 NORMAL  = 0x1
 DOXYGEN = 0x2
 SPHINX  = 0x3
+GOOGLE  = 0x4
 
 SINGLE_QUOTES = 0x1
 DOUBLE_QUOTES = 0x2
 
+
+class Arg(object):
+	def __init__(self, arg):
+		self.arg = arg
+		self.name = arg.split('=')[0].strip()
+
+	def __str__(self):
+		return self.name
+	
+	def __unicode__(self):
+		return self.name
+	
+	def is_kwarg(self):
+		return '=' in self.arg
+
+
 def get_args(arglist):
-	args = [arg.split('=')[0].strip() for arg in arglist.split(',') if arg]
-	args = [arg for arg in args if arg and arg != "self"]
+	args = [Arg(arg) for arg in arglist.split(',') if arg]
+	args = [arg for arg in args if arg.name != 'self']
 
 	return args
 
@@ -61,6 +78,7 @@ def get_style(snip):
 
 	if    style == "doxygen": return DOXYGEN
 	elif  style == "sphinx": return SPHINX
+	elif  style == "google": return GOOGLE
 	else: return NORMAL
 
 
@@ -71,6 +89,8 @@ def format_arg(arg, style):
 		return ":param %s: @todo" % arg
 	elif style == NORMAL:
 		return ":%s: @todo" % arg
+	elif style == GOOGLE:
+		return "%s (@todo): @todo" % arg
 
 
 def format_return(style):
@@ -78,6 +98,8 @@ def format_return(style):
 		return "@return: @todo"
 	elif style in (NORMAL, SPHINX):
 		return ":returns: @todo"
+	elif style == GOOGLE:
+		return "Returns: @todo"
 
 
 def write_docstring_args(args, snip):
@@ -89,8 +111,32 @@ def write_docstring_args(args, snip):
 
 	style = get_style(snip)
 
-	for arg in args:
-		snip += format_arg(arg, style)
+	if style == GOOGLE:
+		write_google_docstring_args(args, snip)
+	else:
+		for arg in args:
+			snip += format_arg(arg, style)
+
+
+def write_google_docstring_args(args, snip):
+	kwargs = [arg for arg in args if arg.is_kwarg()]
+	args = [arg for arg in args if not arg.is_kwarg()]
+
+	if args:
+		snip += "Args:"
+		snip.shift()
+		for arg in args:
+			snip += format_arg(arg, GOOGLE)
+		snip.unshift()
+		snip.rv += '\n' + snip.mkline('', indent='')
+
+	if kwargs:
+		snip += "Kwargs:"
+		snip.shift()
+		for kwarg in kwargs:
+			snip += format_arg(kwarg, GOOGLE)
+		snip.unshift()
+		snip.rv += '\n' + snip.mkline('', indent='')
 
 
 def write_init_body(args, parents, snip):
