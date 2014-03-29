@@ -479,6 +479,8 @@ snippet asne
 	assert_not_equal ${1:unexpected}, ${2:actual}
 snippet asid
 	assert_in_delta ${1:expected_float}, ${2:actual_float}, ${3:2 ** -20}
+snippet asi
+	assert_includes ${1:collection}, ${2:object}
 snippet asio
 	assert_instance_of ${1:ExpectedClass}, ${2:actual_instance}
 snippet asko
