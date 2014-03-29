@@ -1,0 +1,136 @@
+snippet #! "Hashbang for Rscript"
+#!/usr/bin/env Rscript
+endsnippet
+
+# includes
+snippet lib "Import a library"
+library(${0:package})
+endsnippet
+
+snippet req "Require a file"
+require(${0:package})
+endsnippet
+
+snippet source "Source a file"
+source('${0:file}')
+endsnippet
+
+# conditionals
+snippet if "If statement"
+if (${1:condition}) {
+	${0}
+}
+endsnippet
+
+snippet el "Else statement"
+else {
+	${0}
+}
+endsnippet
+
+snippet ei "Else-If statement"
+else if (${1:condition}) {
+	${0}
+}
+endsnippet
+
+# functions
+snippet fun "Function definition"
+${1:name} = function (${2:variables}) {
+	${0}
+}
+endsnippet
+
+snippet ret "Return call"
+return(${0})
+endsnippet
+
+# dataframes, lists, etc
+snippet df "Data frame"
+${1:name}[${2:rows}, ${0:cols}]
+endsnippet
+
+snippet c "C function"
+c(${0:items})
+endsnippet
+
+snippet li "List function"
+list(${0:items})
+endsnippet
+
+snippet mat "Matrix function"
+matrix(${1:data}, nrow=${2:rows}, ncol=${0:cols})
+endsnippet
+
+# apply functions
+snippet apply "Apply function"
+apply(${1:array}, ${2:margin}, ${0:function})
+endsnippet
+
+snippet lapply "lapply function"
+lapply(${1:list}, ${0:function})
+endsnippet
+
+snippet sapply "sapply function"
+lapply(${1:list}, ${0:function})
+endsnippet
+
+snippet vapply "vapply function"
+vapply(${1:list}, ${2:function}, ${0:type})
+endsnippet
+
+snippet mapply "mapply function"
+mapply(${1:function}, ${0:...})
+endsnippet
+
+snippet tapply "tapply function"
+tapply(${1:vector}, ${2:index}, ${0:function})
+endsnippet
+
+snippet rapply "rapply function"
+rapply(${1:list}, ${0:function})
+endsnippet
+
+# plot functions
+snippet pl "Plot function"
+plot(${1:x}, ${0:y})
+endsnippet
+
+snippet ggp "ggplot2 plot"
+ggplot(${1:data}, aes(${0:aesthetics}))
+endsnippet
+
+snippet img "Output an image"
+${1:(jpeg,bmp,png,tiff)}(filename="${2:filename}", width=${3}, height=${4}, unit="${5}")
+${0:plot}
+dev.off()
+endsnippet
+
+# statistical test functions
+snippet fis "Fisher test"
+fisher.test(${1:x}, ${0:y})
+endsnippet
+
+snippet chi "Chi Squared test"
+chisq.test(${1:x}, ${0:y})
+endsnippet
+
+snippet tt "t-test"
+t.test(${1:x}, ${0:y})
+endsnippet
+
+snippet wil "Wilcox test"
+wilcox.test(${1:x}, ${0:y})
+endsnippet
+
+snippet cor "Correlation test"
+cor.test(${1:x}, ${0:y})
+endsnippet
+
+snippet fte "FTE test"
+var.test(${1:x}, ${0:y})
+endsnippet
+
+snippet kvt "KV test"
+kv.test(${1:x}, ${0:y})
+endsnippet
