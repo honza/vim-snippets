@@ -1,69 +1,91 @@
-snippet #! "Hashbang for Rscript"
+priority -50
+
+snippet #! "Hashbang for Rscript (#!)" b
 #!/usr/bin/env Rscript
 endsnippet
 
-# includes
-snippet lib "Import a library"
+snippet lib "Import a library (lib)"
 library(${0:package})
 endsnippet
 
-snippet req "Require a file"
+snippet req "Require a file (req)"
 require(${0:package})
 endsnippet
 
-snippet source "Source a file"
+snippet source "Source a file (source)"
 source('${0:file}')
 endsnippet
 
-# conditionals
-snippet if "If statement"
-if (${1:condition}) {
+snippet if "If statement (if)"
+if (${1}) {
 	${0}
 }
 endsnippet
 
-snippet el "Else statement"
+snippet eif "Else-If statement (eif)"
+else if (${1}) {
+	${0}
+}
+
+snippet el "Else statement (el)"
 else {
 	${0}
 }
 endsnippet
 
-snippet ei "Else-If statement"
-else if (${1:condition}) {
+snippet eif "Else-If statement (eif)"
+else if (${1}) {
 	${0}
 }
 endsnippet
 
-# functions
-snippet fun "Function definition"
-${1:name} <- function (${2:variables}) {
+snippet ife "if .. else (ife)"
+if (${1}) {
+	${2}
+} else {
+	${3}
+}
+endsnippet
+
+snippet wh "while loop (wh)"
+while(${1}) {
+	${2}
+}
+endsnippet
+
+snippet for "for loop (for)"
+for ({${1:item} in ${2:list}) {
+	${3}
+}
+endsnippet
+
+snippet fun "Function definition (fun)"
+${1:name} <- function (${2}) {
 	${0}
 }
 endsnippet
 
-snippet ret "Return call"
+snippet ret "Return call (ret)"
 return(${0})
 endsnippet
 
-# dataframes, lists, etc
-snippet df "Data frame"
+snippet df "Data frame (df)"
 ${1:name}[${2:rows}, ${0:cols}]
 endsnippet
 
-snippet c "C function"
+snippet c "c function (c)"
 c(${0:items})
 endsnippet
 
-snippet li "List function"
+snippet li "list function (li)"
 list(${0:items})
 endsnippet
 
-snippet mat "Matrix function"
+snippet mat "matrix function (mat)"
 matrix(${1:data}, nrow = ${2:rows}, ncol = ${0:cols})
 endsnippet
 
-# apply functions
-snippet apply "Apply function"
+snippet apply "apply function"
 apply(${1:array}, ${2:margin}, ${0:function})
 endsnippet
 
@@ -91,46 +113,38 @@ snippet rapply "rapply function"
 endsnippet
 rapply(${1:list}, ${0:function})
 
-# plot functions
-snippet pl "Plot function"
+snippet pl "Plot function (pl)"
 plot(${1:x}, ${0:y})
 endsnippet
 
-snippet ggp "ggplot2 plot"
+snippet ggp "ggplot2 plot (ggp)"
 ggplot(${1:data}, aes(${0:aesthetics}))
 endsnippet
 
-snippet img "Output an image"
-${1:(jpeg,bmp,png,tiff)}(filename = "${2:filename}", width = ${3}, height = ${4}, unit = "${5}")
-${0:plot}
-dev.off()
-endsnippet
-
-# statistical test functions
-snippet fis "Fisher test"
+snippet fis "Fisher test (fis)"
 fisher.test(${1:x}, ${0:y})
 endsnippet
 
-snippet chi "Chi Squared test"
+snippet chi "Chi Squared test (chi)"
 chisq.test(${1:x}, ${0:y})
 endsnippet
 
-snippet tt "t-test"
+snippet tt "t-test (tt)"
 t.test(${1:x}, ${0:y})
 endsnippet
 
-snippet wil "Wilcox test"
+snippet wil "Wilcox test (wil)"
 wilcox.test(${1:x}, ${0:y})
 endsnippet
 
-snippet cor "Correlation test"
+snippet cor "Correlation test (cor)"
 cor.test(${1:x}, ${0:y})
 endsnippet
 
-snippet fte "FTE test"
+snippet fte "FTE test (fte)"
 var.test(${1:x}, ${0:y})
 endsnippet
 
-snippet kvt "KV test"
+snippet kvt "KV test (kvt)"
 kv.test(${1:x}, ${0:y})
 endsnippet
