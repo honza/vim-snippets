@@ -25,9 +25,11 @@ def getArgs(group):
 	return [i.split(" ") for i in word.findall(group) ]
 
 def camel(word):
+	if not word: return ''
 	return word[0].upper() + word[1:]
 
 def mixedCase(word):
+	if not word: return ''
 	return word[0].lower() + word[1:]
 
 endglobal
