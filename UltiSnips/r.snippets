@@ -36,7 +36,7 @@ endsnippet
 
 # functions
 snippet fun "Function definition"
-${1:name} = function (${2:variables}) {
+${1:name} <- function (${2:variables}) {
 	${0}
 }
 endsnippet
@@ -59,7 +59,7 @@ list(${0:items})
 endsnippet
 
 snippet mat "Matrix function"
-matrix(${1:data}, nrow=${2:rows}, ncol=${0:cols})
+matrix(${1:data}, nrow = ${2:rows}, ncol = ${0:cols})
 endsnippet
 
 # apply functions
@@ -88,8 +88,8 @@ tapply(${1:vector}, ${2:index}, ${0:function})
 endsnippet
 
 snippet rapply "rapply function"
-rapply(${1:list}, ${0:function})
 endsnippet
+rapply(${1:list}, ${0:function})
 
 # plot functions
 snippet pl "Plot function"
@@ -101,7 +101,7 @@ ggplot(${1:data}, aes(${0:aesthetics}))
 endsnippet
 
 snippet img "Output an image"
-${1:(jpeg,bmp,png,tiff)}(filename="${2:filename}", width=${3}, height=${4}, unit="${5}")
+${1:(jpeg,bmp,png,tiff)}(filename = "${2:filename}", width = ${3}, height = ${4}, unit = "${5}")
 ${0:plot}
 dev.off()
 endsnippet
