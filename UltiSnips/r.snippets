@@ -4,36 +4,36 @@ snippet #! "Hashbang for Rscript (#!)" b
 #!/usr/bin/env Rscript
 endsnippet
 
-snippet lib "Import a library (lib)"
+snippet lib "Import a library"
 library(${0:package})
 endsnippet
 
-snippet req "Require a file (req)"
+snippet req "Require a file"
 require(${0:package})
 endsnippet
 
-snippet source "Source a file (source)"
+snippet source "Source a file"
 source('${0:file}')
 endsnippet
 
-snippet if "If statement (if)"
+snippet if "If statement"
 if (${1}) {
 	${0}
 }
 endsnippet
 
-snippet eif "Else-If statement (eif)"
+snippet eif "Else-If statement"
 else if (${1}) {
 	${0}
 }
 
-snippet el "Else statement (el)"
+snippet el "Else statement"
 else {
 	${0}
 }
 endsnippet
 
-snippet ife "if .. else (ife)"
+snippet ife "if .. else"
 if (${1}) {
 	${2}
 } else {
@@ -41,41 +41,41 @@ if (${1}) {
 }
 endsnippet
 
-snippet wh "while loop (wh)"
+snippet wh "while loop"
 while(${1}) {
 	${2}
 }
 endsnippet
 
-snippet for "for loop (for)"
+snippet for "for loop"
 for ({${1:item} in ${2:list}) {
 	${3}
 }
 endsnippet
 
-snippet fun "Function definition (fun)"
+snippet fun "Function definition"
 ${1:name} <- function (${2}) {
 	${0}
 }
 endsnippet
 
-snippet ret "Return call (ret)"
+snippet ret "Return call"
 return(${0})
 endsnippet
 
-snippet df "Data frame (df)"
+snippet df "Data frame"
 ${1:name}[${2:rows}, ${0:cols}]
 endsnippet
 
-snippet c "c function (c)"
+snippet c "c function"
 c(${0:items})
 endsnippet
 
-snippet li "list function (li)"
+snippet li "list function"
 list(${0:items})
 endsnippet
 
-snippet mat "matrix function (mat)"
+snippet mat "matrix function"
 matrix(${1:data}, nrow = ${2:rows}, ncol = ${0:cols})
 endsnippet
 
@@ -107,38 +107,38 @@ snippet rapply "rapply function"
 endsnippet
 rapply(${1:list}, ${0:function})
 
-snippet pl "Plot function (pl)"
+snippet pl "Plot function"
 plot(${1:x}, ${0:y})
 endsnippet
 
-snippet ggp "ggplot2 plot (ggp)"
+snippet ggp "ggplot2 plot"
 ggplot(${1:data}, aes(${0:aesthetics}))
 endsnippet
 
-snippet fis "Fisher test (fis)"
+snippet fis "Fisher test"
 fisher.test(${1:x}, ${0:y})
 endsnippet
 
-snippet chi "Chi Squared test (chi)"
+snippet chi "Chi Squared test"
 chisq.test(${1:x}, ${0:y})
 endsnippet
 
-snippet tt "t-test (tt)"
+snippet tt "t-test"
 t.test(${1:x}, ${0:y})
 endsnippet
 
-snippet wil "Wilcox test (wil)"
+snippet wil "Wilcox test"
 wilcox.test(${1:x}, ${0:y})
 endsnippet
 
-snippet cor "Correlation test (cor)"
+snippet cor "Correlation test"
 cor.test(${1:x}, ${0:y})
 endsnippet
 
-snippet fte "FTE test (fte)"
+snippet fte "FTE test"
 var.test(${1:x}, ${0:y})
 endsnippet
 
-snippet kvt "KV test (kvt)"
+snippet kvt "KV test"
 kv.test(${1:x}, ${0:y})
 endsnippet
