@@ -84,7 +84,7 @@ snippet model
 		def __unicode__(self):
 			${5}
 
-		def save(self, force_insert=False, force_update=False):
+		def save(self, *args, **kwargs):
 			${6}
 
 		@models.permalink
