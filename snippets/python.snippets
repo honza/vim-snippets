@@ -201,3 +201,6 @@ snippet epydoc
 
 	@raise e: ${0: Description}
 	"""
+snippet dol
+	def ${1:__init__}(self, *args, **kwargs):
+	    super(${0:ClassName}, self).$1(*args, **kwargs)
