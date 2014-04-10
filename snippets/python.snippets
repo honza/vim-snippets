@@ -204,3 +204,5 @@ snippet epydoc
 snippet dol
 	def ${1:__init__}(self, *args, **kwargs):
 	    super(${0:ClassName}, self).$1(*args, **kwargs)
+snippet kwg
+	self.${1:var_name} = kwargs.get('$1', ${2:None})${0:}
