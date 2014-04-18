@@ -9,14 +9,14 @@ priority -50
 ###############
 snippet fn "A function, optionally with arguments and return type."
 fn ${1:function_name}(${2})${3/..*/ -> /}${3} {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 }
 endsnippet
 
 snippet test "Test function"
 #[test]
 fn ${1:test_function_name}() {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 }
 endsnippet
 
@@ -55,7 +55,7 @@ endsnippet
 
 snippet mod	 "A mod." b
 mod ${1:`!p snip.rv = snip.basename.lower() or "name"`} {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 } /* $1 */
 endsnippet
 
@@ -97,7 +97,7 @@ endsnippet
 
 snippet if "if .. (if)" b
 if ${1:/* condition */} {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 }
 endsnippet
 
@@ -109,19 +109,19 @@ endsnippet
 
 snippet while "while .. {}" b
 while ${1:condition} {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 }
 endsnippet
 
 snippet for "for .. in .." b
 for ${1:i} in ${2:range(0u, 10)} {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 }
 endsnippet
 
 snippet spawn "spawn(proc() { .. });" b
 spawn(proc() {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 });
 endsnippet
 
@@ -146,13 +146,13 @@ endsnippet
 ############
 snippet st "Struct" b
 struct ${1:`!p snip.rv = snip.basename.title() or "name"`} {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 }
 endsnippet
 
 snippet stn "Struct with new constructor." b
 pub struct ${1:`!p snip.rv = snip.basename.title() or "name"`} {
-	${3:/* code */}
+	${3}
 }
 
 impl $1 {
@@ -180,14 +180,14 @@ endsnippet
 ##########
 snippet imp "An impl" b
 impl ${1:Name} {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 }
 endsnippet
 
 snippet drop "Drop implementation" b
 impl Drop for ${1:Name} {
 	fn drop(&mut self) {
-		${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+		${VISUAL}${0}
 	}
 }
 endsnippet
@@ -198,7 +198,7 @@ endsnippet
 ############
 snippet trait "Trait block" b
 trait ${1:Name} {
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+	${VISUAL}${0}
 }
 endsnippet
 
