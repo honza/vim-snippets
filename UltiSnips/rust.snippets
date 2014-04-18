@@ -7,26 +7,26 @@ priority -50
 ###############
 #  Functions  #
 ###############
-snippet fn "A function, optionally with arguments and return type."
+snippet fn "A function, optionally with arguments and return type." b
 fn ${1:function_name}(${2})${3/..*/ -> /}${3} {
 	${VISUAL}${0}
 }
 endsnippet
 
-snippet test "Test function"
+snippet test "Test function" b
 #[test]
 fn ${1:test_function_name}() {
 	${VISUAL}${0}
 }
 endsnippet
 
-snippet new "A new function"
+snippet new "A new function" b
 pub fn new(${2}) -> ${1:Name} {
 	${VISUAL}${0}return $1 { ${3} };
 }
 endsnippet
 
-snippet main "The main function"
+snippet main "The main function" b
 pub fn main() {
 	${VISUAL}${0}
 }
@@ -34,7 +34,7 @@ endsnippet
 
 
 
-snippet let "A let statement"
+snippet let "A let statement" b
 let ${1:name}${3} = ${VISUAL}${2};
 endsnippet
 
