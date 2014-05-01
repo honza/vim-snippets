@@ -449,7 +449,8 @@ snippet html5
 	<!DOCTYPE html>
 	<html>
 		<head>
-			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width">
 			<title>${1:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
 			${2:meta}
 		</head>
