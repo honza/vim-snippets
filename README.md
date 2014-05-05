@@ -46,6 +46,17 @@ If you have VimL only (vim without python support) your best option is using
 minor bugs found in the engine.
 
 
+Q: Should "snipmate be deprecated in favour of UltiSnips"?
+
+A: No, because snimpate is VimL, and UltiSnips requires Python.
+Some people want to use snippets without having to install Vim with Python
+support. Yes - this sucks. 
+
+One solution would be: Use snippets if they are good enough, but allow overriding them
+in UltiSnips. This would avoid most duplication while still serving most users.
+AFAIK there is a nested-placeholder branch for snipmate too. snipmate is still
+improved by Adnan Zafar. So maybe time is not ready to make a final decision yet.
+
 Installation
 ------------
 
