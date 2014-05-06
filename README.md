@@ -57,7 +57,7 @@ in UltiSnips. This would avoid most duplication while still serving most users.
 AFAIK there is a nested-placeholder branch for snipmate too. snipmate is still
 improved by Adnan Zafar. So maybe time is not ready to make a final decision yet.
 
-[https://github.com/honza/vim-snippets/issues/363](github issue/discussion)
+[github issue/discussion](https://github.com/honza/vim-snippets/issues/363)
 
 Installation
 ------------
