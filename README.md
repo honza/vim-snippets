@@ -130,6 +130,13 @@ What about one line if ee then .. else .. vs if \n .. then \n ... \n else \n .. 
 Which additional policies to add?
 Discuss at: https://github.com/honza/vim-snippets/issues/230
 
+*folding markers*:
+Until further work is done on `vim-snipmate`, please don't add folding markers
+into snippets. `vim-snipmate` has some comments about how to patch all snippets
+on the fly adding those.
+
+Currently all snippets from UltiSnips have been put into UltiSnips - some work
+on merging should be done (dropping duplicates etc). Also see engines section above.
 
 Related repositories
 --------------------
@@ -205,20 +212,6 @@ This list is kept up-to-date on a best effort basis.
 * Scala - [gorodinskiy](https://github.com/gorodinskiy)
 * Falcon - [steveno](https://github.com/steveno)
 * Elixir - [iurifq](https://github.com/iurifq)
-
-Contributing notes
-------------------
-
-Until further work is done on `vim-snipmate`, please don't add folding markers
-into snippets. `vim-snipmate` has some comments about how to patch all snippets
-on the fly adding those.
-
-Because UltiSnips reads snipmate-snippets too there is no need to duplicate all
-snippets - only those snippets who use advanced UltiSnips features should be
-duplicated in UltiSnips.
-
-Currently all snippets from UltiSnips have been put into UltiSnips - some work
-on merging should be done (dropping duplicates etc)
 
 License
 -------
