@@ -79,10 +79,10 @@ setTimeout(function() {
 }${2:.bind(${3:this})}, ${1:10});
 endsnippet
 
-snippet fi "for prop in obj using hasOwnProperty"
+snippet fi "for prop in obj using hasOwnProperty" b
 for (${1:prop} in ${2:obj}){
 	if ($2.hasOwnProperty($1)) {
-		${0:// body...}
+		$0
 	}
 }
 endsnippet
