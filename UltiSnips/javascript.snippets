@@ -82,7 +82,7 @@ endsnippet
 snippet fi "for prop in obj using hasOwnProperty" b
 for (${1:prop} in ${2:obj}){
 	if ($2.hasOwnProperty($1)) {
-		$0
+		${VISUAL}$0
 	}
 }
 endsnippet
