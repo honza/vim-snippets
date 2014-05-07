@@ -64,7 +64,7 @@ assert ${1:test}${2/(.+)/(?1: \: ")/}${2:Failure message}${2/(.+)/(?1:")/};$0
 endsnippet
 
 snippet at "assert true" b
-assertTrue(${1:actual});
+assertTrue(${1:actual});$0
 endsnippet
 
 snippet af "assert false" b
@@ -72,7 +72,7 @@ assertFalse(${1:actual});$0
 endsnippet
 
 snippet ae "assert equals" b
-assertEquals(${1:expected}, ${2:actual});
+assertEquals(${1:expected}, ${2:actual});$0
 endsnippet
 
 snippet br "break"
