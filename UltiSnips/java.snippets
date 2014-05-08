@@ -141,7 +141,7 @@ if len(args) > 0:
 	public `!p snip.rv = snip.basename or "unknown"`($1) { `!p
 args = getArgs(t[1])
 for i in args:
-	snip.rv += "\n\t\tthis." + i[1] + " = " + i[1] + ";"
+	snip.rv += "\n\t\tthis.%s = %s;" % (i[1], i[1])
 if len(args) == 0:
 	snip.rv += "\n"`
 	}
@@ -269,7 +269,7 @@ if len(args) > 0:
 public `!p snip.rv = snip.basename or "unknown"`($1) { `!p
 args = getArgs(t[1])
 for i in args:
-	snip.rv += "\n\t\tthis." + i[1] + " = " + i[1] + ";"
+	snip.rv += "\n\t\tthis.%s = %s;" % (i[1], i[1])
 if len(args) == 0:
 	snip.rv += "\n"`
 }
