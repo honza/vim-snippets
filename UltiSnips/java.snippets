@@ -60,19 +60,19 @@ abstract $0
 endsnippet
 
 snippet as "assert" b
-assert ${1:test}${2/(.+)/(?1: \: ")/}${2:Failure message}${2/(.+)/(?1:")/};$0
+assert ${1:test}${2/(.+)/(?1: \: ")/}${2:Failure message}${2/(.+)/(?1:")/};
 endsnippet
 
 snippet at "assert true" b
-assertTrue(${1:actual});$0
+assertTrue(${1:actual});
 endsnippet
 
 snippet af "assert false" b
-assertFalse(${1:actual});$0
+assertFalse(${1:actual});
 endsnippet
 
 snippet ae "assert equals" b
-assertEquals(${1:expected}, ${2:actual});$0
+assertEquals(${1:expected}, ${2:actual});
 endsnippet
 
 snippet br "break"
