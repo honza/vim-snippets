@@ -103,8 +103,12 @@ snippet feat "#![feature(..)]" b
 #![feature(${1:macro_rules})]
 endsnippet
 
-snippet der "#![deriving(..)]" b
-#![deriving(${1:Show})]
+snippet der "#[deriving(..)]" b
+#[deriving(${1:Show})]
+endsnippet
+
+snippet attr "#[..]" b
+#[${1:inline}]
 endsnippet
 
 snippet opt "Option<..>"
