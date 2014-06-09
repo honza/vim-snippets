@@ -89,6 +89,19 @@ snippet m
 snippet v
 	${1:String} ${2:var}${3: = null}${4};
 ##
+## Declaration for ArrayList
+snippet d.al
+	List<${1:Object}> ${2:list} = ArrayList<$1>;${0}
+## Declaration for HashMap
+snippet d.hm
+	Map<${1:Object}, ${2:Object}> ${3:map} = HashMap<$1, $2>;${0}
+## Declaration for HashSet
+snippet d.hs
+	Set<${1:Object}> ${2:set} = HashSet<$1>;${0}
+## Declaration for Stack
+snippet d.st
+	Stack<${1:Object}> ${2:stack} = Stack<$1>;${0}
+##
 ## Enhancements to Methods, variables, classes, etc.
 snippet ab
 	abstract ${0}
