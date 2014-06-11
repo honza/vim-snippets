@@ -102,6 +102,18 @@ snippet d.hs
 snippet d.st
 	Stack<${1:Object}> ${2:stack} = new Stack<$1>();${0}
 ##
+## Singleton Pattern
+snippet singlet
+	private static class Holder {
+		private static final ${1:`vim_snippets#Filename("$1")`} INSTANCE = new $1();
+	}
+
+	private $1() { }
+
+	private static $1 getInstance() {
+		return Holder.INSTANCE;
+	}
+##
 ## Enhancements to Methods, variables, classes, etc.
 snippet ab
 	abstract ${0}
