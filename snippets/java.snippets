@@ -91,16 +91,28 @@ snippet v
 ##
 ## Declaration for ArrayList
 snippet d.al
-	List<${1:Object}> ${2:list} = ArrayList<$1>;${0}
+	List<${1:Object}> ${2:list} = new ArrayList<$1>();${0}
 ## Declaration for HashMap
 snippet d.hm
-	Map<${1:Object}, ${2:Object}> ${3:map} = HashMap<$1, $2>;${0}
+	Map<${1:Object}, ${2:Object}> ${3:map} = new HashMap<$1, $2>();${0}
 ## Declaration for HashSet
 snippet d.hs
-	Set<${1:Object}> ${2:set} = HashSet<$1>;${0}
+	Set<${1:Object}> ${2:set} = new HashSet<$1>();${0}
 ## Declaration for Stack
 snippet d.st
-	Stack<${1:Object}> ${2:stack} = Stack<$1>;${0}
+	Stack<${1:Object}> ${2:stack} = new Stack<$1>();${0}
+##
+## Singleton Pattern
+snippet singlet
+	private static class Holder {
+		private static final ${1:`vim_snippets#Filename("$1")`} INSTANCE = new $1();
+	}
+
+	private $1() { }
+
+	private static $1 getInstance() {
+		return Holder.INSTANCE;
+	}
 ##
 ## Enhancements to Methods, variables, classes, etc.
 snippet ab
