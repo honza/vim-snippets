@@ -72,12 +72,18 @@ def triple_quotes(snip):
 	return get_quoting_style(snip) * 3
 
 def triple_quotes_handle_trailing(snip, quoting_style):
-	if not hasattr(snip, '_tqt'):
+	"""
+	Generate triple quoted strings and handle any trailing quote char,
+	which might be there from some autoclose/autopair plugin,
+	i.e. when expanding ``"|"``.
+	"""
+	if not snip.c:
+		# Do this only once, otherwise the following error would happen:
+		# RuntimeError: The snippets content did not converge: …
 		_, col = vim.current.window.cursor
 		line = vim.current.line
 
-		# Handle already existing quote chars, usually from an autoclose plugin
-		# like delimitMate.
+		# Handle already existing quote chars after the trigger.
 		_ret = quoting_style * 3
 		while True:
 			try:
@@ -89,8 +95,9 @@ def triple_quotes_handle_trailing(snip, quoting_style):
 				col = col+1
 			else:
 				break
-		snip._tqt = _ret
-	snip.rv = snip._tqt
+		snip.rv = _ret
+	else:
+		snip.rv = snip.c
 
 def get_style(snip):
 	style = snip.opt("g:ultisnips_python_style", "normal")
@@ -630,6 +637,24 @@ class Test${1:Class}(${2:unittest.TestCase}):
 
 	def test_${6:name}(self):
 		${7:pass}
+endsnippet
+
+snippet " "triple quoted string (double quotes)" b
+"""
+${1:doc}
+`!p triple_quotes_handle_trailing(snip, '"')`
+endsnippet
+
+snippet ' "triple quoted string (single quotes)" b
+'''
+${1:doc}
+`!p triple_quotes_handle_trailing(snip, "'")`
+endsnippet
+
+snippet doc "doc block (triple quotes)"
+`!p snip.rv = triple_quotes(snip)`
+${1:doc}
+`!p snip.rv = triple_quotes(snip)`
 endsnippet
 
 # vim:ft=snippets:
