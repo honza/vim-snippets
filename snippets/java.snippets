@@ -110,7 +110,7 @@ snippet singlet
 
 	private $1() { }
 
-	private static $1 getInstance() {
+	public static $1 getInstance() {
 		return Holder.INSTANCE;
 	}
 ##
@@ -135,6 +135,24 @@ snippet errln
 ## Exception Handling
 snippet as
 	assert ${1:test} : "${2:Failure message}";
+snippet ae
+	assertEquals("${1:Failure message}", ${2:expected}, ${3:actual});
+snippet aae
+	assertArrayEquals("${1:Failure message}", ${2:expecteds}, ${3:actuals});
+snippet af
+	assertFalse("${1:Failure message}", ${2:condition});
+snippet at
+	assertTrue("${1:Failure message}", ${2:condition});
+snippet an
+	assertNull("${1:Failure message}", ${2:object});
+snippet ann
+	assertNotNull("${1:Failure message}", ${2:object});
+snippet ass
+	assertSame("${1:Failure message}", ${2:expected}, ${3:actual});
+snippet asns
+	assertNotSame("${1:Failure message}", ${2:expected}, ${3:actual});
+snippet fa
+	fail("${1:Failure message}");
 snippet ca
 	catch(${1:Exception} ${2:e}) ${0}
 snippet thr
