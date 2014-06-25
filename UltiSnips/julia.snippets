@@ -1,5 +1,5 @@
 # Documentation
-snippet docf "function documentation"
+snippet docf "function documentation" b
 #' @description
 #'
 #' ${1:function description}
@@ -13,7 +13,7 @@ snippet docf "function documentation"
 #' ${10: function call examples}
 endsnippet
 
-snippet doct "type definition"
+snippet doct "type definition" b
 #' @description
 #'
 #' ${1:type description}
@@ -25,14 +25,10 @@ snippet doct "type definition"
 #' ${10: constructor examples}
 endsnippet
 
-snippet par "function parameter documentation"
+snippet par "function parameter documentation" b
 #' @param ${1:name}::${2:Type} ${0:Description}
 endsnippet
 
-snippet fld "type field documentation"
+snippet fld "type field documentation" b
 #' @field ${1:name}::${2:Type} ${0:Description}
-endsnippet
-
-snippet todo "todo entry"
-# TODO${1: (`whoami`, `date +%Y-%m-%d`)}: ${0}
 endsnippet
