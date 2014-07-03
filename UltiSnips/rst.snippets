@@ -77,7 +77,7 @@ def check_file_exist(rst_path, relative_path):
 try:
 	rst_char_len = vim.strwidth  # Requires Vim 7.3+
 except AttributeError:
-	from unicodedata import east_asian_width  # Requires Python 2.4+
+	from unicodedata import east_asian_width
 	def rst_char_len(s):
 		"""Return the required over-/underline length for s."""
 		result = 0
