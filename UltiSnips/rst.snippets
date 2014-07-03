@@ -74,15 +74,17 @@ def check_file_exist(rst_path, relative_path):
 		return abs_path
 
 
-def rst_char_len(char):
-	"""
-	return len of string which fit in rst
-	For instance:chinese "我" decode as only one character,
-	However, the rst interpreter needs 2 "=" instead of 1.
+try:
+	rst_char_len = vim.strwidth  # Requires Vim 7.3+
+except AttributeError:
+	from unicodedata import east_asian_width  # Requires Python 2.4+
+	def rst_char_len(s):
+		"""Return the required over-/underline length for s."""
+		result = 0
+		for c in s:
+			result += 2 if east_asian_width(c) in ('W', 'F') else 1
+		return result
 
-	:param: char needs to be count
-	"""
-	return len(re.findall(r'[^\u4e00-\u9fff\s]', char))+len(char)
 
 def	make_items(times, leading='+'):
 	"""
