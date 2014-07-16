@@ -1014,11 +1014,11 @@ snippet desc
 		${0}
 	end
 snippet descm
-	describe "${1:#method}" do
-		${0:pending "Not implemented"}
+	describe '${1:#method}' do
+		${0:pending 'Not implemented'}
 	end
 snippet cont
-	context "${1:message}" do
+	context '${1:message}' do
 		${0}
 	end
 snippet bef
@@ -1050,7 +1050,7 @@ snippet shared
 snippet ibl
 	it_behaves_like ${0:"shared examples name"}
 snippet it
-	it "${1:spec_name}" do
+	it '${1:spec_name}' do
 		${0}
 	end
 snippet its
