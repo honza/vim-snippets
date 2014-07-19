@@ -595,3 +595,64 @@ snippet pry
 	require 'pry'; binding.pry
 snippet strf
 	strftime('${1:%Y-%m-%d %H:%M:%S %z}')${0}
+#
+# Minitest snippets
+#
+snippet mb
+	must_be ${0}
+snippet wb
+	wont_be ${0}
+snippet mbe
+	must_be_empty
+snippet wbe
+	wont_be_empty
+snippet mbio
+	must_be_instance_of ${0:Class}
+snippet wbio
+	wont_be_instance_of ${0:Class}
+snippet mbko
+	must_be_kind_of ${0:Class}
+snippet wbko
+	wont_be_kind_of ${0:Class}
+snippet mbn
+	must_be_nil
+snippet wbn
+	wont_be_nil
+snippet mbsa
+	must_be_same_as ${0:other}
+snippet wbsa
+	wont_be_same_as ${0:other}
+snippet mbsi
+	-> { ${0} }.must_be_silent
+snippet mbwd
+	must_be_within_delta ${1:0.1}, ${2:0.1}
+snippet wbwd
+	wont_be_within_delta ${1:0.1}, ${2:0.1}
+snippet mbwe
+	must_be_within_epsilon ${1:0.1}, ${2:0.1}
+snippet wbwe
+	wont_be_within_epsilon ${1:0.1}, ${2:0.1}
+snippet me
+	must_equal ${0:other}
+snippet we
+	wont_equal ${0:other}
+snippet mi
+	must_include ${0:what}
+snippet wi
+	wont_include ${0:what}
+snippet mm
+	must_match /${0:regex}/
+snippet wm
+	wont_match /${0:regex}/
+snippet mout
+	-> { ${1} }.must_output '${0}'
+snippet mra
+	-> { ${1} }.must_raise ${0:Exception}
+snippet mrt
+	must_respond_to :${0:method}
+snippet wrt
+	wont_respond_to :${0:method}
+snippet msend
+	must_send [ ${1:what}, :${2:method}, ${3:args} ]
+snippet mthrow
+	-> { throw :${1:error} }.must_throw :${2:error}
