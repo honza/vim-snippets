@@ -42,18 +42,9 @@ INCLUDABLE_DIRECTIVES = ['image', 'figure', 'include']
 CJK_RE = re.compile(u'[⺀-⺙⺛-⻳⼀-⿕々〇〡-〩〸-〺〻㐀-䶵一-鿃豈-鶴侮-頻並-龎]', re.UNICODE)
 
 
-def has_cjk(char):
-	"""
-	Detect char contains CJK character
-
-	:param char: characters needs to be detect
-	"""
-	try:
-		CJK_RE.finditer(char).next()
-	except StopIteration:
-		return False
-	else:
-		return True
+def has_cjk(s):
+	"""Detect if s contains CJK characters."""
+	return CJK_RE.search(s) is not None
 
 def real_filename(filename):
 	"""pealeextension name off if possible
@@ -182,7 +173,7 @@ endsnippet
 
 snippet em "Emphasize string" i
 `!p
-# dirty but works with CJK charactor detection
+# dirty but works with CJK character detection
 if has_cjk(vim.current.line):
 	snip.rv ="\ "`*${1:${VISUAL:Em}}*`!p
 if has_cjk(vim.current.line):
