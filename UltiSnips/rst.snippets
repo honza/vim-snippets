@@ -138,43 +138,43 @@ endglobal
 
 snippet part "Part" b
 `!p snip.rv = rst_char_len(t[1])*'#'`
-${1:Part name}
+${1:${VISUAL:Part name}}
 `!p snip.rv = rst_char_len(t[1])*'#'`
-
-$0
-endsnippet
-
-snippet sec "Section" b
-${1:Section name}
-`!p snip.rv = rst_char_len(t[1])*'='`
-
-$0
-endsnippet
-
-snippet ssec "Subsection" b
-${1:Section name}
-`!p snip.rv = rst_char_len(t[1])*'-'`
-
-$0
-endsnippet
-
-snippet sssec "Subsubsection" b
-${1:Section name}
-`!p snip.rv = rst_char_len(t[1])*'^'`
 
 $0
 endsnippet
 
 snippet chap "Chapter" b
 `!p snip.rv = rst_char_len(t[1])*'*'`
-${1:Chapter name}
+${1:${VISUAL:Chapter name}}
 `!p snip.rv = rst_char_len(t[1])*'*'`
 
 $0
 endsnippet
 
+snippet sec "Section" b
+${1:${VISUAL:Section name}}
+`!p snip.rv = rst_char_len(t[1])*'='`
+
+$0
+endsnippet
+
+snippet ssec "Subsection" b
+${1:${VISUAL:Subsection name}}
+`!p snip.rv = rst_char_len(t[1])*'-'`
+
+$0
+endsnippet
+
+snippet sssec "Subsubsection" b
+${1:${VISUAL:Subsubsection name}}
+`!p snip.rv = rst_char_len(t[1])*'^'`
+
+$0
+endsnippet
+
 snippet para "Paragraph" b
-${1:Paragraph name}
+${1:${VISUAL:Paragraph name}}
 `!p snip.rv = rst_char_len(t[1])*'"'`
 
 $0
@@ -226,7 +226,7 @@ endsnippet
 snippet cb "Code Block" b
 .. code-block:: ${1:`!p snip.rv = get_popular_code_type()`}
 
-	${2:code}
+	${2:${VISUAL:code}}
 
 $0
 endsnippet
@@ -249,7 +249,10 @@ if di == 'fi':
 	:alt: {0}
 	{0}""".format(real_name)
 `
-..`!p snip.rv = " %s" % link if link else ""` $1`!p snip.rv=complete(t[1], INCLUDABLE_DIRECTIVES)`:: ${2:file}`!p if content:
+..`!p snip.rv = " %s" % link if link else ""` $1`!p
+snip.rv=complete(t[1], INCLUDABLE_DIRECTIVES)
+`:: ${2:${VISUAL:file}}`!p
+if content:
 	snip.rv +="    "+content`
 `!p
 # Tip of whether file is exist in comment type
@@ -263,7 +266,7 @@ endsnippet
 snippet di "Directives" b
 .. $1`!p snip.rv=complete(t[1], DIRECTIVES)`:: $2
 
-	${3:Content}
+	${3:${VISUAL:Content}}
 $0
 endsnippet
 
@@ -275,7 +278,7 @@ endsnippet
 snippet sa "Specific Admonitions" b
 .. $1`!p snip.rv =complete(t[1], SPECIFIC_ADMONITIONS)`::
 
-	${2:Content}
+	${2:${VISUAL:Content}}
 
 $0
 endsnippet
@@ -294,6 +297,6 @@ endsnippet
 snippet sid "SideBar" b
 .. sidebar:: ${1:SideBar Title}
 
-	${2:SideBar Content}
+	${2:${VISUAL:SideBar Content}}
 endsnippet
 # vim:ft=snippets:
