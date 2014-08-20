@@ -1,7 +1,6 @@
-# Prototype
+# prototype
 snippet proto
-	${1:class_name}.prototype.${2:method_name} =
-	function(${3:first_argument}) {
+	${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
 		${0:// body...}
 	};
 # Function
@@ -11,12 +10,12 @@ snippet fun
 	}
 # Anonymous Function
 snippet f
-	function (${1}) {
+	function(${1}) {
 		${0}
 	}
 # Immediate function
 snippet (f
-	(function (${1}) {
+	(function(${1}) {
 		${0}
 	}(${2}));
 # if
