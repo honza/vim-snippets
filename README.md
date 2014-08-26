@@ -68,7 +68,7 @@ which is why Marc Weber thinks that it doesn't make sense to repeat the same
 repetitive information everywhere.
 
 *Recommended way:*
-[vim-addon-manager](vim-addon-manager) (because Marc Weber wrote it for exactly
+[vim-addon-manager](https://github.com/MarcWeber/vim-addon-manager) (because Marc Weber wrote it for exactly
 this reason, it supports simple dependency management). Eg you're done by this
 line in your .vimrc:
 
