@@ -1,6 +1,6 @@
 priority -49
 
-snippet title "Title Header"
+snippet title "Title Header" -b
 % ${1:`!v Filename('', 'title')`}
 % ${2:`!v g:snips_author`}
 % ${3:`!v strftime("%d %B %Y")`}
@@ -9,5 +9,3 @@ $0
 endsnippet
 
 extends markdown
-
-# vim:ft=snippets:
