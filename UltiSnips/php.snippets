@@ -223,14 +223,14 @@ endsnippet
 
 snippet class "Class declaration template" b
 /**
- * Class ${1:`!p snip.rv=snip.fn.split('.')[0]`}
- * @author ${2:`!v g:snips_author`}
+ * Class ${2:`!p snip.rv=snip.fn.split('.')[0]`}
+ * @author ${3:`!v g:snips_author`}
  */
-class $1
+$1class $2
 {
-	public function ${3:__construct}(${4:$options})
+	public function ${4:__construct}(${5:$options})
 	{
-		${5:// code}
+		${6:// code}
 	}
 }
 $0
