@@ -236,6 +236,21 @@ $1class $2
 $0
 endsnippet
 
+snippet interface "interface declaration template" b
+/**
+ * Interface ${1:`!p snip.rv=snip.fn.split('.')[0]`}
+ * @author ${2:`!v g:snips_author`}
+ */
+interface $1
+{
+	public function ${3:__construct}(${4:$options})
+	{
+		${5:// code}
+	}
+}
+$0
+endsnippet
+
 snippet construct "__construct()" b
 /**
  * @param $2mixed ${1/, /\n     * \@param mixed /g}
