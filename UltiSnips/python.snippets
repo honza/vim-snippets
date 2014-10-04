@@ -158,7 +158,13 @@ def write_slots_args(args, snip):
 	snip += '__slots__ = (%s,)' % ', '.join(args)
 
 
-def write_function_code(t, snip):
+def write_function_docstring(t, snip):
+	"""
+	Writes a function docstring with the current style.
+
+	:param t: The values of the placeholders
+	:param snip: UltiSnips.TextObjects.SnippetUtil object instance
+	"""
 	snip.rv = ""
 	snip >> 1
 
@@ -409,13 +415,12 @@ def __coerce__(self, other):
 	${25:pass}
 endsnippet
 
-
 snippet def "function with docstrings" b
 def ${1:function}(`!p
 if snip.indent:
 	snip.rv = 'self' + (", " if len(t[2]) else "")`${2:arg1}):
 	`!p snip.rv = triple_quotes(snip)`${4:TODO: Docstring for $1.}`!p
-write_function_code(t, snip) `
+write_function_docstring(t, snip) `
 	${0:pass}
 endsnippet
 
@@ -426,7 +431,7 @@ def ${1:function}(`!p
 if snip.indent:
 	snip.rv = 'cls' + (", " if len(t[2]) else "")`${2:arg1}):
 	`!p snip.rv = triple_quotes(snip)`${4:TODO: Docstring for $1.}`!p
-write_function_code(t, snip) `
+write_function_docstring(t, snip) `
 	${0:pass}
 endsnippet
 
@@ -435,7 +440,7 @@ snippet defs "static method with docstrings" b
 @staticmethod
 def ${1:function}(${2:arg1}):
 	`!p snip.rv = triple_quotes(snip)`${4:TODO: Docstring for $1.}`!p
-write_function_code(t, snip) `
+write_function_docstring(t, snip) `
 	${0:pass}
 endsnippet
 
