@@ -212,22 +212,22 @@ snippet jsons
 
 # Get elements
 snippet get
-	getElementsBy${1:TagName}('${2}')
+	getElementsBy${1:TagName}('${0}')
 # Get element
 snippet gett
-	getElementBy${1:Id}('${2}')
+	getElementBy${1:Id}('${0}')
 # Elements by class
 snippet by.
-	${document}.getElementsByClassName('${class name})
+	${1:document}.getElementsByClassName('${0:class})
 # Element by ID
 snippet by#
-	${document}.getElementById('${element ID})
+	${1:document}.getElementById('${0:element ID})
 # Query selector
 snippet qs
-	${document}.querySelector('${selectors})
+	${1:document}.querySelector('${0:CSS selector})
 # Query selector all
 snippet qsa
-	${document}.querySelectorAll('${selectors})
+	${1:document}.querySelectorAll('${0:CSS selector})
 
 # Debugging
 
