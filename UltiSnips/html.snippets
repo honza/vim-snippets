@@ -172,8 +172,8 @@ snip.rv = snip.fn and 'Hallo' or 'Nothin'
 </body>
 endsnippet
 
-snippet div "<div>" w
-<div>
+snippet div. "<div> with class" w
+<div`!p snip.rv=' class="' if t[1] else ""`${1:name}`!p snip.rv = '"' if t[1] else ""`>
 	$0
 </div>
 endsnippet
