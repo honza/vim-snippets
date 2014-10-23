@@ -1,12 +1,98 @@
+priority -50
+
+snippet . "selector { }"
+$1 {
+	$0
+}
+endsnippet
+
+snippet p "padding"
+padding: ${1:0};$0
+endsnippet
+
+snippet m "margin"
+margin: ${1:0};$0
+endsnippet
+
+snippet bd "border"
+border: ${1:0};$0
+endsnippet
+
+snippet d "display"
+display: ${1:none};$0
+endsnippet
+
+snippet bg "background"
+background: ${1:none};$0
+endsnippet
+
+snippet ff "font-family"
+font-family: ${1:"Helvetica Neue", Helvetica, Arial, sans-serif};$0
+endsnippet
+
+snippet h "height"
+height: ${1:auto};$0
+endsnippet
+
+snippet w "width"
+width: ${1:auto};$0
+endsnippet
+
+snippet pos "position"
+position: ${1:relative};$0
+endsnippet
+
+snippet ! "!important CSS (!)"
+!important
+endsnippet
+
+#
+# Selectors
+#
+
+snippet :fc
+:first-child
+endsnippet
+
+snippet :lc
+:last-child
+endsnippet
+
+snippet :nc
+:nth-child($0)
+endsnippet
+
+snippet :nlc
+:nth-last-child($0)
+endsnippet
+
+snippet :oc
+:only-child
+endsnippet
+
+#
+# Pseudo-elements
+#
+
+snippet :a
+:after
+endsnippet
+
+snippet :b
+:before
+endsnippet
+
+snippet ::a
+::after
+endsnippet
+
+snippet ::b
+::before
+endsnippet
+
 ###########################################################################
 #                    Most of these came from TextMate                     #
 ###########################################################################
-
-priority -50
-
-snippet ! "!important CSS (!)"
-${1:!important}
-endsnippet
 
 snippet fixed "Fixed Position Bottom 100% wide IE6"
 ${2:bottom: auto;}top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-${1:THE HEIGHT OF THIS THING IN PIXELS}));
