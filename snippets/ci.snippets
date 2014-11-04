@@ -1,0 +1,103 @@
+# Based on nebjak/snipmate.vim/snippets/php.snippets
+
+# Controller
+snippet cic
+	class ${1:ClassName} extends CI_Controller {
+		function __construct() {
+			parent::__construct();
+			${2:// code...}
+		}
+
+		function ${3:index}() {
+			${4:// code...}
+		}
+	}
+# Model
+snippet cim
+	class ${1:ClassName_model} extends CI_Model {
+		function __construct() {
+			parent::__construct();
+			${2:// code...}
+		}
+	} 
+# Load view
+snippet cilv
+	$this->load->view("${1:view_name}", $${2:data});${3}
+# DB Class snippets
+snippet cidbi
+	$this->db->insert("${1:table}", $${2:data});${3}
+snippet cidbs
+	$this->db->select("${1:id, ...}");${2}
+snippet cidbf
+	$this->db->from("${1:table}");${2}
+snippet cidbj
+	$this->db->join("${1:table}", "${2:condition}", "${3:type}");${4}
+snippet cidbw
+	$this->db->where("${1:key}", "${2:value}");${3}
+snippet cidbow
+	$this->db->or_where("${1:key}", "${2:value}");${3}
+snippet cidbg
+	$this->db->get("${1:table}", ${2:limit}, ${3:offset});${4}
+snippet cidbd
+	$this->db->delete("${1:table}", "${2:where}");${3}
+snippet cidbu
+	$this->db->update("${1:table}", $${2:set}, $${3:where});${4}
+# Input Class snippets
+snippet ciip
+	$this->input->post("${1:index}");${2}
+snippet ciig
+	$this->input->get("${1:index}");${2}
+snippet ciic
+	$this->input->cookie("${1:index}");${2}
+snippet ciis
+	$this->input->server("${1:index}");${2}
+snippet ciiua
+	$this->input->user_agent();${1}
+snippet ciiajax
+	$this->input->is_ajax_request();${1}
+snippet ciicli
+	$this->input->is_cli_request();${1}
+# Form Validation Class and Form Helper snippets
+snippet cifvsr
+	$this->form_validation->set_rules("${1:field}", "${2:label}", "${3:trim|required}");${4}
+snippet cifo
+	form_open("${1:action}");${2}
+snippet cifom
+	form_open_multipart("${1:action}");${2}
+snippet cifh
+	form_hidden("${1:name}", "${2:value}");${3}
+snippet cifi
+	form_input("${1:name}", "${2:value}");${3}
+snippet cifp
+	form_password("${1:name}", "${2:value}");${3}
+snippet cifu
+	form_upload("${1:name}", "${2:value}");${3}
+snippet cifta
+	form_textarea("${1:name}", "${2:value}");${3}
+snippet cifdd
+	form_dropdown("${1:name}", $${2:options}, $${3:selected);${4}
+snippet cifcb
+	form_checkbox("${1:name}", "${2:value}");${3}
+snippet cifr
+	form_radio("${1:name}", "${2:value}");${3}
+snippet cifsub
+	form_submit("${1:name}", "${2:value}");${3}
+snippet cifres
+	form_reset("${1:name}", "${2:value}");${3}
+snippet cifbut
+	form_button("${1:name}", "${2:value}");${3}
+snippet ciflab
+	form_label("${1:label text}", "${2:id}");${3}
+snippet cifc
+	form_close();${1}
+snippet civerr
+	validation_errors();${1}
+# Session Class snippets
+snippet cisud
+	$this->session->userdata("${1:item}");${2}
+snippet cissud
+	$this->session->set_userdata($${1:array});${2}
+snippet cisfd
+	$this->session->flashdata("${1:item}");${2}
+snippet cissfd
+	$this->session->set_flashdata("${1:item}", "${2:value}");${3}
