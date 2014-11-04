@@ -1,7 +1,7 @@
 # Based on nebjak/snipmate.vim/snippets/php.snippets
 
 # Controller
-snippet cic
+snippet ci_controller
 	class ${1:ClassName} extends CI_Controller {
 		function __construct() {
 			parent::__construct();
@@ -13,7 +13,7 @@ snippet cic
 		}
 	}
 # Model
-snippet cim
+snippet ci_model
 	class ${1:ClassName_model} extends CI_Model {
 		function __construct() {
 			parent::__construct();
@@ -21,83 +21,83 @@ snippet cim
 		}
 	} 
 # Load view
-snippet cilv
+snippet ci_load-view
 	$this->load->view("${1:view_name}", $${2:data});${3}
 # DB Class snippets
-snippet cidbi
+snippet ci_db-insert
 	$this->db->insert("${1:table}", $${2:data});${3}
-snippet cidbs
+snippet ci_db-select
 	$this->db->select("${1:id, ...}");${2}
-snippet cidbf
+snippet ci_db-from
 	$this->db->from("${1:table}");${2}
-snippet cidbj
+snippet ci_db-join
 	$this->db->join("${1:table}", "${2:condition}", "${3:type}");${4}
-snippet cidbw
+snippet ci_db-where
 	$this->db->where("${1:key}", "${2:value}");${3}
-snippet cidbow
+snippet ci_db-or_where
 	$this->db->or_where("${1:key}", "${2:value}");${3}
-snippet cidbg
+snippet ci_db-get
 	$this->db->get("${1:table}", ${2:limit}, ${3:offset});${4}
-snippet cidbd
+snippet ci_db-delete
 	$this->db->delete("${1:table}", "${2:where}");${3}
-snippet cidbu
+snippet ci_db-update
 	$this->db->update("${1:table}", $${2:set}, $${3:where});${4}
 # Input Class snippets
-snippet ciip
+snippet ci_input-post
 	$this->input->post("${1:index}");${2}
-snippet ciig
+snippet ci_input-get
 	$this->input->get("${1:index}");${2}
-snippet ciic
+snippet ci_input-cookie
 	$this->input->cookie("${1:index}");${2}
-snippet ciis
+snippet ci_input-server
 	$this->input->server("${1:index}");${2}
-snippet ciiua
+snippet ci_input-user_agent
 	$this->input->user_agent();${1}
-snippet ciiajax
+snippet ci_input-is_ajax_request
 	$this->input->is_ajax_request();${1}
-snippet ciicli
+snippet ci_input-is_cli_request
 	$this->input->is_cli_request();${1}
 # Form Validation Class and Form Helper snippets
-snippet cifvsr
+snippet ci_form_validation-set_rules
 	$this->form_validation->set_rules("${1:field}", "${2:label}", "${3:trim|required}");${4}
-snippet cifo
+snippet ci_form_open
 	form_open("${1:action}");${2}
-snippet cifom
+snippet ci_form_open_multipart
 	form_open_multipart("${1:action}");${2}
-snippet cifh
+snippet ci_form_hidden
 	form_hidden("${1:name}", "${2:value}");${3}
-snippet cifi
+snippet ci_form_input
 	form_input("${1:name}", "${2:value}");${3}
-snippet cifp
+snippet ci_form_password
 	form_password("${1:name}", "${2:value}");${3}
-snippet cifu
+snippet ci_form_upload
 	form_upload("${1:name}", "${2:value}");${3}
-snippet cifta
+snippet ci_form_textarea
 	form_textarea("${1:name}", "${2:value}");${3}
-snippet cifdd
+snippet ci_form_dropdown
 	form_dropdown("${1:name}", $${2:options}, $${3:selected);${4}
-snippet cifcb
+snippet ci_form_checkbox
 	form_checkbox("${1:name}", "${2:value}");${3}
-snippet cifr
+snippet ci_form_radio
 	form_radio("${1:name}", "${2:value}");${3}
-snippet cifsub
+snippet ci_form_submit
 	form_submit("${1:name}", "${2:value}");${3}
-snippet cifres
+snippet ci_form_reset
 	form_reset("${1:name}", "${2:value}");${3}
-snippet cifbut
+snippet ci_form_button
 	form_button("${1:name}", "${2:value}");${3}
-snippet ciflab
+snippet ci_form_label
 	form_label("${1:label text}", "${2:id}");${3}
-snippet cifc
+snippet ci_form_close
 	form_close();${1}
-snippet civerr
+snippet ci_validation_errors
 	validation_errors();${1}
 # Session Class snippets
-snippet cisud
+snippet ci_session_userdata
 	$this->session->userdata("${1:item}");${2}
-snippet cissud
+snippet ci_session_set_userdata
 	$this->session->set_userdata($${1:array});${2}
-snippet cisfd
+snippet ci_session_flashdata
 	$this->session->flashdata("${1:item}");${2}
-snippet cissfd
+snippet ci_session_set_flashdata
 	$this->session->set_flashdata("${1:item}", "${2:value}");${3}
