@@ -11,11 +11,17 @@ snippet _
 	.. _\`$1\`: ${0:link-block}
 snippet =
 	${1:Title}
-	=====${2:=}
-	${0}
+	==${2:=}
 snippet -
 	${1:Title}
-	-----${2:-}
+	--${2:-}
+snippet ===
+	`repeat('=', strlen(getline(line(".") - 1)))`
+
+	${0}
+snippet ---
+	`repeat('-', strlen(getline(line(".") - 1)))`
+
 	${0}
 #some directive
 snippet img:
