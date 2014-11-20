@@ -3,23 +3,43 @@
 # Includes octopress (http://octopress.org/) snippets
 
 snippet [
-	[${1:text}](http://${2:address} "${0:title}")
+	[${1:text}](http://${2:address})
 snippet [*
+	[${1:link}](${2:`@*`})
+
+snippet ["
+	[${1:text}](http://${2:address} "${0:title}")
+snippet ["*
 	[${1:link}](${2:`@*`} "${3:title}")
 
 snippet [:
-	[${1:id}]: http://${2:url} "${0:title}"
+	[${1:id}]: http://${2:url}
 snippet [:*
+	[${1:id}]: ${2:`@*`}
+
+snippet [:"
+	[${1:id}]: http://${2:url} "${0:title}"
+snippet [:"*
 	[${1:id}]: ${2:`@*`} "${0:title}"
 
 snippet ![
-	![${1:alttext}](${2:/images/image.jpg} "${0:title}")
+	![${1:alttext}](${2:/images/image.jpg})
 snippet ![*
+	![${1:alt}](${2:`@*`})
+
+snippet !["
+	![${1:alttext}](${2:/images/image.jpg} "${0:title}")
+snippet !["*
 	![${1:alt}](${2:`@*`} "${3:title}")
 
 snippet ![:
-	![${1:id}]: ${2:url} "${0:title}"
+	![${1:id}]: ${2:url}
 snippet ![:*
+	![${1:id}]: ${2:`@*`}
+
+snippet ![:"
+	![${1:id}]: ${2:url} "${0:title}"
+snippet ![:"*
 	![${1:id}]: ${2:`@*`} "${0:title}"
 
 snippet <
