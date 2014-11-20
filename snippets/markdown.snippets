@@ -72,15 +72,16 @@ snippet blockquote-link
 	${0:quote}
 	{% endblockquote %}
 
-snippet bt-codeblock-short
-	```
-	${0:code_snippet}
-	```
+snippet ```
+	\`\`\`
+	${1:code}
+	\`\`\`
 
-snippet bt-codeblock-full
-	``` ${1:language} ${2:title} ${3:URL} ${4:link_text}
-	${0:code_snippet}
-	```
+# Language.
+snippet ```l
+	\`\`\`${1:language}
+	${2:code}
+	\`\`\`
 
 snippet codeblock-short
 	{% codeblock %}
