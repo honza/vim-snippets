@@ -22,6 +22,12 @@ snippet ![:
 snippet ![:*
 	![${1:id}]: ${2:`@*`} "${0:title}"
 
+snippet <
+	<http://${1:url}>
+snippet <*
+	<`@*`>
+snippet <c
+	<`@+`>
 snippet ===
 	`repeat('=', strlen(getline(line(".") - 1)) - strlen(getline('.')))`
 
