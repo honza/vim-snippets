@@ -2,19 +2,28 @@
 
 # Includes octopress (http://octopress.org/) snippets
 
+# The suffix `c` stands for "Clipboard".
+
 snippet [
 	[${1:text}](http://${2:address})
 snippet [*
 	[${1:link}](${2:`@*`})
+snippet [c
+	[${1:link}](${2:`@+`})
 snippet ["
 	[${1:text}](http://${2:address} "${3:title}")
 snippet ["*
 	[${1:link}](${2:`@*`} "${3:title}")
+snippet ["c
+	[${1:link}](${2:`@+`} "${3:title}")
 snippet [:
 	[${1:id}]: http://${2:url}
 
 snippet [:*
 	[${1:id}]: ${2:`@*`}
+
+snippet [:c
+	[${1:id}]: ${2:`@+`}
 
 snippet [:"
 	[${1:id}]: http://${2:url} "${3:title}"
@@ -22,14 +31,21 @@ snippet [:"
 snippet [:"*
 	[${1:id}]: ${2:`@*`} "${3:title}"
 
+snippet [:"c
+	[${1:id}]: ${2:`@+`} "${3:title}"
+
 snippet ![
 	![${1:alttext}](${2:/images/image.jpg})
 snippet ![*
 	![${1:alt}](${2:`@*`})
+snippet ![c
+	![${1:alt}](${2:`@+`})
 snippet !["
 	![${1:alttext}](${2:/images/image.jpg} "${3:title}")
 snippet !["*
 	![${1:alt}](${2:`@*`} "${3:title}")
+snippet !["c
+	![${1:alt}](${2:`@+`} "${3:title}")
 snippet ![:
 	![${1:id}]: ${2:url}
 
@@ -41,6 +57,9 @@ snippet ![:"
 
 snippet ![:"*
 	![${1:id}]: ${2:`@*`} "${3:title}"
+
+snippet ![:"c
+	![${1:id}]: ${2:`@+`} "${3:title}"
 
 snippet <
 	<http://${1:url}>
