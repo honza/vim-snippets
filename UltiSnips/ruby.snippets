@@ -86,7 +86,7 @@ endsnippet
 
 
 snippet "\b(de)?f" "def <name>..." r
-def ${1:function_name}${2: ${3:*args}}
+def ${1:function_name}${2:(${3:*args})}
 	${0:# TODO}
 end
 endsnippet
@@ -94,7 +94,7 @@ endsnippet
 
 
 snippet defi "def initialize ..."
-def initialize${1: ${2:*args}}
+def initialize${1:(${2:*args})}
 	${0:# TODO}
 end
 endsnippet
@@ -102,7 +102,7 @@ endsnippet
 
 
 snippet defr "def <name> ... rescue ..."
-def ${1:function_name}${2: ${3:*args}}
+def ${1:function_name}${2:(${3:*args})}
 	${4:# TODO}
 rescue
 	${0:# TODO}
@@ -545,7 +545,7 @@ endsnippet
 
 snippet class "class <class_name> def initialize ... end end"
 class ${1:class_name}
-	def initialize ${2:*args}
+	def initialize(${2:*args})
 		$0
 	end
 end
