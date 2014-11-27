@@ -10,54 +10,6 @@ snippet "^# ?[uU][tT][fF]-?8" "# encoding: UTF-8" r
 $0
 endsnippet
 
-snippet if "if <condition> ... end"
-if ${1:condition}
-	$0
-end
-endsnippet
-
-snippet ife "if <condition> ... else ... end"
-if ${1:condition}
-	$2
-else
-	$0
-end
-endsnippet
-
-snippet ifee "if <condition> ... elseif <condition> ... else ... end"
-if ${1:condition}
-	$2
-elsif ${3:condition}
-	$4
-else
-	$0
-end
-endsnippet
-
-snippet unless "unless <condition> ... end"
-unless ${1:condition}
-	$0
-end
-endsnippet
-
-snippet unlesse "unless <condition> ... else ... end"
-unless ${1:condition}
-	$2
-else
-	$0
-end
-endsnippet
-
-snippet unlesee "unless <condition> ... elseif <condition> ... else ... end"
-unless ${1:condition}
-	$2
-elsif ${3:condition}
-	$4
-else
-	$0
-end
-endsnippet
-
 snippet "\b(de)?f" "def <name>..." r
 def ${1:function_name}${2:(${3:*args})}
 	$0
@@ -80,12 +32,6 @@ endsnippet
 
 snippet For "(<from>..<to>).each { |<i>| <block> }"
 (${1:from}..${2:to}).each { |${3:i}| $0 }
-endsnippet
-
-snippet for "(<from>..<to>).each do |<i>| <block> end"
-(${1:from}..${2:to}).each do |${3:i}|
-	$0
-end
 endsnippet
 
 snippet "(\S+)\.Merge!" ".merge!(<other_hash>) { |<key>,<oldval>,<newval>| <block> }" r
@@ -168,12 +114,12 @@ snippet "(\S+)\.each_?val(ue)?" ".each_value do |<value>| <block> end" r
 end
 endsnippet
 
-snippet Each "<elements>.each { |<element>| <block> }"
-${1:elements}.each { |${2:${1/s$//}}| $0 }
+snippet "(\S+)\.ea" "<elements>.each do |<element>| <block> end" r
+`!p snip.rv=match.group(1)`.each { |${1:e}| $0 }
 endsnippet
 
-snippet each "<elements>.each do |<element>| <block> end"
-${1:elements}.each do |${2:${1/s$//}}|
+snippet "(\S+)\.ead" "<elements>.each do |<element>| <block> end" r
+`!p snip.rv=match.group(1)`.each do |${1:e}|
 	$0
 end
 endsnippet
