@@ -54,7 +54,7 @@ snippet let
 	(let [${1:name} ${2:expr}]
 		${0})
 snippet letfn
-	(letfn [(${1:name) [${2:args}]
+	(letfn [(${1:name}) [${2:args}]
 	          ${0})])
 snippet map
 	(map ${1:func} ${0:coll})
@@ -64,8 +64,7 @@ snippet met
 	(${1:name} [${2:this} ${3:args}]
 	  ${0})
 snippet ns
-	(ns ${1:name}
-	  ${0})
+	(ns ${0:name})
 snippet dotimes
 	(dotimes [_ 10]
 	  (time
