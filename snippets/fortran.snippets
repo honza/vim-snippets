@@ -1,0 +1,21 @@
+snippet mod
+	MODULE ${1:modulename}
+		${0}
+	END MODULE $1
+
+snippet doc
+	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	! File: ${2:`vim_snippets#Filename('$1')`}
+	! Author: `g:snips_author`
+	! Email: `g:snips_email`
+	! Github: `g:snips_github`
+	! Description: ${1}
+	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	${0}
+
+snippet prog
+	PROGRAM ${1:main}
+		${0}
+	END PROGRAM $1
+
+
