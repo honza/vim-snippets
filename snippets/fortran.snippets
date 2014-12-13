@@ -1,0 +1,64 @@
+snippet impl
+	IMPLICIT NONE
+	${0}
+
+snippet prog
+	PROGRAM ${1:main}
+		${0}
+	END PROGRAM $1
+
+snippet mod
+	MODULE ${1:modulename}
+		${0}
+	END MODULE $1
+
+snippet doc
+	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	! File: ${2:`vim_snippets#Filename('$1')`}
+	! Author: `g:snips_author`
+	! Email: `g:snips_email`
+	! Github: `g:snips_github`
+	! Description: ${1}
+	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	${0}
+
+# Variables defs
+# Boolean
+snippet logic
+	logical :: ${0:names}
+
+# Integer
+snippet int
+	integer :: ${0:names}
+snippet intp
+	integer, parameter :: ${0:names}
+snippet inta
+	integer, allocatable, dimension(${1::}) :: ${0:names}
+
+# Real
+snippet real
+	real :: ${0:names}
+snippet realp
+	real,parameter :: ${0:names}
+snippet reala
+	real, allocatable, dimension(${1::}) :: ${0:names}
+
+# Double Precision
+snippet double
+	double precision :: ${0:names}
+snippet doublep
+	double precision, parameter :: ${0:names}
+snippet doublea
+	double precision, allocatable, dimension(${1::}) :: ${0:names}
+
+# Char
+snippet char
+	character(len=${1:*}) :: ${0:names}
+
+# Types
+snippet type
+	type(${1:name}) :: ${0:names}
+
+# Array
+snippet arr
+	(/ (${0:}) /)
