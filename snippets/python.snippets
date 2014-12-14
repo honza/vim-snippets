@@ -1,3 +1,5 @@
+snippet *args
+	*args, **kwargs
 snippet #!
 	#!/usr/bin/env python
 	# -*- coding: utf-8 -*-
@@ -34,24 +36,26 @@ snippet with
 snippet cl
 	class ${1:ClassName}(${2:object}):
 		"""${3:docstring for $1}"""
-		def __init__(self, ${4:arg}):
-			${5:super($1, self).__init__()}
-			self.$4 = $4
+		def __init__(self, *args, **kwargs):
+			${5:super($1, self).__init__(*args, **kwargs)}
+			self.args = args
+			self.kwargs = kwargs
 			${0}
 # New Function
 snippet def
-	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+	def ${1:fname}(${2:`indent('.') ? 'self, *args, **kwargs' : '*args, **kwargs'`}):
 		"""${3:docstring for $1}"""
 		${0}
 snippet deff
-	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+	def ${1:fname}(${2:`indent('.') ? 'self, *args, **kwargs' : '*args, **kwargs'`}):
 		${0}
 # New Method
 snippet defs
-	def ${1:mname}(self, ${2:arg}):
+	def ${1:mname}(self, *args, **kwargs):
+		"""${3:docstring for $1}"""
 		${0}
 # New Property
-snippet property
+snippet prop
 	def ${1:foo}():
 		doc = "${2:The $1 property.}"
 		def fget(self):
@@ -86,8 +90,8 @@ snippet cascii
 # Lambda
 snippet ld
 	${1:var} = lambda ${2:vars} : ${0:action}
-snippet .
-	self.
+# snippet . # Disabled because overlapping autocomplete plugings
+#	self.
 snippet try Try/Except
 	try:
 		${1}
