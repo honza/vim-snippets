@@ -208,3 +208,9 @@ snippet kwg
 	self.${1:var_name} = kwargs.get('$1', ${2:None})
 snippet lkwg
 	${1:var_name} = kwargs.get('$1', ${2:None})
+snippet args
+	*args${1:,}${0}
+snippet kwargs
+	**kwargs${1:,}${0}
+snippet akw
+	*args, **kwargs${1:,}${0}
