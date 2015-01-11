@@ -1,5 +1,5 @@
 #resource controller
-snippet l_rsc "Laravel resource controller"
+snippet l_rsc "Laravel resource controller" b
 /*!
  * \class       ${1:`!v expand('%:t:r')`}
  *
@@ -39,7 +39,7 @@ class $1 {
 endsnippet
 
 #service service provider
-snippet l_ssp "Laravel service provider for service"
+snippet l_ssp "Laravel service provider for service" b
 /*!
  * \namespace   ${1:Services}
  * \class       ${2:`!v expand('%:t:r')`}
@@ -65,7 +65,7 @@ class $2 extends ServiceProvider {
 endsnippet
 
 #repository service provider
-snippet l_rsp "Laravel service provider for repository"
+snippet l_rsp "Laravel service provider for repository" b
 /*!
  * \namespace   ${2:Repositories\\${1:}}
  * \class       ${3:`!v expand('%:t:r')`}
@@ -103,7 +103,7 @@ class $3 extends ServiceProvider {
 endsnippet
 
 #model
-snippet l_md "Laravel simple model"
+snippet l_md "Laravel simple model" b
 /*!
  * \namespace   ${1:Entities}
  * \class       ${2:`!v expand('%:t:r')`}
@@ -126,7 +126,7 @@ class $2 extends \Eloquent {
 endsnippet
 
 #abstract repository
-snippet l_ar "Laravel abstract Repository"
+snippet l_ar "Laravel abstract Repository" b
 /*!
  * \namespace   ${1:Repositories}
  * \class       ${2:`!v expand('%:t:r')`}
@@ -192,7 +192,7 @@ abstract class $2 implements $3 {
 endsnippet
 
 #repository
-snippet l_r "Laravel Repository"
+snippet l_r "Laravel Repository" b
 /*!
  * \namespace   ${1:Repositories\\${2}}
  * \class       ${3:`!v expand('%:t:r')`}
@@ -210,7 +210,7 @@ class $3 extends \\$1 implements $4 {
 endsnippet
 
 #service
-snippet l_s "Laravel Service"
+snippet l_s "Laravel Service" b
 /*!
  * \namespace   ${1:Services}
  * \class       ${2:`!v expand('%:t:r')`}
@@ -236,7 +236,7 @@ class $2 {
 endsnippet
 
 #facade
-snippet l_f "Laravel Facade"
+snippet l_f "Laravel Facade" b
 /*!
  * \namespace   ${1:Services}
  * \class       ${2:`!v expand('%:t:r')`}
