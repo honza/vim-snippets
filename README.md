@@ -214,6 +214,7 @@ This list is kept up-to-date on a best effort basis.
 * PHP - [chrisyue](http://github.com/chrisyue)
 * Python - [honza](http://github.com/honza)
 * Ruby - [taq](http://github.com/taq)
+* Rust - [lpil](https://github.com/lpil)
 * Scala - [gorodinskiy](https://github.com/gorodinskiy)
 
 License
