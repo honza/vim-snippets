@@ -57,7 +57,7 @@ class $2 extends ServiceProvider {
     public function register() {
         $this->app->bind('${4}Service', function ($app) {
             return new ${5}(
-                $app->make('Repositories\\${6}Interface'),
+                $app->make('Repositories\\${6}Interface')
             );
         });
     }
