@@ -57,7 +57,7 @@ class $2 extends ServiceProvider {
     public function register() {
         $this->app->bind('${4}Service', function ($app) {
             return new ${5}(
-                $app->make('Repositories\\${6}Interface'),
+                $app->make('Repositories\\${6}Interface')
             );
         });
     }
@@ -74,7 +74,7 @@ snippet l_rsp "Laravel service provider for repository" b
  * \date        `!v strftime('%d-%m-%y')`
  */
 
-namespace $4;
+namespace $2;
 
 use Entities\\$1;
 use $2\\$1Repository;
@@ -229,7 +229,7 @@ class $2 {
     /*!
      * \fn      __construct
      */
-    public function __construct($4 $repo) {
+    public function __construct($5 $repo) {
         $this->$6 = $repo;
     }
 }
