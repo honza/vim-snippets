@@ -226,10 +226,6 @@ snippet else "else (ERB)"
 	$0
 endsnippet
 
-snippet if "if (ERB)"
-<% if ${1:condition} %>$0
-endsnippet
-
 snippet lf "link_to_function"
 `!p textmate_var('TM_RAILS_TEMPLATE_START_RUBY_EXPR', snip)`link_to_function ${1:"${2:Greeting}"}, "${3:alert('Hello world!')}"$4`!p textmate_var('TM_RAILS_TEMPLATE_END_RUBY_EXPR', snip)`
 endsnippet
