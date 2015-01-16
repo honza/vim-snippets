@@ -7,33 +7,30 @@ snippet l_rsc "Laravel resource controller" b
  * \date        `!v strftime('%d-%m-%y')`
  */
 
-class $1 {
-    public function index() {
-        ${3}
-    }
-    
-    public function create() {
+class $1 extends ${3: BaseController} {
+    function __construct() {
         ${4}
     }
     
+    public function index() {
+    }
+    
+    public function create() {
+    }
+    
     public function store($id) {
-        ${5}
     }
     
     public function show($id) {
-        ${6}
     }
     
     public function edit($id) {
-        ${7}
     }
     
     public function update($id) {
-        ${8}
     }
     
     public function destroy($id) {
-        ${9}
     }
 }
 endsnippet
