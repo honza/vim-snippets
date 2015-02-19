@@ -46,6 +46,13 @@ snippet def
 	def ${1:name} do
 		${0}
 	end
+snippet defd
+	@doc """
+	${1:doc string}
+	"""
+	def ${2:name} do
+		${0}
+	end
 snippet defim
 	defimpl ${1:protocol_name}, for: ${2:data_type} do
 		${0}
