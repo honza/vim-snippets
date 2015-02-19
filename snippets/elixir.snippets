@@ -102,6 +102,10 @@ snippet test
 	test "${1:test_name}" do
 		${0}
 	end
+snippet test "A ExUnit test" b
+	test "${1:test_name}", %{${2:arg: arg}} do
+		${0}
+	end
 snippet try try .. rescue .. end
 	try do
 		${1}
