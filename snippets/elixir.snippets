@@ -6,7 +6,7 @@ snippet if if .. do .. end
 	if ${1} do
 		${0}
 	end
-snippet if if .. do: ..
+snippet if: if .. do: ..
 	if ${1:condition}, do: ${0}
 snippet ife if .. do .. else .. end
 	if ${1:condition} do
@@ -14,13 +14,13 @@ snippet ife if .. do .. else .. end
 	else
 		${0}
 	end
-snippet ife if .. do: .. else:
+snippet ife: if .. do: .. else:
 	if ${1:condition}, do: ${2}, else: ${0}
 snippet unless unless .. do .. end
 	unless ${1} do
 		${0}
 	end
-snippet unless unless .. do: ..
+snippet unless: unless .. do: ..
 	unless ${1:condition}, do: ${0}
 snippet unlesse unless .. do .. else .. end
 	unless ${1:condition} do
@@ -28,7 +28,7 @@ snippet unlesse unless .. do .. else .. end
 	else
 		${0}
 	end
-snippet unlesse unless .. do: .. else:
+snippet unlesse: unless .. do: .. else:
 	unless ${1:condition}, do: ${2}, else: ${0}
 snippet cond
 	cond do
