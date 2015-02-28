@@ -51,15 +51,13 @@ snippet getopt
 	#===============================================================================
 	function usage ()
 	{
-			cat <<- EOT
+		echo "
+	    Usage :  $${0:0} [options] [--]
 
-	  Usage :  $${0:0} [options] [--]
+	    Options:
+	    -h|help       Display this message
+	    -v|version    Display script version"
 
-	  Options:
-	  -h|help       Display this message
-	  -v|version    Display script version
-
-			EOT
 	}    # ----------  end of function usage  ----------
 
 	#-----------------------------------------------------------------------
@@ -74,7 +72,7 @@ snippet getopt
 
 		v|version  )  echo "$${0:0} -- Version $__ScriptVersion"; exit 0   ;;
 
-		\? )  echo -e "\n  Option does not exist : $OPTARG\n"
+		* )  echo -e "\n  Option does not exist : $OPTARG\n"
 			  usage; exit 1   ;;
 
 	  esac    # --- end of case ---
