@@ -35,7 +35,6 @@ snippet pln "println!"
 	println!("${1}");
 snippet pln, "println! with format param"
 	println!("${1}", ${2});
-
 # Modules
 snippet ec "extern crate"
 	extern crate ${1:sync};
@@ -53,7 +52,6 @@ snippet testmod "Test module" b
 
 		test${0}
 	}
-
 # Attributes
 snippet allow "allow lint attribute" b
 	#[allow(${1:unused_variable})]
@@ -74,13 +72,11 @@ snippet crate "Define create meta attributes"
 	#![comment = "${4:Comment.}"]
 	// Specify the output type
 	#![crate_type = "${5:lib}"]
-
 # Common types
 snippet opt "Option<T>"
 	Option<${1:i32}>
 snippet res "Result<T, E>"
 	Result<${1:~str}, ${2:()}>
-
 # Control structures
 snippet if
 	if ${1} {
@@ -123,7 +119,6 @@ snippet todo "TODO comment"
 	// [TODO]: ${0:Description}
 snippet fixme "FIXME comment"
 	// FIXME: $0
-
 # Struct
 snippet st "Struct definition"
 	struct ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} {
@@ -165,7 +160,6 @@ snippet ss "static string declaration"
 	static ${1}: &'static str = "${0}";
 snippet stat "static item declaration"
 	static ${1}: ${2:usize} = ${0};
-
 # Concurrency
 snippet spawn "spawn a task or thread"
 	spawn(proc() {
@@ -173,7 +167,6 @@ snippet spawn "spawn a task or thread"
 	});
 snippet chan "Declare (Sender, Receiver) pair of asynchronous channel()"
 	let (${1:tx}, ${2:rx}): (Sender<${3:i32}>, Receiver<${4:i32}>) = channel();
-
 # Testing
 snippet as "assert!"
 	assert!(${1:predicate})
