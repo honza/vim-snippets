@@ -102,8 +102,10 @@ snippet eli "else if"
 	}
 snippet mat "match pattern"
 	match ${1} {
-		${2} => ${3},
+		${2} => ${3}
 	}
+snippet case "Case clause of pattern match"
+	${1:_} => ${2:expression}
 snippet loop "loop {}" b
 	loop {
 		${0}
