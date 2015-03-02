@@ -1,8 +1,8 @@
 priority -50
 
-###########################################
-# Snippets for the SystemVerilog language #
-###########################################
+##########################
+# SystemVerilog Snippets #
+##########################
 
 snippet if "If statement"
 if (${1}) begin
@@ -78,25 +78,25 @@ endsnippet
 snippet always_comb "Combinational always block"
 always_comb begin : ${1:statement_label}
   $0
-end : ${1}
+end : $1
 endsnippet
 
 snippet always_ff "Sequential logic"
 always_ff @(posedge ${1:clk}) begin : ${2:statement_label}
   $0
-end : ${2}
+end : $2
 endsnippet
 
 snippet always_latch "Latched logic"
-always_ff begin : ${1:statement_label}
+always_latch begin : ${1:statement_label}
   $0
-end : ${1}
+end : $1
 endsnippet
 
 snippet module "Module block"
 module ${1:module_name} ();
   $0
-endmodule : ${1}
+endmodule : $1
 endsnippet
 
 snippet module "Class"
@@ -108,7 +108,7 @@ class ${1:module_name};
   function new();
   endfunction : new
 
-endmodule : ${1}
+endmodule : $1
 endsnippet
 
 snippet typestruct "Typedef structure"
@@ -120,35 +120,37 @@ endsnippet
 snippet program "Program block"
 program ${1:program_name} ();
   $0
-endprogram : ${1}
+endprogram : $1
 endsnippet
 
 snippet interface "Interface block"
 interface ${1:program_name} ();
   // nets
+  $0
 
   // clocking
 
   // modports
 
+endinterface : $1
+endsnippet
+
+snippet clocking "clocking"
+clocking ${1:clocking_name} @(${2:posedge} ${3:clk});
   $0
-endinterface : ${1}
+endclocking : $1
 endsnippet
 
 snippet covergroup "Covergroup construct"
-covergroup ${1:package_name} @(posedge ${2:clk});
+covergroup ${1:group_name} @(${2:posedge} ${3:clk});
   $0
-endgroup : ${1}
+endgroup : $1
 endsnippet
 
 snippet package "Package declaration"
 package ${1:package_name};
   $0
-endpackage : ${1}
+endpackage : $1
 endsnippet
-
-####################################################
-# Snippets for the Accellera UVM Base Class Library#
-####################################################
 
 # vim:ft=snippets:
