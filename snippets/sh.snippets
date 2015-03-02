@@ -1,4 +1,7 @@
 # Shebang. Executing bash via /usr/bin/env makes scripts more portable.
+snippet #!
+	#!/usr/bin/env bash
+
 snippet bash
 	#!/bin/bash
 
@@ -81,7 +84,14 @@ snippet getopt
 snippet root
 	if [ \$(id -u) -ne 0 ]; then exec sudo \$0; fi
 
+# function the bash way
 snippet fun
 	function ${1:function_name}() {
 		${0:#function_body}
 	}
+
+# function the sh way
+snippet fun-sh
+	${1:function_name}() {
+		${0:#function_body}
+ 	}
