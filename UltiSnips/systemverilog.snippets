@@ -1,0 +1,154 @@
+priority -50
+
+###########################################
+# Snippets for the SystemVerilog language #
+###########################################
+
+snippet if "If statement"
+if (${1}) begin
+  $0
+end
+endsnippet
+
+snippet ife "If/else statements"
+if (${1}) begin
+  $0
+end
+else begin
+
+end
+endsnippet
+
+snippet eif "Else if statement"
+else if (${1}) begin
+  $0
+end
+endsnippet
+
+snippet el "Else statement"
+else begin
+  $0
+end
+endsnippet
+
+snippet wh "While statement
+while (${1}) begin
+  $0
+end
+endsnippet
+
+snippet repeat "Repeat loop"
+repeat (${1}) begin
+  $0
+end
+endsnippet
+
+snippet foreach "Foreach loop"
+foreach (${1}) begin
+  $0
+end
+endsnippet
+
+snippet dowh "Do-while statement
+do begin
+  $0
+end while (${1});
+endsnippet
+
+snippet case "Case statement"
+case (${1})
+  {$2}: begin
+    $0
+  end
+  default: begin
+  end
+endcase
+endsnippet
+
+snippet casez "CaseZ statement"
+casez (${1})
+  {$2}: begin
+    $0
+  end
+  default: begin
+  end
+endcase
+endsnippet
+
+snippet always_comb "Combinational always block"
+always_comb begin : ${1:statement_label}
+  $0
+end : ${1}
+endsnippet
+
+snippet always_ff "Sequential logic"
+always_ff @(posedge ${1:clk}) begin : ${2:statement_label}
+  $0
+end : ${2}
+endsnippet
+
+snippet always_latch "Latched logic"
+always_ff begin : ${1:statement_label}
+  $0
+end : ${1}
+endsnippet
+
+snippet module "Module block"
+module ${1:module_name} ();
+  $0
+endmodule : ${1}
+endsnippet
+
+snippet module "Class"
+class ${1:module_name};
+	// data or class properties
+  $0
+
+  // initialization
+  function new();
+  endfunction : new
+
+endmodule : ${1}
+endsnippet
+
+snippet typestruct "Typedef structure"
+typedef struct {
+  $0
+} ${1:name_t};
+endsnippet
+
+snippet program "Program block"
+program ${1:program_name} ();
+  $0
+endprogram : ${1}
+endsnippet
+
+snippet interface "Interface block"
+interface ${1:program_name} ();
+  // nets
+
+  // clocking
+
+  // modports
+
+  $0
+endinterface : ${1}
+endsnippet
+
+snippet covergroup "Covergroup construct"
+covergroup ${1:package_name} @(posedge ${2:clk});
+  $0
+endgroup : ${1}
+endsnippet
+
+snippet package "Package declaration"
+package ${1:package_name};
+  $0
+endpackage : ${1}
+endsnippet
+
+####################################################
+# Snippets for the Accellera UVM Base Class Library#
+####################################################
+
+# vim:ft=snippets:
