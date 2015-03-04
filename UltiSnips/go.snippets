@@ -135,3 +135,10 @@ snippet json "JSON field"
 endsnippet
 
 # vim:ft=snippets:
+
+# error handling
+snippet err "Basic error handling" b
+if err != nil {
+  log.${1:Fatal}(err)
+}
+endsnippet
