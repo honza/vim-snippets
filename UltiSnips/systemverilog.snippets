@@ -76,21 +76,21 @@ endcase
 endsnippet
 
 snippet always_comb "Combinational always block"
-always_comb begin : ${1:statement_label}
+always_comb begin ${1:: statement_label}
   $0
-end : $1
+end $1
 endsnippet
 
 snippet always_ff "Sequential logic"
-always_ff @(posedge ${1:clk}) begin : ${2:statement_label}
+always_ff @(posedge ${1:clk}) begin ${2:: statement_label}
   $0
-end : $2
+end $2
 endsnippet
 
 snippet always_latch "Latched logic"
-always_latch begin : ${1:statement_label}
+always_latch begin ${1:: statement_label}
   $0
-end : $1
+end $1
 endsnippet
 
 snippet module "Module block"
