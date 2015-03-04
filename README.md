@@ -205,7 +205,6 @@ to maintain snippets for a language, please get in touch.
 Notes: People are interested in snippets - and their interest may wane again.
 This list is kept up-to-date on a best effort basis.
 
-* Clojure - [lpil](https://github.com/lpil)
 * Elixir - [iurifq](https://github.com/iurifq)
 * Falcon - [steveno](https://github.com/steveno)
 * HTML Django - [honza](http://github.com/honza)
