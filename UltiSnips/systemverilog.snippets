@@ -31,25 +31,25 @@ else begin
 end
 endsnippet
 
-snippet wh "While statement
+snippet wh "While statement"
 while (${1}) begin
   $0
 end
 endsnippet
 
-snippet repeat "Repeat loop"
+snippet rep "Repeat loop"
 repeat (${1}) begin
   $0
 end
 endsnippet
 
-snippet foreach "Foreach loop"
+snippet fe "Foreach loop"
 foreach (${1}) begin
   $0
 end
 endsnippet
 
-snippet dowh "Do-while statement
+snippet dowh "Do-while statement"
 do begin
   $0
 end while (${1});
@@ -75,31 +75,31 @@ casez (${1})
 endcase
 endsnippet
 
-snippet always_comb "Combinational always block"
+snippet alc "Combinational always block"
 always_comb begin ${1:: statement_label}
   $0
 end $1
 endsnippet
 
-snippet always_ff "Sequential logic"
+snippet alff "Sequential logic"
 always_ff @(posedge ${1:clk}) begin ${2:: statement_label}
   $0
 end $2
 endsnippet
 
-snippet always_latch "Latched logic"
+snippet all "Latched logic"
 always_latch begin ${1:: statement_label}
   $0
 end $1
 endsnippet
 
-snippet module "Module block"
+snippet mod "Module block"
 module ${1:module_name} ();
   $0
 endmodule : $1
 endsnippet
 
-snippet module "Class"
+snippet cl "Class"
 class ${1:module_name};
 	// data or class properties
   $0
@@ -111,19 +111,19 @@ class ${1:module_name};
 endmodule : $1
 endsnippet
 
-snippet typestruct "Typedef structure"
+snippet types "Typedef structure"
 typedef struct {
   $0
 } ${1:name_t};
 endsnippet
 
-snippet program "Program block"
+snippet prog "Program block"
 program ${1:program_name} ();
   $0
 endprogram : $1
 endsnippet
 
-snippet interface "Interface block"
+snippet intf "Interface block"
 interface ${1:program_name} ();
   // nets
   $0
@@ -135,19 +135,19 @@ interface ${1:program_name} ();
 endinterface : $1
 endsnippet
 
-snippet clocking "clocking"
+snippet clock "Clocking Block"
 clocking ${1:clocking_name} @(${2:posedge} ${3:clk});
   $0
 endclocking : $1
 endsnippet
 
-snippet covergroup "Covergroup construct"
+snippet cg "Covergroup construct"
 covergroup ${1:group_name} @(${2:posedge} ${3:clk});
   $0
 endgroup : $1
 endsnippet
 
-snippet package "Package declaration"
+snippet pkg "Package declaration"
 package ${1:package_name};
   $0
 endpackage : $1
