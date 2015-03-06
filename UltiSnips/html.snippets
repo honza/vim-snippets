@@ -291,4 +291,225 @@ snippet movie "Embed QT movie (movie)" b
 	`!p x(snip)`>
 </object>
 endsnippet
+
+##############
+# HTML5 TAGS #
+##############
+
+snippet article "article" w
+<article>
+	$0
+</article>
+endsnippet
+
+snippet article. "" w
+<article class="$1">
+	$0
+</article>
+endsnippet
+
+snippet article# "" w
+<article id="$1">
+	$0
+</article>
+endsnippet
+
+snippet aside "" w
+<aside>
+	$0
+</aside>
+endsnippet
+
+snippet aside. "" w
+<aside class="$1">
+	$0
+</aside>
+endsnippet
+
+snippet aside# "" w
+<aside id="$1">
+	$0
+</aside>
+endsnippet
+
+snippet audio "" w
+<audio src="$1>$0</audio>
+endsnippet
+
+snippet bdi "" w
+<bdi>$0</bdo>
+endsnippet
+
+snippet canvas "" w
+<canvas>
+	$0
+</canvas>
+endsnippet
+
+snippet details "" w
+<details>$0</details>
+endsnippet
+
+snippet dialog "" w
+<dialog>
+	$0
+</dialog>
+endsnippet
+
+snippet embed "" w
+<embed src="$1" type="$0" />
+endsnippet
+
+snippet figcaption "" w
+<figcaption>$0</figcaption>
+endsnippet
+
+snippet figure "" w
+<figure>$0</figure>
+endsnippet
+
+snippet figure# "" w
+<figure id="$1">
+	$0
+</figure>
+endsnippet
+
+snippet figure. "" w
+<figure class="$1">
+	$0
+</figure>
+endsnippet
+
+snippet footer "" w
+<footer>
+	$0
+</footer>
+endsnippet
+
+snippet footer. "" w
+<footer class="$1">
+	$0
+</footer>
+endsnippet
+
+snippet footer# "" w
+<footer id="$1">
+	$0
+</footer>
+endsnippet
+
+snippet header "" w
+<header>
+	$0
+</header>
+endsnippet
+
+snippet header. "" w
+<header class="$1">
+	$0
+</header>
+endsnippet
+
+snippet header# "" w
+<header id="$1">
+	$0
+</header>
+endsnippet
+
+snippet keygen "" w
+<keygen>$0</keygen>
+endsnippet
+
+snippet mark "" w
+<mark>$0</mark>
+endsnippet
+
+snippet meter "" w
+<meter>$0</meter>
+endsnippet
+
+snippet nav "" w
+<nav>
+	$0
+</nav>
+endsnippet
+
+snippet nav. "" w
+<nav class="$1">
+	$0
+</nav>
+endsnippet
+
+snippet nav# "" w
+<nav id="$1">
+	$0
+</nav>
+endsnippet
+
+snippet output "" w
+<output>$0</output>
+endsnippet
+
+snippet progress "" w
+<progress>$0</progress>
+endsnippet
+
+snippet rp "" w
+<rp>$0</rp>
+endsnippet
+
+snippet rt "" w
+<rt>$0</rt>
+endsnippet
+
+snippet ruby "" w
+<ruby>
+<rp><rt>$0</rt></rp>
+</ruby>
+endsnippet
+
+snippet section "" w
+<section>
+	$0
+</section>
+endsnippet
+
+snippet section. "" w
+<section class="$1">
+	$0
+</section>
+endsnippet
+
+snippet section# "" w
+<section id="$1">
+	$0
+</section>
+endsnippet
+
+snippet source "" w
+<source src="$1" type="$2" media="$0" />
+endsnippet
+
+snippet summary "" w
+<summary>
+	$0
+</summary>
+endsnippet
+
+snippet time "" w
+<time datetime="${1}" pubdate="${2:$1}">${0:$1}</time>
+endsnippet
+
+snippet track "" w
+<track src="${1}" srclang="${2}" label="${3}" default="${4:default}">${5}</track>
+endsnippet
+
+snippet video "" w
+<video src="${1} height="${2}" width="${3}" preload="${5:none}" autoplay="${6:autoplay}">${7}</video>
+endsnippet
+
+snippet wbr "" w
+<wbr />
+endsnippet
+
 # vim:ft=snippets:
