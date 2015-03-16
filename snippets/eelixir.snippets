@@ -14,3 +14,10 @@ snippet ft
 
 snippet lin
 	<%= link "${1:Submit}", to: ${2:"/users"}, method: ${3::delete}) %>
+
+snippet ff
+	<%= form_for @changeset, ${1:"/users"}, fn f -> %>
+			${0}
+
+		<%= submit "Submit" %>
+	<% end %>
