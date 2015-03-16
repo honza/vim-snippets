@@ -1,3 +1,15 @@
 priority -50
 
 extends html
+
+snippet % "<% %>" w
+	<% ${0} %>
+endsnippet
+
+snippet = "<%= %>" w
+	<%= ${1} %>
+endsnippet
+
+snippet end "<% end %>" w
+	<% end %>
+endsnippet
