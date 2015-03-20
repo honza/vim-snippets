@@ -1,0 +1,42 @@
+snippet html
+doctype html
+html(lang='${1:en}')
+	head
+		title= ${2:title}
+	body
+		${3}
+endsnippet
+
+snippet form
+form(action='${1:url}', method='${2:post}')
+endsnippet
+
+snippet input
+input(type='${1:text}', name='${2:name}'${3})${4}
+endsnippet
+
+snippet input.
+input.${1:class}(type='${2:text}', name='${3:name}'${4})${5}
+endsnippet
+
+snippet input#
+input#${1:id}(type='${2:text}', name='${3:name}'${4})${5}
+endsnippet
+
+snippet text
+input(
+	type='text'
+	name='${2:name}'
+	value='${3:$2}'${4:
+	placeholder='${5:Type something...}'}
+)${6}
+endsnippet
+
+snippet checkbox
+input(
+	type='checkbox'
+	name='${2:name}'
+	value='${3:$2}'
+	checked${4}
+)${5}
+endsnippet
