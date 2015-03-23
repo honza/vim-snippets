@@ -1,4 +1,4 @@
-snippet html
+snippet html "HTML 5 - Scaffold" b
 doctype html
 html(lang='${1:en}')
 	head
@@ -7,23 +7,16 @@ html(lang='${1:en}')
 		${3}
 endsnippet
 
-snippet form
+snippet form "Form" b
 form(action='${1:url}', method='${2:post}')
+	${3}
 endsnippet
 
-snippet input
+snippet input "Input field" b
 input(type='${1:text}', name='${2:name}'${3})${4}
 endsnippet
 
-snippet input.
-input.${1:class}(type='${2:text}', name='${3:name}'${4})${5}
-endsnippet
-
-snippet input#
-input#${1:id}(type='${2:text}', name='${3:name}'${4})${5}
-endsnippet
-
-snippet text
+snippet text "Multiline text field" b
 input(
 	type='text'
 	name='${2:name}'
@@ -32,7 +25,7 @@ input(
 )${6}
 endsnippet
 
-snippet checkbox
+snippet checkbox "Multiline checkbox field" b
 input(
 	type='checkbox'
 	name='${2:name}'
