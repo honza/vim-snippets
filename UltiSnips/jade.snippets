@@ -17,8 +17,28 @@ input(type='${1:text}', name='${2:name}'${3})
 ${4}
 endsnippet
 
+snippet input. "Input field with class" b
+input.${1:class}(type='${2:text}', name='${3:name}'${4})
+${5}
+endsnippet
+
+snippet input# "Input field with ID" b
+input#${1:ID}(type='${2:text}', name='${3:name}'${4})
+${5}
+endsnippet
+
 snippet text "Multiline text field" b
 input(
+	type='text'
+	name='${1:name}'
+	value='${2:$1}'${3:
+	placeholder='${4:Type something...}'}
+)
+${5}
+endsnippet
+
+snippet text. "Multiline text field with class" b
+input.${1:class}(
 	type='text'
 	name='${2:name}'
 	value='${3:$2}'${4:
@@ -27,8 +47,38 @@ input(
 ${6}
 endsnippet
 
-snippet checkbox "Multiline checkbox field" b
+snippet text# "Multiline text field with ID" b
+input#${1:ID}(
+	type='text'
+	name='${2:name}'
+	value='${3:$2}'${4:
+	placeholder='${5:Type something...}'}
+)
+${6}
+endsnippet
+
+snippet check "Multiline checkbox field" b
 input(
+	type='checkbox'
+	name='${1:name}'
+	value='${2:$1}'
+	checked${3}
+)
+${4}
+endsnippet
+
+snippet check. "Multiline checkbox field class" b
+input.${1:class}(
+	type='checkbox'
+	name='${2:name}'
+	value='${3:$2}'
+	checked${4}
+)
+${5}
+endsnippet
+
+snippet check# "Multiline checkbox field with ID" b
+input#${1:ID}(
 	type='checkbox'
 	name='${2:name}'
 	value='${3:$2}'
