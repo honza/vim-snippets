@@ -13,7 +13,8 @@ form(action='${1:url}', method='${2:post}')
 endsnippet
 
 snippet input "Input field" b
-input(type='${1:text}', name='${2:name}'${3})${4}
+input(type='${1:text}', name='${2:name}'${3})
+${4}
 endsnippet
 
 snippet text "Multiline text field" b
@@ -22,7 +23,8 @@ input(
 	name='${2:name}'
 	value='${3:$2}'${4:
 	placeholder='${5:Type something...}'}
-)${6}
+)
+${6}
 endsnippet
 
 snippet checkbox "Multiline checkbox field" b
@@ -31,5 +33,6 @@ input(
 	name='${2:name}'
 	value='${3:$2}'
 	checked${4}
-)${5}
+)
+${5}
 endsnippet
