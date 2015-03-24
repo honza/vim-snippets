@@ -81,7 +81,7 @@ snippet mod
 	endmodule : $1
 # Class
 snippet cl
-	class ${1:module_name};
+	class ${1:class_name};
 		// data or class properties
 		${0}
 
@@ -89,7 +89,7 @@ snippet cl
 		function new();
 		endfunction : new
 
-	endmodule : $1
+	endclass : $1
 # Typedef structure
 snippet types
 	typedef struct {
