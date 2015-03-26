@@ -394,7 +394,7 @@ snippet eq
             ${0:throw new NotImplementedException();}
             return base.Equals(obj);
         }
-# exception snippet
+# exception 
 snippet exc
 	public class ${1:MyException} : ${2:Exception}{
             public $1() { }
@@ -405,15 +405,41 @@ snippet exc
               System.Runtime.Serialization.StreamingContext context)
                 : base(info, context) { }
         }
-# indexer snippet
+# indexer 
 snippet index
 	public ${1:object} this[${2:int} index]{
             get { ${3:} }
             set { ${0:} }
         }
-# eventhandler snippet
+# eventhandler 
 snippet inv
 	EventHandler temp = ${1:MyEvent};
 	if (${2:temp} != null){
 		$2();
 	}
+# lock
+snippet lock
+    lock (${1:this}){
+        ${0:}
+    }
+# namespace
+snippet namespace
+    namespace ${1:MyNamespace}{
+        ${0:}
+    }
+# property
+snippet prop
+    public ${1:int} ${2:MyProperty} { get; set;}
+snippet propf
+    private ${1:int} ${2:myVar};
+
+    public $1 ${3:MyProperty}{
+        get { return $2;}
+        set { $2 = value;}
+    }
+snippet propg
+    public ${1:int} ${2:MyProperty} { get; private set; }
+
+# todo: iterator, iterindex
+
+
