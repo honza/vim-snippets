@@ -17,6 +17,11 @@ snippet base
 
 	mrproper : clean
 		rm -f $1
+# add
+snippet add
+	${1:out} : $1.o
+		$(CC) $(CFLAGS) -o $@ $+
+	
 # ifeq
 snippet ifeq
 	ifeq (${1:cond0},${2:cond1})
