@@ -21,7 +21,9 @@ snippet base
 snippet add
 	${1:out} : $1.o
 		$(CC) $(CFLAGS) -o $@ $+
-	
+# print
+snippet print
+	print-%: ; @echo $*=$($*)
 # ifeq
 snippet ifeq
 	ifeq (${1:cond0},${2:cond1})
