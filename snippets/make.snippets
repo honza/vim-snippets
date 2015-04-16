@@ -4,22 +4,22 @@ snippet base
 	CC = gcc
 	CFLAGS = -g -Wall
 
-	all : $1
+	all: $1
 
-	%.o : %.c
+	%.o: %.c
 		$(CC) $(CFLAGS) -c -o $@ $<
 	
-	${1:out} : $1.o
+	${1:out}: $1.o
 		$(CC) $(CFLAGS) -o $@ $+
 
-	clean :
+	clean:
 		rm -f *.o core.*
 
-	mrproper : clean
+	mrproper: clean
 		rm -f $1
 # add
 snippet add
-	${1:out} : $1.o
+	${1:out}: $1.o
 		$(CC) $(CFLAGS) -o $@ $+
 # print
 snippet print
