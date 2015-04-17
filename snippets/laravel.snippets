@@ -1,5 +1,5 @@
 #resource controller
-snippet l_rsc "Laravel resource controller" b
+snippet l_rsc
 /*!
  * \class       $1
  *
@@ -32,10 +32,9 @@ class ${1:`!v expand('%:t:r')`} extends ${2:BaseController} {
     public function destroy($id) {
     }
 }
-endsnippet
 
 #service service provider
-snippet l_ssp "Laravel service provider for service" b
+snippet l_ssp
 /*!
  * \namespace   $1
  * \class       $2
@@ -58,10 +57,9 @@ class ${2:`!v expand('%:t:r')`} extends ServiceProvider {
         });
     }
 }
-endsnippet
 
 #repository service provider
-snippet l_rsp "Laravel service provider for repository" b
+snippet l_rsp
 /*!
  * \namespace   $2
  * \class       $3
@@ -96,10 +94,9 @@ class ${3:`!v expand('%:t:r')`} extends ServiceProvider {
         return ['$2\\$1Interface'];
     }
 }
-endsnippet
 
 #model
-snippet l_md "Laravel simple model" b
+snippet l_md
 /*!
  * \namespace   $1
  * \class       $2
@@ -119,10 +116,9 @@ class ${2:`!v expand('%:t:r')`} extends \Eloquent {
 
     protected $guarded = array(${7:'id'});
 }
-endsnippet
 
 #abstract repository
-snippet l_ar "Laravel abstract Repository" b
+snippet l_ar
 /*!
  * \namespace   $1
  * \class       $2
@@ -185,10 +181,9 @@ abstract class ${2:`!v expand('%:t:r')`} implements ${3:BaseRepositoryInterface}
         return $this->model->find($id, $columns);
     }
 }
-endsnippet
 
 #repository
-snippet l_r "Laravel Repository" b
+snippet l_r
 /*!
  * \namespace   $1
  * \class       $3
@@ -203,10 +198,9 @@ namespace ${1:Repositories\\${2}};
 class ${3:`!v expand('%:t:r')`} extends \\${6} implements ${4:$3RepositoryInterface} {
     ${7}
 }
-endsnippet
 
 #service
-snippet l_s "Laravel Service" b
+snippet l_s
 /*!
  * \namespace   $1
  * \class       $2
@@ -229,10 +223,9 @@ class ${2:`!v expand('%:t:r')`} {
         $this->$5 = $repo;
     }
 }
-endsnippet
 
 #facade
-snippet l_f "Laravel Facade" b
+snippet l_f
 /*!
  * \namespace   $1
  * \class       $2
@@ -253,4 +246,3 @@ class ${2:`!v expand('%:t:r')`} extends Facade {
      */
     protected static function getFacadeAccessor() { return '${4:${3}Service}'; }
 }
-endsnippet
