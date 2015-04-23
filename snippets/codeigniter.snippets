@@ -44,17 +44,17 @@ snippet ci_model_complet
 
 		public function getRows()
 		{
-			return $this->db->get($table)->result();
+			return $this->db->get($this->table)->result();
 		}
 
 		public function getRow($id)
 		{
-			return $this->db->get_where($table, array('id', $id))->result();
+			return $this->db->get_where($this->table, array('id', $id))->result();
 		}
 
 		public function insert($data)
 		{
-			if($this->db->insert($table, $data))
+			if($this->db->insert($this->table, $data))
 				return true;
 			else
 				return false;
@@ -62,7 +62,7 @@ snippet ci_model_complet
 
 		public function update($id, $data)
 		{
-			if($this->db->where('id', $id)->update($table, $data))
+			if($this->db->where('id', $id)->update($this->table, $data))
 				return true;
 			else
 				return false;
