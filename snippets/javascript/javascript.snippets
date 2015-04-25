@@ -25,6 +25,16 @@ snippet vf
 	var ${1:function_name} = function $1(${2}) {
 		${0}
 	};
+# Anonymous Function assigned to a property
+snippet paf
+	${1:function_name}: function (${2}) {
+		${0}
+	};
+# Function assigned to a property
+snippet pf
+	${1:function_name}: function ${1}(${2}) {
+		${0}
+	};
 # Immediate function
 snippet (f
 	(function(${1}) {
