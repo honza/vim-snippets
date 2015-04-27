@@ -1,0 +1,126 @@
+snippet if
+if ${1:condition} do
+	${2:expression}
+${3:end}
+endsnippet
+
+snippet unless
+unless ${1:condition} do
+	${2:expression}
+${3:end}
+endsnippet
+
+snippet else
+else
+	${1:expression}
+end
+endsnippet
+
+snippet iff
+if ${1:condition}, do: ${2:expression}${3:, else: ${4:expression}}
+endsnippet
+
+snippet unlesss
+unless ${1:condition}, do: ${2:expression}${3:, else: ${4:expression}}
+endsnippet
+
+snippet def
+def ${1:name}${2:(${3:parameters})}${4: when ${5:guard-condition}} do
+	${0:expression}
+end
+endsnippet
+
+snippet defp
+defp ${1:name}${2:(${3:parameters})}${4: when ${5:guard-condition}} do
+	${0:expression}
+end
+endsnippet
+
+snippet deff
+def ${1:name}${2:(${3:parameters})}, do: ${0:expression}
+endsnippet
+
+snippet defpp
+defp ${1:name}${2:(${3:parameters})}, do: ${0:expression}
+endsnippet
+
+snippet fn "inline function" s
+fn ${1:${2:args} }-> ${0:expression} end
+endsnippet
+
+snippet for
+for ${1:item} <- ${2:items}${3:, into: ${4:%{}}} do
+	${0:expression}
+end
+endsnippet
+
+snippet cond "cond do" s
+cond do
+	${1:pattern match} -> ${2:expression}${3:
+	->$4}
+end${0}
+endsnippet
+
+snippet rec "receive do" s
+receive do
+	${1:pattern match} -> ${2:expression}${3:
+	->$4}
+end${0}
+endsnippet
+
+snippet case "case do" s
+case ${1:expression} do
+	${2:pattern match} -> ${3:expression}${4:
+	->$5}
+end${0}
+endsnippet
+
+snippet try
+try do
+	${1:expression}
+rescue
+	${2:pattern match} -> ${3:expression}${4:
+	->$5}
+end${0}
+endsnippet
+
+snippet -> "case/cond pattern match" s
+${1:pattern match} -> ${2:expression}${3:
+->$4}
+endsnippet
+
+snippet @doc
+@doc """
+${1:A really good excuse for the code that follows.}
+"""
+def${0}
+endsnippet
+
+snippet @mod
+@moduledoc """
+${1:A really good excuse for this entire module.}
+"""
+endsnippet
+
+snippet req
+require ${1:Module}${2:, as: ${3:NewName}}
+endsnippet
+
+snippet ali
+alias ${1:Module}${2:, as: ${3:NewName}}
+endsnippet
+
+# To encourage the use or :only over :except.
+snippet imp
+import ${1:Module}${2:, only: [${3:function}: ${4:arity}]}
+endsnippet
+
+snippet test
+test "${1:behaves in some way}"${2:, %{${3:test_context}: ${4:dictionary}}} do
+	${0:test case}
+end
+endsnippet
+
+snippet pry
+require IEx; IEx.pry
+endsnippet

@@ -1,81 +1,81 @@
 snippet do
 	do
-		${0}
+		${0:expression}
 	end
 snippet if if .. do .. end
-	if ${1} do
-		${0}
+	if ${1:condition} do
+		${0:expression}
 	end
 snippet if: if .. do: ..
 	if ${1:condition}, do: ${0}
 snippet ife if .. do .. else .. end
 	if ${1:condition} do
-		${2}
+		${2:expression}
 	else
-		${0}
+		${0:expression}
 	end
 snippet ife: if .. do: .. else:
-	if ${1:condition}, do: ${2}, else: ${0}
+	if ${1:condition}, do: ${2:expression}, else: ${0:expression}
 snippet unless unless .. do .. end
-	unless ${1} do
-		${0}
+	unless ${1:condition} do
+		${0:expression}
 	end
 snippet unless: unless .. do: ..
 	unless ${1:condition}, do: ${0}
 snippet unlesse unless .. do .. else .. end
 	unless ${1:condition} do
-		${2}
+		${2:expression}
 	else
-		${0}
+		${0:expression}
 	end
 snippet unlesse: unless .. do: .. else:
-	unless ${1:condition}, do: ${2}, else: ${0}
+	unless ${1:condition}, do: ${2:expression}, else: ${0:expression}
 snippet cond
 	cond do
-		${1} ->
-			${0}
+		${1:condition} ->
+			${0:expression}
 	end
 snippet case
-	case ${1} do
-		${2} ->
-			${0}
+	case ${1:expression} do
+		${2:pattern match} ->
+			${0:expression}
 	end
 snippet for
 	for ${1:item} <- ${2:items} do
-		${0}
+		${0:expression}
 	end
 snippet fori
-	for ${1:item} <- ${2:items}, into: ${3} do
-		${0}
+	for ${1:item} <- ${2:items}, into: ${3:%{}} do
+		${0:expression}
 	end
 snippet df
-	def ${1:name}, do: ${2}
+	def ${1:name}, do: ${2:expression}
 snippet def
 	def ${1:name} do
-		${0}
+		${0:expression}
 	end
 snippet defd
 	@doc """
 	${1:doc string}
 	"""
 	def ${2:name} do
-		${0}
+		${0:expression}
 	end
 snippet defim
 	defimpl ${1:protocol_name}, for: ${2:data_type} do
-		${0}
+		${0:expression}
 	end
 snippet defma
 	defmacro ${1:name} do
-		${0}
+		${0:expression}
 	end
 snippet defmo
 	defmodule ${1:module_name} do
-		${0}
+		${0:expression}
 	end
 snippet defp
 	defp ${1:name} do
-		${0}
+		${0:expression}
 	end
 snippet defpr
 	defprotocol ${1:name}, [${0:function}]
@@ -83,22 +83,22 @@ snippet defr
 	defrecord ${1:record_name}, ${0:fields}
 snippet doc
 	@doc """
-	${0}
+	${0:doc string}
 	"""
 snippet fn
-	fn ${1:args} -> ${0} end
+	fn ${1:args} -> ${0:expression} end
 snippet fun
 	function do
-		${0}
+		${0:expression}
 	end
 snippet mdoc
 	@moduledoc """
-	${0}
+	${0:doc string}
 	"""
 snippet rec
 	receive do
-	${1} ->
-		${0}
+	${1:pattern match} ->
+		${0:expression}
 	end
 snippet req
 	require ${0:module_name}
@@ -108,17 +108,17 @@ snippet ali
 	alias ${0:module_name}
 snippet test
 	test "${1:test_name}" do
-		${0}
+		${0:test case}
 	end
 snippet testa
 	test "${1:test_name}", %{${2:arg: arg}} do
-		${0}
+		${0:test case}
 	end
 snippet try try .. rescue .. end
 	try do
-		${1}
+		${1:expression}
 	rescue
-		${2} -> ${0}
+		${2:pattern match} -> ${0:expression}
 	end
 snippet pry
 	require IEx; IEx.pry
