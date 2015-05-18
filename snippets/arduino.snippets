@@ -1,18 +1,18 @@
 snippet setup
-    void setup()
-    {
-        ${0}
-        Serial.begin(9600);
-    }
+	void setup()
+	{
+		${0}
+		Serial.begin(9600);
+	}
 
 snippet loop
-    void loop()
-    {
-        ${0}
-    }
+	void loop()
+	{
+		${0}
+	}
 
 snippet inc
-    #include <${1}.h>
+	#include <${1}.h>
 
 # if
 snippet if
@@ -81,27 +81,27 @@ snippet fun
 ## IO
 # pinMode OUTPUT
 snippet pinout
-    pinMode(${1}, OUTPUT);
+	pinMode(${1}, OUTPUT);
 # pinMode INPUT
 snippet pinin
-    pinMode(${1}, INPUT);
+	pinMode(${1}, INPUT);
 # digitalWrite HIGH
 snippet dwHigh
-    digitalWrite(${1}, HIGH);
+	digitalWrite(${1}, HIGH);
 # digitalWrite LOW
 snippet dwLow
-    digitalWrite(${1}, LOW);
+	digitalWrite(${1}, LOW);
 # digitalRead
 snippet dr
-    digitalRead(${1});
+	digitalRead(${1});
 # serialRead
 snippet sr
-    serialRead();
+	serialRead();
 # serial.println
 snippet sp
-    serial.println(${1});
+	serial.println(${1});
 
 
 # delay
 snippet dl
-    delay(${1});
+	delay(${1});
