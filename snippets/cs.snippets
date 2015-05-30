@@ -70,9 +70,9 @@ snippet simc
 		}
 	}
 snippet svm
-    ${1:public }static void Main(string[] args) {
-        ${0}
-    }
+	${1:public }static void Main(string[] args) {
+		${0}
+	}
 # if condition
 snippet if
 	if (${1:true}) {
@@ -391,30 +391,30 @@ snippet cw
 
 # equals override
 snippet eq
-        public override bool Equals(object obj) {
-            if (obj == null || GetType() != obj.GetType()) {
-                return false;
-            }
-            ${0:throw new NotImplementedException();}
-            return base.Equals(obj);
-        }
+	public override bool Equals(object obj) {
+		if (obj == null || GetType() != obj.GetType()) {
+			return false;
+		}
+		${0:throw new NotImplementedException();}
+		return base.Equals(obj);
+	}
 # exception 
 snippet exc
 	public class ${1:MyException} : ${2:Exception} {
-            public $1() { }
-            public $1(string message) : base(message) { }
-            public $1(string message, Exception inner) : base(message, inner) { }
-            protected $1(
-              System.Runtime.Serialization.SerializationInfo info,
-              System.Runtime.Serialization.StreamingContext context)
-                : base(info, context) { }
-        }
+		public $1() { }
+		public $1(string message) : base(message) { }
+		public $1(string message, Exception inner) : base(message, inner) { }
+		protected $1(
+			System.Runtime.Serialization.SerializationInfo info,
+			System.Runtime.Serialization.StreamingContext context)
+				: base(info, context) { }
+	}
 # indexer 
 snippet index
 	public ${1:object} this[${2:int} index] {
-            get { ${0} }
-            set { ${0} }
-        }
+		get { ${0} }
+		set { ${0} }
+	}
 # eventhandler 
 snippet inv
 	EventHandler temp = ${1:MyEvent};
@@ -423,51 +423,48 @@ snippet inv
 	}
 # lock
 snippet lock
-    lock (${1:this}) {
-        ${0}
-    }
+	lock (${1:this}) {
+		${0}
+	}
 # namespace
 snippet namespace
-    namespace ${1:MyNamespace} {
-        ${0}
-    }
+	namespace ${1:MyNamespace} {
+		${0}
+	}
 # property
 snippet prop
-    public ${1:int} ${2:MyProperty} { get; set; }
+	public ${1:int} ${2:MyProperty} { get; set; }
 snippet propf
-    private ${1:int} ${2:myVar};
-
-    public $1 ${3:MyProperty} {
-        get { return $2; }
-        set { $2 = value; }
-    }
+	private ${1:int} ${2:myVar};
+		public $1 ${3:MyProperty} {
+			get { return $2; }
+			set { $2 = value; }
+		}
 snippet propg
-    public ${1:int} ${2:MyProperty} { get; private set; }
+	public ${1:int} ${2:MyProperty} { get; private set; }
 # switch    
 snippet switch
-    switch (${1:switch_on}) {
-        ${0}
-        default:
-    }
+	switch (${1:switch_on}) {
+		${0}
+		default:
+	}
 # try
 snippet try
-    try {
-        ${0}
-    }
-    catch (${1:System.Exception}) {
-        throw;
-    }
+	try {
+			${0}
+	}
+	catch (${1:System.Exception}) {
+			throw;
+	}
 snippet tryf
-    try {
-        ${0}
-    }
-    finally {
-        ${1}
-    }
+	try {
+		${0}
+	}
+	finally {
+		${1}
+	}
 # using
 snippet usi
-    using(${1:resource}) {
-        ${0}
-    }
-
-
+	using(${1:resource}) {
+		${0}
+	}
