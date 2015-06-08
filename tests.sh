@@ -2,7 +2,7 @@
 
 SPACED=$(grep -REn '^ .+' --include '*.snippets' snippets);
 
-if [[ -n SPACED ]]; then
+if [[ $? -ne 1 ]]; then
   echo These snippet lines are indented with spaces:;
   echo;
   echo "$SPACED";
