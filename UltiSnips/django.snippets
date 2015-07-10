@@ -1,5 +1,136 @@
 priority -50
 
+# This files will define django snippets from sublime text djaneiro
+
+###########################################################################
+#                             FORMS SNIPPETS                              #
+###########################################################################
+snippet form
+class ${1:FORMNAME}(forms.Form):
+    ${2:# TODO: Define form fields here}
+endsnippet
+
+snippet modelform
+class ${1:MODELNAME}Form(forms.ModelForm):
+    class Meta:
+        model = $1
+endsnippet
+
+snippet fbool
+${1:FIELDNAME} = forms.BooleanField($2)
+endsnippet
+
+snippet fchar
+${1:FIELDNAME} = forms.CharField($2)
+endsnippet
+
+snippet fchoice
+${1:FIELDNAME} = forms.ChoiceField($2)
+endsnippet
+
+snippet fcombo
+${1:FIELDNAME} = forms.ComboField($2)
+endsnippet
+
+snippet fdate
+${1:FIELDNAME} = forms.DateField($2)
+endsnippet
+
+snippet fdatetime
+${1:FIELDNAME} = forms.DateTimeField($2)
+endsnippet
+
+snippet fdecimal
+${1:FIELDNAME} = forms.DecimalField($2)
+endsnippet
+
+snippet fmail
+${1:FIELDNAME} = forms.EmailField($2)
+endsnippet
+
+snippet ffile
+${1:FIELDNAME} = forms.FileField($2)
+endsnippet
+
+snippet ffilepath
+${1:FIELDNAME} = forms.FilePathField($2)
+endsnippet
+
+snippet ffloat
+${1:FIELDNAME} = forms.FloatField($2)
+endsnippet
+
+snippet fip
+${1:FIELDNAME} = forms.IPAddressField($2)
+endsnippet
+
+snippet fimg
+${1:FIELDNAME} = forms.ImageField($2)
+endsnippet
+
+snippet fint
+${1:FIELDNAME} = forms.IntegerField($2)
+endsnippet
+
+snippet fmochoice
+${1:FIELDNAME} = forms.ModelChoiceField($2)
+endsnippet
+
+snippet fmomuchoice
+${1:FIELDNAME} = forms.ModelMultipleChoiceField($2)
+endsnippet
+
+snippet fmuval
+${1:FIELDNAME} = forms.MultiValueField($2)
+endsnippet
+
+snippet fmuchoice
+${1:FIELDNAME} = forms.MultipleChoiceField($2)
+endsnippet
+
+snippet fnullbool
+${1:FIELDNAME} = forms.NullBooleanField($2)
+endsnippet
+
+snippet freg
+${1:FIELDNAME} = forms.RegexField($2)
+endsnippet
+
+snippet fslug
+${1:FIELDNAME} = forms.SlugField($2)
+endsnippet
+
+snippet fsdatetime
+${1:FIELDNAME} = forms.SplitDateTimeField($2)
+endsnippet
+
+snippet ftime
+${1:FIELDNAME} = forms.TimeField($2)
+endsnippet
+
+snippet ftchoice
+${1:FIELDNAME} = forms.TypedChoiceField($2)
+endsnippet
+
+snippet ftmuchoice
+${1:FIELDNAME} = forms.TypedMultipleChoiceField($2)
+endsnippet
+
+snippet furl
+${1:FIELDNAME} = forms.URLField($2)
+endsnippet
+
+#########################################################################################
+# Models
+#########################################################################################
+
+#########################################################################################
+# Views
+#########################################################################################
+
+#########################################################################################
+# Forms
+#########################################################################################
 # Generic Tags
 snippet %
 {% ${1} %}${2}
