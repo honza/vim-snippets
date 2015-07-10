@@ -447,7 +447,7 @@ if snip.indent:
 	snip.rv = 'self' + (", " if len(t[2]) else "")`${2:arg1}):
 	`!p snip.rv = triple_quotes(snip)`${4:TODO: Docstring for $1.}`!p
 write_function_docstring(t, snip) `
-	${0:${VISUAL:pass}}
+	${5:${VISUAL:pass}}
 endsnippet
 
 
@@ -458,7 +458,7 @@ if snip.indent:
 	snip.rv = 'cls' + (", " if len(t[2]) else "")`${2:arg1}):
 	`!p snip.rv = triple_quotes(snip)`${4:TODO: Docstring for $1.}`!p
 write_function_docstring(t, snip) `
-	${0:${VISUAL:pass}}
+	${5:${VISUAL:pass}}
 endsnippet
 
 
@@ -467,7 +467,7 @@ snippet defs "static method with docstrings" b
 def ${1:function}(${2:arg1}):
 	`!p snip.rv = triple_quotes(snip)`${4:TODO: Docstring for $1.}`!p
 write_function_docstring(t, snip) `
-	${0:${VISUAL:pass}}
+	${5:${VISUAL:pass}}
 endsnippet
 
 
