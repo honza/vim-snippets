@@ -80,8 +80,25 @@ snippet if
 {% endif %}
 endsnippet
 
+snippet iif
+{% if ${1} %}${2}{% endif %}
+endsnippet
+
+snippet ielse
+{% else %}${1}
+endsnippet
+
 snippet else
 {% else %}
+	${1}
+endsnippet
+
+snippet ielif
+{% elif %}${1}
+endsnippet
+
+snippet elif
+{% elif %}
 	${1}
 endsnippet
 
@@ -139,6 +156,48 @@ endsnippet
 
 snippet with
 {% with ${1} as ${2} %}
+	${3:$VISUAL}
+{% endwith %}
+endsnippet
+
+snippet verbatim
+{% verbatim %}
+	${1:$VISUAL}
+{% endverbatim %}
+endsnippet
+
+snippet super
+{{ block.super }}
+endsnippet
+
+snippet staticu
+{{ STATIC_URL }}
+endsnippet
+
+snippet static
+{% static "${1:$VISUAL}" %}
+endsnippet
+
+snippet mediau
+{{ MEDIA_URL }}
+endsnippet
+
+snippet iblock
+{% block ${1:blockname} %}${2:$VISUAL}{% endblock ${1:blockname} %}
+endsnippet
+
+snippet csfr
+{% csrf_token %}
+endsnippet
+
+snippet blocktrans
+{% blocktrans %}
+    ${1:$VISUAL}
+{% endblocktrans %}
+endsnippet
+
+snippet lorem
+{% lorem ${1} %}
 endsnippet
 
 # Template Filters
