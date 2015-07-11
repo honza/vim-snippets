@@ -8,14 +8,14 @@ priority -50
 snippet form "Form"
 class ${1:FORMNAME}(forms.Form):
 
-    ${2:# TODO: Define form fields here}
+	${2:# TODO: Define form fields here}
 endsnippet
 
 snippet modelform "ModelForm"
 class ${1:MODELNAME}Form(forms.ModelForm):
 
-    class Meta:
-        model = $1
+	class Meta:
+		model = $1
 endsnippet
 
 snippet fbool "BooleanField (fbool)"
@@ -128,35 +128,35 @@ endsnippet
 
 snippet model "Model"
 class ${1:MODELNAME}(models.Model):
+	${0}
+	class Meta:
+		verbose_name = "$1"
+		verbose_name_plural = "$1s"
 
-    class Meta:
-        verbose_name = "$1"
-        verbose_name_plural = "$1s"
-
-    def __str__(self):
-        pass
+	def __str__(self):
+		pass
 
 endsnippet
 
 snippet modelfull "Model (full)"
 class ${1:MODELNAME}(models.Model):
-    ${2:# TODO: Define fields here}
+	${2:# TODO: Define fields here}
 
-    class Meta:
-        verbose_name = "$1"
-        verbose_name_plural = "$1s"
+	class Meta:
+		verbose_name = "$1"
+		verbose_name_plural = "$1s"
 
-    def __str__(self):
-        pass
+	def __str__(self):
+		pass
 
-    def save(self):
-        pass
+	def save(self):
+		pass
 
-    @models.permalink
-    def get_absolute_url(self):
-        return ('')
+	@models.permalink
+	def get_absolute_url(self):
+		return ('')
 
-    ${3:# TODO: Define custom methods here}
+	${3:# TODO: Define custom methods here}
 
 endsnippet
 
@@ -370,6 +370,6 @@ endsnippet
 #                     MODEL FIELDS SNIPPETS                               #
 ###########################################################################
 
-snippet null "null" w
+snippet null "null" i
 null=${1:True}
 endsnippet
