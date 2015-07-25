@@ -70,7 +70,10 @@ def get_quoting_style(snip):
 	return DOUBLE_QUOTES
 
 def triple_quotes(snip):
-	return get_quoting_style(snip) * 3
+	style = snip.opt("g:ultisnips_python_triple_quoting_style")
+	if not style:
+		return get_quoting_style(snip) * 3
+	return (SINGLE_QUOTES if style == 'single' else DOUBLE_QUOTES) * 3
 
 def triple_quotes_handle_trailing(snip, quoting_style):
 	"""
