@@ -162,4 +162,10 @@ snippet req "require an AMD module"
 require([${1:'dependencies'}], ${2:callback});
 endsnippet
 
+# CommonJS snippets
+
+snippet vreq "assign a CommonJS-style module to a var"
+var ${0:${1/(.+\/)*(\w+)(-|\b|$)(\..+$)?/\u$2/g}} = require('${1}');
+endsnippet
+
 # vim:ft=snippets:
