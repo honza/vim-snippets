@@ -3,200 +3,200 @@ priority -50
 extends html
 
 # Generic Tags
-snippet % "" b
+snippet % "" bi
 {% ${1} %}${2}
 endsnippet
 
-snippet %%
+snippet %% "" bi
 {% ${1:tag_name} %}
 	${2}
 {% end$1 %}
 endsnippet
 
-snippet {
+snippet { "" bi
 {{ ${1} }}${2}
 endsnippet
 
 # Template Tags
 
-snippet autoescape
+snippet autoescape "" bi
 {% autoescape ${1:off} %}
 	${2}
 {% endautoescape %}
 endsnippet
 
-snippet block
+snippet block "" bi
 {% block ${1} %}
 	${2}
 {% endblock $1 %}
 endsnippet
 
-snippet #
+snippet # "" bi
 {# ${1:comment} #}
 endsnippet
 
-snippet comment
+snippet comment "" bi
 {% comment %}
 	${1}
 {% endcomment %}
 endsnippet
 
-snippet cycle
+snippet cycle "" bi
 {% cycle ${1:val1} ${2:val2} ${3:as ${4}} %}
 endsnippet
 
-snippet debug
+snippet debug "" bi
 {% debug %}
 endsnippet
 
-snippet extends
+snippet extends "" bi
 {% extends "${1:base.html}" %}
 endsnippet
 
-snippet filter
+snippet filter "" bi
 {% filter ${1} %}
 	${2}
 {% endfilter %}
 endsnippet
 
-snippet firstof
+snippet firstof "" bi
 {% firstof ${1} %}
 endsnippet
 
-snippet for
+snippet for "" bi
 {% for ${1} in ${2} %}
 	${3}
 {% endfor %}
 endsnippet
 
-snippet empty
+snippet empty "" bi
 {% empty %}
 	${1}
 endsnippet
 
-snippet if
+snippet if "" bi
 {% if ${1} %}
 	${2}
 {% endif %}
 endsnippet
 
-snippet iif
+snippet iif "" bi
 {% if ${1} %}${2}{% endif %}
 endsnippet
 
-snippet ielse
+snippet ielse "" bi
 {% else %}${1}
 endsnippet
 
-snippet else
+snippet else "" bi
 {% else %}
 	${1}
 endsnippet
 
-snippet ielif
+snippet ielif "" bi
 {% elif %}${1}
 endsnippet
 
-snippet elif
+snippet elif "" bi
 {% elif %}
 	${1}
 endsnippet
 
-snippet ifchanged
+snippet ifchanged "" bi
 {% ifchanged %}${1}{% endifchanged %}
 endsnippet
 
-snippet ifequal
+snippet ifequal "" bi
 {% ifequal ${1} ${2} %}
 	${3}
 {% endifequal %}
 endsnippet
 
-snippet ifnotequal
+snippet ifnotequal "" bi
 {% ifnotequal ${1} ${2} %}
 	${3}
 {% endifnotequal %}
 endsnippet
 
-snippet include
+snippet include "" bi
 {% include "${1}" %}
 endsnippet
 
-snippet load
+snippet load "" bi
 {% load ${1} %}
 endsnippet
 
-snippet now
+snippet now "" bi
 {% now "${1:jS F Y H:i}" %}
 endsnippet
 
-snippet regroup
+snippet regroup "" bi
 {% regroup ${1} by ${2} as ${3} %}
 endsnippet
 
-snippet spaceless
+snippet spaceless "" bi
 {% spaceless %}${1}{% endspaceless %}
 endsnippet
 
-snippet ssi
+snippet ssi "" bi
 {% ssi ${1} %}
 endsnippet
 
-snippet trans
+snippet trans "" bi
 {% trans "${1:string}" %}
 endsnippet
 
-snippet url
+snippet url "" bi
 {% url ${1} as ${2} %}
 endsnippet
 
-snippet widthratio
+snippet widthratio "" bi
 {% widthratio ${1:this_value} ${2:max_value} ${3:100} %}
 endsnippet
 
-snippet with
+snippet with "" bi
 {% with ${1} as ${2} %}
 	${VISUAL}
 {% endwith %}
 endsnippet
 
-snippet verbatim
+snippet verbatim "" bi
 {% verbatim %}
 	${VISUAL}
 {% endverbatim %}
 endsnippet
 
-snippet super
+snippet super "" bi
 {{ block.super }}
 endsnippet
 
-snippet staticu
+snippet staticu "" bi
 {{ STATIC_URL }}
 endsnippet
 
-snippet static
+snippet static "" bi
 {% static "${VISUAL}" %}
 endsnippet
 
-snippet mediau
+snippet mediau "" bi
 {{ MEDIA_URL }}
 endsnippet
 
-snippet iblock
+snippet iblock "" bi
 {% block ${1:blockname} %}${VISUAL}{% endblock $1 %}
 endsnippet
 
-snippet csfr
+snippet csfr "" bi
 {% csrf_token %}
 endsnippet
 
-snippet blocktrans
+snippet blocktrans "" bi
 {% blocktrans %}
     ${VISUAL}
 {% endblocktrans %}
 endsnippet
 
-snippet lorem
+snippet lorem "" bi
 {% lorem ${1} %}
 endsnippet
 
@@ -208,91 +208,91 @@ endsnippet
 
 # Note: Template tags that take no arguments are not implemented.
 
-snippet add
+snippet add "" bi
 add:"${1}"
 endsnippet
 
-snippet center
+snippet center "" bi
 center:"${1}"
 endsnippet
 
-snippet cut
+snippet cut "" bi
 cut:"${1}"
 endsnippet
 
-snippet date
+snippet date "" bi
 date:"${1}"
 endsnippet
 
-snippet default
+snippet default "" bi
 default:"${1}"
 endsnippet
 
-snippet defaultifnone
+snippet defaultifnone "" bi
 default_if_none:"${1}"
 endsnippet
 
-snippet dictsort
+snippet dictsort "" bi
 dictsort:"${1}"
 endsnippet
 
-snippet dictsortrev
+snippet dictsortrev "" bi
 dictsortreversed:"${1}"
 endsnippet
 
-snippet divisibleby
+snippet divisibleby "" bi
 divisibleby:"${1}"
 endsnippet
 
-snippet floatformat
+snippet floatformat "" bi
 floatformat:"${1}"
 endsnippet
 
-snippet getdigit
+snippet getdigit "" bi
 get_digit:"${1}"
 endsnippet
 
-snippet join
+snippet join "" bi
 join:"${1}"
 endsnippet
 
-snippet lengthis
+snippet lengthis "" bi
 length_is:"${1}"
 endsnippet
 
-snippet pluralize
+snippet pluralize "" bi
 pluralize:"${1}"
 endsnippet
 
-snippet removetags
+snippet removetags "" bi
 removetags:"${1}"
 endsnippet
 
-snippet slice
+snippet slice "" bi
 slice:"${1}"
 endsnippet
 
-snippet stringformat
+snippet stringformat "" bi
 stringformat:"${1}"
 endsnippet
 
-snippet time
+snippet time "" bi
 time:"${1}"
 endsnippet
 
-snippet truncatewords
+snippet truncatewords "" bi
 truncatewords:${1}
 endsnippet
 
-snippet truncatewordshtml
+snippet truncatewordshtml "" bi
 truncatewords_html:${1}
 endsnippet
 
-snippet urlizetrunc
+snippet urlizetrunc "" bi
 urlizetrunc:${1}
 endsnippet
 
-snippet wordwrap
+snippet wordwrap "" bi
 wordwrap:${1}
 endsnippet
 
