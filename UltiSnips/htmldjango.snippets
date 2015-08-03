@@ -3,7 +3,7 @@ priority -50
 extends html
 
 # Generic Tags
-snippet %
+snippet % '' b
 {% ${1} %}${2}
 endsnippet
 
@@ -156,13 +156,13 @@ endsnippet
 
 snippet with
 {% with ${1} as ${2} %}
-	${3:$VISUAL}
+	${VISUAL}
 {% endwith %}
 endsnippet
 
 snippet verbatim
 {% verbatim %}
-	${1:$VISUAL}
+	${VISUAL}
 {% endverbatim %}
 endsnippet
 
@@ -175,7 +175,7 @@ snippet staticu
 endsnippet
 
 snippet static
-{% static "${1:$VISUAL}" %}
+{% static "${VISUAL}" %}
 endsnippet
 
 snippet mediau
@@ -183,7 +183,7 @@ snippet mediau
 endsnippet
 
 snippet iblock
-{% block ${1:blockname} %}${2:$VISUAL}{% endblock ${1:blockname} %}
+{% block ${1:blockname} %}${VISUAL}{% endblock $1 %}
 endsnippet
 
 snippet csfr
@@ -192,7 +192,7 @@ endsnippet
 
 snippet blocktrans
 {% blocktrans %}
-    ${1:$VISUAL}
+    ${VISUAL}
 {% endblocktrans %}
 endsnippet
 
