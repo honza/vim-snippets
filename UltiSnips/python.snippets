@@ -578,14 +578,14 @@ endsnippet
 snippet try "Try / Except" b
 try:
 	${1:${VISUAL:pass}}
-except ${2:Exception}, ${3:e}:
+except ${2:Exception} as ${3:e}:
 	${4:raise $3}
 endsnippet
 
 snippet trye "Try / Except / Else" b
 try:
 	${1:${VISUAL:pass}}
-except ${2:Exception}, ${3:e}:
+except ${2:Exception} as ${3:e}:
 	${4:raise $3}
 else:
 	${5:pass}
@@ -594,7 +594,7 @@ endsnippet
 snippet tryf "Try / Except / Finally" b
 try:
 	${1:${VISUAL:pass}}
-except ${2:Exception}, ${3:e}:
+except ${2:Exception} as ${3:e}:
 	${4:raise $3}
 finally:
 	${5:pass}
@@ -603,7 +603,7 @@ endsnippet
 snippet tryef "Try / Except / Else / Finally" b
 try:
 	${1:${VISUAL:pass}}
-except${2: ${3:Exception}, ${4:e}}:
+except${2: ${3:Exception} as ${4:e}}:
 	${5:raise}
 else:
 	${6:pass}
