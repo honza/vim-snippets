@@ -148,6 +148,9 @@ snippet ptpython
 # python console debugger (pudb)
 snippet pudb
 	import pudb; pudb.set_trace()
+# pdb in nosetests
+snippet nosetrace
+	from nose.tools import set_trace; set_trace()
 snippet pprint
 	import pprint; pprint.pprint(${1})
 snippet "
@@ -225,5 +228,3 @@ snippet kwargs
 	**kwargs${1:,}${0}
 snippet akw
 	*args, **kwargs${1:,}${0}
-snippet nosetrace
-	from nose.tools import set_trace; set_trace()
