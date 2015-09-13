@@ -49,10 +49,6 @@ for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 }
 endsnippet
 
-snippet enum "Enumeration"
-enum ${1:name} { $0 };
-endsnippet
-
 snippet once "Include header once only guard"
 #ifndef ${1:`!p
 if not snip.c:
@@ -71,12 +67,6 @@ endsnippet
 
 snippet td "Typedef"
 typedef ${1:int} ${2:MyCustomType};
-endsnippet
-
-snippet wh "while loop"
-while(${1:/* condition */}) {
-	${VISUAL}${0}
-}
 endsnippet
 
 snippet do "do...while loop (do)"

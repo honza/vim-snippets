@@ -148,6 +148,9 @@ snippet tds
 	typedef struct ${2:_$1 }{
 		${3:/* data */}
 	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
+
+snippet enum
+	enum ${1:name} { ${0} };
 # typedef enum
 snippet tde
 	typedef enum {
