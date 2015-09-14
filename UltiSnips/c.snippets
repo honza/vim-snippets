@@ -65,16 +65,6 @@ ${VISUAL}${0}
 #endif /* end of include guard: $1 */
 endsnippet
 
-snippet td "Typedef"
-typedef ${1:int} ${2:MyCustomType};
-endsnippet
-
-snippet do "do...while loop (do)"
-do {
-	${VISUAL}${0}
-} while(${1:/* condition */});
-endsnippet
-
 snippet fprintf "fprintf ..."
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
