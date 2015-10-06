@@ -42,6 +42,7 @@ DOXYGEN = 0x2
 SPHINX  = 0x3
 GOOGLE  = 0x4
 NUMPY   = 0x5
+JEDI    = 0x6
 
 SINGLE_QUOTES = "'"
 DOUBLE_QUOTES = '"'
@@ -116,6 +117,7 @@ def get_style(snip):
 	elif  style == "sphinx": return SPHINX
 	elif  style == "google": return GOOGLE
 	elif  style == "numpy": return NUMPY
+	elif  style == "jedi": return JEDI
 	else: return NORMAL
 
 
@@ -128,6 +130,8 @@ def format_arg(arg, style):
 		return ":%s: TODO" % arg
 	elif style == GOOGLE:
 		return "%s (TODO): TODO" % arg
+	elif style == JEDI:
+		return ":type %s: TODO" % arg
 	elif style == NUMPY:
 		return "%s : TODO" % arg
 
@@ -135,7 +139,7 @@ def format_arg(arg, style):
 def format_return(style):
 	if style == DOXYGEN:
 		return "@return: TODO"
-	elif style in (NORMAL, SPHINX):
+	elif style in (NORMAL, SPHINX, JEDI):
 		return ":returns: TODO"
 	elif style == GOOGLE:
 		return "Returns: TODO"
