@@ -28,6 +28,18 @@ afterEach(function() {
 });
 endsnippet
 
+snippet befa "before all (js)" b
+beforeAll(function() {
+	$0
+});
+endsnippet
+
+snippet afta "after all (js)" b
+afterAll(function() {
+	$0
+});
+endsnippet
+
 snippet any "any (js)" b
 jasmine.any($1)
 endsnippet
@@ -48,6 +60,14 @@ endsnippet
 
 snippet ee "expect to equal (js)" b
 expect(${1:target}).toEqual(${2:value});
+endsnippet
+
+snippet el "expect to be less than (js)" b
+expect(${1:target}).toBeLessThan(${2:value});
+endsnippet
+
+snippet eg "expect to be greater than (js)" b
+expect(${1:target}).toBeGreaterThan(${2:value});
 endsnippet
 
 snippet eb "expect to be (js)" b
@@ -74,6 +94,10 @@ snippet ed "expect to be defined (js)" b
 expect(${1:target}).toBeDefined();
 endsnippet
 
+snippet eud "expect to be defined (js)" b
+expect(${1:target}).toBeUndefined();
+endsnippet
+
 snippet en "expect to be null (js)" b
 expect(${1:target}).toBeNull();
 endsnippet
@@ -96,6 +120,14 @@ endsnippet
 
 snippet note "expect not to equal (js)" b
 expect(${1:target}).not.toEqual(${2:value});
+endsnippet
+
+snippet notl "expect to not be less than (js)" b
+expect(${1:target}).not.toBeLessThan(${2:value});
+endsnippet
+
+snippet notg "expect to not be greater than (js)" b
+expect(${1:target})..not.toBeGreaterThan(${2:value});
 endsnippet
 
 snippet notm "expect not to match (js)" b
