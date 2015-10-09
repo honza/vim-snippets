@@ -171,19 +171,19 @@ spyOn(${1:object}, '${2:method}')$0;
 endsnippet
 
 snippet sr "spy on and return (js)" b
-spyOn(${1:object}, '${2:method}').andReturn(${3:arguments});
+spyOn(${1:object}, '${2:method}').and.returnValue(${3:arguments});
 endsnippet
 
 snippet st "spy on and throw (js)" b
-spyOn(${1:object}, '${2:method}').andThrow(${3:exception});
+spyOn(${1:object}, '${2:method}').and.throwError(${3:exception});
 endsnippet
 
 snippet sct "spy on and call through (js)" b
-spyOn(${1:object}, '${2:method}').andCallThrough();
+spyOn(${1:object}, '${2:method}').and.callThrough();
 endsnippet
 
 snippet scf "spy on and call fake (js)" b
-spyOn(${1:object}, '${2:method}').andCallFake(${3:function});
+spyOn(${1:object}, '${2:method}').and.callFake(${3:function});
 endsnippet
 
 snippet esc "expect was called (js)" b
