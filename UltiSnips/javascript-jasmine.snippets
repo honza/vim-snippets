@@ -186,22 +186,6 @@ snippet scf "spy on and call fake (js)" b
 spyOn(${1:object}, '${2:method}').and.callFake(${3:function});
 endsnippet
 
-snippet esc "expect was called (js)" b
-expect(${1:target}).wasCalled();
-endsnippet
-
-snippet escw "expect was called with (js)" b
-expect(${1:target}).wasCalledWith(${2:arguments});
-endsnippet
-
-snippet notsc "expect was not called (js)" b
-expect(${1:target}).wasNotCalled();
-endsnippet
-
-snippet noscw "expect was not called with (js)" b
-expect(${1:target}).wasNotCalledWith(${2:arguments});
-endsnippet
-
 snippet ethbc "expect to have been called (js)" b
 expect(${1:target}).toHaveBeenCalled();
 endsnippet
