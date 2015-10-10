@@ -44,6 +44,24 @@ snippet any "any (js)" b
 jasmine.any($1)
 endsnippet
 
+snippet anyt "anything (js)" b
+jasmine.anything()
+endsnippet
+
+snippet objc "object containing (js)" b
+jasmine.objectContaining({
+	${VISUAL}$0
+});
+endsnippet
+
+snippet arrc "array containing (js)" b
+jasmine.arrayContaining([${1:value1}]);
+endsnippet
+
+snippet strm "string matching (js)" b
+jasmine.stringMatching("${1:matcher}")
+endsnippet
+
 snippet ru "runs (js)" b
 runs(function() {
 	$0
