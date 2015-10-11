@@ -58,7 +58,7 @@ def _parse_comments(s):
     except StopIteration:
         return rv
 
-def _get_comment_format():
+def get_comment_format():
     """ Returns a 4-element tuple (first_line, middle_lines, end_line, indent)
     representing the comment format for the current file.
 
@@ -78,7 +78,7 @@ def _get_comment_format():
 
 
 def make_box(twidth, bwidth=None):
-    b, m, e, i = _get_comment_format()
+    b, m, e, i = get_comment_format()
     bwidth_inner = bwidth - 3 - max(len(b), len(i + e)) if bwidth else twidth + 2
     sline = b + m + bwidth_inner * m[0] + 2 * m[0]
     nspaces = (bwidth_inner - twidth) // 2
