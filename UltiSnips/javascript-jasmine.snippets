@@ -44,6 +44,24 @@ snippet any "any (js)" b
 jasmine.any($1)
 endsnippet
 
+snippet anyt "anything (js)" b
+jasmine.anything()
+endsnippet
+
+snippet objc "object containing (js)" b
+jasmine.objectContaining({
+	${VISUAL}$0
+});
+endsnippet
+
+snippet arrc "array containing (js)" b
+jasmine.arrayContaining([${1:value1}]);
+endsnippet
+
+snippet strm "string matching (js)" b
+jasmine.stringMatching("${1:matcher}")
+endsnippet
+
 snippet ru "runs (js)" b
 runs(function() {
 	$0
@@ -171,35 +189,19 @@ spyOn(${1:object}, '${2:method}')$0;
 endsnippet
 
 snippet sr "spy on and return (js)" b
-spyOn(${1:object}, '${2:method}').andReturn(${3:arguments});
+spyOn(${1:object}, '${2:method}').and.returnValue(${3:arguments});
 endsnippet
 
 snippet st "spy on and throw (js)" b
-spyOn(${1:object}, '${2:method}').andThrow(${3:exception});
+spyOn(${1:object}, '${2:method}').and.throwError(${3:exception});
 endsnippet
 
 snippet sct "spy on and call through (js)" b
-spyOn(${1:object}, '${2:method}').andCallThrough();
+spyOn(${1:object}, '${2:method}').and.callThrough();
 endsnippet
 
 snippet scf "spy on and call fake (js)" b
-spyOn(${1:object}, '${2:method}').andCallFake(${3:function});
-endsnippet
-
-snippet esc "expect was called (js)" b
-expect(${1:target}).wasCalled();
-endsnippet
-
-snippet escw "expect was called with (js)" b
-expect(${1:target}).wasCalledWith(${2:arguments});
-endsnippet
-
-snippet notsc "expect was not called (js)" b
-expect(${1:target}).wasNotCalled();
-endsnippet
-
-snippet noscw "expect was not called with (js)" b
-expect(${1:target}).wasNotCalledWith(${2:arguments});
+spyOn(${1:object}, '${2:method}').and.callFake(${3:function});
 endsnippet
 
 snippet ethbc "expect to have been called (js)" b
