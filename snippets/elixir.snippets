@@ -70,7 +70,7 @@ snippet defma
 		${0}
 	end
 snippet defmo
-	defmodule ${1:module_name} do
+	defmodule ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
 		${0}
 	end
 snippet defp
