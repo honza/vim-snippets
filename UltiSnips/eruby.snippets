@@ -125,6 +125,10 @@ snippet jit "javascript_include_tag" w
 `!p textmate_var('TM_RAILS_TEMPLATE_START_RUBY_EXPR', snip)`javascript_include_tag ${1::all}${2:, :cache => ${3:true}}`!p textmate_var('TM_RAILS_TEMPLATE_END_RUBY_EXPR', snip)`
 endsnippet
 
+snippet lt "link_to (name, dest)" w
+`!p textmate_var('TM_RAILS_TEMPLATE_START_RUBY_EXPR', snip)`link_to "${1:link text...}", ${2:dest}`!p textmate_var('TM_RAILS_TEMPLATE_END_RUBY_EXPR', snip)`
+endsnippet
+
 snippet lia "link_to (action)" w
 `!p textmate_var('TM_RAILS_TEMPLATE_START_RUBY_EXPR', snip)`link_to "${1:link text...}", :action => "${2:index}"`!p textmate_var('TM_RAILS_TEMPLATE_END_RUBY_EXPR', snip)`
 endsnippet
