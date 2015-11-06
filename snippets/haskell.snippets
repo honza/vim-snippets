@@ -2,6 +2,8 @@ snippet lang
 	{-# LANGUAGE ${0:OverloadedStrings} #-}
 snippet haddock
 	{-# OPTIONS_HADDOCK ${0:hide} #-}
+snippet ghc
+	{-# OPTIONS_GHC ${0:-fno-warn-unused-imports} #-}
 snippet inline
 	{-# INLINE ${0:name} #-}
 snippet info
@@ -40,7 +42,7 @@ snippet class
 		${0}
 snippet module
 	module `substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')` (
-	)	where
+	) where
 	`expand('%') =~ 'Main' ? "\n\nmain = do\n  print \"hello world\"" : ""`
 
 snippet const
