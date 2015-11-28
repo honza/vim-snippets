@@ -91,3 +91,23 @@ snippet let
 snippet where
 	where
 		${1:fn} = ${0:undefined}
+snippet spec
+	import Test.Hspec
+	import Test.QuickCheck
+
+	main :: IO ()
+	main = hspec spec
+
+	spec :: Spec
+	spec =
+		describe "${1}" $ do
+			$0
+snippet desc
+	describe "${1}" $ do
+		$0
+snippet it
+	it "${1}" $
+		$0
+snippet itp
+	it "${1}" $ property $
+		$0
