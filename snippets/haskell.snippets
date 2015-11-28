@@ -43,7 +43,7 @@ snippet class
 snippet module
 	module `substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')` (
 	) where
-	`expand('%') =~ 'a' ? "\nmain :: IO ()\nmain = undefined" : ""`
+	`expand('%') =~ 'Main' ? "\nmain :: IO ()\nmain = undefined" : ""`
 
 snippet main
 	main :: IO ()
