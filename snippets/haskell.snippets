@@ -8,7 +8,7 @@ snippet inline
 	{-# INLINE ${0:name} #-}
 snippet info
 	-- |
-	-- Module      :  ${1:Module.Namespace}
+	-- Module      :  ${1:`substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')`}
 	-- Copyright   :  ${2:Author} ${3:2011-2012}
 	-- License     :  ${4:BSD3}
 	--
@@ -43,8 +43,11 @@ snippet class
 snippet module
 	module `substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')` (
 	) where
-	`expand('%') =~ 'Main' ? "\n\nmain = do\n  print \"hello world\"" : ""`
+	`expand('%') =~ 'a' ? "\nmain :: IO ()\nmain = undefined" : ""`
 
+snippet main
+	main :: IO ()
+	main = ${0:undefined}
 snippet const
 	${1:name} :: ${2:a}
 	$1 = ${0:undefined}
@@ -54,11 +57,13 @@ snippet fn
 snippet fn2
 	${1:fn} :: ${2:a} -> ${3:a} -> ${4:a}
 	$1 ${5} = ${0:undefined}
+snippet fn3
+	${1:fn} :: ${2:a} -> ${3:a} -> ${4:a} -> ${5:a}
+	$1 ${6} = ${0:undefined}
+snippet => "Type constraint"
+	(${1:Class} ${2:a}) => $2
 snippet ap
 	${1:map} ${2:fn} ${0:list}
-snippet do
-	do
-
 snippet \
 	\\${1:x} -> ${0:expression}
 snippet (\
