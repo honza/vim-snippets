@@ -92,6 +92,8 @@ snippet where
 	where
 		${1:fn} = ${0:undefined}
 snippet spec
+	module `substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')` (main spec) where
+
 	import Test.Hspec
 	import Test.QuickCheck
 
