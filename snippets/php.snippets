@@ -603,3 +603,35 @@ snippet tc
 	}
 snippet te 
 	throw new ${1:Exception}("${2:Error Processing Request}");
+
+snippet fpc "file_put_contents" b
+file_put_contents(${1:file}, ${2:content}${3:, FILE_APPEND});$0
+endsnippet
+
+snippet sr "str_replace"
+str_replace(${1:search}, ${2:replace}, ${3:subject})$0
+endsnippet
+
+snippet ia "in_array"
+in_array(${1:needle}, ${2:haystack})$0
+endsnippet
+
+snippet is "isset"
+isset(${1:var})$0
+endsnippet
+
+snippet isa "isset array"
+isset($${1:array}[${2:key}])$0
+endsnippet
+
+snippet in "is_null"
+is_null($${1:var})$0
+endsnippet
+
+snippet fe "file_exists"
+file_exists(${1:file})$0
+endsnippet
+
+snippet id "is_dir"
+is_dir(${1:path})$0
+endsnippet
