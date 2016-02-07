@@ -133,7 +133,7 @@ class ${1:Model}sController < ApplicationController
 	# PUT /${1/./\l$0/}s/1.xml
 	def update
 		respond_to do |wants|
-			if @${1/./\l$0/}.update_attributes(params[:${1/./\l$0/}])
+			if @${1/./\l$0/}.update(params[:${1/./\l$0/}])
 				flash[:notice] = '${1:Model} was successfully updated.'
 				wants.html { redirect_to(@${1/./\l$0/}) }
 				wants.xml  { head :ok }
