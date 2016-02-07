@@ -601,12 +601,6 @@ respond_to do |wants|
 end
 endsnippet
 
-snippet resw "respond_with"
-respond_with(${1:@${2:model}})${3: do |format|
-	format.${4:html} { $0 \}
-end}
-endsnippet
-
 # FIXME
 snippet returning "returning do |variable| ... end"
 returning ${1:variable} do${2/(^(?<var>\s*[a-z_][a-zA-Z0-9_]*\s*)(,\g<var>)*,?\s*$)|.*/(?1: |)/}${2:v}${2/(^(?<var>\s*[a-z_][a-zA-Z0-9_]*\s*)(,\g<var>)*,?\s*$)|.*/(?1:|)/}
