@@ -51,11 +51,11 @@ format!("${1}"${2/..*/, /}${2});
 endsnippet
 
 snippet macro "macro_rules!" b
-macro_rules! ${1:name} (
+macro_rules! ${1:name} {
 	(${2:matcher}) => (
 		${3}
 	)
-)
+}
 endsnippet
 
 snippet mod "A module" b
