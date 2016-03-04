@@ -73,8 +73,12 @@ Additional snippets can be added to the current buffer with the
 `:UltiSnipsAddFiletypes` command followed by the snippet name without the
 "snippets" ending. For example, to add the JavaScript Jasmine snippets, run:
 `:UltiSnipsAddFiletypes javascript-jasmine`. To have this snippet loaded
-everytime a JavaScript file is opened or created you can add the command to your
-`.vim/ftplugin/javascript.vim` file.
+everytime a JavaScript file is opened or created you can add this command to your
+`.vimrc` file:
+
+```vim
+autocmd FileType js UltiSnipsAddFiletypes javascript-jasmine
+```
 
 For more see the UltiSnips docs (`:help UltiSnips`).
 
