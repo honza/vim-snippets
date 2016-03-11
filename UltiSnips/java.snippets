@@ -124,7 +124,7 @@ for i in args:
 	\tthis." + i[1] + " = " + i[1] + ";\n\t}\n"
 
 	snip.rv += "\n\tpublic " + i[0] + " get" + camel(i[1]) + "() {\n\
-	\t\treturn " + i[1] + ";\n\t}\n"
+	\treturn " + i[1] + ";\n\t}\n"
 `
 }
 endsnippet
@@ -326,11 +326,11 @@ snippet md "Method With javadoc" b
  * ${7:Short Description}`!p
 for i in getArgs(t[4]):
 	snip.rv += "\n\t * @param " + i[1] + " usage..."`
- * `!p
+ *`!p
 if "throws" in t[5]:
 	snip.rv = "\n\t * @throws " + t[6]
 else:
-	snip.rv = ""` `!p
+	snip.rv = ""``!p
 if not "void" in t[2]:
 	snip.rv = "\n\t * @return object"
 else:
@@ -356,8 +356,7 @@ endsnippet
 snippet /se?tge?t|ge?tse?t|gs/ "setter and getter" br
 public void set${1:Name}(${2:String} `!p snip.rv = mixedCase(t[1])`) {
 	this.`!p snip.rv = mixedCase(t[1])` = `!p snip.rv = mixedCase(t[1])`;
-}
-
+}`!p snip.rv += "\n"`
 public $2 get$1() {
 	return `!p snip.rv = mixedCase(t[1])`;
 }
