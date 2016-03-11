@@ -21,7 +21,7 @@ def nl(snip):
 		snip.rv += " "
 def getArgs(group):
 	import re
-	word = re.compile('[a-zA-Z><.]+ \w+')
+	word = re.compile('[a-zA-Z0-9><.]+ \w+')
 	return [i.split(" ") for i in word.findall(group) ]
 
 def camel(word):
@@ -109,7 +109,7 @@ for i in args:
 	snip.rv += "\n\tprivate " + i[0] + " " + i[1]+ ";"
 if len(args) > 0:
 	snip.rv += "\n"`
-	public `!p snip.rv = snip.basename or "unknown"`($1) { `!p
+	public `!p snip.rv = snip.basename or "unknown"`($1) {`!p
 args = getArgs(t[1])
 for i in args:
 	snip.rv += "\n\t\tthis." + i[1] + " = " + i[1] + ";"
@@ -123,8 +123,8 @@ for i in args:
 	snip.rv += "\n\tpublic void set" + camel(i[1]) + "(" + i[0] + " " + i[1] + ") {\n" + "\
 	\tthis." + i[1] + " = " + i[1] + ";\n\t}\n"
 
-	snip.rv += "\n\tpublic " + i[0] + " get" + camel(i[1]) + "() {\
-	\n\t\treturn " + i[1] + ";\n\t}\n"
+	snip.rv += "\n\tpublic " + i[0] + " get" + camel(i[1]) + "() {\n\
+	\t\treturn " + i[1] + ";\n\t}\n"
 `
 }
 endsnippet
@@ -138,7 +138,7 @@ for i in args:
 	snip.rv += "\n\tprivate " + i[0] + " " + i[1]+ ";"
 if len(args) > 0:
 	snip.rv += "\n"`
-	public `!p snip.rv = snip.basename or "unknown"`($1) { `!p
+	public `!p snip.rv = snip.basename or "unknown"`($1) {`!p
 args = getArgs(t[1])
 for i in args:
 	snip.rv += "\n\t\tthis.%s = %s;" % (i[1], i[1])
@@ -266,7 +266,7 @@ for i in args:
 	snip.rv += "\n\tprivate " + i[0] + " " + i[1]+ ";"
 if len(args) > 0:
 	snip.rv += "\n"`
-public `!p snip.rv = snip.basename or "unknown"`($1) { `!p
+public `!p snip.rv = snip.basename or "unknown"`($1) {`!p
 args = getArgs(t[1])
 for i in args:
 	snip.rv += "\n\t\tthis.%s = %s;" % (i[1], i[1])
