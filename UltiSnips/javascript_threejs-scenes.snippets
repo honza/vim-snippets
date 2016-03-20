@@ -1,0 +1,15 @@
+# -------------------------------------------------
+# Classes
+# -------------------------------------------------
+
+snippet scene "THREE.Scene"
+    ne} = new THREE.Scene()${0}
+endsnippet
+
+snippet fog "THREE.Fog"
+    new THREE.Fog(${1:color}, ${2:near}, ${3:far})${0}
+endsnippet
+
+snippet fogexp2 "THREE.FogExp2"
+    new THREE.FogExp2(${1:color}, ${2:density})${0}
+endsnippet

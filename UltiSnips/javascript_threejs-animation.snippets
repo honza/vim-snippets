@@ -1,0 +1,23 @@
+snippet anim "THREE.Animation"
+    new THREE.Animation(${1:root}, ${2:name})
+endsnippet
+
+snippet animaction "THREE.AnimationAction"
+    new THREE.AnimationAction(${1:clip}, ${2:startTime}, ${3:timeScale}, ${4:weight}, ${5:loop})
+endsnippet
+
+snippet animclip "THREE.AnimationClip"
+    new THREE.AnimationClip(${1:name}, ${2:duration}, ${3:tracks})
+endsnippet
+
+snippet animmixer "THREE.AnimationMixer"
+    new THREE.AnimationMixer(${1:root})
+endsnippet
+
+snippet keyframetrack "THREE.KeyframeTrack"
+    new THREE.KeyframeTrack(${1:name}, ${2:keys})
+endsnippet
+
+snippet propertybinding "THREE.PropertyBinding"
+    new THREE.PropertyBinding(${1:rootNode}, ${2:trackName})
+endsnippet
