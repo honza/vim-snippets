@@ -34,7 +34,10 @@ snippet !env "#!/usr/bin/env (!env)"
 endsnippet
 
 snippet sbash "safe bash options"
-`!p snip.rv = '#!/usr/bin/env bash' +  "\nset -euo pipefail\nIFS=$'\n\t'" + "\n\n" `
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+`!p snip.rv ='\n\n' `
 endsnippet
 
 snippet temp "Tempfile"
