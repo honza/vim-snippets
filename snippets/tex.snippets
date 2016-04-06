@@ -37,6 +37,10 @@ snippet ali align(ed) environment
 		\label{eq:${2}}
 		${0}
 	\end{align$1}
+snippet ali* align star environment
+	\begin{align*}
+		${0}
+	\end{align*}
 # Gather(ed)
 snippet gat gather(ed) environment
 	\begin{gather${1:ed}}
@@ -250,6 +254,10 @@ snippet tikz figure environment (tikzpicture)
 	\end{figure}
 	${0}
 #math
+snippet A for all
+	\forall
+snippet E there exists
+	\exists
 snippet stackrel \stackrel{}{}
 	\stackrel{${1:above}}{${2:below}} ${0}
 snippet frac \frac{}{}
@@ -288,15 +296,15 @@ snippet \{ \{ \}
 #delimiter
 snippet lr left right
 	\left${1} ${0} \right$1
-snippet lr( left( right) 
+snippet lr( left( right)
 	\left( ${0} \right)
-snippet lr| left| right| 
+snippet lr| left| right|
 	\left| ${0} \right|
-snippet lr{ left\{ right\} 
+snippet lr{ left\{ right\}
 	\left\\{ ${0} \right\\}
-snippet lr[ left[ right] 
+snippet lr[ left[ right]
 	\left[ ${0} \right]
-snippet lra langle rangle 
+snippet lra langle rangle
 	\langle ${0} \rangle
 # Code listings
 snippet lst
@@ -315,3 +323,63 @@ snippet urlc
 	\url{`@+`} ${0}
 snippet hrefc
 	\href{`@+`}{${1}} ${0}
+# Greek Letters
+snippet a Greek letter alpha
+	\alpha
+snippet beta Greek letter beta
+	\beta
+snippet c Greek letter chi
+	\chi
+snippet d Greek letter delta
+	\delta
+snippet e Greek letter epsilon
+	\epsilon
+snippet ve Greek varepsilon
+	\varepsilon
+snippet f Greek letter phi
+	\phi
+snippet g Greek letter gamma
+	\gamma
+snippet h Greek letter eta
+	\eta
+snippet i Greek letter iota
+	\iota
+snippet k Greek letter kappa
+	\kappa
+snippet l Greek letter lambda
+	\lambda
+snippet m Greek letter mu
+	\mu
+snippet n Greek letter nu
+	\nu
+snippet p Greek letter pi
+	\pi
+snippet r Greek letter rho
+	\rho
+snippet s Greek letter sigma
+	\sigma
+snippet t Greek letter tau
+	\tau
+snippet th Greek letter theta
+	\theta
+snippet w Greek letter omega
+	\omega
+snippet x Greek letter xi
+	\xi
+snippet z Greek letter zeta
+	\zeta
+snippet D Greek capital Delta
+	\Delta
+snippet G Greek capital Gamma
+	\Gamma
+snippet L Greek capital Lambda
+	\Lambda
+snippet P Greek capital Pi
+	\Pi
+snippet S Greek capital Sigma
+	\Sigma
+snippet Th Greek capital Theta
+	\Theta
+snippet W Greek capital Omega
+	\Omega
+
