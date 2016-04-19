@@ -696,10 +696,10 @@ snippet pmdoc "pocoo style module doc string" b
 	`!p snip.rv = get_dir_and_file_name(snip)`
 	`!p snip.rv = '~' * len(get_dir_and_file_name(snip))`
 
-	${1:YOURDOCSTRING}
+	${1:DESCRIPTION}
 
-	:copyright: (c) `date +Y%` by ${2:YOURNAME}.
-	:license: ${3:YOURLICENSE}, see LICENSE for more details.
+	:copyright: (c) `date +%Y` by ${2:YOUR_NAME}.
+	:license: ${3:LICENSE_NAME}, see LICENSE for more details.
 """
 $0
 endsnippet
