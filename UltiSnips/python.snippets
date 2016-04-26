@@ -246,7 +246,7 @@ def write_function_docstring(t, snip):
 	snip += triple_quotes(snip)
 
 def get_dir_and_file_name(snip):
-	return os.getcwd().split('/')[-1] + '.' + snip.basename
+	return os.getcwd().split(os.sep)[-1] + '.' + snip.basename
 
 endglobal
 
