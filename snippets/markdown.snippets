@@ -3,8 +3,9 @@
 # Includes octopress (http://octopress.org/) snippets
 
 # The suffix `c` stands for "Clipboard".
+# The suffix `d` stands for "Default".
 
-snippet [
+snippet [d
 	[${1:text}](http://${2:address})
 snippet [*
 	[${1:link}](${2:`@*`})
@@ -34,7 +35,7 @@ snippet [:"*
 snippet [:"c
 	[${1:id}]: ${2:`@+`} "${3:title}"
 
-snippet ![
+snippet ![d
 	![${1:alttext}](${2:/images/image.jpg})
 snippet ![*
 	![${1:alt}](${2:`@*`})
@@ -61,7 +62,7 @@ snippet ![:"*
 snippet ![:"c
 	![${1:id}]: ${2:`@+`} "${3:title}"
 
-snippet <
+snippet <d
 	<http://${1:url}>
 snippet <*
 	<`@*`>
