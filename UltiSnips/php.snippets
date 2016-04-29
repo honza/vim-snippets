@@ -268,8 +268,8 @@ endsnippet
 
 snippet ns "namespace declaration" b
 namespace ${1:`!p
-abspath = os.path.abspath(path)
-m = re.search(r'[A-Z].+(?=/)', abspath)
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
 if m:
 	snip.rv = m.group().replace('/', '\\')
 `};
@@ -279,8 +279,8 @@ snippet class "Class declaration template" b
 <?php
 
 namespace ${1:`!p
-abspath = os.path.abspath(path)
-m = re.search(r'[A-Z].+(?=/)', abspath)
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
 if m:
 	snip.rv = m.group().replace('/', '\\')
 `};
@@ -298,8 +298,8 @@ snippet interface "Interface declaration template" b
 <?php
 
 namespace ${1:`!p
-abspath = os.path.abspath(path)
-m = re.search(r'[A-Z].+(?=/)', abspath)
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
 if m:
 	snip.rv = m.group().replace('/', '\\')
 `};
