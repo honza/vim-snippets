@@ -314,6 +314,24 @@ interface $1
 }
 endsnippet
 
+snippet trait "Trait declaration template" b
+<?php
+
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+/**
+ * Interface ${1:`!p snip.rv=snip.basename`}
+ * @author ${2:`!v g:snips_author`}
+ */
+trait $1
+{
+}
+endsnippet
 
 snippet construct "__construct()" b
 /**
@@ -331,19 +349,6 @@ endsnippet
 
 snippet pc "Dumb debug helper in cli"
 var_export($1);$0
-endsnippet
-
-# Symfony 2 based snippets
-snippet sfa "Symfony 2 Controller action"
-/**
-* @Route("/${1:route_name}", name="$1")
-* @Template()
-*/
-public function $1Action($2)
-{
-	$3
-	return ${4:array();}$0
-}
 endsnippet
 
 snippet inheritdoc "@inheritdoc docblock"
