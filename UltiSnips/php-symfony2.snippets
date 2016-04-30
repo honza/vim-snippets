@@ -53,6 +53,18 @@ snip.rv = re.match(r'.*(?=\.)', fn).group()
 }
 endsnippet
 
+snippet sfa "Symfony 2 Controller action"
+/**
+* @Route("/${1:route_name}", name="$1")
+* @Template()
+*/
+public function $1Action($2)
+{
+	$3
+	return ${4:array();}$0
+}
+endsnippet
+
 snippet act "Symfony2 action" b
 /**
  * @Route("${3}", name="${4}")
