@@ -314,6 +314,25 @@ interface $1
 }
 endsnippet
 
+snippet trait "Trait declaration template" b
+<?php
+
+namespace ${1:`!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`};
+
+/**
+ * Interface ${1:`!p snip.rv=snip.basename`}
+ * @author ${2:`!v g:snips_author`}
+ */
+trait $1
+{
+	public function ${3:someFunction}();$4                                                                                                              
+}
+endsnippet
 
 snippet construct "__construct()" b
 /**
