@@ -11,6 +11,12 @@ snippet def "def"
 define('${1:VARIABLE_NAME}', ${2:'definition'});${3}
 endsnippet
 
+snippet wh "while"
+while (${1}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
 snippet do "do"
 do {
 	${2:// code... }
@@ -39,9 +45,9 @@ interface ${1:someClass}
 } // END interface $1"
 endsnippet
 
-snippet else "else"
+snippet el "else"
 else {
-	${1:// code...}
+	${0:${VISUAL}}
 }
 endsnippet
 
@@ -62,14 +68,14 @@ $_GET['${1}']${2}
 endsnippet
 
 snippet if "if"
-if (${1:/* condition */}) {
-	${2:// code...}
+if (${1}) {
+	${0:${VISUAL}}
 }
 endsnippet
 
-snippet elif "elseif"
-elseif (${1:/* condition */}) {
-	${2:// code...}
+snippet eif "elseif"
+elseif (${1}) {
+	${0:${VISUAL}}
 }
 endsnippet
 
