@@ -1,8 +1,11 @@
 # suggestion? report bugs?
 # please go to https://github.com/chrisyue/vim-snippets/issues
+#
+# to use add the following to your .vimrc
+# `autocmd BufRead,BufNewFile,BufEnter *Test.php UltiSnipsAddFiletypes php-phpunit`
 priority -50
 
-snippet test "phpunit test class" b
+snippet testcase "class XYZTest extends \PHPUnit_Framework_TestCase { ... }"
 <?php
 
 namespace `!p
@@ -21,8 +24,29 @@ snip.rv = re.match(r'.*(?=\.)', fn).group()
 {
 	public function test${1}()
 	{
-		${2}
+		${0:${VISUAL}}
 	}
+}
+endsnippet
+
+snippet test "public function testXYZ() { ... }"
+public function test${1}()
+{
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet setup "protected function setUp() { ... }"
+protected function setUp()
+{
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet teardown "protected function tearDown() { ... }"
+protected function tearDown()
+{
+	${0:${VISUAL}}
 }
 endsnippet
 
@@ -37,4 +61,16 @@ snippet testcmt "phpunit comment with group" b
 /**
 * @group ${1}
 */
+endsnippet
+
+snippet fail "$this->fail()"
+$this->fail(${1});
+endsnippet
+
+snippet marki "$this->markTestIncomplete()"
+$this->markTestIncomplete(${1});
+endsnippet
+
+snippet marks "$this->markTestSkipped()"
+$this->markTestSkipped(${1});
 endsnippet
