@@ -1,0 +1,16 @@
+snippet mod
+	module `substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')` exposing (${1})
+	${0}
+snippet imp
+	import ${0:List}
+snippet impe
+	import ${1:List} exposing (${0:map})
+snippet fn
+	${1:fn} :: ${2:a} -> ${3:a}
+	$1 ${4} = ${0}
+snippet fn2
+	${1:fn} :: ${2:a} -> ${3:a} -> ${4:a}
+	$1 ${5} = ${0}
+snippet fn3
+	${1:fn} :: ${2:a} -> ${3:a} -> ${4:a} -> ${5:a}
+	$1 ${6} = ${0}
