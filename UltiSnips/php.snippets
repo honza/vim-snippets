@@ -363,4 +363,29 @@ snippet inheritdoc "@inheritdoc docblock"
  */
 endsnippet
 
+# PHPUnit snippets
+snippet testcase "class XYZTest extends \PHPUnit_Framework_TestCase { ... }"
+<?php
+
+namespace `!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+/**
+ * @author `!v g:snips_author`
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` extends \PHPUnit_Framework_TestCase
+{
+	public function test${1}()
+	{
+		${0:${VISUAL}}
+	}
+}
+endsnippet
+
 # :vim:ft=snippets:
