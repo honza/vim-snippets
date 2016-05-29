@@ -3,114 +3,6 @@ priority -50
 ## Snippets from SnipMate, taken from
 ## https://github.com/scrooloose/snipmate-snippets.git
 
-snippet array "array"
-$${1:arrayName} = array('${2}' => ${3});${4}
-endsnippet
-
-snippet def "def"
-define('${1:VARIABLE_NAME}', ${2:'definition'});${3}
-endsnippet
-
-snippet wh "while"
-while (${1}) {
-	${0:${VISUAL}}
-}
-endsnippet
-
-snippet do "do"
-do {
-	${2:// code... }
-} while (${1:/* condition */});
-endsnippet
-
-snippet doc_f "doc_f"
-/**
- * $2
- * @return ${4:void}
- * @author ${5:`!v g:snips_author`}
- **/
-${1:public }function ${2:someFunc}(${3})
-{${6}
-}
-endsnippet
-
-snippet doc_i "doc_i"
-/**
- * $1
- * @package ${2:default}
- * @author ${3:`!v g:snips_author`}
- **/
-interface ${1:someClass}
-{${4}
-} // END interface $1"
-endsnippet
-
-snippet el "else"
-else {
-	${0:${VISUAL}}
-}
-endsnippet
-
-snippet for "for"
-for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
-	${4:// code...}
-}
-endsnippet
-
-snippet foreachk "foreachk"
-foreach ($${1:variable} as $${2:key} => $${3:value}) {
-	${4:// code...}
-}
-endsnippet
-
-snippet get "get"
-$_GET['${1}']${2}
-endsnippet
-
-snippet if "if"
-if (${1}) {
-	${0:${VISUAL}}
-}
-endsnippet
-
-snippet eif "elseif"
-elseif (${1}) {
-	${0:${VISUAL}}
-}
-endsnippet
-
-snippet inc "inc"
-include '${1:file}';${2}
-endsnippet
-
-snippet log "log"
-error_log(var_export(${1}, true));${2}
-endsnippet
-
-snippet post "post"
-$_POST['${1}']${2}
-endsnippet
-
-snippet req "req1"
-require_once '${1:file}';${2}
-endsnippet
-
-snippet req1 "req1"
-require_once '${1:file}';${2}
-endsnippet
-
-snippet session "session"
-$_SESSION['${1}']${2}
-endsnippet
-
-snippet t "t"
-$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
-endsnippet
-
-snippet var "var"
-var_export(${1});${2}
-endsnippet
-
 snippet getter "PHP Class Getter" b
 /**
  * Getter for $1
@@ -251,24 +143,8 @@ function ${1:name}(${2:$param})
 $0
 endsnippet
 
-snippet fore "Foreach loop"
-foreach ($${1:variable} as $${3:value}) {
-	${VISUAL}${4}
-}
-$0
-endsnippet
-
 snippet new "New class instance" b
 $${1:variableName} = new ${2:${1/\w+\s*/\u$0/}}($3);
-$0
-endsnippet
-
-snippet ife "if else"
-if (${1:/* condition */}) {
-	${2:// code...}
-} else {
-	${3:// code...}
-}
 $0
 endsnippet
 
@@ -347,20 +223,6 @@ public function __construct(${1:$dependencies})
 {${1/\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
 }
 $0
-endsnippet
-
-snippet ve "Dumb debug helper in HTML"
-    echo '<pre>' . var_export($1, 1) . '</pre>';$0
-endsnippet
-
-snippet pc "Dumb debug helper in cli"
-var_export($1);$0
-endsnippet
-
-snippet inheritdoc "@inheritdoc docblock"
-/**
- * {@inheritdoc}
- */
 endsnippet
 
 # PHPUnit snippets

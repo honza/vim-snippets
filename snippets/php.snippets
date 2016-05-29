@@ -24,9 +24,6 @@ snippet ?i
 snippet ns
 	namespace ${1:Foo\Bar\Baz};
 	${0}
-snippet use
-	use ${1:Foo\Bar\Baz};
-	${0}
 snippet c
 	class ${1:`vim_snippets#Filename()`}
 	{
@@ -81,13 +78,14 @@ snippet $s
 #getter
 snippet $g
 	${1:$foo}->get${0:Bar}();
-
 # Tertiary conditional
 snippet =?:
 	$${1:foo} = ${2:true} ? ${3:a} : ${0};
 snippet ?:
 	${1:true} ? ${2:a} : ${0}
-
+snippet t "$retVal = (condition) ? a : b"
+	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};
+# Predefined variables
 snippet C
 	$_COOKIE['${1:variable}']
 snippet E
@@ -104,7 +102,12 @@ snippet S
 	$_SERVER['${1:variable}']
 snippet SS
 	$_SESSION['${1:variable}']
-
+snippet get "get"
+	$_GET['${1}']
+snippet post "post"
+	$_POST['${1}']
+snippet session "session"
+	$_SESSION['${1}']
 # the following are old ones
 snippet inc
 	include '${1:file}';
@@ -205,7 +208,19 @@ snippet doc_h
 	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
 	 * @package ${0:default}
 	 */
-
+snippet doc_i "interface someClass {}"
+	/**
+	 * $1
+	 * @package ${2:default}
+	 * @author ${3:`!v g:snips_author`}
+	 **/
+	interface ${1:someClass}
+	{${4}
+	}
+snippet inheritdoc "@inheritdoc docblock"
+	/**
+	 * {@inheritdoc}
+	 */
 # Interface
 snippet interface
 	/**
@@ -254,55 +269,54 @@ snippet nc
 		${0}
 	}
 # define(...)
-snippet def
-	define('${1}'${2});
+snippet def "define('VARIABLE_NAME', 'definition')"
+	define('${1:VARIABLE_NAME}', ${2:'definition'});
 # defined(...)
 snippet def?
 	${1}defined('${2}')
-snippet wh
+snippet wh "while (condition) { ... }"
 	while (${1:/* condition */}) {
 		${0}
 	}
-# do ... while
-snippet do
+snippet do "do { ... } while (condition)"
 	do {
 		${0}
-	} while (${1:/* condition */});
-snippet if
-	if (${1:/* condition */}) {
+	} while (${1});
+snippet if "if (condition) { ... }"
+	if (${1}) {
 		${0}
 	}
-snippet ifn
-	if (!${1:/* condition */}) {
+snippet ifn "if (!condition) { ... }"
+	if (!${1}) {
 		${2}
 	}
-snippet ifil
-	<?php if (${1:/* condition */}): ?>
+snippet ifil "<?php if (condition): ?> ... <?php endif; ?>"
+	<?php if (${1}): ?>
 		${0}
 	<?php endif; ?>
-snippet ife
-	if (${1:/* condition */}) {
+snippet ife "if (cond) { ... } else { ... }"
+	if (${1}) {
 		${2}
 	} else {
 		${3}
 	}
 	${0}
-snippet ifeil
-	<?php if (${1:/* condition */}): ?>
-		${2:<!-- html... -->}
+snippet ifeil "<?php if (condition): ?> ... <?php else: ?> ... <?php endif; ?>"
+	<?php if (${1}): ?>
+		${2}
 	<?php else: ?>
-		${3:<!-- html... -->}
+		${3}
 	<?php endif; ?>
 	${0}
-snippet el
+snippet el "else { ... }"
 	else {
 		${0}
 	}
-snippet eif
+snippet eif "elseif(condition) { ... }"
 	elseif (${1}) {
 		${0}
 	}
-snippet switch
+snippet switch "switch($var) { case 'xyz': ... default: .... }"
 	switch ($${1:variable}) {
 		case '${2:value}':
 			${3}
@@ -312,34 +326,33 @@ snippet switch
 			${4}
 			break;
 	}
-snippet case
+snippet case "case 'value': ... break"
 	case '${1:value}':
 		${2}
 		break;
-snippet for
+snippet for "for ($i = 0; $i < $count; $i++) { ... }"
 	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
 		${0}
 	}
-snippet foreach
+snippet foreach "foreach ($var as $value) { .. }"
 	foreach ($${1:variable} as $${2:value}) {
 		${0}
 	}
-snippet foreachil
+snippet foreachil "<?php foreach ($var as $value): ?>  ... <?php endforeach; ?>"
 	<?php foreach ($${1:variable} as $${2:value}): ?>
-		${0:<!-- html... -->}
+		${0}
 	<?php endforeach; ?>
-snippet foreachk
+snippet foreachk "foreach ($var as $key => $value) { .. }"
 	foreach ($${1:variable} as $${2:key} => $${3:value}) {
 		${0}
 	}
-snippet foreachkil
+snippet foreachkil "<?php foreach ($var as $key => $value): ?>  ... <?php endforeach; ?>"
 	<?php foreach ($${1:variable} as $${2:key} => $${3:value}): ?>
 		${0:<!-- html... -->}
 	<?php endforeach; ?>
-# $... = array (...)
-snippet array b
+snippet array "$... = array(...)"
 	$${1:arrayName} = array('${2}' => ${3});
-snippet try
+snippet try "try { ... } catch (Exception $e) { ... }"
 	try {
 		${0}
 	} catch (${1:Exception} $e) {
@@ -369,6 +382,14 @@ snippet http_redirect
 	header ("HTTP/1.1 301 Moved Permanently");
 	header ("Location: ".URL);
 	exit();
+snippet log "error_log(var_export($var, true));"
+	error_log(var_export(${1}, true));
+snippet var "var_export($var)"
+	var_export(${1});
+snippet ve "Dumb debug helper in HTML"
+	echo '<pre>' . var_export(${1}, 1) . '</pre>';
+snippet pc "Dumb debug helper in cli"
+	var_export($1);$0
 # Getters & Setters
 snippet gs
 	/**
@@ -425,14 +446,12 @@ snippet aw
 	array_walk($${1:foo}, function(&$${2:v}, $${3:k}) {
 		$$2 = ${0};
 	});
-
 # static var assign once
 snippet static_var
 	static $${1} = null;
 	if (is_null($$1)){
 		$$1 = ${2};
 	}
-
 snippet CSVWriter
 	<?php
 	
@@ -467,7 +486,6 @@ snippet CSVWriter
 		}
 	
 	}
-
 snippet CSVIterator
 	
 	// http://snipplr.com/view.php?codeview&id=1986 // modified
@@ -570,9 +588,6 @@ snippet CSVIterator
 		}
 	
 	} // end class
-
-snippet is "isset()"
-	isset($1{VISUAL})
 # phpunit
 snippet ase "$this->assertEquals()"
 	$this->assertEquals(${1:expected}, ${2:actual});
