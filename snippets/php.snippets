@@ -391,13 +391,13 @@ snippet ve "Dumb debug helper in HTML"
 snippet pc "Dumb debug helper in cli"
 	var_export($1);$0
 # Getters & Setters
-snippet gs
+snippet gs "PHP Class Getter Setter"
 	/**
 	 * Gets the value of ${1:foo}
 	 *
-	 * @return ${2:$1}
+	 * @return ${2:string}
 	 */
-	public function get${3:$2}()
+	public function get${3:$1}()
 	{
 		return $this->${4:$1};
 	}
