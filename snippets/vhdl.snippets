@@ -1,0 +1,161 @@
+snippet lib "library ... use ..."
+library $1;
+use $1.$2;
+endsnippet
+
+snippet libs "insert IEEE libraries"
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+$0
+endsnippet
+
+snippet libx "insert Xilinx primitive library"
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+
+$0
+endsnippet
+
+snippet ent "entity ... end entity"
+entity ${1:`!p snip.rv = snip.basename`} is${2:
+	generic (
+		$3
+	);}${4:
+	port (
+		$5
+	);}
+end entity $1;
+endsnippet
+
+snippet arc
+architecture ${1:behav} of ${2:`!p snip.rv = snip.basename`} is
+
+$0
+
+begin
+
+
+end $1;
+endsnippet
+
+snippet st "signal ... : std_logic"
+signal $1 : std_logic;
+$0
+endsnippet
+
+snippet sv "signal ... : std_logic_vector"
+signal $1 : std_logic_vector ($2 downto 0);
+$0
+endsnippet
+snippet un "signal ... : unsigned"
+signal $1 : unsigned ($2 downto 0);
+$0
+endsnippet
+
+snippet ist "... : in std_logic;"
+	$1 : in std_logic;
+endsnippet
+
+snippet isv "... : in std_logic_vector;"
+	$1 : in std_logic_vector ($2 downto 0);
+endsnippet
+
+snippet ost "... : out std_logic;"
+	$1 : out std_logic;
+endsnippet
+
+snippet osv "... : out std_logic_vector;"
+	$1 : out std_logic_vector ($2 downto 0);
+endsnippet
+
+snippet pr "process"
+process
+begin
+	$0
+end process;
+endsnippet
+
+snippet pra "process all"
+process (all)
+begin
+	$0
+end process;
+endsnippet
+
+snippet prc "process with clock"
+process (${1:clk})
+begin
+	if rising_edge($1) then
+		$0
+	end if;
+end process;
+endsnippet
+
+snippet if "if ... end if;"
+if $1 then
+	$0
+end if;
+endsnippet
+
+snippet ife "if ... else ... end if;"
+if $1 then
+	$2
+else
+	$3
+end if;
+endsnippet
+
+snippet el "else ..."
+else
+	$3
+endsnippet
+
+snippet eif "else if ..."
+else if
+	$3
+endsnippet
+
+snippet ca "case ... end case;"
+case $1 is
+	$0
+end case;
+endsnippet
+
+snippet wh "when ... =>"
+when $1 =>
+	$0
+endsnippet
+
+snippet for "for loop"
+for ${1:i} in $2 ${3:to} $4 loop
+	$0
+end loop;
+endsnippet
+
+snippet wh "while loop"
+while $1 loop
+	$0
+end loop;
+endsnippet
+
+snippet oth "(others => '..')"
+(others => '${1:0}')
+endsnippet
+
+snippet fun "function"
+function $1 ($2) return $3 is${4:
+	$5}
+begin
+	$0
+end $1;
+endsnippet
+
+snippet pro "procedure"
+procedure $1 ($2) is${4:
+	$5}
+begin
+	$0
+end $1;
+endsnippet
