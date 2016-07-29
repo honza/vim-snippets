@@ -18,7 +18,7 @@ snippet libx
 
 ## Entity Declaration
 snippet ent
-	entity ${1:`Filename()`} is
+	entity ${1:`vim_snippets#Filename()`} is
 		generic (
 			${2}
 		);
@@ -29,7 +29,7 @@ snippet ent
 
 ## Architecture
 snippet arc
-	architecture ${1:behav} of ${2:`Filename()`} is
+	architecture ${1:behav} of ${2:`vim_snippets#Filename()`} is
 
 		${3}
 
