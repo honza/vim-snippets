@@ -1,0 +1,37 @@
+snippet exp "Skeleton for webpack"
+	export default {
+		entry: '${1}',
+		output: {
+			path: '${2}',
+			filename: '${3}'
+		},
+		module: {
+			loaders: [
+				${4}
+			]
+		}
+	}
+snippet exp5 "ES5 version of skeleton"
+	module.exports = {
+		entry: '${1}',
+		output: {
+			path: '${2}',
+			filename: '${3}'
+		},
+		module: {
+			loaders: [
+				${4}
+			]
+		}
+	}
+snippet lodr "Generic loader"
+	{
+		test: /${1}$/,
+		loader: '${2}'
+	}
+snippet jsl "Javascript babel loader"
+	{
+		test: /\.js$/,
+		loader: 'babel',
+		exclude: /node_modules/
+	}
