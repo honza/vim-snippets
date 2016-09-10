@@ -1,0 +1,61 @@
+snippet apr
+active proctype ${1:process type}() {
+	${2:/*body...*/}
+}
+endsnippet
+
+snippet at
+atomic {
+  ${1:/*body...*/}
+}
+endsnippet
+
+snippet de
+#define ${1:name} ${2:value}
+endsnippet
+
+snippet do
+do
+  :: ${1:condition} -> ${2:break}
+  :: ${3:else} -> ${4:loop}
+od
+endsnippet
+
+snippet if
+if
+  :: ${1:condition} -> ${2:condition_satisfied_branch}
+	:: ${3:else} -> ${4:condition_not_satisfied_branch}
+fi
+endsnippet
+
+snippet in
+init {
+  ${1:/*body...*/}
+}
+endsnippet
+
+snippet ina
+init {
+	atomic {
+		${1:/*body...*/}
+	}
+
+	_nr_pr == 1 -> ${2:assert($3:condition)}
+}
+endsnippet
+
+snippet inl
+inline ${1:name} (){
+  ${2:/*body...*/}
+}
+endsnippet
+
+snippet pf
+printf("${1:msg}${2:\n}");
+endsnippet
+
+snippet pr
+proctype ${1:p}() {
+  ${2:/*body...*/}
+}
+endsnippet
