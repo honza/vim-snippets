@@ -84,7 +84,7 @@ snippet fore
 	${1:expression} foreach @${2:array};
 # Package
 snippet package
-	package ${1:`vim_snippets#Filename(expand('%:p:s?.*lib/??:r:gs?/?::?'))`};
+	package ${1:`expand('%:p:s?.*lib/??:r:gs?/?::?')`};
 	use strict;
 	use warnings;
 
@@ -95,7 +95,7 @@ snippet package
 	__END__
 # Package syntax perl >= 5.14
 snippet packagev514
-	package ${1:`vim_snippets#Filename(expand('%:p:s?.*lib/??:r:gs?/?::?'))`} ${2:0.99};
+	package ${1:`expand('%:p:s?.*lib/??:r:gs?/?::?')`} ${2:0.99};
 	use v5.14;
 	use warnings;
 
