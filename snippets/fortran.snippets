@@ -8,86 +8,86 @@ snippet doc
 	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 	$0
 snippet impl
-	implicit none
+	IMPLICIT NONE
 		$0
 snippet prog
-	program ${1:main}
+	PROGRAM ${1:main}
 		$0
-	end program $1
+	END PROGRAM $1
 snippet mod
-	module ${1:modulename}
+	MODULE ${1:modulename}
 		$0
-	end module $1
+	END MODULE $1
 snippet proc
-	procedure ${1:name}
+	PROCEDURE ${1:name}
 		${0}
-	end procedure $1
+	END PROCEDURE $1
 snippet iface
-	interface ${1:name}
+	INTERFACE ${1:name}
 		${0}
-	end interface $1
-# Variables definitions
-# Boolean
+	END INTERFACE $1
+# VARIABLES DEFINITIONS
+# BOOLEAN
 snippet bool
-	logical :: $0
-# Integer
+	LOGICAL :: $0
+# INTEGER
 snippet int
-	integer :: $0
+	INTEGER :: $0
 snippet real
-	real :: $0
-# Double Precision
+	REAL :: $0
+# DOUBLE PRECISION
 snippet double
-	double precision :: $0
-# Char
+	DOUBLE PRECISION :: $0
+# CHAR
 snippet str
-	character(len=${1:*}) :: ${0:}
-# Types
+	CHARACTER(LEN=${1:*}) :: ${0:}
+# TYPES
 snippet type
-	type(${1:name})
+	TYPE(${1:name})
 		$0
-	end type
+	END TYPE
 snippet const
-	${1:type}, parameter :: $2 = $0
+	${1:type}, PARAMETER :: $2 = $0
 snippet arr
-	${1:type}, allocatable, dimension(${2::}) :: $0
+	${1:type}, ALLOCATABLE, DIMENSION(${2::}) :: $0
 snippet intent
-	${1:type}, intent(inout) :: $0
-# Array
+	${1:type}, INTENT(INOUT) :: $0
+# ARRAY
 snippet /
 	(/ $1 /) ${2:,&} $0
 snippet if
-	if (${1:condition}) then
+	IF (${1:condition}) THEN
 		$2
-	end if
+	END IF
 snippet case
-	select case (${1:expr})
-		case ($2)
-		case default
+	SELECT CASE (${1:expr})
+		CASE ($2)
+		CASE DEFAULT
 			$3
-	end select $0
+	END SELECT $0
 snippet do
-	do ${1:i} = ${2:start}, ${3:end}, ${4:incr}
+	DO ${1:i} = ${2:start}, ${3:end}, ${4:incr}
 		$4
-	end do
+	END DO
 snippet dow
-	do while (${1:condition})
+	DO WHILE (${1:condition})
 		$2
-	end do
+	END DO
 snippet sub
-	subroutine ${1:name}($2)
+	SUBROUTINE ${1:name}($2)
 		$0
-	end subroutine $1
+	END SUBROUTINE $1
 snippet func
-	function ${1:name}($2) result($3)
+	FUNCTION ${1:name}($2) RESULT($3)
 		$0
-	end function $1
+	END FUNCTION $1
 snippet pr
-	write(*,*) $0
+	WRITE(*,*) $0
 snippet read
-	read(unit = ${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) $0
+	READ(UNIT = ${1:fp}, FILE = ${2:filename}, IOSTAT = ${3:ierr}) $0
 snippet write
-	write(unit = ${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) $0
+	WRITE(UNIT = ${1:fp}, FILE = ${2:filename}, IOSTAT = ${3:ierr}) $0
 snippet open
-	open(unit = ${1:fp}, file = ${2:filename}, status = ${3:unknown}, iostat = ${4:ierr}) $0
+	OPEN(UNIT = ${1:fp}, FILE = ${2:filename}, STATUS = ${3:unknown}, IOSTAT = ${4:ierr}) $0
 snippet close
-	close(unit = ${1:fp}) $0
+	CLOSE(UNIT = ${1:fp}) $0
