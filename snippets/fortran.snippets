@@ -66,7 +66,7 @@ snippet case
 			$3
 	end select $0
 snippet do
-	do ${1:i} = ${2:start},${3:end}, ${4:incr}
+	do ${1:i} = ${2:start}, ${3:end}, ${4:incr}
 		$4
 	end do
 snippet dow
@@ -84,10 +84,10 @@ snippet func
 snippet pr
 	write(*,*) $0
 snippet read
-	read( unit = ${1:fp}, file = ${2:filename}${3:, iostat = IERR }) $0
+	read(unit = ${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) $0
 snippet write
-	write( unit = ${1:fp}, file = ${2:filename}${3:, iostat = IERR }) $0
+	write(unit = ${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) $0
 snippet open
-	open (unit = ${1:fp}, file = ${2:filename}, status = unknown${3:, iostat = IERR }) $0
+	open(unit = ${1:fp}, file = ${2:filename}, status = ${3:unknown}, iostat = ${4:ierr}) $0
 snippet close
-	close ( unit = ${1:fp} ) $0
+	close(unit = ${1:fp}) $0
