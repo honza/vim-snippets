@@ -1,3 +1,12 @@
+snippet doc
+	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	! File: ${2:`vim_snippets#Filename('$1')`}
+	! Author: `g:snips_author`
+	! Email: `g:snips_email`
+	! Github: `g:snips_github`
+	! Description: $1
+	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	$0
 snippet impl
 	implicit none
 		$0
@@ -17,15 +26,6 @@ snippet iface
 	interface ${1:name}
 		${0}
 	end interface $1
-snippet doc
-	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-	! File: ${2:`vim_snippets#Filename('$1')`}
-	! Author: `g:snips_author`
-	! Email: `g:snips_email`
-	! Github: `g:snips_github`
-	! Description: $1
-	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-	$0
 # Variables definitions
 # Boolean
 snippet bool
