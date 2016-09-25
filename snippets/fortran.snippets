@@ -1,3 +1,22 @@
+snippet impl
+	implicit none
+		$0
+snippet prog
+	program ${1:main}
+		$0
+	end program $1
+snippet mod
+	module ${1:modulename}
+		$0
+	end module $1
+snippet proc
+	procedure ${1:name}
+		${0}
+	end procedure $1
+snippet iface
+	interface ${1:name}
+		${0}
+	end interface $1
 snippet doc
 	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 	! File: ${2:`vim_snippets#Filename('$1')`}
@@ -7,87 +26,68 @@ snippet doc
 	! Description: $1
 	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 	$0
-snippet impl
-	IMPLICIT NONE
-		$0
-snippet prog
-	PROGRAM ${1:main}
-		$0
-	END PROGRAM $1
-snippet mod
-	MODULE ${1:modulename}
-		$0
-	END MODULE $1
-snippet proc
-	PROCEDURE ${1:name}
-		${0}
-	END PROCEDURE $1
-snippet iface
-	INTERFACE ${1:name}
-		${0}
-	END INTERFACE $1
-# VARIABLES DEFINITIONS
-# BOOLEAN
+# Variables definitions
+# Boolean
 snippet bool
-	LOGICAL :: $0
-# INTEGER
+	logical :: $0
+# Integer
 snippet int
-	INTEGER :: $0
+	integer :: $0
 snippet real
-	REAL :: $0
-# DOUBLE PRECISION
+	real :: $0
+# Double Precision
 snippet double
-	DOUBLE PRECISION :: $0
-# CHAR
+	double precision :: $0
+# Char
 snippet str
-	CHARACTER(LEN=${1:*}) :: ${0:}
-# TYPES
+	character(len=${1:*}) :: ${0:}
+# Types
 snippet type
-	TYPE(${1:name})
+	type(${1:name})
 		$0
-	END TYPE
+	end type
 snippet const
-	${1:type}, PARAMETER :: $2 = $0
+	${1:type}, parameter :: $2 = $0
 snippet arr
-	${1:type}, ALLOCATABLE, DIMENSION(${2::}) :: $0
+	${1:type}, allocatable, dimension(${2::}) :: $0
 snippet intent
-	${1:type}, INTENT(INOUT) :: $0
-# ARRAY
+	${1:type}, intent(inout) :: $0
+# Array
 snippet /
 	(/ $1 /) ${2:,&} $0
 snippet if
-	IF (${1:condition}) THEN
-		$0
-	END IF
-snippet case
-	SELECT CASE (${1:expr})
-		CASE ($2)
-		CASE DEFAULT
-			$3
-	END SELECT $0
-snippet do
-	DO ${1:i} = ${2:start}, ${3:end}, ${4:incr}
-		$0
-	END DO
-snippet dow
-	DO WHILE (${1:condition})
+	if (${1:condition}) then
 		$2
-	END DO
+	end if
+snippet case
+	select case (${1:expr})
+		case ($2)
+		case default
+			$3
+	end select $0
+snippet do
+	do ${1:i} = ${2:start},${3:end}, ${4:incr}
+		$4
+	end do
+snippet dow
+	do while (${1:condition})
+		$2
+	end do
 snippet sub
-	SUBROUTINE ${1:name}($2)
+	subroutine ${1:name}($2)
 		$0
-	END SUBROUTINE $1
+	end subroutine $1
 snippet func
-	FUNCTION ${1:name}($2) RESULT($3)
+	function ${1:name}($2) result($3)
 		$0
-	END FUNCTION $1
+	end function $1
 snippet pr
-	WRITE(*,*) $0
+	write(*,*) $0
 snippet read
-	READ(UNIT = ${1:fp}, FILE = ${2:filename}, IOSTAT = ${3:ierr}) $0
+	read( unit = ${1:fp}, file = ${2:filename}${3:, iostat = IERR }) $0
 snippet write
-	WRITE(UNIT = ${1:fp}, FILE = ${2:filename}, IOSTAT = ${3:ierr}) $0
+	write( unit = ${1:fp}, file = ${2:filename}${3:, iostat = IERR }) $0
 snippet open
-	OPEN(UNIT = ${1:fp}, FILE = ${2:filename}, STATUS = ${3:unknown}, IOSTAT = ${4:ierr}) $0
+	open (unit = ${1:fp}, file = ${2:filename}, status = unknown${3:, iostat = IERR }) $0
 snippet close
-	CLOSE(UNIT = ${1:fp}) $0
+	close ( unit = ${1:fp} ) $0
