@@ -57,7 +57,7 @@ snippet /
 	(/ $1 /) ${2:,&} $0
 snippet if
 	if (${1:condition}) then
-		$2
+		$0
 	end if
 snippet case
 	select case (${1:expr})
@@ -67,7 +67,7 @@ snippet case
 	end select $0
 snippet do
 	do ${1:i} = ${2:start}, ${3:end}, ${4:incr}
-		$4
+		$0
 	end do
 snippet dow
 	do while (${1:condition})
