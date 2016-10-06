@@ -18,6 +18,24 @@ snippet clac
 			${0}
 		}
 	}
+# For of loop
+snippet foro
+	for (let ${1:prop} of ${2:object}) {
+		${0:$1}
+	}
+# Generator
+snippet fun*
+	function* ${1:function_name}(${2}) {
+		${0}
+	}
+snippet c=>
+	const ${1:function_name} = (${2}) => {
+		${0}
+	}
+snippet caf
+	const ${1:function_name} = (${2}) => {
+		${0}
+	}
 snippet =>
 	(${1}) => {
 		${0}
