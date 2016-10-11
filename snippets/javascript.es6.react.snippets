@@ -1,0 +1,57 @@
+# Import only React
+snippet ri1
+	import React from 'react'
+
+# Import both React and Component
+snippet ri2
+	import React, { Component } from 'react'
+
+# React class
+snippet rcla
+	class ${1:MyComponent} extends Component {
+		render() {
+			return (
+				${0:<div></div>}
+			)
+		}
+	}
+
+# React constructor
+snippet rcon
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			${1}: ${0},
+		}
+	}
+
+# Presentational component
+snippet rcom
+	(props) => {
+		return (
+			${0:<div></div>}
+		)
+	}
+
+# Lifecycle Methods
+snippet rcdm
+	componentDidMount() {
+		${0}
+	}
+
+# State
+snippet rsst
+	this.setState({
+		${1}: ${0},
+	})
+
+snippet rtst
+	this.state.${0}
+
+# Props
+snippet rp
+	props.${0}
+
+snippet rtp
+	this.props.${0}
