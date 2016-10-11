@@ -8,10 +8,10 @@ snippet ri2
 
 # React class
 snippet rcla
-	class ${1} extends Component {
+	class ${1:MyComponent} extends Component {
 		render() {
 			return (
-				${0}
+				${0:<div></div>}
 			)
 		}
 	}
@@ -22,7 +22,7 @@ snippet rcon
 		super(props)
 
 		this.state = {
-			${1}
+			${1}: ${0},
 		}
 	}
 
@@ -30,28 +30,28 @@ snippet rcon
 snippet rcom
 	(props) => {
 		return (
-			${1}
+			${0:<div></div>}
 		)
 	}
 
 # Lifecycle Methods
 snippet rcdm
 	componentDidMount() {
-		${1}
+		${0}
 	}
 
 # State
 snippet rsst
 	this.setState({
-		${1}: ${2}
+		${1}: ${0},
 	})
 
-snippet rst
-	this.state.${1}
+snippet rtst
+	this.state.${0}
 
 # Props
 snippet rp
-	props.${1}
+	props.${0}
 
 snippet rtp
-	this.props.${1}
+	this.props.${0}
