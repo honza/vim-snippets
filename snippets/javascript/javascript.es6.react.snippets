@@ -6,15 +6,13 @@ snippet ri1
 snippet ri2
 	import React, { Component } from 'react'
 
-# Import ReactDOM
-snippet ri3
-	import ReactDOM from 'react-dom'
-
 # React class
 snippet rcla
 	class ${1} extends Component {
 		render() {
-			${0}
+			return (
+				${0}
+			)
 		}
 	}
 
@@ -27,3 +25,33 @@ snippet rcon
 			${1}
 		}
 	}
+
+# Presentational component
+snippet rcom
+	(props) => {
+		return (
+			${1}
+		)
+	}
+
+# Lifecycle Methods
+snippet rcdm
+	componentDidMount() {
+		${1}
+	}
+
+# State
+snippet rsst
+	this.setState({
+		${1}: ${2}
+	})
+
+snippet rst
+	this.state.${1}
+
+# Props
+snippet rp
+	props.${1}
+
+snippet rtp
+	this.props.${1}
