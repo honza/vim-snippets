@@ -1,0 +1,29 @@
+# Import only React
+snippet ri1
+	import React from 'react'
+
+# Import both React and Component
+snippet ri2
+	import React, { Component } from 'react'
+
+# Import ReactDOM
+snippet ri3
+	import ReactDOM from 'react-dom'
+
+# React class
+snippet rcla
+	class ${1} extends Component {
+		render() {
+			${0}
+		}
+	}
+
+# React constructor
+snippet rcon
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			${1}
+		}
+	}
