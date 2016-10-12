@@ -1,17 +1,19 @@
 # Import only React
 snippet ri1
-	import React from 'react'
+	import React from 'react'${0}
 
 # Import both React and Component
 snippet ri2
-	import React, { Component } from 'react'
+	import React, { Component } from 'react'${0}
 
 # React class
 snippet rcla
 	class ${1:MyComponent} extends Component {
 		render() {
 			return (
-				${0:<div></div>}
+				<div>
+					${0}
+				</div>
 			)
 		}
 	}
@@ -22,17 +24,19 @@ snippet rcon
 		super(props)
 
 		this.state = {
-			${1}: ${0},
+			${1:foo}: ${0:'foo'},
 		}
 	}
 
 # Presentational component
 snippet rcom
-	(props) => {
-		return (
-			${0:<div></div>}
-		)
-	}
+(props) => {
+	return (
+		<div>
+			${0}
+		</div>
+	)
+}
 
 # Lifecycle Methods
 snippet rcdm
@@ -41,12 +45,12 @@ snippet rcdm
 	}
 
 # State
-snippet rsst
+snippet rtss
 	this.setState({
-		${1}: ${0},
+		${1:foo}: ${0:'foo'},
 	})
 
-snippet rtst
+snippet rts
 	this.state.${0}
 
 # Props
