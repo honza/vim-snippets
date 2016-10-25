@@ -4,7 +4,7 @@ snippet ri1
 
 # Import both React and Component
 snippet ri2
-	import React, { Component } from 'react'
+	import React, { Component, PropTypes } from 'react'
 
 # React class
 snippet rcla
@@ -26,12 +26,35 @@ snippet rcon
 		}
 	}
 
+# Proptypes for React Class
+snippet rcpt
+	static propTypes = {
+		${1:prop}: PropType.${0:type}
+	}
+
+# Default props for React Class
+snipet rcdp
+	static defaultProps = {
+		${1:prop}: ${0:'value'}
+	}
+
 # Presentational component
 snippet rcom
 	(props) => {
 		return (
 			${0:<div></div>}
 		)
+	}
+# Proptypes for Presentational component
+snippet rpt
+	${1}.propTypes = {
+		${2:prop}: PropType.${0:type}
+	}
+
+# Default props for Presentational component
+snippet rdp
+	${1}.defaultProps = {
+		${2:prop}: ${0:'value'}
 	}
 
 # Lifecycle Methods
