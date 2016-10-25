@@ -29,13 +29,13 @@ snippet rcon
 # Proptypes for React Class
 snippet rcpt
 	static propTypes = {
-		${1:prop}: PropType.${0:type}
+		${1:prop}: PropTypes.${0:type},
 	}
 
 # Default props for React Class
-snipet rcdp
+snippet rcdp
 	static defaultProps = {
-		${1:prop}: ${0:'value'}
+		${1:prop}: ${0:'value'},
 	}
 
 # Presentational component
@@ -45,16 +45,17 @@ snippet rcom
 			${0:<div></div>}
 		)
 	}
+
 # Proptypes for Presentational component
 snippet rpt
 	${1}.propTypes = {
-		${2:prop}: PropType.${0:type}
+		${2:prop}: PropTypes.${0:type},
 	}
 
 # Default props for Presentational component
 snippet rdp
 	${1}.defaultProps = {
-		${2:prop}: ${0:'value'}
+		${2:prop}: ${0:'value'},
 	}
 
 # Lifecycle Methods
