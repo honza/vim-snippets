@@ -28,21 +28,17 @@ snippet cwu
 	}
 snippet fup
 	forceUpdate(${1:callback});
-snippet gdp
-	getDefaultProps() {
-		return {
-			${1}
-		};
+snippet dp
+	static defaultProps = {
+		${1}: ${2},
 	}
-snippet gis
-	getInitialState() {
-		return {
-			${1}: ${2}
-		};
+snippet st
+	state = {
+		${1}: ${2},
 	}
 snippet pt
-	propTypes: {
-		${1}: React.PropTypes.${2:string}
+	static propTypes = {
+		${1}: React.PropTypes.${2:type},
 	}
 snippet rcc
 	class ${1:ClassName} extends React.Component {
