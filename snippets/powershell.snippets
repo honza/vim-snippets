@@ -1,0 +1,34 @@
+# Snippets for 
+# Authored by Trevor Sullivan <trevor@trevorsullivan.net>
+
+# PowerShell Class
+snippet class
+	class {
+	  [string] ${0:FirstName}
+	}
+
+# PowerShell Advanced Function 
+snippet function
+	function {0:name} {
+	  [CmdletBinding()]
+	  param (
+	    [Parameter(Mandatory = $true)]
+	    [string] $Param1
+	  )
+
+	  begin {
+	  }
+
+	  process {
+	  }
+
+	  end {
+	  }
+	}
+
+# PowerShell Splatting
+	$Params = @{
+	  ${0:Param1} = 'Value1'
+	  ${1:Param2} = 'Value2'
+	}
+	${3:CommandName}
