@@ -79,7 +79,7 @@ snippet mu
 # class
 snippet cl
 	/*! \class $1 
-	 *  \brief ${3:Brief struct description}
+	 *  \brief ${3:Brief class description}
 	 * 
 	 *  ${4:Detailed description} 	
 	 */
@@ -89,14 +89,19 @@ snippet cl
 		$1(${2});
 		virtual ~$1();
 
-	private:
+	protected:
 		m_${5}; /*!< ${6:Member description} */
 	};
+# member function implementation
+snippet mfun
+	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
+		${0}
+	}
 # member function implementation without parameters
-snippet mfun0
+snippet dmfun0
 	/*! \brief ${4:Brief function description here}
 	 *
-	 *  ${5:Detailed description of the function}
+	 *  ${5:Detailed description}
 	 * 
 	 * \return ${6:Return parameter description}
 	 */
@@ -104,10 +109,10 @@ snippet mfun0
 		${0}
 	}
 # member function implementation with one parameter
-snippet mfun1
+snippet dmfun1
 	/*! \brief ${6:Brief function description here}
 	 *
-	 *  ${7:Detailed description of the function}
+	 *  ${7:Detailed description}
 	 * 
 	 * \param $4 ${8:Parameter description}
 	 * \return ${9:Return parameter description}
@@ -116,10 +121,10 @@ snippet mfun1
 		${0}
 	}
 # member function implementation with two parameter
-snippet mfun2
+snippet dmfun2
 	/*! \brief ${8:Brief function description here}
 	 *
-	 *  ${9:Detailed description of the function}
+	 *  ${9:Detailed description}
 	 * 
 	 * \param $4 ${10:Parameter description}
 	 * \param $6 ${11:Parameter description}
@@ -188,5 +193,13 @@ snippet lld
 	[${1}](${2}){
 		${3}
 	};
+# snippets exception 
+snippet try
+	try {
+		
+	}catch(${1}) {
+		
+	}
+
 
 

@@ -125,13 +125,19 @@ snippet do
 ##
 ## Functions
 # function definition
-#snippet fun
-#	${1:void} ${2:function_name}(${3})
-#	{
-#		${4}
-#	}
+snippet fun
+	${1:void} ${2:function_name}(${3})
+	{
+		${4}
+	}
 # function definition with zero parameters
 snippet fun0
+	${1:void} ${2:function_name}()
+	{
+		${3}
+	}
+# function definition with Doxygen documentation
+snippet dfun0
 	/*! \brief ${1:Brief function description here}
 	 *
 	 *  ${2:Detailed description of the function}
@@ -144,6 +150,12 @@ snippet fun0
 	}
 # function definition with one parameter
 snippet fun1
+	${1:void} ${2:function_name}(${3:Type} ${4:Parameter})
+	{
+		${5}
+	}
+# function definition with one parameter with  Doxygen documentation
+snippet dfun1
 	/*! \brief ${1:Brief function description here}
 	 *
 	 *  ${2:Detailed description of the function}
@@ -155,9 +167,14 @@ snippet fun1
 	{
 		${9}
 	}
-
 # function definition with two parameters
 snippet fun2
+	${1:void} ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter})
+	{
+		${7}
+	}
+# function definition with two parameters with  Doxygen documentation
+snippet dfun2
 	/*! \brief ${1:Brief function description here}
 	 *
 	 *  ${2:Detailed description of the function}
@@ -170,9 +187,14 @@ snippet fun2
 	{
 		${12}
 	}
-
 # function definition with two parameters
 snippet fun3
+	${1:void} ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}, ${7:Type} ${8:Parameter})
+	{
+		${9}
+	}
+# function definition with two parameters with  Doxygen documentation
+snippet dfun3
 	/*! \brief ${1:Brief function description here}
 	 *
 	 *  ${2:Detailed description of the function}
@@ -186,7 +208,6 @@ snippet fun3
 	{
 		${15}
 	}
-
 # function declaration
 snippet fund
 	${1:void} ${2:function_name}(${3});
@@ -312,24 +333,3 @@ snippet todo
 # This is kind of convenient
 snippet .
 	[${1}]
-# GPL v3
-snippet gpl3
-	/* 
-	 * ${1:`expand('%:t')`}
-	 *
-	 * Copyright (C) ${2:Year} ${3:Developer name} <${4:E-mail}>
-	 *
-	 * This program is free software; you can redistribute it and/or modify
-	 * it under the terms of the GNU General Public License as published by
-	 * the Free Software Foundation; either version 3 of the License, or
-	 * (at your option) any later version.
-	 *
-	 * This program is distributed in the hope that it will be useful,
-	 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-	 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	 * GNU General Public License for more details.
-	 *
-	 * You should have received a copy of the GNU General Public License
-	 * along with this program. If not, see <http://www.gnu.org/licenses/>.
-	 *
-	 */
