@@ -78,18 +78,54 @@ snippet mu
 ## Class
 # class
 snippet cl
+	/*! \class $1 
+	 *  \brief ${3:Brief struct description}
+	 * 
+	 *  ${4:Detailed description} 	
+	 */
 	class ${1:`vim_snippets#Filename('$1', 'name')`}
 	{
 	public:
 		$1(${2});
-		~$1();
+		virtual ~$1();
 
 	private:
-		${0:/* data */}
+		m_${5}; /*!< ${6:Member description} */
 	};
-# member function implementation
-snippet mfun
-	${4:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
+# member function implementation without parameters
+snippet mfun0
+	/*! \brief ${4:Brief function description here}
+	 *
+	 *  ${5:Detailed description of the function}
+	 * 
+	 * \return ${6:Return parameter description}
+	 */
+	${3:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}() {
+		${0}
+	}
+# member function implementation with one parameter
+snippet mfun1
+	/*! \brief ${6:Brief function description here}
+	 *
+	 *  ${7:Detailed description of the function}
+	 * 
+	 * \param $4 ${8:Parameter description}
+	 * \return ${9:Return parameter description}
+	 */
+	${5:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter}) {
+		${0}
+	}
+# member function implementation with two parameter
+snippet mfun2
+	/*! \brief ${8:Brief function description here}
+	 *
+	 *  ${9:Detailed description of the function}
+	 * 
+	 * \param $4 ${10:Parameter description}
+	 * \param $6 ${11:Parameter description}
+	 * \return ${12:Return parameter description}
+	 */
+	${7:void} ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter},${5:Type} ${6:Parameter}) {
 		${0}
 	}
 # namespace
@@ -152,3 +188,5 @@ snippet lld
 	[${1}](${2}){
 		${3}
 	};
+
+
