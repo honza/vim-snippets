@@ -122,6 +122,10 @@ snippet include "" bi
 {% include "${1}" %}
 endsnippet
 
+snippet includew "" bi
+{% include "${1}" ${2:with ${3:var} = ${4:val}} ${5:only} %}
+endsnippet
+
 snippet load "" bi
 {% load ${1} %}
 endsnippet
@@ -156,13 +160,13 @@ endsnippet
 
 snippet with "" bi
 {% with ${1} as ${2} %}
-	${VISUAL}
+	${VISUAL}$3
 {% endwith %}
 endsnippet
 
 snippet verbatim "" bi
 {% verbatim %}
-	${VISUAL}
+	${VISUAL}$1
 {% endverbatim %}
 endsnippet
 
@@ -175,15 +179,15 @@ snippet staticu "" bi
 endsnippet
 
 snippet static "" bi
-{% static "${VISUAL}" %}
+{% static "${VISUAL}$1" %}
 endsnippet
 
 snippet mediau "" bi
 {{ MEDIA_URL }}
 endsnippet
 
-snippet iblock "" bi
-{% block ${1:blockname} %}${VISUAL}{% endblock $1 %}
+snippet iblock "" iw
+{% block ${1:blockname} %}${VISUAL}$2{% endblock $1 %}
 endsnippet
 
 snippet csrf "" bi
@@ -192,12 +196,18 @@ endsnippet
 
 snippet blocktrans "" bi
 {% blocktrans %}
-    ${VISUAL}
+	${VISUAL}$1
 {% endblocktrans %}
 endsnippet
 
 snippet lorem "" bi
 {% lorem ${1} %}
+endsnippet
+
+snippet cache "" bi
+{% cache ${1:duration} ${2:cache_name} %}
+	${VISUAL}$3
+{% endcache %}
 endsnippet
 
 # Template Filters
@@ -208,91 +218,91 @@ endsnippet
 
 # Note: Template tags that take no arguments are not implemented.
 
-snippet add "" bi
+snippet add "" iw
 add:"${1}"
 endsnippet
 
-snippet center "" bi
+snippet center "" iw
 center:"${1}"
 endsnippet
 
-snippet cut "" bi
+snippet cut "" iw
 cut:"${1}"
 endsnippet
 
-snippet date "" bi
+snippet date "" iw
 date:"${1}"
 endsnippet
 
-snippet default "" bi
+snippet default "" iw
 default:"${1}"
 endsnippet
 
-snippet defaultifnone "" bi
+snippet defaultifnone "" iw
 default_if_none:"${1}"
 endsnippet
 
-snippet dictsort "" bi
+snippet dictsort "" iw
 dictsort:"${1}"
 endsnippet
 
-snippet dictsortrev "" bi
+snippet dictsortrev "" iw
 dictsortreversed:"${1}"
 endsnippet
 
-snippet divisibleby "" bi
+snippet divisibleby "" iw
 divisibleby:"${1}"
 endsnippet
 
-snippet floatformat "" bi
+snippet floatformat "" iw
 floatformat:"${1}"
 endsnippet
 
-snippet getdigit "" bi
+snippet getdigit "" iw
 get_digit:"${1}"
 endsnippet
 
-snippet join "" bi
+snippet join "" iw
 join:"${1}"
 endsnippet
 
-snippet lengthis "" bi
+snippet lengthis "" iw
 length_is:"${1}"
 endsnippet
 
-snippet pluralize "" bi
+snippet pluralize "" iw
 pluralize:"${1}"
 endsnippet
 
-snippet removetags "" bi
+snippet removetags "" iw
 removetags:"${1}"
 endsnippet
 
-snippet slice "" bi
+snippet slice "" iw
 slice:"${1}"
 endsnippet
 
-snippet stringformat "" bi
+snippet stringformat "" iw
 stringformat:"${1}"
 endsnippet
 
-snippet time "" bi
+snippet time "" iw
 time:"${1}"
 endsnippet
 
-snippet truncatewords "" bi
+snippet truncatewords "" iw
 truncatewords:${1}
 endsnippet
 
-snippet truncatewordshtml "" bi
+snippet truncatewordshtml "" iw
 truncatewords_html:${1}
 endsnippet
 
-snippet urlizetrunc "" bi
+snippet urlizetrunc "" iw
 urlizetrunc:${1}
 endsnippet
 
-snippet wordwrap "" bi
+snippet wordwrap "" iw
 wordwrap:${1}
 endsnippet
 
