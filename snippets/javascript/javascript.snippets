@@ -240,33 +240,46 @@ snippet qsa
 # Debugging
 snippet de
 	debugger;
-# console.log
-snippet cl
+snippet cl "console.log"
 	console.log(${0});
-# console.debug
-snippet cd
+snippet cd "console.debug"
 	console.debug(${0});
-# console.error
-snippet ce
+snippet ce "console.error"
 	console.error(${0});
-# console.warn
-snippet cw
+snippet cw "console.warn"
 	console.warn(${0});
-# console.info
-snippet ci
+snippet ci "console.info"
 	console.info(${0});
-# console.trace
-snippet ct
+snippet ct "console.trace"
 	console.trace(${0:label});
-# console.time
-snippet ctime
-	console.time(${0:label});
-# console.assert
-snippet ca
+snippet ctime "console.time ... console.timeEnd"
+	console.time("${1:label}");
+	${0:${VISUAL}}
+	console.timeEnd("$1");
+snippet ctimestamp "console.timeStamp"
+	console.timeStamp("${1:label}");
+snippet ca "console.assert"
 	console.assert(${1:expression}, ${0:obj});
-# console.dir
-snippet cdir
+snippet cclear "console.clear"
+	console.clear();
+snippet cdir "console.dir"
 	console.dir(${0:obj});
+snippet cdirx "console.dirxml"
+	console.dirxml(${1:object});
+snippet cgroup "console.group"
+	console.group("${1:label}");
+	${0:${VISUAL}}
+	console.groupEnd();
+snippet cgroupc "console.groupCollapsed"
+	console.groupCollapsed("${1:label}");
+	${0:${VISUAL}}
+	console.groupEnd();
+snippet cprof "console.profile"
+	console.profile("${1:label}");
+	${0:${VISUAL}}
+	console.profileEnd();
+snippet ctable "console.table"
+	console.table(${1:"${2:value}"});
 # Misc
 # 'use strict';
 snippet us
