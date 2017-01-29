@@ -65,6 +65,18 @@ ${VISUAL}$0
 #endif /* end of include guard: $1 */
 endsnippet
 
+snippet nocxx "Disable C++ name mangling in C headers" b
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+${VISUAL}$0
+
+#ifdef __cplusplus
+} /* extern "C" */
+#endif
+endsnippet
+
 snippet fprintf "fprintf ..."
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
