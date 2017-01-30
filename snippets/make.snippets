@@ -46,5 +46,5 @@ snippet default
 # help target for self-documented Makefile
 snippet help
 	help: ## Prints help for targets with comments
-		@echo $(MAKEFILE_LIST) | xargs cat | grep -E '^[a-zA-Z_-]+:.*?## .*$$' | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+		@echo $(MAKEFILE_LIST) | xargs cat | grep -E '^[a-zA-Z_-]+:.*?## .*$$' | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 	${0}
