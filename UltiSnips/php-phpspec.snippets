@@ -25,7 +25,7 @@ snip.rv = re.match(r'.*(?=\.)', fn).group()
 {
 	function it_$1()
 	{
-		$0
+		${0:${VISUAL}}
 	}
 }
 endsnippet
