@@ -18,17 +18,17 @@ snippet pdef
 	end
 snippet if
 	if ${1:condition}
-		${0}
+		${0:${VISUAL}}
 	end
 snippet ife
 	if ${1:condition}
-		${2}
+		${2:${VISUAL}}
 	else
 		${0}
 	end
 snippet wh
 	while ${1:condition}
-		${0}
+		${0:${VISUAL}}
 	end
 snippet cla class .. end
 	class ${1:`substitute(vim_snippets#Filename(), "\(_\|^\)\(.\)", "\u\2", "g")`}
@@ -66,7 +66,7 @@ snippet defi
 	end
 snippet do
 	do
-		${0}
+		${0:${VISUAL}}
 	end
 snippet dov
 	do |${1:v}|
