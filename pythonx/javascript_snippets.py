@@ -34,3 +34,15 @@ def space_before_function_paren(snip):
     else:
         ret = ''
     return ret
+
+
+def keyword_spacing(snip):
+    option = get_option(snip, 'keyword-spacing', ALWAYS)
+
+    if option == NEVER:
+        ret = ''
+    elif option == ALWAYS:
+        ret = ' '
+    else:
+        ret = ''
+    return ret
