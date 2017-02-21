@@ -10,7 +10,7 @@ priority -50
 
 global !p
 from javascript_snippets import (
-	semi, space_before_function_paren
+	semi, space_before_function_paren, keyword_spacing
 )
 endglobal
 
@@ -85,29 +85,29 @@ setTimeout(function`!p snip.rv = space_before_function_paren(snip)`() {
 endsnippet
 
 snippet fi "for prop in obj using hasOwnProperty" b
-for (${1:prop} in ${2:obj}){
-	if ($2.hasOwnProperty($1)) {
+for`!p snip.rv = keyword_spacing(snip)`(${1:prop} in ${2:obj}){
+	if`!p snip.rv = keyword_spacing(snip)`($2.hasOwnProperty($1)) {
 		${VISUAL}$0
 	}
 }
 endsnippet
 
 snippet if "if (condition) { ... }"
-if (${1:true}) {
+if`!p snip.rv = keyword_spacing(snip)`(${1:true}) {
 	${VISUAL}$0
 }
 endsnippet
 
 snippet ife "if (condition) { ... } else { ... }"
-if (${1:true}) {
+if`!p snip.rv = keyword_spacing(snip)`(${1:true}) {
 	${VISUAL}$0
-} else {
+}`!p snip.rv = keyword_spacing(snip)`else`!p snip.rv = keyword_spacing(snip)`{
 	${2}
 }
 endsnippet
 
 snippet switch
-switch (${VISUAL}${1:expression}) {
+switch`!p snip.rv = keyword_spacing(snip)`(${VISUAL}${1:expression}) {
 	case '${VISUAL}${3:case}':
 		${4}
 		break`!p snip.rv = semi(snip)`
@@ -118,15 +118,15 @@ switch (${VISUAL}${1:expression}) {
 endsnippet
 
 snippet case "case 'xyz': ... break"
-case '${VISUAL}${1:case}':
+case`!p snip.rv = keyword_spacing(snip)`'${VISUAL}${1:case}':
 	${VISUAL}$0
 	break`!p snip.rv = semi(snip)`
 endsnippet
 
 snippet do "do { ... } while (condition)"
-do {
+do`!p snip.rv = keyword_spacing(snip)`{
 	${VISUAL}$0
-} while (${1:/* condition */})`!p snip.rv = semi(snip)`
+}`!p snip.rv = keyword_spacing(snip)`while`!p snip.rv = keyword_spacing(snip)`(${1:/* condition */})`!p snip.rv = semi(snip)`
 endsnippet
 
 snippet ret "Return statement"
