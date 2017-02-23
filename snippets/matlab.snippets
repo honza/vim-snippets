@@ -34,7 +34,7 @@ snippet parfor parfor
 	end
 
 snippet fun function
-	function [${3:out}] ${1:`vim_snippets#Filename("$1", "fun_name")`}(${2}) 
+	function [${3:out}] = ${1:`vim_snippets#Filename("$1", "fun_name")`}(${2}) 
 	${0}
 
 snippet try try ... catch
