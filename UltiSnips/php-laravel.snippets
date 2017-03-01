@@ -36,6 +36,8 @@ endsnippet
 
 #service service provider
 snippet l_ssp "Laravel service provider for service" b
+<?php
+
 /*!
  * \namespace   $1
  * \class       $2
@@ -51,9 +53,9 @@ use Illuminate\Support\ServiceProvider;
 class ${2:`!v expand('%:t:r')`} extends ServiceProvider {
     
     public function register() {
-        $this->app->bind('${4}Service', function ($app) {
-            return new ${5}(
-                $app->make('Repositories\\${6}Interface')
+        $this->app->bind('$4Service', function ($app) {
+            return new $5(
+                $app->make('Repositories\\$6Interface')
             );
         });
     }
@@ -62,6 +64,8 @@ endsnippet
 
 #repository service provider
 snippet l_rsp "Laravel service provider for repository" b
+<?php
+
 /*!
  * \namespace   $2
  * \class       $3
@@ -100,6 +104,8 @@ endsnippet
 
 #model
 snippet l_md "Laravel simple model" b
+<?php
+
 /*!
  * \namespace   $1
  * \class       $2
@@ -115,14 +121,16 @@ class ${2:`!v expand('%:t:r')`} extends \Eloquent {
 
     public $timestamps = ${5:false};
 
-    protected $hidden  = array(${6});
+    protected $hidden  = [$6];
 
-    protected $guarded = array(${7:'id'});
+    protected $guarded = [${7:'id'}];
 }
 endsnippet
 
 #abstract repository
 snippet l_ar "Laravel abstract Repository" b
+<?php
+
 /*!
  * \namespace   $1
  * \class       $2
@@ -154,7 +162,7 @@ abstract class ${2:`!v expand('%:t:r')`} implements ${3:BaseRepositoryInterface}
      *
      * \return  Illuminate\Database\Eloquent\Collection
      */
-    public function all($columns = array('*')) {
+    public function all($columns = ['*']) {
         return $this->model->all()->toArray();
     }
 
@@ -181,7 +189,7 @@ abstract class ${2:`!v expand('%:t:r')`} implements ${3:BaseRepositoryInterface}
      *
      * \return  mixed
      */
-    public function find($id, $columns = array('*')) {
+    public function find($id, $columns = ['*']) {
         return $this->model->find($id, $columns);
     }
 }
@@ -189,6 +197,8 @@ endsnippet
 
 #repository
 snippet l_r "Laravel Repository" b
+<?php
+
 /*!
  * \namespace   $1
  * \class       $3
@@ -198,15 +208,17 @@ snippet l_r "Laravel Repository" b
  * \date        `!v strftime('%d-%m-%y')`
  */
 
-namespace ${1:Repositories\\${2}};
+namespace ${1:Repositories\\$2};
 
-class ${3:`!v expand('%:t:r')`} extends \\${6} implements ${4:$3RepositoryInterface} {
-    ${7}
+class ${3:`!v expand('%:t:r')`} extends \\$6 implements ${4:$3RepositoryInterface} {
+    $7
 }
 endsnippet
 
 #service
 snippet l_s "Laravel Service" b
+<?php
+
 /*!
  * \namespace   $1
  * \class       $2
@@ -215,7 +227,7 @@ snippet l_s "Laravel Service" b
  * \date        `!v strftime('%d-%m-%y')`
  */
 
-namespace Services\\${1};
+namespace Services\\$1;
 
 use ${3:Repositories\\${4:Interface}};
 
@@ -233,6 +245,8 @@ endsnippet
 
 #facade
 snippet l_f "Laravel Facade" b
+<?php
+
 /*!
  * \namespace   $1
  * \class       $2
@@ -251,6 +265,6 @@ class ${2:`!v expand('%:t:r')`} extends Facade {
      *
      * \return      string
      */
-    protected static function getFacadeAccessor() { return '${4:${3}Service}'; }
+    protected static function getFacadeAccessor() { return '${4:$3Service}'; }
 }
 endsnippet
