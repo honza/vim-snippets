@@ -16,7 +16,7 @@ namespace ${1:MyNamespace}
 endsnippet
 
 snippet class "class" w
-class ${1:MyClass}
+${1:public} class ${2:MyClass}
 {
 	$0
 }
@@ -288,6 +288,10 @@ snippet cw "Console.WriteLine" b
 Console.WriteLine("$1");
 endsnippet
 
+snippet cr "Console.ReadLine" b
+Console.ReadLine();
+endsnippet
+
 # as you first type comma-separated parameters on the right, {n} values appear in the format string
 snippet cwp "Console.WriteLine with parameters" b
 Console.WriteLine("${2:`!p
@@ -319,14 +323,14 @@ endsnippet
 snippet mth "Method" b
 ${1:public} ${2:void} ${3:MyMethod}(${4})
 {
-	${5}
+	$0
 }
 endsnippet
 
-snippet mth "Static method" b
+snippet mths "Static method" b
 ${1:public} static ${2:void} ${3:MyMethod}(${4})
 {
-	${5}
+	$0
 }
 endsnippet
 
@@ -335,10 +339,11 @@ endsnippet
 ###############
 
 snippet ctor "Constructor" b
-${1:public} ${2:snip.basename}
+${1:public} ${2:`!p snip.rv = snip.basename or "untitled"`}(${3})
 {
-	${3}
+	$0
 }
+endsnippet
 
 ##############
 #  comments  #
@@ -346,12 +351,12 @@ ${1:public} ${2:snip.basename}
 
 snippet /// "XML summary comment" b
 /// <summary>
-/// $1
+/// $0
 /// </summary>
 endsnippet
 
 snippet <p "XML pramameter comment" b
-<param name="${1}">${2:$1}</param>
+<param name="${1}">${2}</param>
 endsnippet
 
 snippet <ex "XML exception comment" b
@@ -359,9 +364,9 @@ snippet <ex "XML exception comment" b
 endsnippet
 
 snippet <r "XML returns comment" b
-<returns>${1}</returns>
+<returns>$0</returns>
 endsnippet
 
 snippet <c "XML code comment" b
-<code>${1}</code>
+<code>$0</code>
 endsnippet
