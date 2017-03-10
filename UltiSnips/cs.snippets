@@ -300,9 +300,9 @@ MessageBox.Show("${1:message}");
 endsnippet
 
 
-##################
-#  full methods  #
-##################
+#############
+#  methods  #
+#############
 
 snippet equals "Equals method" b
 public override bool Equals(object obj)
@@ -316,6 +316,17 @@ public override bool Equals(object obj)
 }
 endsnippet
 
+snippet mth "Method" b
+${1:public} ${2:void} ${3:MyMethod}(${4})
+{
+	${5}
+}
+
+snippet mth "Static method" b
+${1:public} static ${2:void} ${3:MyMethod}(${4})
+{
+	${5}
+}
 
 ##############
 #  comments  #
