@@ -321,19 +321,37 @@ ${1:public} ${2:void} ${3:MyMethod}(${4})
 {
 	${5}
 }
+endsnippet
 
 snippet mth "Static method" b
 ${1:public} static ${2:void} ${3:MyMethod}(${4})
 {
 	${5}
 }
+endsnippet
 
 ##############
 #  comments  #
 ##############
 
-snippet /// "XML comment" b
+snippet /// "XML summary comment" b
 /// <summary>
 /// $1
 /// </summary>
+endsnippet
+
+snippet <p "XML pramameter comment" b
+<param name="${1}">${2:$1}</param>
+endsnippet
+
+snippet <ex "XML exception comment" b
+<exception cref="${1:System.Exception}">${2}</exception>
+endsnippet
+
+snippet <r "XML returns comment" b
+<returns>${1}</returns>
+endsnippet
+
+snippet <c "XML code comment" b
+<code>${1}</code>
 endsnippet
