@@ -42,12 +42,11 @@ snippet #if
 # header include guard
 snippet once
 	#ifndef ${1:`toupper(vim_snippets#Filename('$1_H', 'UNTITLED_H'))`}
-
 	#define $1
 
 	${0}
 
-	#endif /* end of include guard: $1 */
+	#endif /* $1 */
 ##
 ## Control Statements
 # if
@@ -80,18 +79,18 @@ snippet t
 # switch
 snippet switch
 	switch (${1:/* variable */}) {
-		case ${2:/* variable case */}:
-			${3}
-			${4:break;}${5}
-		default:
-			${6}
+	case ${2:/* variable case */}:
+		${3}
+		${4:break;}${5}
+	default:
+		${6}
 	}
 # switch without default
 snippet switchndef
 	switch (${1:/* variable */}) {
-		case ${2:/* variable case */}:
-			${3}
-			${4:break;}${5}
+	case ${2:/* variable case */}:
+		${3}
+		${4:break;}${5}
 	}
 # case
 snippet case
@@ -104,12 +103,16 @@ snippet ret
 ## Loops
 # for
 snippet for
-	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+	int ${2:i}
+
+	for (${2:i} = 0; $2 < ${1:count}; $2${3: += 1}) {
 		${4}
 	}
 # for (custom)
 snippet forr
-	for (int ${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
+	int ${1:i};
+
+	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4: += 1}) {
 		${5}
 	}
 # while
@@ -132,7 +135,7 @@ snippet fun
 	}
 # function definition with zero parameters
 snippet fun0
-	${1:void} ${2:function_name}()
+	${1:void} ${2:function_name}(void)
 	{
 		${3}
 	}
@@ -144,7 +147,7 @@ snippet dfun0
 	 *
 	 * \return ${3:Return parameter description}
 	 */
-	${4:void} ${5:function_name}()
+	${4:void} ${5:function_name}(void)
 	{
 		${6}
 	}
@@ -187,13 +190,13 @@ snippet dfun2
 	{
 		${12}
 	}
-# function definition with two parameters
+# function definition with three parameters
 snippet fun3
 	${1:void} ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}, ${7:Type} ${8:Parameter})
 	{
 		${9}
 	}
-# function definition with two parameters with  Doxygen documentation
+# function definition with three parameters with  Doxygen documentation
 snippet dfun3
 	/*! \brief ${1:Brief function description here}
 	 *
@@ -218,6 +221,11 @@ snippet td
 	typedef ${1:int} ${2:MyCustomType};
 # struct
 snippet st
+	struct ${1:`vim_snippets#Filename('_$1', 'name')`} {
+		${2:Data}
+	}
+# struct with documentation
+snippet std
 	/*! \struct $1
 	 *  \brief ${3:Brief struct description}
 	 *
@@ -228,6 +236,11 @@ snippet st
 	}${5: /* optional variable list */};
 # typedef struct
 snippet tds
+	typedef struct ${2:_$1 }{
+		${3:Data}
+	} ${1:`vim_snippets#Filename('$1', 'name')`};
+# typedef struct with documentation
+snippet tdsd
 	/*! \struct $2
 	 *  \brief ${5:Brief struct description}
 	 *
@@ -237,7 +250,11 @@ snippet tds
 		m_${3:Data} /*!< ${4:Description} */
 	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
 
+# enum
 snippet enum
+	enum ${1:name} { ${0} };
+# enum with documentation
+snippet enumd
 	/*! \enum $1
 	 *
 	 *  ${2:Detailed description}
@@ -245,6 +262,11 @@ snippet enum
 	enum ${1:name} { ${0} };
 # typedef enum
 snippet tde
+	typedef enum {
+		${1:Data}
+	} ${2:foo};
+# typedef enum with documentation
+snippet tded
 	/*! \enum $2
 	 *
 	 *  ${4:Detailed description}
