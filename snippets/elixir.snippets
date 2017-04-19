@@ -63,6 +63,16 @@ snippet wie
 		${4} ->
 			${0}
 	end
+snippet sp
+	@spec ${1:name}(${2:args}) :: ${3:returns}
+snippet op
+	@opaque ${1:type_name} :: ${2:type}
+snippet ty
+	@type ${1:type_name} :: ${2:type}
+snippet typ
+	@typep ${1:type_name} :: ${2:type}
+snippet cb
+	@callback ${1:name}(${2:args}) :: ${3:returns}
 snippet df
 	def ${1:name}, do: ${2}
 snippet def

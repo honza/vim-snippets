@@ -142,21 +142,6 @@ snippet mod module .. end
 	module ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
 		${0}
 	end
-snippet mod module .. ClassMethods .. end
-	module ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
-		module ClassMethods
-			${0}
-		end
-
-		module InstanceMethods
-
-		end
-
-		def self.included(receiver)
-			receiver.extend         ClassMethods
-			receiver.send :include, InstanceMethods
-		end
-	end
 # attr_reader
 snippet r
 	attr_reader :${0:attr_names}
@@ -718,9 +703,9 @@ snippet is
 snippet isn
 	it { should_not ${0} }
 snippet iexp
-	it { expect(${1:object}).${1} ${0} }
+	it { expect(${1:object}).${2} ${0} }
 snippet iexpb
-	it { expect { ${1:object} }.${1} ${0} }
+	it { expect { ${1:object} }.${2} ${0} }
 snippet iiexp
 	it { is_expected.to ${0} }
 snippet iiexpn
