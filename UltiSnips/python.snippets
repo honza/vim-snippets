@@ -11,6 +11,13 @@ snippet #! "Shebang header for python scripts" b
 $0
 endsnippet
 
+#!3 header
+snippet #!3 "Shebang header for python3 scripts" b
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+$0
+endsnippet
+
 snippet ifmain "ifmain" b
 if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
 	${1:${VISUAL:main()}}
