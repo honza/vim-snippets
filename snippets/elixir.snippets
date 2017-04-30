@@ -167,3 +167,15 @@ snippet qu
 snippet beh
 	@behaviour ${1:Mix.Task}
 	${0}
+snippet >e pipe to each
+	|> Enum.each(fn ${1} -> ${0} end)
+snippet >m pipe to map
+	|> Enum.map(fn ${1} -> ${0} end)
+snippet >f pipe to filter
+	|> Enum.filter(fn ${1} -> ${0} end)
+snippet >r pipe to reduce
+	|> Enum.reduce(${1:acc}, fn ${2}, ${3:acc} -> ${0} end)
+snippet >i pipe to inspect
+	|> IO.inspect
+snippet >il pipe to inspect with label
+	|> IO.inspect(label: "${1:label}")
