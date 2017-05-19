@@ -98,7 +98,7 @@ snippet fieldset "Fieldset" w
 </fieldset>
 endsnippet
 
-snippet form "XHTML <form>" w
+snippet form "HTML <form>" w
 <form action="${1:`!p
 snip.rv = (snip.basename or 'unnamed') + '_submit'
 `}" method="${2:get}" accept-charset="utf-8">
@@ -106,31 +106,31 @@ snip.rv = (snip.basename or 'unnamed') + '_submit'
 </form>
 endsnippet
 
-snippet h1 "XHTML <h1>" w
+snippet h1 "HTML <h1>" w
 <h1>${0:${VISUAL}}</h1>
 endsnippet
 
-snippet h2 "XHTML <h2>" w
+snippet h2 "HTML <h2>" w
 <h2>${0:${VISUAL}}</h2>
 endsnippet
 
-snippet h3 "XHTML <h3>" w
+snippet h3 "HTML <h3>" w
 <h3>${0:${VISUAL}}</h3>
 endsnippet
 
-snippet h4 "XHTML <h4>" w
+snippet h4 "HTML <h4>" w
 <h4>${0:${VISUAL}}</h4>
 endsnippet
 
-snippet h5 "XHTML <h5>" w
+snippet h5 "HTML <h5>" w
 <h5>${0:${VISUAL}}</h5>
 endsnippet
 
-snippet h6 "XHTML <h6>" w
+snippet h6 "HTML <h6>" w
 <h6>${0:${VISUAL}}</h6>
 endsnippet
 
-snippet head "XHTML <head>"
+snippet head "HTML <head>"
 <head>
 	<meta charset="utf-8">
 	<title>${1:`!p snip.rv = snip.basename or "Page Title"`}</title>
@@ -142,7 +142,7 @@ snippet input "Input with Label" w
 <label for="${2:${1/[[:alpha:]]+|( )/(?1:_:\L$0)/g}}">$1</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="$5"${6: id="${7:$2}"}`!p x(snip)`>
 endsnippet
 
-snippet input "HTML   <input>" w
+snippet input "HTML <input>" w
 <input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="$3"${4: id="${5:$2}"}`!p x(snip)`>
 endsnippet
 
@@ -150,7 +150,7 @@ snippet li "list item" w
 <li>${0:${VISUAL}}</li>
 endsnippet
 
-snippet link "XHTML <link>" w
+snippet link "HTML <link>" w
 <link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" title="${4:no title}" charset="${5:utf-8}"`!p x(snip)`>
 endsnippet
 
@@ -158,7 +158,7 @@ snippet mailto "HTML <a mailto: >" w
 <a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
 endsnippet
 
-snippet meta "XHTML <meta>" w
+snippet meta "HTML <meta>" w
 <meta name="${1:name}" content="${2:content}"`!p x(snip)`>
 endsnippet
 
@@ -198,13 +198,13 @@ snippet span. "<span> with class" w
 <span`!p snip.rv=' class="' if t[1] else ""`${1:name}`!p snip.rv = '"' if t[1] else ""`> ${0:${VISUAL}} </span>
 endsnippet
 
-snippet style "XHTML <style>" w
+snippet style "HTML <style>" w
 <style type="text/css" media="screen">
 	${0:${VISUAL}}
 </style>
 endsnippet
 
-snippet table "XHTML <table>" w
+snippet table "HTML <table>" w
 <table>
 	${0:${VISUAL}}
 </table>
@@ -214,7 +214,7 @@ snippet td "table cell" w
 <td>${0:${VISUAL}}</td>
 endsnippet
 
-snippet textarea "HTML   <textarea>" w
+snippet textarea "HTML <textarea>" w
 <textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">$0</textarea>
 endsnippet
 
@@ -222,7 +222,7 @@ snippet th "table header" w
 <th>${0:${VISUAL}}</th>
 endsnippet
 
-snippet title "XHTML <title>" w
+snippet title "HTML <title>" w
 <title>${1:`!p snip.rv = snip.basename or "Page Title"`}</title>
 endsnippet
 
