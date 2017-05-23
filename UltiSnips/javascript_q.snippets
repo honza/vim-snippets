@@ -1,0 +1,73 @@
+priority -50
+
+# Snippets for the Q promise library 
+
+snippet qdef "Create promise using Q.defer" b
+var ${1:deferred} = Q.defer();
+endsnippet
+
+snippet qres "Resolve deferred promise" b
+${1:deferred}.resolve(${2:value});
+endsnippet
+
+snippet qrej "Reject deferred promise" b
+${1:deferred}.reject(${2:err});
+endsnippet
+
+snippet qnot "Notify deferred promise" b
+${1:deferred}.notify(${2:value});
+endsnippet
+
+snippet qret "Return deferred promise" b
+return ${1:deferred}.promise;
+endsnippet
+
+snippet qretc "Return deferred promise with wrapped callback" b
+return ${1:deferred}.promise.nodeify(${2:callback});
+endsnippet
+
+snippet qp "Create a promise using Q.promise" b
+return Q.promise(function(${1:resolve}, ${2:reject}, ${3:notify}) {
+	${0}
+});
+endsnippet
+
+snippet qw "When result could be a promise, but may not be, use Q.when" b
+return Q.when(${1:valueOrPromise}, function(${2:value}) {
+	// handle promise/value
+}, function(${3:err}) {
+ // handle error
+});
+endsnippet
+
+snippet qtc "Promise, then, catch" b
+${1:promise}
+	.then(function(${2:resolvedValue}) {
+		${3:// handle resolve}
+	})
+	.catch(function(${4:err}) {
+		${5:// handle reject}
+	});
+endsnippet
+
+snippet qttc "Promise, then, then, catch (chaining)" b
+${1:promise}
+	.then(function(${2:resolvedValue}) {
+		return ${3:anotherPromise};
+	})
+	.then(function(${4:resolvedValue}) {
+		${5:// handle resolve}
+	})
+	.catch(function(${6:err}) {
+		${7:// handle reject}
+	});
+endsnippet
+
+snippet qnfc "Wrap node function call" b
+return Q.nfcall(${1:nodeFunction}, ${2:args});
+endsnippet
+
+snippet qnfa "Wrap node function apply" b
+return Q.nfapply(${1:nodeFunction}, [${2:args}]);
+endsnippet
+
