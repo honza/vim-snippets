@@ -259,12 +259,19 @@ snippet subfig subfigure environment
 	\\label{fig:${5}}
 	\\end{subfigure}
 	${0}
-snippet tikzcd tikzcd environment
-	\begin{equation}
-	\begin{tikzcd}
+snippet tikzcd tikzcd environment in equation
+	\\begin{equation}
+	\\begin{tikzcd}
 		${1}
-	\end{tikzcd}
-	\end{equation}
+	\\end{tikzcd}
+	\\end{equation}
+	${0}
+snippet tikzcd* tikzcd environment in equation*
+	\\begin{equation*}
+	\\begin{tikzcd}
+		${1}
+	\\end{tikzcd}
+	\\end{equation*}
 	${0}
 #math
 snippet stackrel \stackrel{}{}
