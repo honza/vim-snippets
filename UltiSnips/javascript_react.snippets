@@ -1,0 +1,69 @@
+priority -50
+
+snippet ri1 "Import only React"
+import React from 'react'
+$0
+endsnippet
+
+snippet ri2 "Import both React and Component"
+import React, { Component } from 'react'
+$0
+endsnippet
+
+snippet rcla "React class"
+class ${1:MyComponent} extends Component {
+  render() {
+    return (
+      <div>
+        $0
+      </div>
+    )
+  }
+}
+endsnippet
+
+snippet rcon "React constructor"
+constructor(props) {
+  super(props)
+
+  this.state = {
+    ${1:foo}: ${0:'foo'},
+  }
+}
+
+endsnippet
+
+snippet rcom "Presentational component"
+(props) => {
+  return (
+    <div>
+      $0
+    </div>
+  )
+}
+endsnippet
+
+snippet rcdm "Lifecycle Methods"
+componentDidMount() {
+  $0
+}
+
+endsnippet
+
+snippet rtss "this.setState"
+this.setState({
+  ${1:foo}: ${0:'foo'},
+})
+endsnippet
+
+snippet rts "this.state"
+this.state.$0
+endsnippet
+
+snippet rp "props"
+props.$0
+endsnippet
+
+snippet rtp "this.props"
+this.props.$0
+endsnippet
