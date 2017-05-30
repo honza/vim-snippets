@@ -1,7 +1,7 @@
 # Functions
 # prototype
 snippet proto
-	${1:class_name}.prototype.${2:method_name} = function(${3}) {
+	${1:class_name}.prototype.${2:method_name} = function (${3}) {
 		${0:${VISUAL}}
 	};
 # Function
@@ -11,12 +11,12 @@ snippet fun
 	}
 # Anonymous Function
 snippet f "" w
-	function(${1}) {
+	function (${1}) {
 		${0:${VISUAL}}
 	}
 # Anonymous Function assigned to variable
 snippet vaf
-	var ${1:function_name} = function(${2}) {
+	var ${1:function_name} = function (${2}) {
 		${0:${VISUAL}}
 	};
 # Function assigned to variable
@@ -26,12 +26,12 @@ snippet vf
 	};
 # Immediate function
 snippet (f
-	(function(${1}) {
+	(function (${1}) {
 		${0:${VISUAL}}
 	}(${2}));
 # Minify safe iife
 snippet ;fe
-	;(function(${1}) {
+	;(function (${1}) {
 		${0:${VISUAL}}
 	}(${2}))
 # self-defining function
