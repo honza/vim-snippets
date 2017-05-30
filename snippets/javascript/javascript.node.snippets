@@ -8,13 +8,13 @@ snippet re
 	${1:const} ${2} = require('${3:module_name}');
 # EventEmitter
 snippet on
-	on('${1:event_name}', function(${2:stream}) {
+	on('${1:event_name}', function (${2:stream}) {
 	  ${3}
 	});
 snippet emit
 	emit('${1:event_name}', ${2:args});
 snippet once
-	once('${1:event_name}', function(${2:stream}) {
+	once('${1:event_name}', function (${2:stream}) {
 	  ${3}
 	});
 # http. User js function snippet as handler
@@ -22,11 +22,11 @@ snippet http
 	http.createServer(${1:handler}).listen(${2:port_number});
 # net 
 snippet net
-	net.createServer(function(${1:socket}){
-		${1}.on('data', function('data'){
+	net.createServer(function (${1:socket}) {
+		${1}.on('data', function ('data') {
 		  ${2}
 		]});
-		${1}.on('end', function(){
+		${1}.on('end', function () {
 		  ${3}
 		});
 	}).listen(${4:8124});
