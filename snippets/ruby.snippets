@@ -27,9 +27,9 @@ snippet beg
 	rescue ${1:Exception} => ${2:e}
 	end
 snippet req require
-	require '${1}'
+	require "${1}"
 snippet reqr
-	require_relative '${1}'
+	require_relative "${1}"
 snippet #
 	# =>
 snippet case
@@ -421,9 +421,9 @@ snippet dov
 		${2}
 	end
 snippet :
-	${1:key}: ${2:'value'}
+	${1:key}: ${2:"value"}
 snippet ope
-	open('${1:path/or/url/or/pipe}', '${2:w}') { |${3:io}| ${0} }
+	open("${1:path/or/url/or/pipe}", "${2:w}") { |${3:io}| ${0} }
 # path_from_here()
 snippet fpath
 	File.join(File.dirname(__FILE__), *['${1:rel path here}'])
@@ -461,7 +461,7 @@ snippet ts
 	require 'tc_${1:test_case_file}'
 	require 'tc_${2:test_case_file}'
 snippet as
-	assert ${1:test}, '${2:Failure message.}'
+	assert ${1:test}, "${2:Failure message.}"
 snippet ase
 	assert_equal ${1:expected}, ${2:actual}
 snippet asne
@@ -517,7 +517,7 @@ snippet asntd
 		${0}
 	end
 snippet fl
-	flunk '${1:Failure message.}'
+	flunk "${1:Failure message.}"
 # Benchmark.bmbm do .. end
 snippet bm-
 	TESTS = ${1:10_000}
@@ -528,23 +528,23 @@ snippet rep
 	results.report('${1:name}:') { TESTS.times { ${0} } }
 # Marshal.dump(.., file)
 snippet Md
-	File.open('${1:path/to/file.dump}', 'wb') { |${2:file}| Marshal.dump(${3:obj}, $2) }
+	File.open("${1:path/to/file.dump}", "wb") { |${2:file}| Marshal.dump(${3:obj}, $2) }
 # Mashal.load(obj)
 snippet Ml
-	File.open('${1:path/to/file.dump}', 'rb') { |${2:file}| Marshal.load($2) }
+	File.open("${1:path/to/file.dump}", "rb") { |${2:file}| Marshal.load($2) }
 # deep_copy(..)
 snippet deec
 	Marshal.load(Marshal.dump(${1:obj_to_copy}))
 snippet Pn-
-	PStore.new('${1:file_name.pstore}')
+	PStore.new("${1:file_name.pstore}")
 snippet tra
 	transaction(${1:true}) { ${0} }
 # xmlread(..)
 snippet xml-
-	REXML::Document.new(File.read('${1:path/to/file}'))
+	REXML::Document.new(File.read("${1:path/to/file}"))
 # xpath(..) { .. }
 snippet xpa
-	elements.each('${1://Xpath}') do |${2:node}|
+	elements.each("${1://Xpath}") do |${2:node}|
 		${0}
 	end
 # class_from_name()
@@ -558,7 +558,7 @@ snippet nam
 		${0}
 	end
 snippet tas
-	desc '${1:Task description}'
+	desc "${1:Task description}"
 	task ${2:task_name: [:dependent, :tasks]} do
 		${0}
 	end
@@ -638,7 +638,7 @@ snippet mm
 snippet wm
 	wont_match /${0:regex}/
 snippet mout
-	-> { ${1} }.must_output '${0}'
+	-> { ${1} }.must_output "${0}"
 snippet mra
 	-> { ${1} }.must_raise ${0:Exception}
 snippet mrt
@@ -657,11 +657,11 @@ snippet desc
 		${0}
 	end
 snippet descm
-	describe '${1:#method}' do
-		${0:pending 'Not implemented'}
+	describe "${1:#method}" do
+		${0:pending "Not implemented"}
 	end
 snippet cont
-	context '${1:message}' do
+	context "${1:message}" do
 		${0}
 	end
 snippet bef
@@ -689,11 +689,11 @@ snippet expb
 snippet experr
 	expect { ${1:object} }.to raise_error ${2:StandardError}, /${0:message_regex}/
 snippet shared
-	shared_examples ${0:'shared examples name'}
+	shared_examples ${0:"shared examples name"}
 snippet ibl
-	it_behaves_like ${0:'shared examples name'}
+	it_behaves_like ${0:"shared examples name"}
 snippet it
-	it '${1:spec_name}' do
+	it "${1:spec_name}" do
 		${0}
 	end
 snippet its
