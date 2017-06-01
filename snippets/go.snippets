@@ -231,3 +231,8 @@ snippet cl
 	type ${1:name} struct {
 		${2:attrName} ${3:attrType}
 	}
+# if key in a map
+snippet om
+	if ${1:value}, ok := ${2:map}[${3:key}]; ok == true {
+		${4:/* code */}
+	}
