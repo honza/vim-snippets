@@ -1,0 +1,26 @@
+# Requirejs snippets
+
+# requirejs config initialize
+snippet reqconf
+	require.config({
+		baseUrl: ${1:''},
+
+		paths: {
+			${2:}
+		},
+		shim: {
+			${3:}
+		}
+	});
+
+# require([]);
+snippet require
+	require(['${1:}'], function(${2:}) {
+		${2://body}
+	});
+
+# define([])
+snippet define
+	define(['${1:}'], function(${2:}) {
+		${3://body}
+	});
