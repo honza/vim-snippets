@@ -1,0 +1,27 @@
+# -------------------------------------------------
+# Classes
+# -------------------------------------------------
+
+snippet texture "THREE.Texture"
+new THREE.Texture(${1:image}, ${2:mapping}, ${3:wrapS}, ${4:wrapT}, ${5:magFilter}, ${6:minFilter}, ${7:format}, ${8:type}, ${9:anisotropy})${0}
+endsnippet
+
+snippet texturecanvas "THREE.CanvasTexture"
+    new THREE.CanvasTexture(${1:canvas}, ${2:mapping}, ${3:wrapS}, ${4:wrapT}, ${5:magFilter}, ${6:minFilter}, ${7:format}, ${8:type}, ${9:anisotropy})${0}
+endsnippet
+
+snippet texturecompressed "THREE.CompressedTexture"
+    new THREE.CompressedTexture(${1:mipmaps}, ${2:width}, ${3:height}, ${4:format}, ${5:type}, ${6:mapping}, ${7:wrapS}, ${8:wrapT}, ${9:magFilter}, ${10:minFilter}, ${11:anisotropy})${0}
+endsnippet
+
+snippet texturecube "THREE.CubeTexture"
+    new THREE.CubeTexture(${1:image}, ${2:mapping}, ${3:wrapS}, ${4:wrapT}, ${5:magFilter}, ${6:minFilter}, ${7:format}, ${8:type}, ${9:anisotropy})${0}
+endsnippet
+
+snippet texturedata "THREE.DataTexture"
+    new THREE.DataTexture(${1:data}, ${2:width}, ${3:height}, ${4:format}, ${5:type}, ${6:mapping}, ${7:wrapS}, ${8:wrapT}, ${9:magFilter}, ${10:minFilter}, ${11:anisotropy})${0}
+endsnippet
+
+snippet texturevideo "THREE.VideoTexture"
+    new THREE.VideoTexture(${1:video}, ${2:mapping}, ${3:wrapS}, ${4:wrapT}, ${5:magFilter}, ${6:minFilter}, ${7:format}, ${8:type}, ${9:anisotropy})${0}
+endsnippet

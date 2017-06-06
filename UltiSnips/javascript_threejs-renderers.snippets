@@ -1,0 +1,59 @@
+# -------------------------------------------------
+# Renderers
+# -------------------------------------------------
+
+snippet canvasrenderer "THREE.CanvasRenderer"
+    new THREE.CanvasRenderer(${1:parameters})${0}
+endsnippet
+
+snippet webglrenderer "THREE.WebGLRenderer"
+    new THREE.WebGLRenderer(${1:parameters})${0}
+endsnippet
+
+snippet webglrendertarget "THREE.WebGLRenderTarget"
+    new THREE.WebGLRenderTarget(${1:width}, ${2:height}, ${3:options})${0}
+endsnippet
+
+snippet webglrendertargetcube "THREE.WebGLRenderTargetCube"
+    new THREE.WebGLRenderTargetCube(${1:width}, ${2:height}, ${3:options})${0}
+endsnippet
+
+# -------------------------------------------------
+# Shaders
+# -------------------------------------------------
+
+snippet shaderchunk "THREE.ShaderChunk"
+    new THREE.ShaderChunk()${0}
+endsnippet
+
+snippet shaderlib "THREE.ShaderLib"
+    new THREE.ShaderLib[\${1:shader\'}]${0}'
+endsnippet
+
+snippet uniformslib "THREE.UniformsLib"
+    new THREE.UniformsLib[\${1:shader\'}]${0}'
+endsnippet
+
+snippet uniformsutils "THREE.UniformsUtils"
+    new THREE.UniformUtils.${0}
+endsnippet
+
+# -------------------------------------------------
+# WebGL
+# -------------------------------------------------
+
+snippet pluginlensflare "THREE.LensFlarePlugin"
+    new THREE.LensFlarePlugin()${0}
+endsnippet
+
+snippet pluginsprite "THREE.SpritePlugin"
+    new THREE.SpritePlugin()${0}
+endsnippet
+
+snippet pluginshadowmap "THREE.ShadowMapPlugin"
+    new THREE.ShadowMapPlugin()${0}
+endsnippet
+
+# -------------------------------------------------
+# WebGL Plugins
+# -------------------------------------------------
