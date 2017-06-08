@@ -236,3 +236,11 @@ snippet om
 	if ${1:value}, ok := ${2:map}[${3:key}]; ok == true {
 		${4:/* code */}
 	}
+
+# Grouped globals with anonymous struct
+snippet gg
+	var ${1:var} = struct{
+		${2:name} ${3:type}
+	}{
+		${2:name}: ${4:value},
+	}
