@@ -47,6 +47,6 @@ snippet au augroup ... autocmd block
 		autocmd ${2:BufRead,BufNewFile} ${3:*.ext,*.ext3|<buffer[=N]>} ${0}
 	augroup end
 snippet bun Vundle.vim Plugin definition
-	Plugin '${0}'
+	Plugin '${1:author}/${2:plugin}'
 snippet plug Vundle.vim Plugin definition
-	Plugin '${0}'
+	Plugin '${1:author}/${2:plugin}'
