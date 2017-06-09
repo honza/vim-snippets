@@ -1,40 +1,41 @@
+version 1
+
 snippet des "Describe (js)"
 	describe('${1:description}', function() {
-		${0}
+		$0
 	});
 
 snippet it "it (js)"
 	it('${1:description}', function() {
-		${0}
+		$0
 	});
 
 snippet bef "before each (js)"
 	beforeEach(function() {
-		${0}
+		$0
 	});
 
 snippet aft "after each (js)"
 	afterEach(function() {
-		${0}
+		$0
 	});
 
 snippet befa "before all (js)"
 	beforeAll(function() {
-		${0}
+		$0
 	});
 
 snippet afta "after all (js)"
 	afterAll(function() {
-		${0}
+		$0
 	});
 
 snippet any "any (js)"
-	jasmine.any(${1})
+	jasmine.any($1)
 
 snippet anyt "anything (js)"
 	jasmine.anything()
 
-version 1
 snippet objc "object containing (js)"
 	jasmine.objectContaining({
 		${VISUAL}$0
@@ -48,14 +49,14 @@ snippet strm "string matching (js)"
 
 snippet ru "runs (js)"
 	runs(function() {
-		${0}
+		$0
 	});
 
 snippet wa "waits (js)"
-	waits(${1});
+	waits($1);
 
 snippet ex "expect (js)"
-	expect(${1:target})${0};
+	expect(${1:target})$0;
 
 snippet ee "expect to equal (js)"
 	expect(${1:target}).toEqual(${2:value});
@@ -106,7 +107,7 @@ snippet ethe "expect to throw error (js)"
 	expect(${1:target}).toThrowError(${2:value});
 
 snippet notx "expect not (js)"
-	expect(${1:target}).not${0};
+	expect(${1:target}).not$0;
 
 snippet note "expect not to equal (js)"
 	expect(${1:target}).not.toEqual(${2:value});
@@ -151,7 +152,7 @@ snippet notthe "expect not to throw error (js)"
 	expect(${1:target}).not.toThrowError(${2:value});
 
 snippet s "spy on (js)"
-	spyOn(${1:object}, '${2:method}');
+	spyOn(${1:object}, '${2:method}')$0;
 
 snippet sr "spy on and return (js)"
 	spyOn(${1:object}, '${2:method}').and.returnValue(${3:arguments});
