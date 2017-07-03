@@ -242,5 +242,13 @@ snippet gg
 	var ${1:var} = struct{
 		${2:name} ${3:type}
 	}{
-		${2:name}: ${4:value},
+		$2: ${4:value},
+	}
+
+# Marshalable json alias
+snippet ja
+	type ${1:parentType}Alias $1
+
+	func (p *$1) MarshalJSON() ([]byte, error) {
+		return json.Marshal(&struct{ *$1Alias }{(*$1Alias)(p)})
 	}
