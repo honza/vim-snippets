@@ -232,7 +232,7 @@ snippet tmconcp1 "copy constructor"
 	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$2>::$1 ( const $1<$2>& ${3:copy} ) 
 	{
 		if ( this != &$3 ) {
-			${0}
+			${0:${VISUAL}}
 		}
 	}
 
@@ -241,10 +241,11 @@ snippet tmopcp "copy operator"
 	$1<$2>&
 	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$2>::operator= ( const $1<$2>& ${3:copy} ) 
 	{
-		if ( this == &$3 ) 
-			return *this;
-		
-		${0}
+		if ( this != &$3 ) {
+			${0:${VISUAL}}
+		}
+
+		return *this;
 	}
 
 snippet tmconmv "move constructor"
@@ -252,7 +253,7 @@ snippet tmconmv "move constructor"
 	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$2>::$1 ( $1<$2>&& ${3:move} ) 
 	{
 		if ( this != &$3 ) {
-			${0}
+			${0:${VISUAL}}
 		}
 	}
 
@@ -261,17 +262,18 @@ snippet tmopmv "move operator"
 	$1<$2>&
 	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$2>::operator= ( $1<$2>&& ${3:move} ) 
 	{
-		if ( this == &$3 ) 
-			return *this;
-		
-		${0}
+		if ( this != &$3 ) {
+			${0:${VISUAL}}
+		}
+
+		return *this;
 	}
 
 snippet tmdes "template destructor"
 	template <class ${2:T}>
 	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$2>::~$1 () 
 	{
-		${0}
+		${0:${VISUAL}}
 	}
 
 ##
@@ -376,6 +378,13 @@ snippet tmcon1.0 "create constructor for template class with 0 arg"
 		${0}
 	}
 
+snippet tmcon2.0 "create constructor for template class with 0 arg"
+	template <class ${2:T}, class ${3:A}>
+	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$2, $3>::$1 () 
+	{
+		${0}
+	}
+
 snippet dcond0 "define constructor with doxygen"
 	/** @brief ${1:Brief function description here}
 	 *
@@ -448,6 +457,12 @@ snippet tmcon1.1 "create constructor with 1 args."
 		${0}
 	}
 
+snippet tmcon2.1 "create constructor with 1 args."
+	template <class ${4:T}, class ${5:A}>
+	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$4, $5>::$1 ( ${2:Type} ${3:Parameter} ) 
+	{
+		${0}
+	}
 snippet mfun1 "create member func with 1 arg"
 	${5:void} 
 	${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction} ( ${3:Type} ${4:Parameter} ) 
@@ -484,9 +499,16 @@ snippet tmcon1.2 "create member template constructor with 2 args."
 		${0}
 	}
 
+snippet tmcon2.2 "create member template constructor with 2 args."
+	template <class ${6:T}, class ${7:A}>
+	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$6, $7>::$1 ( ${2:Type} ${3:Parameter}, ${4:Type} ${5:Parameter} ) 
+	{
+		${0}
+	}
+
 snippet tmcon1.3 "create member template constructor with 3 args."
-	template <class ${8:T}>
-	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$8>::$1 ( ${2:Type} ${3:Parameter}, ${4:Type} ${5:Parameter}, ${6:Type} ${7:Parameter} ) 
+	template <class ${8:T}, class ${9:A}>
+	${1:`vim_snippets#Filename('$1', 'ClassName')`}<$8, $9>::$1 ( ${2:Type} ${3:Parameter}, ${4:Type} ${5:Parameter}, ${6:Type} ${7:Parameter} ) 
 	{
 		${0}
 	}
