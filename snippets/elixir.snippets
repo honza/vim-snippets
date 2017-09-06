@@ -199,3 +199,15 @@ snippet >i pipe to inspect
 	|> IO.inspect
 snippet >il pipe to inspect with label
 	|> IO.inspect(label: "${1:label}")
+snippet gs basic genserver structure
+	use GenServer
+
+	@doc false
+	def start_link do
+		GenServer.start_link(__MODULE__, ${1:Map.new}, name: __MODULE__)
+	end
+
+	@impl true
+	def init(state) do
+		{:ok, state}
+	end
