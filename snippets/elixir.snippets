@@ -197,3 +197,14 @@ snippet >i pipe to inspect
 	|> IO.inspect
 snippet >il pipe to inspect with label
 	|> IO.inspect(label: "${1:label}")
+snippet cs
+	@doc false
+	def child_spec(_opts) do
+		%{
+			id: __MODULE__,
+			start: {__MODULE__, :start_link, []},
+			restart: ${1::permanent},
+			shutdown: ${2:5000},
+			type: ${3::worker}
+		}
+	end
