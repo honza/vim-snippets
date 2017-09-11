@@ -195,6 +195,17 @@ snippet >i pipe to inspect
 	|> IO.inspect
 snippet >il pipe to inspect with label
 	|> IO.inspect(label: "${1:label}")
+snippet cs
+	@doc false
+	def child_spec(${1:_opts}) do
+		%{
+			id: __MODULE__,
+			start: {__MODULE__, :start_link, ${2:[]}},
+			restart: ${3::permanent},
+			shutdown: ${4:5000},
+			type: ${5::worker}
+		}
+	end
 snippet genserver basic genserver structure
 	use GenServer
 
