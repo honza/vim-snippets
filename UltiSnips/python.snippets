@@ -709,4 +709,16 @@ snippet pmdoc "pocoo style module doc string" b
 $0
 endsnippet
 
+##################
+# Comprehensions #
+##################
+
+snippet lcp "list comprehension"
+[$1 for $2 in ${3:${VISUAL}}]$0
+endsnippet
+
+snippet dcp "dict comprehension"
+{$1: $2 for $3 in ${4:${VISUAL}}}$0
+endsnippet
+
 # vim:ft=snippets:
