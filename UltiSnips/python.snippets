@@ -242,7 +242,6 @@ def write_function_docstring(t, snip):
 		snip += 'TODO'
 	else:
 		snip += format_return(style)
-	snip.rv += '\n' + snip.mkline('', indent='')
 	snip += triple_quotes(snip)
 
 def get_dir_and_file_name(snip):
@@ -707,6 +706,18 @@ snippet pmdoc "pocoo style module doc string" b
 	:license: ${3:LICENSE_NAME}, see LICENSE for more details.
 """
 $0
+endsnippet
+
+##################
+# Comprehensions #
+##################
+
+snippet lcp "list comprehension"
+[$1 for $2 in ${3:${VISUAL}}]$0
+endsnippet
+
+snippet dcp "dict comprehension"
+{$1: $2 for $3 in ${4:${VISUAL}}}$0
 endsnippet
 
 # vim:ft=snippets:
