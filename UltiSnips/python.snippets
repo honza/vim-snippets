@@ -242,7 +242,6 @@ def write_function_docstring(t, snip):
 		snip += 'TODO'
 	else:
 		snip += format_return(style)
-	snip.rv += '\n' + snip.mkline('', indent='')
 	snip += triple_quotes(snip)
 
 def get_dir_and_file_name(snip):
