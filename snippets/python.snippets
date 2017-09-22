@@ -33,6 +33,9 @@ snippet dowh
 snippet with
 	with ${1:expr} as ${2:var}:
 		${0:${VISUAL}}
+snippet awith
+	async with ${1:expr} as ${2:var}:
+		${0:${VISUAL}}
 # New Class
 snippet cl
 	class ${1:ClassName}(${2:object}):
@@ -49,10 +52,21 @@ snippet def
 snippet deff
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 		${0}
+snippet adef
+	async def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+		"""${3:docstring for $1}"""
+		${0}
+snippet adeff
+	async def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
+		${0}
 # New Method
 snippet defm
 	def ${1:mname}(self, ${2:arg}):
 		${0}
+snippet adefm
+	async def ${1:mname}(self, ${2:arg}):
+		${0}
+
 # New Property
 snippet property
 	def ${1:foo}():
