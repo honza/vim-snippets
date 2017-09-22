@@ -1,3 +1,4 @@
+include html.snippets
 snippet @page
 	<%@page contentType="text/html" pageEncoding="UTF-8"%>
 snippet jstl
@@ -97,3 +98,5 @@ snippet uc
 	${fn:toUpperCase(${0:string})}
 snippet trim
 	${fn:trim(${0:string})}
+snippet fmessage
+    <fmt:message key="${1}" />

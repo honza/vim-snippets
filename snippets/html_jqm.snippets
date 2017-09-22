@@ -1,0 +1,541 @@
+# Some useful Unicode entities
+# Non-Breaking Space
+snippet nbs
+	&nbsp;
+# ←
+snippet left
+	&#x2190;
+# →
+snippet right
+	&#x2192;
+# ↑
+snippet up
+	&#x2191;
+# ↓
+snippet down
+	&#x2193;
+# ↩
+snippet return
+	&#x21A9;
+# ⇤
+snippet backtab
+	&#x21E4;
+# ⇥
+snippet tab
+	&#x21E5;
+# ⇧
+snippet shift
+	&#x21E7;
+# ⌃
+snippet control
+	&#x2303;
+# ⌅
+snippet enter
+	&#x2305;
+# ⌘
+snippet command
+	&#x2318;
+# ⌥
+snippet option
+	&#x2325;
+# ⌦
+snippet delete
+	&#x2326;
+# ⌫
+snippet backspace
+	&#x232B;
+# ⎋
+snippet escape
+	&#x238B;
+# Generic Doctype
+snippet doctype HTML 4.01 Strict
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""
+	"http://www.w3.org/TR/html4/strict.dtd">
+snippet doctype HTML 4.01 Transitional
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""
+	"http://www.w3.org/TR/html4/loose.dtd">
+snippet doctype HTML 5
+	<!DOCTYPE HTML>
+snippet doctype XHTML 1.0 Frameset
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Strict
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Transitional
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+snippet doctype XHTML 1.1
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+# HTML Doctype 4.01 Strict
+snippet docts
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""
+	"http://www.w3.org/TR/html4/strict.dtd">
+# HTML Doctype 4.01 Transitional
+snippet doct
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""
+	"http://www.w3.org/TR/html4/loose.dtd">
+# HTML Doctype 5
+snippet doct5
+	<!DOCTYPE HTML>
+# XHTML Doctype 1.0 Frameset
+snippet docxf
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+# XHTML Doctype 1.0 Strict
+snippet docxs
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+# XHTML Doctype 1.0 Transitional
+snippet docxt
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+# XHTML Doctype 1.1
+snippet docx
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+snippet html
+	<html>
+	${1}
+	</html>
+snippet xhtml
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	${1}
+	</html>
+snippet body
+	<body>
+		${1}
+	</body>
+snippet head
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"`Close()`>
+
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		${2}
+	</head>
+snippet title
+	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+snippet script
+	<script type="text/javascript" charset="utf-8">
+		${1}
+	</script>${2}
+snippet scriptsrc
+	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
+snippet style
+	<style type="text/css" media="${1:screen}">
+		${2}
+	</style>${3}
+snippet base
+	<base href="${1}" target="${2}"`Close()`>
+snippet r
+	<br`Close()[1:]`>
+snippet div
+	<div id="${1:name}">
+		${2}
+	</div>
+# Embed QT Movie
+snippet movie
+	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		<param name="src" value="$1"`Close()`>
+		<param name="controller" value="$4"`Close()`>
+		<param name="autoplay" value="$5"`Close()`>
+		<embed src="${1:movie.mov}"
+			width="${2:320}" height="${3:240}"
+			controller="${4:true}" autoplay="${5:true}"
+			scale="tofit" cache="true"
+			pluginspage="http://www.apple.com/quicktime/download/"
+		`Close()[1:]`>
+	</object>${6}
+snippet fieldset
+	<fieldset id="$1">
+		<legend>${1:name}</legend>
+
+		${3}
+	</fieldset>
+snippet form
+	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
+		${3}
+
+
+	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
+	</form>
+snippet h1
+	<h1 id="${1:heading}">${2:$1}</h1>
+snippet input
+	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
+snippet label
+	<label for="${2:$1}">${1:name}</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="${5}" id="${6:$2}"`Close()`>${7}
+snippet link
+	<link type="text/css" rel="${1:stylesheet}" href="${2:css/style.css}" media="${3:screen}" charset="utf-8"`Close()`>${4}
+snippet mailto
+	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
+snippet meta
+	<meta name="${1:name}" content="${2:content}"`Close()`>${3}
+snippet opt
+	<option value="${1:option}">${2:$1}</option>${3}
+snippet optt
+	<option>${1:option}</option>${2}
+snippet select
+	<select name="${1:some_name}" id="${2:$1}">
+		<option value="${3:option}">${4:$3}</option>
+	</select>${5}
+snippet table
+	<table border="${1:0}">
+		<tr><th>${2:Header}</th></tr>
+		<tr><th>${3:Data}</th></tr>
+	</table>${4}
+snippet textarea
+	<label for="$1">Textarea:</label>
+	<textarea id="${1:textarea}" name="$1" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+
+# image
+snippet comment
+	<!-- ${1:comment here} -->
+snippet img
+	<img src="${1:icon.gif}" alt="${2:icon}" />
+
+#############################################################################
+# jQuery mobile snippets added by brooky [brooky.yen@gmail.com]
+#############################################################################
+snippet mhtml
+	<!DOCTYPE html>
+	<html>
+		<head>
+		<title>${1:title}</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+	</head>
+	<body>
+	<div data-role="page">
+		<div data-role="header">${2:header}</div>
+		<div data-role="content">${3:content}</div>
+		<div data-role="footer">${4:footer}</div>
+	</div>
+	</body>
+	</html>
+
+snippet mobile
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
+
+snippet mpage
+	<div data-role="page">
+		<div data-role="header">${1:header}</div>
+		<div data-role="content">${2:content}</div>
+		<div data-role="footer">${3:footer}</div>
+	</div>
+
+snippet mpage#
+	<div data-role="page" id="${1:id}">
+		<div data-role="header">${2:header}</div>
+		<div data-role="content">${3:content}</div>
+		<div data-role="footer">${4:footer}</div>
+	</div>
+
+snippet mheader
+	<div data-role="header">${1:Header}</div>
+
+snippet mcontent
+	<div data-role="content">${1:content}</div>
+
+snippet mfooter
+	<div data-role="footer">${1:Footer}</div>
+
+# list view
+snippet listview
+	<ul data-role="listview" data-theme="${1:a/b/c/d/e/f/g}">
+		<li><a href="${2:item1.html}">${3:item1}</a></li>
+		<li><a href="${4:item1.html}">${5:item1}</a></li>
+		<li><a href="${6:item1.html}">${7:item1}</a></li>
+	</ul>
+
+# in set list
+snippet insetlist
+	<ul data-role="listview" data-theme="${1:a/b/c/d/e/f/g}" data-inset="true">
+		<li><a href="${2:item1.html}">${3:item1}</a></li>
+		<li><a href="${4:item1.html}">${5:item1}</a></li>
+		<li><a href="${6:item1.html}">${7:item1}</a></li>
+	</ul>
+
+# counter in the list (e.g. number of comments, number of recommends, etc.)
+snippet listcount
+	<span class="ui-li-count">${1:10}</span>
+
+#############################################################################
+# Form Elements
+# see http://jquerymobile.com/demos/1.0a4.1/#docs/forms/index.html for more detail
+#############################################################################
+
+# select
+snippet mselect
+	<div data-role="fieldcontain" data-native-menu="${4:false}">
+		<label for="$1" class="select">${3:Choose:}</label>
+		<select name="$2" id="${1:text}">
+			<option value="value1">option1</option>
+			<option value="value2">option2</option>
+			<option value="value3">option3</option>
+		</select>
+	</div>
+
+# text input
+snippet mtext
+	<div data-role="fieldcontain">
+		<label for="$1">${4:Text Input:}</label>
+		<input type="text" id="${1:text}" name="${2:name}" value="${3}"  />
+	</div>
+
+
+# checkbox
+snippet mcheckbox
+	<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup">
+			<legend>Agree to the terms:</legend>
+			<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+			<label for="checkbox-1">I agree</label>
+		</fieldset>
+	</div>
+
+# radio
+snippet mradio
+	<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup">
+			<legend>${1:Choose a pet:}</legend>
+				<input type="radio" name="${2:radio-choice-1}" id="$2" value="$2" checked="checked" />
+				<label for="$2">Cat</label>
+
+				<input type="radio" name="$2" id="${3:radio-choice-2}" value="$3"  />
+				<label for="radio-choice-2">Dog</label>
+
+				<input type="radio" name="$2" id="${4:radio-choice-3}" value="$4"  />
+				<label for="$4">Hamster</label>
+
+				<input type="radio" name="$2" id="${5:radio-choice-4}" value="$5"  />
+				<label for="$5">Lizard</label>
+		</fieldset>
+	</div>
+
+snippet msearch
+	<div data-role="fieldcontain">
+		<label for="search">Search Input:</label>
+		<input type="search" name="password" id="search" value="" />
+	</div>
+
+# slider
+snippet mslider
+	<div data-role="fieldcontain">
+		<label for="slider">Input slider:</label>
+		<input type="range" name="slider" id="slider" value="0" min="0" max="100"  />
+	</div>
+
+# flip control
+snippet mflip
+	<div data-role="fieldcontain">
+		<label for="slider">Select slider:</label>
+		<select name="slider" id="slider" data-role="slider">
+			<option value="off">Off</option>
+			<option value="on">On</option>
+		</select>
+	</div>
+
+# form with ajax false
+snippet mform
+	<form method="" action="" ${3:data-ajax="false"}>
+		${2:<button type="submit" data-theme="a" name="submit" value="submit-value">Submit</button>}
+	</form
+
+
+#############################################################################
+# Layout
+#############################################################################
+snippet 2column
+	<div class="ui-grid-a">
+		<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+		<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
+	</div><!-- /grid-a -->
+
+snippet 3column
+	<div class="ui-grid-b">
+		<div class="ui-block-a">Block A</div>
+		<div class="ui-block-b">Block B</div>
+		<div class="ui-block-c">Block C</div>
+	</div><!-- /grid-b -->
+
+snippet 4column
+	<div class="ui-grid-c">
+		<div class="ui-block-a">Block A</div>
+		<div class="ui-block-b">Block B</div>
+		<div class="ui-block-c">Block C</div>
+		<div class="ui-block-c">Block D</div>
+	</div><!-- /grid-c -->
+
+snippet collapsible
+	<div data-role="collapsible" ${1:data-collapsed="true"}>
+		<h3>I'm a header</h3>
+		<p>I'm the collapsible content. By default I'm open and displayed on the page, but you can click the header to hide me.</p>
+	</div>
+
+snippet accordion
+	<div data-role="collapsible-set">
+		<div data-role="collapsible">
+			<h3>I'm a header in a set of collapsibles</h3>
+			<p>I'm the collapsible content. I'm hidden by default because I have the "collapsed" state; you need to expand the header to see me.</p>
+		</div>
+		<div data-role="collapsible" data-collapsed="true">
+			<h3>I'm a header in a set of collapsibles</h3>
+			<p>I'm the collapsible content. I'm hidden by default because I have the "collapsed" state; you need to expand the header to see me.</p>
+		</div>
+		<div data-role="collapsible" data-collapsed="true">
+			<h3>I'm a header in a set of collapsibles</h3>
+			<p>I'm the collapsible content. I'm hidden by default because I have the "collapsed" state; you need to expand the header to see me.</p>
+		</div>
+	</div>
+
+
+#############################################################################
+# buttons
+#############################################################################
+
+# link button
+snippet lbtn
+	<a href="index.html" data-role="button">Link button</a>
+
+# inline buttons
+snippet ibtns
+	<p>inline buttons:</p>
+	<div data-inline="true">
+		<a href="index.html" data-role="button">Cancel</a>
+		<a href="index.html" data-role="button" data-theme="b">Save</a>
+	</div>
+
+# group buttons
+snippet gbtns
+	<div data-role="controlgroup">
+	<a href="index.html" data-role="button">Yes</a>
+	<a href="index.html" data-role="button">No</a>
+	<a href="index.html" data-role="button">Maybe</a>
+	</div>
+
+# Horizontal grouped buttons:
+snippet hrbtns
+	<div data-role="controlgroup" data-type="horizontal">
+	<a href="index.html" data-role="button">Yes</a>
+	<a href="index.html" data-role="button">No</a>
+	<a href="index.html" data-role="button">Maybe</a>
+	</div>
+
+# Horizontal grouped buttons with icons:
+snippet iconbtns
+	<p>Horizontal grouped buttons with icons:</p>
+	<div data-role="controlgroup" data-type="horizontal" >
+		<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+		<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+		<a href="index.html" data-role="button" data-icon="delete">Delete</a>
+	</div>
+
+# Horizontal grouped buttons, icon only:
+snippet icons
+	<div data-role="controlgroup" data-type="horizontal" >
+		<a href="index.html" data-role="button" data-icon="arrow-u" data-iconpos="notext">Up</a>
+		<a href="index.html" data-role="button" data-icon="arrow-d" data-iconpos="notext">Down</a>
+		<a href="index.html" data-role="button" data-icon="delete" data-iconpos="notext">Delete</a>
+	</div>
+
+
+############################################################################
+# Toolbars
+############################################################################
+
+snippet footericons
+	<div data-role="footer" class="ui-bar">
+		<a href="index.html" data-role="button" data-icon="delete">Remove</a>
+		<a href="index.html" data-role="button" data-icon="plus">Add</a>
+		<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+		<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+	</div>
+
+snippet headericons
+	<div data-role="header" data-position="inline">
+		<a href="index.html" data-icon="delete">Cancel</a>
+		<h1>Edit Contact</h1>
+		<a href="index.html" data-icon="check" data-theme="b">Save</a>
+	</div>
+
+# navigation bar
+snippet navbar
+	<div data-role="navbar">
+		<ul>
+			<li><a href="a.html" class="ui-btn-active">One</a></li>
+			<li><a href="b.html">Two</a></li>
+		</ul>
+	</div><!-- /navbar -->
+
+# navigation footer (set data-id to make Persistent footers)
+snippet navfooter
+	<div data-role="footer" data-id="foo1" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="footer-persist-a.html" class="ui-btn-active ui-state-persist">Friends</a></li>
+				<li><a href="footer-persist-b.html">Albums</a></li>
+				<li><a href="footer-persist-c.html">Emails</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+# navigation icons in bar
+snippet navicon
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#" data-icon="grid" data-iconpos="top">Summary</a></li>
+			<li><a href="#" data-icon="star" class="ui-btn-active" data-iconpos="top">Favs</a></li>
+			<li><a href="#" data-icon="gear" data-iconpos="top">Setup</a></li>
+		</ul>
+	</div><!-- /navbar -->
+
+
+############################################################################
+# Button icons
+############################################################################
+
+snippet icon_arrowl
+	<a href="index.html" data-role="button" data-icon="arrow-l">My button</a>
+snippet icon_arrowr
+	<a href="index.html" data-role="button" data-icon="arrow-r">My button</a>
+snippet icon_arrowu
+	<a href="index.html" data-role="button" data-icon="arrow-u">My button</a>
+snippet icon_arrowd
+	<a href="index.html" data-role="button" data-icon="arrow-d">My button</a>
+snippet icon_delete
+	<a href="index.html" data-role="button" data-icon="delete">My button</a>
+snippet icon_plus
+	<a href="index.html" data-role="button" data-icon="plus">My button</a>
+snippet icon_minus
+	<a href="index.html" data-role="button" data-icon="minus">My button</a>
+snippet icon_check
+	<a href="index.html" data-role="button" data-icon="check">My button</a>
+snippet icon_gear
+	<a href="index.html" data-role="button" data-icon="gear">My button</a>
+snippet icon_refresh
+	<a href="index.html" data-role="button" data-icon="refresh">My button</a>
+snippet icon_forward
+	<a href="index.html" data-role="button" data-icon="forward">My button</a>
+snippet icon_back
+	<a href="index.html" data-role="button" data-icon="back">My button</a>
+snippet icon_grid
+	<a href="index.html" data-role="button" data-icon="grid">My button</a>
+snippet icon_star
+	<a href="index.html" data-role="button" data-icon="star">My button</a>
+snippet icon_alert
+	<a href="index.html" data-role="button" data-icon="alert">My button</a>
+snippet icon_info
+	<a href="index.html" data-role="button" data-icon="info">My button</a>
+snippet icon_home
+	<a href="index.html" data-role="button" data-icon="home">My button</a>
+snippet icon_search
+	<a href="index.html" data-role="button" data-icon="search">My button</a>
+snippet panel_fixed
+    <div data-role="panel" data-position-fixed="true" data-theme="${1:a/b/c/d/e/f/g}" id="${2:id}">
+    </div>
