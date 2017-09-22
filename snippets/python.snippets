@@ -259,3 +259,10 @@ snippet kwargs
 	**kwargs${1:,}${0}
 snippet akw
 	*args, **kwargs${1:,}${0}
+
+# comprehensions
+snippet lcp list comprehension
+	[${1} for ${2} in ${3:${VISUAL}}]${0}
+
+snippet dcp dict comprehension
+	{${1}: ${2} for ${3} in ${4:${VISUAL}}}${0}
