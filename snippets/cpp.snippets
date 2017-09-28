@@ -20,6 +20,9 @@ snippet tdu "using type = other"
 ##
 ## Preprocessor
 # #include <...>
+snippet inc "hpp include"
+	#include <${1:global}.hpp>
+
 snippet incc
 	#include <${1:iostream}>
 
@@ -28,6 +31,11 @@ snippet binc
 
 ##
 ## STL Collections
+# std::string
+snippet string "std::string"
+	std::string ${1:name}${2};
+	${0}
+
 # std::array
 snippet array
 	std::array<${1:T}, ${2:N}> ${3};
@@ -576,6 +584,9 @@ snippet ns
 snippet cout
 	std::cout << ${1} << std::endl;
 
+snippet cerr
+	std::cerr << ${1} << std::endl;
+
 # std::cin
 snippet cin
 	std::cin >> ${1};
@@ -650,5 +661,17 @@ snippet try
 		
 	}
 
+snippet ct "catch"
+	catch ( ${1} ) {
+		
+	}
 
+# member function implementation
+snippet gtff
+	TEST_F ( ${1:`vim_snippets#Filename('$1', 'ClassName')`}, ${2:testFunction} ) 
+	{
+		${0}
+	}
 
+snippet gtfa "google test assert"
+	${1:ASSERT_TRUE} ( ${2} );
