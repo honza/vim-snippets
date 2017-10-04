@@ -213,18 +213,18 @@ snippet getopt
 # glog = get log
 snippet glog
 	import logging
-	logger = logging.getLogger(${0:__name__})
+	LOGGER = logging.getLogger(${0:__name__})
 snippet le
-	logger.error(${0:msg})
+	LOGGER.error(${0:msg})
 # conflict with lambda=ld, therefor we change into Logger.debuG
 snippet lg
-	logger.debug(${0:msg})
+	LOGGER.debug(${0:msg})
 snippet lw
-	logger.warning(${0:msg})
+	LOGGER.warning(${0:msg})
 snippet lc
-	logger.critical(${0:msg})
+	LOGGER.critical(${0:msg})
 snippet li
-	logger.info(${0:msg})
+	LOGGER.info(${0:msg})
 snippet epydoc
 	"""${1:Description}
 
