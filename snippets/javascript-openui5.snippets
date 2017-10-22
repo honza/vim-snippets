@@ -1,11 +1,11 @@
 snippet sapmlabel
-	var $1 = new sap.m.Label({ 
-				design : $2, 
-				text : $3, 
-				visible : $4, 
-				textAlign : $5, 
-				textDirection : $6, 
-				width : $7, 
+	var $1 = new sap.m.Label({
+				design : $2,
+				text : $3,
+				visible : $4,
+				textAlign : $5,
+				textDirection : $6,
+				width : $7,
 				required : $7
 			});
 
@@ -76,7 +76,7 @@ snippet sapmvbox
 snippet sapcomponent
 	sap.ui.controller("$1", {
 	   onInit: function(){
-	   }, 
+	   },
 	   onAfterRendering: function() {
 	   },
 	   onAfterRendering: function() {
@@ -96,9 +96,9 @@ snippet sapminput
 		placeholder : $8,
 		editable : $9,
 		type : $10,
-		maxLength :$11, 
-		valueStateText :$12, 
-		showValueStateMessage :$13, 
+		maxLength :$11,
+		valueStateText :$12,
+		showValueStateMessage :$13,
 		dateFormat :$14,
 		showValueHelp :$15,
 		showSuggestion :$16,
@@ -114,7 +114,7 @@ snippet sapminput
 		suggestionColumns : [$26],
 		suggestionRows : [$27],
 		liveChange : $28,
-		valueHelpRequest :$29, 
+		valueHelpRequest :$29,
 		suggest : $30,
 		suggestionItemSelected : $31
 	});
@@ -165,41 +165,41 @@ snippet sapicon
 					visible :$11 , //boolean (default: true)
 					decorative : $12 ,//boolean (default: true)
 				});
-snippet extendVerticalL 
+snippet extendVerticalL
 	sap.ui.layout.VerticalLayout.extend("$1", {
 	    metadata: {
 		properties: {
-		  	$2 
+		  	$2
 		},
 		aggregations: {
-			$3	
+			$3
 		},
 		events: {
 			$4
 		}
 	    },
 	   init: function(){
-		$5	
+		$5
 	    },
-	    
+
 	    renderer: "$6"
-	});	
-snippet extendHorizontalL 
+	});
+snippet extendHorizontalL
 	sap.ui.layout.HorizontalLayout.extend("$1", {
 	    metadata: {
 		properties: {
-		  	$2 
+		  	$2
 		},
 		aggregations: {
-			$3	
+			$3
 		},
 		events: {
 			$4
 		}
 	    },
 	   init: function(){
-		$5	
+		$5
 	    },
-	    
+
 	    renderer: "$6"
-	});	
+	});
