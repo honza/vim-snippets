@@ -1,83 +1,103 @@
-snippet ir
-	import React from 'react';
-snippet ird
-	import ReactDOM from 'react-dom';
-snippet cdm
+snippet ri
+	import React from 'react'
+snippet ric
+	import React, { Component } from 'react'
+snippet rip
+	import PropTypes from 'prop-types'
+snippet rid
+	import ReactDOM from 'react-dom'
+snippet rcdm
 	componentDidMount() {
 		${1}
 	}
-snippet cdup
+snippet rcdu
 	componentDidUpdate(prevProps, prevState) {
 		${1}
 	}
-snippet cwm
+snippet rcwm
 	componentWillMount() {
 		${1}
 	}
-snippet cwr
+snippet rcwrp
 	componentWillReceiveProps(nextProps) {
 		${1}
 	}
-snippet cwun
+snippet rcwu
 	componentWillUnmount() {
 		${1}
 	}
-snippet cwu
+snippet rcwup
 	componentWillUpdate(nextProps, nextState) {
 		${1}
 	}
-snippet fup
-	forceUpdate(${1:callback});
-snippet dp
-	static defaultProps = {
-		${1}: ${2},
+snippet rscu
+	shouldComponentUpdate(nextProps, nextState) {
+		${1}
 	}
-snippet st
+snippet rfu
+	forceUpdate(${1:callback})
+snippet rst
 	state = {
 		${1}: ${2},
 	}
-snippet pt
-	static propTypes = {
-		${1}: React.PropTypes.${2:type},
+snippet rcom
+	props => {
+		return (
+			${0:<div></div>}
+		)
 	}
-snippet rcc
-	class ${1:ClassName} extends React.Component {
+snippet rdp
+	${1}.defaultProps = {
+		${2}: ${0},
+	}
+snippet rcdp
+	static defaultProps = {
+		${1}: ${2},
+	}
+snippet rpt
+	${1}.propTypes = {
+		${2}: PropTypes.${0},
+	}
+snippet rcpt
+	static propTypes = {
+		${1}: PropTypes.${2:type},
+	}
+snippet rcla
+	class ${1:ClassName} extends Component {
 		render() {
 			return (
-				${0:<div />}
-			);
+				${0:<div></div>}
+			)
 		}
 	}
 snippet rdr
 	ReactDOM.render(${1}, ${2})
-snippet ercc
-	export default class ${1:ClassName} extends React.Component {
+snippet rec
+	export default class ${1:ClassName} extends Component {
 		render() {
 			return (
 				${0:<div />}
-			);
+			)
 		}
 	}
-snippet ctor
-	constructor() {
-		super();
-		${1}
+snippet rcon
+	constructor(props) {
+		super(props)
+		this.state = {
+			${1}: ${0},
+		}
 	}
-snippet ren
+snippet rren
 	render() {
 		return (
 			${1:<div />}
-		);
+		)
 	}
-snippet sst
+snippet rss
 	this.setState({
 		${1}: ${2}
-	});
-snippet scu
-	shouldComponentUpdate(nextProps, nextState) {
-		${1}
-	}
-snippet prp i
+	})
+snippet rtp i
 	this.props.${1}
-snippet ste i
+snippet rts i
 	this.state.${1}
