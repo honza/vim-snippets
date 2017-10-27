@@ -145,4 +145,11 @@ endsnippet
 snippet lp "Long parenthesis"
 \left(${1:${VISUAL:contents}}\right)$0
 endsnippet
+
+snippet "mint(ed)?( (\S+))?" "Minted code typeset" br
+\begin{minted}{${1:`!p
+snip.rv = match.group(3) if match.group(2) is not None else "language"`}}
+${2:${VISUAL:code}}
+\end{minted}$0
+endsnippet
 # vim:ft=snippets:
