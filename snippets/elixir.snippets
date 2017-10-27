@@ -228,3 +228,8 @@ snippet genserver: basic genserver structure
 
 	@impl true
 	def init(state), do: {:ok, state}
+snippet impl
+	@impl true
+	def ${1:name} do
+		${0}
+	end
