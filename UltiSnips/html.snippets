@@ -258,31 +258,31 @@ snippet hr "<hr>"
 endsnippet
 
 snippet html "HTML basic structure" b
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="UTF-8" />
-			<meta name="viewport" content="width=device-width" />
-			<title>${1:`!p snip.rv = snip.basename.replace('-', ' ').capitalize()`}</title>
-		</head>
-		<body>
-			${0:body}
-		</body>
-	</html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>${1:`!p snip.rv = snip.basename.replace('-', ' ').capitalize()`}</title>
+	</head>
+	<body>
+		${0:body}
+	</body>
+</html>
 endsnippet
 
 snippet htmll "HTML basic structure with the lang attribute" b
-	<!DOCTYPE html>
-	<html lang="${1:es}">
-		<head>
-			<meta charset="UTF-8" />
-			<meta name="viewport" content="width=device-width" />
-			<title>${2:`!p snip.rv = snip.basename.replace('-', ' ').capitalize()`}</title>
-		</head>
-		<body>
-			${0:body}
-		</body>
-	</html>
+<!DOCTYPE html>
+<html lang="${1:es}">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>${2:`!p snip.rv = snip.basename.replace('-', ' ').capitalize()`}</title>
+	</head>
+	<body>
+		${0:body}
+	</body>
+</html>
 endsnippet
 
 snippet i "<i>" w
