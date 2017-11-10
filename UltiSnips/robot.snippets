@@ -8,7 +8,7 @@ priority -50
 #  Built In library  #
 ######################
 snippet cat "Catenate"
-Catenate    SEPARATOR=${1:---}    ${2:Hello}    ${3:world}
+\${${1:name}}=    Catenate    SEPARATOR=${2:---}    ${3:Hello}    ${4:world}
 endsnippet
 
 snippet eval "Evaluate"
