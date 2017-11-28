@@ -109,6 +109,10 @@ snippet sgv "Set Global Variable"
 Set Global Variable    \${${1:name}}    ${2:${value}}
 endsnippet
 
+snippet sbe "Should Be Equal"
+Should Be Equal    "\${${1:var}}"    "${2:expected value}"    ${3:"optional error msg"}	${4:ignore_case=True}
+endsnippet
+
 snippet sleep "Sleep"
 Sleep    ${1:2 minutes 10 seconds}
 endsnippet
