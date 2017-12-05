@@ -146,6 +146,12 @@ Import library    Dialogs
 Pause execution
 endsnippet
 
+snippet tpause "Teardown Pause - pause test execution only on failure"
+[Teardown]    Run Keyword If Test Failed    Run Keywords
+...    Import library    Dialogs    AND
+...    Pause execution
+endsnippet
+
 
 ##############################
 #  Selenium2Library library  #
