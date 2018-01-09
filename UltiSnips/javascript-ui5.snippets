@@ -1,0 +1,176 @@
+snippet ComponentContainer "sap.ui.core.ComponentContainer JS"
+new sap.ui.core.ComponentContainer({
+    height: "${1:100%}",
+    name: "${2:component.identifier}"
+})
+endsnippet
+
+snippet IconTabBar "sap.m.IconTabBar JS"
+new sap.m.IconTabBar({
+    items: [
+        ${1:}
+    ]
+})
+endsnippet
+
+snippet IconTabFilter "sap.m.IconTabFilter JS"
+new sap.m.IconTabFilter({
+    text: "${1:textProperty}",
+    icon: "sap-icon://${2:icon}"
+})
+endsnippet
+
+snippet List "sap.m.List JS"
+new sap.m.List({
+    id: "${1:idList}",
+    mode: "${3:SingleSelectMaster}",
+    select: function(oEvent) {
+    	$0
+    }
+})
+endsnippet
+
+snippet ObjectAttributeF "sap.m.ObjectAttribute with Formatter JS"
+new sap.m.ObjectAttribute({
+    text: {
+        path: "${1:textProperty}",
+        formatter: "${2:formatter.identifier}"
+    }
+})
+endsnippet
+
+snippet ObjectAttribute "sap.m.ObjectAttribute JS"
+new sap.m.ObjectAttribute({
+    text: "{${1:textProperty}}"
+})
+endsnippet
+
+snippet ObjectHeader "sap.m.ObjectHeader JS"
+new sap.m.ObjectHeader({
+    title: "{${1:titleProperty}}",
+    number: "{${2:numberProperty}}",
+    numberUnit: "{${3:numberUnitProperty}}",
+    attributes: [
+        ${4:}
+    ],
+    firstStatus: ${5:}
+})
+endsnippet
+
+snippet ObjectListItem "sap.m.ObjectListItem JS"
+new sap.m.ObjectListItem({
+    press: "${1:handleObjectListItemPress}",
+    title: "{${2:titleProperty}}",
+    number: "{${3:numberProperty}}",
+    numberUnit: "{${4:numberUnitProperty}}",
+    attributes: [
+        ${5:}
+    ],
+    firstStatus: ${6:}
+})
+endsnippet
+
+snippet ObjectStatusF "sap.m.ObjectStatus with Formatter JS"
+new sap.m.ObjectStatus({
+    text: "{${1:textProperty}}",
+    state: {
+        path: "${1:textProperty}",
+        formatter: "formatter.identifier"
+    }
+})
+endsnippet
+
+snippet Page "sap.m.Page JS"
+new sap.m.Page({
+    title: "${1:titleProperty}"
+})
+endsnippet
+
+snippet SearchField "sap.m.SearchField JS"
+new sap.m.SearchField({
+    search: "${1:handleSearch}",
+    width: "${2:100%}"
+})
+endsnippet
+
+snippet StandardListItem "sap.m.StandardListItem JS"
+new sap.m.StandardListItem({
+    title: "{${1:titleProperty}}",
+    description: "{${2:descriptionProperty}}"
+})
+endsnippet
+
+snippet Table "sap.m.Table JS"
+new sap.m.Table({
+    headerText: "${1:headerTextProperty}",
+    items: "{${2:itemsAggregation}}",
+    columns: [
+        ${3:}
+    ]
+})
+endsnippet
+
+snippet sapbyId "sap.ui.getCore().byId ..."
+sap.ui.getCore().byId("${1:controlId}")
+endsnippet
+
+snippet jsdebug "jQuery.sap.debug(true) ..."
+jQuery.sap.debug(true);
+endsnippet
+
+snippet jsdec "jQuery.sap.declare ..."
+jQuery.sap.declare("${1:identifier}");
+endsnippet
+
+snippet jseach "jQuery.sap.each ..."
+jQuery.sap.each(${1:array}, function(${2:item}) { $0 });
+endsnippet
+
+snippet jsendswith "jQuery.sap.endsWith ..."
+jQuery.sap.endsWith(${1:string},"${2:endsWith}")
+endsnippet
+
+snippet fevt
+ "function(oEvent) {...}
+"
+function(oEvent) {
+    $0
+}${1:}
+endsnippet
+
+snippet sapJSONModel "sap.ui.model.json.JSONModel ..."
+sap.ui.model.json.JSONModel(${1:data});
+endsnippet
+
+snippet jslog "jQuery.sap.log ..."
+jQuery.sap.log.${1:info}("${2:logmessage}");
+endsnippet
+
+snippet sapoDataModel "sap.ui.model.odata ..."
+sap.ui.model.odata.ODataModel(${1:uri},${2:true});
+endsnippet
+
+snippet randomodata "Random oData JS"
+var mData = {
+    people: [
+        { name: "Kate",  age: 44, pseudoNumber: "23", city: "London" },
+        { name: "Julie", age: 40, pseudoNumber: "95", city: "Birmingham" },
+        { name: "Bob",   age: 59, pseudoNumber: "41", city: "Manchester" },
+        { name: "Alan",  age: 31, pseudoNumber: "7",  city: "Aberdeen" }
+    ]
+};
+$0
+endsnippet
+
+snippet jsreq "jQuery.sap.require ..."
+jQuery.sap.require("${1:identifier}");
+endsnippet
+
+snippet sapsetModel "sap.ui.getCore().setModel ..."
+sap.ui.getCore().setModel(${1:model},"${2:name}");
+endsnippet
+
+snippet jsstartswith "jQuery.sap.startsWith ..."
+jQuery.sap.startsWith(${1:string},"${2:startsWith}")
+endsnippet
+
