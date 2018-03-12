@@ -20,7 +20,7 @@ snippet classheader
 	#
 	# @example Use with params
 	#   class { '$1':
-	#     $4 => '${7:undef}',
+	#     $$4 => '${7:undef}',
 	#   }
 	#
 	# @author ${8:`g:snips_author`} <${9:`g:snips_email`}>
@@ -28,7 +28,7 @@ snippet classheader
 	# @note Copyright `strftime("%Y")` $8
 	#
 	class $1(
-		$4 = undef,
+		$$4 = undef,
 	) {
 		${0}
 	}
@@ -44,7 +44,7 @@ snippet defheader
 	#
 	# @example Simple use
 	#   $1 { 'namevar':
-	#     $4 => '${7:undef}',
+	#     $$4 => '${7:undef}',
 	#   }
 	#
 	# @author ${8:`g:snips_author`} <${9:`g:snips_email`}>
@@ -52,7 +52,7 @@ snippet defheader
 	# @note Copyright `strftime("%Y")` $8
 	#
 	define $1(
-		$4 = undef,
+		$$4 = undef,
 	) {
 		${0}
 	}
