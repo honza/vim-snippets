@@ -1,6 +1,5 @@
 # Snippets for
 # Authored by Trevor Sullivan <trevor@trevorsullivan.net>
-# Additional Snippets added by Mike Murray <mikemurray86@gmail.com>
 
 # PowerShell Class
 snippet class
@@ -48,6 +47,15 @@ snippet if
 		${2:statement}
 	}
 
+# PowerShell if..else
+snippet ife
+	if ( ${1:condition} ) {
+		${2}
+	}
+	else {
+		${3}
+	}
+
 # PowerShell While Loop
 snippet while
 	while (${1:condition}) {
@@ -67,3 +75,28 @@ snippet foreach
 # PowerShell export-csv
 snippet epcsv
 	Export-CSV -NoTypeInformation -Path ${1:path}
+
+# Powershell Comment Based Help
+snippet help
+	<#
+	.SYNOPSIS
+		${1:Short Description}
+	.DESCRIPTION
+		${2:Full Description}
+	.PARAMETER ${3:Param1}
+		${4: $3 usage}
+	.EXAMPLE
+		${5:Example}
+	.NOTES
+		${6:notes}
+	.LINK
+		${7:online help}
+	#>
+
+# Powershell switch statement
+snippet switch
+	switch ( ${1:test} ){
+		${2:condition1} { ${3:action} }
+		${4:condition2} { ${5:action} }
+		default { ${6:action} }
+
