@@ -1,19 +1,20 @@
-# Snippets for 
+# Snippets for
 # Authored by Trevor Sullivan <trevor@trevorsullivan.net>
+# Additional Snippets added by Mike Murray <mikemurray86@gmail.com>
 
 # PowerShell Class
 snippet class
 	class {
-		[string] ${0:FirstName}
+		[string] ${1:FirstName}
 	}
 
-# PowerShell Advanced Function 
+# PowerShell Advanced Function
 snippet function
-	function {0:name} {
+	function ${1:name} {
 		[CmdletBinding()]
 		param (
 			[Parameter(Mandatory = $true)]
-			[string] $Param1
+			[string] ${2:Param}
 		)
 
 		begin {
@@ -29,30 +30,40 @@ snippet function
 # PowerShell Splatting
 snippet splatting
 	$Params = @{
-		${0:Param1} = 'Value1'
-		${1:Param2} = 'Value2'
+		${1:Param1} = '{2:Value1}'
+		${3:Param2} = '{4:Value2}'
 	}
-	${3:CommandName}
+	${5:CommandName} @Params
 
 # PowerShell Enumeration
 snippet enum
-	enum ${0:name} {
-		${1:item1}
-		${2:item2}
+	enum ${1:name} {
+		${2:item1}
+		${3:item2}
 	}
 
 # PowerShell if..then
 snippet if
-	if (${0:condition}) {
-		${1:statement}
+	if (${1:condition}) {
+		${2:statement}
 	}
 
 # PowerShell While Loop
 snippet while
-	while (${0:condition}) {
-		${1:statement}
+	while (${1:condition}) {
+		${2:statement}
 	}
 
 # PowerShell Filter..Sort
 snippet filtersort
-	${0:command} | Where-Object -FilterScript { $PSItem.${1:property} -${2:operator} '${3:expression}' } | Sort-Object -Property ${4:sortproperty}
+	${1:command} | Where-Object -FilterScript { $PSItem.${2:property} -${3:operator} '${4:expression}' } | Sort-Object -Property ${5:sortproperty}
+
+# PowerShell foreach
+snippet foreach
+	foreach ( $${1:iterator} in $${2:collection} ) {
+		${3:statement}
+	}
+
+# PowerShell export-csv
+snippet epcsv
+	Export-CSV -NoTypeInformation -Path ${1:path}
