@@ -16,6 +16,11 @@ if !exists("g:snips_github")
     let g:snips_github = "https://github.com/yourname"
 endif
 
+" Ruby snippet config
+if !exists("g:ruby_quote")
+    let g:ruby_quote = "'"
+endif
+
 " Expanding the path is not needed on Vim 7.4
 if &cp || version >= 704
     finish
