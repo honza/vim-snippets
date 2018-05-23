@@ -1,18 +1,20 @@
+######################################
+# ELIXIR DOCUMENTATION-FULL SNIPPETS #
+######################################
+
+
 global !p
 import os
 
-def log(*a, **k):
-    with open(os.path.expanduser("~/Desktop/log.txt"), 'w') as f:
-        print(*a, **k, file=f)
-
-
 def write_spec(t, snip):
+    """Write the @spec of a function"""
     snip.rv += "@spec {0}({1}) :: TODO".format(
         t[1],
         ", ".join("{0}::TODO".format(arg.strip()) for arg in t[2].split(',')))
 
 
 def write_type_fields(t, snip):
+    """Write the fields inside of a type definition"""
     fields = [field.split(':')[0].strip() for field in t[1].split(',')]
     maxlength = max(len(field) for field in fields)
 
@@ -26,8 +28,7 @@ def write_type_fields(t, snip):
 
 
 def write_typedoc_fields(t, snip):
-    log("'{}', '{}'".format(snip._initial_indent, snip.indent))
-    log(snip.__dict__)
+    """Write the fields of a type in a @typespec"
     fields = [field.split(':')[0].strip() for field in t[1].split(',')]
     maxlength = max(len(field) for field in fields)
 
@@ -40,6 +41,15 @@ def write_typedoc_fields(t, snip):
         for field in fields)
 
 endglobal
+
+
+
+############
+# SNIPPETS #
+############
+
+# These snippets are designed to automatically include various documentation.
+# This aims at encouraging writing well-formatted and documented code.
 
 
 snippet def "Function with docstring and typespecs"
