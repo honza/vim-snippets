@@ -29,7 +29,7 @@ def write_type_fields(t, snip):
 
 
 def write_typedoc_fields(t, snip):
-    """Write the fields of a type in a @typespec"
+    """Write the fields of a type in a @typespec"""
     fields = [field.split(':')[0].strip() for field in t[1].split(',')]
     maxlength = max(len(field) for field in fields)
 
