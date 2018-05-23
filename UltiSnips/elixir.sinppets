@@ -1,0 +1,81 @@
+global !p
+import os
+
+def log(*a, **k):
+    with open(os.path.expanduser("~/Desktop/log.txt"), 'w') as f:
+        print(*a, **k, file=f)
+
+
+def write_spec(t, snip):
+    snip.rv += "@spec {0}({1}) :: TODO".format(
+        t[1],
+        ", ".join("{0}::TODO".format(arg.strip()) for arg in t[2].split(',')))
+
+
+def write_type_fields(t, snip):
+    fields = [field.split(':')[0].strip() for field in t[1].split(',')]
+    maxlength = max(len(field) for field in fields)
+
+    snip.rv += "\n{}".format(snip.indent).join(
+        "{0}{1}: {2}{3}TODO_TYPE,".format(
+            snip._initial_indent,
+            field,
+            snip._ind.shiftwidth * ' ',
+            ' ' * (maxlength - len(field)))
+        for field in fields)
+
+
+def write_typedoc_fields(t, snip):
+    log("'{}', '{}'".format(snip._initial_indent, snip.indent))
+    log(snip.__dict__)
+    fields = [field.split(':')[0].strip() for field in t[1].split(',')]
+    maxlength = max(len(field) for field in fields)
+
+    snip.rv += "\n{}".format(snip.indent).join(
+        "{0}- {1}: {2}{3}TODO_DESCRIPTION".format(
+            snip._initial_indent, 
+            field,
+            snip._ind.shiftwidth * ' ',
+            ' ' * (maxlength - len(field)))
+        for field in fields)
+
+endglobal
+
+
+snippet def "Function with docstring and typespecs"
+@doc ~S"""
+${3:One-line summary}
+"""
+`!p write_spec(t, snip)`
+def ${1:function_name}(${2:arg1}) do
+  ${4:body}
+end
+endsnippet
+
+
+snippet defm "Module with doc"
+defmodule ${1:module_name} do
+  @moduledoc ~S"""
+  ${2:One-line summary}
+  """
+  ${3:body}
+end
+endsnippet
+
+
+snippet defs "Struct with typespec"
+defstruct [
+  ${1:field1}
+]
+
+@typedoc ~S"""
+${2:Type summary}
+
+Fields:
+`!p write_typedoc_fields(t, snip)`
+"""
+
+type t :: %__MODULE__{
+`!p write_type_fields(t, snip)`
+}
+endsnippet
