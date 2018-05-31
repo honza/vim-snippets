@@ -53,18 +53,16 @@ endglobal
 # This aims at encouraging writing well-formatted and documented code.
 
 
-snippet def "Function with docstring and typespecs"
+snippet defd "Function with docstring and typespecs"
 @doc ~S"""
 ${3:One-line summary}
 """
 `!p write_spec(t, snip)`
-def ${1:function_name}(${2:arg1}) do
-  ${4:body}
-end
+def ${1:function_name}(${2:arg1})
 endsnippet
 
 
-snippet defm "Module with doc"
+snippet defmd "Module with doc"
 defmodule ${1:module_name} do
   @moduledoc ~S"""
   ${2:One-line summary}
@@ -75,7 +73,7 @@ end
 endsnippet
 
 
-snippet defs "Struct with typespec"
+snippet defsd "Struct with typespec"
 defstruct [
   ${1:field1}
 ]
