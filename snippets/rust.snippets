@@ -139,8 +139,16 @@ snippet st "Struct definition"
 	struct ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} {
 		${0}
 	}
-snippet impl "Struct/Trait implementation"
-	impl ${1:Type/Trait}${2: for ${3:Type}} {
+snippet impl "Struct implementation"
+	impl ${1:Type} {
+		${0}
+	}
+snippet implt "Trait implementation"
+	impl ${1:Trait} for ${2:Type} {
+		${0}
+	}
+snippet blimpl "Trait implementation"
+	impl<${1:Trait}> ${2:Trait} for ${3:Type} {
 		${0}
 	}
 snippet stn "Struct with new constructor"
