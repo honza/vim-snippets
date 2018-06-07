@@ -28,7 +28,7 @@ snippet eqann "Equation array without numbers" b
 endsnippet
 
 snippet frac "Fraction" w
-\frac{${1:${VISUAL:nom}}}{${2:denom}}
+\frac{${1:${VISUAL}}}{${2}}
 endsnippet
 
 snippet mat "Smart Matrix"
@@ -51,6 +51,25 @@ endsnippet
 
 snippet lr[ "left[ right]" w
 \left[ ${1:${VISUAL}} \right]
+endsnippet
+
+#################
+# PHYSICS STUFF #
+#################
+snippet dv "Derivative" w
+\dv[${1:${VISUAL}}]{${2}}{${3}}
+endsnippet
+
+snippet pdv "Partial Derivative" w
+\pdv[${1:${VISUAL}}]{${2}}{${3}}
+endsnippet
+
+snippet SI "SI-Unit" w
+\SI{${1:${VISUAL}}}{${2}}
+endsnippet
+
+snippet qm "Quick Math" b
+\[ $0 \]
 endsnippet
 
 # vim:ft=snippets:
