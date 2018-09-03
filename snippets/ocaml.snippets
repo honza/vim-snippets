@@ -3,9 +3,11 @@ snippet doc
 		${0}
 	 *)
 snippet let
-	let ${1} = ${2} in ${0}
+	let ${1} = ${2} in
+	${0}
 snippet fn
-	let ${1} = ${0}
+	let ${1} =
+		${0}
 snippet fun
 	type ${1} = ${0}
 snippet mod
@@ -28,3 +30,10 @@ snippet if
 		${2}
 	else
 		${0}
+snippet fnr
+	let rec ${1} =
+		${0}
+snippet try
+	try
+		${1}
+	with ${0}
