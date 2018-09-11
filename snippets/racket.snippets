@@ -16,16 +16,9 @@ snippet defun
         (define (${1})
                 ${0})
 snippet if
-        (if ${1}
-                ${2}
-                ${0})
+        (if ${1} ${2} ${0})
 snippet ifn
-        (if (not ${1})
-                ${2}
-                ${0})
-snippet do
-        (let ()
-                ${0})
+        (if (not ${1}) ${2} {0})
 snippet ifl
         (if ${1}
                 (let ()
@@ -51,3 +44,29 @@ snippet match
         (match ${1}
                 [(${2})
                         ${0}])
+snippet letcc
+        (let/cc here (set! ${1} here) ${0})
+snippet for
+        (for ([${1} ${2}])
+                ${0})
+snippet req
+        (require ${0})
+snippet unless
+        (unless ${1} ${2} ${0})
+snippet let
+        (let ([${1}]) ${0})
+snippet begin
+        (begin
+                ${0})
+snippet lambda
+        (lambda (${1}) ${0})
+snippet ifb
+        (if ${1}
+                (begin
+                        ${2})
+                ${0})
+snippet ifnb
+        (if (not ${1})
+                (begin
+                        ${2})
+                ${0})
