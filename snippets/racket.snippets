@@ -1,0 +1,53 @@
+snippet #r
+        #lang racket
+snippet #tr
+        #lang typed/racket
+snippet #rg
+        #lang racket/gui
+snippet #sb
+        #lang scribble/base
+snippet #d
+        #lang datalog
+snippet #wi
+        #lang web-server/insta
+snippet def
+        (define ${1} ${0})
+snippet defun
+        (define (${1})
+                ${0})
+snippet if
+        (if ${1}
+                ${2}
+                ${0})
+snippet ifn
+        (if (not ${1})
+                ${2}
+                ${0})
+snippet do
+        (let ()
+                ${0})
+snippet ifl
+        (if ${1}
+                (let ()
+                        ${2})
+                ${0})
+snippet ifnl
+        (if (not ${1})
+                (let ()
+                        ${2})
+                ${0})
+snippet when
+        (when ${1}
+                ${0})
+snippet cond
+        (cond
+                [(${1})
+                        ${0}])
+snippet case
+        (case ${1}
+                [(${2})
+                        ${0}])
+snippet match
+        (match ${1}
+                [(${2})
+                        ${0}])
