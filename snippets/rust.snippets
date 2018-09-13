@@ -28,7 +28,7 @@ snippet new "Constructor function"
 		$1 { ${3} }
 	}
 snippet main "Main function"
-	pub fn main() {
+	fn main() {
 		${0}
 	}
 snippet let "let variable declaration with type inference"
@@ -64,12 +64,10 @@ snippet testmod "Test module" b
 	#[cfg(test)]
 	mod tests {
 		use super::${1:*};
-
-		test${0}
 	}
 # Attributes
 snippet allow "allow lint attribute" b
-	#[allow(${1:unused_variable})]
+	#[allow(${1:unused_variables})]
 snippet cfg "cfg attribute" b
 	#[cfg(${1:target_os = "linux"})]
 snippet feat "feature attribute" b
