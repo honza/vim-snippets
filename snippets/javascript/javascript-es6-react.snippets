@@ -37,12 +37,6 @@ snippet ipt
 snippet iredux
 	import { createStore } from 'redux'
 	import { connect } from 'react-redux'
-snippet inav
-	import { ${1:createBottomTabNavigator, createMaterialTopTabNavigator, createStackNavigator} } from 'react-navigation'
-snippet iexpoi
-	import { ${1:FontAwesome, Ionicons} } from '${2:@expo/vector-icons}'
-snippet iexpo
-	import { ${1:Constants} } from '${2:expo}'
 
 snippet cdm
 	componentDidMount() {
@@ -352,16 +346,6 @@ snippet rfl
 	${1} = ${2} => ${0}
 snippet rfi
 	(${1}) => ${0}
-#jsx with Emmet
-snippet einput
-	input[type=text defaultValue=${2:val} placehoder=${3:val}]${0:Emmet}
-snippet etextarea
-	textarea[placehoder=${3:val}]${0:Emmet}
-snippet eselect
-	select>option[value=${1:val}]${0:Emmet}
-snippet ebutton
-	button.btn.btn-primary[type=submit]${0:Emmet}
-
 snippet rcsl
 	import React from 'react';
 
@@ -380,6 +364,7 @@ snippet riife
 		  ${0:<div>$2</div>}
 		}
 	})();
+#map
 snippet rmap
 	{${1:array}.map( ${2:item} => <li key={$2.id}>{$2.id}</li> )}
 snippet rmapl
@@ -415,6 +400,14 @@ snippet connect
 snippet l
 	let ${1} = ${0}
 
+snippet r(
+	return (
+	  ${0}
+	)
+snippet rjsx
+	return (
+	  ${0}
+	)
 
 # ____  _____    _    ____ _____     _   _    _  _____ _____     __ _____
 #|  _ \| ____|  / \  / ___|_   _|   | \ | |  / \|_   _|_ _\ \   / /| ____|
@@ -422,6 +415,12 @@ snippet l
 #|  _ <| |___ / ___ \ |___  | |_____| |\  |/ ___ \| |  | |  \ V /  | |___
 #|_| \_\_____/_/   \_\____| |_|     |_| \_/_/   \_\_| |___|  \_/   |_____|
 
+snippet inav
+	import { ${1:createBottomTabNavigator, createMaterialTopTabNavigator, createStackNavigator} } from 'react-navigation'
+snippet iexpoi
+	import { ${1:FontAwesome, Ionicons} } from '${2:@expo/vector-icons}'
+snippet iexpo
+	import { ${1:Constants} } from '${2:expo}'
 snippet rnt
 	<Text>
 	  ${0}
@@ -454,13 +453,14 @@ snippet rncc
 snippet irn
 	import React, { Component } from 'react';
 	import { View, Text } from 'react-native';
-snippet rj
-	return (
-	  ${0}
-	)
 
-#React css
-snippet stylesheet
+#  ____ ____ ____
+# / ___/ ___/ ___|
+#| |   \___ \___ \
+#| |___ ___) |__) |
+# \____|____/____/
+
+snippet rnssc
 	const styles = StyleSheet.create({
 		${1:container}: {
 			${0}
