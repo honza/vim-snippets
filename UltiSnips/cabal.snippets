@@ -1,0 +1,102 @@
+snippet pkg "Package properties"
+name          : `!v vim2hs#cabal#name()`
+version       : 0.1.0
+license       : BSD3
+cabal-version : >= 1.10
+build-type    : Simple
+
+endsnippet
+
+snippet repo "Source-Repository"
+source-repository ${1:head}
+	type     : ${2:`!v vim2hs#cabal#vcs()`}
+	location : $3
+endsnippet
+
+snippet gh "Source-Repository: GitHub"
+homepage      : https://github.com/$1/$2
+
+source-repository head
+	type     : git
+	location : git://github.com/${1:`!v $USER`}/${2:`!v vim2hs#cabal#name()`}.git
+endsnippet
+
+snippet den "Source-Repository: darcsden"
+homepage      : http://darcsden.com/$1/$2
+
+source-repository head
+	type     : darcs
+	location : http://darcsden.com/${1:`!v $USER`}/${2:`!v vim2hs#cabal#name()`}
+endsnippet
+
+snippet hub "Source-Repository: hub.darcs.net"
+homepage      : http://hub.darcs.net/$1/$2
+
+source-repository head
+	type     : darcs
+	location : http://hub.darcs.net/${1:`!v $USER`}/${2:`!v vim2hs#cabal#name()`}
+endsnippet
+
+snippet pt "Source-Repository: Patch-Tag"
+homepage      : http://patch-tag.com/r/$1/$2
+
+source-repository head
+	type     : darcs
+	location : http://patch-tag.com/r/${1:`!v $USER`}/${2:`!v vim2hs#cabal#name()`}
+endsnippet
+
+snippet test "Test-Suite"
+test-suite test-${1:`!v vim2hs#cabal#name()`}
+	type             : exitcode-stdio-1.0
+	main-is          : ${2:test-$1.hs}
+	hs-source-dirs   : test bin
+	default-language : Haskell2010
+	ghc-options      : -Wall
+	other-modules    : $3
+	build-depends    : base == 4.*,
+	                   `!v vim2hs#cabal#name()`,
+	                   checkers,
+	                   HUnit,
+	                   QuickCheck,
+	                   quickcheck-instances,
+	                   quickcheck-properties,
+	                   test-framework,
+	                   test-framework-hunit,
+	                   test-framework-quickcheck2,
+	                   test-framework-th
+endsnippet
+
+snippet bench "Benchmark"
+benchmark bench-${1:`!v vim2hs#cabal#name()`}
+	type             : exitcode-stdio-1.0
+	main-is          : ${2:bench-$1.hs}
+	hs-source-dirs   : bench bin
+	default-language : Haskell2010
+	ghc-options      : -Wall
+	other-modules    : $3
+	build-depends    : base == 4.*,
+	                   `!v vim2hs#cabal#name()`,
+	                   criterion
+endsnippet
+
+snippet exe "Executable"
+executable ${1:`!v vim2hs#cabal#name()`}
+	main-is          : ${2:$1.hs}
+	hs-source-dirs   : bin
+	default-language : Haskell2010
+	ghc-options      : -Wall
+	                   -threaded -rtsopts -with-rtsopts=-N
+	build-depends    : base == 4.*,
+	                   `!v vim2hs#cabal#name()`,
+	                   $0
+endsnippet
+
+snippet lib "Library"
+library
+	hs-source-dirs   : src
+	default-language : Haskell2010
+	ghc-options      : -Wall
+	exposed-modules  : $1
+	build-depends    : base == 4.*,
+	                   $0
+endsnippet

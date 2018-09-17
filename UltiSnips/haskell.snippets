@@ -1,5 +1,173 @@
-priority -50
+# vim: foldmethod=marker
 
-snippet impq "Qualified import"
-import qualified ${1:Data.Text} as ${0:`!p snip.rv = t[1].split(".")[-1]`}
+# Pragmas {{{
+
+snippet pragma "Compiler pragma" !b
+{-# $1 #-}
 endsnippet
+
+snippet lang "LANGUAGE pragma" !b
+{-# LANGUAGE $1 #-}
+endsnippet
+
+snippet ghcopt "GHC options" !b
+{-# OPTIONS_GHC $1 #-}
+endsnippet
+
+snippet preproc "Preprocessor" !b
+{-# OPTIONS_GHC -F -pgmF ${1:executable} #-}
+endsnippet
+
+snippet trhsx "HSP/HSX Preprocessor (trhsx)" !b
+{-# OPTIONS_GHC -F -pgmF trhsx #-}
+endsnippet
+
+snippet hsx "HSP/HSX Preprocessor (hsx2hs)" !b
+{-# OPTIONS_GHC -F -pgmF hsx2hs #-}
+endsnippet
+
+snippet inline "INLINE pragma" !b
+{-# INLINE ${1:name} #-}
+endsnippet
+
+snippet inlinable "INLINABLE pragma" !b
+{-# INLINABLE ${1:name} #-}
+endsnippet
+
+snippet noinline "NOINLINE pragma" !b
+{-# NOINLINE ${1:name} #-}
+endsnippet
+
+snippet specialize "SPECIALIZE pragma" !b
+{-# SPECIALIZE ${1:name} :: ${2:type} #-}
+endsnippet
+
+snippet rules "RULES pragma" !b
+{-# RULES "${1:name}" ${2:rule} #-}
+endsnippet
+
+snippet unpack "UNPACK pragma" !w
+{-# UNPACK #-}
+endsnippet
+
+snippet nounpack "NOUNPACK pragma" !w
+{-# NOUNPACK #-}
+endsnippet
+
+# }}} Pragmas
+
+# Statements {{{
+
+global !p
+def last_module(mod):
+	return mod.rstrip('.').rsplit('.', 1)[-1]
+
+def space_if(p):
+	return " " if p else ""
+endglobal
+
+snippet mod "Module declaration" !b
+module ${1:`!v vim2hs#haskell#snippets#module_name()`}
+		( $2
+		)
+	where
+
+$0
+endsnippet
+
+snippet main "Main module" !b
+module Main (main) where
+
+main :: IO ()
+main = ${1:error "undefined: \`main' in `!v expand('%')`"}
+endsnippet
+
+snippet qual "Qualified import, name by last module" !b
+import qualified ${1:Module} as ${2:`!p snip.rv = last_module(t[1])`}
+endsnippet
+
+snippet as "Qualified import, name by first character of last module" !b
+import qualified ${1:Module} as ${2:`!p snip.rv = last_module(t[1])[0]`}
+endsnippet
+
+snippet containers "Import modules for data structures, qualified" !b
+import qualified Data.HashMap.Lazy as HashMap
+import qualified Data.HashSet      as HashSet
+import qualified Data.IntMap       as IntMap
+import qualified Data.IntSet       as IntSet
+import qualified Data.IxSet        as IxSet
+import qualified Data.Map          as Map
+import qualified Data.Sequence     as Seq
+import qualified Data.Set          as Set
+endsnippet
+
+snippet data "Algebraic data type" !b
+data ${1:Type} ${2:variables}`!p snip.rv = space_if(t[2])`= ${3:Constructor} | ${0:Constructor}
+endsnippet
+
+snippet rec "Data record" !b
+data ${1:Type} = $1
+		{ ${3:field} :: ${4:Type}
+		} deriving (${5:Classes})
+endsnippet
+
+snippet new "Newtype" !b
+newtype ${1:Type} ${2:variables}`!p snip.rv = space_if(t[2])`= $1 ${3:Oldtype}
+endsnippet
+
+snippet cls "Type class definition" !b
+class ${1:Name} where
+		$0
+endsnippet
+
+snippet in "Instance definition" !b
+instance ${1:Class} ${2:Type} where
+		$0
+endsnippet
+
+# }}} Statements
+
+# Definitions {{{
+
+snippet :: "Type signature" !b
+${1:name} :: ${2:Type}
+endsnippet
+
+snippet => "Class constraint" !w
+${1:Class} ${2:variable} => $2
+endsnippet
+
+snippet fun "Function definition" !b
+-- | ${5:Documentation for '$1'}
+$1 :: ${3:Type} -> ${4:Type}
+${1:name} ${2:args} = ${6:error "undefined: \`$1' in `!v expand('%')`"}
+endsnippet
+
+snippet def "Value definition" !b
+-- | ${4:Documentation for $1}
+$1 :: ${2:Type}
+${1:name} = ${5:error "undefined: \`$1' in `!v expand('%')`"}
+endsnippet
+
+# }}} Definitions
+
+# Expressions {{{
+
+snippet \ "Lambda" !w
+\\${1:args} -> ${2:expression}
+endsnippet
+
+snippet if "Boolean conditional" !w
+if ${1:condition} then ${2:true} else ${3:false}
+endsnippet
+
+snippet case "Pattern match" !w
+case ${1:scrutinee} of
+	${2:pattern} -> ${3:expression}
+endsnippet
+
+snippet qq "Quasi quote" !w
+[${1:quoter}|${2:content}|]
+endsnippet
+
+# }}} Expressions
