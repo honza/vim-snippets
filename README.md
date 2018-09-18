@@ -46,9 +46,9 @@ If you have VimL only (vim without python support) your best option is using
 [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate) and cope with the
 minor bugs found in the engine.
 
-Q: Should "snipMate be deprecated in favour of UltiSnips"?
+**Q**: Should snipMate be deprecated in favour of UltiSnips?
 
-A: No, because snipMate is VimL, and UltiSnips requires Python.
+**A**: No, because snipMate is VimL, and UltiSnips requires Python.
 Some people want to use snippets without having to install Vim with Python
 support. Yes - this sucks.
 
@@ -106,8 +106,8 @@ About how to install snipMate see [snipmate@garbas](https://github.com/garbas/vi
 I know that I should be reading the docs of the snippet engine, just let me copy paste into my `.vimrc`:
 [See this pull request](https://github.com/honza/vim-snippets/pull/307/files).
 
-TROUBLE
-=======
+Getting help
+------------
 
 If you still have trouble getting this to work create a GitHub ticket, ask on
 IRC or the mailing list.
@@ -176,7 +176,7 @@ so that all users can benefit from them.  People can list their snippet reposito
 
 Installation using VAM: https://github.com/MarcWeber/vim-addon-manager
 
-Future - ideas - examples
+Future ideas and examples
 -------------------------
 
 [overview snippet engines](http://vim-wiki.mawercer.de/wiki/topic/text-snippets-skeletons-templates.html)
