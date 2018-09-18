@@ -20,12 +20,12 @@ Snippet engines supporting vim-snippets
 There are different forks of snippet engines which allow the user to insert
 snippets by typing the name of a snippet hitting the expansion mapping.
 
-- [github.com/SirVer/ultisnips](https://github.com/SirVer/ultisnips):   
+- [github.com/SirVer/ultisnips](https://github.com/SirVer/ultisnips):
   python, supports all snippets in this repo.
-- [github.com/garbas/vim-snipmate](https://github.com/garbas/vim-snipmate):   
+- [github.com/garbas/vim-snipmate](https://github.com/garbas/vim-snipmate):
   VimL, snipmate-snippets, engine sometimes behaves strange. Supports
   snippets/*
-- [github.com/Shougo/neosnippet](https://github.com/Shougo/neosnippet.vim):   
+- [github.com/Shougo/neosnippet](https://github.com/Shougo/neosnippet.vim):
   VimL, supports snippets/* with some configuration.
 - [github.com/drmingdrmer/xptemplate](https://github.com/drmingdrmer/xptemplate):
   Totally different syntax, does not read snippets contained in this file, but
