@@ -82,15 +82,15 @@ For more see the UltiSnips docs (`:help UltiSnips`).
 Installation
 ------------
 
-First be aware that there are many options, see "Snippet engines" above.
-Second be aware than there are [tons of plugin managers](http://vim-wiki.mawercer.de/wiki/topic/vim%20plugin%20managment.html)
-which is why Marc Weber thinks that it doesn't make sense to repeat the same
-repetitive information everywhere.
+First be aware that there are many options, see "Snippet engines" above.  Second
+be aware than there are [tons of plugin managers][8] which is why Marc Weber
+thinks that it doesn't make sense to repeat the same repetitive information
+everywhere.
 
-*Recommended way:*
-[vim-addon-manager](https://github.com/MarcWeber/vim-addon-manager) (because Marc Weber wrote it for exactly
-this reason, it supports simple dependency management). E.g. you're done by this
-line in your `.vimrc`:
+The recommended way to install these snippets is by using
+[vim-addon-manager][9].  Marc Weber wrote it for exactly this reason, it
+supports simple dependency management. E.g. all you need is this line in your
+`.vimrc`:
 
 ```vim
 " assuming you want to use snipmate snippet engine
@@ -100,20 +100,18 @@ ActivateAddons vim-snippets snipmate
 [vim-pi](https://bitbucket.org/vimcommunity/vim-pi/issue/90/we-really-need-a-web-interface)
 Is the place to discuss plugin managers and repository resources.
 
-About how to install snipMate see [snipmate@garbas](https://github.com/garbas/vim-snipmate)
+For snipMate installation instructions, please see [snipmate@garbas][1].
 
-(Bundle, Pathogen, git clone - keywords to make people find this link by ctrl-f search)
-I know that I should be reading the docs of the snippet engine, just let me copy paste into my `.vimrc`:
-[See this pull request](https://github.com/honza/vim-snippets/pull/307/files).
+Pull requests adding installation instructions for Pathogen, Bundle, git clone,
+etc. are welcome and much appreciated.
 
 Getting help
 ------------
 
-If you still have trouble getting this to work create a GitHub ticket, ask on
-IRC or the mailing list.
+If you still have trouble getting this to work, please create a GitHub issue.
 
-Policies / for contributors
----------------------------
+Things to consider when contributing
+------------------------------------
 
 Some snippets are useful for almost all languages, so let's try to have the same
 triggers for them:
@@ -251,3 +249,5 @@ terms of the MIT license.
 [3]: http://github.com/garbas
 [4]: http://github.com/garbas/vim-snipmate
 [7]: http://github.com/SirVer/ultisnips
+[8]: http://vim-wiki.mawercer.de/wiki/topic/vim%20plugin%20managment.html
+[9]: https://github.com/MarcWeber/vim-addon-manager
