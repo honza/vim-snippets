@@ -20,7 +20,7 @@ Snippet engines supporting vim-snippets
 There are different forks of snippet engines which allow the user to insert
 snippets by typing the name of a snippet hitting the expansion mapping.
 
-- [github.com/SirVer/ultisnips](https://github.com/SirVer/ultisnips):
+- [github.com/SirVer/ultisnips][7]:
   python, supports all snippets in this repo.
 - [github.com/garbas/vim-snipmate](https://github.com/garbas/vim-snipmate):
   VimL, snipmate-snippets, engine sometimes behaves strange. Supports
@@ -39,9 +39,8 @@ UltiSnips has additional features such as high speed, nesting snippets,
 expanding snippets in snippets and offers powerful transformations on text in
 snippets (like visual selections or placeholder texts).
 
-Which one to use? If you have python give
-[SirVer/ultisnips](https://github.com/SirVer/ultisnips) a try because its fast
-and has the most features.
+Which one to use? If you have python give [SirVer/ultisnips][7] a try because
+its fast and has the most features.
 
 If you have VimL only (vim without python support) your best option is using
 [garbas/vim-snipmate](https://github.com/garbas/vim-snipmate) and cope with the
