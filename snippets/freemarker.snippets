@@ -1,0 +1,32 @@
+extends html
+
+snippet assign "<#assign/>"
+<#assign ${1} = ${0:${VISUAL}} />
+endsnippet
+
+snippet if "<#if>...</#if>"
+<#if ${1}>
+	${0:${VISUAL}}
+</#if>
+endsnippet
+
+snippet ife "<#if>...<#else>...</#if>"
+<#if ${1}>
+	${2:${VISUAL}}
+<#else>
+	${0}
+</#if>
+endsnippet
+
+snippet list "<#list>...</#list>"
+<#list ${1} as ${2}>
+	${0:${VISUAL}}
+</#list>
+endsnippet
+
+snippet attempt "<#attempt>...<#recover></#attempt>"
+<#attempt>
+	${0:${VISUAL}}
+<#recover>
+</#attempt>
+endsnippet
