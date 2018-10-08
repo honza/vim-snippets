@@ -145,7 +145,7 @@ snippet implt "Trait implementation"
 	impl ${1:Trait} for ${2:Type} {
 		${0}
 	}
-snippet blimpl "Trait implementation"
+snippet blimpl "Blanket trait implementation"
 	impl<${1:Trait}> ${2:Trait} for ${3:Type} {
 		${0}
 	}
@@ -159,12 +159,20 @@ snippet stn "Struct with new constructor"
 			$1 { ${3} }
 		}
 	}
-snippet type "Type alias"
+snippet ty "Type alias"
 	type ${1:NewName} = $2;
 snippet enum "enum definition"
 	enum ${1:Name} {
 		${2},
 	}
+snippet pst "Public structure"
+	pub struct ${1:Name} {
+		${2}
+	}
+snippet ust "Unit structure"
+	struct ${1:Name};
+snippet tst "Tuple structure"
+	struct ${1:Name}(${2:Field});
 # Traits
 snippet trait "Trait definition"
 	trait ${1:Name} {
@@ -220,3 +228,5 @@ snippet ext "import extern crates"
 	extern crate ${1};
 snippet use "import namespace"
 	use ${1};
+snippet pb "Keyword pub"
+	pub ${1}
