@@ -234,6 +234,9 @@ snippet un "Unsafe code block"
 # Crates
 snippet ext "import extern crates"
 	extern crate ${1};
+snippet extm "import extern crates with macro use"
+	#[macro_use]
+	extern crate ${1};
 snippet use "import namespace"
 	use ${1};
 snippet pb "Keyword pub"
