@@ -53,10 +53,10 @@ snippet pipeline_sample
 
 snippet d
 	docker {
-		image ${1:myregistry.com/node'}
-		label ${2:my-defined-label'}
-		registryUrl ${3:https://myregistry.com/'}
-		registryCredentialsId ${4:myPredefinedCredentialsInJenkins'}
+		image '${1:myregistry.com/node'}'
+		label '${2:my-defined-label'}'
+		registryUrl '${3:https://myregistry.com/'}'
+		registryCredentialsId '${4:myPredefinedCredentialsInJenkins'}'
 	}
 
 
@@ -153,6 +153,18 @@ snippet psss
 			}
 	}
 	${0}
+
+snippet sss
+	stages {
+		stage('${1:Build}') { 
+			steps { 
+				sh '${2:make}' 
+			}
+		}
+	}
+	${0}
+
+
 
 snippet parameters
 	parameters{ 
