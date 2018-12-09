@@ -256,3 +256,11 @@ snippet err_chain "error chain"
 			${3}
 		}
 	}
+# Rocket
+snippet req "FromRequest"
+	impl<'a, 'r> FromRequest<'a, 'r> for ${1} {
+		type Error = ${2};
+		fn from_request(request:&'a Request<'r>) -> request::Outcome<${3}, Self::Error> {
+			${4}
+		}
+	}
