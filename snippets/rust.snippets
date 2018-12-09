@@ -244,3 +244,15 @@ snippet pb "Keyword pub"
 # Useful macros
 snippet uimpl "unimplemented macro"
 	unimplemented!()
+snippet err_chain "error chain"
+	error_chain! {
+		errors {
+			${1}
+		}
+		links {
+			${2}
+		}
+		foreign_links {
+			${3}
+		}
+	}
