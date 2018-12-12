@@ -5,34 +5,6 @@
 priority -50
 
 # imports
-snippet eiapp "import Application"
-import Application from "@ember/application"
-endsnippet
-
-snippet eicon "import Controller"
-import Controller from "@ember/controller"
-endsnippet
-
-snippet eirou "import Route"
-import Route from "@ember/routing/route"
-endsnippet
-
-snippet eiapp "import Service"
-import Service from "@ember/service"
-endsnippet
-
-snippet eimod "import Model"
-import Model from 'ember-data/model'
-endsnippet
-
-snippet eicom "import Component"
-import Component from "@ember/component"
-endsnippet
-
-snippet eimix "import Mixin"
-import Mixin from "@ember/object/mixin"
-endsnippet
-
 snippet eiobj "import Object"
 import EmberObject from "@ember/object"
 endsnippet
@@ -55,7 +27,7 @@ ${1:this}.set('${2:property}', ${3:value});
 endsnippet
 
 # Computed properties
-snippet ecp "property_name: computed('...', function() {...}),"
+snippet cpro "property_name: computed('...', function() {...}),"
 ${1:property_name}: computed('${3:argument}', function() {
 	${0://body...}
 }),
