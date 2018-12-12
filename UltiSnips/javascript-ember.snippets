@@ -4,57 +4,45 @@
 
 priority -50
 
-# Application
-snippet eapp "App.Name = Ember.Application.create({});"
-${1:App.Name} = Ember.Application.create({});
+# imports
+snippet eiapp "import Application"
+import Application from "@ember/application"
 endsnippet
 
-# Models
-snippet emod "App.ModelName = Ember.Model.extend({...});"
-${1:model_name} = Ember.Model.extend({
-	${0://Properties here...}
-});
+snippet eicon "import Controller"
+import Controller from "@ember/controller"
 endsnippet
 
-# View
-snippet eview "App.ViewName = Ember.Model.extend({...});"
-${1:view_name} = Ember.View.extend({
-	${0://Properties here...}
-});
+snippet eirou "import Route"
+import Route from "@ember/routing/route"
 endsnippet
 
-# Controller
-snippet econtroller "App.ControllerName = Ember.Model.extend({...});"
-${1:controller_name} = Ember.ObjectController.extend({
-	${0://Properties here...}
-});
+snippet eiapp "import Service"
+import Service from "@ember/service"
 endsnippet
 
-# Route
-snippet eroute "App.RouteName = Ember.Route.extend({...});"
-${1:route_name} = Ember.Route.extend({
-	${0://Properties here...}
-});
+snippet eimod "import Model"
+import Model from 'ember-data/model'
 endsnippet
 
-snippet eview "App.ViewName = Ember.Model.create({...});"
-${1:view_name} = Ember.View.create({
-	${0://Properties here...}
-});
+snippet eicom "import Component"
+import Component from "@ember/component"
 endsnippet
 
-# Object
-snippet eobj "App.ObjectName = Ember.Object.extend({...});"
-${1:object_name} = Ember.Object.create({
-	${0://Properties here...}
-});
+snippet eimix "import Mixin"
+import Mixin from "@ember/object/mixin"
 endsnippet
 
-# Mixin
-snippet emix "App.MixinName = Ember.Model.extend({...});"
-${1:view_name} = Ember.Mixin.create({
-	${0://Properties here...}
-});
+snippet eiobj "import Object"
+import EmberObject from "@ember/object"
+endsnippet
+
+snippet eicp "import computed"
+import { computed } from "@ember/object"
+endsnippet
+
+snippet eicpmacro "import computed macro"
+import { ${1:alias} } from "@ember/object/computed"
 endsnippet
 
 # Ember getter and setter
@@ -66,25 +54,11 @@ snippet eset "this.set('property', value);"
 ${1:this}.set('${2:property}', ${3:value});
 endsnippet
 
-# Computer properties
-snippet cpro "property_name: function() {...}.property(),"
-${1:property_name}: function() {
+# Computed properties
+snippet ecp "property_name: computed('...', function() {...}),"
+${1:property_name}: computed('${3:argument}', function() {
 	${0://body...}
-}.property('${3:argumenet}'),
-endsnippet
-
-snippet cpro ": function() {...}.property('property'),"
-${1:property_name}: function() {
-	${0://body...}
-}.property(),
-endsnippet
-
-
-# Observes
-snippet proo "property_name: function() {...}.property()"
-${1:property_name}: function() {
-	${0://body...}
-}.observes('${3:property}'),
+}),
 endsnippet
 
 # vim:ft=snippets:
