@@ -23,9 +23,9 @@ snippet docs
 	"""
 
 # Unittest skip
-snippet sk "skip unittests" b
-@unittest.skip(${1:skip_reason})
-endsnippet
+snippet sk
+	@unittest.skip(${0:skip_reason})
+
 
 snippet wh
 	while ${1:condition}:
