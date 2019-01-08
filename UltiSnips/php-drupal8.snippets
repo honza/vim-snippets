@@ -1,0 +1,2402 @@
+snippet hook_ajax_render_alter "Alter the Ajax command data that is sent to the client." b
+/**
+ * Implements hook_ajax_render_alter().
+ */
+function ${1:hook}_ajax_render_alter(&${2:$data}) {
+  $3
+}
+endsnippet
+
+snippet hook_archiver_info_alter "Alter archiver information declared by other modules." b
+/**
+ * Implements hook_archiver_info_alter().
+ */
+function ${1:hook}_archiver_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_batch_alter "Alter batch information before a batch is processed." b
+/**
+ * Implements hook_batch_alter().
+ */
+function ${1:hook}_batch_alter(&${2:$batch}) {
+  $3
+}
+endsnippet
+
+snippet hook_block_access "Control access to a block instance." b
+/**
+ * Implements hook_block_access().
+ */
+function ${1:hook}_block_access(${2:$block}, ${3:$operation}, ${4:$account}) {
+  $5
+}
+endsnippet
+
+snippet hook_block_build_alter "Alter the result of \Drupal\Core\Block\BlockBase::build()." b
+/**
+ * Implements hook_block_build_alter().
+ */
+function ${1:hook}_block_build_alter(&${2:$build}, ${3:$block}) {
+  $4
+}
+endsnippet
+
+snippet hook_block_build_BASE_BLOCK_ID_alter "Provide a block plugin specific block_build alteration." b
+/**
+ * Implements hook_block_build_BASE_BLOCK_ID_alter().
+ */
+function ${1:hook}_block_build_${2:$BASE_BLOCK_ID}_alter(&${3:$build}, ${4:$block}) {
+  $5
+}
+endsnippet
+
+snippet hook_block_view_alter "Alter the result of \Drupal\Core\Block\BlockBase::build()." b
+/**
+ * Implements hook_block_view_alter().
+ */
+function ${1:hook}_block_view_alter(&${2:$build}, ${3:$block}) {
+  $4
+}
+endsnippet
+
+snippet hook_block_view_BASE_BLOCK_ID_alter "Provide a block plugin specific block_view alteration." b
+/**
+ * Implements hook_block_view_BASE_BLOCK_ID_alter().
+ */
+function ${1:hook}_block_view_${2:$BASE_BLOCK_ID}_alter(&${3:$build}, ${4:$block}) {
+  $5
+}
+endsnippet
+
+snippet hook_cache_flush "Flush all persistent and static caches." b
+/**
+ * Implements hook_cache_flush().
+ */
+function ${1:hook}_cache_flush() {
+  $2
+}
+endsnippet
+
+snippet hook_ckeditor_css_alter "Modify the list of CSS files that will be added to a CKEditor instance." b
+/**
+ * Implements hook_ckeditor_css_alter().
+ */
+function ${1:hook}_ckeditor_css_alter(&${2:$css}, ${3:$editor}) {
+  $4
+}
+endsnippet
+
+snippet hook_ckeditor_plugin_info_alter "Modify the list of available CKEditor plugins." b
+/**
+ * Implements hook_ckeditor_plugin_info_alter().
+ */
+function ${1:hook}_ckeditor_plugin_info_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_comment_links_alter "Alter the links of a comment." b
+/**
+ * Implements hook_comment_links_alter().
+ */
+function ${1:hook}_comment_links_alter(&${2:$links}, ${3:$entity}, &${4:$context}) {
+  $5
+}
+endsnippet
+
+snippet hook_config_import_steps_alter "Alter the configuration synchronization steps." b
+/**
+ * Implements hook_config_import_steps_alter().
+ */
+function ${1:hook}_config_import_steps_alter(&${2:$sync_steps}, ${3:$config_importer}) {
+  $4
+}
+endsnippet
+
+snippet hook_config_schema_info_alter "Alter config typed data definitions." b
+/**
+ * Implements hook_config_schema_info_alter().
+ */
+function ${1:hook}_config_schema_info_alter(&${2:$definitions}) {
+  $3
+}
+endsnippet
+
+snippet hook_config_translation_info "Introduce dynamic translation tabs for translation of configuration." b
+/**
+ * Implements hook_config_translation_info().
+ */
+function ${1:hook}_config_translation_info(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_config_translation_info_alter "Alter existing translation tabs for translation of configuration." b
+/**
+ * Implements hook_config_translation_info_alter().
+ */
+function ${1:hook}_config_translation_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_contextual_links_alter "Alter contextual links before they are rendered." b
+/**
+ * Implements hook_contextual_links_alter().
+ */
+function ${1:hook}_contextual_links_alter(&${2:$links}, ${3:$group}, ${4:$route_parameters}) {
+  $5
+}
+endsnippet
+
+snippet hook_contextual_links_plugins_alter "Alter the plugin definition of contextual links." b
+/**
+ * Implements hook_contextual_links_plugins_alter().
+ */
+function ${1:hook}_contextual_links_plugins_alter(&${2:$contextual_links}) {
+  $3
+}
+endsnippet
+
+snippet hook_contextual_links_view_alter "Alter a contextual links element before it is rendered." b
+/**
+ * Implements hook_contextual_links_view_alter().
+ */
+function ${1:hook}_contextual_links_view_alter(&${2:$element}, ${3:$items}) {
+  $4
+}
+endsnippet
+
+snippet hook_countries_alter "Alter the default country list." b
+/**
+ * Implements hook_countries_alter().
+ */
+function ${1:hook}_countries_alter(&${2:$countries}) {
+  $3
+}
+endsnippet
+
+snippet hook_cron "Perform periodic actions." b
+/**
+ * Implements hook_cron().
+ */
+function ${1:hook}_cron() {
+  $2
+}
+endsnippet
+
+snippet hook_css_alter "Alter CSS files before they are output on the page." b
+/**
+ * Implements hook_css_alter().
+ */
+function ${1:hook}_css_alter(&${2:$css}, ${3:$assets}) {
+  $4
+}
+endsnippet
+
+snippet hook_data_type_info_alter "Alter available data types for typed data wrappers." b
+/**
+ * Implements hook_data_type_info_alter().
+ */
+function ${1:hook}_data_type_info_alter(&${2:$data_types}) {
+  $3
+}
+endsnippet
+
+snippet hook_display_variant_plugin_alter "Alter display variant plugin definitions." b
+/**
+ * Implements hook_display_variant_plugin_alter().
+ */
+function ${1:hook}_display_variant_plugin_alter(&${2:$definitions}) {
+  $3
+}
+endsnippet
+
+snippet hook_editor_info_alter "Performs alterations on text editor definitions." b
+/**
+ * Implements hook_editor_info_alter().
+ */
+function ${1:hook}_editor_info_alter(&${2:$editors}) {
+  $3
+}
+endsnippet
+
+snippet hook_editor_js_settings_alter "Modifies JavaScript settings that are added for text editors." b
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function ${1:hook}_editor_js_settings_alter(&${2:$settings}) {
+  $3
+}
+endsnippet
+
+snippet hook_editor_xss_filter_alter "Modifies the text editor XSS filter that will used for the given text format." b
+/**
+ * Implements hook_editor_xss_filter_alter().
+ */
+function ${1:hook}_editor_xss_filter_alter(&${2:$editor_xss_filter_class}, ${3:$format}, ${4:$original_format} = NULL) {
+  $5
+}
+endsnippet
+
+snippet hook_element_info_alter "Alter the element type information returned from modules." b
+/**
+ * Implements hook_element_info_alter().
+ */
+function ${1:hook}_element_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_access "Control entity operation access." b
+/**
+ * Implements hook_entity_access().
+ */
+function ${1:hook}_entity_access(${2:$entity}, ${3:$operation}, ${4:$account}) {
+  $5
+}
+endsnippet
+
+snippet hook_entity_base_field_info "Provides custom base field definitions for a content entity type." b
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function ${1:hook}_entity_base_field_info(${2:$entity_type}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_base_field_info_alter "Alter base field definitions for a content entity type." b
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function ${1:hook}_entity_base_field_info_alter(&${2:$fields}, ${3:$entity_type}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_build_defaults_alter "Alter entity renderable values before cache checking in drupal_render()." b
+/**
+ * Implements hook_entity_build_defaults_alter().
+ */
+function ${1:hook}_entity_build_defaults_alter(&${2:$build}, ${3:$entity}, ${4:$view_mode}) {
+  $5
+}
+endsnippet
+
+snippet hook_entity_bundle_create "Act on entity_bundle_create()." b
+/**
+ * Implements hook_entity_bundle_create().
+ */
+function ${1:hook}_entity_bundle_create(${2:$entity_type_id}, ${3:$bundle}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_bundle_delete "Act on entity_bundle_delete()." b
+/**
+ * Implements hook_entity_bundle_delete().
+ */
+function ${1:hook}_entity_bundle_delete(${2:$entity_type_id}, ${3:$bundle}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_bundle_field_info "Provides field definitions for a specific bundle within an entity type." b
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function ${1:hook}_entity_bundle_field_info(${2:$entity_type}, ${3:$bundle}, ${4:$base_field_definitions}) {
+  $5
+}
+endsnippet
+
+snippet hook_entity_bundle_field_info_alter "Alter bundle field definitions." b
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ */
+function ${1:hook}_entity_bundle_field_info_alter(&${2:$fields}, ${3:$entity_type}, ${4:$bundle}) {
+  $5
+}
+endsnippet
+
+snippet hook_entity_bundle_info "Describe the bundles for entity types." b
+/**
+ * Implements hook_entity_bundle_info().
+ */
+function ${1:hook}_entity_bundle_info() {
+  $2
+}
+endsnippet
+
+snippet hook_entity_bundle_info_alter "Alter the bundles for entity types." b
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function ${1:hook}_entity_bundle_info_alter(&${2:$bundles}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_create "Acts when creating a new entity." b
+/**
+ * Implements hook_entity_create().
+ */
+function ${1:hook}_entity_create(${2:$entity}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_create_access "Control entity create access." b
+/**
+ * Implements hook_entity_create_access().
+ */
+function ${1:hook}_entity_create_access(${2:$account}, ${3:$context}, ${4:$entity_bundle}) {
+  $5
+}
+endsnippet
+
+snippet hook_entity_delete "Respond to entity deletion." b
+/**
+ * Implements hook_entity_delete().
+ */
+function ${1:hook}_entity_delete(${2:$entity}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_display_build_alter "Alter the render array generated by an EntityDisplay for an entity." b
+/**
+ * Implements hook_entity_display_build_alter().
+ */
+function ${1:hook}_entity_display_build_alter(&${2:$build}, ${3:$context}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_extra_field_info "Exposes 'pseudo-field' components on content entities." b
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function ${1:hook}_entity_extra_field_info() {
+  $2
+}
+endsnippet
+
+snippet hook_entity_extra_field_info_alter "Alter 'pseudo-field' components on content entities." b
+/**
+ * Implements hook_entity_extra_field_info_alter().
+ */
+function ${1:hook}_entity_extra_field_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_field_access "Control access to fields." b
+/**
+ * Implements hook_entity_field_access().
+ */
+function ${1:hook}_entity_field_access(${2:$operation}, ${3:$field_definition}, ${4:$account}, ${5:$items} = NULL) {
+  $6
+}
+endsnippet
+
+snippet hook_entity_field_access_alter "Alter the default access behavior for a given field." b
+/**
+ * Implements hook_entity_field_access_alter().
+ */
+function ${1:hook}_entity_field_access_alter(&${2:$grants}, ${3:$context}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_field_storage_info "Provides field storage definitions for a content entity type." b
+/**
+ * Implements hook_entity_field_storage_info().
+ */
+function ${1:hook}_entity_field_storage_info(${2:$entity_type}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_field_storage_info_alter "Alter field storage definitions for a content entity type." b
+/**
+ * Implements hook_entity_field_storage_info_alter().
+ */
+function ${1:hook}_entity_field_storage_info_alter(&${2:$fields}, ${3:$entity_type}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_field_values_init "Acts when initializing a fieldable entity object." b
+/**
+ * Implements hook_entity_field_values_init().
+ */
+function ${1:hook}_entity_field_values_init(${2:$entity}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_form_display_alter "Alter the settings used for displaying an entity form." b
+/**
+ * Implements hook_entity_form_display_alter().
+ */
+function ${1:hook}_entity_form_display_alter(${2:$form_display}, ${3:$context}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_insert "Respond to creation of a new entity." b
+/**
+ * Implements hook_entity_insert().
+ */
+function ${1:hook}_entity_insert(${2:$entity}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_load "Act on entities when loaded." b
+/**
+ * Implements hook_entity_load().
+ */
+function ${1:hook}_entity_load(${2:$entity_type_id}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_operation "Declares entity operations." b
+/**
+ * Implements hook_entity_operation().
+ */
+function ${1:hook}_entity_operation(${2:$entity}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_operation_alter "Alter entity operations." b
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function ${1:hook}_entity_operation_alter(&${2:$operations}, ${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_predelete "Act before entity deletion." b
+/**
+ * Implements hook_entity_predelete().
+ */
+function ${1:hook}_entity_predelete(${2:$entity}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_prepare_form "Acts on an entity object about to be shown on an entity form." b
+/**
+ * Implements hook_entity_prepare_form().
+ */
+function ${1:hook}_entity_prepare_form(${2:$entity}, ${3:$operation}, ${4:$form_state}) {
+  $5
+}
+endsnippet
+
+snippet hook_entity_prepare_view "Act on entities as they are being prepared for view." b
+/**
+ * Implements hook_entity_prepare_view().
+ */
+function ${1:hook}_entity_prepare_view(${2:$entity_type_id}, ${3:$entities}, ${4:$displays}, ${5:$view_mode}) {
+  $6
+}
+endsnippet
+
+snippet hook_entity_presave "Act on an entity before it is created or updated." b
+/**
+ * Implements hook_entity_presave().
+ */
+function ${1:hook}_entity_presave(${2:$entity}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_revision_delete "Respond to entity revision deletion." b
+/**
+ * Implements hook_entity_revision_delete().
+ */
+function ${1:hook}_entity_revision_delete(${2:$entity}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_storage_load "Respond to entity revision deletion." b
+/**
+ * Implements hook_entity_storage_load().
+ */
+function ${1:hook}_entity_storage_load(${2:$entity}, ${3:$entity_type}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_translation_create "Acts when creating a new entity translation." b
+/**
+ * Implements hook_entity_translation_create().
+ */
+function ${1:hook}_entity_translation_create(${2:$translation}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_translation_delete "Respond to entity translation deletion." b
+/**
+ * Implements hook_entity_translation_delete().
+ */
+function ${1:hook}_entity_translation_delete(${2:$translation}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_translation_insert "Respond to creation of a new entity translation." b
+/**
+ * Implements hook_entity_translation_insert().
+ */
+function ${1:hook}_entity_translation_insert(${2:$translation}) {
+  $3
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_access "Control entity operation access for a specific entity type." b
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_access(${3:$entity}, ${4:$operation}, ${5:$account}) {
+  $6
+}
+endsnippet
+
+snippet hook_entity_type_alter "Alter the entity type definitions." b
+/**
+ * Implements hook_entity_type_alter().
+ */
+function ${1:hook}_entity_type_alter(&${2:$entity_types}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_type_build "Add to entity type definitions." b
+/**
+ * Implements hook_entity_type_build().
+ */
+function ${1:hook}_entity_type_build(&${2:$entity_types}) {
+  $3
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_build_defaults_alter "Alter entity renderable values before cache checking in drupal_render()." b
+/**
+ * Implements hook_ENTITY_TYPE_build_defaults_alter().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_build_defaults_alter(&${3:$build}, ${4:$entity}, ${5:$view_mode}) {
+  $6
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_create "Acts when creating a new entity of a specific type." b
+/**
+ * Implements hook_ENTITY_TYPE_create().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_create(${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_create_access "Control entity create access for a specific entity type." b
+/**
+ * Implements hook_ENTITY_TYPE_create_access().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_create_access(${3:$account}, ${4:$context}, ${5:$entity_bundle}) {
+  $6
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_delete "Respond to entity deletion of a particular type." b
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_delete(${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_field_values_init "Acts when initializing a fieldable entity object." b
+/**
+ * Implements hook_ENTITY_TYPE_field_values_init().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_field_values_init(${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_insert "Respond to creation of a new entity of a particular type." b
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_insert(${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_load "Act on entities of a specific type when loaded." b
+/**
+ * Implements hook_ENTITY_TYPE_load().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_load(${3:$entities}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_predelete "Act before entity deletion of a particular entity type." b
+/**
+ * Implements hook_ENTITY_TYPE_predelete().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_predelete(${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_prepare_form "Acts on a particular type of entity object about to be in an entity form." b
+/**
+ * Implements hook_ENTITY_TYPE_prepare_form().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_prepare_form(${3:$entity}, ${4:$operation}, ${5:$form_state}) {
+  $6
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_presave "Act on a specific type of entity before it is created or updated." b
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_presave(${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_revision_delete "Respond to entity revision deletion of a particular type." b
+/**
+ * Implements hook_ENTITY_TYPE_revision_delete().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_revision_delete(${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_storage_load "Act on content entities of a given type when loaded from the storage." b
+/**
+ * Implements hook_ENTITY_TYPE_storage_load().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_storage_load(${3:$entities}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_translation_create "Acts when creating a new entity translation of a specific type." b
+/**
+ * Implements hook_ENTITY_TYPE_translation_create().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_translation_create(${3:$translation}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_translation_delete "Respond to entity translation deletion of a particular type." b
+/**
+ * Implements hook_ENTITY_TYPE_translation_delete().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_translation_delete(${3:$translation}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_translation_insert "Respond to creation of a new entity translation of a particular type." b
+/**
+ * Implements hook_ENTITY_TYPE_translation_insert().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_translation_insert(${3:$translation}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_update "Respond to updates to an entity of a particular type." b
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_update(${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_view "Act on entities of a particular type being assembled before rendering." b
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_view(&${3:$build}, ${4:$entity}, ${5:$display}, ${6:$view_mode}) {
+  $7
+}
+endsnippet
+
+snippet hook_ENTITY_TYPE_view_alter "Alter the results of the entity build array for a particular entity type." b
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function ${1:hook}_${2:ENTITY_TYPE}_view_alter(&${3:$build}, ${4:$entity}, ${5:$display}) {
+  $6
+}
+endsnippet
+
+snippet hook_entity_update "Respond to updates to an entity." b
+/**
+ * Implements hook_entity_update().
+ */
+function ${1:hook}_entity_update(${2:$entity}) {
+  $3
+}
+endsnippet
+
+snippet hook_entity_view "Act on entities being assembled before rendering." b
+/**
+ * Implements hook_entity_view().
+ */
+function ${1:hook}_entity_view(&${2:$build}, ${3:$entity}, ${4:$display}, ${5:$view_mode}) {
+  $6
+}
+endsnippet
+
+snippet hook_entity_view_alter "Alter the results of the entity build array." b
+/**
+ * Implements hook_entity_view_alter().
+ */
+function ${1:hook}_entity_view_alter(&${2:$build}, ${3:$entity}, ${4:$display}) {
+  $5
+}
+endsnippet
+
+snippet hook_entity_view_display_alter "Alter the settings used for displaying an entity." b
+/**
+ * Implements hook_entity_view_display_alter().
+ */
+function ${1:hook}_entity_view_display_alter(${2:$display}, ${3:$context}) {
+  $4
+}
+endsnippet
+
+snippet hook_entity_view_mode_alter "Change the view mode of an entity that is being displayed." b
+/**
+ * Implements hook_entity_view_mode_alter().
+ */
+function ${1:hook}_entity_view_mode_alter(&${2:$view_mode}, ${3:$entity}, ${4:$context}) {
+  $5
+}
+endsnippet
+
+snippet hook_entity_view_mode_info_alter "Alter the view modes for entity types." b
+/**
+ * Implements hook_entity_view_mode_info_alter().
+ */
+function ${1:hook}_entity_view_mode_info_alter(&${2:$view_modes}) {
+  $3
+}
+endsnippet
+
+snippet hook_extension "Declare a template file extension to be used with a theme engine." b
+/**
+ * Implements hook_extension().
+ */
+function ${1:hook}_extension() {
+  $2
+}
+endsnippet
+
+snippet hook_field_formatter_info_alter "Perform alterations on Field API formatter types." b
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function ${1:hook}_field_formatter_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_field_info_max_weight "Returns the maximum weight for the entity components handled by the module." b
+/**
+ * Implements hook_field_info_max_weight().
+ */
+function ${1:hook}_field_info_max_weight(${2:$entity_type}, ${3:$bundle}, ${4:$context}, ${5:$context_mode}) {
+  $6
+}
+endsnippet
+
+snippet hook_field_purge_field "Acts when a field is being purged." b
+/**
+ * Implements hook_field_purge_field().
+ */
+function ${1:hook}_field_purge_field(${2:$field}) {
+  $3
+}
+endsnippet
+
+snippet hook_field_purge_field_storage "Acts when a field storage definition is being purged." b
+/**
+ * Implements hook_field_purge_field_storage().
+ */
+function ${1:hook}_field_purge_field_storage(${2:$field_storage}) {
+  $3
+}
+endsnippet
+
+snippet hook_field_storage_config_update_forbid "Forbid a field storage update from occurring." b
+/**
+ * Implements hook_field_storage_config_update_forbid().
+ */
+function ${1:hook}_field_storage_config_update_forbid(${2:$field_storage}, ${3:$prior_field_storage}) {
+  $4
+}
+endsnippet
+
+snippet hook_field_ui_preconfigured_options_alter "Perform alterations on preconfigured field options." b
+/**
+ * Implements hook_field_ui_preconfigured_options_alter().
+ */
+function ${1:hook}_field_ui_preconfigured_options_alter(&${2:$options}, ${3:$field_type}) {
+  $4
+}
+endsnippet
+
+snippet hook_field_views_data "Override the default Views data for a Field API field." b
+/**
+ * Implements hook_field_views_data().
+ */
+function ${1:hook}_field_views_data(${2:$field_storage}) {
+  $3
+}
+endsnippet
+
+snippet hook_field_views_data_alter "Alter the Views data for a single Field API field." b
+/**
+ * Implements hook_field_views_data_alter().
+ */
+function ${1:hook}_field_views_data_alter(&${2:$data}, ${3:$field_storage}) {
+  $4
+}
+endsnippet
+
+snippet hook_field_views_data_views_data_alter "Alter the Views data on a per field basis." b
+/**
+ * Implements hook_field_views_data_views_data_alter().
+ */
+function ${1:hook}_field_views_data_views_data_alter(&${2:$data}, ${3:$field}) {
+  $4
+}
+endsnippet
+
+snippet hook_field_widget_form_alter "Alter forms for field widgets provided by other modules." b
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function ${1:hook}_field_widget_form_alter(&${2:$element}, ${3:$form_state}, ${4:$context}) {
+  $5
+}
+endsnippet
+
+snippet hook_field_widget_info_alter "Perform alterations on Field API widget types." b
+/**
+ * Implements hook_field_widget_info_alter().
+ */
+function ${1:hook}_field_widget_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_field_widget_multivalue_form_alter "Alter forms for multi-value field widgets provided by other modules." b
+/**
+ * Implements hook_field_widget_multivalue_form_alter().
+ */
+function ${1:hook}_field_widget_multivalue_form_alter(&${2:$elements}, ${3:$form_state}, ${4:$context}) {
+  $5
+}
+endsnippet
+
+snippet hook_field_widget_multivalue_WIDGET_TYPE_form_alter "Alter multi-value widget forms for a widget provided by another module." b
+/**
+ * Implements hook_field_widget_multivalue_WIDGET_TYPE_form_alter().
+ */
+function ${1:hook}_field_widget_multivalue_${2:WIDGET_TYPE}_form_alter(&${3:$info}) {
+  $4
+}
+endsnippet
+
+snippet hook_field_widget_WIDGET_TYPE_form_alter "Alter widget forms for a specific widget provided by another module." b
+/**
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ */
+function ${1:hook}_field_widget_${2:WIDGET_TYPE}_form_alter(&${3:$elements}, ${4:$form_state}, ${5:$context}) {
+  $6
+}
+endsnippet
+
+snippet hook_filetransfer_info "Register information about FileTransfer classes provided by a module." b
+/**
+ * Implements hook_filetransfer_info().
+ */
+function ${1:hook}_filetransfer_info() {
+  $2
+}
+endsnippet
+
+snippet hook_filetransfer_info_alter "Alter the FileTransfer class registry." b
+/**
+ * Implements hook_filetransfer_info_alter().
+ */
+function ${1:hook}_filetransfer_info_alter(&${2:$filetransfer_info}) {
+  $3
+}
+endsnippet
+
+snippet hook_file_copy "Respond to a file that has been copied." b
+/**
+ * Implements hook_file_copy().
+ */
+function ${1:hook}_file_copy(${2:$file}, ${3:$source}) {
+  $4
+}
+endsnippet
+
+snippet hook_file_download "Control access to private file downloads and specify HTTP headers." b
+/**
+ * Implements hook_file_download().
+ */
+function ${1:hook}_file_download(${2:$uri}) {
+  $3
+}
+endsnippet
+
+snippet hook_file_mimetype_mapping_alter "Alter MIME type mappings used to determine MIME type from a file extension." b
+/**
+ * Implements hook_file_mimetype_mapping_alter().
+ */
+function ${1:hook}_file_mimetype_mapping_alter(&${2:$mapping}) {
+  $3
+}
+endsnippet
+
+snippet hook_file_move "Respond to a file that has been moved." b
+/**
+ * Implements hook_file_move().
+ */
+function ${1:hook}_file_move(${2:$file}, ${3:$source}) {
+  $4
+}
+endsnippet
+
+snippet hook_file_url_alter "Alter the URL to a file." b
+/**
+ * Implements hook_file_url_alter().
+ */
+function ${1:hook}_file_url_alter(&${2:$uri}) {
+  $3
+}
+endsnippet
+
+snippet hook_file_validate "Check that files meet a given criteria." b
+/**
+ * Implements hook_file_validate().
+ */
+function ${1:hook}_file_validate(${2:$file}) {
+  $3
+}
+endsnippet
+
+snippet hook_filter_format_disable "Perform actions when a text format has been disabled." b
+/**
+ * Implements hook_filter_format_disable().
+ */
+function ${1:hook}_filter_format_disable(${2:$format}) {
+  $3
+}
+endsnippet
+
+snippet hook_filter_info_alter "Perform alterations on filter definitions." b
+/**
+ * Implements hook_filter_info_alter().
+ */
+function ${1:hook}_filter_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_filter_secure_image_alter "Alters images with an invalid source." b
+/**
+ * Implements hook_filter_secure_image_alter().
+ */
+function ${1:hook}_filter_secure_image_alter(&${2:$image}) {
+  $3
+}
+endsnippet
+
+snippet hook_form_alter "Perform alterations before a form is rendered." b
+/**
+ * Implements hook_form_alter().
+ */
+function ${1:hook}_form_alter(&${2:$form}, ${3:$form_state}, ${4:$form_id}) {
+  $5
+}
+endsnippet
+
+snippet hook_form_BASE_FORM_ID_alter "Provide a form-specific alteration for shared ('base') forms." b
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function ${1:hook}_form_${2:BASE_FORM_ID}_alter(&${3:$form}, ${4:$form_state}, ${5:$form_id}) {
+  $6
+}
+endsnippet
+
+snippet hook_form_FORM_ID_alter "Provide a form-specific alteration instead of the global hook_form_alter()." b
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ${1:hook}_form_${2:FORM_ID}_alter(&${3:$form}, ${4:$form_state}, ${5:$form_id}) {
+  $6
+}
+endsnippet
+
+snippet hook_form_system_theme_settings_alter "Allow themes to alter the theme-specific settings form." b
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function ${1:hook}_form_system_theme_settings_alter(&${2:$form}, ${3:$form_state}) {
+  $4
+}
+endsnippet
+
+snippet hook_hal_relation_uri_alter "Alter the HAL relation URI." b
+/**
+ * Implements hook_hal_relation_uri_alter().
+ */
+function ${1:hook}_hal_relation_uri_alter(&${2:$uri}, ${3:$context} = []) {
+  $4
+}
+endsnippet
+
+snippet hook_hal_type_uri_alter "Alter the HAL type URI." b
+/**
+ * Implements hook_hal_type_uri_alter().
+ */
+function ${1:hook}_hal_type_uri_alter(&${2:$uri}, ${3:$context} = []) {
+  $4
+}
+endsnippet
+
+snippet hook_help "Provide online user help." b
+/**
+ * Implements hook_help().
+ */
+function ${1:hook}_help(${2:$route_name}, ${3:$route_match}) {
+  $4
+}
+endsnippet
+
+snippet hook_help_section_info_alter "Perform alterations on help page section plugin definitions." b
+/**
+ * Implements hook_help_section_info_alter().
+ */
+function ${1:hook}_help_section_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_hook_info "Defines one or more hooks that are exposed by a module." b
+/**
+ * Implements hook_hook_info().
+ */
+function ${1:hook}_hook_info() {
+  $2
+}
+endsnippet
+
+snippet hook_image_effect_info_alter "Alter the information provided in \Drupal\image\Annotation\ImageEffect." b
+/**
+ * Implements hook_image_effect_info_alter().
+ */
+function ${1:hook}_image_effect_info_alter(&${2:$effects}) {
+  $3
+}
+endsnippet
+
+snippet hook_image_style_flush "Respond to image style flushing." b
+/**
+ * Implements hook_image_style_flush().
+ */
+function ${1:hook}_image_style_flush(${2:$style}) {
+  $3
+}
+endsnippet
+
+snippet hook_install "Perform setup tasks when the module is installed." b
+/**
+ * Implements hook_install().
+ */
+function ${1:hook}_install() {
+  $2
+}
+endsnippet
+
+snippet hook_install_tasks "Return an array of tasks to be performed by an installation profile." b
+/**
+ * Implements hook_install_tasks().
+ */
+function ${1:hook}_install_tasks(&${2:$install_state}) {
+  $3
+}
+endsnippet
+
+snippet hook_install_tasks_alter "Alter the full list of installation tasks." b
+/**
+ * Implements hook_install_tasks_alter().
+ */
+function ${1:hook}_install_tasks_alter(&${2:$tasks}, ${3:$install_state}) {
+  $4
+}
+endsnippet
+
+snippet hook_js_alter "Perform necessary alterations to the JavaScript before it is presented on the page." b
+/**
+ * Implements hook_js_alter().
+ */
+function ${1:hook}_js_alter(&${2:$javascript}, ${3:$assets}) {
+  $4
+}
+endsnippet
+
+snippet hook_js_settings_alter "Perform necessary alterations to the JavaScript settings (drupalSettings)." b
+/**
+ * Implements hook_js_settings_alter().
+ */
+function ${1:hook}_js_settings_alter(&${2:$settings}, ${3:$assets}) {
+  $4
+}
+endsnippet
+
+snippet hook_js_settings_build "hook_js_settings_build"
+/**
+ * Implements hook_js_settings_build().
+ */
+function ${1:hook}_js_settings_build(&${2:$settings}, ${3:$assets}) {
+  $4
+}
+endsnippet
+
+snippet hook_language_fallback_candidates_alter "Allow modules to alter the language fallback candidates." b
+/**
+ * Implements hook_language_fallback_candidates_alter().
+ */
+function ${1:hook}_language_fallback_candidates_alter(&${2:$candidates}, ${3:$context}) {
+  $4
+}
+endsnippet
+
+snippet hook_language_fallback_candidates_OPERATION_alter "Allow modules to alter the fallback candidates for specific operations." b
+/**
+ * Implements hook_language_fallback_candidates_OPERATION_alter().
+ */
+function ${1:hook}_language_fallback_candidates_${2:OPERATION}_alter(&${3:$candidates}, ${4:$context}) {
+  $5
+}
+endsnippet
+
+snippet hook_language_negotiation_info_alter "Perform alterations on language negotiation methods." b
+/**
+ * Implements hook_language_negotiation_info_alter().
+ */
+function ${1:hook}_language_negotiation_info_alter(&${2:$negotiation_info}) {
+  $3
+}
+endsnippet
+
+snippet hook_language_switch_links_alter "Perform alterations on language switcher links." b
+/**
+ * Implements hook_language_switch_links_alter().
+ */
+function ${1:hook}_language_switch_links_alter(&${2:$links}, ${3:$type}, ${4:$url}) {
+  $5
+}
+endsnippet
+
+snippet hook_language_types_info "Define language types." b
+/**
+ * Implements hook_language_types_info().
+ */
+function ${1:hook}_language_types_info() {
+  $2
+}
+endsnippet
+
+snippet hook_language_types_info_alter "Perform alterations on language types." b
+/**
+ * Implements hook_language_types_info_alter().
+ */
+function ${1:hook}_language_types_info_alter(&${2:$language_types}) {
+  $3
+}
+endsnippet
+
+snippet hook_layout_alter "Allow modules to alter layout plugin definitions." b
+/**
+ * Implements hook_layout_alter().
+ */
+function ${1:hook}_layout_alter(&${2:$definitions}) {
+  $3
+}
+endsnippet
+
+snippet hook_library_info_alter "Alter libraries provided by an extension." b
+/**
+ * Implements hook_library_info_alter().
+ */
+function ${1:hook}_library_info_alter(&${2:$libraries}, ${3:$extension}) {
+  $4
+}
+endsnippet
+
+snippet hook_library_info_build "Add dynamic library definitions." b
+/**
+ * Implements hook_library_info_build().
+ */
+function ${1:hook}_library_info_build() {
+  $2
+}
+endsnippet
+
+snippet hook_link_alter "Alter the parameters for links." b
+/**
+ * Implements hook_link_alter().
+ */
+function ${1:hook}_link_alter(&${2:$variables}) {
+  $3
+}
+endsnippet
+
+snippet hook_locale_translation_projects_alter "Alter the list of projects to be updated by locale's interface translation." b
+/**
+ * Implements hook_locale_translation_projects_alter().
+ */
+function ${1:hook}_locale_translation_projects_alter(&${2:$projects}) {
+  $3
+}
+endsnippet
+
+snippet hook_local_tasks_alter "Alter local tasks plugins." b
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function ${1:hook}_local_tasks_alter(&${2:$local_tasks}) {
+  $3
+}
+endsnippet
+
+snippet hook_mail "Prepares a message based on parameters;"
+/**
+ * Implements hook_mail().
+ */
+function ${1:hook}_mail(${2:$key}, &${3:$message}, ${4:$params}) {
+  $5
+}
+endsnippet
+
+snippet hook_mail_alter "Alter an email message created with MailManagerInterface->mail()." b
+/**
+ * Implements hook_mail_alter().
+ */
+function ${1:hook}_mail_alter(&${2:$message}) {
+  $3
+}
+endsnippet
+
+snippet hook_mail_backend_info_alter "Alter the list of mail backend plugin definitions." b
+/**
+ * Implements hook_mail_backend_info_alter().
+ */
+function ${1:hook}_mail_backend_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_media_source_info_alter "Alters the information provided in \Drupal\media\Annotation\MediaSource." b
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function ${1:hook}_media_source_info_alter(&${2:$sources}) {
+  $3
+}
+endsnippet
+
+snippet hook_menu_links_discovered_alter "Alters all the menu links discovered by the menu link plugin manager." b
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function ${1:hook}_menu_links_discovered_alter(&${2:$links}) {
+  $3
+}
+endsnippet
+
+snippet hook_menu_local_actions_alter "Alter local actions plugins." b
+/**
+ * Implements hook_menu_local_actions_alter().
+ */
+function ${1:hook}_menu_local_actions_alter(&${2:$local_actions}) {
+  $3
+}
+endsnippet
+
+snippet hook_menu_local_tasks_alter "Alter local tasks displayed on the page before they are rendered." b
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function ${1:hook}_menu_local_tasks_alter(&${2:$data}, ${3:$route_name}) {
+  $4
+}
+endsnippet
+
+snippet hook_migrate_MIGRATION_ID_prepare_row "Allows adding data to a row for a migration with the specified ID." b
+/**
+ * Implements hook_migrate_MIGRATION_ID_prepare_row().
+ */
+function ${1:hook}_migrate_${2:MIGRATION_ID}_prepare_row(${3:$row}, ${4:$source}, ${5:$migration}) {
+  $6
+}
+endsnippet
+
+snippet hook_migrate_prepare_row "Allows adding data to a row before processing it." b
+/**
+ * Implements hook_migrate_prepare_row().
+ */
+function ${1:hook}_migrate_prepare_row(${2:$row}, ${3:$source}, ${4:$migration}) {
+  $5
+}
+endsnippet
+
+snippet hook_migration_plugins_alter "Allows altering the list of discovered migration plugins." b
+/**
+ * Implements hook_migration_plugins_alter().
+ */
+function ${1:hook}_migration_plugins_alter(&${2:$migrations}) {
+  $3
+}
+endsnippet
+
+snippet hook_modules_installed "Perform necessary actions after modules are installed." b
+/**
+ * Implements hook_modules_installed().
+ */
+function ${1:hook}_modules_installed(${2:$modules}) {
+  $3
+}
+endsnippet
+
+snippet hook_modules_uninstalled "Perform necessary actions after modules are uninstalled." b
+/**
+ * Implements hook_modules_uninstalled().
+ */
+function ${1:hook}_modules_uninstalled(${2:$modules}) {
+  $3
+}
+endsnippet
+
+snippet hook_module_implements_alter "Alter the registry of modules implementing a hook." b
+/**
+ * Implements hook_module_implements_alter().
+ */
+function ${1:hook}_module_implements_alter(&${2:$implementations}, ${3:$hook}) {
+  $4
+}
+endsnippet
+
+snippet hook_module_preinstall "Perform necessary actions before a module is installed." b
+/**
+ * Implements hook_module_preinstall().
+ */
+function ${1:hook}_module_preinstall(${2:$module}) {
+  $3
+}
+endsnippet
+
+snippet hook_module_preuninstall "Perform necessary actions before a module is uninstalled." b
+/**
+ * Implements hook_module_preuninstall().
+ */
+function ${1:hook}_module_preuninstall(${2:$module}) {
+  $3
+}
+endsnippet
+
+snippet hook_node_access "Controls access to a node." b
+/**
+ * Implements hook_node_access().
+ */
+function ${1:hook}_node_access(${2:$node}, ${3:$op}, ${4:$account}) {
+  $5
+}
+endsnippet
+
+snippet hook_node_access_records "Set permissions for a node to be written to the database." b
+/**
+ * Implements hook_node_access_records().
+ */
+function ${1:hook}_node_access_records(${2:$node}) {
+  $3
+}
+endsnippet
+
+snippet hook_node_access_records_alter "Alter permissions for a node before it is written to the database." b
+/**
+ * Implements hook_node_access_records_alter().
+ */
+function ${1:hook}_node_access_records_alter(&${2:$grants}, ${3:$node}) {
+  $4
+}
+endsnippet
+
+snippet hook_node_grants "Inform the node access system what permissions the user has." b
+/**
+ * Implements hook_node_grants().
+ */
+function ${1:hook}_node_grants(${2:$account}, ${3:$op}) {
+  $4
+}
+endsnippet
+
+snippet hook_node_grants_alter "Alter user access rules when trying to view edit or delete a node." b
+/**
+ * Implements hook_node_grants_alter().
+ */
+function ${1:hook}_node_grants_alter(&${2:$grants}, ${3:$account}, ${4:$op}) {
+  $5
+}
+endsnippet
+
+snippet hook_node_links_alter "Alter the links of a node." b
+/**
+ * Implements hook_node_links_alter().
+ */
+function ${1:hook}_node_links_alter(&${2:$links}, ${3:$entity}, &${4:$$context}) {
+  $5
+}
+endsnippet
+
+snippet hook_node_search_result "Act on a node being displayed as a search result." b
+/**
+ * Implements hook_node_search_result().
+ */
+function ${1:hook}_node_search_result(${2:$node}) {
+  $3
+}
+endsnippet
+
+snippet hook_node_update_index "Act on a node being indexed for searching." b
+/**
+ * Implements hook_node_update_index().
+ */
+function ${1:hook}_node_update_index(${2:$node}) {
+  $3
+}
+endsnippet
+
+snippet hook_options_list_alter "Alters the list of options to be displayed for a field." b
+/**
+ * Implements hook_options_list_alter().
+ */
+function ${1:hook}_options_list_alter(&${2:$options}, ${3:$context}) {
+  $4
+}
+endsnippet
+
+snippet hook_page_attachments "Add attachments (typically assets) to a page before it is rendered." b
+/**
+ * Implements hook_page_attachments().
+ */
+function ${1:hook}_page_attachments(&${2:$attachments}) {
+  $3
+}
+endsnippet
+
+snippet hook_page_attachments_alter "Alter attachments (typically assets) to a page before it is rendered." b
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function ${1:hook}_page_attachments_alter(&${2:$attachments}) {
+  $3
+}
+endsnippet
+
+snippet hook_page_bottom "Add a renderable array to the bottom of the page." b
+/**
+ * Implements hook_page_bottom().
+ */
+function ${1:hook}_page_bottom(&${2:$page_bottom}) {
+  $3
+}
+endsnippet
+
+snippet hook_page_top "Add a renderable array to the top of the page." b
+/**
+ * Implements hook_page_top().
+ */
+function ${1:hook}_page_top(&${2:$page_top}) {
+  $3
+}
+endsnippet
+
+snippet hook_path_delete "Respond to a path being deleted." b
+/**
+ * Implements hook_path_delete().
+ */
+function ${1:hook}_path_delete(${2:$path}) {
+  $3
+}
+endsnippet
+
+snippet hook_path_insert "Respond to a path being inserted." b
+/**
+ * Implements hook_path_insert().
+ */
+function ${1:hook}_path_insert(${2:$path}) {
+  $3
+}
+endsnippet
+
+snippet hook_path_update "Respond to a path being updated." b
+/**
+ * Implements hook_path_update().
+ */
+function ${1:hook}_path_update(${2:$path}) {
+  $3
+}
+endsnippet
+
+snippet hook_post_update_NAME "Executes an update which is intended to update data like entities." b
+/**
+ * Implements hook_post_update_NAME().
+ */
+function ${1:hook}_post_update_${2:NAME}(&${3:$sandbox}) {
+  $4
+}
+endsnippet
+
+snippet hook_preprocess "Preprocess theme variables for templates." b
+/**
+ * Implements hook_preprocess().
+ */
+function ${1:hook}_preprocess(&${2:$variables}, ${3:$hook}) {
+  $4
+}
+endsnippet
+
+snippet hook_preprocess_HOOK "Preprocess theme variables for a specific theme hook." b
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function ${1:hook}_preprocess_${2:HOOK}(&${3:$variables}) {
+  $4
+}
+endsnippet
+
+snippet hook_query_alter "Perform alterations to a structured query." b
+/**
+ * Implements hook_query_alter().
+ */
+function ${1:hook}_query_alter(${2:$query}) {
+  $3
+}
+endsnippet
+
+snippet hook_query_TAG_alter "Perform alterations to a structured query for a given tag." b
+/**
+ * Implements hook_query_TAG_alter().
+ */
+function ${1:hook}_query_${2:TAG}_alter(${3:$query}) {
+  $4
+}
+endsnippet
+
+snippet hook_queue_info_alter "Alter cron queue information before cron runs." b
+/**
+ * Implements hook_queue_info_alter().
+ */
+function ${1:hook}_queue_info_alter(&${2:$queues}) {
+  $3
+}
+endsnippet
+
+snippet hook_quickedit_editor_alter "Allow modules to alter in-place editor plugin metadata." b
+/**
+ * Implements hook_quickedit_editor_alter().
+ */
+function ${1:hook}_quickedit_editor_alter(&${2:$editors}) {
+  $3
+}
+endsnippet
+
+snippet hook_quickedit_render_field "Returns a renderable array for the value of a single field in an entity." b
+/**
+ * Implements hook_quickedit_render_field().
+ */
+function ${1:hook}_quickedit_render_field(${2:$entity}, ${3:$field_name}, ${4:$view_mode_id}, ${5:$langcode}) {
+  $6
+}
+endsnippet
+
+snippet hook_ranking "Provide additional methods of scoring for core search results for nodes." b
+/**
+ * Implements hook_ranking().
+ */
+function ${1:hook}_ranking() {
+  $2
+}
+endsnippet
+
+snippet hook_rdf_namespaces "Allow modules to define namespaces for RDF mappings." b
+/**
+ * Implements hook_rdf_namespaces().
+ */
+function ${1:hook}_rdf_namespaces() {
+  $2
+}
+endsnippet
+
+snippet hook_rebuild "Rebuild data based upon refreshed caches." b
+/**
+ * Implements hook_rebuild().
+ */
+function ${1:hook}_rebuild() {
+  $2
+}
+endsnippet
+
+snippet hook_render_template "Render a template using the theme engine." b
+/**
+ * Implements hook_render_template().
+ */
+function ${1:hook}_render_template(${2:$template_file}, ${3:$variables}) {
+  $4
+}
+endsnippet
+
+snippet hook_requirements "Check installation requirements and do status reporting." b
+/**
+ * Implements hook_requirements().
+ */
+function ${1:hook}_requirements(${2:$phase}) {
+  $3
+}
+endsnippet
+
+snippet hook_rest_relation_uri_alter "Deprecated: Alter the REST relation URI." b
+/**
+ * Implements hook_rest_relation_uri_alter().
+ */
+function ${1:hook}_rest_relation_uri_alter(&${2:$uri}, ${3:$context} = []) {
+  $4
+}
+endsnippet
+
+snippet hook_rest_resource_alter "Alter the resource plugin definitions." b
+/**
+ * Implements hook_rest_resource_alter().
+ */
+function ${1:hook}_rest_resource_alter(&${2:$definitions}) {
+  $3
+}
+endsnippet
+
+snippet hook_rest_type_uri_alter "Deprecated: Alter the REST type URI." b
+/**
+ * Implements hook_rest_type_uri_alter().
+ */
+function ${1:hook}_rest_type_uri_alter(&${2:$uri}, ${3:$context} = []) {
+  $4
+}
+endsnippet
+
+snippet hook_schema "Define the current version of the database schema." b
+/**
+ * Implements hook_schema().
+ */
+function ${1:hook}_schema() {
+  $2
+}
+endsnippet
+
+snippet hook_search_plugin_alter "Alter search plugin definitions." b
+/**
+ * Implements hook_search_plugin_alter().
+ */
+function ${1:hook}_search_plugin_alter(&${2:$definitions}) {
+  $3
+}
+endsnippet
+
+snippet hook_search_preprocess "Preprocess text for search." b
+/**
+ * Implements hook_search_preprocess().
+ */
+function ${1:hook}_search_preprocess(${2:$text}, ${3:$langcode}) {
+  $4
+}
+endsnippet
+
+snippet hook_shortcut_default_set "Return the name of a default shortcut set for the provided user account." b
+/**
+ * Implements hook_shortcut_default_set().
+ */
+function ${1:hook}_shortcut_default_set(${2:$account}) {
+  $3
+}
+endsnippet
+
+snippet hook_simpletest_alter "Deprecated: Alter the list of tests." b
+/**
+ * Implements hook_simpletest_alter().
+ */
+function ${1:hook}_simpletest_alter(&${2:$groups}) {
+  $3
+}
+endsnippet
+
+snippet hook_system_breadcrumb_alter "Perform alterations to the breadcrumb built by the BreadcrumbManager." b
+/**
+ * Implements hook_system_breadcrumb_alter().
+ */
+function ${1:hook}_system_breadcrumb_alter(&${2:$breadcrumb}, ${3:$route_match}, ${4:$context}) {
+  $5
+}
+endsnippet
+
+snippet hook_system_info_alter "Alter the information parsed from module and theme .info.yml files." b
+/**
+ * Implements hook_system_info_alter().
+ */
+function ${1:hook}_system_info_alter(&${2:$info}, ${3:$file}, ${4:$type}) {
+  $5
+}
+endsnippet
+
+snippet hook_system_themes_page_alter "Alters theme operation links." b
+/**
+ * Implements hook_system_themes_page_alter().
+ */
+function ${1:hook}_system_themes_page_alter(&${2:$theme_groups}) {
+  $3
+}
+endsnippet
+
+snippet hook_template_preprocess_default_variables_alter "Alters theme operation links." b
+/**
+ * Implements hook_template_preprocess_default_variables_alter().
+ */
+function ${1:hook}_template_preprocess_default_variables_alter(&${2:$variables}) {
+  $3
+}
+endsnippet
+
+snippet hook_test_finished "An individual test has finished." b
+/**
+ * Implements hook_test_finished().
+ */
+function ${1:hook}_test_finished(${2:$results}) {
+  $3
+}
+endsnippet
+
+snippet hook_test_group_finished "A test group has finished." b
+/**
+ * Implements hook_test_group_finished().
+ */
+function ${1:hook}_test_group_finished() {
+  $2
+}
+endsnippet
+
+snippet hook_test_group_started "A test group has started." b
+/**
+ * Implements hook_test_group_started().
+ */
+function ${1:hook}_test_group_started() {
+  $2
+}
+endsnippet
+
+snippet hook_theme "Register a module or theme's theme implementations." b
+/**
+ * Implements hook_theme().
+ */
+function ${1:hook}_theme(${2:$existing}, ${3:$type}, ${4:$theme}, ${5:$path}) {
+  $6
+}
+endsnippet
+
+snippet hook_themes_installed "Respond to themes being installed." b
+/**
+ * Implements hook_themes_installed().
+ */
+function ${1:hook}_themes_installed(${2:$theme_list}) {
+  $3
+}
+endsnippet
+
+snippet hook_themes_uninstalled "Respond to themes being uninstalled." b
+/**
+ * Implements hook_themes_uninstalled().
+ */
+function ${1:hook}_themes_uninstalled(${2:$themes}) {
+  $3
+}
+endsnippet
+
+snippet hook_theme_registry_alter "Alter the theme registry information returned from hook_theme()." b
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function ${1:hook}_theme_registry_alter(&${2:$theme_registry}) {
+  $3
+}
+endsnippet
+
+snippet hook_theme_suggestions_alter "Alters named suggestions for all theme hooks." b
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function ${1:hook}_theme_suggestions_alter(&${2:$suggestions}, ${3:$variables}, ${4:$hook}) {
+  $5
+}
+endsnippet
+
+snippet hook_theme_suggestions_HOOK "Provides alternate named suggestions for a specific theme hook." b
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function ${1:hook}_theme_suggestions_${2:HOOK}(${3:$variables}) {
+  $4
+}
+endsnippet
+
+snippet hook_theme_suggestions_HOOK_alter "Provides alternate named suggestions for a specific theme hook." b
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function ${1:hook}_theme_suggestions_${2:HOOK}_alter(&${3:$suggestions}, ${4:$variables}) {
+  $5
+}
+endsnippet
+
+snippet hook_tokens "Provide replacement values for placeholder tokens." b
+/**
+ * Implements hook_tokens().
+ */
+function ${1:hook}_tokens(${2:$type}, ${3:$tokens}, ${4:$data}, ${5:$options}, ${6:$bubbleable_metadata}) {
+  $7
+}
+endsnippet
+
+snippet hook_tokens_alter "Alter replacement values for placeholder tokens." b
+/**
+ * Implements hook_tokens_alter().
+ */
+function ${1:hook}_tokens_alter(&${2:$replacements}, ${3:$context}, ${4:$bubbleable_metadata}) {
+  $5
+}
+endsnippet
+
+snippet hook_toolbar "Add items to the toolbar menu." b
+/**
+ * Implements hook_toolbar().
+ */
+function ${1:hook}_toolbar() {
+  $2
+}
+endsnippet
+
+snippet hook_toolbar_alter "Alter the toolbar menu after hook_toolbar() is invoked." b
+/**
+ * Implements hook_toolbar_alter().
+ */
+function ${1:hook}_toolbar_alter(&${2:$items}) {
+  $3
+}
+endsnippet
+
+snippet hook_tour_tips_alter "Allow modules to alter tour items before render." b
+/**
+ * Implements hook_tour_tips_alter().
+ */
+function ${1:hook}_tour_tips_alter(&${2:$tour_tips}, ${3:$entity}) {
+  $4
+}
+endsnippet
+
+snippet hook_tour_tips_info_alter "Allow modules to alter tip plugin definitions." b
+/**
+ * Implements hook_tour_tips_info_alter().
+ */
+function ${1:hook}_tour_tips_info_alter(&${2:$info}) {
+  $3
+}
+endsnippet
+
+snippet hook_transliteration_overrides_alter "Provide language-specific overrides for transliteration." b
+/**
+ * Implements hook_transliteration_overrides_alter().
+ */
+function ${1:hook}_transliteration_overrides_alter(&${2:$overrides}, ${3:$langcode}) {
+  $4
+}
+endsnippet
+
+snippet hook_uninstall "Remove any information that the module sets." b
+/**
+ * Implements hook_uninstall().
+ */
+function ${1:hook}_uninstall() {
+  $2
+}
+endsnippet
+
+snippet hook_updater_info "Provide information on Updaters (classes that can update Drupal)." b
+/**
+ * Implements hook_updater_info().
+ */
+function ${1:hook}_updater_info() {
+  $2
+}
+endsnippet
+
+snippet hook_uhook_updater_info_alterpdater_info "Alter the Updater information array." b
+/**
+ * Implements hook_updater_info_alter().
+ */
+function ${1:hook}_updater_info_alter(&${2:$updaters}) {
+  $3
+}
+endsnippet
+
+snippet hook_update_dependencies "Return an array of information about module update dependencies." b
+/**
+ * Implements hook_update_dependencies().
+ */
+function ${1:hook}_update_dependencies() {
+  $2
+}
+endsnippet
+
+snippet hook_update_last_removed "Return a number which is no longer available as hook_update_N()." b
+/**
+ * Implements hook_update_last_removed().
+ */
+function ${1:hook}_update_last_removed() {
+  $2
+}
+endsnippet
+
+snippet hook_update_N "Perform a single update between minor versions." b
+/**
+ * Implements hook_update_N().
+ */
+function ${1:hook}_update_${2:N}(&${3:$sandbox}) {
+  $4
+}
+endsnippet
+
+snippet hook_update_projects_alter "Alter the list of projects before fetching data and comparing versions." b
+/**
+ * Implements hook_update_projects_alter().
+ */
+function ${1:hook}_update_projects_alter(&${2:$projects}) {
+  $3
+}
+endsnippet
+
+snippet hook_update_status_alter "Alter the information about available updates for projects." b
+/**
+ * Implements hook_update_status_alter().
+ */
+function ${1:hook}_update_status_alter(&${2:$projects}) {
+  $3
+}
+endsnippet
+
+snippet hook_user_cancel "Act on user account cancellations." b
+/**
+ * Implements hook_user_cancel().
+ */
+function ${1:hook}_user_cancel(${2:$edit}, ${3:$account}, ${4:$method}) {
+  $5
+}
+endsnippet
+
+snippet hook_user_cancel_methods_alter "Modify account cancellation methods." b
+/**
+ * Implements hook_user_cancel_methods_alter().
+ */
+function ${1:hook}_user_cancel_methods_alter(&${2:$methods}) {
+  $3
+}
+endsnippet
+
+snippet hook_user_format_name_alter "Alter the username that is displayed for a user." b
+/**
+ * Implements hook_user_format_name_alter().
+ */
+function ${1:hook}_user_format_name_alter(&${2:$name}, ${3:$account}) {
+  $4
+}
+endsnippet
+
+snippet hook_user_login "The user just logged in." b
+/**
+ * Implements hook_user_login().
+ */
+function ${1:hook}_user_login(${2:$account}) {
+  $3
+}
+endsnippet
+
+snippet hook_user_logout "The user just logged out." b
+/**
+ * Implements hook_user_logout().
+ */
+function ${1:hook}_user_logout(${2:$account}) {
+  $3
+}
+endsnippet
+
+snippet hook_validation_constraint_alter "Alter validation constraint plugin definitions." b
+/**
+ * Implements hook_validation_constraint_alter().
+ */
+function ${1:hook}_validation_constraint_alter(&${2:$definitions}) {
+  $3
+}
+endsnippet
+
+snippet hook_verify_update_archive "Verify an archive after it has been downloaded and extracted." b
+/**
+ * Implements hook_verify_update_archive().
+ */
+function ${1:hook}_verify_update_archive(${2:$project}, ${3:$archive_file}, ${4:$directory}) {
+  $5
+}
+endsnippet
+
+snippet hook_views_analyze "Analyze a view to provide warnings about its configuration." b
+/**
+ * Implements hook_views_analyze().
+ */
+function ${1:hook}_views_analyze(${2:$view}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_data "Describe data tables and fields (or the equivalent) to Views." b
+/**
+ * Implements hook_views_data().
+ */
+function ${1:hook}_views_data() {
+  $2
+}
+endsnippet
+
+snippet hook_views_data_alter "Alter the table and field information from hook_views_data()." b
+/**
+ * Implements hook_views_data_alter().
+ */
+function ${1:hook}_views_data_alter(&${2:$data}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_form_substitutions "Replace special strings when processing a view with form elements." b
+/**
+ * Implements hook_views_form_substitutions().
+ */
+function ${1:hook}_views_form_substitutions() {
+  $2
+}
+endsnippet
+
+snippet hook_views_invalidate_cache "Allow modules to respond to the invalidation of the Views cache." b
+/**
+ * Implements hook_views_invalidate_cache().
+ */
+function ${1:hook}_views_invalidate_cache() {
+  $2
+}
+endsnippet
+
+snippet hook_views_plugins_access_alter "Modify the list of available views access plugins." b
+/**
+ * Implements hook_views_plugins_access_alter().
+ */
+function ${1:hook}_views_plugins_access_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_area_alter "Modify the list of available views area handler plugins." b
+/**
+ * Implements hook_views_plugins_area_alter().
+ */
+function ${1:hook}_views_plugins_area_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_argument_alter "Modify the list of available views argument handler plugins." b
+/**
+ * Implements hook_views_plugins_argument_alter().
+ */
+function ${1:hook}_views_plugins_argument_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_argument_default_alter "Modify the list of available views default argument plugins." b
+/**
+ * Implements hook_views_plugins_argument_default_alter().
+ */
+function ${1:hook}_views_plugins_argument_default_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_argument_validator_alter "Modify the list of available views argument validation plugins." b
+/**
+ * Implements hook_views_plugins_argument_validator_alter().
+ */
+function ${1:hook}_views_plugins_argument_validator_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_cache_alter "Modify the list of available views cache plugins." b
+/**
+ * Implements hook_views_plugins_cache_alter().
+ */
+function ${1:hook}_views_plugins_cache_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_display_alter "Modify the list of available views display plugins." b
+/**
+ * Implements hook_views_plugins_display_alter().
+ */
+function ${1:hook}_views_plugins_display_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_display_extenders_alter "Modify the list of available views display extender plugins." b
+/**
+ * Implements hook_views_plugins_display_extenders_alter().
+ */
+function ${1:hook}_views_plugins_display_extenders_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_exposed_form_alter "Modify the list of available views exposed form plugins." b
+/**
+ * Implements hook_views_plugins_exposed_form_alter().
+ */
+function ${1:hook}_views_plugins_exposed_form_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_field_alter "Modify the list of available views field handler plugins." b
+/**
+ * Implements hook_views_plugins_field_alter().
+ */
+function ${1:hook}_views_plugins_field_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_join_alter "Modify the list of available views join plugins." b
+/**
+ * Implements hook_views_plugins_join_alter().
+ */
+function ${1:hook}_views_plugins_join_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_pager_alter "Modify the list of available views pager plugins." b
+/**
+ * Implements hook_views_plugins_pager_alter().
+ */
+function ${1:hook}_views_plugins_pager_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_query_alter "Modify the list of available views query plugins." b
+/**
+ * Implements hook_views_plugins_query_alter().
+ */
+function ${1:hook}_views_plugins_query_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_relationship_alter "Modify the list of available views relationship handler plugins." b
+/**
+ * Implements hook_views_plugins_relationship_alter().
+ */
+function ${1:hook}_views_plugins_relationship_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_row_alter "Modify the list of available views row plugins." b
+/**
+ * Implements hook_views_plugins_row_alter().
+ */
+function ${1:hook}_views_plugins_row_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_sort_alter "Modify the list of available views sort handler plugins." b
+/**
+ * Implements hook_views_plugins_sort_alter().
+ */
+function ${1:hook}_views_plugins_sort_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_style_alter "Modify the list of available views style plugins." b
+/**
+ * Implements hook_views_plugins_style_alter().
+ */
+function ${1:hook}_views_plugins_style_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_plugins_wizard_alter "Modify the list of available views wizard plugins." b
+/**
+ * Implements hook_views_plugins_wizard_alter().
+ */
+function ${1:hook}_views_plugins_wizard_alter(&${2:$plugins}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_post_build "Act on the view immediately after the query is built." b
+/**
+ * Implements hook_views_post_build().
+ */
+function ${1:hook}_views_post_build(${2:$view}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_post_execute "Act on the view immediately after the query has been executed." b
+/**
+ * Implements hook_views_post_execute().
+ */
+function ${1:hook}_views_post_execute(${2:$view}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_post_render "Post-process any rendered data." b
+/**
+ * Implements hook_views_post_render().
+ */
+function ${1:hook}_views_post_render(${2:$view}, &${3:$output}, ${4:$cache}) {
+  $5
+}
+endsnippet
+
+snippet hook_views_preview_info_alter "Alter the view preview information." b
+/**
+ * Implements hook_views_preview_info_alter().
+ */
+function ${1:hook}_views_preview_info_alter(&${2:$rows}, ${3:$view}) {
+  $4
+}
+endsnippet
+
+snippet hook_views_pre_build "Act on the view before the query is built but after displays are attached." b
+/**
+ * Implements hook_views_pre_build().
+ */
+function ${1:hook}_views_pre_build(${2:$view}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_pre_execute "Act on the view after the query is built and just before it is executed." b
+/**
+ * Implements hook_views_pre_execute().
+ */
+function ${1:hook}_views_pre_execute(${2:$view}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_pre_render "Act on the view immediately before rendering it." b
+/**
+ * Implements hook_views_pre_render().
+ */
+function ${1:hook}_views_pre_render(${2:$view}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_pre_view "Alter a view at the very beginning of Views processing." b
+/**
+ * Implements hook_views_pre_view().
+ */
+function ${1:hook}_views_pre_view(${2:$view}, ${3:$display_id}, &${4:$args}) {
+  $5
+}
+endsnippet
+
+snippet hook_views_query_alter "Alter the query before it is executed." b
+/**
+ * Implements hook_views_query_alter().
+ */
+function ${1:hook}_views_query_alter(${2:$view}, ${3:$query}) {
+  $4
+}
+endsnippet
+
+snippet hook_views_query_substitutions "Replace special strings in the query before it is executed." b
+/**
+ * Implements hook_views_query_substitutions().
+ */
+function ${1:hook}_views_query_substitutions(${2:$view}) {
+  $3
+}
+endsnippet
+
+snippet hook_views_ui_display_top_links_alter "Alter the links displayed at the top of the view edit form." b
+/**
+ * Implements hook_views_ui_display_top_links_alter().
+ */
+function ${1:hook}_views_ui_display_top_links_alter(${2:$view}) {
+  $3
+}
+endsnippet
