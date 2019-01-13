@@ -1,0 +1,16 @@
+snippet controller
+	defmodule ${0:app_name}Web.${1:controller_name}Controller do
+		use ${0:app_name}Web, :controller
+		
+		${2}
+	end
+
+snippet view
+	defmodule ${0:app_name}Web.${1:view_name}View do
+		use ${0:app_name}Web, :view
+	end
+
+snippet channel
+	defmodule ${0:app_name}Web.${1:channe_name}Channel do
+		use ${0:app_name}Web, :channel
+	end
