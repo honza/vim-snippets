@@ -35,6 +35,46 @@ snippet @m "@media mediatype { }"
 	@media ${1:print} {
 		${0:${VISUAL}}
 	}
+snippet ac
+	align-content: ${0};
+snippet ac:c
+	align-content: center;
+snippet ac:fe
+	align-content: flex-end;
+snippet ac:fs
+	align-content: flex-start;
+snippet ac:sa
+	align-content: space-around;
+snippet ac:sb
+	align-content: space-between;
+snippet ac:s
+	align-content: stretch;
+snippet ai
+	align-items: ${0};
+snippet ai:b
+	align-items: baseline;
+snippet ai:c
+	align-items: center;
+snippet ai:fe
+	align-items: flex-end;
+snippet ai:fs
+	align-items: flex-start;
+snippet ai:s
+	align-items: stretch;
+snippet as
+	align-self:  ${0};
+snippet as:a
+	align-self: auto;
+snippet as:b
+	align-self: baseline;
+snippet as:c
+	align-self: center;
+snippet as:fe
+	align-self: flex-end;
+snippet as:fs
+	align-self: flex-start;
+snippet as:s
+	align-self: stretch;
 snippet bg+
 	background: #${1:FFF} url(${2}) ${3:0} ${4:0} ${0:no-repeat};
 snippet bga
@@ -423,16 +463,34 @@ snippet ec:s
 	empty-cells: show;
 snippet exp
 	expression()
-snippet fd
+snippet fxb
+	flex-basis: ${0};
+snippet fxb:a
+	flex-basis: auto;
+snippet fxd
 	flex-direction: ${0};
-snippet fd:r
-	flex-direction: row;
-snippet fd:rr
-	flex-direction: row-reverse;
-snippet fd:c
+snippet fxd:c
 	flex-direction: column;
-snippet fd:cr
+snippet fxd:cr
 	flex-direction: column-reverse;
+snippet fxd:r
+	flex-direction: row;
+snippet fxd:rr
+	flex-direction: row-reverse;
+snippet fwf
+	flex-flow: ${1} ${0};
+snippet fxg
+	flex-grow: ${0};
+snippet fxs
+	flex-shrink: ${0};
+snippet fxw
+	flex-wrap: ${0};
+snippet fxw:n
+	flex-wrap: nowrap;
+snippet fxw:w
+	flex-wrap: wrap;
+snippet fxw:wr
+	flex-wrap: wrap-reverse;
 snippet fl
 	float: ${0};
 snippet fl:l
@@ -549,6 +607,20 @@ snippet h
 	height: ${0};
 snippet h:a
 	height: auto;
+snippet jc
+	justify-content: ${0};
+snippet jc:c
+	justify-content: center;
+snippet jc:fe
+	justify-content: flex-end;
+snippet jc:fs
+	justify-content: flex-start;
+snippet jc:sa
+	justify-content: space-around;
+snippet jc:sb
+	justify-content: space-between;
+snippet jc:se
+	justify-content: space-evenly;
 snippet l
 	left: ${0};
 snippet l:a
