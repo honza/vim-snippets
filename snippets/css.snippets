@@ -463,12 +463,14 @@ snippet ec:s
 	empty-cells: show;
 snippet exp
 	expression()
+snippet fx
+	flex: ${1:0} ${2:1} ${0:auto};
 snippet fxb
-	flex-basis: ${0};
+	flex-basis: ${0:auto};
 snippet fxb:a
 	flex-basis: auto;
 snippet fxd
-	flex-direction: ${0};
+	flex-direction: ${0:row};
 snippet fxd:c
 	flex-direction: column;
 snippet fxd:cr
@@ -478,13 +480,13 @@ snippet fxd:r
 snippet fxd:rr
 	flex-direction: row-reverse;
 snippet fxf
-	flex-flow: ${1} ${0};
+	flex-flow: ${1:row} ${0:nowrap};
 snippet fxg
-	flex-grow: ${0};
+	flex-grow: ${0:0};
 snippet fxs
-	flex-shrink: ${0};
+	flex-shrink: ${0:1};
 snippet fxw
-	flex-wrap: ${0};
+	flex-wrap: ${0:nowrap};
 snippet fxw:n
 	flex-wrap: nowrap;
 snippet fxw:w
@@ -608,7 +610,7 @@ snippet h
 snippet h:a
 	height: auto;
 snippet jc
-	justify-content: ${0};
+	justify-content: ${0:flex-start};
 snippet jc:c
 	justify-content: center;
 snippet jc:fe
@@ -710,7 +712,7 @@ snippet op:ms
 snippet orp
 	orphans: ${0};
 snippet or
-	order: ${0};
+	order: ${0:0};
 snippet o+
 	outline: ${1:1px} ${2:solid} #${0:000};
 snippet oc
