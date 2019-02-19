@@ -19,7 +19,7 @@ endsnippet
 snippet with "with" b
 with ${1:expr}`!p snip.rv = " as " if t[2] else ""`${2:var}:
 	${3:${VISUAL:pass}}
-${0}
+$0
 endsnippet
 
 snippet for "for loop" b
@@ -42,6 +42,7 @@ DOXYGEN = 0x2
 SPHINX  = 0x3
 GOOGLE  = 0x4
 NUMPY   = 0x5
+JEDI    = 0x6
 
 SINGLE_QUOTES = "'"
 DOUBLE_QUOTES = '"'
@@ -116,6 +117,7 @@ def get_style(snip):
 	elif  style == "sphinx": return SPHINX
 	elif  style == "google": return GOOGLE
 	elif  style == "numpy": return NUMPY
+	elif  style == "jedi": return JEDI
 	else: return NORMAL
 
 
@@ -128,6 +130,8 @@ def format_arg(arg, style):
 		return ":%s: TODO" % arg
 	elif style == GOOGLE:
 		return "%s (TODO): TODO" % arg
+	elif style == JEDI:
+		return ":type %s: TODO" % arg
 	elif style == NUMPY:
 		return "%s : TODO" % arg
 
@@ -135,7 +139,7 @@ def format_arg(arg, style):
 def format_return(style):
 	if style == DOXYGEN:
 		return "@return: TODO"
-	elif style in (NORMAL, SPHINX):
+	elif style in (NORMAL, SPHINX, JEDI):
 		return ":returns: TODO"
 	elif style == GOOGLE:
 		return "Returns: TODO"
@@ -212,7 +216,9 @@ def write_init_body(args, parents, snip):
 
 
 def write_slots_args(args, snip):
-	args = ['"_%s"' % arg for arg in args]
+	quote = get_quoting_style(snip)
+	arg_format = quote + '_%s' + quote
+	args = [arg_format % arg for arg in args]
 	snip += '__slots__ = (%s,)' % ', '.join(args)
 
 
@@ -240,6 +246,9 @@ def write_function_docstring(t, snip):
 		snip += format_return(style)
 	snip.rv += '\n' + snip.mkline('', indent='')
 	snip += triple_quotes(snip)
+
+def get_dir_and_file_name(snip):
+	return os.getcwd().split(os.sep)[-1] + '.' + snip.basename
 
 endglobal
 
@@ -479,6 +488,11 @@ def __coerce__(self, other):
 	${25:pass}
 endsnippet
 
+snippet deff
+def ${1:fname}(`!p snip.rv = vim.eval('indent(".") ? "self" : ""')`$2):
+	$0
+endsnippet
+
 snippet def "function with docstrings" b
 def ${1:function}(`!p
 if snip.indent:
@@ -618,24 +632,12 @@ finally:
 endsnippet
 
 
-#####################
+######################
 # Assertions & Tests #
-#####################
-
-snippet pdb "Set PDB breakpoint" b
-import pdb; pdb.set_trace()
-endsnippet
-
-snippet ipdb "Set IPDB breakpoint" b
-import ipdb; ipdb.set_trace()
-endsnippet
-
-snippet pudb "Set PUDB breakpoint" b
-import pudb; pudb.set_trace()
-endsnippet
+######################
 
 snippet ae "Assert equal" b
-self.assertEqual(${1:${VISUAL:first}},${2:second})
+self.assertEqual(${1:${VISUAL:first}}, ${2:second})
 endsnippet
 
 snippet at "Assert True" b
@@ -647,7 +649,7 @@ self.assertFalse(${1:${VISUAL:expression}})
 endsnippet
 
 snippet aae "Assert almost equal" b
-self.assertAlmostEqual(${1:${VISUAL:first}},${2:second})
+self.assertAlmostEqual(${1:${VISUAL:first}}, ${2:second})
 endsnippet
 
 snippet ar "Assert raises" b
@@ -693,6 +695,20 @@ snippet doc "doc block (triple quotes)"
 `!p snip.rv = triple_quotes(snip)`
 ${1:${VISUAL:doc}}
 `!p snip.rv = triple_quotes(snip)`
+endsnippet
+
+snippet pmdoc "pocoo style module doc string" b
+# -*- coding: utf-8 -*-
+"""
+	`!p snip.rv = get_dir_and_file_name(snip)`
+	`!p snip.rv = '~' * len(get_dir_and_file_name(snip))`
+
+	${1:DESCRIPTION}
+
+	:copyright: (c) `date +%Y` by ${2:YOUR_NAME}.
+	:license: ${3:LICENSE_NAME}, see LICENSE for more details.
+"""
+$0
 endsnippet
 
 # vim:ft=snippets:
