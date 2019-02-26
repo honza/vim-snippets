@@ -216,7 +216,9 @@ def write_init_body(args, parents, snip):
 
 
 def write_slots_args(args, snip):
-	args = ['"_%s"' % arg for arg in args]
+	quote = get_quoting_style(snip)
+	arg_format = quote + '_%s' + quote
+	args = [arg_format % arg for arg in args]
 	snip += '__slots__ = (%s,)' % ', '.join(args)
 
 
@@ -635,7 +637,7 @@ endsnippet
 ######################
 
 snippet ae "Assert equal" b
-self.assertEqual(${1:${VISUAL:first}},${2:second})
+self.assertEqual(${1:${VISUAL:first}}, ${2:second})
 endsnippet
 
 snippet at "Assert True" b
@@ -647,7 +649,7 @@ self.assertFalse(${1:${VISUAL:expression}})
 endsnippet
 
 snippet aae "Assert almost equal" b
-self.assertAlmostEqual(${1:${VISUAL:first}},${2:second})
+self.assertAlmostEqual(${1:${VISUAL:first}}, ${2:second})
 endsnippet
 
 snippet ar "Assert raises" b
