@@ -117,9 +117,9 @@ snippet head "File Header" b
 /******************************************************************************
 * File:             `!p snip.rv = fn`
 *
-* Author:           ${2:`git config --get user.name`}  
+* Author:           ${2}  
 * Created:          `date +%m/%d/%y` 
-* Description:      ${4:I need a really long default here so I don't have to type so much !}
+* Description:      ${4:${VISUAL}}
 *****************************************************************************/
 ${0}
 endsnippet
@@ -128,7 +128,7 @@ post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
 snippet func "Function Header" 
 /******************************************************************************
 * Function:         $1
-* Description:      ${4:I need a really long default here so I don't have to type so much !}
+* Description:      ${4:${VISUAL}}
 * Where:`!p 
 snip.rv = ""
 snip >> 2
