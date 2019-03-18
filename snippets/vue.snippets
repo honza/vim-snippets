@@ -149,22 +149,11 @@ snippet vmixin
 	})
 
 snippet vmutations
-	// define a mixin object
-	var myMixin = {
-	  created: function () {
-		this.hello()
-	  },
-	  methods: {
-		hello: function () {
-		  console.log('hello from mixin!')
+	mutations: {
+		${1:updateValue}(state, ${3:payload}) => {
+			state.${2:value} = $3;
 		}
-	  }
 	}
-	// define a component that uses this mixin
-	var Component = Vue.extend({
-	  mixins: [myMixin]
-	})
-	var component = new Component() // -> "hello from mixin!"
 
 snippet vprops:d
 	propName: {
