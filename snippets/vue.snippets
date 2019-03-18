@@ -103,10 +103,10 @@ snippet vcl
 	@click="${1}"
 
 snippet vdata
-	data: function () {
-	  return {
-		key: value
-	  };
+	data() {
+		return {
+			${1:key}: ${2:value}
+		};
 	}
 
 snippet vfilter
