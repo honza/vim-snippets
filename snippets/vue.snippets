@@ -1,8 +1,8 @@
 # This snippet file enables vue files to use tabs for html, js and css. It also
-# includes some vue-specific html-like snippets, as well as some general 
+# includes some vue-specific html-like snippets, as well as some general
 # boilerplate code for vue.
 
-extends html, javascript, css 
+extends html, javascript, css
 
 # These snippets form a port of Sarah Drasner's vue-sublime-snippets
 
@@ -14,7 +14,7 @@ snippet slot
 snippet template
 	<template></template>
 
-snippet transition 
+snippet transition
 	<transition></transition>
 
 # The following snippets create more complex boilerplate code.
@@ -39,7 +39,7 @@ snippet vimport:c
 
 	export default{
 		components: {
-			appNew: New 
+			appNew: New
 		}
 	}
 
@@ -52,8 +52,8 @@ snippet vactionsis now
 	}
 
 # Add in js animation hooks
-snippet vanim:js:el 
-	<transition 
+snippet vanim:js:el
+	<transition
 	  @before-enter="beforeEnter"
 	  @enter="enter"
 	  @after-enter="afterEnter"
@@ -63,40 +63,40 @@ snippet vanim:js:el
 	  @after-leave="afterLeave"
 	  @leave-cancelled="leaveCancelled"
 	  :css="false">
-	 
+
 	 </transition>
-	 
+
 snippet vanim:js:method
 	methods: {
 	  beforeEnter(el) {
 		console.log('beforeEnter');
-	  }, 
+	  },
 	  enter(el, done) {
 		 console.log('enter');
 		 done();
 	  },
 	  afterEnter(el) {
 		console.log('afterEnter');
-	  }, 
+	  },
 	  enterCancelled(el, done) {
 		 console.log('enterCancelled');
 	  },
 	  beforeLeave(el) {
 		console.log('beforeLeave');
-	  }, 
+	  },
 	  leave(el, done) {
 		 console.log('leave');
 		 done();
 	  },
 	  afterLeave(el) {
 		console.log('afterLeave');
-	  }, 
+	  },
 	  leaveCancelled(el, done) {
 		 console.log('leaveCancelled');
 	  }
 	}
 
-snippet vcl 
+snippet vcl
 	@click=""
 
 snippet vdata
@@ -125,7 +125,7 @@ snippet vgetters
 		}
 	}
 
-snippet vimport 
+snippet vimport
 	import New from './components/New.vue';
 
 snippet vkeep
@@ -177,7 +177,7 @@ snippet vprops:d
 	  default: 100
 	},
 
-snippet vprops 
+snippet vprops
 	propName: {
 		type: Number
 	},
