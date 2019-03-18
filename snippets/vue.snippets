@@ -39,14 +39,13 @@ snippet vbase
 snippet vimport:c
 	import ${1:Name} from './components/$1.vue';
 
-	export default{
+	export default {
 		components: {
 			$1
 		}
 	}
 
 snippet vactions
-
 	actions: {
 		${1:updateValue}({commit}, ${2:payload}) {
 			commit($1, $2);
