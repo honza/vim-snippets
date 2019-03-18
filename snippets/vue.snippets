@@ -71,32 +71,32 @@ snippet vanim:js:el
 
 snippet vanim:js:method
 	methods: {
-	  beforeEnter(el) {
-		console.log('beforeEnter');
-	  },
-	  enter(el, done) {
-		 console.log('enter');
-		 done();
-	  },
-	  afterEnter(el) {
-		console.log('afterEnter');
-	  },
-	  enterCancelled(el, done) {
-		 console.log('enterCancelled');
-	  },
-	  beforeLeave(el) {
-		console.log('beforeLeave');
-	  },
-	  leave(el, done) {
-		 console.log('leave');
-		 done();
-	  },
-	  afterLeave(el) {
-		console.log('afterLeave');
-	  },
-	  leaveCancelled(el, done) {
-		 console.log('leaveCancelled');
-	  }
+		beforeEnter(el) {
+			console.log('beforeEnter');
+		},
+		enter(el, done) {
+			console.log('enter');
+			done();
+		},
+		afterEnter(el) {
+			console.log('afterEnter');
+		},
+		enterCancelled(el, done) {
+			console.log('enterCancelled');
+		},
+		beforeLeave(el) {
+			console.log('beforeLeave');
+		},
+		leave(el, done) {
+			console.log('leave');
+			done();
+		},
+		afterLeave(el) {
+			console.log('afterLeave');
+		},
+		leaveCancelled(el, done) {
+			console.log('leaveCancelled');
+		}
 	}
 
 snippet vcl
