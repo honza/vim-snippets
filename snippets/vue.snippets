@@ -164,3 +164,15 @@ snippet vprops
 	${1:propName}: {
 		type: ${2:Number}
 	},
+
+snippet vstore
+	import Vue from 'vue';
+	import Vuex from 'vuex';
+
+	Vue.use(Vuex);
+
+	export const store = new Vuex.Store({
+		state: {
+			${1:key}: ${2:value}
+		}
+	});
