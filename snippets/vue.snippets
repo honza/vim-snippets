@@ -139,22 +139,14 @@ snippet vkeep
 	</keep-alive>
 
 snippet vmixin
-	// define a mixin object
-	var myMixin = {
-	  created: function () {
-		this.hello()
-	  },
-	  methods: {
-		hello: function () {
-		  console.log('hello from mixin!')
-		}
-	  }
+	const ${1:mixinName} = {
+		mounted() {
+			console.log('hello from mixin!')
+		},
 	}
-	// define a component that uses this mixin
-	var Component = Vue.extend({
-	  mixins: [myMixin]
+	const ${2:Component} = Vue.extend({
+		mixins: [$1]
 	})
-	var component = new Component() // -> "hello from mixin!"
 
 snippet vmutations
 	// define a mixin object
