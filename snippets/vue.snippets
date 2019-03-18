@@ -43,11 +43,11 @@ snippet vimport:c
 		}
 	}
 
-snippet vactionsis now
+snippet vactions
 
 	actions: {
-		updateValue({commit}, payload) {
-			commit(updateValue, payload);
+		${1:updateValue}({commit}, ${2:payload}) {
+			commit($1, $2);
 		}
 	}
 
