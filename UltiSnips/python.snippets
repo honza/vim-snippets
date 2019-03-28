@@ -64,6 +64,9 @@ class Arg(object):
 	def is_kwarg(self):
 		return '=' in self.arg
 
+	def is_vararg(self):
+		return '*' in self.name
+
 
 def get_args(arglist):
 	args = [Arg(arg) for arg in arglist.split(',') if arg]
@@ -213,7 +216,7 @@ def write_init_body(args, parents, snip):
 	if parents:
 		snip.rv += '\n' + snip.mkline('', indent='')
 
-	for arg in args:
+	for arg in filter(lambda arg: not arg.is_vararg(), args):
 		snip += "self._%s = %s" % (arg, arg)
 
 
