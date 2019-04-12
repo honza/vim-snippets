@@ -12,7 +12,7 @@ snippet classheader
 	#
 	# @summary ${3:A short summary of the purpose of this class}
 	#
-	# @param ${4:parameter1} [${5:String}]
+	# @param ${4:parameter1}
 	#   ${6:Explanation of what this parameter affects.}
 	#
 	# @example Simple use
@@ -28,7 +28,7 @@ snippet classheader
 	# @note Copyright `strftime("%Y")` $8
 	#
 	class $1(
-		$$4 = undef,
+		${5:String} $$4 = undef,
 	) {
 		${0}
 	}
