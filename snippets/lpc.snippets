@@ -95,6 +95,12 @@ snippet ret
 	return ${0};
 ##
 ## Loops
+#foreach
+snippet fore
+	foreach(${1:mixed} ${2:ele} in ${3:arr})
+	{
+		${4}
+	}
 # for
 snippet for
 	for(int ${2:i} = 0; $2 < ${1:count}; $2${3:++})
