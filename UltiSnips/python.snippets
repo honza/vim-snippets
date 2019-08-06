@@ -5,8 +5,12 @@ priority -50
 ###########################################################################
 
 #! header
-snippet #! "Shebang header for python scripts" b
+snippet #! "#!/usr/bin/env python" b
 #!/usr/bin/env python
+$0
+endsnippet
+
+snippet "^# ?[uU][tT][fF]-?8" "# encoding: UTF-8" r
 # -*- coding: utf-8 -*-
 $0
 endsnippet
