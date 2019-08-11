@@ -38,6 +38,8 @@ snippet ft
 	<%= form_tag(${1:"/users"}, method: ${2::post}) %>
 		${0}
 	</form>
+snippet et error_tag
+	<%= error_tag ${1:f}, :${2:field} %>
 snippet lin
 	<%= link "${1:Submit}", to: ${2:"/users"}, method: ${3::delete} %>
 snippet ff
