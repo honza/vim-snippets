@@ -1,8 +1,8 @@
 extends html
 
-snippet %
+snippet % <% %>
 	<% ${0} %>
-snippet =
+snippet = <%= %>
 	<%= ${0} %>
 snippet # <%# %>
 	<%# ${0} %>
@@ -34,7 +34,7 @@ snippet unless
 	<%= unless ${1} do %>
 		${0:${VISUAL}}
 	<% end %>
-snippet ft
+snippet ft form_tag
 	<%= form_tag(${1:"/users"}, method: ${2::post}) %>
 		${0}
 	</form>
@@ -48,9 +48,9 @@ snippet pi password_input
 	<%= password_input ${1:f}, :${2:password} %>
 snippet render
 	<%= render "${1:index}.html", ${2:var: @var} %>
-snippet lin
+snippet lin link
 	<%= link "${1:Submit}", to: ${2:"/users"}, method: ${3::delete} %>
-snippet ff
+snippet ff form_for
 	<%= form_for @changeset, ${1:"/users"}, fn f -> %>
 			${0}
 
