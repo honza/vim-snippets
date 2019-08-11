@@ -30,6 +30,10 @@ snippet cond
 		<% true -> %>
 			${0}
 	<% end %>
+snippet unless
+	<%= unless ${1} do %>
+		${0:${VISUAL}}
+	<% end %>
 snippet ft
 	<%= form_tag(${1:"/users"}, method: ${2::post}) %>
 		${0}
