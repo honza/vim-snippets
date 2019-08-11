@@ -22,6 +22,14 @@ snippet ife
 	<% else %>
 		${0}
 	<% end %>
+snippet cond
+	<%= cond do %>
+		<% ${1} -> %>
+			${2:${VISUAL}}
+
+		<% true -> %>
+			${0}
+	<% end %>
 snippet ft
 	<%= form_tag(${1:"/users"}, method: ${2::post}) %>
 		${0}
