@@ -1,0 +1,40 @@
+priority -50
+
+snippet im "Import Package" b
+import 'package:$1/$2.dart';
+endsnippet
+
+snippet imm "Import Material" b
+import 'package:flutter/material.dart';
+endsnippet
+
+snippet imc "Import Cupertino" b
+import 'package:flutter/cupertino.dart';
+endsnippet
+
+snippet stfu "Stateful Widget" b
+class $1 extends StatefulWidget {
+	@override
+	$1State createState() => $1State();
+}
+
+class $1State extends State<$1> {
+	@override
+	Widget build(BuildContext context) {
+		return $2();
+	}
+}
+endsnippet
+
+snippet stls "Stateless Widget" b
+class $1 extends StatelessWidget {
+	@override
+	Widget build(BuildContext context) {
+		return $2();
+	}
+}	
+endsnippet
+
+	
+
+
