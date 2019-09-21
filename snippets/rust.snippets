@@ -50,11 +50,6 @@ snippet d; "dbg! debugging macro statement"
 	dbg!(&${1});
 	${0}
 # Modules
-snippet ec "extern crate"
-	extern crate ${1:sync};
-snippet ecl "extern crate log"
-	#[macro_use]
-	extern crate log;
 snippet mod
 	mod ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} {
 		${0}
@@ -116,7 +111,7 @@ snippet ife "if / else"
 	}
 snippet el "else"
 	else {
-		${0:${VISUAL}}
+		${1:${VISUAL}}
 	}
 snippet eli "else if"
 	else if ${1} {
