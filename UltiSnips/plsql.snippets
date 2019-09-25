@@ -48,6 +48,22 @@ def today():
 def param(var):
 	""" Returns the string name wrapped value """
 	return "'" + var + " : ' || "
+
+# Added for Oracle Apps
+def apps_hdr_params(params, level=0, gap="	 "):
+	line = level * gap + "-- -----------------------------------------------"
+	comment = line
+	comment += "\n" + level * gap + "-- {0:20} : {1}".format('x_retcode'.upper(), 'Return Code')
+	comment += "\n" + level * gap + "-- {0:20} : {1}".format('x_errmsg'.upper(), 'Return Message')
+	if params:
+		# Split the arguments
+		args = [arg.strip() for arg in params.split(',')]
+		for arg in args:
+			comment += "\n" + level * gap + "-- {0:20} : ".format(arg.split(' ')[0].upper())
+	# comment += line
+	# Return the comment string
+	return comment
+
 	
 endglobal
 
@@ -122,7 +138,7 @@ snippet arn "AND ROWNNUM"
 AND ROWNUM <= 10 ${0:;}
 endsnippet
 
-snippet ppram "Retuns param in wrapped format"
+snippet aparm "Retuns parameter in wrapped format"
 	||`!p snip.rv = param(t[1].upper())`$1 $0
 endsnippet
 
@@ -130,20 +146,20 @@ snippet dbo "Show output "
 	DBMS_OUTPUT.put_line('${0}');
 endsnippet
 
-snippet dbop "Show Parameter output "
-	DBMS_OUTPUT.put_line(`!p snip.rv = param(t[1].upper())`$1 $0);
+snippet dbop "Show Parameter value output "
+	DBMS_OUTPUT.put_line(`!p snip.rv = param(t[1].upper())`$1 $0 );
 endsnippet
 
 snippet dbl "Log message in Log Table, Change procedure as defined by you"
 	DEBUG_LOG_PKG.WRITE_LOG(${1:'Test'},${2:$1} ,$0 );
 endsnippet
 
-snippet plog "Print Log output "
+snippet logp "Print Log output "
 	printlog(`!p snip.rv = param(t[1].upper())`$1 $0);
 endsnippet
 
 snippet dut "DBMS_OUTPUT.put_line"
-	DBMS_UTILITY.get_time;
+	DBMS_UTILITY.get_time
 endsnippet
 
 snippet bc "Bulk collect into"
@@ -151,7 +167,7 @@ snippet bc "Bulk collect into"
 endsnippet
 
 snippet ei "Execute Immediate"
-	EXECUTE IMMEDIATE '${0:statement}' ;
+	EXECUTE IMMEDIATE ${1:'${0:statement}'} ;
 endsnippet
 
 snippet eitt "Execute Immediate TRUNCATE Table"
@@ -493,29 +509,40 @@ snippet crprintlog "Create Printlog Procedure"
 	-- PROCEDURE	: PRINTLOG
 	-- Description	: This procedure is used to print log messages in Log file, Table and Console
 	------------------------------------------------------------------------------------------------
-	PROCEDURE printlog (p_message IN VARCHAR2)
-	IS
-		l_errmsg									 VARCHAR2 (10000);
-	BEGIN
-		l_errmsg := SUBSTR ( p_message, 1, g_err_length_limit);
-		fnd_file.put_line ( fnd_file.LOG, l_errmsg); -- Debug log file
-		DBMS_OUTPUT.put_line (l_errmsg); -- Console output
-		DEBUG_LOG_PKG.WRITE_LOG(g_package_name,g_proc_name,p_message); -- Debug table
-	END printlog;
+    PROCEDURE printlog(
+        p_message        IN VARCHAR2
+      , p_indent_level   IN NUMBER DEFAULT 0
+    )
+    IS
+        l_message          VARCHAR2( 16000 ) := NULL;
+    BEGIN
+        l_message          := LPAD( ' ', 4 * p_indent_level, g_delimiter ) || p_message;
+        DBMS_OUTPUT.put_line( l_message );
+        DEBUG_LOG_PKG.WRITE_LOG(g_package_name,g_proc_name,l_message); -- Custom logic, replace it
+   END printlog;
 endsnippet
 
 snippet crgeterr "Create get_errmsg function"
    -- Form the error message for when others
-   FUNCTION get_errmsg( p_message IN VARCHAR2 DEFAULT NULL )
-	  RETURN VARCHAR2
-   IS
-   BEGIN
-	  RETURN 'Error occured in ' || g_package_name || '.' || g_proc_name || '. ' || NVL( p_message, '' ) || ' Error : ' || SQLERRM;
-   EXCEPTION --Exception Block
-	  WHEN OTHERS THEN
-		 printlog( 'Error while forming messgage. Error : ' || SQLERRM );
-		 RETURN NULL;
-   END;
+    FUNCTION get_errmsg( p_message IN VARCHAR2 DEFAULT NULL )
+        RETURN VARCHAR2
+    IS
+    BEGIN
+        RETURN    'Error occured in '
+               || g_package_name
+               || '.'
+               || g_proc_name
+               || '. '
+               || NVL( p_message, '' )
+               || ' Error : '
+               || SQLERRM
+               || '  '
+               || DBMS_UTILITY.format_error_backtrace;
+    EXCEPTION --Exception Block
+        WHEN OTHERS THEN
+            printlog( 'Error while forming messgage. Error : ' || SQLERRM );
+            RETURN NULL;
+    END;
 endsnippet
 
 snippet crpksfunc "Create package specification function"
@@ -660,24 +687,38 @@ IS
    -- PROCEDURE	   : PRINTLOG
    -- Description  : This procedure is used to print log messages
    ------------------------------------------------------------------------------------------------
-   PROCEDURE printlog( p_message IN VARCHAR2 )
-   IS
-   BEGIN
-	  DBMS_OUTPUT.PUT_LINE( p_message );
-	  DEBUG_LOG_PKG.WRITE_LOG(g_package_name,g_proc_name,p_message);
+    PROCEDURE printlog(
+        p_message        IN VARCHAR2
+      , p_indent_level   IN NUMBER DEFAULT 0
+    )
+    IS
+        l_message          VARCHAR2( 16000 ) := NULL;
+    BEGIN
+        l_message          := LPAD( ' ', 4 * p_indent_level, g_delimiter ) || p_message;
+        DBMS_OUTPUT.put_line( l_message );
+        DEBUG_LOG_PKG.WRITE_LOG(g_package_name,g_proc_name,l_message); -- Custom logic, replace it
    END printlog;
 
-   -- Form the error message for when others
-   FUNCTION get_errmsg( p_message IN VARCHAR2 DEFAULT NULL )
-	  RETURN VARCHAR2
-   IS
-   BEGIN
-	  RETURN 'Error occured in ' || g_package_name || '.' || g_proc_name || '. ' || NVL( p_message, '' ) || ' Error : ' || SQLERRM;
-   EXCEPTION --Exception Block
-	  WHEN OTHERS THEN
-		 printlog( 'Error while forming messgage. Error : ' || SQLERRM );
-		 RETURN NULL;
-   END;
+    -- Form the error message for when others
+    FUNCTION get_errmsg( p_message IN VARCHAR2 DEFAULT NULL )
+        RETURN VARCHAR2
+    IS
+    BEGIN
+        RETURN    'Error occured in '
+               || g_package_name
+               || '.'
+               || g_proc_name
+               || '. '
+               || NVL( p_message, '' )
+               || ' Error : '
+               || SQLERRM
+               || '  '
+               || DBMS_UTILITY.format_error_backtrace;
+    EXCEPTION --Exception Block
+        WHEN OTHERS THEN
+            printlog( 'Error while forming messgage. Error : ' || SQLERRM );
+            RETURN NULL;
+    END;
 
 END $2;
 /
@@ -688,7 +729,6 @@ SHOW ERROR
 endsnippet
 
 snippet crproc "Create procedure"
-
 CREATE OR REPLACE PROCEDURE ${1:schema}.${2:name} ${3:( ${4:prams} )}
 -- #############################################################################
 -- #	  Copyright (c) `!p snip.rv = dyear()` ${5}
@@ -728,6 +768,76 @@ EXCEPTION -- Exception block of Procedure
 	  l_errmsg									  := 'Exception in procedure. '||SQLERRM;
 	  DEBUG_LOG_PKG.WRITE_LOG(g_proc_name,g_proc_name ,l_errmsg );
 END $2;
+endsnippet
+
+#####################################################
+#		Oracle Apps Function creation scripts		#
+#####################################################
+    
+snippet appsglob "Create global variables"
+    g_user_id                        NUMBER := fnd_global.user_id;
+    g_login_id                       NUMBER := fnd_global.conc_login_id;
+    g_request_id                     NUMBER := fnd_global.conc_request_id;
+    g_program_appl_id                NUMBER := fnd_global.prog_appl_id;
+    g_program_id                     NUMBER := fnd_global.conc_program_id;
+    g_instance_name                  VARCHAR2( 100 ) := NULL;
+    g_program_name                   VARCHAR2( 100 ) := NULL;
+    g_debug_flag                     VARCHAR2( 1 ) := 'N';
+
+    g_success_code          CONSTANT NUMBER := 0;
+    g_warning_code          CONSTANT NUMBER := 1;
+    g_failure_code          CONSTANT NUMBER := 2;
+    g_success               CONSTANT VARCHAR2( 30 ) := 'SUCCESS';
 
 endsnippet
 
+snippet appspksproc "Create package specification procedure"
+------------------------------------------------------------------------------------------------
+-- PROCEDURE	: `!p snip.rv = t[1].upper()`
+-- Description	: This Procedure will ${4:description}.
+`!p snip.rv=apps_hdr_params(t[3],0) `
+------------------------------------------------------------------------------------------------
+PROCEDURE ${1:proc} ${2:(
+    x_errmsg       OUT VARCHAR2
+  , x_retcode      OUT NUMBER
+    ${3:params})} ;
+endsnippet
+
+snippet appspkbproc "Create package body procedure"
+------------------------------------------------------------------------------------------------
+-- PROCEDURE	: `!p snip.rv = t[1].upper()`
+-- Description	: This Procedure will ${4:description}.
+`!p snip.rv=apps_hdr_params(t[3]) `
+------------------------------------------------------------------------------------------------
+PROCEDURE ${1:proc} ${2:(   
+    x_errmsg       OUT VARCHAR2
+  , x_retcode      OUT NUMBER
+    ${3:params})} 
+IS
+   -- Declare cursors
+   -- Declare Out and exception variables
+   l_retcode                                    NUMBER := g_success_code;
+   l_errmsg                                     VARCHAR2( 4000 ) := g_success;
+   excp_skip                                    EXCEPTION;
+   -- Declare Varibales
+
+BEGIN
+   -- Initializing out parameters
+   g_proc_name									:= '`!p snip.rv = t[1].upper()`';
+   x_errmsg                                    := l_errmsg;
+   x_retcode                                   := l_retcode;
+
+   ${0}
+EXCEPTION -- Exception block of Procedure
+   WHEN excp_custom THEN
+	  ROLLBACK;
+      x_retcode                                   := l_retcode;
+	  x_errmsg                                    := l_errmsg;
+      printlog( l_errmsg );
+   WHEN OTHERS THEN
+	  ROLLBACK;
+      x_retcode                                   := g_failure_code;
+      x_errmsg                                    := get_errmsg;
+	  printlog( l_errmsg );
+END $1;
+endsnippet
