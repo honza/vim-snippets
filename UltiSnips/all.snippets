@@ -107,4 +107,23 @@ snippet uuid "Random UUID" w
 `!p if not snip.c: import uuid; snip.rv = uuid.uuid4()`
 endsnippet
 
+
+#################
+#  Parentheses  #
+#################
+snippet () "Parentheses surround" A
+$1(${2:${VISUAL}})$0
+endsnippet
+
+snippet [] "Bracket surround" A
+$1[${2:${VISUAL}}]$0
+endsnippet
+
+snippet {} "Brace surround" A
+$1{${2:${VISUAL}}}$0
+endsnippet
+
+snippet <> "Angle surround" A
+$1<${2:${VISUAL}}>$0
+endsnippet
 # vim:ft=snippets:
