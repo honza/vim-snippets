@@ -69,7 +69,7 @@ def get_comment_format():
     commentstring = vim.eval("&commentstring")
     if commentstring.endswith("%s"):
         c = commentstring[:-2]
-        return (c, c, c, "")
+        return (c.rstrip(), c.rstrip(), c.rstrip(), "")
     comments = _parse_comments(vim.eval("&comments"))
     for c in comments:
         if c[0] == "SINGLE_CHAR":
