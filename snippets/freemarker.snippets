@@ -1,27 +1,65 @@
 extends html
 
-snippet assign
-	<#assign ${1} = ${0:${VISUAL}} />
+snippet int "${interpolation}"
+	\${${0:interpolation${VISUAL}}\}
 
-snippet if
-	<#if ${1}>
+snippet intd "${interpolation!"default_string"}"
+	\${${0:interpolation${VISUAL}}!"${1:default_string}"\}
+
+snippet com "<#-- comment -->"
+	<#-- ${0:comment${VISUAL}} -->
+
+snippet ass "<#assign variable_name = value />"
+	<#assign ${1:variable_name} = ${0:value${VISUAL}} />
+
+snippet assm "<#assign <#-- multiple lines --> />"
+	<#assign
+		${1:variable_name} = ${0:value${VISUAL}}
+	/>
+
+snippet loc "<#local variable_name = value />"
+	<#local ${1:variable_name} = ${0:value${VISUAL}} />
+
+snippet locm "<#local <#-- multiple lines --> />"
+	<#local
+		${1:variable_name} = ${0:value${VISUAL}}
+	/>
+
+snippet inc "<#include \"file.ftl\" />"
+	<#include "${0:file.ftl${VISUAL}}" />
+
+snippet if "<#if condition>...</#if>"
+	<#if ${1:true}>
 		${0:${VISUAL}}
 	</#if>
 
-snippet ife
-	<#if ${1}>
-		${2:${VISUAL}}
+snippet ife "<#if condition>...<#else>...</#if>"
+	<#if ${1:true}>
+		${0:${VISUAL}}
 	<#else>
-		${0}
+		${2}
 	</#if>
 
-snippet list
-	<#list ${1} as ${2}>
+snippet lis "<#list sequence as element>...</#list>"
+	<#list ${1:sequence} as ${2:element}>
 		${0:${VISUAL}}
 	</#list>
 
-snippet attempt
+snippet mac "<#macro macro_name param1>...</#macro>"
+	<#macro ${1:macro_name} ${2:param1}>
+		${0:${VISUAL}}
+	</#macro>
+
+snippet fun "<#function function_name param1>...</#function>"
+	<#function ${1:function_name} ${2:param1}>
+		${0:${VISUAL}}
+	</#function>
+
+snippet att "<#attempt>...<#recover></#attempt>"
 	<#attempt>
 		${0:${VISUAL}}
 	<#recover>
 	</#attempt>
+
+snippet the "?then(true, false)"
+	?then(${1:true}, ${0:false${VISUAL}})
