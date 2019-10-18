@@ -225,7 +225,7 @@ snippet test "test function"
 snippet testt "table test function"
 	func Test${1:name}(t *testing.T) {
 		tests := []struct {
-			name string 
+			name string
 		}{
 			{
 				name: "${2:test name}",
@@ -235,7 +235,7 @@ snippet testt "table test function"
 		for _, test := range tests {
 			t.Run(test.name, func(t *testing.T) {
 				${0:${VISUAL}}
-			}
+			})
 		}
 	}
 
