@@ -42,10 +42,15 @@ snippet ife "<#if condition>...<#else>...</#if>"
 	<#else>
 		${2}
 	</#if>
-# If-else statement
+# Iteration over a sequence
 snippet lis "<#list sequence as element>...</#list>"
 	<#list ${1:sequence} as ${2:element}>
 		${0:${VISUAL}}
+	</#list>
+# Iteration over an hashmap
+snippet lish "<#list hashmap?keys as element>...</#list>"
+	<#list ${1:hashmap}?keys as ${2:key}>
+		\${$2\}: \${$1[$2]\}${0:${VISUAL}}
 	</#list>
 # Macro statement
 snippet mac "<#macro macro_name param1>...</#macro>"
