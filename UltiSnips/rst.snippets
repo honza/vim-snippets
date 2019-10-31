@@ -14,34 +14,37 @@ from collections import Counter
 
 from vimsnippets import complete
 
-#http://docutils.sourceforge.net/docs/ref/rst/roles.html
-TEXT_ROLES = ['emphasis','literal','code','math',
-			  'pep-reference','rfc-reference',
-			  'strong','subscript','superscript',
-			  'title-reference','raw']
+# http://docutils.sourceforge.net/docs/ref/rst/roles.html
+TEXT_ROLES = ['emphasis', 'literal', 'code', 'math',
+			  'pep-reference', 'rfc-reference',
+			  'strong', 'subscript', 'superscript',
+			  'title-reference', 'raw']
 TEXT_ROLES_REGEX = r'\.\.\srole::?\s(w+)'
 
-#http://docutils.sourceforge.net/docs/ref/rst/directives.html#specific-admonitions
+# http://docutils.sourceforge.net/docs/ref/rst/directives.html#specific-admonitions
 SPECIFIC_ADMONITIONS = ["attention", "caution", "danger",
 						"error", "hint", "important", "note",
 						"tip", "warning"]
-#http://docutils.sourceforge.net/docs/ref/rst/directives.html
-DIRECTIVES = ['topic','sidebar','math','epigraph',
-			  'parsed-literal','code','highlights',
-			  'pull-quote','compound','container','table','csv-table',
-			  'list-table','class','sectnum',
-			  'role','default-role','unicode',
-			  'raw']
+# http://docutils.sourceforge.net/docs/ref/rst/directives.html
+DIRECTIVES = ['code', 'contents', 'admonition', 'table', 'csv-table', 'list-table',
+			  'class', 'container', 'sidebar', 'topic', 'title',
+			  'role', 'default-role', 'raw']
 
-NONE_CONTENT_DIRECTIVES = ['rubric', 'contents', 'header',
-						   'footer', 'date', 'include', 'title']
+# DIRECTIVES_WITHOUT_TITLE means directive arguments equal None
+DIRECTIVES_WITHOUT_TITLE = ['math', 'meta', 'parsed-literal', 'line-block',
+							'header', 'compound', 'highlights', 'pull-quote',
+							'footer', 'epigraph', 'rubric', 'sectnum']
 
 INCLUDABLE_DIRECTIVES = ['image', 'figure', 'include']
+
+# Directives for Subsubsection Definition
+DIRECTIVES_FOR_SUBSTITUTION = ['replace', 'unicode', 'date']
+
 # CJK chars
 # http://stackoverflow.com/questions/2718196/find-all-chinese-text-in-a-string-using-python-and-regex
 CJK_RE = re.compile(u'[⺀-⺙⺛-⻳⼀-⿕々〇〡-〩〸-〺〻㐀-䶵一-鿃豈-鶴侮-頻並-龎]', re.UNICODE)
 
-#http://www.pygal.org/en/stable/documentation/types/index.html
+# http://www.pygal.org/en/stable/documentation/types/index.html
 CHART_TYPES = ["Line", "StackedLine", "HorizontalLine", "Bar", "StackedBar", "HorizontalBar", "Histogram", "XY", "DateLine", "TimeLine", "TimeDeltaLine", "DateTimeLine", "Pie", "Radar", "Box", "Dot", "Funnel", "Gauge", "SolidGauge", "Pyramid", "Treemap"]
 
 def has_cjk(s):
@@ -264,23 +267,30 @@ snippet di "Directives" b
 $0
 endsnippet
 
-snippet nd "None Content Directives" b
-.. $1`!p snip.rv=complete(t[1], NONE_CONTENT_DIRECTIVES)`:: $2
+snippet dt "Directives without title" b
+.. $1`!p snip.rv=complete(t[1], DIRECTIVES_WITHOUT_TITLE)`::
+
+	${2:${VISUAL:Content}}
+$0
+endsnippet
+
+snippet ds "Directives for subscription" b
+.. |$1| $2`!p snip.rv=complete(t[2], DIRECTIVES_FOR_SUBSTITUTION)`:: ${3:Content}
 $0
 endsnippet
 
 snippet sa "Specific Admonitions" b
-.. $1`!p snip.rv =complete(t[1], SPECIFIC_ADMONITIONS)`::
+.. $1`!p snip.rv =complete(t[1], SPECIFIC_ADMONITIONS)`:: $2
 
-	${2:${VISUAL:Content}}
+	${3:${VISUAL:Content}}
 
 $0
 endsnippet
 
-#it will be trigger at start of line or after a word
+# it will be trigger at start of line or after a word
 snippet ro "Text Roles" w
 \ :$1`!p snip.rv=complete(t[1],
-						  TEXT_ROLES+look_up_directives(TEXT_ROLES_REGEX,
+							   TEXT_ROLES+look_up_directives(TEXT_ROLES_REGEX,
 														path))`:\`$2\`\
 endsnippet
 
@@ -306,7 +316,7 @@ snippet chart "Pygal chart for Nikola" b
 .. chart:: $1`!p snip.rv=complete(t[1], CHART_TYPES)`
 	:title: '${2:Browser usage evolution (in %)}'
 	:x_labels: [${3:"2002", "2003", "2004", "2005", "2006", "2007"}]
-	
+
 	'Firefox', [None, None, 0, 16.6, 25, 31]
 	'Chrome',  [None, None, None, None, None, None]
 	'IE',      [85.8, 84.6, 84.7, 74.5, 66, 58.6]
@@ -323,4 +333,5 @@ snippet sid "SideBar" b
 
 	${2:${VISUAL:SideBar Content}}
 endsnippet
-# vim:ft=snippets:
+
+# vim:set list noet sts=0 sw=4 ts=4:
