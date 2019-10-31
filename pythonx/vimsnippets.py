@@ -1,25 +1,25 @@
 """Helper methods used in UltiSnips snippets."""
 
-import string, vim
+import string, vim, re
 
 def complete(tab, opts):
     """
-    get options that start with tab
+    get options that match with tab
 
     :param tab: query string
     :param opts: list that needs to be completed
 
-    :return: a string that start with tab
+    :return: a string that match with tab
     """
-    msg = "({0})"
-    if tab:
-        opts = [m[len(tab):] for m in opts if m.startswith(tab)]
-    if len(opts) == 1:
-        return opts[0]
-
-    if not len(opts):
-        msg = "{0}"
-    return msg.format("|".join(opts))
+    el = [x for x in tab]
+    pat = "".join(list(map(lambda x: x + "\w*" if re.match("\w", x) else x,
+                           el)))
+    mats = [x for x in opts if re.search(pat, x, re.IGNORECASE)]
+    if len(mats) == 0 or str.lower(tab) in list(map(str.lower, mats)):
+        return ""
+    cads = "|".join(mats[:5])
+    if len(mats) > 5: cads += "|..."
+    return "({0})".format(cads)
 
 def _parse_comments(s):
     """ Parses vim's comments option to extract comment format """
