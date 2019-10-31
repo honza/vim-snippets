@@ -14,11 +14,14 @@ def complete(tab, opts):
     el = [x for x in tab]
     pat = "".join(list(map(lambda x: x + "\w*" if re.match("\w", x) else x,
                            el)))
-    mats = [x for x in opts if re.search(pat, x, re.IGNORECASE)]
-    if len(mats) == 0 or str.lower(tab) in list(map(str.lower, mats)):
+    try:
+        opts = [x for x in opts if re.search(pat, x, re.IGNORECASE)]
+    except:
+        opts = [x for x in opts if x.startswith(tab)]
+    if not len(opts) or str.lower(tab) in list(map(str.lower, opts)):
         return ""
-    cads = "|".join(mats[:5])
-    if len(mats) > 5: cads += "|..."
+    cads = "|".join(opts[:5])
+    if len(opts) > 5: cads += "|..."
     return "({0})".format(cads)
 
 def _parse_comments(s):
