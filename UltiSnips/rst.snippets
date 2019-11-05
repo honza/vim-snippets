@@ -6,13 +6,8 @@ priority -50
 #							   General Stuff							  #
 ###########################################################################
 global !p
-import vim
-from os import path as ospath
-from string import Template
-import re
 from collections import Counter
-
-from vimsnippets import complete
+from vimsnippets import complete, has_cjk, display_width
 
 # http://docutils.sourceforge.net/docs/ref/rst/roles.html
 TEXT_ROLES = ['emphasis', 'literal', 'code', 'math',
@@ -40,22 +35,14 @@ INCLUDABLE_DIRECTIVES = ['image', 'figure', 'include']
 # Directives for Subsubsection Definition
 DIRECTIVES_FOR_SUBSTITUTION = ['replace', 'unicode', 'date']
 
-# CJK chars
-# http://stackoverflow.com/questions/2718196/find-all-chinese-text-in-a-string-using-python-and-regex
-CJK_RE = re.compile(u'[⺀-⺙⺛-⻳⼀-⿕々〇〡-〩〸-〺〻㐀-䶵一-鿃豈-鶴侮-頻並-龎]', re.UNICODE)
-
 # http://www.pygal.org/en/stable/documentation/types/index.html
 CHART_TYPES = ["Line", "StackedLine", "HorizontalLine", "Bar", "StackedBar", "HorizontalBar", "Histogram", "XY", "DateLine", "TimeLine", "TimeDeltaLine", "DateTimeLine", "Pie", "Radar", "Box", "Dot", "Funnel", "Gauge", "SolidGauge", "Pyramid", "Treemap"]
-
-def has_cjk(s):
-	"""Detect if s contains CJK characters."""
-	return CJK_RE.search(s) is not None
 
 def real_filename(filename):
 	"""pealeextension name off if possible
 	# i.e. "foo.bar.png will return "foo.bar"
 	"""
-	return ospath.splitext(filename)[0]
+	return os.path.splitext(filename)[0]
 
 def check_file_exist(rst_path, relative_path):
 	"""
@@ -65,22 +52,9 @@ def check_file_exist(rst_path, relative_path):
 	:param relative_path: path related to rst file
 	:return: relative file's absolute path if file exist
 	"""
-	abs_path = ospath.join(ospath.dirname(rst_path), relative_path)
-	if ospath.isfile(abs_path):
+	abs_path = os.path.join(os.path.dirname(rst_path), relative_path)
+	if os.path.isfile(abs_path):
 		return abs_path
-
-
-try:
-	rst_char_len = vim.strwidth  # Requires Vim 7.3+
-except AttributeError:
-	from unicodedata import east_asian_width
-	def rst_char_len(s):
-		"""Return the required over-/underline length for s."""
-		result = 0
-		for c in s:
-			result += 2 if east_asian_width(c) in ('W', 'F') else 1
-		return result
-
 
 def	make_items(times, leading='+'):
 	"""
@@ -133,45 +107,45 @@ def get_popular_code_type():
 endglobal
 
 snippet part "Part" b
-`!p snip.rv = rst_char_len(t[1])*'#'`
+`!p snip.rv = display_width(t[1])*'#'`
 ${1:${VISUAL:Part name}}
-`!p snip.rv = rst_char_len(t[1])*'#'`
+`!p snip.rv = display_width(t[1])*'#'`
 
 $0
 endsnippet
 
 snippet chap "Chapter" b
-`!p snip.rv = rst_char_len(t[1])*'*'`
+`!p snip.rv = display_width(t[1])*'*'`
 ${1:${VISUAL:Chapter name}}
-`!p snip.rv = rst_char_len(t[1])*'*'`
+`!p snip.rv = display_width(t[1])*'*'`
 
 $0
 endsnippet
 
 snippet sec "Section" b
 ${1:${VISUAL:Section name}}
-`!p snip.rv = rst_char_len(t[1])*'='`
+`!p snip.rv = display_width(t[1])*'='`
 
 $0
 endsnippet
 
 snippet ssec "Subsection" b
 ${1:${VISUAL:Subsection name}}
-`!p snip.rv = rst_char_len(t[1])*'-'`
+`!p snip.rv = display_width(t[1])*'-'`
 
 $0
 endsnippet
 
 snippet sssec "Subsubsection" b
 ${1:${VISUAL:Subsubsection name}}
-`!p snip.rv = rst_char_len(t[1])*'^'`
+`!p snip.rv = display_width(t[1])*'^'`
 
 $0
 endsnippet
 
 snippet para "Paragraph" b
 ${1:${VISUAL:Paragraph name}}
-`!p snip.rv = rst_char_len(t[1])*'"'`
+`!p snip.rv = display_width(t[1])*'"'`
 
 $0
 endsnippet
@@ -231,7 +205,7 @@ endsnippet
 # img, inc, fig
 snippet id "Includable Directives" b
 `!p
-real_name=real_filename(ospath.basename(t[2]))
+real_name=real_filename(os.path.basename(t[2]))
 di=t[1][:2]
 
 link=""
