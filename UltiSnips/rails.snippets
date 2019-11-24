@@ -69,7 +69,7 @@ endsnippet
 
 # FIXME: handling literal bracket pair inside of nested tab groups?
 snippet tcr "Create references column"
-t.references :${1:taggable}${2:, polymorphic ${3:{ :default: '${4:Photo}' }}}
+t.references :${1:taggable}${2:, polymorphic: ${3:{ default: '${4:Photo}' }}}
 $0
 endsnippet
 
@@ -655,7 +655,7 @@ t.$0
 endsnippet
 
 snippet t. "t.references (tcr)"
-t.references :${1:taggable}${2:, polymorphic ${3:{ :default: '${4:Photo}' }}}
+t.references :${1:taggable}${2:, polymorphic: ${3:{ default: '${4:Photo}' }}}
 t.$0
 endsnippet
 
