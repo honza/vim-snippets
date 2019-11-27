@@ -1,0 +1,267 @@
+priority -50
+
+# Common
+
+# Implicit none
+snippet "impl(icit)?" "implicit none" br
+implicit none
+	$0
+endsnippet
+
+# Array
+snippet "/(/)?" "(/  /)" r
+(/ ${1:${VISUAL}} /) ${2:,&} $3
+endsnippet
+
+# Reshape
+snippet "resh(ape)?" "reshape" r
+reshape($1, $2)
+endsnippet
+
+# Equivalence
+snippet "equ(ivalence)?" "equivalence" br
+equivalence ($1, $2)
+endsnippet
+
+# Variable type
+#
+# Snippets of the snipMate format DO NOT have an ending `:` for variable
+# definition. Thus triggers without `:` at the end will expand as a variable
+# definition.
+
+# Variable definition
+#
+# Python context is added such that variable definition triggers will NOT
+# expand when there is another variable definition in the same line
+
+# Integer
+context "not re.search('::', snip.buffer[snip.line])"
+snippet "int(eger)?" "integer ::" bre
+integer :: ${1:${VISUAL}}
+endsnippet
+
+# Character
+context "not re.search('::', snip.buffer[snip.line])"
+snippet char "character ::" be
+character :: ${1:${VISUAL}}
+endsnippet
+
+# String
+context "not re.search('::', snip.buffer[snip.line])"
+snippet "str(ing)?" "character (len=*) ::" bre
+character (len=${1:*}) :: ${2:${VISUAL}}
+endsnippet
+
+# Real
+context "not re.search('::', snip.buffer[snip.line])"
+snippet "re(al)?" "real ::" bre
+real :: ${1:${VISUAL}}
+endsnippet
+
+# Real (8-byte)
+context "not re.search('::', snip.buffer[snip.line])"
+snippet "re(al)?8" "real (kind=8) ::" bre
+real (kind=8) :: ${1:${VISUAL}}
+endsnippet
+
+# Double
+context "not re.search('::', snip.buffer[snip.line])"
+snippet "d(ou)?b(le)?" "double precision ::" bre
+double precision :: ${1:${VISUAL}}
+endsnippet
+
+# Boolean
+context "not re.search('::', snip.buffer[snip.line])"
+snippet bool "logical ::" be
+logical :: ${1:${VISUAL}}
+endsnippet
+
+# Dimension
+context "not re.search('::', snip.buffer[snip.line])"
+snippet "dim(ension)?" "dimension(:) ::" re
+dimension(${1::}) :: ${2:${VISUAL}}
+endsnippet
+
+# Array
+context "not re.search('::', snip.buffer[snip.line])"
+snippet "arr(ay)?" "type, dimension(:)" bre
+${1:type}, ${2:allocatable, }dimension(${3::}) :: ${4:${VISUAL}}
+endsnippet
+
+# Const
+context "not re.search('::', snip.buffer[snip.line])"
+snippet const "type, parameter ::" be
+${1:type}, parameter :: $2 = $3
+endsnippet
+
+# Type
+snippet type "type" b
+type(${1:MyType})
+	${2:${VISUAL}}
+end type
+endsnippet
+
+# Intent
+context "not re.search('::', snip.buffer[snip.line])"
+snippet intent "intent ::" e
+intent(${1:inout}) :: ${2:${VISUAL}}
+endsnippet
+
+# External
+context "not re.search('::', snip.buffer[snip.line])"
+snippet "ext(ernal)?" "external ::" re
+external :: ${1:${VISUAL}}
+endsnippet
+
+# Optional
+context "not re.search('::', snip.buffer[snip.line])"
+snippet "opt(ional)?" "optional ::" re
+optional :: ${1:${VISUAL}}
+endsnippet
+
+# Save
+context "not re.search('::', snip.buffer[snip.line])"
+snippet save "save ::" e
+save :: ${1:${VISUAL}}
+endsnippet
+
+# Control flow
+
+# If
+snippet if "if" b
+if ($1) then
+	${2:${VISUAL}}
+end if
+endsnippet
+
+# If else
+snippet ife "if else" b
+if ($1) then
+	${2:${VISUAL}}
+else
+	$3
+end if
+endsnippet
+
+# Else if
+snippet eif "else if" b
+else if ($1) then
+	${2:${VISUAL}}
+endsnippet
+
+# Else
+snippet el "else" b
+else
+	${1:${VISUAL}}
+endsnippet
+
+# Do with index
+snippet do "do i = " b
+do ${1:index} = ${2:begin}, ${3:end}, ${4:1}
+	${5:${VISUAL}}
+end do
+endsnippet
+
+# Do while
+snippet "dow(hile)?" "do while" br
+do while($1)
+	${2:${VISUAL}}
+end do
+endsnippet
+
+# Structure
+
+# Program
+snippet "prog(ram)?" "program" br
+program ${1:Main}
+	${2:${VISUAL}}
+end program $1
+endsnippet
+
+# Interface
+snippet "i(nter)?face" "interface" br
+interface ${1:MyInterface}
+	${2:${VISUAL}}
+end interface $1
+endsnippet
+
+# Module
+snippet "mod(ule)?" "module" br
+module ${1:MyModule}
+	$2
+contains
+	${3:${VISUAL}}
+end module $1
+endsnippet
+
+# Use only
+snippet "useo(nly)?" "use only" br
+use ${1:Module}, only: ${2:Symbol}
+endsnippet
+
+# Subroutine
+snippet "sub(routine)?" "subroutine" br
+subroutine ${1:MySubroutine}($2)
+	${3:${VISUAL}}
+end subroutine $1
+endsnippet
+
+# Procedure
+snippet "proc(edure)?" "procedure" br
+procedure ${1:MyProcedure}
+	${2:${VISUAL}}
+end procedure $1
+endsnippet
+
+# Function
+snippet "func(tion)?" "function" br
+function ${1:MyFunction}($2) result(${3:MyResult})
+	${4:${VISUAL}}
+end function $1
+endsnippet
+
+# Recursive function
+snippet "r(ec)?func(tion)?" "recursive function" br
+recursive function ${1:MyRecursiveFunction}($2) result(${3:MyResult})
+	${4:${VISUAL}}
+end function $1
+endsnippet
+
+# Pure function
+snippet "p(ure)?func(tion)?" "pure function" br
+pure function ${1:MyPureFunction}($2)
+	${3:${VISUAL}}
+end function $1
+endsnippet
+
+# Input and output
+
+# Open
+snippet open "open" b
+open(unit=${1:FilePosition}, file='${2:FileName}', status=${3:FileStatus}, iostat=${4:Error})
+endsnippet
+
+# Close
+snippet close "close" b
+close(${1:FilePosition})
+endsnippet
+
+# Read
+snippet read "read" b
+read(unit=${1:FilePosition}), file=${2:FileName}, iostat=${3:Error}) ${4:${VISUAL}}
+endsnippet
+
+# Write
+snippet write "write" b
+write(unit=${1:FilePosition}), file=${2:FileName}, iostat=${3:Error}) ${4:${VISUAL}}
+endsnippet
+
+# Print
+snippet "pr(int)?" "print" br
+write(*, *) ${1:${VISUAL}}
+endsnippet
+
+# Data print
+snippet "d(ata)?pr(int)?" "data print" br
+write(*, *) '${1:x} = ', $1
+endsnippet
