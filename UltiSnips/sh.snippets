@@ -44,7 +44,7 @@ ${5:${6/(.+)/trap "/}${6:rm -f '$${1/.*\s//}'}${6/(.+)/" 0               # EXIT\
 
 endsnippet
 
-snippet case "case .. esac (case)"
+snippet /case|sw(itch)?/ "case .. esac (case)" r
 case ${1:word} in
 	${2:pattern} )
 		${0:${VISUAL}};;
