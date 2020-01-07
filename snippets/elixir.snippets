@@ -189,10 +189,8 @@ snippet pry
 	require IEx; IEx.pry
 	${0}
 snippet ppry
-	|> (fn x ->
-	  require IEx; IEx.pry
-		x
-	end).()${0}
+	|> (fn x -> require IEx; IEx.pry; x end).()
+	${0}
 snippet qu
 	quote do
 		${1}
