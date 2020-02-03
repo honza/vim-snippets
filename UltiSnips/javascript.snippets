@@ -109,6 +109,20 @@ for`!p snip.rv = keyword_spacing(snip)`(${1:prop} in ${2:obj}){
 }
 endsnippet
 
+snippet for "for loop with index" b
+for`!p snip.rv = keyword_spacing(snip)`(let ${1:i} = 0; $1 < ${2:10}; ++$1)
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fore "for loop over collection" b
+for`!p snip.rv = keyword_spacing(snip)`(${2:entry} in ${1:items})
+{
+	${VISUAL}$0
+}
+endsnippet
+
 snippet if "if (condition) { ... }"
 if`!p snip.rv = keyword_spacing(snip)`(${1:true}) {
 	${VISUAL}$0
