@@ -100,3 +100,15 @@ snippet wa
 snippet err
 	error("${1}")
 	${0}
+
+snippet @t @testset with @test 
+	@testset "${1}" begin
+		${2}
+		@test ${0}
+	end
+	
+snippet @tt @testset with @test_throws
+	@testset "${1}" begin
+		${2}
+		@test_throws ${0}
+	end
