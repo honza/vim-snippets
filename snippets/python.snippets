@@ -182,6 +182,10 @@ snippet ptpython
 # python console debugger (pudb)
 snippet pudb
 	__import__('pudb').set_trace()
+# python console debugger remote (pudb)
+snippet pudbr
+	from pudb.remote import set_trace
+	set_trace()
 # pdb in nosetests
 snippet nosetrace
 	__import__('nose').tools.set_trace()
