@@ -327,7 +327,9 @@ snippet =>
 	(${1}) => {
 		${0:${VISUAL}}
 	}
-snippet af
+snippet af "() =>"
+	(${1}) => ${0:${VISUAL}}
+snippet afb "() => {}"
 	(${1}) => {
 		${0:${VISUAL}}
 	}
@@ -339,5 +341,3 @@ snippet ${
 	${${1}}${0}
 snippet aw "await"
 	await ${0:${VISUAL}}
-snippet f "() =>"
-	(${1}) => ${0:${VISUAL}}
