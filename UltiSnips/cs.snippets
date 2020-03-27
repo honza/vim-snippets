@@ -308,22 +308,28 @@ endsnippet
 #  methods  #
 #############
 
-snippet equals "Equals method" b
+snippet equals "Equality for a type" b
 public override bool Equals(object obj) => Equals(obj as ${1:TYPE});
 
-public bool Equals($1 other) 
+public bool Equals($1 other)  // IEquatable<$1>
 {
-	if (other == null)
+	if (object.ReferenceEquals(other, null))
 		return false;
-	${0}
+	if (object.ReferenceEquals(this, other))
+		return true;
+	if (this.GetType() != other.GetType())
+		return false;
+	$0
 	return base.Equals(other);
 }
 
-public override int GetHashCode() => this.GetHashCode(); // TODO
+public override int GetHashCode() => base.GetHashCode();
 
-public static bool operator ==($1 x, $1 y) => x.Equals(y);
+public static bool operator ==($1 x, $1 y) =>
+	(object.ReferenceEquals(x, null) && object.ReferenceEquals(y, null))
+	|| (!object.ReferenceEquals(x, null) && x.Equals(y));
 
-public static bool operator !=($1 x, $1 y) => !x.Equals(y); 
+public static bool operator !=($1 x, $1 y) => !(x == y);
 
 endsnippet
 
