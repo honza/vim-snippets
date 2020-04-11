@@ -97,6 +97,13 @@ supports simple dependency management. E.g. all you need is this line in your
 ActivateAddons vim-snippets snipmate
 ```
 
+Installation with [vimplug](https://github.com/mahyarap/vimplug): 
+
+```vim
+" install to ~/.vim/snippets
+Plug 'honza/vim-snippets', { 'dir': '~/.vim/snippets' }
+```
+
 [vim-pi](https://bitbucket.org/vimcommunity/vim-pi/issue/90/we-really-need-a-web-interface)
 Is the place to discuss plugin managers and repository resources.
 
