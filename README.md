@@ -100,7 +100,7 @@ ActivateAddons vim-snippets snipmate
 Installation with [vimplug](https://github.com/mahyarap/vimplug): 
 
 ```vim
-" install to ~/.vim/snippets
+" install vim-snippets
 Plug 'honza/vim-snippets'
 ```
 
