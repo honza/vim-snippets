@@ -101,7 +101,7 @@ Installation with [vimplug](https://github.com/mahyarap/vimplug):
 
 ```vim
 " install to ~/.vim/snippets
-Plug 'honza/vim-snippets', { 'dir': '~/.vim/snippets' }
+Plug 'honza/vim-snippets'
 ```
 
 [vim-pi](https://bitbucket.org/vimcommunity/vim-pi/issue/90/we-really-need-a-web-interface)
