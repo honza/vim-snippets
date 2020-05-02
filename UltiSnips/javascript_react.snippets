@@ -1,6 +1,6 @@
 # Functional components
 snippet rfc "react functional component" b
-import React, {useState} from "react"
+import React from "react";
 
 function ${1:`!p snip.rv = snip.basename`}(${2}){
 	return(
@@ -12,9 +12,34 @@ function ${1:`!p snip.rv = snip.basename`}(${2}){
 
 export default $4`!p snip.rv = snip.basename`
 endsnippet
+
+# HTML tags
+# div tags
+snippet div "div tag"
+<div>
+	${0}
+</div>
+endsnippet
+snippet div. "div tag with className"
+<div className="${1}">
+	${0}
+</div>
+endsnippet
+
+# image tags
+snippet img "image tag"
+<img src={${1:pic_name}} alt="${2}" />${0}
+endsnippet
+snippet img. "image tag with class" b
+<img className="${1}" src={${2}} alt="${3}" />${0}
+endsnippet
+snippet img# "image tag with id" b
+<img className="${1}" src={${2}} alt="${3}" />${0}
+endsnippet
+
 # React Hooks
 snippet useS "useState Hook" b
-const [${1}, set`!p snip.rv=t[1].title()`] = useState(${3:"${4}"})
+const [${1}, set$1`!p snip.rv=t[1].title()`] = useState(${3:"${4}"})
 endsnippet
 snippet useE "useEffect Hook" b
 useEffect(() => {
