@@ -45,6 +45,13 @@ snip += box[3]`
 $0
 endsnippet
 
+snippet boxx "A nice box with a nice border" b
+`!p snip.rv = get_comment_format()[0] + '┌' + '─' * (len(t[1]) + 2) + '┐' + get_comment_format()[2]`
+`!p snip.rv = get_comment_format()[0]`│ ${1:${VISUAL:content}} │`!p snip.rv = get_comment_format()[2]`
+`!p snip.rv = get_comment_format()[0] + '└' + '─' * (len(t[1]) + 2) + '┘' + get_comment_format()[2]`
+$0
+endsnippet
+
 snippet fold "Insert a vim fold marker" b
 `!p snip.rv = get_comment_format()[0]` ${1:Fold description} `!p snip.rv = foldmarker()[0]`${2:1} `!p snip.rv = get_comment_format()[2]`
 endsnippet
