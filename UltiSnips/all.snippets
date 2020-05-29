@@ -52,6 +52,13 @@ snippet boxx "A nice box with a nice border" b
 $0
 endsnippet
 
+snippet comment "comment style like javadoc" b
+`!p snip.rv = get_comment_format()[0]`
+ `!p snip.rv = get_comment_format()[1]` ${1:${VISUAL:content}}
+ `!p snip.rv = get_comment_format()[2]`
+$0
+endsnippet
+
 snippet fold "Insert a vim fold marker" b
 `!p snip.rv = get_comment_format()[0]` ${1:Fold description} `!p snip.rv = foldmarker()[0]`${2:1} `!p snip.rv = get_comment_format()[2]`
 endsnippet
