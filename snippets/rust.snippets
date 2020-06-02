@@ -122,6 +122,10 @@ snippet ife "if / else"
 	} else {
 		${0}
 	}
+snippet ifl "if let (...)"
+	if let ${1:Some(${2})} = $3 {
+		${0:${VISUAL}}
+	}
 snippet el "else"
 	else {
 		${0:${VISUAL}}
@@ -144,6 +148,10 @@ snippet loop "loop {}" b
 	}
 snippet wh "while loop"
 	while ${1:condition} {
+		${0:${VISUAL}}
+	}
+snippet whl "while let (...)"
+	while let ${1:Some(${2})} = $3 {
 		${0:${VISUAL}}
 	}
 snippet for "for ... in ... loop"
