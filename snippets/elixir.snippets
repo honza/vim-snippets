@@ -92,12 +92,17 @@ snippet defd
 	def ${2:name} do
 		${0}
 	end
+snippet defs
+	@spec ${1:name}(${2:arg types}) :: ${3:no_return}
+	def $1(${4:args}) do
+		${0}
+	end
 snippet defsd
 	@doc """
 	${1:doc string}
 	"""
-	@spec ${2:name} :: ${3:no_return}
-	def ${2} do
+	@spec ${2:name}(${3:arg types}) :: ${4:no_return}
+	def $2(${5:args}) do
 		${0}
 	end
 snippet defim
