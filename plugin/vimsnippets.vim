@@ -8,7 +8,7 @@ let s:has_git = executable('git')
 
 if !exists("g:snips_author")
     if s:has_git
-        let g:snips_author = trim(system('command git config --global user.name'))
+        let g:snips_author = trim(system('git config --global user.name'))
     else
         let g:snips_author = "yourname"
     endif
@@ -16,7 +16,7 @@ endif
 
 if !exists("g:snips_email")
     if s:has_git
-        let g:snips_email = trim(system('command git config --global user.email'))
+        let g:snips_email = trim(system('git config --global user.email'))
     else
         let g:snips_email = "yourname@email.com"
     endif
