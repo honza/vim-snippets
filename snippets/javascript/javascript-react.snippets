@@ -112,10 +112,10 @@ snippet usect useContext
 	const ${1:value} = useContext(${2:MyContext});
 snippet usecb useCallback
 	const ${1:memoizedCallback} = useCallback(
-    () => {
-      ${2}(${3})
-    },
-    [$3]
+	() => {
+		${2}(${3})
+	},
+	[$3]
 	);
 snippet usem useMemo
 	const ${1:memoizedCallback} = useMemo(() => ${2}(${3}), [$3]);
