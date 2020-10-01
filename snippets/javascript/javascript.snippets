@@ -61,6 +61,15 @@ snippet ife "if (condition) { ... } else { ... }"
 	} else {
 		${2}
 	}
+#if-else-if
+snippet ifelif
+	if (${1})
+		${2:${VISUAL}}
+	else if (${3})
+		${0:${VISUAL}}
+snippet eif
+	else if (${3})
+		${0:${VISUAL}}
 # tertiary conditional
 snippet ter
 	${1:/* condition */} ? ${2:/* if true */} : ${0:/* if false */}
