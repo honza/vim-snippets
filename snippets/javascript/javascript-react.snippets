@@ -2,6 +2,8 @@ snippet ir
 	import React from 'react';
 snippet irc
 	import React, { Component } from 'react';
+snippet irh import react hooks
+	import { use$1 } from 'react';
 snippet ird
 	import ReactDOM from 'react-dom';
 snippet cdm
@@ -92,7 +94,32 @@ snippet scu
 	shouldComponentUpdate(nextProps, nextState) {
 		${1}
 	}
-snippet prp i
+snippet prp
 	this.props.${1}
-snippet ste i
+snippet ste 
 	this.state.${1}
+snippet uses useState
+	const [${1:state}, set${2}] = useState(${3:initialState});
+snippet usee useEffect
+	useEffect(() => {
+    ${1}
+	});
+snippet userd useReducer
+	const [${1:state}, ${2:dispatch}] = useReducer(${3:reducer});
+snippet userf useRef
+	const ${1:refContainer} = useRef(${2:initialValue});
+snippet usect useContext
+	const ${1:value} = useContext(${2:MyContext});
+snippet usecb useCallback
+	const ${1:memoizedCallback} = useCallback(
+    () => {
+      ${2}(${3})
+    },
+    [$3]
+	);
+snippet usem useMemo
+	const ${1:memoizedCallback} = useMemo(() => ${2}(${3}), [$3]);
+snippet usei useImperativeHandle
+	useImperativeHandle(${1:ref}, ${2:createHandle});
+snippet used useDebugValue
+	useDebugValue(${1:value});
