@@ -9,6 +9,10 @@ snippet autoescape "twig autoescape"
 	{% endautoescape %}
 snippet endautoescape "twig endautoescape"
 	{% endautoescape %}${0}
+snippet bl "twig block"
+	{% block ${1} %}
+		${0}
+	{% endblock %}
 snippet block "twig block"
 	{% block ${1} %}
 		${0}
@@ -40,6 +44,8 @@ snippet endembed "twig endembed"
 snippet exit "twig exit"
 	{% exit ${1} %}
 snippet extends "twig extends"
+	{% extends "${1}" %}${0}
+snippet ext "twig extends"
 	{% extends "${1}" %}${0}
 snippet for "twig for"
 	{% for ${1} in ${2} %}
