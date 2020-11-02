@@ -117,6 +117,8 @@ snippet defmo
 	defmodule ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
 		${0}
 	end
+snippet enfk
+	@enforce_keys [:${1:key_name}]
 snippet dfp
 	defp ${1:name}, do: ${2}
 snippet defp
@@ -178,6 +180,10 @@ snippet des
 	describe "${1:test group subject}" do
 		${0}
 	end
+snippet destag
+	@describetag :${1:describe tag}
+snippet mtag
+	@moduletag :${1:module tag}
 snippet exunit
 	defmodule ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
 		use ExUnit.Case, async: true
