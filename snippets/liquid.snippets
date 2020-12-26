@@ -151,6 +151,22 @@ snippet include-
 	{%- include '${0:snippet}' -%}
 snippet includewith-
 	{%- include '${1:snippet}', ${2:variable}: ${0:value} -%}
+snippet render-
+	{%- render '${0:snippet}' -%}
+snippet renderwith-
+	{%- render '${1:snippet}', ${2:variable}: ${0:value} -%}
+snippet section-
+	{%- section '${1:snippet}' -%}
+snippet layout-
+	{%- layout '${1:layout}' -%}
+snippet layoutnone-
+	{%- layout none -%}
+snippet paginate-
+	{%- paginate ${1:collection.products} by ${2:12} -%}
+		{%- for ${3:product} in $1 -%}
+			${0}
+		{%- endfor -%}
+	{%- endpaginate -%}
 snippet join
 	| join: '${1:, }'
 snippet first
