@@ -485,13 +485,13 @@ snippet asnm
 snippet aso
 	assert_operator ${1:left}, :${2:operator}, ${3:right}
 snippet asr
-	assert_raise ${1:Exception} { ${0} }
+	assert_raise(${1:Exception}) { ${0} }
 snippet asrd
 	assert_raise ${1:Exception} do
 		${0}
 	end
 snippet asnr
-	assert_nothing_raised ${1:Exception} { ${0} }
+	assert_nothing_raised(${1:Exception}) { ${0} }
 snippet asnrd
 	assert_nothing_raised ${1:Exception} do
 		${0}
