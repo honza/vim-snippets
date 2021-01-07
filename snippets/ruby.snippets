@@ -485,9 +485,9 @@ snippet asnm
 snippet aso
 	assert_operator ${1:left}, :${2:operator}, ${3:right}
 snippet asr
-	assert_raise(${1:StandardError}) { ${0} }
+	assert_raises(${1:StandardError}) { ${0} }
 snippet asrd
-	assert_raise ${1:StandardError} do
+	assert_raises ${1:StandardError} do
 		${0}
 	end
 snippet asnr
