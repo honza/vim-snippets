@@ -61,6 +61,12 @@ snippet type "Data type alias" b
 type ${1:`!p snip.rv = get_module_namespace_and_basename()`} = ${2:Type}
 endsnippet
 
+snippet lambda "Lambda function chain-called on a variable"
+$${1:varname}.${2:each} |${3:Type} $${4:param}| {
+	$0
+}
+endsnippet
+
 #################################################################
 #  Puppet Types                                                 #
 #    See http://docs.puppetlabs.com/references/latest/type.html #
@@ -205,6 +211,14 @@ endsnippet
 
 snippet hiera_include "Hiera Include Function" b
 hiera_include("${1:Lookup}")$0
+endsnippet
+
+snippet lookup "Lookup data from hiera"
+$${1:varname} = lookup('${2:hiera::key}')$0
+endsnippet
+
+snippet trocla "Lookup or generate sensitive information"
+trocla('${1:lookup_key}', '${2:plain}', ${3:'length: 32'})$0
 endsnippet
 
 snippet include "Include Function" b
