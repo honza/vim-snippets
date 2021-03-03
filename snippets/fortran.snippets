@@ -12,6 +12,11 @@ snippet modu
 	module ${1:modulename}
 		${0}
 	end module $1
+# submodule
+snippet submod
+	submodule (${1:parent}) ${2:submodulename}
+		${0}
+	end submodule ${2}
 # Procedure declaration
 snippet proc
 	procedure (${1:procname}) :: ${0}
@@ -38,7 +43,7 @@ snippet doxp
 	!> @param[${1}]${0}
 # Variables definitions
 # Boolean
-snippet log
+snippet logi
 	logical :: ${0}
 # Integer
 snippet int
@@ -70,7 +75,7 @@ snippet arr
 	${1:type}, ${2:allocatable, }dimension (${3::}) :: ${0}
 # Dummy arguments
 snippet intent
-	${1:type}, intent (${2:inout}) :: ${0}
+	${1:datatype}, intent (${2:inout}) :: ${0}
 snippet class
 	class (${1:ClassType}) :: ${0}
 # Implied do
@@ -91,7 +96,7 @@ snippet ifel
 		${4}
 	end if
 # Select case
-snippet case
+snippet sel
 	select case (${1:expr})
 		case ($2)
 		case default
