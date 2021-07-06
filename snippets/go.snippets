@@ -81,6 +81,18 @@ snippet el "else"
 		${0:${VISUAL}}
 	}
 
+snippet emb "embed as byte"
+	//go:embed ${1:file}
+	var ${2:variable} []byte
+
+snippet emd "embed directory"
+	//go:embed ${1:directory}
+	var ${2:variable} embed.FS
+
+snippet ems "embed as string"
+	//go:embed ${1:file}
+	var ${2:variable} string
+
 snippet ir "if error not nil, return err"
 	if err != nil {
 		return err
