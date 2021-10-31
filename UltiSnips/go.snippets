@@ -113,3 +113,9 @@ if err != nil {
 	log.${1:Fatal}(err)
 }
 endsnippet
+
+snippet iferr "Functional error handling" b
+if err != nil {
+	return ${1}err
+}
+endsnippet
