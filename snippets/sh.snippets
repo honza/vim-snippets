@@ -55,7 +55,7 @@ snippet go
 	done
 # Set SCRIPT_DIR variable to directory script is located.
 snippet sdir
-	SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+	SCRIPT_DIR="\$( cd "\$( dirname "\${BASH_SOURCE[0]}" )" && pwd )"
 # getopt
 snippet getopt
 	__ScriptVersion="${1:version}"
