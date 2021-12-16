@@ -8,13 +8,13 @@
 
 # Insert Title Block
 snippet %%
-	% ${1:`Filename('', 'title')`}
+	% ${1:`vim_snippets#Filename('', 'title')`}
 	% ${2:`g:snips_author`}
 	% ${3:`strftime("%d %B %Y")`}
 
 	${4}
 snippet %%*
-	% ${1:`Filename('', @*)`}
+	% ${1:`vim_snippets#Filename('', @*)`}
 	% ${2:`g:snips_author`}
 	% ${3:`strftime("%d %b %Y")`}
 
