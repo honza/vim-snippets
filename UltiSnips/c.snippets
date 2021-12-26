@@ -18,7 +18,7 @@ def printf_expand_args(snip):
 
 	# Add the amount of tabstops
 	for placeholder_index in range(3, amount_placeholders + 3):
-		output += f", ${placeholder_index}"
+		output += ", ${}".format(placeholder_index)
 	
 	# convert them into tabstops
 	snip.expand_anon(output)
