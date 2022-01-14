@@ -36,79 +36,73 @@ endglobal
 # ENVIRONMENT #
 ###############
 
-snippet beg "begin{} / end{}" bAi
+snippet beg "begin{} / end{}" bi
 \begin{$1}
 	$0${VISUAL}
 \end{$1}
 endsnippet
 
-snippet doc "Document" bAi
-\begin{document}
-	$0${VISUAL}
-\end{document}
-endsnippet
-
-snippet cnt "Center" bAi
+snippet cnt "Center" bi
 \begin{center}
 	$0${VISUAL}
 \end{center}
 endsnippet
 
-snippet desc "Description" bAi
+snippet desc "Description" bi
 \begin{description}
 	$0${VISUAL}
 \end{description}
 endsnippet
 
-snippet lemma "Lemma" bAi
+snippet lemma "Lemma" bi
 \begin{lemma}
 	$0${VISUAL}
 \end{lemma}
 endsnippet
 
-snippet prop "Proposition" bAi
+snippet prop "Proposition" bi
 \begin{prop}[$1]
 	$0${VISUAL}
 \end{prop}
 endsnippet
 
-snippet thrm "Theorem" bAi
+snippet thrm "Theorem" bi
 \begin{theorem}[$1]
 	$0${VISUAL}
 \end{theorem}
 endsnippet
 
-snippet post "postulate" bAi
+snippet post "postulate" bi
 \begin{postulate}[$1]
 	$0${VISUAL}
 \end{postulate}
 endsnippet
 
-snippet prf "Proof" bAi
+snippet prf "Proof" bi
 \begin{myproof}[$1]
 	$0${VISUAL}
 \end{myproof}
 endsnippet
 
-snippet def "Definition" bAi
+snippet def "Definition" bi
 \begin{definition}[$1]
 	$0${VISUAL}
 \end{definition}
 endsnippet
 
-snippet nte "Note" bAi
+snippet nte "Note" bi
 \begin{note}[$1]
 	$0${VISUAL}
 \end{note}
 endsnippet
 
-snippet prob "Problem" bAi
+snippet prob "Problem" bi
 \begin{problem}[$1]
 	$0${VISUAL}
 \end{problem}
 endsnippet
 
-snippet corl "Corollary" bAi
+snippet corl "Corollary" bi
 \begin{corollary}[$1]
 	$0${VISUAL}
 \end{corollary}
@@ -120,43 +114,43 @@ snippet example "Example" bAi
 \end{example}
 endsnippet
 
-snippet notion "Notation" bAi
+snippet notion "Notation" bi
 \begin{notation}[$1]
 	$0${VISUAL}
 \end{notation}
 endsnippet
 
-snippet rep "Repetition" bAi
+snippet rep "Repetition" bi
 \begin{repetition}[$1]
 	$0${VISUAL}
 \end{repetition}
 endsnippet
 
-snippet prop "Property" bAi
+snippet prop "Property" bi
 \begin{property}[$1]
 	$0${VISUAL}
 \end{property}
 endsnippet
 
-snippet int "Intuition" bAi
+snippet int "Intuition" bi
 \begin{intuition}[$1]
 	$0${VISUAL}
 \end{intuition}
 endsnippet
 
-snippet obs "Observation" bAi
+snippet obs "Observation" bi
 \begin{observation}[$1]
 	$0${VISUAL}
 \end{observation}
 endsnippet
 
-snippet conc "Conclusion" bAi
+snippet conc "Conclusion" bi
 \begin{conclusion}[$1]
 	$0${VISUAL}
 \end{conclusion}
 endsnippet
 
-snippet fig "Figure environment" bAi
+snippet fig "Figure environment" bi
 \begin{figure}[${1:htpb}]
 	\centering:${VISUAL}
 	${2:\includegraphics[width=0.8\textwidth]{$3}}
@@ -165,31 +159,31 @@ snippet fig "Figure environment" bAi
 \end{figure}
 endsnippet
 
-snippet enum "Enumerate" bAi
+snippet enum "Enumerate" bi
 \begin{enumerate}
 	\item $0${VISUAL}
 \end{enumerate}
 endsnippet
 
-snippet item "Itemize" bAi
+snippet item "Itemize" bi
 \begin{itemize}
 	\item $0${VISUAL}
 \end{itemize}
 endsnippet
 
-snippet case "cases" bAi
+snippet case "cases" bi
 \begin{cases}
 	$0${VISUAL}
 \end{cases}
 endsnippet
 
-snippet ali "Align" bAi
+snippet ali "Align" bi
 \begin{align}
 	${1:${VISUAL}}
 .\end{align}
 endsnippet
 
-snippet ali "Align*" bAi
+snippet ali* "Align*" bi
 \begin{align*}
 	${1:${VISUAL}}
 .\end{align*}
@@ -199,13 +193,6 @@ snippet abs "abstract environment" b
 \begin{abstract}
 	$0${VISUAL}
 .\end{abstract}
-endsnippet
-
-snippet box "Box"
-`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
-│ $1 │
-`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
-$0
 endsnippet
 
 snippet tab "tabular / array environment" b
@@ -332,14 +319,6 @@ snippet dm "Display Math" w
 .\]$0
 endsnippet
 
-snippet ... "ldots" Aw
-\ldots
-endsnippet
-
-snippet * "times" wi
-\times $0
-endsnippet
-
 snippet // "Fraction" Aw
 \frac{$1}{$2}$0
 endsnippet
@@ -362,36 +341,12 @@ snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 `{$1}$0
 endsnippet
 
-snippet '([A-Za-z])(\d)' "Auto subscript" wrA
-`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
-endsnippet
-
-snippet '([A-Za-z])_(\d\d)' "Auto subscript 2" wrA
-`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
-endsnippet
-
 snippet '([A-Za-z])_\{(\d+)\}(\d)' "Auto subscript 3+" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2) + match.group(3)`}
 endsnippet
 
-snippet '([A-Za-z])\^(\d)' "Auto superscript" wrA
-`!p snip.rv = match.group(1)`^`!p snip.rv = match.group(2)`
-endsnippet
-
-snippet '([A-Za-z])\^(\d\d)' "Auto superscript 2" wrA
-`!p snip.rv = match.group(1)`^{`!p snip.rv = match.group(2)`}
-endsnippet
-
-snippet '([A-Za-z])\^\{(\d+)\}(\d)' "Auto superscript 3+" wrA
+snippet '([A-Za-z])\^\{(\d+)\}(\d)' "Auto superscript" wrA
 `!p snip.rv = match.group(1)`^{`!p snip.rv = match.group(2) + match.group(3)`}
-endsnippet
-
-snippet sq "Square" i
-^2
-endsnippet
-
-snippet cb "Square" i
-^3
 endsnippet
 
 snippet compl "Complement" i
@@ -400,10 +355,6 @@ endsnippet
 
 snippet ss "Super Script" i
 ^{$1}$0
-endsnippet
-
-snippet rd "to the ... power" Aw
-^{($1)}$0
 endsnippet
 
 snippet __ "subscript" Aw
@@ -538,7 +489,7 @@ snippet == "Equals" w
 &= $1 \\\\
 endsnippet
 
-snippet != "Equals" w
+snippet != "Not Equal" w
 \neq 
 endsnippet
 
@@ -548,26 +499,6 @@ endsnippet
 
 snippet >= "geq" Aw
 \ge 
-endsnippet
-
-snippet EE "geq" Aw
-\exists 
-endsnippet
-
-snippet -> "to" Aw
-\to 
-endsnippet
-
-snippet AA "forall" Aw
-\forall 
-endsnippet
-
-snippet xp1 "x" Aw
-x_{n+1}
-endsnippet
-
-snippet R0+ "R0+" Aw
-\\R_0^+
 endsnippet
 
 snippet plot "Plot" w
@@ -596,10 +527,6 @@ snippet lll "l" Aw
 \ell
 endsnippet
 
-snippet nabl "nabla" Aw
-\nabla 
-endsnippet
-
 snippet xx "cross" Aw
 \times 
 endsnippet
@@ -608,60 +535,24 @@ snippet ** "cdot" Aw
 \cdot 
 endsnippet
 
-snippet norm "norm" Aw
-\|$1\|$0
-endsnippet
-
 snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rw
 \\`!p snip.rv = match.group(1)`
-endsnippet
-
-snippet notin "not in " Aw
-\not\in 
 endsnippet
 
 snippet <! "normal" Aw
 \triangleleft 
 endsnippet
 
-snippet <> "hokje" Aw
-\diamond 
-endsnippet
-
-snippet '(?<!i)sts' "text subscript" irA
-_\text{$1} $0
-endsnippet
-
 snippet SI "SI" Aw
 \SI{$1}{$2}
-endsnippet
-
-snippet set "set" wA
-\\{$1\\} $0
 endsnippet
 
 snippet ~~ "~" Aw
 \sim 
 endsnippet
 
-snippet \\\ "setminus" Aw
-\setminus
-endsnippet
-
-snippet >> ">>" Aw
-\gg
-endsnippet
-
-snippet << "<<" Aw
-\ll
-endsnippet
-
 snippet "(\d|\w)+invs" "inverse" Awr
 `!p snip.rv = match.group(1)`^{-1}
-endsnippet
-
-snippet <-> "leftrightarrow" Aw
-\leftrightarrow
 endsnippet
 
 snippet !> "mapsto" Aw
@@ -671,15 +562,6 @@ endsnippet
 snippet || "mid" Aw
 \mid 
 endsnippet
-
-snippet dint "integral" wA
-\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
-endsnippet
-
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" Awrb
-\\`!p snip.rv = match.group(1)`
-endsnippet
-
 
 ##########
 # TABLES #
@@ -705,19 +587,6 @@ endsnippet
 snippet bar "bar" wi
 \bar{${1:${VISUAL}}}$0
 endsnippet
-
-priority 100
-snippet "([a-zA-Z])bar" "bar" Awri
-\overline{`!p snip.rv=match.group(1)`}
-endsnippet
-
-snippet "\{([a-zA-Z]+)\}bar" "bar" Awr
-\overline{`!p snip.rv = match.group(1)`}$0
-endsnippet
-
-snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" Awri
-\vec{`!p snip.rv=match.group(1)`}
-endsnippet 
 
 snippet "\<(.*?)\|" "bra" Awri
 \bra{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
@@ -764,39 +633,11 @@ $2
 		$0
 \end{document}
 endsnippet
-	
+
 
 #########
 # OTHER #
 #########
-
-snippet date-time "Today's date and Current Time"
-`date "+%b %d %Y %a (%H:%M:%S)"`
-endsnippet
-
-snippet sign "Signature"
-Yours sincerely,
-
-Hashem A. Damrah
-endsnippet
-
-snippet ref "Reference" wi
-Figure~\ref{${1:Fig}:$2:${VISUAL}}$0
-endsnippet
-
-snippet les "Lesson"
-\lesson{${1:LESSON NUMBER}}{`date "+%b %d %Y %a (%H:%M:%S)"`}{${3:LESSON NAME}}{${4:UNIT NUMBER}}
-$0
-endsnippet
-
-snippet lec "Lecture"
-\lecture{${1:LECTURE NUMBER}}{`date "+%b %d %Y %a (%H:%M:%S)"`}{${3:LECTURE NAME}}{${4:UNIT NUMBER}}
-$0
-endsnippet
-
-snippet newp "New Page" bAi
-\newpage
-endsnippet
 
 snippet acl "Acroynm expanded" bi
 \acl{${1:acronym}}
