@@ -322,16 +322,11 @@ snippet DD "D" w
 \mathbb{D}
 endsnippet
 
-snippet im "Inline Math" Aw
-$${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-	snip.rv = ' '
-else:
-	snip.rv = ''
-`$0
+snippet im "Inline Math" w
+$${1}$
 endsnippet
 
-snippet dm "Display Math" Aw
+snippet dm "Display Math" w
 \[
 	${1:${VISUAL}}
 .\]$0
