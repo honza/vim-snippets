@@ -341,14 +341,6 @@ snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 `{$1}$0
 endsnippet
 
-snippet '([A-Za-z])_\{(\d+)\}(\d)' "Auto subscript 3+" wrA
-`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2) + match.group(3)`}
-endsnippet
-
-snippet '([A-Za-z])\^\{(\d+)\}(\d)' "Auto superscript" wrA
-`!p snip.rv = match.group(1)`^{`!p snip.rv = match.group(2) + match.group(3)`}
-endsnippet
-
 snippet compl "Complement" i
 ^{c}
 endsnippet
