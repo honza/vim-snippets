@@ -213,17 +213,13 @@ snippet DD "D" w
 \mathbb{D}
 endsnippet
 
-snippet $$ "Inline Math" iA
-\\(${1}\\) $0
-endsnippet
-
 snippet dm "Display Math" w
 \[
 	${1:${VISUAL}}
 .\]$0
 endsnippet
 
-snippet // "Fraction" Aw
+snippet frac "Fraction" Aw
 \frac{$1}{$2}$0
 endsnippet
 
@@ -392,10 +388,6 @@ snippet xx "cross" Aw
 \times 
 endsnippet
 
-snippet ** "cdot" Aw
-\cdot 
-endsnippet
-
 snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rw
 \\`!p snip.rv = match.group(1)`
 endsnippet
@@ -404,20 +396,12 @@ snippet <! "normal" Aw
 \triangleleft 
 endsnippet
 
-snippet ~~ "~" Aw
-\sim 
-endsnippet
-
 snippet "(\d|\w)+invs" "inverse" Awr
 `!p snip.rv = match.group(1)`^{-1}
 endsnippet
 
 snippet !> "mapsto" Aw
 \mapsto 
-endsnippet
-
-snippet || "mid" Aw
-\mid 
 endsnippet
 
 ##########
