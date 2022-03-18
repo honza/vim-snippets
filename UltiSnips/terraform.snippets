@@ -1,0 +1,17 @@
+snippet var "variable" b
+variable "${1:name}" {
+    description = "${2:description}"
+    type = ${3:string}
+    default = ${4:""}
+}
+${0}
+endsnippet
+
+
+snippet out "output" b
+output "${1:name}" {
+    description = "${2:description}"
+    value = ${3:value}
+}
+${0}
+endsnippet
