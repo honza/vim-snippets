@@ -429,11 +429,11 @@ snippet bar "bar" wi
 \bar{${1:${VISUAL}}}$0
 endsnippet
 
-snippet "\<(.*?)\|" "bra" Awri
+snippet "\<(.*?)\|" "bra" wri
 \bra{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
 endsnippet
 
-snippet "\|(.*?)\>" "ket" Awri
+snippet "\|(.*?)\>" "ket" wri
 \ket{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
 endsnippet
 
