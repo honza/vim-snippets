@@ -213,10 +213,14 @@ snippet DD "D" w
 \mathbb{D}
 endsnippet
 
+snippet inmath "Inline Math" w
+\\(${1}\\) $0
+endsnippet
+
 snippet dm "Display Math" w
 \[
 	${1:${VISUAL}}
-.\]$0
+\]$0
 endsnippet
 
 snippet frac "Fraction" w
@@ -429,11 +433,11 @@ snippet bar "bar" wi
 \bar{${1:${VISUAL}}}$0
 endsnippet
 
-snippet "\<(.*?)\|" "bra" Awri
+snippet "\<(.*?)\|" "bra" wri
 \bra{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
 endsnippet
 
-snippet "\|(.*?)\>" "ket" Awri
+snippet "\|(.*?)\>" "ket" wri
 \ket{`!p snip.rv = match.group(1).replace('q', f'\psi').replace('f', f'\phi')`}
 endsnippet
 
