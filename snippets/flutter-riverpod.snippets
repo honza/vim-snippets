@@ -1,5 +1,148 @@
 #Basic Riverpod Provider
 snippet provider
 	final $1Provider = Provider<$2>((ref){
-	return $3;
-		});
+		return $3;
+			});
+
+#Basic Riverpod Provider with family
+snippet providerFamily
+	final $1Provider = Provider.family<$2,$3>((ref, $4){
+		return $5;
+			});
+
+#Future Riverpod Provider
+snippet futureProvider
+	final $1Provider = FutureProvider<$2>((ref) async {
+		return $3;
+			});
+
+#Future Riverpod Provider with Family
+snippet futureProviderFamily
+	final $1Provider = FutureProvider.family<$2,$3>((ref, $4) async {
+		return $5;
+			});
+
+#Stream Riverpod Provider 
+snippet streamProvider
+	final $1Provider = StreamProvider<$2>((ref) async* {
+		return $3;
+			});
+
+#Stream Riverpod Provider with Family
+snippet streamProviderFamily
+	final $1Provider = StreamProvider.family<$2,$3>((ref, $4) async* {
+		return $5;
+			});
+
+#Provider Listenable
+snippet listen
+	ref.listen<$1>($2,(value) {
+		$3
+			});
+
+#Creates a StateProvider
+snippet stateProvider
+	final $1Provider = StateProvider<$2>((ref){
+		return $3;
+			});
+
+#Create a StateProvider with Family modifier
+snippet stateProviderFamily
+	final $1Provider = StateProvider.family<$2,$3>((ref, $4){
+		return $5;
+			});
+
+#Creates a StateNotifier provider
+snippet stateNotifierProvider
+	final $1Provider = StateNotifierProvider<$2>((ref){
+		return $3;
+			});
+
+#Create a StateNotifierProvider with Family modifier
+snippet stateNotifierProviderFamily
+	final $1Provider = StateNotifierProvider.family<$2,$3>((ref, $4){
+		return $5;
+			});
+
+#Create a ChangeNotifierProvider
+snippet changeNotifierProvider
+	final $1Provider = ChangeNotifierProvider<$2>((ref) {
+		return $3;
+			});
+
+#Create a ChangeNotifierProvider with Family modifier
+snippet changeNotifierProviderFamily
+	final $1Provider = ChangeNotifierProvider.family<$2,$3>((ref, $4) {
+		return $5;
+			});
+
+#Creates a class that extends StateNotifier and allows you to edit the types
+snippet stateNotifier
+	class $1Notifier extends StateNotifier<$2> {
+		$1Notifier(): super($3);
+		$4
+	}
+
+#Create Consumer
+snippet consumer
+	Consumer(
+		builder: (context, ref, child){
+			return $1;
+		}
+	)
+
+#Create a ConsumerStatelessWidget
+snippet stlessConsumer
+	class $1 extends ConsumerWidget {
+		const $1({Key? key}) : super(key: key);
+
+		@override
+		Widget build(BuildContext context, WidgetRef ref) {
+			return Container();
+		}
+	}
+
+#Create a ConsumerStatefulWidget
+snippet stfulConsumer
+	class $1 extends ConsumerStatefulWidget {
+		const $1({Key? key}) : super(key: key);
+
+		@override
+		ConsumerState<ConsumerStatefulWidget> createState() => _$1State();
+	}
+
+	class _$1State extends ConsumerState<$1> {
+		@override
+			Widget build(BuildContext context){
+				return Container();
+			}
+	}
+
+#Create a HookConsumerWidget
+snippet stlessHookConsumer
+	class $1 extends HookConsumerWidget {
+		const $1({Key? key}) : super(key: key);
+
+		@override
+			Widget build(BuildContext context, WidgetRef ref){
+				return Container();
+			}
+	}
+
+#Create a StatefulHooksConsumerWidget
+snippet stfulHookConsumer
+	class $1 extends StatefulHookConsumerWidget {
+		const $1({Key? key}) : super(key: key);
+
+		@override
+		ConsumerState<ConsumerStatefulWidget> createState() => _$1State();
+
+	}
+
+	class _$1State extends ConsumerState<$1> {
+		
+		@override
+			Widget build(BuildContext context) {
+				return Container();
+			}
+	}
