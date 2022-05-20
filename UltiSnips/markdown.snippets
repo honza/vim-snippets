@@ -7,7 +7,7 @@ table_settings = [["-", "-"], [":", "-"], ["-", ":"], [":", ":"]]
 # A overkill(dirty) table with automatic alignment feature
 def create_table(snip, align = 0):
 	# retrieving single line from current string and treat it like tabstops count
-	placeholders_string = snip.buffer[snip.line].strip()[-2:]
+	placeholders_string = snip.buffer[snip.line].strip()[3 if align else 2:]
 	rows_amount = int(placeholders_string[0])
 	columns_amount = int(placeholders_string[1])
 	prefix_str = "from vimsnippets import display_width;"
