@@ -1,55 +1,52 @@
 priority -50
 
 global !p
+
+table_settings = [["-", "-"], [":", "-"], ["-", ":"], [":", ":"]]
+
 # A overkill(dirty) table with automatic alignment feature
-def create_table(snip):
+def create_table(snip, align = 0):
 	# retrieving single line from current string and treat it like tabstops count
-	placeholders_string = snip.buffer[snip.line].strip()
+	placeholders_string = snip.buffer[snip.line][:snip.column + 1].strip()[-2:]
 	rows_amount = int(placeholders_string[0])
 	columns_amount = int(placeholders_string[1])
-
 	prefix_str = "from vimsnippets import display_width;"
-
+	extra_content = snip.buffer[snip.line][snip.column + 1:]
 	# erase current line
 	snip.buffer[snip.line] = ""
-
 	# create anonymous snippet with expected content and number of tabstops
 	anon_snippet_title = "| "
 	anon_snippet_delimiter = "|"
-	for col in range(1, columns_amount+1):
-		sync_rows = [x*columns_amount+col for x in range(rows_amount+1)]
+	for col in range(1, columns_amount + 1):
+		sync_rows = [x * columns_amount + col for x in range(rows_amount + 1)]
 		sync_str = ",".join(["t[{0}]".format(x) for x in sync_rows])
-		max_width_str = "max(list(map(display_width, [" + sync_str + "])))"
+		max_width_str = "max(list(map(display_width,[" + sync_str + "])))"
 		cur_width_str = "display_width(t[" + str(col) + "])"
 		rv_val = "(" + max_width_str + "-" + cur_width_str + ")*' '"
 		anon_snippet_title += "${" + str(col)  + ":head" + str(col)\
 			+ "}`!p " + prefix_str + "snip.rv=" + rv_val + "` | "
-		anon_snippet_delimiter += ":`!p " + prefix_str + "snip.rv = "\
-			+ max_width_str + "*'-'" + "`-|"
-
+		anon_snippet_delimiter += table_settings[align][0] + "`!p " + prefix_str + "snip.rv="\
+			+ max_width_str + "*'-'`" + table_settings[align][1] + "|"
 	anon_snippet_title += "\n"
-
 	anon_snippet_delimiter += "\n"
 	anon_snippet_body = ""
-	for row in range(1, rows_amount+1):
+	for row in range(1, rows_amount + 1):
 		body_row = "| "
-		for col in range(1, columns_amount+1):
-			sync_rows = [x*columns_amount+col for x in range(rows_amount+1)]
+		for col in range(1, columns_amount + 1):
+			sync_rows = [x * columns_amount + col for x in range(rows_amount + 1)]
 			sync_str = ",".join(["t[{0}]".format(x) for x in sync_rows])
-			max_width_str = "max(list(map(display_width, [" + sync_str + "])))"
-			cur_width_str = "display_width(t[" + str(row*columns_amount+col) + "])"
+			max_width_str = "max(list(map(display_width,[" + sync_str + "])))"
+			cur_width_str = "display_width(t[" + str(row * columns_amount + col) + "])"
 			rv_val = "(" + max_width_str + "-" + cur_width_str + ")*' '"
 			placeholder = "R{0}C{1}".format(row, col)
-			body_row += "${" + str(row*columns_amount+col)  + ":" + placeholder\
+			body_row += "${" + str(row * columns_amount + col)  + ":" + placeholder\
 				+ "}`!p " + prefix_str + "snip.rv=" + rv_val + "` | "
-
 		body_row += "\n"
 		anon_snippet_body += body_row
-
-	anon_snippet_table = anon_snippet_title + anon_snippet_delimiter + anon_snippet_body
-
+	anon_snippet_table = anon_snippet_title + anon_snippet_delimiter + anon_snippet_body + extra_content
 	# expand anonymous snippet
 	snip.expand_anon(anon_snippet_table)
+
 endglobal
 
 ###########################
@@ -140,9 +137,20 @@ snippet detail "Disclosure"
 </details>
 endsnippet
 
-post_jump "create_table(snip)"
-snippet "tb([1-9][1-9])" "Fancy table" br
-`!p snip.rv = match.group(1)`
+pre_expand "create_table(snip)"
+snippet 'tb([1-9][1-9])' "Table" br
+endsnippet
+
+pre_expand "create_table(snip, 1)"
+snippet 'tbl([1-9][1-9])' "Left Table" br
+endsnippet
+
+pre_expand "create_table(snip, 2)"
+snippet 'tbr([1-9][1-9])' "Right Table" br
+endsnippet
+
+pre_expand "create_table(snip, 3)"
+snippet 'tbm([1-9][1-9])' "Center Table" br
 endsnippet
 
 # vim:ft=snippets:
