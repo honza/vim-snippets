@@ -10,7 +10,7 @@ def printf_expand_args(snip):
 	This will look how many placeholders printf has and adds the separated commas
 	at the end.
 	"""
-	
+
 	# now add so many "," as much as the amount of placeholders
 	amount_placeholders = snip.tabstops[1].current_text.count("%")
 
@@ -19,14 +19,14 @@ def printf_expand_args(snip):
 	# Add the amount of tabstops
 	for placeholder_index in range(3, amount_placeholders + 3):
 		output += f", ${placeholder_index}"
-	
+
 	# convert them into tabstops
 	snip.expand_anon(output)
 
 endglobal
 
 # ==============
-# Snippets 
+# Snippets
 # ==============
 priority -50
 
@@ -69,6 +69,77 @@ for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 }
 endsnippet
 
+snippet structwm "struct with members"
+typedef struct ${2:struct_id} {
+${3:uint8_t} ${4:member};
+${VISUAL}$0
+} ${1:struct_instant};
+endsnippet
+
+snippet structwmt "struct with members, typedef"
+typedef struct ${2:struct_id} {
+${3:uint8_t} ${4:member};
+${VISUAL}$0
+} ${1:struct_t};
+endsnippet
+
+snippet unionwm "union with members"
+union ${2:union_id} {
+${5:structwm}${VISUAL}$0
+${3:uint8_t} ${4:member};
+} ${1:union_instant};
+endsnippet
+
+snippet unionwmt "union with members, typedef"
+typedef union ${2:union_id} {
+${5:structwm}${VISUAL}$0
+${3:uint8_t} ${4:member};
+} ${1:union_t};
+endsnippet
+
+snippet bitf "bit field"
+struct ${2:struct_id} {
+${3:uint8_t} ${4:bit_1}:${5:1};
+${VISUAL}$0
+} ${1:struct_t};
+endsnippet
+
+snippet bitft "bit field, typedef"
+typedef struct ${2:struct_id} {
+${3:uint8_t} ${4:bit_1}:${5:1};
+${VISUAL}$0
+} ${1:struct_instant};
+endsnippet
+
+snippet bitf8 "bit field, 8 bits"
+struct ${2:struct_id} {
+${3:uint8_t} ${4:bit_0} : ${5:1};
+uint8_t ${6:bit_1} : 1;
+uint8_t ${7:bit_2} : 1;
+uint8_t ${8:bit_3} : 1;
+uint8_t ${9:bit_4} : 1;
+uint8_t ${10:bit_5} : 1;
+uint8_t ${11:bit_6} : 1;
+uint8_t ${12:bit_7} : 1;
+} ${1:struct_instant};
+${VISUAL}$0
+endsnippet
+
+
+snippet bitft8 "bit field,typedef, 8 bits"
+typedef struct ${2:struct_id} {
+${3:uint8_t} ${4:bit_0} : ${5:1};
+uint8_t ${6:bit_1} : 1;
+uint8_t ${7:bit_2} : 1;
+uint8_t ${8:bit_3} : 1;
+uint8_t ${9:bit_4} : 1;
+uint8_t ${10:bit_5} : 1;
+uint8_t ${11:bit_6} : 1;
+uint8_t ${12:bit_7} : 1;
+} ${1:struct_t};
+${VISUAL}$0
+endsnippet
+
 snippet fori "for int loop (fori)"
 for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 	${VISUAL}$0
@@ -80,7 +151,7 @@ for (${1:var}; ${2:condition}; `!p
 if len(t[1]) > 0:
 	snip.rv = t[1].split('=')[0].split()[-1]
 `++) {
-	
+
 	$0
 } /* for ($1; $2; `!p if len(t[1]) > 0: snip.rv = t[1].split('=')[0].split()[-1]`++) */
 endsnippet
@@ -154,19 +225,19 @@ snippet head "File Header" b
 /******************************************************************************
 * File:             `!p snip.rv = fn`
 *
-* Author:           ${2}  
-* Created:          `date +%m/%d/%y` 
+* Author:           ${2}
+* Created:          `date +%m/%d/%y`
 * Description:      ${4:${VISUAL}}
 *****************************************************************************/
 ${0}
 endsnippet
 
 post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
-snippet func "Function Header" 
+snippet func "Function Header"
 /******************************************************************************
 * Function:         $1
 * Description:      ${4:${VISUAL}}
-* Where:`!p 
+* Where:`!p
 snip.rv = ""
 snip >> 2
 
