@@ -63,6 +63,18 @@ snippet clai
 		"""${2:description}"""
 		def __init__(self, ${3:args}):
 			${0}
+
+# Data class
+snippet dcl dataclass
+	@dataclass
+	class ${1:ClassName}:
+		"""${2:description}"""
+		${3:var_1}: ${4:int}
+		${5:var_2}: ${6:float} = ${7:0}
+
+		def ${8:total}(self): -> $6:
+			return ${0:self.$3 * self.$5}
+
 # New Function
 snippet def
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
@@ -111,6 +123,23 @@ snippet el
 snippet ei
 	elif ${1:condition}:
 		${0:${VISUAL}}
+
+# Match
+snippet match Structural pattern matching
+	match ${1:expression}:
+		case ${2:pattern_1}:
+			${3:pass}
+		case ${4:pattern_2}:
+			${5:pass}
+
+# Match with wildcard
+snippet matchw Pattern matching with wildcard
+	match ${1:expression}:
+		case ${2:pattern_1}:
+			${3:pass}
+		case _:
+			${0:pass}
+
 # For
 snippet for
 	for ${1:item} in ${2:items}:
