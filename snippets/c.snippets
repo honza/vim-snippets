@@ -281,6 +281,14 @@ snippet prf
 	printf("${1:} = %f\n", $1);
 snippet prx
 	printf("${1:} = %${2}\n", $1);
+snippet warn
+	warn("${1:%s}"$0);
+snippet warnx
+	warnx("${1:%s}"$0);
+snippet err
+	err(${1:1}, "${2:%s}"$0);
+snippet errx
+	errx(${1:1}, "${2:%s}"$0);
 # getopt
 snippet getopt
 	int choice;
