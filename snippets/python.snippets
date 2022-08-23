@@ -508,3 +508,16 @@ snippet numeric "methods for emulating a numeric type" b
 	def __coerce__(self, other):
 		${25:pass}
 
+# Printing
+snippet pr
+	print($0)
+snippet prs
+	print("$0")
+snippet prf
+	print(f"$0")
+snippet fpr
+	print($0, file=${1:sys.stderr})
+snippet fprs
+	print("$0", file=${1:sys.stderr})
+snippet fprf
+	print(f"$0", file=${1:sys.stderr})
