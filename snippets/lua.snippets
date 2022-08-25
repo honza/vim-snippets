@@ -42,5 +42,23 @@ snippet while
 	end
 snippet print
 	print("${1:string}")
+snippet pr
+	print($0)
+snippet prs
+	print("$0")
+snippet prf
+	print(string.format("${1:%s}"$0))
+snippet wr
+	io.write($0)
+snippet wrs
+	io.write("$0")
+snippet wrf
+	io.write(string.format("${1:%s}"$0))
+snippet fwr
+	io.${1:stderr}:write($0)
+snippet fwrs
+	io.${1:stderr}:write("$0")
+snippet fwrf
+	io.${1:stderr}:write(string.format("${2:%s}"$0))
 snippet im
 	import "${1:import file}"
