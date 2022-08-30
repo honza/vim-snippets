@@ -127,7 +127,11 @@ snippet forr
 	}
 # while
 snippet wh
-	while (${1:/* condition */}) {
+	while (${1:1}) {
+		${0:${VISUAL}}
+	}
+snippet wht
+	while (true) {
 		${0:${VISUAL}}
 	}
 # do... while
