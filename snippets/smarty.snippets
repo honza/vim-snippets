@@ -76,7 +76,7 @@ snippet append "{append} is used for creating or appending template variable arr
 
 # https://www.smarty.net/docs/en/language.function.assign.tpl
 snippet assign "{assign} is used for assigning template variables during the execution of a template."
-	{assign var='${1}' value='${2}'${3: scope='${4parent|root|global}'}}
+	{assign var='${1}' value='${2}'${3: scope='${4:parent|root|global}'}}
 
 # https://www.smarty.net/docs/en/language.function.block.tpl
 snippet block "{block} is used to define a named area of template source for template inheritance."
