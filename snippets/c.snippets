@@ -86,8 +86,8 @@ snippet elif
 snippet ifi
 	if (${1:true}) ${0};
 # ternary
-snippet t
-	${1:/* condition */} ? ${2:a} : ${3:b}
+snippet t Ternary: `condition ? true : false`
+	$1 ? $2 : $0
 # switch
 snippet switch
 	switch (${1:/* variable */}) {
@@ -138,7 +138,7 @@ snippet wht
 snippet do
 	do {
 		${0:${VISUAL}}
-	} while (${1:/* condition */});
+	} while ($1);
 ##
 ## Functions
 # function definition
@@ -351,7 +351,7 @@ snippet getopt
 
 ## Assertions
 snippet asr
-	assert(${1:condition});
+	assert($1);
 
 snippet anl
 	assert(${1:ptr} != NULL);

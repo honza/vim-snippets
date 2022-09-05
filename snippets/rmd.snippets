@@ -27,7 +27,7 @@ snippet req
 	require(${1:}, quietly = TRUE)
 # If Condition
 snippet if
-	if ( ${1:condition} )
+	if ( $1 )
 	{
 		${2:}
 	}
@@ -51,7 +51,7 @@ snippet fun
 snippet re
 	repeat{
 	  ${2:}
-	  if(${1:condition}) break
+	  if($1) break
 	}
 
 # matrix
