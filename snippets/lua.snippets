@@ -20,24 +20,24 @@ snippet fori
 		${0:-- body}
 	end
 snippet if
-	if ${1:condition} then
+	if $1 then
 		${2:-- body}
 	end
 snippet ife
-	if ${1:condition} then
+	if $1 then
 		${2:-- if condition}
 	else
 		${0:-- else}
 	end
 snippet elif
-	elseif ${1:condition} then
+	elseif $1 then
 		${0:--body}
 snippet repeat
 	repeat
 		${1:--body}
-	until ${0:condition}
+	until $0
 snippet while
-	while ${1:condition} do
+	while $1 do
 		${0:--body}
 	end
 snippet wh
