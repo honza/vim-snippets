@@ -2,37 +2,37 @@
 snippet forindo
 	for ${1:name} in ${2:array}
 		do ($1) ->
-			${0:// body}
+			$0
 # Array comprehension
 snippet fora
 	for ${1:name} in ${2:array}
-		${0:# body...}
+		$0
 # Object comprehension
 snippet foro
 	for ${1:key}, ${2:value} of ${3:object}
-		${0:# body...}
+		$0
 # Range comprehension (inclusive)
 snippet forr
 	for ${1:name} in [${2:start}..${3:finish}]
-		${0:# body...}
+		$0
 snippet forrb
 	for ${1:name} in [${2:start}..${3:finish}] by ${4:step}
-		${0:# body...}
+		$0
 # Range comprehension (exclusive)
 snippet forrex
 	for ${1:name} in [${2:start}...${3:finish}]
-		${0:# body...}
+		$0
 snippet forrexb
 	for ${1:name} in [${2:start}...${3:finish}] by ${4:step}
-		${0:# body...}
+		$0
 # Function
 snippet fun
 	(${1:args}) ->
-		${0:# body...}
+		$0
 # Function (bound)
 snippet bfun
 	(${1:args}) =>
-		${0:# body...}
+		$0
 # Class
 snippet cla class ..
 	class ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
@@ -76,7 +76,7 @@ snippet unl Unless
 snippet swi
 	switch ${1:object}
 		when ${2:value}
-			${0:# body...}
+			$0
 
 # Log
 snippet log
