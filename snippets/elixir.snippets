@@ -270,8 +270,8 @@ snippet genserver basic genserver structure
 	end
 
 	@impl true
-	def init(_init_args) do
-		{:ok, []}
+	def init(state) do
+		{:ok, state}
 	end
 snippet super basic supervisor structure
 	use Supervisor
