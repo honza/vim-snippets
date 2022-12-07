@@ -36,6 +36,16 @@ snippet <l
 	#+begin_export latex
 	$0
 	#+end_export
+# Begin export python 
+snippet <p
+	#+begin_export python
+	$0
+	#+end_export
+# Begin export shell
+snippet <s
+	#+begin_export shell
+	$0
+	#+end_export
 # dot
 snippet dot
 	#+begin_src dot :file ${1:file}.${2:svg} :results file graphics
@@ -73,8 +83,8 @@ snippet fig
 # Org Header
 snippet head
 	#+title:     ${1:untitled document}
-	#+author:    ${2:`user-full-name`}
-	#+email:     ${3:`user-mail-address`}
+	#+author:    ${2:user-full-name}
+	#+email:     ${3:user-mail-address}
 # Image
 snippet img
 	#+attr_html: :alt $2 :align ${3:left} :class img
