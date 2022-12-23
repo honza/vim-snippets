@@ -520,4 +520,59 @@ snippet subpar* "Sub Paragraph*" wi
 \subparagraph*{$1${VISUAL}}
 endsnippet
 
+snippet chapl "Chapter with label" wi
+\chapter{$1${VISUAL}}
+\label{cha:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet secl "Section with label" wi
+\section{$1${VISUAL}}
+\label{sec:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet sec*l "Section* with label" wi
+\section*{$1${VISUAL}}
+\label{sec:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet subl "Subsection with label" wi
+\subsection{$1${VISUAL}}
+\label{sub:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet sub*l "Subsection* with label" wi
+\subsection*{$1${VISUAL}}
+\label{sub:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet subsubl "Subsection with label" wi
+\subsubsection{$1${VISUAL}}
+\label{ssub:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet subsub*l "Subsubsection with label" wi
+\subsubsection*{$1${VISUAL}}
+\label{ssub:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet parl "Paragraph with label" wi
+\paragraph{$1${VISUAL}}
+\label{par:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet par*l "Paragraph* with label" wi
+\paragraph*{$1${VISUAL}}
+\label{par:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet subparl "Sub Paragraph with label" wi
+\subparagraph{$1${VISUAL}}
+\label{subp:${2:${1/\W+/-/g}}}
+endsnippet
+
+snippet subpar*l "Sub Paragraph* with label" wi
+\subparagraph*{$1${VISUAL}}
+\label{subp:${2:${1/\W+/-/g}}}
+endsnippet
+
 # vim:ft=snippets:
