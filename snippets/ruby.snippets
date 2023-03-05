@@ -376,6 +376,8 @@ snippet finad
 	end
 snippet gre
 	grep(${1:/pattern/}) { |${2:match}| ${0} }
+snippet grepv
+	select { |${1:line}| $1 !~ ${2:/pattern/} }${0}
 snippet sub
 	${1:g}sub(${2:/pattern/}) { |${3:match}| ${0} }
 snippet sca
