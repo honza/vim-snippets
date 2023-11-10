@@ -8,7 +8,7 @@ def complete(t, opts):
 endglobal
 
 snippet status "Status" bA
-status $1`!p snip.rv = complete(t[1], ['build', 'ci', 'test', 'refactor', 'perf', 'improvement', 'docs', 'chore', 'feat', 'fix'])`
+status $1`!p snip.rv = complete(t[1], ['build', 'ci', 'test', 'refactor', 'perf', 'improvement', 'docs', 'chore', 'feat', 'fix', 'style'])`
 endsnippet
 
 snippet fix "fix conventional commit"
@@ -67,6 +67,12 @@ endsnippet
 
 snippet build "build conventional commit"
 build(${1:scope}): ${2:title}
+
+${0:${VISUAL}}
+endsnippet
+
+snippet style "style conventional commit"
+style(${1:scope}): ${2:title}
 
 ${0:${VISUAL}}
 endsnippet
