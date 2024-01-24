@@ -1,30 +1,45 @@
+# Implicit none
 snippet impl
 	implicit none
-		${0}
+	${0}
+# Program
 snippet prog
 	program ${1:main}
 		${0}
 	end program $1
+# Module
 snippet mod
 	module ${1:modulename}
 		${0}
 	end module $1
-snippet proc
-	procedure ${1:name}
+snippet modu
+	module ${1:modulename}
 		${0}
-	end procedure $1
+	end module $1
+# submodule
+snippet submod
+	submodule (${1:parent}) ${2:submodulename}
+		${0}
+	end submodule ${2}
+# Procedure declaration
+snippet proc
+	procedure(${1:type}) :: ${0}
+# Interface
+snippet inter
+	interface ${1:name}
+		${0}
+	end interface $1
 snippet iface
 	interface ${1:name}
 		${0}
 	end interface $1
+# Documentation
 snippet doc
-	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-	! File: ${2:`vim_snippets#Filename('$1')`}
-	! Author: `g:snips_author`
-	! Email: `g:snips_email`
-	! Github: `g:snips_github`
-	! Description: $1
-	! """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+	!! File: ${2:`vim_snippets#Filename('$1')`}
+	!! Author: `g:snips_author`
+	!! Email: `g:snips_email`
+	!! Github: `g:snips_github`
+	!! Description: $1
 	${0}
 snippet dox
 	!> @brief ${1}
@@ -38,66 +53,148 @@ snippet doxp
 # Boolean
 snippet bool
 	logical :: ${0}
+snippet logi
+	logical :: ${0}
 # Integer
 snippet int
 	integer :: ${0}
+# Real
 snippet real
 	real :: ${0}
 # Double Precision
 snippet double
 	double precision :: ${0}
+# Complex
+snippet comp
+	complex :: ${0}
 # Char
+snippet char
+	character(len=${1::}) :: ${0:}
 snippet str
-	character(len=${1:*}) :: ${0:}
+	character(len=${1::}) :: ${0:}
 # Types
 snippet type
-	type(${1:name})
+	type(${1:typename}) :: ${0}
+snippet typed
+	type :: ${1:name}
 		${0}
-	end type
-snippet const
+	end type ${1}
+# Parameter
+snippet param
 	${1:type}, parameter :: $2 = ${0}
-snippet arr
-	${1:type}, ${2:allocatable, }dimension(${3::}) :: ${0}
-snippet intent
-	${1:type}, intent(inout) :: ${0}
 # Array
-snippet /
-	(/ $1 /) ${2:,&} ${0}
+snippet arr
+	${1:type}, ${2:allocatable, }dimension (${3::}) :: ${0}
+# Dummy arguments
+snippet intent
+	${1:datatype}, intent (${2:inout}) :: ${0}
+snippet class
+	class(${1:ClassType}) :: ${0}
+# Implied do
+snippet imdo
+	(${1} ${2:i}, $2=${3:start},${4:stop},${5:step})
+# If
 snippet if
 	if ($1) then
 		${0}
 	end if
+# If else
+snippet ifel
+	if (${1:condition1}) then
+		${2}
+	else if (${3:condition2}) then
+		${3}
+	else
+		${4}
+	end if
+# Select case
+snippet sel
+	select case (${1:expr})
+		case ($2)
+		case default
+			$3
+	end select ${0}
 snippet case
 	select case (${1:expr})
 		case ($2)
 		case default
 			$3
 	end select ${0}
+# select type
+snippet selt
+	select type (${1:expr})
+		$2 is ($3)
+		class default
+			$4
+	end select ${0}
+# Do loop
 snippet do
 	do ${1:i} = ${2:start}, ${3:end}, ${4:incr}
 		${0}
 	end do
+# Do while
 snippet dow
 	do while ($1)
 		$2
 	end do
+# Subroutine
 snippet sub
 	subroutine ${1:name}($2)
 		${0}
 	end subroutine $1
+# Function
 snippet func
 	function ${1:name}($2) result($3)
 		${0}
 	end function $1
+# Print
 snippet pr
+	print *, ${0}
+# Write (standard out)
+snippet wr
 	write(*,*) ${0}
-snippet dpr
+# Write variable
+snippet wrv
 	write(*,*) '$1 = ', $1
-snippet read
-	read(unit = ${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) ${0}
+# Write full
 snippet write
-	write(unit = ${1:fp}, file = ${2:filename}, iostat = ${3:ierr}) ${0}
+	write(unit=${1:fp}, file=${2:filename}, iostat=${3:ierr}) ${0}
+# Read
+snippet read
+	read(unit=${1:fp}, file=${2:filename}, iostat=${3:ierr}) ${0}
+# Open
 snippet open
-	open(unit = ${1:fp}, file = ${2:filename}, status = ${3:unknown}, iostat = ${4:ierr}) ${0}
+	open(unit=${1:fp}, file=${2:filename}, status=${3:unknown}, iostat=${4:ierr}) ${0}
+# Close
 snippet close
-	close(unit = ${1:fp}) ${0}
+	close(unit=${1:fp}) ${0}
+# Class module with a single attribute and method
+snippet classmod
+	module ${1:ClassName}_m
+		implicit none
+		private
+	
+		type, public :: $1
+			${2} :: ${3:attribute}
+		contains
+			procedure :: ${4:constructor}
+			procedure :: ${5:method}
+		end type $1
+	
+		interface $1
+			module procedure $4
+		end interface
+	contains
+		type ($2) function $4($3${6})
+			$4%$3 = $3
+			${7}
+		end function $4
+
+		subroutine $5(self)
+			class($1), intent(inout) :: self
+			${0}
+		end subroutine $5
+	end module $1_m
+# Use
+snippet use
+	use ${1:module}, only: ${0}
