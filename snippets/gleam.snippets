@@ -23,10 +23,7 @@ snippet l "let binding"
 	let ${1} = ${0}
 
 snippet as "assert binding"
-	assert ${1} = ${0}
-
-snippet tr "try binding"
-	try ${1} = ${0}
+	let assert ${1} = ${0}
 
 snippet - "->"
 	-> ${0}
@@ -54,20 +51,6 @@ snippet ptya "pub type alias"
 	pub type ${1:Name} =
 	  ${0:$1}
 
-snippet ext "external type"
-	external type ${0}
-
-snippet pext "pub external type"
-	pub external type ${0}
-
-snippet exfn "external fn"
-	external fn ${1:function_name}(${2}) -> ${3}
-	  = "${4}" "${0}"
-
-snippet pexfn "pub external fn"
-	pub external fn ${1:function_name}(${2}) -> ${3}
-	  = "${4}" "${0}"
-
 snippet im "import"
 	import ${0:gleam/result}
 
@@ -76,9 +59,6 @@ snippet im. "import exposing"
 
 snippet p "|>"
 	|> ${0}
-
-snippet tup "tuple()"
-	tuple(${0:${VISUAL}})
 
 snippet bl "block"
 	{
@@ -95,4 +75,4 @@ snippet strue "should.be_true"
 	should.be_true(${0:${VISUAL}})
 
 snippet sfalse "should.be_false"
-	should.be_true(${0:${VISUAL}})
+	should.be_false(${0:${VISUAL}})
