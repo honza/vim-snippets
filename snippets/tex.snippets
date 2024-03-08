@@ -163,7 +163,7 @@ snippet cha \chapter
 # Section
 snippet sec \section
 	\\section{${1:section name}}%
-	\\label{sec:${2:${1/\\W+/-/g}}}
+	\\label{sec:${2:${1/section/-/g}}}
 	${0}
 # Section without number
 snippet sec* \section*
