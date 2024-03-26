@@ -1,0 +1,74 @@
+snippet Main Maintainer
+	# Maintainer: ${1} <${0}>
+
+snippet Cont Contributor
+	# Contributor: ${1} <${0}>
+
+snippet init "Initial PKBUILD"
+	pkgname=$1
+	pkgver=$2
+	pkgrel=${3:1}
+	pkgdesc="$4"
+	arch=(${5:"any"})
+	url="$6"
+	license=("$7")
+	depends=($8)
+	makedepends=($9)
+	optdepends=($10)
+	source=($11)
+	sha256sums=($12)
+
+	build() {
+		$13
+	}
+
+	check() {
+		$14
+	}
+
+	package() {
+		$15
+	}
+
+snippet prepare "Prepare"
+	prepare() {
+		cd "${pkgname}-${pkgver}"
+		${0}
+	}
+
+snippet build "Build"
+	build() {
+		cd "${pkgname}-${pkgver}"
+		${0}
+	}
+
+snippet check "Check"
+	check() {
+		cd "${pkgname}-${pkgver}"
+		${0}
+	}
+
+snippet package "Package"
+	package() {
+		cd "${pkgname}-${pkgver}"
+		${0}
+	}
+
+snippet make "Makefile"
+	build() {
+		cd "${pkgname}-${pkgver}"
+		./configure --prefix=usr
+		make
+	}
+
+	check() {
+		cd "${pkgname}-${pkgver}"
+		make -k check
+	}
+	package() {
+		cd "${pkgname}-${pkgver}"
+		make DESTDIR="$pkgdir" install
+	}
+
+snippet license "License"
+	install -Dm644 ${0:LICENSE} "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
