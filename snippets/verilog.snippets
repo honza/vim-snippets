@@ -3,6 +3,13 @@ snippet al
 	always @(${1:/* sensitive list */}) begin
 		${0}
 	end
+snippet as "Assign"
+	assign ${1:name} = ${0:value};
+# Begin-end block
+snippet be
+	begin
+		${0:VISUAL}
+	end
 # Case statement
 snippet case
 	case (${1:/* variable */})
@@ -23,6 +30,8 @@ snippet casez
 			${4}
 		end
 	endcase
+snippet cond "Conditional operator"
+	(${1:if}) ? ${2:then} : ${3:else};
 # Else if statement
 snippet eif
 	else if (${1}) begin
@@ -48,6 +57,10 @@ snippet fun
 	function ${1:void} ${2:name}(${3});
 		${0}
 	endfunction: $2
+snippet gen
+	generate
+		${0:${VISUAL}}
+	endgenerate
 # if statement
 snippet if
 	if (${1}) begin
@@ -61,20 +74,43 @@ snippet ife
 	else begin
 		${3}
 	end
-# Initial 
+# Initial
 snippet ini
 	initial begin
 		${0}
 	end
+snippet lpar "Local parameter definition"
+	localparam ${1:name} = ${0:value}
 # Module block
 snippet mod
 	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
 		${0}
 	endmodule
+# Module block with parameters
+snippet modp
+	module ${1:`vim_snippets#Filename('$1', 'name')`} #(${2}) (${3});
+		${0}
+	endmodule
+snippet ned "Negative edge"
+	negedge ${0:signal}
 # Repeat Loop
 snippet rep
 	repeat (${1}) begin
 		${0}
+	end
+snippet par "Parameter definition"
+	parameter ${1:name} = ${0:value}
+snippet ped "Positive edge"
+	posedge ${0:signal}
+# Sequential block
+snippet seq
+	always @(${1:posedge clk}${2:, posedge rst}) begin
+		if (${3:rst}) begin
+			${4}
+		end
+		else begin
+			${0}
+		end
 	end
 # Task
 snippet task
