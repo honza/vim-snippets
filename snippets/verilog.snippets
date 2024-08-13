@@ -2,6 +2,7 @@ snippet al "Always block"
 	always @(${1:/* sensitive list */}) begin
 		${2}
 	end
+
 snippet as "Assign"
 	assign ${1:name} = ${2:value};
 
@@ -81,9 +82,9 @@ snippet modp "Module with parameters"
 		${0}
 	endmodule
 
-snippet ned "Negative edge"
+snippet neg "Negative edge"
 	negedge ${0:signal}
-
+#
 snippet rep "Repeat loop"
 	repeat (${1}) begin
 		${2}
@@ -92,9 +93,9 @@ snippet rep "Repeat loop"
 snippet par "Parameter definition"
 	parameter ${1:name} = ${0:value}
 
-snippet ped "Positive edge"
+snippet pos "Positive edge"
 	posedge ${0:signal}
-
+#
 snippet seq "Sequential block"
 	always @(${1:posedge clk}${2:, posedge rst}) begin
 		if (${3:rst}) begin
