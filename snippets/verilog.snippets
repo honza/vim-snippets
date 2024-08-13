@@ -1,109 +1,101 @@
-# Always block
-snippet al
+snippet al "Always block"
 	always @(${1:/* sensitive list */}) begin
 		${0}
 	end
 snippet as "Assign"
 	assign ${1:name} = ${0:value};
-# Begin-end block
-snippet be
+
+snippet be "Begin-end"
 	begin
 		${0:VISUAL}
 	end
-# Case statement
-snippet case
-	case (${1:/* variable */})
-		${2:/* value */}: begin
-			${3}
-		end
-		default: begin
+
+snippet case "Case(xz) statement"
+	case${1:x} (${2:/* variable */})
+		${3:/* value */}: begin
 			${4}
 		end
-	endcase
-# CaseZ statement
-snippet casez
-	casez (${1:/* variable */})
-		${2:/* value */}: begin
-			${3}
-		end
 		default: begin
-			${4}
+			${5}
 		end
 	endcase
-snippet cond "Conditional operator"
-	(${1:if}) ? ${2:then} : ${3:else};
-# Else if statement
-snippet eif
+
+snippet eif "Else if"
 	else if (${1}) begin
 		${0}
 	end
-#Else statement
-snippet el
+
+snippet el "Else"
 	else begin
 		${0}
 	end
-# For
-snippet for
+
+snippet for "For loop"
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
 		${4}
 	end
-# Forever
-snippet forev
+
+snippet forev "Forever loop"
 	forever begin
 		${0}
 	end
-# Function
-snippet fun
+
+snippet fun "Function"
 	function ${1:void} ${2:name}(${3});
 		${0}
 	endfunction: $2
-snippet gen
+
+snippet gen "Generate block"
 	generate
 		${0:${VISUAL}}
 	endgenerate
-# if statement
-snippet if
+
+snippet if "If statement"
 	if (${1}) begin
 		${0}
 	end
-# If/else statements
-snippet ife
+
+snippet ife "If-else statement"
 	if (${1}) begin
 		${2}
 	end
 	else begin
 		${3}
 	end
-# Initial
-snippet ini
+
+snippet ini "Initial block"
 	initial begin
 		${0}
 	end
-snippet lpar "Local parameter definition"
+
+snippet lpar "Local parameter"
 	localparam ${1:name} = ${0:value}
-# Module block
-snippet mod
+
+snippet mod "Module"
 	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
 		${0}
 	endmodule
-# Module block with parameters
-snippet modp
+
+snippet modp "Module with parameters"
 	module ${1:`vim_snippets#Filename('$1', 'name')`} #(${2}) (${3});
 		${0}
 	endmodule
+
 snippet ned "Negative edge"
 	negedge ${0:signal}
-# Repeat Loop
-snippet rep
+
+snippet rep "Repeat loop"
 	repeat (${1}) begin
 		${0}
 	end
+
 snippet par "Parameter definition"
 	parameter ${1:name} = ${0:value}
+
 snippet ped "Positive edge"
 	posedge ${0:signal}
-# Sequential block
-snippet seq
+
+snippet seq "Sequential block"
 	always @(${1:posedge clk}${2:, posedge rst}) begin
 		if (${3:rst}) begin
 			${4}
@@ -112,24 +104,24 @@ snippet seq
 			${0}
 		end
 	end
-# Task
-snippet task
+
+snippet task "Task definition"
 	task ${1:name}(${2});
 		${0}
 	endtask: $1
-# typedef eum
-snippet tde
+
+snippet tde "Typedef enum"
 	typedef enum ${2:logic[15:0]}
 	{
 		${3:REG = 16'h0000}
 	} ${1:my_dest_t};
-# typedef struct packed
-snippet tdsp
+
+snippet tdsp "Typedef struct packed"
 	typedef struct packed {
 		int ${2:data};
 	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
-# While statement
-snippet wh
+
+snippet wh "While loop"
 	while (${1}) begin
 		${0}
 	end
