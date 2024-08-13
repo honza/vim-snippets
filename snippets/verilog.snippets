@@ -1,6 +1,6 @@
 snippet al "Always block"
 	always @(${1:/* sensitive list */}) begin
-		${2}
+		${2:${VISUAL}}
 	end
 
 snippet as "Assign"
@@ -23,27 +23,27 @@ snippet case "Case(xz) statement"
 
 snippet eif "Else if"
 	else if (${1}) begin
-		${2}
+		${2:${VISUAL}}
 	end
 
 snippet el "Else"
 	else begin
-		${1}
+		${1:${VISUAL}}
 	end
 
 snippet for "For loop"
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
-		${4}
+		${4:${VISUAL}}
 	end
 
 snippet forev "Forever loop"
 	forever begin
-		${1}
+		${1:${VISUAL}}
 	end
 
 snippet fun "Function"
 	function ${1:void} ${2:name}(${3});
-		${4}
+		${4:${VISUAL}}
 	endfunction: $2
 
 snippet gen "Generate block"
@@ -53,7 +53,7 @@ snippet gen "Generate block"
 
 snippet if "If statement"
 	if (${1}) begin
-		${2}
+		${2:${VISUAL}}
 	end
 
 snippet ife "If-else statement"
@@ -66,7 +66,7 @@ snippet ife "If-else statement"
 
 snippet ini "Initial block"
 	initial begin
-		${1}
+		${1:${VISUAL}}
 	end
 
 snippet lpar "Local parameter"
@@ -74,12 +74,12 @@ snippet lpar "Local parameter"
 
 snippet mod "Module"
 	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
-		${0}
+		${0:${VISUAL}}
 	endmodule
 
 snippet modp "Module with parameters"
 	module ${1:`vim_snippets#Filename('$1', 'name')`} #(${2}) (${3});
-		${0}
+		${0:${VISUAL}}
 	endmodule
 
 snippet neg "Negative edge"
@@ -87,7 +87,7 @@ snippet neg "Negative edge"
 #
 snippet rep "Repeat loop"
 	repeat (${1}) begin
-		${2}
+		${2:${VISUAL}}
 	end
 
 snippet par "Parameter definition"
@@ -108,7 +108,7 @@ snippet seq "Sequential block"
 
 snippet task "Task definition"
 	task ${1:name}(${2});
-		${3}
+		${3:${VISUAL}}
 	endtask: $1
 
 snippet tde "Typedef enum"
@@ -124,5 +124,5 @@ snippet tdsp "Typedef struct packed"
 
 snippet wh "While loop"
 	while (${1}) begin
-		${2}
+		${2:${VISUAL}}
 	end

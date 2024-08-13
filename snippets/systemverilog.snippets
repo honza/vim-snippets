@@ -3,23 +3,23 @@ extends verilog
 
 snippet alc "Always combinational"
 	always_comb begin ${1:: statement_label}
-		${0}
+		${2:${VISUAL}}
 	end $1
 
 snippet alff "Always flip-flop"
 	always_ff @(posedge ${1:clk}) begin ${2:: statement_label}
-		${0}
+		${3:${VISUAL}}
 	end $2
 
 snippet all "Always latch"
 	always_latch begin ${1:: statement_label}
-		${0}
+		${2:${VISUAL}}
 	end $1
 
 snippet cl "Class"
 	class ${1:class_name};
 		// data or class properties
-		${0}
+		${2:${VISUAL}}
 
 		// initialization
 		function new();
@@ -29,28 +29,28 @@ snippet cl "Class"
 
 snippet clock "Clocking group"
 	clocking ${1:clocking_name} @(${2:posedge} ${3:clk});
-		${0}
+		${4:${VISUAL}}
 	endclocking : $1
 
 snippet cg "Coverage group"
 	covergroup ${1:group_name} @(${2:posedge} ${3:clk});
-		${0}
+		${4:${VISUAL}}
 	endgroup : $1
 
 snippet dowh "Do..while loop"
 	do begin
-		${0}
+		${2:${VISUAL}}
 	end while (${1});
 
 snippet forea "Foreach loop"
 	foreach (${1}) begin
-		${0}
+		${2:${VISUAL}}
 	end
 
 snippet intf
 	interface ${1:program_name} ();
 		// nets
-		${0}
+		${2:${VISUAL}}
 		// clocking
 
 		// modports
@@ -59,17 +59,17 @@ snippet intf
 
 snippet pkg
 	package ${1:package_name};
-		${0}
+		${2:${VISUAL}}
 	endpackage : $1
 
 snippet prog
 	program ${1:program_name} ();
-		${0}
+		${2:${VISUAL}}
 	endprogram : $1
 
 snippet types "Struct typedef"
 	typedef struct {
-		${0}
+		${2:${VISUAL}}
 	} ${1:name_t};
 
 snippet uvm_component
