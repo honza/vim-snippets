@@ -1,13 +1,13 @@
 snippet al "Always block"
 	always @(${1:/* sensitive list */}) begin
-		${0}
+		${2}
 	end
 snippet as "Assign"
-	assign ${1:name} = ${0:value};
+	assign ${1:name} = ${2:value};
 
 snippet be "Begin-end"
 	begin
-		${0:VISUAL}
+		${1:VISUAL}
 	end
 
 snippet case "Case(xz) statement"
@@ -22,12 +22,12 @@ snippet case "Case(xz) statement"
 
 snippet eif "Else if"
 	else if (${1}) begin
-		${0}
+		${2}
 	end
 
 snippet el "Else"
 	else begin
-		${0}
+		${1}
 	end
 
 snippet for "For loop"
@@ -37,22 +37,22 @@ snippet for "For loop"
 
 snippet forev "Forever loop"
 	forever begin
-		${0}
+		${1}
 	end
 
 snippet fun "Function"
 	function ${1:void} ${2:name}(${3});
-		${0}
+		${4}
 	endfunction: $2
 
 snippet gen "Generate block"
 	generate
-		${0:${VISUAL}}
+		${1:${VISUAL}}
 	endgenerate
 
 snippet if "If statement"
 	if (${1}) begin
-		${0}
+		${2}
 	end
 
 snippet ife "If-else statement"
@@ -65,7 +65,7 @@ snippet ife "If-else statement"
 
 snippet ini "Initial block"
 	initial begin
-		${0}
+		${1}
 	end
 
 snippet lpar "Local parameter"
@@ -86,7 +86,7 @@ snippet ned "Negative edge"
 
 snippet rep "Repeat loop"
 	repeat (${1}) begin
-		${0}
+		${2}
 	end
 
 snippet par "Parameter definition"
@@ -101,13 +101,13 @@ snippet seq "Sequential block"
 			${4}
 		end
 		else begin
-			${0}
+			${5}
 		end
 	end
 
 snippet task "Task definition"
 	task ${1:name}(${2});
-		${0}
+		${3}
 	endtask: $1
 
 snippet tde "Typedef enum"
@@ -123,5 +123,5 @@ snippet tdsp "Typedef struct packed"
 
 snippet wh "While loop"
 	while (${1}) begin
-		${0}
+		${2}
 	end
