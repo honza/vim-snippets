@@ -1,0 +1,58 @@
+snippet ter "terraform" b
+terraform {
+    required_version = "${1}"
+    required_providers {
+        ${2:provider} = {
+            source = "${3}"
+            version = "${4}"
+        }
+    }
+}
+${0}
+endsnippet
+
+snippet prov "provider" b
+provider "${1:provider}" {
+    ${2}
+}
+${0}
+endsnippet
+
+snippet mod "module" b
+module "${1:name}" {
+    source = "${2}"
+}
+${0}
+endsnippet
+
+snippet res "resource" b
+resource "${1:type}" "${2:name}" {
+    ${3}
+}
+${0}
+endsnippet
+
+snippet data "data" b
+data "${1:type}" "${2:name}" {
+    ${3}
+}
+${0}
+endsnippet
+
+snippet var "variable" b
+variable "${1:name}" {
+    description = "${2:description}"
+    type = ${3:string}
+    default = ${4:""}
+}
+${0}
+endsnippet
+
+
+snippet out "output" b
+output "${1:name}" {
+    description = "${2:description}"
+    value = ${3:value}
+}
+${0}
+endsnippet
