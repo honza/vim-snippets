@@ -1,34 +1,6 @@
-# if statement
-snippet if
-	if (${1}) begin
-		${0}
-	end
-# If/else statements
-snippet ife
-	if (${1}) begin
-		${2}
-	end
-	else begin
-		${3}
-	end
-# Else if statement
-snippet eif
-	else if (${1}) begin
-		${0}
-	end
-#Else statement
-snippet el
-	else begin
-		${0}
-	end
-# While statement
-snippet wh
-	while (${1}) begin
-		${0}
-	end
-# Repeat Loop
-snippet rep
-	repeat (${1}) begin
+# Always block
+snippet al
+	always @(${1:/* sensitive list */}) begin
 		${0}
 	end
 # Case statement
@@ -51,16 +23,16 @@ snippet casez
 			${4}
 		end
 	endcase
-# Always block
-snippet al
-	always @(${1:/* sensitive list */}) begin
+# Else if statement
+snippet eif
+	else if (${1}) begin
 		${0}
 	end
-# Module block
-snippet mod
-	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
+#Else statement
+snippet el
+	else begin
 		${0}
-	endmodule
+	end
 # For
 snippet for
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
@@ -76,24 +48,52 @@ snippet fun
 	function ${1:void} ${2:name}(${3});
 		${0}
 	endfunction: $2
-# Task
-snippet task
-	task ${1:name}(${2});
+# if statement
+snippet if
+	if (${1}) begin
 		${0}
-	endtask: $1
+	end
+# If/else statements
+snippet ife
+	if (${1}) begin
+		${2}
+	end
+	else begin
+		${3}
+	end
 # Initial 
 snippet ini
 	initial begin
 		${0}
 	end
-# typedef struct packed
-snippet tdsp
-	typedef struct packed {
-		int ${2:data};
-	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
+# Module block
+snippet mod
+	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
+		${0}
+	endmodule
+# Repeat Loop
+snippet rep
+	repeat (${1}) begin
+		${0}
+	end
+# Task
+snippet task
+	task ${1:name}(${2});
+		${0}
+	endtask: $1
 # typedef eum
 snippet tde
 	typedef enum ${2:logic[15:0]}
 	{
 		${3:REG = 16'h0000}
 	} ${1:my_dest_t};
+# typedef struct packed
+snippet tdsp
+	typedef struct packed {
+		int ${2:data};
+	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
+# While statement
+snippet wh
+	while (${1}) begin
+		${0}
+	end
