@@ -1,0 +1,166 @@
+snippet ve
+	version: '${1:3}'
+snippet volumes
+	volumes:
+		- ${1:value}
+snippet volume_
+	volume_driver: ${1:driver}
+snippet volumes_
+	volumes_from:
+		- ${1:name}
+snippet exter
+	external: ${1:boolean}
+snippet ser
+	services:
+		${1:name}
+snippet bu
+	build:
+		${1:value}
+snippet conte
+	context: ${1:dir}
+snippet com
+	command: ${1:command}
+snippet dep
+	depends_on:
+		${1:value}
+snippet env
+	environment:
+		${1:name}: ${2:value}
+snippet doc
+	dockerfile: ${1:file}
+snippet ar
+	args:
+		${1:name}: ${2:value}
+snippet cap_a
+	cap_add:
+		- ${1:value}
+snippet cap_d
+	cap_drop:
+		- ${1:value}
+snippet cgr
+	cgroup_parent: ${1:cgroup}
+snippet conta
+	container_name: ${1:name}
+snippet dev
+	devices:
+		- ${1:value}
+snippet dn
+	dns:
+		- ${1:ip}
+snippet dns_
+	dns_search:
+		- ${1:ip}
+snippet tm
+	tmpfs:
+		- ${1:dir}
+snippet ent
+	entrypoint: ${1:command}
+snippet env_
+	env_file:
+		- ${1:file}
+snippet exp
+	expose:
+		- ${1:port}
+snippet exten
+	extends:
+		file: ${1:file}
+		service: ${2:name}
+snippet extr
+	extra_hosts:
+		- ${1:host}:${2:ip}
+snippet gr
+	group_add:
+		- ${1:name}
+snippet im
+	image: ${1:image}
+snippet la
+	labels:
+		${1:dns}: ${2:label}
+snippet links
+	links:
+		- ${1:name}
+snippet logg
+	logging:
+		driver: ${1:driver}
+		options:
+			${2:value}
+snippet log_d
+	log_driver: ${1:driver}
+snippet log_o
+	log_opt:
+		${1:value}
+snippet net
+	net: ${1:value}
+snippet network_
+	network_mode: ${1:value}
+snippet networks
+	networks:
+		- ${1:value}
+snippet al
+	networks:
+		- ${1:name}
+snippet ipv4
+	ipv4_address: ${1:ip}
+snippet ipv6
+	ipv6_address: ${1:ip}
+snippet link_
+	link_local_ips:
+		- ${1:ip}
+snippet pi
+	pid: ${1:host}
+snippet po
+	ports:
+		- ${1:value}
+snippet sec
+	security_opt:
+		- ${1:value}
+snippet sto
+	stop_signal: ${1:signal}
+snippet ul
+	ulimits:
+		${1:value}
+snippet cpu_s
+	cpu_shares: ${1:value}
+snippet cpu_q
+	cpu_quota: ${1:value}
+snippet cpus
+	cpuset: ${1:value}
+snippet dom
+	domainname: ${1:name}
+snippet ho
+	hostname: ${1:name}
+snippet ipc
+	ipc: ${1:host}
+snippet mem_
+	mem_limit: ${1:value}
+snippet mems
+	memswap_limit: ${1:value}
+snippet pr
+	privileged: ${1:boolean}
+snippet oom
+	oom_score_adj: ${1:value}
+snippet res
+	restart: ${1:value}
+snippet us
+	user: ${1:value}
+snippet wo
+	working_dir: ${1:dir}
+snippet rea
+	read_only: ${1:boolean}
+snippet sh
+	shm_size: ${1:value}
+snippet std
+	stdin_open: ${1:boolean}
+snippet tt
+	tty: ${1:boolean}
+snippet driver
+	driver: ${1:value}
+snippet driver_
+	driver_opts:
+		${1:key}: ${2:value}
+snippet ipa
+	ipam:
+		${1:value}
+snippet hc
+	healthcheck:
+		test: ${1:command}
