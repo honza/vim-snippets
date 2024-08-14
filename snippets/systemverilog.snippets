@@ -1,21 +1,21 @@
 extends verilog
 
-
+# --------------------------------------------------------------------------------
 snippet alc "Always combinational"
 	always_comb begin ${1:: statement_label}
 		${2:${VISUAL}}
 	end $1
-
+# --------------------------------------------------------------------------------
 snippet alff "Always flip-flop"
 	always_ff @(posedge ${1:clk}) begin ${2:: statement_label}
 		${3:${VISUAL}}
 	end $2
-
+# --------------------------------------------------------------------------------
 snippet all "Always latch"
 	always_latch begin ${1:: statement_label}
 		${2:${VISUAL}}
 	end $1
-
+# --------------------------------------------------------------------------------
 snippet cl "Class"
 	class ${1:class_name};
 		// data or class properties
@@ -26,27 +26,27 @@ snippet cl "Class"
 		endfunction : new
 
 	endclass : $1
-
+# --------------------------------------------------------------------------------
 snippet clock "Clocking group"
 	clocking ${1:clocking_name} @(${2:posedge} ${3:clk});
 		${4:${VISUAL}}
 	endclocking : $1
-
+# --------------------------------------------------------------------------------
 snippet cg "Coverage group"
 	covergroup ${1:group_name} @(${2:posedge} ${3:clk});
 		${4:${VISUAL}}
 	endgroup : $1
-
+# --------------------------------------------------------------------------------
 snippet dowh "Do..while loop"
 	do begin
 		${2:${VISUAL}}
 	end while (${1});
-
+# --------------------------------------------------------------------------------
 snippet forea "Foreach loop"
 	foreach (${1}) begin
 		${2:${VISUAL}}
 	end
-
+# --------------------------------------------------------------------------------
 snippet intf
 	interface ${1:program_name} ();
 		// nets
@@ -56,22 +56,22 @@ snippet intf
 		// modports
 
 	endinterface : $1
-
+# --------------------------------------------------------------------------------
 snippet pkg
 	package ${1:package_name};
 		${2:${VISUAL}}
 	endpackage : $1
-
+# --------------------------------------------------------------------------------
 snippet prog
 	program ${1:program_name} ();
 		${2:${VISUAL}}
 	endprogram : $1
-
+# --------------------------------------------------------------------------------
 snippet types "Struct typedef"
 	typedef struct {
 		${2:${VISUAL}}
 	} ${1:name_t};
-
+# --------------------------------------------------------------------------------
 snippet uvm_component
 	//  Class: $1
 	//
@@ -99,7 +99,7 @@ snippet uvm_component
 
 		$0
 	endclass: $1
-
+# --------------------------------------------------------------------------------
 snippet uvm_component_extended
 	//  Class: $1
 	//
@@ -209,7 +209,7 @@ snippet uvm_component_extended
 	function void $1::extract_phase(uvm_phase phase);
 		super.extract_phase(phase);
 	endfunction: extract_phase
-
+# --------------------------------------------------------------------------------
 snippet uvm_component_with_parameters
 	//  Class: $1
 	//
@@ -236,7 +236,7 @@ snippet uvm_component_with_parameters
 
 		$0
 	endclass: $1
-
+# --------------------------------------------------------------------------------
 snippet uvm_object
 	//  Class: $1
 	//
@@ -257,7 +257,7 @@ snippet uvm_object
 		endfunction: new
 		$0
 	endclass: $1
-
+# --------------------------------------------------------------------------------
 snippet uvm_object_with_parameters
 	//  Class: $1
 	//
@@ -279,7 +279,7 @@ snippet uvm_object_with_parameters
 		endfunction: new
 		$0
 	endclass: $1
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence
 	//  Class: $1
 	//
@@ -347,7 +347,7 @@ snippet uvm_sequence
 		// extern virtual task post_start();
 		$0
 	endclass: $1
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_functions
 	// task ${1:my_class::}pre_start();
 	// endtask: pre_start
@@ -380,7 +380,7 @@ snippet uvm_sequence_functions
 
 	// task $1post_start();
 	// endtask: post_start
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_item
 	//  Class: $1
 	//
@@ -430,7 +430,7 @@ snippet uvm_sequence_item
 	/*  Functions                                                                 */
 	/*----------------------------------------------------------------------------*/
 	
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_item_convert2string
 	function string ${1:my_class}${2:::}convert2string();
 		string s;
@@ -445,7 +445,7 @@ snippet uvm_sequence_item_convert2string
 
 		return s;
 	endfunction: convert2string$0
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_item_do_compare
 	function bit ${1:my_class}${2:::}do_compare(uvm_object rhs, uvm_comparer comparer);
 		this_type_t rhs_;
@@ -465,7 +465,7 @@ snippet uvm_sequence_item_do_compare
 			// <this.property_name == rhs_.property_name>
 		);
 	endfunction: do_compare$0
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_item_do_copy
 	function void ${1:my_class}${2:::}do_copy(uvm_object rhs);
 		this_type_t rhs_;
@@ -482,7 +482,7 @@ snippet uvm_sequence_item_do_copy
 		/*  list of local properties to be copied  */
 		// <this.property_name = rhs_.property_name>;
 	endfunction: do_copy$0
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_item_do_pack
 	function void ${1:my_class}${2:::}do_pack(uvm_packer packer);
 		/*  chain the pack with parent classes  */
@@ -494,7 +494,7 @@ snippet uvm_sequence_item_do_pack
 		// \`uvm_pack_queue(property_name);
 		// \`uvm_pack_string(property_name);
 	endfunction: do_pack$0
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_item_do_print
 	function void ${1:my_class}${2:::}do_print(uvm_printer printer)
 		/*  chain the print with parent classes  */
@@ -504,7 +504,7 @@ snippet uvm_sequence_item_do_print
 		// printer.print_string("property_label", property_name);
 		// printer.print_field_int("property_label", property_name, \$bits(property_name), UVM_HEX);
 	endfunction: do_print$0
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_item_do_record
 	function void ${1:my_class}${2:::}do_record(uvm_recorder recorder);
 		/*  chain the record with parent classes  */
@@ -515,7 +515,7 @@ snippet uvm_sequence_item_do_record
 		// \`uvm_record_string("property_label", property_name);
 		// \`uvm_record_int("property_label", property_name, \$bits(property_name), UVM_HEX);
 	endfunction: do_record$0
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_item_do_unpack
 	function void ${1:my_class}${2:::}do_unpack(uvm_packer packer);
 		/*  chain the unpack with parent classes  */
@@ -527,7 +527,7 @@ snippet uvm_sequence_item_do_unpack
 		// \`uvm_unpack_queue(property_name);
 		// \`uvm_unpack_string(property_name);
 	endfunction: do_unpack$0
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_item_with_parameters
 	//  Class: $1
 	//
@@ -577,7 +577,7 @@ snippet uvm_sequence_item_with_parameters
 	/*  Functions                                                                 */
 	/*----------------------------------------------------------------------------*/
 	
-
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_with_parameters
 	//  Class: $1
 	//

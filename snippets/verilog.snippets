@@ -2,15 +2,15 @@ snippet al "Always block"
 	always @(${1:/* sensitive list */}) begin
 		${2:${VISUAL}}
 	end
-
+# --------------------------------------------------------------------------------
 snippet as "Assign"
 	assign ${1:name} = ${2:value};
-
+# --------------------------------------------------------------------------------
 snippet be "Begin-end"
 	begin
 		${1:VISUAL}
 	end
-
+# --------------------------------------------------------------------------------
 snippet case "Case(xz) statement"
 	case${1:x} (${2:/* variable */})
 		${3:/* value */}: begin
@@ -20,42 +20,42 @@ snippet case "Case(xz) statement"
 			${5}
 		end
 	endcase
-
+# --------------------------------------------------------------------------------
 snippet eif "Else if"
 	else if (${1}) begin
 		${2:${VISUAL}}
 	end
-
+# --------------------------------------------------------------------------------
 snippet el "Else"
 	else begin
 		${1:${VISUAL}}
 	end
-
+# --------------------------------------------------------------------------------
 snippet for "For loop"
 	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
 		${4:${VISUAL}}
 	end
-
+# --------------------------------------------------------------------------------
 snippet forev "Forever loop"
 	forever begin
 		${1:${VISUAL}}
 	end
-
+# --------------------------------------------------------------------------------
 snippet fun "Function"
 	function ${1:void} ${2:name}(${3});
 		${4:${VISUAL}}
 	endfunction: $2
-
+# --------------------------------------------------------------------------------
 snippet gen "Generate block"
 	generate
 		${1:${VISUAL}}
 	endgenerate
-
+# --------------------------------------------------------------------------------
 snippet if "If statement"
 	if (${1}) begin
 		${2:${VISUAL}}
 	end
-
+# --------------------------------------------------------------------------------
 snippet ife "If-else statement"
 	if (${1}) begin
 		${2}
@@ -63,39 +63,39 @@ snippet ife "If-else statement"
 	else begin
 		${3}
 	end
-
+# --------------------------------------------------------------------------------
 snippet ini "Initial block"
 	initial begin
 		${1:${VISUAL}}
 	end
-
+# --------------------------------------------------------------------------------
 snippet lpar "Local parameter"
 	localparam ${1:name} = ${0:value}
-
+# --------------------------------------------------------------------------------
 snippet mod "Module"
 	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
 		${0:${VISUAL}}
 	endmodule
-
+# --------------------------------------------------------------------------------
 snippet modp "Module with parameters"
 	module ${1:`vim_snippets#Filename('$1', 'name')`} #(${2}) (${3});
 		${0:${VISUAL}}
 	endmodule
-
+# --------------------------------------------------------------------------------
 snippet neg "Negative edge"
 	negedge ${0:signal}
-#
+# --------------------------------------------------------------------------------
 snippet rep "Repeat loop"
 	repeat (${1}) begin
 		${2:${VISUAL}}
 	end
-
+# --------------------------------------------------------------------------------
 snippet par "Parameter definition"
 	parameter ${1:name} = ${0:value}
-
+# --------------------------------------------------------------------------------
 snippet pos "Positive edge"
 	posedge ${0:signal}
-#
+# --------------------------------------------------------------------------------
 snippet seq "Sequential block"
 	always @(${1:posedge clk}${2:, posedge rst}) begin
 		if (${3:rst}) begin
@@ -105,23 +105,23 @@ snippet seq "Sequential block"
 			${5}
 		end
 	end
-
+# --------------------------------------------------------------------------------
 snippet task "Task definition"
 	task ${1:name}(${2});
 		${3:${VISUAL}}
 	endtask: $1
-
+# --------------------------------------------------------------------------------
 snippet tde "Typedef enum"
 	typedef enum ${2:logic[15:0]}
 	{
 		${3:REG = 16'h0000}
 	} ${1:my_dest_t};
-
+# --------------------------------------------------------------------------------
 snippet tdsp "Typedef struct packed"
 	typedef struct packed {
 		int ${2:data};
 	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
-
+# --------------------------------------------------------------------------------
 snippet wh "While loop"
 	while (${1}) begin
 		${2:${VISUAL}}
