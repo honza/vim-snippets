@@ -69,6 +69,12 @@ snippet ini "Initial block"
 		${1:${VISUAL}}
 	end
 # --------------------------------------------------------------------------------
+snippet inst "Instantiate module"
+	${1:module_name} ${2:$1}_inst (${3:IO});
+# --------------------------------------------------------------------------------
+snippet instp "Instantiate module with parameters"
+	${1:module_name} #(${2:parameters}) ${3:$1}_inst (${4:IO});
+# --------------------------------------------------------------------------------
 snippet lpar "Local parameter"
 	localparam ${1:name} = ${0:value}
 # --------------------------------------------------------------------------------
