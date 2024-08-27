@@ -1,3 +1,6 @@
+snippet . "IO when instantiating the module"
+	.${1:io_name}(${2:$1})
+# --------------------------------------------------------------------------------
 snippet al "Always block"
 	always @(${1:/* sensitive list */}) begin
 		${2:${VISUAL}}
@@ -73,10 +76,10 @@ snippet ini "Initial block"
 	end
 # --------------------------------------------------------------------------------
 snippet inst "Instantiate module"
-	${1:module_name} ${2:$1}_inst (${3:IO});
+	${1:module_name} ${2:$1}_inst (${3:.*});
 # --------------------------------------------------------------------------------
 snippet instp "Instantiate module with parameters"
-	${1:module_name} #(${2:parameters}) ${3:$1}_inst (${4:IO});
+	${1:module_name} #(${2:parameters}) ${3:$1}_inst (${4:.*});
 # --------------------------------------------------------------------------------
 snippet lpar "Local parameter"
 	localparam ${1:name} = ${0:value}
