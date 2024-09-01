@@ -1,122 +1,77 @@
 extends verilog
 
-# Foreach Loop
-snippet forea
-	foreach (${1}) begin
-		${0}
-	end
-# Do-while statement
-snippet dowh
-	do begin
-		${0}
-	end while (${1});
-# Combinational always block
-snippet alc
+# --------------------------------------------------------------------------------
+snippet alc "Always combinational"
 	always_comb begin ${1:: statement_label}
-		${0}
+		${2:${VISUAL}}
 	end $1
-# Sequential logic
-snippet alff
+# --------------------------------------------------------------------------------
+snippet alff "Always flip-flop"
 	always_ff @(posedge ${1:clk}) begin ${2:: statement_label}
-		${0}
+		${3:${VISUAL}}
 	end $2
-# Latched logic
-snippet all
+# --------------------------------------------------------------------------------
+snippet all "Always latch"
 	always_latch begin ${1:: statement_label}
-		${0}
+		${2:${VISUAL}}
 	end $1
-# Class
-snippet cl
+# --------------------------------------------------------------------------------
+snippet cl "Class"
 	class ${1:class_name};
 		// data or class properties
-		${0}
+		${2:${VISUAL}}
 
 		// initialization
 		function new();
 		endfunction : new
 
 	endclass : $1
-# Typedef structure
-snippet types
-	typedef struct {
-		${0}
-	} ${1:name_t};
-# Program block
-snippet prog
-	program ${1:program_name} ();
-		${0}
-	endprogram : $1
-# Interface block
+# --------------------------------------------------------------------------------
+snippet clock "Clocking group"
+	clocking ${1:clocking_name} @(${2:posedge} ${3:clk});
+		${4:${VISUAL}}
+	endclocking : $1
+# --------------------------------------------------------------------------------
+snippet cg "Coverage group"
+	covergroup ${1:group_name} @(${2:posedge} ${3:clk});
+		${4:${VISUAL}}
+	endgroup : $1
+# --------------------------------------------------------------------------------
+snippet dowh "Do..while loop"
+	do begin
+		${2:${VISUAL}}
+	end while (${1});
+# --------------------------------------------------------------------------------
+snippet forea "Foreach loop"
+	foreach (${1}) begin
+		${2:${VISUAL}}
+	end
+# --------------------------------------------------------------------------------
 snippet intf
 	interface ${1:program_name} ();
 		// nets
-		${0}
+		${2:${VISUAL}}
 		// clocking
 
 		// modports
 
 	endinterface : $1
-# Clocking Block
-snippet clock
-	clocking ${1:clocking_name} @(${2:posedge} ${3:clk});
-		${0}
-	endclocking : $1
-# Covergroup construct
-snippet cg
-	covergroup ${1:group_name} @(${2:posedge} ${3:clk});
-		${0}
-	endgroup : $1
-# Package declaration
+# --------------------------------------------------------------------------------
 snippet pkg
 	package ${1:package_name};
-		${0}
+		${2:${VISUAL}}
 	endpackage : $1
-
-snippet uvm_object
-	//  Class: $1
-	//
-	class ${1:my_class} extends ${2:uvm_object};
-		\`uvm_object_utils($1);
-
-		//  Group: Variables
-
-
-		//  Group: Constraints
-
-
-		//  Group: Functions
-
-		//  Constructor: new
-		function new(string name = "$1");
-			super.new(name);
-		endfunction: new
-		$0
-	endclass: $1
-
-
-snippet uvm_object_with_parameters
-	//  Class: $1
-	//
-	class ${1:my_class} #(${2:parameters}) extends ${3:uvm_object};
-		typedef $1 #(${2/(\b(parameter|type)\s+([A-Za-z_][A-Za-z0-9_$]*)(\s*=\s*([A-Za-z0-9_$]+))?)*\b/$3/g}) this_type_t;
-		\`uvm_object_param_utils(this_type_t);
-
-		//  Group: Variables
-
-
-		//  Group: Constraints
-
-
-		//  Group: Functions
-
-		//  Constructor: new
-		function new(string name = "$1");
-			super.new(name);
-		endfunction: new
-		$0
-	endclass: $1
-
-
+# --------------------------------------------------------------------------------
+snippet prog
+	program ${1:program_name} ();
+		${2:${VISUAL}}
+	endprogram : $1
+# --------------------------------------------------------------------------------
+snippet types "Struct typedef"
+	typedef struct {
+		${2:${VISUAL}}
+	} ${1:name_t};
+# --------------------------------------------------------------------------------
 snippet uvm_component
 	//  Class: $1
 	//
@@ -144,36 +99,7 @@ snippet uvm_component
 
 		$0
 	endclass: $1
-
-
-snippet uvm_component_with_parameters
-	//  Class: $1
-	//
-	class ${1:my_class} #(${2:parameters}) extends ${3:uvm_component};
-		typedef $1 #(${2/(\b(parameter|type)\s+([A-Za-z_][A-Za-z0-9_$]*)(\s*=\s*([A-Za-z0-9_$]+))?)*\b/$3/g}) this_type_t;
-		\`uvm_component_param_utils(this_type_t);
-
-		//  Group: Configuration Object(s)
-
-		//  Var: config_obj
-		${4:config_obj_t} config_obj;
-
-
-		//  Group: Components
-
-
-		//  Group: Variables
-
-
-		//  Constructor: new
-		function new(string name = "$1", uvm_component parent);
-			super.new(name, parent);
-		endfunction: new
-
-		$0
-	endclass: $1
-
-
+# --------------------------------------------------------------------------------
 snippet uvm_component_extended
 	//  Class: $1
 	//
@@ -283,9 +209,77 @@ snippet uvm_component_extended
 	function void $1::extract_phase(uvm_phase phase);
 		super.extract_phase(phase);
 	endfunction: extract_phase
+# --------------------------------------------------------------------------------
+snippet uvm_component_with_parameters
+	//  Class: $1
+	//
+	class ${1:my_class} #(${2:parameters}) extends ${3:uvm_component};
+		typedef $1 #(${2/(\b(parameter|type)\s+([A-Za-z_][A-Za-z0-9_$]*)(\s*=\s*([A-Za-z0-9_$]+))?)*\b/$3/g}) this_type_t;
+		\`uvm_component_param_utils(this_type_t);
+
+		//  Group: Configuration Object(s)
+
+		//  Var: config_obj
+		${4:config_obj_t} config_obj;
 
 
+		//  Group: Components
 
+
+		//  Group: Variables
+
+
+		//  Constructor: new
+		function new(string name = "$1", uvm_component parent);
+			super.new(name, parent);
+		endfunction: new
+
+		$0
+	endclass: $1
+# --------------------------------------------------------------------------------
+snippet uvm_object
+	//  Class: $1
+	//
+	class ${1:my_class} extends ${2:uvm_object};
+		\`uvm_object_utils($1);
+
+		//  Group: Variables
+
+
+		//  Group: Constraints
+
+
+		//  Group: Functions
+
+		//  Constructor: new
+		function new(string name = "$1");
+			super.new(name);
+		endfunction: new
+		$0
+	endclass: $1
+# --------------------------------------------------------------------------------
+snippet uvm_object_with_parameters
+	//  Class: $1
+	//
+	class ${1:my_class} #(${2:parameters}) extends ${3:uvm_object};
+		typedef $1 #(${2/(\b(parameter|type)\s+([A-Za-z_][A-Za-z0-9_$]*)(\s*=\s*([A-Za-z0-9_$]+))?)*\b/$3/g}) this_type_t;
+		\`uvm_object_param_utils(this_type_t);
+
+		//  Group: Variables
+
+
+		//  Group: Constraints
+
+
+		//  Group: Functions
+
+		//  Constructor: new
+		function new(string name = "$1");
+			super.new(name);
+		endfunction: new
+		$0
+	endclass: $1
+# --------------------------------------------------------------------------------
 snippet uvm_sequence
 	//  Class: $1
 	//
@@ -353,7 +347,237 @@ snippet uvm_sequence
 		// extern virtual task post_start();
 		$0
 	endclass: $1
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_functions
+	// task ${1:my_class::}pre_start();
+	// endtask: pre_start
 
+
+	// task $1pre_body();
+	// endtask: pre_body
+
+
+	// task $1pre_do(bit is_item);
+	// endtask: pre_do
+
+
+	// function void $1mid_do(uvm_sequence_item this_item);
+	// endfunction: mid_do
+
+
+	task $1body();
+		$0
+	endtask: body
+
+
+	// function void $1post_do(uvm_sequence_item this_item);
+	// endfunction: post_do
+
+
+	// task $1post_body();
+	// endtask: post_body
+
+
+	// task $1post_start();
+	// endtask: post_start
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_item
+	//  Class: $1
+	//
+	class ${1:my_class} extends ${2:uvm_sequence_item};
+		typedef $1 this_type_t;
+		\`uvm_object_utils($1);
+
+		//  Group: Variables
+
+
+		//  Group: Constraints
+
+
+		//  Group: Functions
+
+		//  Constructor: new
+		function new(string name = "$1");
+			super.new(name);
+		endfunction: new
+
+		//  Function: do_copy
+		// extern function void do_copy(uvm_object rhs);
+		//  Function: do_compare
+		// extern function bit do_compare(uvm_object rhs, uvm_comparer comparer);
+		//  Function: convert2string
+		// extern function string convert2string();
+		//  Function: do_print
+		// extern function void do_print(uvm_printer printer);
+		//  Function: do_record
+		// extern function void do_record(uvm_recorder recorder);
+		//  Function: do_pack
+		// extern function void do_pack();
+		//  Function: do_unpack
+		// extern function void do_unpack();
+		$0
+	endclass: $1
+
+
+	/*----------------------------------------------------------------------------*/
+	/*  Constraints                                                               */
+	/*----------------------------------------------------------------------------*/
+	
+
+
+
+	/*----------------------------------------------------------------------------*/
+	/*  Functions                                                                 */
+	/*----------------------------------------------------------------------------*/
+	
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_item_convert2string
+	function string ${1:my_class}${2:::}convert2string();
+		string s;
+
+		/*  chain the convert2string with parent classes  */
+		s = super.convert2string();
+
+		/*  list of local properties to be printed:  */
+		//  guide             0---4---8--12--16--20--24--28--32--36--40--44--48--
+		// s = {s, \$sformatf("property_label      : 0x%0h\n", property_name)};
+		// s = {s, \$sformatf("property_label      :   %0d\n", property_name)};
+
+		return s;
+	endfunction: convert2string$0
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_item_do_compare
+	function bit ${1:my_class}${2:::}do_compare(uvm_object rhs, uvm_comparer comparer);
+		this_type_t rhs_;
+
+		if (!\$cast(rhs_, rhs)) begin
+			\`uvm_error({this.get_name(), ".do_compare()"}, "Cast failed!");
+			return;
+		end
+		// \`uvm_info({this.get_name(), ".do_compare()"}, "Cast succeded.", UVM_HIGH);
+
+		/*  chain the compare with parent classes  */
+		do_compare = super.do_compare(rhs, comparer);
+
+		/*  list of local properties to be compared:  */
+		do_compare &= (
+			// <this.property_name == rhs_.property_name> &&
+			// <this.property_name == rhs_.property_name>
+		);
+	endfunction: do_compare$0
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_item_do_copy
+	function void ${1:my_class}${2:::}do_copy(uvm_object rhs);
+		this_type_t rhs_;
+
+		if (!\$cast(rhs_, rhs)) begin
+			\`uvm_error({this.get_name(), ".do_copy()"}, "Cast failed!");
+			return;
+		end
+		// \`uvm_info({this.get_name(), ".do_copy()"}, "Cast succeded.", UVM_HIGH);
+
+		/*  chain the copy with parent classes  */
+		super.do_copy(rhs);
+
+		/*  list of local properties to be copied  */
+		// <this.property_name = rhs_.property_name>;
+	endfunction: do_copy$0
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_item_do_pack
+	function void ${1:my_class}${2:::}do_pack(uvm_packer packer);
+		/*  chain the pack with parent classes  */
+		super.do_pack(packer);
+
+		/*  list of local properties to be packed:  */
+		//  note: look up the appropriate macro(s) for your properties!
+		// \`uvm_pack_int(property_name);
+		// \`uvm_pack_queue(property_name);
+		// \`uvm_pack_string(property_name);
+	endfunction: do_pack$0
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_item_do_print
+	function void ${1:my_class}${2:::}do_print(uvm_printer printer)
+		/*  chain the print with parent classes  */
+		super.do_print(printer);
+
+		/*  list of local properties to be printed:  */
+		// printer.print_string("property_label", property_name);
+		// printer.print_field_int("property_label", property_name, \$bits(property_name), UVM_HEX);
+	endfunction: do_print$0
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_item_do_record
+	function void ${1:my_class}${2:::}do_record(uvm_recorder recorder);
+		/*  chain the record with parent classes  */
+		super.do_record(recorder);
+
+		/*  list of local properties to be recorded:  */
+		/*  note: use uvm_record_int, uvm_record_string, uvm_record_time, uvm_record_real for known basic types.  */
+		// \`uvm_record_string("property_label", property_name);
+		// \`uvm_record_int("property_label", property_name, \$bits(property_name), UVM_HEX);
+	endfunction: do_record$0
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_item_do_unpack
+	function void ${1:my_class}${2:::}do_unpack(uvm_packer packer);
+		/*  chain the unpack with parent classes  */
+		super.do_unpack(packer);
+
+		/*  list of local properties to be unpacked:  */
+		//  note: look up the appropriate macro(s) for your properties!
+		// \`uvm_unpack_int(property_name);
+		// \`uvm_unpack_queue(property_name);
+		// \`uvm_unpack_string(property_name);
+	endfunction: do_unpack$0
+# --------------------------------------------------------------------------------
+snippet uvm_sequence_item_with_parameters
+	//  Class: $1
+	//
+	class ${1:my_class} #(${2:parameters}) extends ${3:uvm_sequence_item};
+		typedef $1 #(${2/(\b(parameter|type)\s+([A-Za-z_][A-Za-z0-9_$]*)(\s*=\s*([A-Za-z0-9_$]+))?)*\b/$3/g}) this_type_t;
+		\`uvm_object_param_utils(this_type_t);
+
+		//  Group: Variables
+
+
+		//  Group: Constraints
+
+
+		//  Group: Functions
+
+		//  Constructor: new
+		function new(string name = "$1");
+			super.new(name);
+		endfunction: new
+
+		//  Function: do_copy
+		// extern function void do_copy(uvm_object rhs);
+		//  Function: do_compare
+		// extern function bit do_compare(uvm_object rhs, uvm_comparer comparer);
+		//  Function: convert2string
+		// extern function string convert2string();
+		//  Function: do_print
+		// extern function void do_print(uvm_printer printer);
+		//  Function: do_record
+		// extern function void do_record(uvm_recorder recorder);
+		//  Function: do_pack
+		// extern function void do_pack();
+		//  Function: do_unpack
+		// extern function void do_unpack();
+		$0
+	endclass: $1
+
+
+	/*----------------------------------------------------------------------------*/
+	/*  Constraints                                                               */
+	/*----------------------------------------------------------------------------*/
+	
+
+
+
+	/*----------------------------------------------------------------------------*/
+	/*  Functions                                                                 */
+	/*----------------------------------------------------------------------------*/
+	
+# --------------------------------------------------------------------------------
 snippet uvm_sequence_with_parameters
 	//  Class: $1
 	//
@@ -422,243 +646,4 @@ snippet uvm_sequence_with_parameters
 		// extern virtual task post_start();
 		$0
 	endclass: $1
-
-snippet uvm_sequence_functions
-	// task ${1:my_class::}pre_start();
-	// endtask: pre_start
-
-
-	// task $1pre_body();
-	// endtask: pre_body
-
-
-	// task $1pre_do(bit is_item);
-	// endtask: pre_do
-
-
-	// function void $1mid_do(uvm_sequence_item this_item);
-	// endfunction: mid_do
-
-
-	task $1body();
-		$0
-	endtask: body
-
-
-	// function void $1post_do(uvm_sequence_item this_item);
-	// endfunction: post_do
-
-
-	// task $1post_body();
-	// endtask: post_body
-
-
-	// task $1post_start();
-	// endtask: post_start
-
-
-snippet uvm_sequence_item
-	//  Class: $1
-	//
-	class ${1:my_class} extends ${2:uvm_sequence_item};
-		typedef $1 this_type_t;
-		\`uvm_object_utils($1);
-
-		//  Group: Variables
-
-
-		//  Group: Constraints
-
-
-		//  Group: Functions
-
-		//  Constructor: new
-		function new(string name = "$1");
-			super.new(name);
-		endfunction: new
-
-		//  Function: do_copy
-		// extern function void do_copy(uvm_object rhs);
-		//  Function: do_compare
-		// extern function bit do_compare(uvm_object rhs, uvm_comparer comparer);
-		//  Function: convert2string
-		// extern function string convert2string();
-		//  Function: do_print
-		// extern function void do_print(uvm_printer printer);
-		//  Function: do_record
-		// extern function void do_record(uvm_recorder recorder);
-		//  Function: do_pack
-		// extern function void do_pack();
-		//  Function: do_unpack
-		// extern function void do_unpack();
-		$0
-	endclass: $1
-
-
-	/*----------------------------------------------------------------------------*/
-	/*  Constraints                                                               */
-	/*----------------------------------------------------------------------------*/
-	
-
-
-
-	/*----------------------------------------------------------------------------*/
-	/*  Functions                                                                 */
-	/*----------------------------------------------------------------------------*/
-	
-
-
-snippet uvm_sequence_item_with_parameters
-	//  Class: $1
-	//
-	class ${1:my_class} #(${2:parameters}) extends ${3:uvm_sequence_item};
-		typedef $1 #(${2/(\b(parameter|type)\s+([A-Za-z_][A-Za-z0-9_$]*)(\s*=\s*([A-Za-z0-9_$]+))?)*\b/$3/g}) this_type_t;
-		\`uvm_object_param_utils(this_type_t);
-
-		//  Group: Variables
-
-
-		//  Group: Constraints
-
-
-		//  Group: Functions
-
-		//  Constructor: new
-		function new(string name = "$1");
-			super.new(name);
-		endfunction: new
-
-		//  Function: do_copy
-		// extern function void do_copy(uvm_object rhs);
-		//  Function: do_compare
-		// extern function bit do_compare(uvm_object rhs, uvm_comparer comparer);
-		//  Function: convert2string
-		// extern function string convert2string();
-		//  Function: do_print
-		// extern function void do_print(uvm_printer printer);
-		//  Function: do_record
-		// extern function void do_record(uvm_recorder recorder);
-		//  Function: do_pack
-		// extern function void do_pack();
-		//  Function: do_unpack
-		// extern function void do_unpack();
-		$0
-	endclass: $1
-
-
-	/*----------------------------------------------------------------------------*/
-	/*  Constraints                                                               */
-	/*----------------------------------------------------------------------------*/
-	
-
-
-
-	/*----------------------------------------------------------------------------*/
-	/*  Functions                                                                 */
-	/*----------------------------------------------------------------------------*/
-	
-
-
-snippet uvm_sequence_item_do_copy
-	function void ${1:my_class}${2:::}do_copy(uvm_object rhs);
-		this_type_t rhs_;
-
-		if (!\$cast(rhs_, rhs)) begin
-			\`uvm_error({this.get_name(), ".do_copy()"}, "Cast failed!");
-			return;
-		end
-		// \`uvm_info({this.get_name(), ".do_copy()"}, "Cast succeded.", UVM_HIGH);
-
-		/*  chain the copy with parent classes  */
-		super.do_copy(rhs);
-
-		/*  list of local properties to be copied  */
-		// <this.property_name = rhs_.property_name>;
-	endfunction: do_copy$0
-
-
-
-snippet uvm_sequence_item_do_compare
-	function bit ${1:my_class}${2:::}do_compare(uvm_object rhs, uvm_comparer comparer);
-		this_type_t rhs_;
-
-		if (!\$cast(rhs_, rhs)) begin
-			\`uvm_error({this.get_name(), ".do_compare()"}, "Cast failed!");
-			return;
-		end
-		// \`uvm_info({this.get_name(), ".do_compare()"}, "Cast succeded.", UVM_HIGH);
-
-		/*  chain the compare with parent classes  */
-		do_compare = super.do_compare(rhs, comparer);
-
-		/*  list of local properties to be compared:  */
-		do_compare &= (
-			// <this.property_name == rhs_.property_name> &&
-			// <this.property_name == rhs_.property_name>
-		);
-	endfunction: do_compare$0
-
-
-
-snippet uvm_sequence_item_convert2string
-	function string ${1:my_class}${2:::}convert2string();
-		string s;
-
-		/*  chain the convert2string with parent classes  */
-		s = super.convert2string();
-
-		/*  list of local properties to be printed:  */
-		//  guide             0---4---8--12--16--20--24--28--32--36--40--44--48--
-		// s = {s, \$sformatf("property_label      : 0x%0h\n", property_name)};
-		// s = {s, \$sformatf("property_label      :   %0d\n", property_name)};
-
-		return s;
-	endfunction: convert2string$0
-
-
-
-snippet uvm_sequence_item_do_print
-	function void ${1:my_class}${2:::}do_print(uvm_printer printer)
-		/*  chain the print with parent classes  */
-		super.do_print(printer);
-
-		/*  list of local properties to be printed:  */
-		// printer.print_string("property_label", property_name);
-		// printer.print_field_int("property_label", property_name, \$bits(property_name), UVM_HEX);
-	endfunction: do_print$0
-
-snippet uvm_sequence_item_do_record
-	function void ${1:my_class}${2:::}do_record(uvm_recorder recorder);
-		/*  chain the record with parent classes  */
-		super.do_record(recorder);
-
-		/*  list of local properties to be recorded:  */
-		/*  note: use uvm_record_int, uvm_record_string, uvm_record_time, uvm_record_real for known basic types.  */
-		// \`uvm_record_string("property_label", property_name);
-		// \`uvm_record_int("property_label", property_name, \$bits(property_name), UVM_HEX);
-	endfunction: do_record$0
-
-snippet uvm_sequence_item_do_pack
-	function void ${1:my_class}${2:::}do_pack(uvm_packer packer);
-		/*  chain the pack with parent classes  */
-		super.do_pack(packer);
-
-		/*  list of local properties to be packed:  */
-		//  note: look up the appropriate macro(s) for your properties!
-		// \`uvm_pack_int(property_name);
-		// \`uvm_pack_queue(property_name);
-		// \`uvm_pack_string(property_name);
-	endfunction: do_pack$0
-
-snippet uvm_sequence_item_do_unpack
-	function void ${1:my_class}${2:::}do_unpack(uvm_packer packer);
-		/*  chain the unpack with parent classes  */
-		super.do_unpack(packer);
-
-		/*  list of local properties to be unpacked:  */
-		//  note: look up the appropriate macro(s) for your properties!
-		// \`uvm_unpack_int(property_name);
-		// \`uvm_unpack_queue(property_name);
-		// \`uvm_unpack_string(property_name);
-	endfunction: do_unpack$0
 
