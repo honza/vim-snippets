@@ -1,3 +1,44 @@
+snippet if "if"
+	if($1)
+		$2
+	endif()
+
+snippet ife "if / else"
+	if($1)
+		$2
+	else()
+		$3
+	endif()
+
+snippet ifee "if / elseif / else"
+	if($1)
+		$2
+	elseif($3)
+		$4
+	else()
+		$5
+	endif()
+
+snippet for "foreach"
+	foreach($1 ${$2})
+		$3
+	endforeach()
+
+snippet while "while"
+	while($1)
+		$2
+	endwhile()
+
+snippet macro "macro"
+	macro($1)
+		$2
+	endmacro()
+
+snippet function "function"
+	function($1)
+		$2
+	endfunction()
+
 snippet init
 	cmake_minimum_required(VERSION ${1:2.8.2})
 	project(${2:ProjectName})
