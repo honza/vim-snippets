@@ -1,5 +1,19 @@
 # Markdown
 
+# markdown can include HTML
+extends html
+# markdown can include LaTeX
+extends tex
+# markdown can include graphviz
+extends dot
+
+# Includes pandoc (http://pandoc.org/) snippets
+
+snippet notes
+	::: notes
+	$0
+	:::
+
 # Includes octopress (http://octopress.org/) snippets
 
 # The suffix `c` stands for "Clipboard".
