@@ -1,0 +1,67 @@
+snippet F
+	FROM ${1:ubuntu}
+snippet f
+	FROM ${1:ubuntu}
+snippet M
+	LABEL maintainer="${1:name}"
+snippet m
+	LABEL maintainer="${1:name}"
+snippet R
+	RUN ${1:command}
+snippet r
+	RUN ${1:command}
+snippet C
+	CMD ${1:command}
+snippet c
+	CMD ${1:command}
+snippet CP
+	COPY ${1:src} ${2:dest}
+snippet cp
+	COPY ${1:src} ${2:dest}
+snippet EXP
+	EXPOSE ${1:port}
+snippet exp
+	EXPOSE ${1:port}
+snippet E
+	ENV ${1:key} ${2:value}
+snippet e
+	ENV ${1:key} ${2:value}
+snippet A
+	ADD ${1:src} ${2:dst}
+snippet a
+	ADD ${1:src} ${2:dst}
+snippet ENT
+	ENTRYPOINT ${1:command}
+snippet ent
+	ENTRYPOINT ${1:command}
+snippet V
+	VOLUME ["${1:path}"]
+snippet v
+	VOLUME ["${1:path}"]
+snippet U
+	USER ${1:name}
+snippet u
+	USER ${1:name}
+snippet W
+	WORKDIR ${1:path}
+snippet w
+	WORKDIR ${1:path}
+snippet upd
+	# update packages
+	RUN echo "deb http://archive.ubuntu.com/ubuntu ${1:precise} main universe" > /etc/apt/sources.list; \
+	    apt-get update && apt-get -y upgrade; \
+	    ${2}
+	    ;rm -rf /var/lib/apt/lists/*
+snippet head
+	# ${1:Description}
+	#
+	# VERSION ${2:0.1.0}
+	${3}
+snippet O
+	ONBUILD ${1}
+snippet o
+	ONBUILD ${1}
+snippet L
+	LABEL ${1:label}="${2:value}"
+snippet l
+	LABEL ${1:label}="${2:value}"
