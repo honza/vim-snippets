@@ -8,7 +8,7 @@ endglobal
 
 # Functional components
 snippet rfc "react functional component" b
-import React, {useState} from "react"
+import React from "react";
 
 function ${1:`!p snip.rv = snip.basename`}(${2}){
 	return(
@@ -20,6 +20,7 @@ function ${1:`!p snip.rv = snip.basename`}(${2}){
 
 export default $4`!p snip.rv = snip.basename`
 endsnippet
+
 # React Hooks
 snippet useS "useState Hook" b
 const [${1}, set`!p snip.rv=capitalize_first(t[1])`] = useState(${3:"${4}"})
