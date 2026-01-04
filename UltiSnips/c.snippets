@@ -89,7 +89,7 @@ snippet once "Include header once only guard"
 #ifndef ${1:`!p
 if not snip.c:
 	import random, string
-	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
+	name = re.sub(r'[^A-Za-z0-9]+','_', snip.fn)
 	rand = ''.join(random.sample(string.ascii_letters+string.digits, 8))
 	snip.rv = ('%s_%s' % (name,rand)).upper()
 else:
