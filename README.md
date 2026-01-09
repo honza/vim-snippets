@@ -1,3 +1,5 @@
+This fork fixes https://github.com/honza/vim-snippets/issues/1514.
+
 snipMate & UltiSnip Snippets
 ============================
 
