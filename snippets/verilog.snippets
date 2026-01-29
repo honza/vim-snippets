@@ -1,99 +1,175 @@
-# if statement
-snippet if
-	if (${1}) begin
-		${0}
+snippet . "IO when instantiating the module"
+	.${1:io_name}(${2:$1})
+snippet as "Assign"
+	assign ${1:name} = ${2:value};
+snippet be "Begin-end"
+	begin
+		${0:${VISUAL}}
 	end
-# If/else statements
-snippet ife
+snippet cond "Conditional operator"
+	(${1:if}) ? ${2:then} : ${3:else}
+snippet fsm "Finite state machine"
+	localparam ${1:IDLE} = 0;
+	${2:/*other states*/}
+
+	reg [${3:n}:${4:0}] ${5:state}_reg, $5_next;
+	always @(posedge clk) begin
+		if (rst) begin
+			$5_reg <= $1;
+		end
+		else begin
+			$5_reg <= $5_next;
+		end
+	end
+
+	always @* begin
+		// default values, regardless of state
+
+		case ($5_reg)
+			$1: begin
+				${6:/* $1 behavior */}
+			end
+			default: begin
+				$5_next = $1;
+			end
+		encase
+	end
+snippet gen "Generate block"
+	generate
+		${0:${VISUAL}}
+	endgenerate
+snippet in "Input"
+	input ${1:input_name}_i
+snippet inst "Instantiate module"
+	${1:module_name} ${2:$1}_inst (${3:.*});
+snippet instp "Instantiate module with parameters"
+	${1:module_name} #(${2:parameters}) ${3:$1}_inst (${4:.*});
+snippet inv "Input vector"
+	input [${1:n}:${2:0}] ${3:input_name}_i
+snippet lpar "Local parameter"
+	localparam ${1:name} = ${0:value}
+snippet neg "Negative edge"
+	negedge ${0:signal}
+snippet out "Output"
+	output ${1:output_name}_o
+snippet outr "Output register"
+	output reg ${1:output_name}_o
+snippet outv "Output vector"
+	output [${1:n}:${2:0}] ${3:output_name}_o
+snippet outrv "Output register vector"
+	output reg [${1:n}:${2:0}] ${3:output_name}_o
+snippet par "Parameter definition"
+	parameter ${1:name} = ${0:value}
+snippet pos "Positive edge"
+	posedge ${0:signal}
+snippet r "Register variable"
+	reg ${1:reg_name};
+snippet rv "Register vector"
+	reg [${1:n}:${2:0}] ${3:reg_name};
+snippet rva "Register vector array"
+	reg [${1:n}:${2:0}] ${3:reg_name} [${4:0}:${5:m}];
+snippet v "Vector/array range"
+	[${1:n}:${2:0}]
+snippet w "Simple wire"
+	wire ${1:signal_name};
+snippet wv "Wire vector"
+	wire [${1:n}:${2:0}] ${3:signal_name};
+snippet if "if statement"
 	if (${1}) begin
-		${2}
+		${0:${VISUAL}}
+	end
+snippet ife "If/else statements"
+	if (${1}) begin
+		${2:${VISUAL}}
 	end
 	else begin
-		${3}
+		${3:${VISUAL}}
 	end
-# Else if statement
-snippet eif
+snippet eif "Else if statement"
 	else if (${1}) begin
-		${0}
+		${0:${VISUAL}}
 	end
-#Else statement
-snippet el
+snippet el "Else statement"
 	else begin
-		${0}
+		${0:${VISUAL}}
 	end
-# While statement
-snippet wh
+snippet wh "While statement"
 	while (${1}) begin
-		${0}
+		${0:${VISUAL}}
 	end
-# Repeat Loop
-snippet rep
+snippet rep "Repeat Loop"
 	repeat (${1}) begin
-		${0}
+		${0:${VISUAL}}
 	end
-# Case statement
-snippet case
+snippet case "Case statement"
 	case (${1:/* variable */})
 		${2:/* value */}: begin
-			${3}
+			${3:${VISUAL}}
 		end
 		default: begin
-			${4}
+			${4:${VISUAL}}
 		end
 	endcase
-# CaseZ statement
-snippet casez
+snippet casez "CaseZ statement"
 	casez (${1:/* variable */})
 		${2:/* value */}: begin
-			${3}
+			${3:${VISUAL}}
 		end
 		default: begin
-			${4}
+			${4:${VISUAL}}
 		end
 	endcase
-# Always block
-snippet al
+snippet al "Always block"
 	always @(${1:/* sensitive list */}) begin
-		${0}
+		${2:${VISUAL}}
 	end
-# Module block
-snippet mod
+snippet alc "Combinational always block"
+	always @* begin
+		${1:${VISUAL}}
+	end
+snippet alss "Sync sequential block"
+	always @(${1:posedge} ${2:clk}) begin
+		if (${3:rst}) begin
+			$4
+		end
+		else begin
+			$5
+		end
+	end
+snippet alsa "Async sequential block"
+	always @(${1:posedge} ${2:clk}, ${3:posedge} ${4:rst}) begin
+		if ($4) begin
+			$5
+		end
+		else begin
+			$6
+		end
+	end
+snippet mod "Module block"
 	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
-		${0}
+		${0:${VISUAL}}
 	endmodule
-# For
-snippet for
-	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
-		${4}
+snippet modp "Module with parameters"
+	module ${1:`vim_snippets#Filename('$1', 'name')`} #(${2}) (${3});
+		${0:${VISUAL}}
+	endmodule
+snippet for "For"
+	for (${1:i} = ${2:0}; ${3:i < count}; ${4:i = i + 1}) begin
+		${5:${VISUAL}}
 	end
-# Forever
-snippet forev
+snippet forev "Forever"
 	forever begin
-		${0}
+		${0:${VISUAL}}
 	end
-# Function
-snippet fun
+snippet fun "Function"
 	function ${1:void} ${2:name}(${3});
-		${0}
-	endfunction: $2
-# Task
-snippet task
+		${0:${VISUAL}}
+	endfunction
+snippet task "Task"
 	task ${1:name}(${2});
-		${0}
-	endtask: $1
-# Initial 
-snippet ini
+		${0:${VISUAL}}
+	endtask
+snippet ini "Initial "
 	initial begin
-		${0}
+		${0:${VISUAL}}
 	end
-# typedef struct packed
-snippet tdsp
-	typedef struct packed {
-		int ${2:data};
-	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
-# typedef eum
-snippet tde
-	typedef enum ${2:logic[15:0]}
-	{
-		${3:REG = 16'h0000}
-	} ${1:my_dest_t};

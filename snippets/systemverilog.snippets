@@ -1,32 +1,35 @@
 extends verilog
 
-# Foreach Loop
-snippet forea
+snippet tdsp "typedef struct packed"
+	typedef struct packed {
+		int ${2:data};
+	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
+snippet tde "typedef enum"
+	typedef enum ${2:logic[15:0]}
+	{
+		${3:REG = 16'h0000}
+	} ${1:my_dest_t};
+snippet forea "Foreach Loop"
 	foreach (${1}) begin
 		${0}
 	end
-# Do-while statement
-snippet dowh
+snippet dowh "Do-while statement"
 	do begin
 		${0}
 	end while (${1});
-# Combinational always block
-snippet alc
+snippet alc "Combinational always block"
 	always_comb begin ${1:: statement_label}
 		${0}
 	end $1
-# Sequential logic
-snippet alff
+snippet alff "Sequential logic"
 	always_ff @(posedge ${1:clk}) begin ${2:: statement_label}
 		${0}
 	end $2
-# Latched logic
-snippet all
+snippet all "Latched logic"
 	always_latch begin ${1:: statement_label}
 		${0}
 	end $1
-# Class
-snippet cl
+snippet cl "Class"
 	class ${1:class_name};
 		// data or class properties
 		${0}
@@ -36,18 +39,15 @@ snippet cl
 		endfunction : new
 
 	endclass : $1
-# Typedef structure
-snippet types
+snippet types "Typedef structure"
 	typedef struct {
 		${0}
 	} ${1:name_t};
-# Program block
-snippet prog
+snippet prog "Program block"
 	program ${1:program_name} ();
 		${0}
 	endprogram : $1
-# Interface block
-snippet intf
+snippet intf "Interface block"
 	interface ${1:program_name} ();
 		// nets
 		${0}
@@ -56,18 +56,15 @@ snippet intf
 		// modports
 
 	endinterface : $1
-# Clocking Block
-snippet clock
+snippet clock "Clocking Block"
 	clocking ${1:clocking_name} @(${2:posedge} ${3:clk});
 		${0}
 	endclocking : $1
-# Covergroup construct
-snippet cg
+snippet cg "Covergroup construct"
 	covergroup ${1:group_name} @(${2:posedge} ${3:clk});
 		${0}
 	endgroup : $1
-# Package declaration
-snippet pkg
+snippet pkg "Package declaration"
 	package ${1:package_name};
 		${0}
 	endpackage : $1
