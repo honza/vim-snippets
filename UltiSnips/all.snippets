@@ -73,7 +73,7 @@ endsnippet
 # modeline form ('set') to work in languages with comment terminators
 # (/* like C */).
 snippet modeline "Vim modeline"
-vim`!v ':set '. (&expandtab ? printf('et sw=%i ts=%i', &sw, &ts) : printf('noet sts=%i sw=%i ts=%i', &sts, &sw, &ts)) . (&tw ? ' tw='. &tw : '') . ':'`
+`!v (split(&cms, "%s")[0]) . (&expandtab ? printf(' vim:et:sw=%i:ts=%i', &sw, &ts) : printf(' vim:noet:sts=%i:sw=%i:ts=%i', &sts, &sw, &ts)) . (&tw ? ' tw='. &tw : '') . ':' . (len(split(&cms,"%s")) > 1 ? split(&cms, "%s")[1] : '')`
 endsnippet
 
 #########
